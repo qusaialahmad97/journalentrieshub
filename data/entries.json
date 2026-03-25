@@ -1,0 +1,866 @@
+[
+  {
+    "slug": "prepaid-rent-expense",
+    "category": "General",
+    "title": "How to Record Prepaid Rent Expense",
+    "description": "A guide on recording the initial cash payment and the monthly adjusting entry for prepaid rent.",
+    "entries": [
+      { "account": "Prepaid Rent", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "This records the 12-month advance payment. Every month, you will credit Prepaid Rent and debit Rent Expense for $100."
+  },
+  {
+    "slug": "restaurant-daily-sales-talabat",
+    "category": "Restaurant",
+    "title": "Recording Restaurant Sales via Talabat",
+    "description": "How to account for gross sales, delivery commissions, and net cash received from delivery apps.",
+    "entries": [
+      { "account": "Cash/Bank", "type": "Asset (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Commission Expense", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "This entry ensures your revenue reflects the full sale amount while properly tracking the commission costs paid to the platform."
+  },
+  {
+    "slug": "accrued-payroll-interest",
+    "category": "General",
+    "title": "Journal Entry for Accrued Payroll",
+    "description": "Recording wages earned by employees but not yet paid at the end of the accounting period.",
+    "entries": [
+      { "account": "Wages Expense", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "This is a year-end/month-end adjustment to ensure expenses match the period in which the work was performed."
+  },
+  {
+    "slug": "saas-subscription-annual",
+    "category": "SaaS",
+    "title": "Annual SaaS Subscription Revenue",
+    "description": "Recording a bulk annual payment for a software subscription under the accrual basis.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Deferred Revenue", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Since the service hasn't been provided yet, the payment is a liability. You recognize 1/12th as revenue each month."
+  },
+  {
+    "slug": "purchase-vehicle-loan",
+    "category": "General",
+    "title": "Buying a Company Vehicle with a Loan",
+    "description": "Recording a fixed asset purchase with a cash down payment and a bank loan.",
+    "entries": [
+      { "account": "Vehicles", "type": "Asset (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 5000.00 },
+      { "account": "Notes Payable", "type": "Liability (+)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "This entry reflects the increase in assets (Vehicle) and the simultaneous decrease in cash and increase in debt."
+  },
+  {
+    "slug": "vat-input-tax-jordan",
+    "category": "Tax",
+    "title": "Recording VAT Input Tax in Jordan",
+    "description": "How to record Value Added Tax (VAT) on local purchases and expenses for Jordanian companies.",
+    "entries": [
+      { "account": "Expense / Asset", "type": "Mixed", "dr": 1000.00, "cr": 0 },
+      { "account": "VAT Input Tax (16%)", "type": "Asset (+)", "dr": 160.00, "cr": 0 },
+      { "account": "Accounts Payable / Cash", "type": "Liability (+)", "dr": 0, "cr": 1160.00 }
+    ],
+    "explanation": "In Jordan, the standard Sales Tax is 16%. You debit the VAT Input account as an asset because it will be deducted from your VAT Output when filing with the ISTD."
+  },
+  {
+    "slug": "saas-deferred-revenue-monthly",
+    "category": "SaaS",
+    "title": "Monthly SaaS Revenue Recognition",
+    "description": "The adjusting entry to recognize monthly revenue from a previously collected annual subscription.",
+    "entries": [
+      { "account": "Deferred Revenue", "type": "Liability (-)", "dr": 100.00, "cr": 0 },
+      { "account": "Subscription Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "This follows the IFRS 15 framework. You are reducing the liability (Deferred Revenue) and 'earning' the revenue as the service is provided over time."
+  },
+  {
+    "slug": "bad-debt-provision-allowance",
+    "category": "General",
+    "title": "Allowance for Doubtful Accounts (Bad Debt)",
+    "description": "Creating a provision for accounts receivable that may not be collected at year-end.",
+    "entries": [
+      { "account": "Bad Debt Expense", "type": "Expense (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Allowance for Doubtful Accounts", "type": "Contra-Asset (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "This is a key CMA concept. Using the allowance method adheres to the Matching Principle by recording the expense in the same period as the related sale."
+  },
+  {
+    "slug": "restaurant-inventory-spoilage",
+    "category": "Restaurant",
+    "title": "Recording Restaurant Food Spoilage & Waste",
+    "description": "How to adjust inventory for wasted, expired, or spoiled food items in a kitchen environment.",
+    "entries": [
+      { "account": "Inventory Spoilage Expense", "type": "Expense (+)", "dr": 450.00, "cr": 0 },
+      { "account": "Food Inventory", "type": "Asset (-)", "dr": 0, "cr": 450.00 }
+    ],
+    "explanation": "Regularly recording spoilage prevents your COGS from being artificially inflated and keeps your ending inventory balance accurate."
+  },
+  {
+    "slug": "bank-reconciliation-interest-income",
+    "category": "General",
+    "title": "Bank Reconciliation: Interest Earned",
+    "description": "Adjusting the general ledger for interest income reported on a bank statement.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 15.50, "cr": 0 },
+      { "account": "Interest Income", "type": "Revenue (+)", "dr": 0, "cr": 15.50 }
+    ],
+    "explanation": "This is a standard 'Book Side' adjustment during a bank reconciliation to ensure the GL matches the actual bank balance."
+  },
+  {
+    "slug": "construction-retention-receivable",
+    "category": "Construction",
+    "title": "Recording Retention Money in Construction",
+    "description": "How to account for the percentage of payment withheld by a client until project completion.",
+    "entries": [
+      { "account": "Accounts Receivable (Net)", "type": "Asset (+)", "dr": 9000.00, "cr": 0 },
+      { "account": "Retention Receivable", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Construction Revenue", "type": "Revenue (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Retention is common in Jordan's construction sector. Even though you haven't received the cash, you recognize the full revenue and split the receivable into current and non-current (retention) portions."
+  },
+  {
+    "slug": "ecommerce-sales-return-provision",
+    "category": "E-commerce",
+    "title": "Provision for Sales Returns (E-commerce)",
+    "description": "Estimating and recording expected returns for online sales at the end of the month.",
+    "entries": [
+      { "account": "Sales Returns and Allowances", "type": "Contra-Revenue (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Allowance for Sales Returns", "type": "Contra-Asset (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "To follow the matching principle, you must estimate how much of this month's sales will be returned next month, especially for high-return industries like fashion e-commerce."
+  },
+  {
+    "slug": "petty-cash-replenishment",
+    "category": "General",
+    "title": "Replenishing the Petty Cash Fund",
+    "description": "The entry required to record expenses paid out of petty cash and bring the fund back to its original balance.",
+    "entries": [
+      { "account": "Office Supplies Expense", "type": "Expense (+)", "dr": 45.00, "cr": 0 },
+      { "account": "Delivery/Postage Expense", "type": "Expense (+)", "dr": 20.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 65.00 }
+    ],
+    "explanation": "Notice you do NOT credit Petty Cash itself unless you are reducing the fund size. You credit the main Bank account to replace the cash spent on specific expenses."
+  },
+  {
+    "slug": "fixed-asset-disposal-gain",
+    "category": "General",
+    "title": "Sale of Fixed Asset at a Gain",
+    "description": "How to remove an asset from the books and record a profit on the sale.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (-)", "dr": 5000.00, "cr": 0 },
+      { "account": "Equipment/Vehicle", "type": "Asset (-)", "dr": 0, "cr": 18000.00 },
+      { "account": "Gain on Disposal of Asset", "type": "Revenue (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "You must 'flush out' both the original cost and the accumulated depreciation to zero out the asset's book value before recording the gain."
+  },
+  {
+    "slug": "dividend-declaration-entry",
+    "category": "Advanced",
+    "title": "Declaration of Cash Dividends",
+    "description": "Recording the board's approval to pay dividends before the actual cash is sent.",
+    "entries": [
+      { "account": "Retained Earnings", "type": "Equity (-)", "dr": 10000.00, "cr": 0 },
+      { "account": "Dividends Payable", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "The moment dividends are declared, they become a legal liability for the company, reducing the equity available for reinvestment."
+  },
+  {
+    "slug": "office-lease-ifrs16-initial",
+    "category": "Advanced",
+    "title": "Initial Recognition of Lease (IFRS 16)",
+    "description": "Recording the Right-of-Use (ROU) asset and Lease Liability for a new office lease.",
+    "entries": [
+      { "account": "Right-of-Use Asset", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Lease Liability", "type": "Liability (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Under IFRS 16, almost all leases come onto the balance sheet. This entry represents the present value of future lease payments."
+  },
+  {
+    "slug": "equity-investment-fair-value",
+    "category": "Advanced",
+    "title": "Investment in Equity Securities (FVTPL)",
+    "description": "Recording the purchase of shares in another company held for trading.",
+    "entries": [
+      { "account": "Investment in Equity (FVTPL)", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "FVTPL stands for 'Fair Value Through Profit or Loss'. Any change in share price at year-end will go directly to the income statement."
+  },
+  {
+    "slug": "inventory-write-down-nrv",
+    "category": "General",
+    "title": "Inventory Write-Down to Net Realizable Value",
+    "description": "Adjusting inventory value when the market price drops below the cost (LCM/NRV rule).",
+    "entries": [
+      { "account": "Cost of Goods Sold (or Loss)", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Inventory", "type": "Asset (-)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "This follows the Conservatism principle. You must report inventory at the lower of cost or its net realizable value."
+  },
+  {
+    "slug": "unearned-revenue-recognition",
+    "category": "General",
+    "title": "Adjusting Entry for Unearned Revenue",
+    "description": "Recognizing revenue that was previously collected as an advance payment.",
+    "entries": [
+      { "account": "Unearned Revenue", "type": "Liability (-)", "dr": 5000.00, "cr": 0 },
+      { "account": "Service Revenue", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "As the work is completed, you move the amount from the liability (Unearned) to the income statement (Revenue)."
+  },
+  {
+    "slug": "bond-issuance-at-premium",
+    "category": "Advanced",
+    "title": "Issuance of Bonds at a Premium",
+    "description": "Recording the cash received when bonds are sold for more than their face value.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 105000.00, "cr": 0 },
+      { "account": "Bonds Payable", "type": "Liability (+)", "dr": 0, "cr": 100000.00 },
+      { "account": "Premium on Bonds Payable", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "A premium occurs when the bond's stated interest rate is higher than the market rate. The premium is amortized over the life of the bond."
+  },
+  {
+    "slug": "foreign-currency-gain-transaction",
+    "category": "Tax",
+    "title": "Foreign Currency Exchange Gain",
+    "description": "Recording a gain when settling a foreign currency invoice at a favorable rate.",
+    "entries": [
+      { "account": "Accounts Payable", "type": "Liability (-)", "dr": 1400.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 1350.00 },
+      { "account": "Foreign Exchange Gain", "type": "Revenue (+)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "Common in Jordan for imports. If the JOD/USD rate fluctuates in your favor between the invoice date and payment date, you record a gain."
+  },
+  {
+    "slug": "share-capital-issuance-par",
+    "category": "Advanced",
+    "title": "Issuance of Common Stock above Par",
+    "description": "Recording the sale of new shares to investors including Additional Paid-In Capital (APIC).",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Common Stock ($1 Par)", "type": "Equity (+)", "dr": 0, "cr": 5000.00 },
+      { "account": "Paid-in Capital in Excess of Par", "type": "Equity (+)", "dr": 0, "cr": 45000.00 }
+    ],
+    "explanation": "This shows how equity is split between the legal par value and the actual amount paid by investors."
+  },
+  {
+    "slug": "lease-depreciation-ifrs16",
+    "category": "Advanced",
+    "title": "Depreciation of Right-of-Use (ROU) Asset",
+    "description": "Monthly depreciation entry for an office or equipment lease under IFRS 16 standards.",
+    "entries": [
+      { "account": "Depreciation Expense (ROU)", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (ROU)", "type": "Contra-Asset (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Even though you don't 'own' the building, IFRS 16 requires you to depreciate the Right-of-Use asset over the shorter of the lease term or the asset's useful life."
+  },
+  {
+    "slug": "treasury-stock-purchase-cost",
+    "category": "Advanced",
+    "title": "Purchase of Treasury Stock (Cost Method)",
+    "description": "Recording the buyback of a company's own shares from the open market.",
+    "entries": [
+      { "account": "Treasury Stock", "type": "Contra-Equity (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Treasury stock is not an asset; it is a contra-equity account. It reduces total shareholders' equity on the balance sheet."
+  },
+  {
+    "slug": "manufacturing-overhead-applied",
+    "category": "Construction",
+    "title": "Applying Manufacturing Overhead",
+    "description": "Allocating indirect production costs to Work-in-Process (WIP) based on a predetermined rate.",
+    "entries": [
+      { "account": "Work-in-Process (WIP) Inventory", "type": "Asset (+)", "dr": 8500.00, "cr": 0 },
+      { "account": "Manufacturing Overhead Applied", "type": "Clearing Account", "dr": 0, "cr": 8500.00 }
+    ],
+    "explanation": "This is a core CMA concept. Overhead is applied using a driver (like machine hours) to ensure products carry the full cost of production."
+  },
+  {
+    "slug": "impairment-loss-goodwill",
+    "category": "Advanced",
+    "title": "Impairment Loss on Goodwill",
+    "description": "Recognizing a permanent decrease in the value of goodwill recorded during an acquisition.",
+    "entries": [
+      { "account": "Loss on Impairment", "type": "Expense (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Goodwill", "type": "Asset (-)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Under IFRS/GAAP, goodwill is not amortized; instead, it is tested for impairment annually. If its value drops, it must be written down immediately."
+  },
+  {
+    "slug": "sales-tax-payable-collection",
+    "category": "Tax",
+    "title": "Collection of Sales Tax (VAT Output)",
+    "description": "Recording a sale that includes sales tax (VAT) collected from a customer on behalf of the government.",
+    "entries": [
+      { "account": "Accounts Receivable / Cash", "type": "Asset (+)", "dr": 116.00, "cr": 0 },
+      { "account": "Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 },
+      { "account": "Sales Tax Payable (VAT Output)", "type": "Liability (+)", "dr": 0, "cr": 16.00 }
+    ],
+    "explanation": "The tax collected is not your revenue; it is a liability you owe to the ISTD (in Jordan). You act as a middleman for the government."
+  },
+  {
+    "slug": "inventory-obsolescence-reserve",
+    "category": "Retail",
+    "title": "Provision for Inventory Obsolescence",
+    "description": "Recording a reserve for stock that is unlikely to be sold due to damage or lack of demand.",
+    "entries": [
+      { "account": "Inventory Obsolescence Expense", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Allowance for Obsolescence", "type": "Contra-Asset (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "This follows the Prudence principle. Instead of reducing inventory directly, we create a 'bucket' (allowance) to show the estimated loss in value."
+  },
+  {
+    "slug": "accrued-audit-fees",
+    "category": "Advanced",
+    "title": "Accrual of Professional Audit Fees",
+    "description": "Recognizing the expense for the annual audit before the invoice is received or paid.",
+    "entries": [
+      { "account": "Audit & Professional Fees", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Accrued Expenses", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Audits usually happen after year-end, but the work relates to the prior year. This entry ensures the expense hits the correct fiscal period."
+  },
+  {
+    "slug": "prepaid-software-license-amortization",
+    "category": "SaaS",
+    "title": "Amortization of Prepaid Software Licenses",
+    "description": "Monthly adjustment to recognize the expense of an upfront software subscription payment.",
+    "entries": [
+      { "account": "Software Subscription Expense", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Prepaid Expenses", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "If you pay $2,400 for a yearly SAP or QuickBooks license, you record $2,400 as a prepaid asset and then 'bleed' $200 into expenses every month."
+  },
+  {
+    "slug": "intercompany-loan-interest",
+    "category": "Advanced",
+    "title": "Accruing Intercompany Loan Interest",
+    "description": "Recording interest earned on a loan provided to a subsidiary or related entity.",
+    "entries": [
+      { "account": "Interest Receivable", "type": "Asset (+)", "dr": 750.00, "cr": 0 },
+      { "account": "Interest Income (Intercompany)", "type": "Revenue (+)", "dr": 0, "cr": 750.00 }
+    ],
+    "explanation": "Common in groups like alfanar. Even if no cash moves, the interest must be recognized to reflect the arms-length transaction principle."
+  },
+  {
+    "slug": "manufacturing-scrap-sales",
+    "category": "Construction",
+    "title": "Sale of Manufacturing Scrap Metal",
+    "description": "Recording the miscellaneous income from selling byproduct or waste materials from production.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 120.00, "cr": 0 },
+      { "account": "Other Income (Scrap Sales)", "type": "Revenue (+)", "dr": 0, "cr": 120.00 }
+    ],
+    "explanation": "If the scrap value is significant, it can be used to reduce the cost of the main product; otherwise, it is recorded as 'Other Income'."
+  },
+  {
+    "slug": "ecommerce-stripe-payout-reconciliation",
+    "category": "E-commerce",
+    "title": "Reconciling Payouts from Payment Processors",
+    "description": "Recording the net cash received after processing fees from Stripe, PayPal, or HyperPay.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 97.00, "cr": 0 },
+      { "account": "Merchant Processing Fees", "type": "Expense (+)", "dr": 3.00, "cr": 0 },
+      { "account": "Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "Never record just the net amount ($97) as revenue. You must record the full $100 sale to keep your tax reporting accurate."
+  },
+  {
+    "slug": "fixed-asset-revaluation-surplus",
+    "category": "Advanced",
+    "title": "Fixed Asset Revaluation (IFRS)",
+    "description": "Increasing the carrying value of land or buildings to reflect current market fair value.",
+    "entries": [
+      { "account": "Land / Building", "type": "Asset (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Revaluation Surplus (OCI)", "type": "Equity (+)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "Under the IFRS Revaluation model, the gain does not go to the Income Statement; it goes to 'Other Comprehensive Income' (OCI) in Equity."
+  },
+  {
+    "slug": "bank-service-charges",
+    "category": "General",
+    "title": "Bank Service Charges & Transfer Fees",
+    "description": "Recording monthly maintenance or wire transfer fees deducted by the bank.",
+    "entries": [
+      { "account": "Bank Service Charges", "type": "Expense (+)", "dr": 15.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 15.00 }
+    ],
+    "explanation": "Usually discovered during the bank reconciliation process. This ensures the company's ledger matches the bank statement."
+  },
+  {
+    "slug": "provision-for-employee-eosb",
+    "category": "Tax",
+    "title": "End of Service Benefit (EOSB) Provision",
+    "description": "Accruing the liability for employee severance pay as required by Middle Eastern labor laws.",
+    "entries": [
+      { "account": "EOSB Expense", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Provision for EOSB", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "In Jordan and Saudi Arabia, companies must build a reserve for the gratuity pay employees receive when they leave."
+  },
+  {
+    "slug": "bad-debt-write-off-direct",
+    "category": "General",
+    "title": "Direct Write-Off of Uncollectible Account",
+    "description": "Recording a loss when a specific customer's balance is confirmed as uncollectible.",
+    "entries": [
+      { "account": "Bad Debt Expense", "type": "Expense (+)", "dr": 850.00, "cr": 0 },
+      { "account": "Accounts Receivable", "type": "Asset (-)", "dr": 0, "cr": 850.00 }
+    ],
+    "explanation": "This method is used when no prior allowance (provision) was made. It directly reduces the accounts receivable balance."
+  },
+  {
+    "slug": "manufacturing-wip-to-finished-goods",
+    "category": "Construction",
+    "title": "Transferring WIP to Finished Goods",
+    "description": "Recording the completion of production and moving costs from Work-in-Process to Finished Goods inventory.",
+    "entries": [
+      { "account": "Finished Goods Inventory", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Work-in-Process (WIP)", "type": "Asset (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "This represents the 'Cost of Goods Manufactured'. It moves all accumulated material, labor, and overhead into the final salable product."
+  },
+  {
+    "slug": "accrued-warranty-liability",
+    "category": "Advanced",
+    "title": "Provision for Warranty Claims",
+    "description": "Estimating and recording future warranty repair costs at the time of sale (Matching Principle).",
+    "entries": [
+      { "account": "Warranty Expense", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Warranty Liability", "type": "Liability (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "You must record the expense in the same period as the sale, even if the actual repair happens months later."
+  },
+  {
+    "slug": "nonprofit-restricted-contribution",
+    "category": "General",
+    "title": "Restricted Grant Revenue (Non-Profit)",
+    "description": "Recording a donation that must be used for a specific project or timeframe.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Temp. Restricted Revenue", "type": "Revenue (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "In NGO accounting, restricted funds are tracked separately to ensure the donor's conditions are met before the funds are 'released' to general use."
+  },
+  {
+    "slug": "bond-interest-amortization-discount",
+    "category": "Advanced",
+    "title": "Bond Interest with Discount Amortization",
+    "description": "Recording periodic interest payment and the amortization of a bond discount using the straight-line method.",
+    "entries": [
+      { "account": "Interest Expense", "type": "Expense (+)", "dr": 5500.00, "cr": 0 },
+      { "account": "Discount on Bonds Payable", "type": "Contra-Liability (-)", "dr": 0, "cr": 500.00 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "The interest expense is higher than the cash paid because it includes the 'cost' of the discount spread over the bond's life."
+  },
+  {
+    "slug": "dividends-received-investment",
+    "category": "General",
+    "title": "Cash Dividends Received on Investment",
+    "description": "Recording income from dividends paid by a company in which you own shares (Cost Method).",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Dividend Income", "type": "Revenue (+)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Under the cost/fair value method, dividends are recorded directly as income when the right to receive payment is established."
+  },
+  {
+    "slug": "fixed-asset-exchange-no-commercial-substance",
+    "category": "Advanced",
+    "title": "Exchange of Assets (No Commercial Substance)",
+    "description": "Trading an old machine for a similar new one where the future cash flows don't change significantly.",
+    "entries": [
+      { "account": "Equipment (New)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (-)", "dr": 4000.00, "cr": 0 },
+      { "account": "Equipment (Old)", "type": "Asset (-)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "If an exchange lacks commercial substance, you generally do not recognize a gain; you simply carry over the book value to the new asset."
+  },
+  {
+    "slug": "software-development-capitalization",
+    "category": "SaaS",
+    "title": "Capitalizing Internal Software Development",
+    "description": "Recording internal labor costs as an intangible asset during the application development stage.",
+    "entries": [
+      { "account": "Capitalized Software (Intangible)", "type": "Asset (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Cash / Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "For SaaS companies, coding costs after reaching 'technical feasibility' are moved from the income statement to the balance sheet as an asset."
+  },
+  {
+    "slug": "prepaid-advertising-campaign",
+    "category": "E-commerce",
+    "title": "Prepaid Social Media Ad Campaign",
+    "description": "Recording a large upfront payment for a 3-month marketing campaign on Meta or Google Ads.",
+    "entries": [
+      { "account": "Prepaid Advertising", "type": "Asset (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Just like rent, advertising should be expensed as the ads are actually shown, not necessarily when the invoice is paid."
+  },
+  {
+    "slug": "sale-of-scrap-metal-construction",
+    "category": "Construction",
+    "title": "Sale of Construction Site Scrap",
+    "description": "Recording revenue from selling excess rebar or copper scrap from a job site.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Other Income (Scrap)", "type": "Revenue (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "In Jordan's construction sector, scrap sales are often treated as 'Other Income' rather than a reduction of the project's material cost."
+  },
+  {
+    "slug": "unrealized-gain-marketable-securities",
+    "category": "Advanced",
+    "title": "Unrealized Gain on Trading Securities",
+    "description": "Adjusting the value of stocks held in a trading portfolio to fair market value at year-end.",
+    "entries": [
+      { "account": "Marketable Securities", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Unrealized Gain (Income Statement)", "type": "Revenue (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Because these are 'Trading' securities, the gain is recorded on the Income Statement even if you haven't sold the shares yet."
+  },
+  {
+    "slug": "talabat-daily-sales-reconciliation",
+    "category": "Restaurant",
+    "title": "Daily Talabat Sales Reconciliation",
+    "description": "Recording the daily gross sales and the corresponding receivable from Talabat before payout.",
+    "entries": [
+      { "account": "Receivable: Talabat", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "This records the sales reported by the Talabat portal. The cash isn't in the bank yet, so it sits in a specific receivable account."
+  },
+  {
+    "slug": "talabat-commission-expense",
+    "category": "Restaurant",
+    "title": "Talabat Commission & Service Fee",
+    "description": "Recording the commission percentage deducted by Talabat on total orders.",
+    "entries": [
+      { "account": "Delivery Commission Expense", "type": "Expense (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Receivable: Talabat", "type": "Asset (-)", "dr": 0, "cr": 250.00 }
+    ],
+    "explanation": "Platform commissions (usually 20-30%) reduce the amount Talabat owes you. This entry recognizes the cost of using the service."
+  },
+  {
+    "slug": "talabat-weekly-payout",
+    "category": "Restaurant",
+    "title": "Talabat Weekly Bank Payout",
+    "description": "Recording the actual cash transfer from Talabat to your Jordanian bank account.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 750.00, "cr": 0 },
+      { "account": "Receivable: Talabat", "type": "Asset (-)", "dr": 0, "cr": 750.00 }
+    ],
+    "explanation": "This clears the receivable once the money is successfully transferred to your bank account."
+  },
+  {
+    "slug": "talabat-customer-cancellation-refund",
+    "category": "Restaurant",
+    "title": "Talabat Order Cancellation (Restaurant Fault)",
+    "description": "How to record a refund when an order is cancelled after the food was prepared.",
+    "entries": [
+      { "account": "Sales Returns & Allowances", "type": "Contra-Revenue (+)", "dr": 25.00, "cr": 0 },
+      { "account": "Receivable: Talabat", "type": "Asset (-)", "dr": 0, "cr": 25.00 }
+    ],
+    "explanation": "If the restaurant is at fault for a cancellation, Talabat will deduct the amount from your next payout."
+  },
+  {
+    "slug": "talabat-delivery-promo-discount",
+    "category": "Restaurant",
+    "title": "Talabat Shared Marketing Promotion",
+    "description": "Recording a discount where the restaurant pays 50% of a customer promotion.",
+    "entries": [
+      { "account": "Marketing & Promo Expense", "type": "Expense (+)", "dr": 10.00, "cr": 0 },
+      { "account": "Receivable: Talabat", "type": "Asset (-)", "dr": 0, "cr": 10.00 }
+    ],
+    "explanation": "When you run a 'Buy 1 Get 1' or % discount on the app, your shared portion of that cost is recorded as a marketing expense."
+  },
+  {
+    "slug": "talabat-tablet-rental-fee",
+    "category": "Restaurant",
+    "title": "Talabat Monthly Tablet/Device Fee",
+    "description": "Recording the monthly subscription or rental fee for the Talabat order terminal.",
+    "entries": [
+      { "account": "Software/Tool Subscription", "type": "Expense (+)", "dr": 15.00, "cr": 0 },
+      { "account": "Receivable: Talabat", "type": "Asset (-)", "dr": 0, "cr": 15.00 }
+    ],
+    "explanation": "Often, platforms deduct a small hardware or software maintenance fee directly from your sales balance."
+  },
+  {
+    "slug": "talabat-vat-on-commission",
+    "category": "Restaurant",
+    "title": "VAT on Talabat Commission (Jordan)",
+    "description": "Recording the 16% Sales Tax applied to the commission invoice from Talabat.",
+    "entries": [
+      { "account": "VAT Input Tax (16%)", "type": "Asset (+)", "dr": 40.00, "cr": 0 },
+      { "account": "Receivable: Talabat", "type": "Asset (-)", "dr": 0, "cr": 40.00 }
+    ],
+    "explanation": "In Jordan, the commission service is taxable. You can claim this 16% back against your sales tax output."
+  },
+  {
+    "slug": "talabat-bad-debt-adjustment",
+    "category": "Restaurant",
+    "title": "Talabat Disputed Payout Adjustment",
+    "description": "Writing off a balance that Talabat refused to pay due to a technical dispute.",
+    "entries": [
+      { "account": "Disputed Sales Expense", "type": "Expense (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Receivable: Talabat", "type": "Asset (-)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "If a reconciliation error occurs and Talabat denies a claim, the uncollectible receivable must be written off."
+  },
+  {
+    "slug": "talabat-delivery-fee-revenue",
+    "category": "Restaurant",
+    "title": "Recording Delivery Fee Revenue (Own Fleet)",
+    "description": "If the restaurant uses its own drivers but the Talabat app, recording the delivery fee collected.",
+    "entries": [
+      { "account": "Receivable: Talabat", "type": "Asset (+)", "dr": 2.00, "cr": 0 },
+      { "account": "Delivery Service Income", "type": "Revenue (+)", "dr": 0, "cr": 2.00 }
+    ],
+    "explanation": "This separates food revenue from delivery service revenue, which is important for margin analysis."
+  },
+  {
+    "slug": "talabat-tips-payout-reconciliation",
+    "category": "Restaurant",
+    "title": "Driver Tips Collected via Talabat",
+    "description": "Handling tips paid by customers on the app that must be passed to drivers.",
+    "entries": [
+      { "account": "Receivable: Talabat", "type": "Asset (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Tips Payable to Staff", "type": "Liability (+)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "Tips are not restaurant revenue. They are a liability until you pay them out to your delivery staff."
+  },
+  {
+    "slug": "bad-debt-recovery-cash",
+    "category": "General",
+    "title": "Recovery of Previously Written-Off Bad Debt",
+    "description": "Recording cash received from a customer whose balance was already written off in a prior period.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Uncollectible Accounts Recovery", "type": "Revenue (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "When a 'dead' debt is suddenly paid, you recognize the cash and record it as other income or a reduction in bad debt expense."
+  },
+  {
+    "slug": "petty-cash-establishment",
+    "category": "General",
+    "title": "Establishing a Petty Cash Fund",
+    "description": "Setting up an initial float for small office expenses (Imprest System).",
+    "entries": [
+      { "account": "Petty Cash", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "This moves cash from the main bank account to a physical drawer in the office. The balance stays at $200 unless the fund size is changed."
+  },
+  {
+    "slug": "zakat-provision-saudi",
+    "category": "Tax",
+    "title": "Zakat Provision (Saudi Arabia/GCC)",
+    "description": "Accruing the estimated Zakat liability for a company operating in the GCC.",
+    "entries": [
+      { "account": "Zakat Expense", "type": "Expense (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Zakat Payable", "type": "Liability (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Zakat is calculated based on the Zakat base (equity, provisions, and long-term liabilities). This is essential for companies like alfanar."
+  },
+  {
+    "slug": "inventory-shortage-shrinkage",
+    "category": "Retail",
+    "title": "Inventory Shrinkage (Theft/Error)",
+    "description": "Adjusting inventory records after a physical count reveals a shortage compared to the system.",
+    "entries": [
+      { "account": "Inventory Shrinkage Expense", "type": "Expense (+)", "dr": 350.00, "cr": 0 },
+      { "account": "Merchandise Inventory", "type": "Asset (-)", "dr": 0, "cr": 350.00 }
+    ],
+    "explanation": "Shrinkage accounts for theft, breakage, or administrative errors that cause the physical stock to be lower than the books."
+  },
+  {
+    "slug": "accrued-utilities-expense",
+    "category": "General",
+    "title": "Accruing Monthly Utilities (Electricity/Water)",
+    "description": "Recording estimated utility costs at month-end before the actual bill arrives.",
+    "entries": [
+      { "account": "Utilities Expense", "type": "Expense (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Accrued Liabilities", "type": "Liability (+)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "To follow the accrual basis, you must estimate and record the cost of electricity used during the month, even if the bill comes later."
+  },
+  {
+    "slug": "purchase-returns-allowances",
+    "category": "General",
+    "title": "Purchase Returns and Allowances",
+    "description": "Returning defective raw materials to a supplier for a full credit.",
+    "entries": [
+      { "account": "Accounts Payable", "type": "Liability (-)", "dr": 1200.00, "cr": 0 },
+      { "account": "Inventory (or Purchase Returns)", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "This reduces the amount you owe the vendor and adjusts your inventory balance for the returned items."
+  },
+  {
+    "slug": "interest-bearing-note-issuance",
+    "category": "Advanced",
+    "title": "Issuance of Short-Term Note Payable",
+    "description": "Borrowing cash from a bank by signing a formal 6-month promissory note.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Notes Payable", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Notes are different from Accounts Payable as they are formal legal documents and usually carry an explicit interest rate."
+  },
+  {
+    "slug": "goodwill-recognition-acquisition",
+    "category": "Advanced",
+    "title": "Recognition of Goodwill in Acquisition",
+    "description": "Recording the excess price paid over the fair value of net assets when buying a business.",
+    "entries": [
+      { "account": "Identifiable Net Assets", "type": "Asset (+)", "dr": 80000.00, "cr": 0 },
+      { "account": "Goodwill", "type": "Asset (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "Goodwill represents intangible value like brand reputation and customer loyalty that isn't on the target company's books."
+  },
+  {
+    "slug": "dividends-payable-payment",
+    "category": "General",
+    "title": "Payment of Previously Declared Dividends",
+    "description": "The actual cash outflow to shareholders following the declaration date.",
+    "entries": [
+      { "account": "Dividends Payable", "type": "Liability (-)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "This clears the liability created during the 'Declaration' phase and records the cash leaving the company."
+  },
+  {
+    "slug": "prepaid-insurance-expiration",
+    "category": "General",
+    "title": "Monthly Amortization of Prepaid Insurance",
+    "description": "The adjusting entry to move one month of coverage from assets to expenses.",
+    "entries": [
+      { "account": "Insurance Expense", "type": "Expense (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Prepaid Insurance", "type": "Asset (-)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "Commonly checked in audits. If you paid for a 1-year policy, you must recognize 1/12th of that cost every month."
+  },
+  {
+    "slug": "unearned-rent-revenue-receipt",
+    "category": "General",
+    "title": "Receipt of Advance Rent (Unearned)",
+    "description": "Recording cash received from a tenant for the next 6 months of rent.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 6000.00, "cr": 0 },
+      { "account": "Unearned Rent Revenue", "type": "Liability (+)", "dr": 0, "cr": 6000.00 }
+    ],
+    "explanation": "Because you haven't 'provided' the space yet, the money is a liability. You owe the tenant the service (space) or their money back."
+  },
+  {
+    "slug": "sales-tax-remittance-government",
+    "category": "Tax",
+    "title": "Remitting Sales Tax (VAT) to Authorities",
+    "description": "Paying the net tax owed (Output - Input) to the tax department.",
+    "entries": [
+      { "account": "Sales Tax Payable", "type": "Liability (-)", "dr": 1000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "This is the final step in the VAT cycle—transferring the collected taxes from your books to the government."
+  },
+  {
+    "slug": "fixed-asset-impairment-loss",
+    "category": "Advanced",
+    "title": "Impairment of Machinery",
+    "description": "Writing down an asset whose fair value has fallen below its book value permanently.",
+    "entries": [
+      { "account": "Impairment Loss", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Accumulated Impairment (or Asset)", "type": "Contra-Asset (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "If a machine becomes obsolete or damaged, you must reduce its carrying value to reflect its actual worth."
+  },
+  {
+    "slug": "salary-advance-employee",
+    "category": "General",
+    "title": "Issuing a Salary Advance to Employee",
+    "description": "Recording a short-term loan given to an employee against their next paycheck.",
+    "entries": [
+      { "account": "Employee Advances", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "This is a receivable for the company. It will be deducted from the employee's salary at the end of the month."
+  },
+  {
+    "slug": "bonus-accrual-yearend",
+    "category": "General",
+    "title": "Accruing Annual Employee Bonuses",
+    "description": "Recording the expense for bonuses earned in the current year but paid in the next year.",
+    "entries": [
+      { "account": "Bonus Expense", "type": "Expense (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Bonuses Payable", "type": "Liability (+)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "Bonuses must be matched to the year the performance occurred, even if the check isn't cut until February."
+  },
+  {
+    "slug": "software-subscription-renewal",
+    "category": "SaaS",
+    "title": "Annual Software Subscription Renewal",
+    "description": "Paying for another year of a mission-critical SaaS tool.",
+    "entries": [
+      { "account": "Prepaid Software", "type": "Asset (+)", "dr": 2400.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 2400.00 }
+    ],
+    "explanation": "Just like week 1 of our build, large annual payments start as assets and move to expenses monthly."
+  },
+  {
+    "slug": "consignment-sales-revenue",
+    "category": "Retail",
+    "title": "Sale of Consigned Goods",
+    "description": "Recording revenue from selling goods that belong to another vendor.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Payable to Consignor", "type": "Liability (+)", "dr": 0, "cr": 80.00 },
+      { "account": "Consignment Commission Revenue", "type": "Revenue (+)", "dr": 0, "cr": 20.00 }
+    ],
+    "explanation": "You only record your commission as revenue. The rest is a liability because you owe that money to the owner of the goods."
+  },
+  {
+    "slug": "land-purchase-cash-commission",
+    "category": "General",
+    "title": "Purchase of Land with Broker Commissions",
+    "description": "Capitalizing all costs required to get an asset ready for use.",
+    "entries": [
+      { "account": "Land", "type": "Asset (+)", "dr": 105000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 105000.00 }
+    ],
+    "explanation": "Broker fees, legal costs, and title insurance are capitalized into the cost of the Land. Land is never depreciated."
+  },
+  {
+    "slug": "interest-expense-accrual-loan",
+    "category": "General",
+    "title": "Accruing Monthly Loan Interest",
+    "description": "Recording interest that has built up on a bank loan but hasn't been paid yet.",
+    "entries": [
+      { "account": "Interest Expense", "type": "Expense (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Interest Payable", "type": "Liability (+)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "Standard month-end adjustment to ensure your financial statements show the true cost of debt for that month."
+  },
+  {
+    "slug": "treasury-stock-resale-gain",
+    "category": "Advanced",
+    "title": "Resale of Treasury Stock above Cost",
+    "description": "Selling back company-owned shares to the market at a higher price than they were bought for.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 6000.00, "cr": 0 },
+      { "account": "Treasury Stock (at cost)", "type": "Contra-Equity (-)", "dr": 0, "cr": 5000.00 },
+      { "account": "Paid-in Capital from Treasury Stock", "type": "Equity (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "You do not record a 'Gain' on the income statement when selling treasury stock; the 'profit' goes directly to Equity (APIC)."
+  }
+]
