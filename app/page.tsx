@@ -9,9 +9,13 @@ export default function HomePage() {
   const [showDropdown, setShowDropdown] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
+  // Subscription States
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
   const totalEntriesCount = entries.length;
 
-  // SEO Strategy: Define your "Power Pillars" (Main focus)
+  // SEO Strategy: Define your "Power Pillars"
   const primaryPillars = ["Tax", "IFRS", "Advanced"];
   
   // Extract all other industries for the secondary grid
@@ -28,6 +32,29 @@ export default function HomePage() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Handle Subscription
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
 
   const dropdownResults = entries
     .filter((entry) =>
@@ -107,7 +134,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. THE PRIMARY PILLARS (The Big Focus) */}
+      {/* 2. THE PRIMARY PILLARS */}
       <section id="categories" className="py-24 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div>
@@ -118,7 +145,6 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
-          {/* TAX PILLAR */}
           <Link href="/categories/Tax" className="group relative bg-white border border-slate-200 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
             <div className="w-16 h-16 bg-emerald-600 text-white rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl shadow-emerald-200 mb-10 transform group-hover:rotate-6 transition-transform">T</div>
             <h3 className="text-2xl font-black mb-4">Tax & VAT</h3>
@@ -128,7 +154,6 @@ export default function HomePage() {
             </div>
           </Link>
 
-          {/* IFRS PILLAR */}
           <Link href="/categories/IFRS" className="group relative bg-slate-900 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.3)]">
             <div className="w-16 h-16 bg-white text-slate-900 rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl mb-10 transform group-hover:rotate-6 transition-transform">I</div>
             <h3 className="text-2xl font-black mb-4 text-white">IFRS Hub</h3>
@@ -138,7 +163,6 @@ export default function HomePage() {
             </div>
           </Link>
 
-          {/* ADVANCED PILLAR */}
           <Link href="/categories/Advanced" className="group relative bg-white border border-slate-200 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
             <div className="w-16 h-16 bg-blue-600 text-white rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl shadow-blue-200 mb-10 transform group-hover:rotate-6 transition-transform text-blue-100">A</div>
             <h3 className="text-2xl font-black mb-4">Advanced</h3>
@@ -172,28 +196,49 @@ export default function HomePage() {
       </section>
 
       {/* 4. SUBSCRIPTION / LEAD MAGNET */}
-      <section className="py-24 px-4 bg-[#0f172a] relative overflow-hidden">
-        {/* Decorative background element */}
+      <section id="subscribe" className="py-24 px-4 bg-[#0f172a] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-8 border border-emerald-500/20">
             Verified Expertise by Qusai Ahmad
           </div>
+          
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Master Your <span className="text-emerald-500">Career.</span></h2>
-          <p className="text-slate-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
-            Join 1,000+ professionals receiving deep-dive IFRS guides and Jordanian tax updates.
-          </p>
-          <form className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Professional email address" 
-              className="flex-1 p-5 rounded-[20px] bg-slate-800 border border-slate-700 text-white outline-none focus:border-emerald-500 transition-all placeholder:text-slate-500" 
-            />
-            <button className="bg-emerald-600 text-white font-black px-10 py-5 rounded-[20px] hover:bg-emerald-500 transition-all shadow-xl shadow-emerald-900/40 uppercase text-[10px] tracking-widest">
-              Join for Free
-            </button>
-          </form>
+          
+          {status === "success" ? (
+            <div className="bg-emerald-500/20 text-emerald-400 p-8 rounded-[32px] border border-emerald-500/30 animate-in fade-in zoom-in max-w-lg mx-auto">
+              <p className="font-bold text-lg text-white mb-2">You&apos;re in! 🎉</p>
+              <p className="text-emerald-400">Welcome to the Hub. Check your inbox for your first technical accounting guide.</p>
+            </div>
+          ) : (
+            <>
+              <p className="text-slate-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+                Join 1,000+ professionals receiving deep-dive IFRS guides and professional automation tips.
+              </p>
+              <form className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto" onSubmit={handleSubscribe}>
+                <input 
+                  type="email" 
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Professional email address" 
+                  className="flex-1 p-5 rounded-[20px] bg-slate-800 border border-slate-700 text-white outline-none focus:border-emerald-500 transition-all placeholder:text-slate-500" 
+                />
+                <button 
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="bg-emerald-600 text-white font-black px-10 py-5 rounded-[20px] hover:bg-emerald-500 transition-all shadow-xl shadow-emerald-900/40 uppercase text-[10px] tracking-widest disabled:opacity-50"
+                >
+                  {status === "loading" ? "Joining..." : "Join Free"}
+                </button>
+              </form>
+              {status === "error" && (
+                <p className="text-red-400 text-xs mt-4 font-bold uppercase tracking-widest">Something went wrong. Please try again.</p>
+              )}
+            </>
+          )}
+          
           <p className="mt-8 text-slate-500 text-[10px] uppercase font-bold tracking-widest opacity-50">
             No Spam. Just high-quality technical accounting.
           </p>
