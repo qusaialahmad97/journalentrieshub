@@ -1,18 +1,26 @@
 [
   {
     "id": "1",
-    "date": "2026-03-25",
-    "title": "New IFRS 15 Disclosure Requirements",
-    "excerpt": "New amendments require more detail on contract liabilities. See how this affects your SaaS deferred revenue entries.",
-    "category": "IFRS",
+    "date": "2026-03-27",
+    "title": "Journal Entries Hub is Officially Live",
+    "excerpt": "We have launched with over 70+ expert-verified journal entries covering IFRS, Tax, and SaaS accounting logic. Our goal is to standardize professional accounting resources for 2026.",
+    "category": "General",
     "trending": true
   },
   {
     "id": "2",
-    "date": "2026-03-20",
-    "title": "Rise of Automated Bank Reconciliations",
-    "excerpt": "Trend alert: More firms are moving to API-based bank feeds. We've updated our reconciliation guides to reflect this.",
-    "category": "Trends",
+    "date": "2026-03-26",
+    "title": "Jordanian Income Tax Filing Deadline Reminder",
+    "excerpt": "A reminder for firms in Jordan: The deadline for corporate income tax filing is approaching. Review our updated Tax pillar for Withholding and Social Security entry logic.",
+    "category": "Tax",
+    "trending": false
+  },
+  {
+    "id": "3",
+    "date": "2026-03-25",
+    "title": "IFRS 16 Lease Modification Trends",
+    "excerpt": "We are seeing an increase in lease modifications globally. Our Advanced pillar now includes a deep-dive on Right-of-Use asset impairment during mid-term renegotiations.",
+    "category": "IFRS",
     "trending": true
   }
 ]
