@@ -14,64 +14,54 @@ export default function Header() {
         aria-label="Main Navigation"
       >
         
-        {/* Logo Section - SEO Optimized */}
+        {/* Logo Section */}
         <Link 
           href="/" 
           className="flex items-center gap-2 group transition-all"
-          aria-label="Journal Entries Hub Home"
         >
           <Image 
             src="/journalentrieshublogo.png" 
-            alt="Journal Entries Hub - Professional Accounting & IFRS Resource Logo" 
+            alt="Journal Entries Hub Logo" 
             width={150} 
             height={50} 
-            // The Fix: Setting width and height to auto in the style prop 
-            // satisfies the Next.js warning while keeping it responsive.
             style={{ width: 'auto', height: 'auto' }} 
             priority 
           />
         </Link>
 
-        {/* Navigation Links */}
-        <div className="flex items-center gap-6 text-sm font-semibold">
+        {/* Navigation & Action Links */}
+        <div className="flex items-center gap-3 md:gap-6 text-sm font-semibold">
           
-          <Link 
-            href="/" 
-            className={`hover:text-emerald-600 transition-colors ${
-              pathname === '/' ? 'text-emerald-600 underline decoration-2 underline-offset-8' : 'text-slate-600'
-            }`}
-            aria-current={pathname === '/' ? 'page' : undefined}
-          >
-            Home
-          </Link>
+          <div className="hidden md:flex items-center gap-6 mr-2">
+            <Link href="/" className={pathname === '/' ? 'text-emerald-600' : 'text-slate-600 hover:text-emerald-600 transition-colors'}>Home</Link>
+            <Link href="/glossary" className={pathname === '/glossary' ? 'text-emerald-600' : 'text-slate-600 hover:text-emerald-600 transition-colors'}>Glossary</Link>
+            <Link href="/news" className={pathname === '/news' ? 'text-emerald-600' : 'text-slate-600 hover:text-emerald-600 transition-colors'}>News</Link>
+          </div>
 
-          {/* GLOSSARY LINK */}
-          <Link 
-            href="/glossary" 
-            className={`hover:text-emerald-600 transition-colors ${
-              pathname === '/glossary' ? 'text-emerald-600 underline decoration-2 underline-offset-8' : 'text-slate-600'
-            }`}
+          {/* DONATION BUTTON (Buy Me a Coffee) */}
+          <a 
+            href="https://buymeacoffee.com/qusaiahmad" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#FFDD00] text-black px-4 py-2 rounded-full hover:bg-[#ffea5c] transition-all shadow-sm active:scale-95"
           >
-            Glossary
-          </Link>
+            <span className="text-base">☕</span>
+            <span className="hidden lg:inline text-[11px] font-black uppercase tracking-tighter">Support</span>
+          </a>
 
-          {/* NEWS LINK */}
+          {/* SUBSCRIBE BUTTON */}
           <Link 
-            href="/news" 
-            className={`relative hover:text-emerald-600 transition-colors ${
-              pathname === '/news' ? 'text-emerald-600 underline decoration-2 underline-offset-8' : 'text-slate-600'
-            }`}
+            href="/#subscribe" 
+            className="hidden sm:block px-4 py-2 border-2 border-emerald-600 text-emerald-600 rounded-full hover:bg-emerald-600 hover:text-white transition-all duration-300 active:scale-95 text-[11px] font-black uppercase tracking-tighter"
           >
-            News
-            <span className="absolute -top-1 -right-2 h-2 w-2 bg-emerald-500 rounded-full animate-pulse"></span>
+            Join Hub
           </Link>
           
           <Link 
             href="/about" 
-            className="bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 transition shadow-md focus:ring-2 focus:ring-emerald-500 focus:outline-none"
-            title="Learn more about the expert behind the hub"
+            className="bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-800 transition shadow-md text-[11px] font-black uppercase tracking-tighter"
           >
-            About Me
+            About
           </Link>
         </div>
       </nav>

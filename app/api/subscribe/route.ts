@@ -8,6 +8,7 @@ export async function POST(request: Request) {
     const { email } = await request.json();
 
     // 1. Send the internal alert to YOURSELF
+    // Using "Hub System" so you can filter these easily in your inbox
     await resend.emails.send({
       from: 'Journal Entries Hub <qusai.ahmad@journalentrieshub.com>',
       to: 'qusaialahmad97@gmail.com', 
@@ -22,8 +23,9 @@ export async function POST(request: Request) {
     });
 
     // 2. Send the "Welcome" email to the SUBSCRIBER
+    // Using your name here creates a personal connection with the user
     const data = await resend.emails.send({
-      from: 'Qusai Ahmad <qusai.ahmad@journalentrieshub.com>',
+      from: 'Journal Entries Hub <qusai.ahmad@journalentrieshub.com>',
       to: email,
       subject: 'Welcome to the Journal Entries Hub 📚',
       html: `
