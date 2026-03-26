@@ -1,18 +1,30 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "./Header"; 
-import Footer from "./components/Footer"; // Import the new Footer
+import Footer from "./components/Footer"; 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// This fixed the warning and Point #1 & #6 on your list
 export const metadata: Metadata = {
-  title: "Journal Entries Hub | Automated Accounting for Modern Accountants",
-  description: "Explore our library of automated journal entries, Excel templates, and Python SAP scripting. Master accounting automation.",
+  metadataBase: new URL("https://www.journalentrieshub.com"), // Crucial for OG images
+  title: {
+    default: "Journal Entries Hub | Real-World Accounting Examples & IFRS Guides",
+    template: "%s | Journal Entries Hub",
+  },
+  description: "The definitive library of professional journal entries, IFRS guides, and restaurant accounting reconciliations. Built by experts for modern accountants.",
+  keywords: ["Journal Entries", "IFRS 16", "Talabat", "Jordanian VAT", "Accounting Hub"],
+  authors: [{ name: "Qusai Ahmad" }],
+  alternates: {
+    canonical: "/", // Point #6: Canonical Tags
+  },
   openGraph: {
-    title: "Journal Entries Hub",
-    description: "The definitive resource for modern accountants and automation experts.",
     type: "website",
+    locale: "en_US",
+    url: "https://www.journalentrieshub.com",
+    siteName: "Journal Entries Hub",
+    images: ["/journalentrieshublogo.png"],
   },
 };
 
@@ -23,18 +35,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* 1. Added flex and min-h-screen to the body */}
-      <body className={`${inter.className} flex flex-col min-h-screen bg-white`}>
-        
+      <body className={`${inter.className} flex flex-col min-h-screen bg-white text-black`}>
         <Header />
         
-        {/* 2. Wrapped children in a flex-grow div to push the footer down */}
+        {/* Main content wrapper */}
         <div className="flex-grow">
           {children}
         </div>
 
         <Footer />
-        
       </body>
     </html>
   );

@@ -12,24 +12,28 @@ export default function Footer() {
           <h3 className="text-white text-xl font-bold tracking-tight">
             Journal Entries <span className="text-emerald-500">Hub</span>
           </h3>
-          <p className="text-sm leading-relaxed max-w-xs">
+          <p className="text-sm leading-relaxed max-w-xs text-slate-400">
             The definitive resource for modern accountants. Specialized in IFRS, 
-            Jordanian Tax, and financial automation.
+            Jordanian Tax, and financial automation. Expertise by Qusai Ahmad.
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* Quick Links & Legal (Point #11) */}
         <div>
-          <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-widest">Resources</h4>
+          <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-widest">Resources & Legal</h4>
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="/" className="hover:text-emerald-400 transition-colors">Browse All Entries</Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-emerald-400 transition-colors">About Qusai</Link>
+              <Link href="/about" className="hover:text-emerald-400 transition-colors">About Me</Link>
+            </li>
+            {/* POINT #11: The Professional Shield Links */}
+            <li>
+              <Link href="/privacy" className="hover:text-emerald-400 transition-colors italic">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/sitemap.xml" className="hover:text-emerald-400 transition-colors">Sitemap (XML)</Link>
+              <Link href="/terms" className="hover:text-emerald-400 transition-colors italic">Terms & Disclaimers</Link>
             </li>
           </ul>
         </div>
@@ -39,18 +43,28 @@ export default function Footer() {
           <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-widest">Connect</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" className="hover:text-emerald-400 transition-colors">
-                LinkedIn
+              <a 
+                href="https://linkedin.com/in/qusaialahmad" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-emerald-400 transition-colors"
+              >
+                LinkedIn Profile
               </a>
             </li>
             <li>
-              <a href="https://github.com/qusaialahmad97" target="_blank" className="hover:text-emerald-400 transition-colors">
-                GitHub
+              <a 
+                href="https://github.com/qusaialahmad97" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-emerald-400 transition-colors"
+              >
+                GitHub Projects
               </a>
             </li>
             <li>
-              <Link href="mailto:qusai@example.com" className="hover:text-emerald-400 transition-colors">
-                Contact for Consulting
+              <Link href="mailto:qusai@speakaccounting.com" className="hover:text-emerald-400 transition-colors font-bold">
+                Consulting Inquiry
               </Link>
             </li>
           </ul>
@@ -59,11 +73,16 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-        <p>© {currentYear} Journal Entries Hub. Created by Qusai Ahmad.</p>
-        <div className="flex gap-6">
+        <div className="flex flex-col gap-1">
+          <p>© {currentYear} Journal Entries Hub. All Rights Reserved.</p>
+          <p>Created by Qusai Ahmad, General Accountant (Supervisor).</p>
+        </div>
+        
+        <div className="flex gap-6 items-center">
+          <Link href="/sitemap.xml" className="hover:text-slate-300">Sitemap</Link>
           <span className="flex items-center gap-1">
             <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Built with Next.js & Tailwind
+            System Status: Optimized
           </span>
         </div>
       </div>

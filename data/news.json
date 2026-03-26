@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "date": "2026-03-25",
+    "title": "New IFRS 15 Disclosure Requirements",
+    "excerpt": "New amendments require more detail on contract liabilities. See how this affects your SaaS deferred revenue entries.",
+    "category": "IFRS",
+    "trending": true
+  },
+  {
+    "id": "2",
+    "date": "2026-03-20",
+    "title": "Rise of Automated Bank Reconciliations",
+    "excerpt": "Trend alert: More firms are moving to API-based bank feeds. We've updated our reconciliation guides to reflect this.",
+    "category": "Trends",
+    "trending": true
+  }
+]

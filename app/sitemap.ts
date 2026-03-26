@@ -1,25 +1,53 @@
 import { MetadataRoute } from 'next'
-import entries from '../data/entries.json'
+import entries from "../data/entries.json";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Replace this with your actual domain once you buy it
-  const baseUrl = 'https://www.journalentrieshub.com'
+  const baseUrl = 'https://www.journalentrieshub.com';
 
-  // This part auto-generates the list from your JSON
+  // 1. Dynamic Entry URLs (The high-volume pages)
   const entryUrls = entries.map((entry) => ({
     url: `${baseUrl}/entries/${entry.slug}`,
-    lastModified: new Date().toISOString(),
+    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: 0.7, // Entries are important
-  }))
+    priority: 0.7,
+  }));
 
-  return [
+  // 2. Dynamic Category Pillar URLs (The authority hubs)
+  const categories = Array.from(new Set(entries.map((e) => e.category)));
+  const categoryUrls = categories.map((cat) => ({
+    url: `${baseUrl}/categories/${encodeURIComponent(cat)}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9, // Higher priority than entries because they are "Pillars"
+  }));
+
+  // 3. Static Core Hubs
+  const staticPages = [
     {
       url: baseUrl,
-      lastModified: new Date().toISOString(),
+      lastModified: new Date(),
       changeFrequency: 'daily' as const,
-      priority: 1.0, // Homepage is most important
+      priority: 1, // Homepage is King
     },
-    ...entryUrls,
-  ]
+    {
+      url: `${baseUrl}/news`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9, // Freshness signal
+    },
+    {
+      url: `${baseUrl}/glossary`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    },
+  ];
+
+  return [...staticPages, ...categoryUrls, ...entryUrls];
 }
