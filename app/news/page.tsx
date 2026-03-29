@@ -26,7 +26,7 @@ export default function NewsPage() {
               className="relative mb-16 pl-10 group"
             >
               {/* Timeline Dot */}
-              <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-4 border-white bg-slate-200 group-hover:bg-emerald-500 transition-colors"></div>
+              <div className="absolute -left-2.25 top-1.5 h-4 w-4 rounded-full border-4 border-white bg-slate-200 group-hover:bg-emerald-500 transition-colors"></div>
               
               <div className="flex flex-col gap-2">
                 <time className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">

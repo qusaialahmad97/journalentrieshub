@@ -2,25 +2,51 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import entries from "../data/entries.json";
+import entriesData from "../data/entries.json";
+
+// 1. Define the interfaces
+interface JournalRow {
+  account: string;
+}
+
+interface Entry {
+  title: string;
+  slug: string;
+  category: string;
+  explanation: string;
+  description: string;
+  entries: JournalRow[];
+}
+
+const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 export default function HomePage() {
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Subscription States
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const totalEntriesCount = entries.length;
+  const totalEntriesCount = entriesData.length;
 
-  // SEO Strategy: Define your "Power Pillars"
   const primaryPillars = ["Tax", "IFRS", "Advanced"];
   
-  // Extract all other industries for the secondary grid
-  const allCategories = Array.from(new Set(entries.map((item) => item.category)));
-  const secondaryIndustries = allCategories.filter(cat => !primaryPillars.includes(cat) && cat !== "General");
+  // ---------------------------------------------------------
+  // NEW LOGIC: Count entries per category
+  // ---------------------------------------------------------
+  const categoryCounts = (entriesData as Entry[]).reduce((acc, entry) => {
+    if (entry.category) {
+      acc[entry.category] = (acc[entry.category] || 0) + 1;
+    }
+    return acc;
+  }, {} as Record<string, number>);
+
+  // Convert the tally into an array of objects: { name: "Agriculture", count: 4 }
+  const secondaryIndustries = Object.entries(categoryCounts)
+    .filter(([catName]) => !primaryPillars.includes(catName) && catName !== "General")
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count); // Bonus: Sorts them so the categories with the most entries appear first!
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -33,18 +59,15 @@ export default function HomePage() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Handle Subscription
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-
     try {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
-
       if (response.ok) {
         setStatus("success");
         setEmail("");
@@ -56,17 +79,36 @@ export default function HomePage() {
     }
   };
 
-  const dropdownResults = entries
-    .filter((entry) =>
-      entry.title.toLowerCase().includes(query.toLowerCase()) ||
-      entry.category.toLowerCase().includes(query.toLowerCase())
-    )
-    .slice(0, 5);
+  const handleSearchRedirect = () => {
+    if (query.trim()) {
+      window.location.href = `/search?q=${encodeURIComponent(query)}`;
+    }
+  };
+
+  // Dropdown Search Logic
+  const searchTerms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  const allMatches = (entriesData as Entry[]).filter((entry) => {
+    if (searchTerms.length === 0) return false;
+    const searchableContent = [
+      entry.title,
+      entry.category,
+      entry.description,
+      entry.explanation,
+      ...(entry.entries || []).map(row => row.account)
+    ].join(" ").toLowerCase();
+
+    return searchTerms.every(term => {
+      const regex = new RegExp(`\\b${escapeRegExp(term)}`, 'i');
+      return regex.test(searchableContent);
+    });
+  });
+
+  const dropdownResults = allMatches.slice(0, 8);
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 font-sans">
+    <main className="min-h-screen bg-white text-slate-900 font-sans antialiased">
       
-      {/* 1. HERO & GOOGLE-STYLE SEARCH */}
+      {/* 1. HERO */}
       <section className="relative py-28 px-4 bg-[#f8fafc] border-b border-slate-200 overflow-visible">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase tracking-widest mb-8 border border-emerald-200">
@@ -87,7 +129,7 @@ export default function HomePage() {
           {/* FLOATING SEARCH BAR */}
           <div className="relative max-w-2xl mx-auto" ref={searchRef}>
             <div className={`relative z-50 flex items-center bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border transition-all duration-300 ${
-              showDropdown && query ? 'rounded-t-[24px] border-slate-200' : 'rounded-full border-transparent'
+              showDropdown && query ? 'rounded-t-[24px] border-slate-200' : 'rounded-full border-transparent hover:border-emerald-200'
             }`}>
               <div className="pl-6 text-slate-400">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,29 +143,47 @@ export default function HomePage() {
                 value={query}
                 onFocus={() => setShowDropdown(true)}
                 onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSearchRedirect()} 
               />
+              <button 
+                onClick={handleSearchRedirect} 
+                className="hidden sm:block absolute right-3 top-3 bg-emerald-600 text-white font-black text-xs uppercase tracking-wider px-6 py-4 rounded-full hover:bg-emerald-500 transition shadow-emerald-200"
+              >
+                Search
+              </button>
             </div>
 
             {/* FLOATING DROPDOWN */}
             {showDropdown && query && (
-              <div className="absolute top-full left-0 w-full bg-white shadow-[0_30px_60px_rgba(0,0,0,0.15)] rounded-b-[24px] border-x border-b border-slate-200 z-[100] overflow-hidden">
+              <div className="absolute top-full left-0 w-full bg-white shadow-[0_30px_60px_rgba(0,0,0,0.15)] rounded-b-[24px] border-x border-b border-slate-200 z-[100] overflow-hidden text-left">
                 {dropdownResults.length > 0 ? (
                   <div className="py-2">
                     {dropdownResults.map((entry) => (
                       <Link
                         key={entry.slug}
                         href={`/entries/${entry.slug}`}
-                        className="flex items-center px-8 py-5 hover:bg-slate-50 transition-all border-b border-slate-50 last:border-0 group"
+                        onClick={() => setShowDropdown(false)}
+                        className="flex items-center px-8 py-4 hover:bg-slate-50 transition-all border-b border-slate-50 last:border-0 group"
                       >
                         <div className="flex-1 text-left">
-                          <span className="block text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-1">{entry.category}</span>
+                          <span className="block text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-1 opacity-80">{entry.category}</span>
                           <span className="block text-slate-900 font-bold text-lg group-hover:text-emerald-700 transition-colors">{entry.title}</span>
+                          <span className="block text-slate-500 text-xs mt-1 leading-relaxed line-clamp-1">{entry.description}</span>
                         </div>
-                        <div className="text-slate-200 group-hover:text-emerald-500 transition-colors">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" /></svg>
+                        <div className="text-slate-200 group-hover:text-emerald-500 transition-colors ml-4">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" /></svg>
                         </div>
                       </Link>
                     ))}
+                    
+                    {allMatches.length > 0 && (
+                      <Link 
+                        href={`/search?q=${encodeURIComponent(query)}`} 
+                        className="block text-center pt-4 pb-3 font-bold text-sm text-emerald-700 hover:text-emerald-500 group bg-slate-50 border-t border-slate-100"
+                      >
+                        See all {allMatches.length} matches for "{query}" <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                      </Link>
+                    )}
                   </div>
                 ) : (
                   <div className="p-12 text-center text-slate-400 font-medium italic">No entries found for &quot;{query}&quot;</div>
@@ -173,21 +233,23 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* 3. SECONDARY INDUSTRY GRID */}
+        {/* 3. SECONDARY INDUSTRY GRID - NOW WITH COUNTS! */}
         <div className="pt-20 border-t border-slate-100">
           <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-12 text-center">Browse Specialized Industries</h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {secondaryIndustries.map((industry) => (
               <Link 
-                key={industry}
-                href={`/categories/${encodeURIComponent(industry)}`}
+                key={industry.name}
+                href={`/categories/${encodeURIComponent(industry.name)}`}
                 className="group p-8 bg-white border border-slate-100 rounded-[32px] text-center transition-all hover:border-emerald-500 hover:shadow-xl hover:bg-emerald-50/30"
               >
                 <span className="block text-slate-800 font-bold group-hover:text-emerald-700 transition-colors">
-                  {industry}
+                  {industry.name}
                 </span>
-                <span className="text-[9px] text-slate-400 font-black uppercase tracking-widest mt-2 block opacity-60">
-                  Sector Hub
+                
+                {/* Displaying the dynamic entry count here */}
+                <span className="text-[9px] text-slate-400 font-black uppercase tracking-widest mt-2 block opacity-80">
+                  {industry.count} {industry.count === 1 ? 'Entry' : 'Entries'}
                 </span>
               </Link>
             ))}

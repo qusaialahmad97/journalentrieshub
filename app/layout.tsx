@@ -53,7 +53,7 @@ export default function RootLayout({
         <Header />
         
         {/* Main content wrapper with standard max-width to keep text readable */}
-        <main className="flex-grow">
+        <main className="grow">
           {children}
         </main>
 

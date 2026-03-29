@@ -3009,21 +3009,3319 @@
       { "account": "Cash (New 40% Purchase)", "type": "Asset (-)", "dr": 0, "cr": 40000.00 }
     ],
     "explanation": "Under IFRS 3, when you gain control, you re-measure your previous stake at fair value and combine it with the new purchase to record the total investment in the subsidiary."
+  },
+  {
+    "slug": "nonprofit-unrestricted-donation",
+    "category": "Non-Profit",
+    "title": "Unrestricted Cash Donation",
+    "description": "Recording a cash contribution received for general operating purposes (without donor restrictions).",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Contributions Revenue (Unrestricted)", "type": "Revenue (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "This is the most common entry for NGOs. The funds are available for any use the board deems necessary."
+  },
+  {
+    "slug": "nonprofit-restricted-donation-purpose",
+    "category": "Non-Profit",
+    "title": "Donation Restricted for Specific Project",
+    "description": "Recording cash received that is legally restricted by the donor for a specific program or purpose.",
+    "entries": [
+      { "account": "Cash (Restricted)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Contributions Revenue (With Restrictions)", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Under FASB/IFRS, you must track restricted revenue separately to ensure the money is only spent on the donor's specified project."
+  },
+  {
+    "slug": "nonprofit-pledge-receivable",
+    "category": "Non-Profit",
+    "title": "Unconditional Promise to Give (Pledge)",
+    "description": "Recording a written promise from a donor to contribute cash in the future.",
+    "entries": [
+      { "account": "Pledges Receivable", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Contributions Revenue (Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Pledges are recognized as revenue the moment the promise is made, provided it is unconditional. They are usually restricted by time until the cash is collected."
+  },
+  {
+    "slug": "nonprofit-release-of-restriction",
+    "category": "Non-Profit",
+    "title": "Release of Net Assets from Restriction",
+    "description": "Moving funds from restricted to unrestricted once the project conditions have been satisfied.",
+    "entries": [
+      { "account": "Net Assets Released (With Restrictions)", "type": "Equity (-)", "dr": 2000.00, "cr": 0 },
+      { "account": "Net Assets Released (Without Restrictions)", "type": "Equity (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "This 'reclassification' entry is unique to NGOs. It shows that the organization has fulfilled the donor's wishes and can now 'use' the revenue on the income statement."
+  },
+  {
+    "slug": "nonprofit-inkind-goods",
+    "category": "Non-Profit",
+    "title": "In-Kind Donation of Goods (Gifts-in-Kind)",
+    "description": "Recording non-cash donations such as food, clothing, or equipment.",
+    "entries": [
+      { "account": "Inventory / Supplies", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "In-Kind Contribution Revenue", "type": "Revenue (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Goods should be recorded at their Fair Market Value (FMV). This reflects the true scale of the NGO's resources even if no cash was exchanged."
+  },
+  {
+    "slug": "nonprofit-inkind-services",
+    "category": "Non-Profit",
+    "title": "Contributed Specialized Services",
+    "description": "Recording professional services (e.g., Legal or IT) provided for free by a professional.",
+    "entries": [
+      { "account": "Legal / Professional Fees", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "In-Kind Contribution Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "You only record services if they create/enhance a non-financial asset or require specialized skills that the NGO would otherwise have to pay for."
+  },
+  {
+    "slug": "nonprofit-conditional-grant-advance",
+    "category": "Non-Profit",
+    "title": "Conditional Grant (Refundable Advance)",
+    "description": "Recording a grant that has a 'barrier' or condition that must be met before revenue can be recognized.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Refundable Advance (Grant)", "type": "Liability (+)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "If a grant says 'You only keep this if you vaccinate 1,000 children,' the money is a liability (Refundable Advance) until the work is done."
+  },
+  {
+    "slug": "nonprofit-functional-expense-allocation",
+    "category": "Non-Profit",
+    "title": "Allocating Salaries to Program Services",
+    "description": "Dividing staff costs between direct mission work and administrative overhead.",
+    "entries": [
+      { "account": "Program Services: Education", "type": "Expense (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Management & General Expense", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Donors look at the 'Program Expense Ratio.' This entry ensures costs are accurately attributed to the mission vs. management."
+  },
+  {
+    "slug": "nonprofit-endowment-permanent",
+    "category": "Non-Profit",
+    "title": "Establishing a Permanent Endowment",
+    "description": "Recording a gift where the principal must be kept intact forever.",
+    "entries": [
+      { "account": "Endowment Fund (Cash)", "type": "Asset (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "Contributions (Permanently Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "The principal is restricted forever. Usually, the investment income generated by this cash is used for operations."
+  },
+  {
+    "slug": "nonprofit-uncollectible-pledge-allowance",
+    "category": "Non-Profit",
+    "title": "Allowance for Uncollectible Pledges",
+    "description": "Estimating the portion of promised donations that will likely not be fulfilled.",
+    "entries": [
+      { "account": "Provision for Bad Debt (Pledges)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Allowance for Doubtful Pledges", "type": "Contra-Asset (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Like a business's Bad Debt, this follows the conservatism principle to avoid overstating the value of future donations."
+  },
+  {
+    "slug": "nonprofit-special-event-fundraiser",
+    "category": "Non-Profit",
+    "title": "Fundraising Event Revenue & Expense",
+    "description": "Recording gross ticket sales for a gala and the direct costs associated with the event.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Direct Costs: Gala Dinner", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Special Event Revenue", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "NGOs must report the gross amount raised and the direct costs to donors (like the meal cost) to show the net efficiency of the fundraiser."
+  },
+  {
+    "slug": "nonprofit-board-designated-funds",
+    "category": "Non-Profit",
+    "title": "Board-Designated Reserve Fund",
+    "description": "Internally restricting unrestricted cash for a future capital project.",
+    "entries": [
+      { "account": "Net Assets Without Restrictions (Undesignated)", "type": "Equity (-)", "dr": 50000.00, "cr": 0 },
+      { "account": "Net Assets Without Restrictions (Board Designated)", "type": "Equity (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Even if there is no donor restriction, the Board can 'designate' funds for a specific use (like a rainy-day fund). This is still technically 'Unrestricted' but labeled differently for clarity."
+  },
+
+  {
+    "slug": "nonprofit-agency-transaction",
+    "category": "Non-Profit",
+    "title": "Agency Transaction (Pass-Through)",
+    "description": "Recording funds received where the NGO acts as an agent/intermediary for another specified beneficiary.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Funds Held for Others", "type": "Liability (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "If a donor says 'Give this to John Smith,' the NGO is just a middleman. No revenue is recognized; it is a liability until the cash is handed over."
+  },
+  {
+    "slug": "nonprofit-member-dues-bifurcation",
+    "category": "Non-Profit",
+    "title": "Membership Dues (Exchange vs. Contribution)",
+    "description": "Splitting membership fees between the value of services provided and the purely charitable portion.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Exchange Revenue (Membership Service)", "type": "Revenue (+)", "dr": 0, "cr": 50.00 },
+      { "account": "Contribution Revenue (Unrestricted)", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "If a member gets a $50 benefit (like a magazine or club access), only the amount above that fair value ($100) is considered a donation."
+  },
+  {
+    "slug": "nonprofit-ubit-tax-accrual",
+    "category": "Non-Profit",
+    "title": "Unrelated Business Income Tax (UBIT)",
+    "description": "Accruing tax for income generated from activities not substantially related to the NGO's exempt purpose.",
+    "entries": [
+      { "account": "UBIT Tax Expense", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Income Tax Payable", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "If an NGO runs a profitable coffee shop or parking lot, that specific income is taxable at corporate rates to prevent unfair competition with for-profit businesses."
+  },
+  {
+    "slug": "nonprofit-endowment-unrealized-gain",
+    "category": "Non-Profit",
+    "title": "Endowment Investment Fair Value Adjustment",
+    "description": "Adjusting the value of stocks/bonds held in an endowment fund at fiscal year-end.",
+    "entries": [
+      { "account": "Long-Term Investments", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Unrealized Gain on Investments (Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Most endowment income is restricted until 'appropriated for spend' by the Board. This entry keeps the asset balance in line with the stock market."
+  },
+  {
+    "slug": "nonprofit-joint-cost-allocation",
+    "category": "Non-Profit",
+    "title": "Joint Costs: Program vs. Fundraising",
+    "description": "Allocating costs for a direct mail campaign that includes both an educational message and a solicitation.",
+    "entries": [
+      { "account": "Program Expense (Public Education)", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Fundraising Expense", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Under SOP 98-2, you can only allocate part of the cost to 'Program' if you meet specific criteria regarding Purpose, Audience, and Content."
+  },
+  {
+    "slug": "nonprofit-split-interest-agreement",
+    "category": "Non-Profit",
+    "title": "Charitable Gift Annuity (Initial Recognition)",
+    "description": "Recording a donor's gift where the NGO must pay the donor a fixed income for life.",
+    "entries": [
+      { "account": "Cash / Assets", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Annuity Payment Liability", "type": "Liability (+)", "dr": 0, "cr": 30000.00 },
+      { "account": "Contribution Revenue (Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "The NGO receives $50k. However, the Present Value of what they must pay back to the donor over their lifetime is $30k. Only the remaining $20k is a donation today."
+  },
+  {
+    "slug": "nonprofit-capital-campaign-building",
+    "category": "Non-Profit",
+    "title": "Capital Campaign (Building Fund)",
+    "description": "Recording donations specifically restricted by the donor for the construction of a new facility.",
+    "entries": [
+      { "account": "Cash (Restricted for Capital)", "type": "Asset (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "Contribution Revenue (With Restrictions)", "type": "Revenue (+)", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "Capital campaign funds are restricted until the building is built. Once construction costs are incurred, the net assets are 'released' to match the depreciation of the building."
+  },
+  {
+    "slug": "nonprofit-term-endowment-expiration",
+    "category": "Non-Profit",
+    "title": "Expiration of a Term Endowment",
+    "description": "Releasing funds from restriction because a specific timeframe (e.g., 20 years) has passed.",
+    "entries": [
+      { "account": "Net Assets Released (With Restrictions)", "type": "Equity (-)", "dr": 15000.00, "cr": 0 },
+      { "account": "Net Assets Released (Without Restrictions)", "type": "Equity (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Unlike permanent endowments, term endowments allow the principal to become unrestricted after a certain date or event."
+  },
+
+  {
+    "slug": "nonprofit-donated-rent-facilities",
+    "category": "Non-Profit",
+    "title": "Donated Use of Facilities (Free Rent)",
+    "description": "Recording the fair market value of office space provided to the NGO for free by a landlord.",
+    "entries": [
+      { "account": "Rent Expense", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "In-Kind Contribution Revenue", "type": "Revenue (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "If a landlord gives you free space, you must record the expense and the revenue at Fair Market Value. This shows donors the 'true cost' of running your programs."
+  },
+  {
+    "slug": "nonprofit-charity-care-hospital",
+    "category": "Non-Profit",
+    "title": "Charity Care (NGO Healthcare)",
+    "description": "Recording medical services provided to a patient who has no ability to pay.",
+    "entries": [
+      { "account": "Patient Service Revenue (Gross)", "type": "Revenue (-)", "dr": 1500.00, "cr": 0 },
+      { "account": "Accounts Receivable (Patient)", "type": "Asset (-)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Charity care is not 'Bad Debt.' It is an intentional decision to provide service for free. It is recorded as a direct reduction of Gross Revenue."
+  },
+  {
+    "slug": "nonprofit-tuition-discounting-scholarship",
+    "category": "Non-Profit",
+    "title": "Tuition Discount (Scholarship/Fellowship)",
+    "description": "Recording a scholarship granted to a student in an NGO-run school or university.",
+    "entries": [
+      { "account": "Tuition Discount (Scholarship Allowance)", "type": "Contra-Revenue (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Student Accounts Receivable", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Scholarships are not expenses; they are 'allowances' that reduce the gross tuition revenue to the net amount the school actually expects to collect."
+  },
+  {
+    "slug": "nonprofit-subgrant-to-partner",
+    "category": "Non-Profit",
+    "title": "Grant Sub-award to Local Partner",
+    "description": "Recording the transfer of grant funds to a smaller NGO (sub-recipient) to execute a project.",
+    "entries": [
+      { "account": "Sub-grant Expense", "type": "Expense (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "International NGOs often 'pass through' money to local organizations. The lead NGO remains responsible for the audit trail of these funds."
+  },
+  {
+    "slug": "nonprofit-museum-collection-purchase",
+    "category": "Non-Profit",
+    "title": "Purchase of Museum Collection Item",
+    "description": "Recording the acquisition of a piece of art or a historical artifact (if the NGO capitalizes its collection).",
+    "entries": [
+      { "account": "Collections (Heritage Assets)", "type": "Asset (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "Many museums choose NOT to capitalize collections. If they do, collection items are recorded as assets but are generally NOT depreciated because they have an indefinite life."
+  },
+  {
+    "slug": "nonprofit-foreign-office-remittance",
+    "category": "Non-Profit",
+    "title": "Foreign Field Office Remittance (INGOs)",
+    "description": "Sending funds from the home office to a foreign field office in a different currency.",
+    "entries": [
+      { "account": "Due from Foreign Field Office", "type": "Asset (+)", "dr": 7100.00, "cr": 0 },
+      { "account": "Cash in Bank (Home Currency)", "type": "Asset (-)", "dr": 0, "cr": 7100.00 }
+    ],
+    "explanation": "The money is still an asset of the NGO, just in a different location. Exchange rate gains/losses will be recorded when the field office reports its monthly spending."
+  },
+  {
+    "slug": "nonprofit-interfund-transfer",
+    "category": "Non-Profit",
+    "title": "Inter-fund Transfer (General to Scholarship)",
+    "description": "Internally moving cash between two different funds within the same legal entity.",
+    "entries": [
+      { "account": "Transfer Out: General Fund", "type": "Equity (-)", "dr": 500.00, "cr": 0 },
+      { "account": "Transfer In: Scholarship Fund", "type": "Equity (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Inter-fund transfers do not change the total Net Assets of the NGO; they just move money between internal 'buckets' for tracking purposes."
+  },
+
+  {
+    "slug": "nonprofit-museum-deaccessioning-sale",
+    "category": "Non-Profit",
+    "title": "Museum Deaccessioning (Sale of Art)",
+    "description": "Recording the sale of a collection item where proceeds are legally restricted for new acquisitions.",
+    "entries": [
+      { "account": "Cash (Restricted)", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Gain on Sale of Collections (Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "In museum accounting (AAM standards), money from selling art cannot be used for operations. It is recorded as restricted revenue and can only be used to buy other items for the collection."
+  },
+  {
+    "slug": "nonprofit-donor-advised-fund-receipt",
+    "category": "Non-Profit",
+    "title": "Donor-Advised Fund (DAF) Contribution",
+    "description": "Recording a contribution where the donor retains 'advisory privileges' over distributions.",
+    "entries": [
+      { "account": "Cash / Investments", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Contributions (Board-Designated/DAF)", "type": "Revenue (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Legally, the NGO owns the money, but for accounting purposes, it is tracked in a separate 'bucket' where the donor suggests the grants. It is usually treated as 'unrestricted' but 'designated' for that donor's advice."
+  },
+  {
+    "slug": "nonprofit-donated-life-insurance",
+    "category": "Non-Profit",
+    "title": "Donated Life Insurance Policy",
+    "description": "Recording the change in ownership of a life insurance policy given to the NGO.",
+    "entries": [
+      { "account": "Cash Surrender Value of Insurance", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Contribution Revenue (Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "If a donor gives the NGO their policy, the NGO records the 'Cash Surrender Value' (the amount the insurance company would pay if canceled today) as an asset."
+  },
+  {
+    "slug": "nonprofit-cost-reimbursable-grant-billing",
+    "category": "Non-Profit",
+    "title": "Government Cost-Reimbursement Billing",
+    "description": "Recognizing revenue after spending money on a government-funded project that pays on a reimbursement basis.",
+    "entries": [
+      { "account": "Grant Receivable (Government)", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Grant Revenue (Earned)", "type": "Revenue (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Many government grants are not paid upfront. You spend your own cash first (Expense), then this entry recognizes the revenue and the receivable from the government for that exact amount."
+  },
+  {
+    "slug": "nonprofit-beneficial-interest-trust",
+    "category": "Non-Profit",
+    "title": "Beneficial Interest in Perpetual Trust",
+    "description": "Recording the fair value of an interest in a trust held by a third party (like a bank).",
+    "entries": [
+      { "account": "Beneficial Interest in Trust", "type": "Asset (+)", "dr": 75000.00, "cr": 0 },
+      { "account": "Contributions (Permanently Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 75000.00 }
+    ],
+    "explanation": "The NGO doesn't have the cash; a bank does. But because the NGO is the sole beneficiary of the interest forever, it must record the fair value of the trust's assets on its own balance sheet."
+  },
+
+
+  {
+    "slug": "nonprofit-volunteer-stipend-payment",
+    "category": "Non-Profit",
+    "title": "Volunteer Stipend (Non-Employee Allowance)",
+    "description": "Recording a small daily allowance or travel stipend paid to a volunteer (not a salary).",
+    "entries": [
+      { "account": "Volunteer Support Expense", "type": "Expense (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "Stipends are not wages. They are typically recorded as a program expense. In many jurisdictions, these are tax-exempt if they only cover the volunteer's out-of-pocket costs."
+  },
+  {
+    "slug": "release-restriction-depreciation",
+    "category": "Non-Profit",
+    "title": "Release of Donor Restriction Matching Depreciation",
+    "description": "Releasing a portion of a restricted capital gift to match the annual depreciation of the purchased asset.",
+    "entries": [
+      { "account": "Net Assets with Donor Restrictions", "type": "Equity (-)", "dr": 1000, "cr": 0 },
+      { "account": "Net Assets without Donor Restrictions", "type": "Equity (+)", "dr": 0, "cr": 1000 }
+    ],
+    "explanation": "If a donor gives $10k for a machine with a 10-year life, you release $1k each year as 'Unrestricted' to offset the $1k depreciation expense on the Statement of Activities."
+  },
+  {
+    "slug": "nonprofit-multiyear-grant-pv-discount",
+    "category": "Non-Profit",
+    "title": "Multi-Year Grant (Present Value Discount)",
+    "description": "Recording a long-term pledge and adjusting for the time value of money (PV).",
+    "entries": [
+      { "account": "Pledges Receivable (Gross)", "type": "Asset (+)", "dr": 30000.00, "cr": 0 },
+      { "account": "Discount on Pledges Receivable", "type": "Contra-Asset (+)", "dr": 0, "cr": 2000.00 },
+      { "account": "Contribution Revenue (Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 28000.00 }
+    ],
+    "explanation": "If a donor promises $10k/year for 3 years, the money arriving in Year 3 is worth less today. You must record the receivable net of the discount to follow GAAP/IFRS."
+  },
+
+
+
+  {
+    "slug": "education-tuition-billing-receivable",
+    "category": "Education",
+    "title": "Initial Tuition Billing (Semester Start)",
+    "description": "Recording the total amount owed by students at the beginning of the academic term.",
+    "entries": [
+      { "account": "Student Accounts Receivable", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Deferred Tuition Revenue", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "At the start of the term, you bill the full amount. It is not revenue yet (it's deferred) because the classes haven't been taught."
+  },
+  {
+    "slug": "education-scholarship-tuition-discount",
+    "category": "Education",
+    "title": "Scholarship Allowance (Tuition Discounting)",
+    "description": "Recording a school-funded scholarship that reduces the student's net tuition cost.",
+    "entries": [
+      { "account": "Scholarship Allowance", "type": "Contra-Revenue (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Student Accounts Receivable", "type": "Asset (-)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Scholarships are not expenses. Per NACUBO standards, they are 'allowances' that reduce Gross Tuition to Net Tuition on the financial statements."
+  },
+  {
+    "slug": "education-registration-fee-revenue",
+    "category": "Education",
+    "title": "Non-Refundable Admission/Registration Fee",
+    "description": "Recording the immediate revenue from application or registration fees.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Admission Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "Since these fees are usually non-refundable and not tied to the teaching period, they are recognized as revenue when the student applies."
+  },
+  {
+    "slug": "education-student-withdrawal-refund",
+    "category": "Education",
+    "title": "Student Withdrawal (Tuition Refund)",
+    "description": "Prorated reversal of revenue when a student leaves the school mid-term.",
+    "entries": [
+      { "account": "Deferred Tuition Revenue", "type": "Liability (-)", "dr": 1200.00, "cr": 0 },
+      { "account": "Cash / Student Receivable", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "If a student leaves, the unearned portion of the tuition is removed from the liability and either refunded in cash or credited against their balance."
+  },
+  {
+    "slug": "education-dormitory-housing-recognition",
+    "category": "Education",
+    "title": "Monthly Housing/Dormitory Recognition",
+    "description": "Moving one month of room and board fees from deferred to earned revenue.",
+    "entries": [
+      { "account": "Deferred Housing Revenue", "type": "Liability (-)", "dr": 800.00, "cr": 0 },
+      { "account": "Auxiliary Revenue: Housing", "type": "Revenue (+)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "Just like tuition, housing is earned over the time the student actually lives in the dormitory."
+  },
+  {
+    "slug": "education-meal-plan-cafeteria-revenue",
+    "category": "Education",
+    "title": "Cafeteria / Meal Plan Revenue",
+    "description": "Recording the sale of student meal plans or individual cafeteria purchases.",
+    "entries": [
+      { "account": "Student Debit Card Fund", "type": "Liability (-)", "dr": 50.00, "cr": 0 },
+      { "account": "Auxiliary Revenue: Dining", "type": "Revenue (+)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "Many schools use a 'declining balance' card. This entry converts the student's prepaid deposit into dining revenue as they eat."
+  },
+  {
+    "slug": "education-research-grant-expenditure",
+    "category": "Education",
+    "title": "Research Grant Expenditure (Restricted)",
+    "description": "Recording costs for an academic research project funded by an outside grant.",
+    "entries": [
+      { "account": "Research Project Expense", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Mixed", "dr": 0, "cr": 3000.00 },
+      { "account": "Deferred Grant Revenue", "type": "Liability (-)", "dr": 3000.00, "cr": 0 },
+      { "account": "Grant Revenue (Earned)", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Common in Universities. You recognize the grant revenue only as you incur the qualifying research expenses."
+  },
+  {
+    "slug": "education-uncollectible-student-accounts",
+    "category": "Education",
+    "title": "Provision for Doubtful Student Accounts",
+    "description": "Estimating the loss from students who may default on their tuition payments.",
+    "entries": [
+      { "account": "Bad Debt Expense (Tuition)", "type": "Expense (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Allowance for Doubtful Student Accounts", "type": "Contra-Asset (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "Educational institutions must estimate how many student receivables are at risk, especially those from students who have already withdrawn."
+  },
+  {
+    "slug": "education-graduation-lab-fees",
+    "category": "Education",
+    "title": "Special Fees (Graduation / Laboratory)",
+    "description": "Recording specific incidental fees charged for specialized services or events.",
+    "entries": [
+      { "account": "Student Accounts Receivable", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Fees Revenue", "type": "Revenue (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "These are recognized as revenue when the service is provided (e.g., when the lab session occurs or during the graduation month)."
+  },
+  {
+    "slug": "education-uniform-bookstore-sales",
+    "category": "Education",
+    "title": "Sale of Uniforms / Books (Inventory)",
+    "description": "Recording a retail sale of merchandise to a student.",
+    "entries": [
+      { "account": "Cash / Student Account", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Merchandise Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 },
+      { "account": "Cost of Goods Sold", "type": "Expense (+)", "dr": 60.00, "cr": 0 },
+      { "account": "Inventory", "type": "Asset (-)", "dr": 0, "cr": 60.00 }
+    ],
+    "explanation": "This follows standard retail accounting for the school's on-site shop."
+  },
+  {
+    "slug": "education-government-funding-voucher",
+    "category": "Education",
+    "title": "Government Voucher / Subsidy Payment",
+    "description": "Recording the receipt of tuition funding from a government agency on behalf of a student.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 4000.00, "cr": 0 },
+      { "account": "Student Accounts Receivable", "type": "Asset (-)", "dr": 0, "cr": 4000.00 }
+    ],
+    "explanation": "This clears the student's balance when a third party (the government) pays their bill."
+  },
+  {
+    "slug": "education-library-book-depreciation",
+    "category": "Education",
+    "title": "Depreciation of Library Collections",
+    "description": "Annual depreciation for the school's library books and academic resources.",
+    "entries": [
+      { "account": "Depreciation Expense (Library)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (Library)", "type": "Contra-Asset (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "While rare in small schools, large institutions treat their library collections as a depreciable asset."
+  },
+
+
+  {
+    "slug": "education-financial-aid-pass-through",
+    "category": "Education",
+    "title": "Financial Aid Pass-Through (Federal Loans/Grants)",
+    "description": "Recording the receipt of government financial aid that must be applied to a student's account.",
+    "entries": [
+      { "account": "Cash (Restricted)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Due to Students (Financial Aid)", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "When a school receives federal funds, it is a liability initially. Once applied to the student's tuition bill, the liability is cleared against the Student Receivable."
+  },
+  {
+    "slug": "education-tuition-remission-employee",
+    "category": "Education",
+    "title": "Tuition Remission (Faculty/Staff Benefit)",
+    "description": "Recording the non-cash benefit when an employee or their dependent receives free or discounted tuition.",
+    "entries": [
+      { "account": "Employee Benefits: Tuition Remission", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Tuition Revenue", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "To show the true value of the education provided, the school records the full revenue and offsets it with an 'Employee Benefit' expense. No cash moves."
+  },
+  {
+    "slug": "education-summer-revenue-accrual-cutoff",
+    "category": "Education",
+    "title": "Summer Term Revenue Splitting (Cut-off)",
+    "description": "Splitting summer session revenue between two fiscal years based on the number of days in each period.",
+    "entries": [
+      { "account": "Deferred Tuition Revenue", "type": "Liability (-)", "dr": 500.00, "cr": 0 },
+      { "account": "Tuition Revenue (Current Year)", "type": "Revenue (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "If a 10-week summer course has 5 weeks in June (Fiscal Year End) and 5 weeks in July, you must recognize exactly 50% of the revenue in the current year."
+  },
+  {
+    "slug": "education-athletic-season-tickets",
+    "category": "Education",
+    "title": "Athletic Season Ticket Sales (Deferred)",
+    "description": "Recording the sale of tickets for a sports season that has not yet started.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Deferred Athletic Revenue", "type": "Liability (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Just like tuition, ticket sales for football or basketball seasons are liabilities until the games are actually played."
+  },
+  {
+    "slug": "education-study-abroad-pass-through",
+    "category": "Education",
+    "title": "Study Abroad Pass-Through Fee",
+    "description": "Recording the payment to a foreign institution for a student's semester abroad.",
+    "entries": [
+      { "account": "Study Abroad Clearing Account", "type": "Asset (+)", "dr": 4000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 4000.00 }
+    ],
+    "explanation": "If the student pays the home school for an overseas program, the home school records the payment to the foreign partner as a receivable/clearing item until the semester starts."
+  },
+  {
+    "slug": "education-endowed-professor-salary",
+    "category": "Education",
+    "title": "Endowed Chair Salary Funding",
+    "description": "Using restricted investment income to pay the salary of a specific professor (Endowed Chair).",
+    "entries": [
+      { "account": "Instructional Salary Expense", "type": "Expense (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 10000.00 },
+      { "account": "Net Assets Released (With Restrictions)", "type": "Equity (-)", "dr": 10000.00, "cr": 0 },
+      { "account": "Net Assets Released (Without Restrictions)", "type": "Equity (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "This is a two-step process: you pay the salary, and then you 'release' the donor's restricted interest income to cover the cost."
+  },
+  {
+    "slug": "education-campus-construction-bond",
+    "category": "Education",
+    "title": "Campus Facility Bond Issuance",
+    "description": "Issuing a municipal/institutional bond to fund the construction of a new campus building.",
+    "entries": [
+      { "account": "Cash (Restricted for Construction)", "type": "Asset (+)", "dr": 1000000.00, "cr": 0 },
+      { "account": "Bonds Payable", "type": "Liability (+)", "dr": 0, "cr": 1000000.00 }
+    ],
+    "explanation": "Universities often issue debt to build stadiums or labs. The cash is restricted and cannot be used for salaries or general operations."
+  },
+
+
+  {
+    "slug": "education-student-health-insurance",
+    "category": "Education",
+    "title": "Student Health Insurance (Pass-Through)",
+    "description": "Recording the collection of insurance premiums from students to be paid to the provider.",
+    "entries": [
+      { "account": "Cash / Student Account", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Health Insurance Payable", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "The school acts as an agent. The money is not revenue; it is a liability until it is sent to the insurance company."
+  },
+  {
+    "slug": "education-federal-work-study-payroll",
+    "category": "Education",
+    "title": "Federal Work-Study (FWS) Payroll",
+    "description": "Recording student wages where 75% is funded by the government and 25% by the school.",
+    "entries": [
+      { "account": "Student Wages Expense (School Share)", "type": "Expense (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Grant Receivable (Federal Share)", "type": "Asset (+)", "dr": 750.00, "cr": 0 },
+      { "account": "Cash / Wages Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "This reflects the matching requirement for federal work-study programs. The school only 'expenses' its own required contribution."
+  },
+  {
+    "slug": "education-title-iv-refund-return",
+    "category": "Education",
+    "title": "Title IV Refund (Return of Federal Aid)",
+    "description": "Returning unearned federal financial aid to the government after a student withdraws.",
+    "entries": [
+      { "account": "Deferred Tuition Revenue", "type": "Liability (-)", "dr": 3000.00, "cr": 0 },
+      { "account": "Cash (Due to Government)", "type": "Asset (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Federal law requires schools to return a portion of a student's aid if they do not complete the term. This reduces the school's cash and its deferred revenue."
+  },
+  {
+    "slug": "education-faculty-sabbatical-accrual",
+    "category": "Education",
+    "title": "Faculty Sabbatical Leave Accrual",
+    "description": "Monthly accrual of the future cost of a professor's paid sabbatical year.",
+    "entries": [
+      { "account": "Sabbatical Benefit Expense", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Accrued Sabbatical Liability", "type": "Liability (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "To follow the matching principle, the cost of a sabbatical should be spread over the years of service that earned it, rather than hitting the budget all at once."
+  },
+  {
+    "slug": "education-parking-permit-revenue",
+    "category": "Education",
+    "title": "Campus Parking Permit Revenue",
+    "description": "Recording the sale of annual or semester parking passes to students and faculty.",
+    "entries": [
+      { "account": "Cash / Student Account", "type": "Asset (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Auxiliary Revenue: Parking", "type": "Revenue (+)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "This is non-tuition revenue. If the permit is for a full year, it may be deferred and recognized monthly."
+  },
+  {
+    "slug": "education-lab-breakage-library-fines",
+    "category": "Education",
+    "title": "Student Fines (Lab Breakage / Library)",
+    "description": "Recording revenue from penalties charged to students for damaged or late items.",
+    "entries": [
+      { "account": "Student Account Receivable", "type": "Asset (+)", "dr": 25.00, "cr": 0 },
+      { "account": "Other Operating Revenue (Fines)", "type": "Revenue (+)", "dr": 0, "cr": 25.00 }
+    ],
+    "explanation": "Fines are recognized as revenue at the moment the penalty is assessed to the student's account."
+  },
+  {
+    "slug": "education-after-school-care-revenue",
+    "category": "Education",
+    "title": "After-School / Extended Day Care Revenue",
+    "description": "Recording fees for childcare provided before or after standard school hours (K-12).",
+    "entries": [
+      { "account": "Cash / Parent Receivable", "type": "Asset (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Program Revenue: Childcare", "type": "Revenue (+)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "Common in private K-12 schools. This is a separate revenue stream from core tuition."
+  },
+  {
+    "slug": "education-field-trip-fees-collection",
+    "category": "Education",
+    "title": "Field Trip Fee Collection",
+    "description": "Recording cash collected from students for an upcoming trip.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 15.00, "cr": 0 },
+      { "account": "Deferred Field Trip Revenue", "type": "Liability (+)", "dr": 0, "cr": 15.00 }
+    ],
+    "explanation": "Fees collected for a specific trip are a liability until the trip actually takes place, at which point revenue and expenses are recognized."
+  },
+  {
+    "slug": "education-continuing-ed-certification",
+    "category": "Education",
+    "title": "Continuing Education / Non-Credit Workshop",
+    "description": "Recording revenue for a short-term professional development course.",
+    "entries": [
+      { "account": "Cash / Credit Card", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Continuing Ed Revenue", "type": "Revenue (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Since these courses are short (1-3 days), revenue is usually recognized immediately upon payment/attendance."
+  },
+  {
+    "slug": "education-alumni-naming-rights-pledge",
+    "category": "Education",
+    "title": "Building Naming Rights (Major Gift Pledge)",
+    "description": "Recording a multi-million dollar donor pledge to name a new campus facility.",
+    "entries": [
+      { "account": "Pledges Receivable", "type": "Asset (+)", "dr": 1000000.00, "cr": 0 },
+      { "account": "Contribution Revenue (Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 1000000.00 }
+    ],
+    "explanation": "Under the accrual basis, the full pledge is recorded as revenue today (often discounted to present value) because it is a legally binding promise."
+  },
+
+  {
+    "slug": "education-tech-transfer-patent-royalty",
+    "category": "Education",
+    "title": "Technology Transfer / Patent Royalty Revenue",
+    "description": "Recording royalty income from a patent licensed to a private corporation.",
+    "entries": [
+      { "account": "Cash / Receivable", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Intellectual Property Revenue", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Universities with research labs earn 'Tech Transfer' revenue when their inventions are commercialized. A portion is often shared with the inventing professor."
+  },
+  {
+    "slug": "education-student-club-agency-funds",
+    "category": "Education",
+    "title": "Student Club Agency Funds (Held for Others)",
+    "description": "Recording cash collected by a student club that is held in the university's bank account.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Due to Student Organizations", "type": "Liability (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "The school acts as a bank for the 'Robotics Club' or 'Debate Team.' The money is a liability, not school revenue, because the students decide how to spend it."
+  },
+  {
+    "slug": "education-athletic-media-rights-revenue",
+    "category": "Education",
+    "title": "Athletic Broadcast / Media Rights",
+    "description": "Recording revenue from television or digital streaming contracts for sports coverage.",
+    "entries": [
+      { "account": "Cash / Receivable", "type": "Asset (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Auxiliary Revenue: Media Rights", "type": "Revenue (+)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "Media rights are a major revenue stream for large university athletic departments. Revenue is recognized over the course of the playing season."
+  },
+  {
+    "slug": "education-athlete-stipend-payment",
+    "category": "Education",
+    "title": "Student-Athlete Stipend (Cost of Attendance)",
+    "description": "Recording a cash payment to a scholarship athlete for living expenses.",
+    "entries": [
+      { "account": "Student Aid Expense: Stipends", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Beyond free tuition, some student-athletes receive a 'Cost of Attendance' stipend to cover personal expenses. This is an operating expense for the athletic department."
+  },
+  {
+    "slug": "education-faculty-research-fellowship-award",
+    "category": "Education",
+    "title": "Faculty Research Fellowship Award",
+    "description": "Recording a restricted donation given specifically to support one professor's research.",
+    "entries": [
+      { "account": "Cash (Restricted)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Contributions (Temporarily Restricted)", "type": "Revenue (+)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Individual fellowships are restricted until the professor incurs the research costs (travel, books, equipment) specified in the award letter."
+  },
+  {
+    "slug": "education-underwater-endowment-adjustment",
+    "category": "Education",
+    "title": "Underwater Endowment Adjustment",
+    "description": "Reflecting a loss when an endowment's fair value drops below the donor's original gift (historic dollar value).",
+    "entries": [
+      { "account": "Unrealized Loss on Investments", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Endowment Investments", "type": "Asset (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "If the stock market crashes and an endowment is worth less than what the donor gave (the 'corpus'), it is called 'underwater.' Legal rules (UPMIFA) dictate how much you can still spend."
+  },
+  {
+    "slug": "education-summer-conference-venue-rental",
+    "category": "Education",
+    "title": "Summer Conference / Venue Rental Revenue",
+    "description": "Recording revenue from renting campus facilities to a corporate client during the off-season.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Other Operating Revenue: Rentals", "type": "Revenue (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Schools generate 'ancillary income' by using their empty dorms and classrooms for corporate retreats or summer camps during July and August."
+  },
+  {
+    "slug": "education-tuition-insurance-premium",
+    "category": "Education",
+    "title": "Tuition Insurance Premium (Agency)",
+    "description": "Collecting optional tuition insurance fees from parents to be remitted to a 3rd party insurer.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Due to Insurance Provider", "type": "Liability (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "The school offers insurance to parents. The school is not the insurer; it is an agent. The liability is cleared when the premiums are sent to the insurance company."
+  },
+  {
+    "slug": "education-performance-based-funding-accrual",
+    "category": "Education",
+    "title": "Performance-Based Government Funding",
+    "description": "Recording revenue earned only after achieving specific educational outcomes (e.g., graduation rates).",
+    "entries": [
+      { "account": "Grant Receivable", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Grant Revenue (Earned)", "type": "Revenue (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Many modern state/government grants are 'outcomes-based.' You only record the revenue once the milestone (e.g., 90% student retention) is officially certified."
+  },
+  {
+    "slug": "education-faculty-relocation-subsidy",
+    "category": "Education",
+    "title": "Faculty Relocation & Housing Subsidy",
+    "description": "Recording the cost of moving an international professor and their family to the campus.",
+    "entries": [
+      { "account": "Recruitment & Relocation Expense", "type": "Expense (+)", "dr": 4000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Mixed", "dr": 0, "cr": 4000.00 }
+    ],
+    "explanation": "To attract top global talent, universities pay for international flights and shipping containers. This is an operating expense for the academic department."
+  },
+
+  
+  {
+    "slug": "education-endowment-spending-transfer",
+    "category": "Education",
+    "title": "Annual Endowment Spending Distribution",
+    "description": "Transferring the authorized spending amount from the endowment to the operating budget.",
+    "entries": [
+      { "account": "Cash (Operating)", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Endowment Investment Account", "type": "Asset (-)", "dr": 0, "cr": 50000.00 },
+      { "account": "Net Assets Released (With Restrictions)", "type": "Equity (-)", "dr": 50000.00, "cr": 0 },
+      { "account": "Net Assets Released (Without Restrictions)", "type": "Equity (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Universities don't spend the whole endowment. They 'distribute' a set percentage (usually 4-5%) each year to fund operations and scholarships."
+  },
+  {
+    "slug": "education-clinical-service-revenue",
+    "category": "Education",
+    "title": "Clinical Service Revenue (Medical/Dental Schools)",
+    "description": "Recording revenue from patient services provided at university-run medical or dental clinics.",
+    "entries": [
+      { "account": "Accounts Receivable (Patient/Insurance)", "type": "Asset (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Clinical Service Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Teaching hospitals and clinics generate revenue separate from tuition. This is a primary income source for 'Research I' universities."
+  },
+  {
+    "slug": "education-school-lunch-subsidy-nslp",
+    "category": "Education",
+    "title": "Government Lunch Program Subsidy",
+    "description": "Recording the reimbursement from the government for free or reduced-price student meals.",
+    "entries": [
+      { "account": "Grant Receivable (Food Services)", "type": "Asset (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Auxiliary Revenue: Food Services", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "In many K-12 systems, the government pays the school a fixed rate per meal for qualifying low-income students."
+  },
+  {
+    "slug": "education-sevis-visa-processing-fee",
+    "category": "Education",
+    "title": "SEVIS / International Student Visa Fee",
+    "description": "Recording the administrative fee charged to international students for immigration compliance paperwork.",
+    "entries": [
+      { "account": "Cash / Student Account", "type": "Asset (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Administrative Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 250.00 }
+    ],
+    "explanation": "Schools charge international students for the specialized labor required to maintain their legal status in the country's immigration database."
+  },
+  {
+    "slug": "education-pta-booster-club-agency",
+    "category": "Education",
+    "title": "PTA / Booster Club Agency Transaction",
+    "description": "Recording funds raised by a parent organization that are held by the school as an intermediary.",
+    "entries": [
+      { "account": "Cash (Restricted)", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Due to PTA / Booster Organizations", "type": "Liability (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Parent-Teacher Associations are often separate legal entities. The school holds their cash in a liability account until the PTA instructs the school to pay a vendor."
+  },
+  {
+    "slug": "education-institutional-student-loan-disbursed",
+    "category": "Education",
+    "title": "Disbursement of Institutional Student Loan",
+    "description": "Recording the issuance of a loan directly from the school's own funds to a student.",
+    "entries": [
+      { "account": "Student Loans Receivable", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Cash / Student Tuition Account", "type": "Asset/Revenue", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Some schools act as the lender. This entry creates a long-term asset (the loan) and pays off the student's current tuition bill."
+  },
+  {
+    "slug": "education-uniform-resale-shop",
+    "category": "Education",
+    "title": "Uniform Resale / Second-Hand Shop Sale",
+    "description": "Recording the sale of donated or used school uniforms to parents.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 40.00, "cr": 0 },
+      { "account": "Other Income: Uniform Resale", "type": "Revenue (+)", "dr": 0, "cr": 40.00 }
+    ],
+    "explanation": "Private schools often run a thrift shop. If uniforms are donated, the entire sale price is recorded as 'Other Income'."
+  },
+  {
+    "slug": "education-accreditation-membership-fees",
+    "category": "Education",
+    "title": "Educational Accreditation & Membership Fees",
+    "description": "Recording the annual cost of maintaining school accreditation (e.g., IB or Regional Board).",
+    "entries": [
+      { "account": "Professional Dues & Accreditation", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Accreditation is a vital 'cost of doing business' for schools. These fees are usually expensed in the month they are paid."
+  },
+  {
+    "slug": "education-alumni-life-membership-deferral",
+    "category": "Education",
+    "title": "Alumni Lifetime Membership (Deferred)",
+    "description": "Recording a one-time fee for a lifetime membership in the Alumni Association.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Deferred Alumni Revenue", "type": "Liability (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Under IFRS 15, because the 'service' (membership) is provided over the lifetime of the member, the revenue must be deferred and recognized over a reasonable estimate (e.g., 20 years)."
+  },
+  {
+    "slug": "education-debt-service-reserve-fund",
+    "category": "Education",
+    "title": "Transfer to Debt Service Reserve Fund (DSRF)",
+    "description": "Setting aside cash as required by a bank or bond covenant for future loan payments.",
+    "entries": [
+      { "account": "Restricted Cash (Debt Service)", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash (Unrestricted)", "type": "Asset (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Lenders often require schools to keep one year of mortgage payments in a separate, 'untouchable' account as collateral."
+  },
+
+  {
+    "slug": "hospitality-guest-advance-deposit",
+    "category": "Hospitality",
+    "title": "Guest Advance Deposit (Booking)",
+    "description": "Recording a cash deposit received from a guest for a future stay.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Guest Ledger: Advance Deposits", "type": "Liability (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Until the guest actually stays, the money is a liability. It is held in the 'Guest Ledger' (or City Ledger) until check-in."
+  },
+  {
+    "slug": "hospitality-night-audit-room-revenue",
+    "category": "Hospitality",
+    "title": "Daily Night Audit: Room Revenue",
+    "description": "The daily entry to recognize revenue from guests currently in-house.",
+    "entries": [
+      { "account": "Guest Ledger (Receivable)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Room Revenue", "type": "Revenue (+)", "dr": 0, "cr": 4500.00 },
+      { "account": "Tourism Tax / VAT Output", "type": "Liability (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Every night, the auditor 'posts' the room rates to the guest folios. This recognizes the revenue for that day and increases the amount the guests owe."
+  },
+  {
+    "slug": "hospitality-night-audit-incidental-charges",
+    "category": "Hospitality",
+    "title": "Daily Night Audit: Incidental Charges",
+    "description": "Recording charges for laundry, phone, or movie rentals posted to guest rooms.",
+    "entries": [
+      { "account": "Guest Ledger (Receivable)", "type": "Asset (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Other Operating Revenue", "type": "Revenue (+)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "Incidentals are secondary revenue streams. They are posted to the room folio and collected at check-out."
+  },
+  {
+    "slug": "hospitality-checkout-payment-creditcard",
+    "category": "Hospitality",
+    "title": "Guest Check-out (Credit Card Payment)",
+    "description": "Clearing the guest folio when they pay by card at the front desk.",
+    "entries": [
+      { "account": "Credit Cards Receivable", "type": "Asset (+)", "dr": 600.00, "cr": 0 },
+      { "account": "Guest Ledger (Receivable)", "type": "Asset (-)", "dr": 0, "cr": 600.00 }
+    ],
+    "explanation": "Check-out moves the balance from the 'Guest Ledger' (people in the building) to 'Credit Cards Receivable' (money coming from the bank)."
+  },
+  {
+    "slug": "hospitality-city-ledger-transfer",
+    "category": "Hospitality",
+    "title": "Transfer to City Ledger (Direct Billing)",
+    "description": "Moving a guest balance to City Ledger when a corporate client is billed directly.",
+    "entries": [
+      { "account": "City Ledger (Accounts Receivable)", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Guest Ledger (Receivable)", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "If a guest is staying on a company account, they don't pay at checkout. Their balance is transferred to the 'City Ledger' to be invoiced to the corporation later."
+  },
+  {
+    "slug": "hospitality-guaranteed-no-show-revenue",
+    "category": "Hospitality",
+    "title": "Guaranteed No-Show Revenue",
+    "description": "Recognizing revenue for a pre-paid room when the guest fails to arrive.",
+    "entries": [
+      { "account": "Guest Ledger: Advance Deposits", "type": "Liability (-)", "dr": 150.00, "cr": 0 },
+      { "account": "No-Show Revenue", "type": "Revenue (+)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "This converts the guest's advance deposit into revenue because the cancellation policy allows the hotel to keep the funds."
+  },
+  {
+    "slug": "hospitality-petty-cash-front-desk-float",
+    "category": "Hospitality",
+    "title": "Front Desk Cash Float Establishment",
+    "description": "Setting up the initial cash drawer for the receptionists to make change.",
+    "entries": [
+      { "account": "Front Office Cash Float", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Each 'cashier' has a fixed float. This is a permanent asset on the balance sheet unless the drawer size is increased or decreased."
+  },
+  {
+    "slug": "hospitality-cash-shortage-night-audit",
+    "category": "Hospitality",
+    "title": "Night Audit Cash Shortage",
+    "description": "Adjusting for a discrepancy when the actual cash collected is less than the POS report.",
+    "entries": [
+      { "account": "Cash Over and Short (Expense)", "type": "Expense (+)", "dr": 10.00, "cr": 0 },
+      { "account": "Cash in Hand", "type": "Asset (-)", "dr": 0, "cr": 10.00 }
+    ],
+    "explanation": "Hospitality requires daily cash reconciliation. Small errors are expensed immediately to keep the books matching the physical cash."
+  },
+  {
+    "slug": "hospitality-foreign-currency-exchange-guest",
+    "category": "Hospitality",
+    "title": "Guest Currency Exchange Service",
+    "description": "Recording a transaction where the hotel exchanges USD for local currency for a guest.",
+    "entries": [
+      { "account": "Cash in Hand (USD)", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Cash in Hand (Local)", "type": "Asset (-)", "dr": 0, "cr": 95.00 },
+      { "account": "Exchange Commission Revenue", "type": "Revenue (+)", "dr": 0, "cr": 5.00 }
+    ],
+    "explanation": "Many hotels provide currency exchange as a service, making a small margin on the exchange rate."
+  },
+  {
+    "slug": "hospitality-early-departure-penalty",
+    "category": "Hospitality",
+    "title": "Early Departure Penalty Fee",
+    "description": "Charging a guest for leaving their stay earlier than the booked dates.",
+    "entries": [
+      { "account": "Guest Ledger (Receivable)", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Early Departure Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "If a guest leaves early, the contract often allows the hotel to charge for one extra night as a penalty."
+  },
+  
+  {
+    "slug": "hospitality-ota-merchant-model-gross",
+    "category": "Hospitality",
+    "title": "OTA Merchant Sale (Expedia Model)",
+    "description": "Recording a booking where the guest pays the OTA, and the OTA pays the hotel net of commission.",
+    "entries": [
+      { "account": "Receivable: OTA (Net)", "type": "Asset (+)", "dr": 80.00, "cr": 0 },
+      { "account": "Commission Expense: OTA", "type": "Expense (+)", "dr": 20.00, "cr": 0 },
+      { "account": "Room Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "Never record only the $80 as revenue. To track performance (RevPAR), you must record the full $100 and treat the $20 as a distribution expense."
+  },
+  {
+    "slug": "hospitality-ota-agency-commission-accrual",
+    "category": "Hospitality",
+    "title": "OTA Agency Commission Accrual (Booking.com)",
+    "description": "Accruing the commission expense for guests who stayed during the month but haven't been invoiced by the OTA yet.",
+    "entries": [
+      { "account": "Commission Expense: OTA", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Accrued Commissions Payable", "type": "Liability (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "In the Agency model, guests pay the hotel directly. The hotel must estimate the commission owed to Booking.com at month-end to match the revenue."
+  },
+  {
+    "slug": "hospitality-gds-transaction-fee",
+    "category": "Hospitality",
+    "title": "GDS Transaction Fee Recording",
+    "description": "Recording the per-reservation fee charged by systems like Sabre, Amadeus, or Travelport.",
+    "entries": [
+      { "account": "GDS Fees / Distribution Expense", "type": "Expense (+)", "dr": 15.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 15.00 }
+    ],
+    "explanation": "GDS fees are 'transactional' costs of sales. They are recorded as operating expenses under the Rooms department."
+  },
+  {
+    "slug": "hospitality-wholesale-allotment-billing",
+    "category": "Hospitality",
+    "title": "Wholesale / Tour Operator Billing",
+    "description": "Recording room revenue for a tour operator at a pre-negotiated 'Net' rate.",
+    "entries": [
+      { "account": "City Ledger: Tour Operator", "type": "Asset (+)", "dr": 60.00, "cr": 0 },
+      { "account": "Room Revenue (Wholesale)", "type": "Revenue (+)", "dr": 0, "cr": 60.00 }
+    ],
+    "explanation": "Wholesale rates are usually 'Net' of commission already. Unlike OTAs, these are often recorded at the contract rate because the hotel never sees the 'retail' price the guest paid the operator."
+  },
+  {
+    "slug": "hospitality-credit-card-merchant-fee",
+    "category": "Hospitality",
+    "title": "Credit Card Merchant Fee (Direct Deduction)",
+    "description": "Recording the bank's commission on guest credit card payments.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 97.50, "cr": 0 },
+      { "account": "Credit Card Commission Expense", "type": "Expense (+)", "dr": 2.50, "cr": 0 },
+      { "account": "Credit Cards Receivable", "type": "Asset (-)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "When the bank settles credit card batches, they take a percentage (e.g., 2.5%). This is an administrative operating expense."
+  },
+  {
+    "slug": "hospitality-travel-agent-commission-payout",
+    "category": "Hospitality",
+    "title": "Travel Agent Commission Payout (Direct)",
+    "description": "Paying a local travel agency for a group booking they brought to the hotel.",
+    "entries": [
+      { "account": "Accrued Commissions Payable", "type": "Liability (-)", "dr": 150.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "This clears the liability created when the group checked in and the commission was originally recognized as an expense."
+  },
+  {
+    "slug": "hospitality-ota-accelerator-marketing",
+    "category": "Hospitality",
+    "title": "OTA Accelerator / Marketing Fee",
+    "description": "Recording the extra commission paid to an OTA to boost the hotel's search ranking.",
+    "entries": [
+      { "account": "Marketing Expense: OTA Boost", "type": "Expense (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Receivable: OTA", "type": "Asset (-)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "Extra commissions for ranking boosts are often categorized under Marketing rather than Departmental Commission to keep cost-of-sales analysis clean."
+  },
+  {
+    "slug": "hospitality-guest-walk-expense",
+    "category": "Hospitality",
+    "title": "Guest 'Walk' Expense (Overbooking)",
+    "description": "Recording the cost of sending a guest to another hotel due to an overbooking error.",
+    "entries": [
+      { "account": "Guest Relocation Expense", "type": "Expense (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 250.00 }
+    ],
+    "explanation": "If the hotel is full, it must pay for the guest's room at a competitor's hotel. This is an operational loss in the Rooms department."
+  },
+  {
+    "slug": "hospitality-ota-no-show-reversal",
+    "category": "Hospitality",
+    "title": "OTA Commission Reversal (No-Show)",
+    "description": "Reversing an accrued commission because an OTA guest did not show up and was not charged.",
+    "entries": [
+      { "account": "Accrued Commissions Payable", "type": "Liability (-)", "dr": 30.00, "cr": 0 },
+      { "account": "Commission Expense: OTA", "type": "Expense (-)", "dr": 0, "cr": 30.00 }
+    ],
+    "explanation": "If you don't charge the guest, the OTA doesn't get a commission. You must reverse your month-end accrual to keep expenses accurate."
+  },
+  {
+    "slug": "hospitality-channel-manager-subscription",
+    "category": "Hospitality",
+    "title": "Channel Manager Software Subscription",
+    "description": "Monthly fee for the software that syncs rates across Expedia, Booking.com, and the Website.",
+    "entries": [
+      { "account": "IT/Telecom Expense (Rooms)", "type": "Expense (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "This is a fixed operating cost. Under USALI, software specific to a department is charged to that department's 'Other Expenses' line."
+  },
+
+  {
+    "slug": "hospitality-restaurant-sale-room-charge",
+    "category": "Hospitality",
+    "title": "Restaurant Sale (Charge to Room)",
+    "description": "Recording a guest meal that is posted to their room folio rather than paid in cash.",
+    "entries": [
+      { "account": "Guest Ledger (Receivable)", "type": "Asset (+)", "dr": 55.00, "cr": 0 },
+      { "account": "F&B Revenue: Restaurant", "type": "Revenue (+)", "dr": 0, "cr": 50.00 },
+      { "account": "Service Charge Payable", "type": "Liability (+)", "dr": 0, "cr": 5.00 }
+    ],
+    "explanation": "This moves the transaction from the Restaurant POS to the Front Office system. The service charge is a liability because it must be distributed to staff."
+  },
+  {
+    "slug": "hospitality-service-charge-distribution",
+    "category": "Hospitality",
+    "title": "Distribution of Staff Service Charge",
+    "description": "Recording the payout of collected service charges to employees via payroll.",
+    "entries": [
+      { "account": "Service Charge Payable", "type": "Liability (-)", "dr": 1000.00, "cr": 0 },
+      { "account": "Cash / Wages Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "In many regions, the 10% service charge is mandatory and belongs to the staff. It is not an expense for the hotel; it is a pass-through liability."
+  },
+  {
+    "slug": "hospitality-staff-meals-internal-transfer",
+    "category": "Hospitality",
+    "title": "Internal Transfer: Staff Meals",
+    "description": "Moving the cost of food from the F&B department to the HR/General Admin department for employee dining.",
+    "entries": [
+      { "account": "Employee Benefits: Staff Meals", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "F&B Cost of Sales (Credit)", "type": "Expense (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "To keep the 'Cost of Goods Sold' (COGS) accurate for the restaurant, the cost of feeding employees is removed from F&B and charged to the departments that the employees work in."
+  },
+  {
+    "slug": "hospitality-mini-bar-daily-posting",
+    "category": "Hospitality",
+    "title": "Daily Mini-Bar Revenue Posting",
+    "description": "Recording the consumption of snacks and drinks from the guest room mini-bar.",
+    "entries": [
+      { "account": "Guest Ledger (Receivable)", "type": "Asset (+)", "dr": 25.00, "cr": 0 },
+      { "account": "F&B Revenue: Mini-Bar", "type": "Revenue (+)", "dr": 0, "cr": 25.00 }
+    ],
+    "explanation": "Mini-bar revenue is usually tracked as a sub-category of F&B. It is posted manually by housekeeping or via automated sensors."
+  },
+  {
+    "slug": "hospitality-buffet-wastage-adjustment",
+    "category": "Hospitality",
+    "title": "F&B Wastage & Spoilage Recording",
+    "description": "Adjusting inventory for food that was prepared for a buffet but not consumed and cannot be reused.",
+    "entries": [
+      { "account": "F&B Waste Expense", "type": "Expense (+)", "dr": 150.00, "cr": 0 },
+      { "account": "F&B Inventory", "type": "Asset (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "Tracking wastage separately from COGS allows the Chef to monitor kitchen efficiency and over-production."
+  },
+  {
+    "slug": "hospitality-complimentary-breakfast-transfer",
+    "category": "Hospitality",
+    "title": "Complimentary Breakfast (Room Package)",
+    "description": "Internal accounting to credit the F&B department for 'free' breakfasts included in a room rate.",
+    "entries": [
+      { "account": "Room Revenue (Adjustment)", "type": "Revenue (-)", "dr": 15.00, "cr": 0 },
+      { "account": "F&B Revenue: Breakfast", "type": "Revenue (+)", "dr": 0, "cr": 15.00 }
+    ],
+    "explanation": "If a room is $100 including breakfast, the auditor must 're-route' the value of the breakfast ($15) to F&B so that the restaurant gets credit for the sale."
+  },
+  {
+    "slug": "hospitality-beverage-inventory-purchase",
+    "category": "Hospitality",
+    "title": "Purchase of Beverage Inventory (Alcohol)",
+    "description": "Recording the bulk purchase of wines and spirits for the hotel bar.",
+    "entries": [
+      { "account": "Beverage Inventory", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Liquor is a high-value asset. It stays on the balance sheet until it is issued to the bar, at which point it becomes a Cost of Sale."
+  },
+  {
+    "slug": "hospitality-crockery-breakage-writeoff",
+    "category": "Hospitality",
+    "title": "Crockery & Glassware Breakage",
+    "description": "Expensing broken plates, glasses, and cutlery from the restaurant floor.",
+    "entries": [
+      { "account": "Operating Supplies: Breakage", "type": "Expense (+)", "dr": 40.00, "cr": 0 },
+      { "account": "Operating Supplies (Inventory)", "type": "Asset (-)", "dr": 0, "cr": 40.00 }
+    ],
+    "explanation": "Crockery is often handled as an operating supply. Regular inventory counts of 'par stock' determine the monthly breakage expense."
+  },
+  {
+    "slug": "hospitality-banquet-event-deposit-recognition",
+    "category": "Hospitality",
+    "title": "Banquet Deposit Recognition (Event Day)",
+    "description": "Converting a wedding or conference deposit into revenue once the event occurs.",
+    "entries": [
+      { "account": "Advance Deposits (Banquet)", "type": "Liability (-)", "dr": 5000.00, "cr": 0 },
+      { "account": "F&B Revenue: Banquets", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Banquet deposits are held as liabilities for months. On the day of the event, the revenue is finally earned."
+  },
+  {
+    "slug": "hospitality-kitchen-gas-lpg-accrual",
+    "category": "Hospitality",
+    "title": "Kitchen Fuel (LPG/Gas) Accrual",
+    "description": "Recording the estimated cost of gas used in the kitchen before the utility bill arrives.",
+    "entries": [
+      { "account": "Utilities: Gas (F&B)", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Accrued Liabilities", "type": "Liability (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Under USALI, energy costs directly attributable to a department (like gas for a kitchen) should be tracked separately if possible."
+  },
+  
+  {
+    "slug": "hospitality-meeting-room-rental-revenue",
+    "category": "Hospitality",
+    "title": "Meeting Room Rental Revenue",
+    "description": "Recording the pure rental fee for a conference hall or ballroom.",
+    "entries": [
+      { "account": "City Ledger (Accounts Receivable)", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "MICE Revenue: Room Rental", "type": "Revenue (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Unlike F&B, room rental has almost zero cost of goods sold. It is classified under 'Other Operated Departments' or a sub-category of Events in USALI."
+  },
+  {
+    "slug": "hospitality-av-equipment-outsourced",
+    "category": "Hospitality",
+    "title": "AV Equipment Hire (Outsourced)",
+    "description": "Recording the revenue and cost when the hotel hires AV equipment from a 3rd party for a guest.",
+    "entries": [
+      { "account": "City Ledger (Receivable)", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "MICE Revenue: AV Hire", "type": "Revenue (+)", "dr": 0, "cr": 500.00 },
+      { "account": "Cost of Sales: AV Vendor", "type": "Expense (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Accounts Payable: AV Vendor", "type": "Liability (+)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "The hotel acts as a principal here, marking up the service. Gross revenue and gross cost must be shown to track the margin on third-party services."
+  },
+  {
+    "slug": "hospitality-event-cancellation-income",
+    "category": "Hospitality",
+    "title": "Event Cancellation Fee",
+    "description": "Recognizing revenue when a client cancels a wedding or event and forfeits their deposit.",
+    "entries": [
+      { "account": "Advance Deposits (Banquet)", "type": "Liability (-)", "dr": 2000.00, "cr": 0 },
+      { "account": "Cancellation Revenue", "type": "Revenue (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Since the event won't happen, the liability is 'cleared' to revenue. This is usually classified as 'Other Income' because no actual service was provided."
+  },
+  {
+    "slug": "hospitality-group-attrition-fees",
+    "category": "Hospitality",
+    "title": "Group Attrition Fees (Room Block)",
+    "description": "Charging a corporate group for failing to fill the minimum number of rooms promised in their contract.",
+    "entries": [
+      { "account": "City Ledger (Receivable)", "type": "Asset (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Attrition Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Attrition is a penalty for under-performance. It compensates the hotel for 'displacement' (rooms that could have been sold to others)."
+  },
+  {
+    "slug": "hospitality-vendor-commission-kickback",
+    "category": "Hospitality",
+    "title": "Vendor Commission (Kickback Income)",
+    "description": "Recording a commission received from a florist or photographer for recommending them to a wedding couple.",
+    "entries": [
+      { "account": "Cash / Receivable", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Miscellaneous Income: Vendor Commissions", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "This is common in the events industry. The hotel earns a 'referral fee' which is recorded as non-operating miscellaneous income."
+  },
+  {
+    "slug": "hospitality-delegate-day-rate-split",
+    "category": "Hospitality",
+    "title": "Delegate Day Rate (DDR) Splitting",
+    "description": "Splitting a single package price (e.g., $75 per person) between room rental and food.",
+    "entries": [
+      { "account": "City Ledger (Receivable)", "type": "Asset (+)", "dr": 75.00, "cr": 0 },
+      { "account": "MICE Revenue: Room Rental", "type": "Revenue (+)", "dr": 0, "cr": 35.00 },
+      { "account": "F&B Revenue: Banquets", "type": "Revenue (+)", "dr": 0, "cr": 40.00 }
+    ],
+    "explanation": "To keep departmental performance (GOP) accurate, a 'bundled' package must be manually split based on the internal value of the components."
+  },
+  {
+    "slug": "hospitality-master-account-transfer",
+    "category": "Hospitality",
+    "title": "Transfer to Master Account (Group Billing)",
+    "description": "Moving individual guest room charges to a single 'Master Folio' to be paid by the corporate sponsor.",
+    "entries": [
+      { "account": "City Ledger: Master Account", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Guest Ledger (Individual Folios)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "In a group booking, guests don't pay individually. The night auditor 'slabs' all individual charges into one City Ledger account for bulk billing."
+  },
+  {
+    "slug": "hospitality-exhibition-booth-rental",
+    "category": "Hospitality",
+    "title": "Exhibition Booth Space Rental",
+    "description": "Recording revenue from vendors who rent small areas in the lobby or foyer for displays.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Other Operating Revenue: Exhibitions", "type": "Revenue (+)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "This is separate from meeting room hire and covers 'non-traditional' spaces used for commercial display."
+  },
+  {
+    "slug": "hospitality-internal-departmental-meeting",
+    "category": "Hospitality",
+    "title": "Internal Departmental Meeting (Cross-Charge)",
+    "description": "Charging the Marketing department for holding their annual strategy meeting in a hotel conference room.",
+    "entries": [
+      { "account": "Marketing Expense: Meetings", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "MICE Revenue: Internal (Credit)", "type": "Revenue (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "While this nets to zero for the whole hotel, it ensures that the Events department gets 'credit' for the space used and Marketing is held accountable for their budget."
+  },
+  {
+    "slug": "hospitality-banquet-casual-labor-accrual",
+    "category": "Hospitality",
+    "title": "Banquet Casual Labor Accrual",
+    "description": "Recording the cost of temp workers hired specifically for a one-night gala event.",
+    "entries": [
+      { "account": "Payroll: Casual Labor (Events)", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Accrued Wages / Agency Payable", "type": "Liability (+)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "Banquets often use agency staff. This cost should be tracked specifically under the Events department rather than General Payroll to monitor the 'Cost of Labor' for events."
+  },
+  
+  {
+    "slug": "hospitality-base-management-fee",
+    "category": "Hospitality",
+    "title": "Base Management Fee Accrual",
+    "description": "Recording the monthly fee paid to the hotel management company (usually % of Total Revenue).",
+    "entries": [
+      { "account": "Management Fees: Base", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Due to Management Company", "type": "Liability (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Management companies typically charge 2-4% of Total Revenue as a base fee to run the hotel on behalf of the owner."
+  },
+  {
+    "slug": "hospitality-incentive-management-fee",
+    "category": "Hospitality",
+    "title": "Incentive Management Fee",
+    "description": "Recording the performance-based fee paid to management based on GOP targets.",
+    "entries": [
+      { "account": "Management Fees: Incentive", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Due to Management Company", "type": "Liability (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "This is a 'Success Fee.' It is only recorded if the hotel achieves a certain level of Gross Operating Profit (GOP), rewarding the manager for efficiency."
+  },
+  {
+    "slug": "hospitality-franchise-royalty-fee",
+    "category": "Hospitality",
+    "title": "Franchise Royalty Fee Payment",
+    "description": "Recording the monthly royalty fee paid to the brand for using their name and systems.",
+    "entries": [
+      { "account": "Franchise Fees: Royalties", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Accounts Payable: Brand", "type": "Liability (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Franchise fees are usually a percentage of Room Revenue only. This is separate from management fees."
+  },
+  {
+    "slug": "hospitality-loyalty-points-accrual",
+    "category": "Hospitality",
+    "title": "Guest Loyalty Program Assessment",
+    "description": "Recording the cost the hotel pays to the brand when a guest earns points during their stay.",
+    "entries": [
+      { "account": "Marketing Expense: Loyalty Program", "type": "Expense (+)", "dr": 120.00, "cr": 0 },
+      { "account": "Due to Brand / Loyalty Fund", "type": "Liability (+)", "dr": 0, "cr": 120.00 }
+    ],
+    "explanation": "When a guest earns 'Points,' the individual hotel must pay a fee to the global brand's loyalty fund. This is a cost of guest acquisition."
+  },
+  {
+    "slug": "hospitality-loyalty-redemption-revenue",
+    "category": "Hospitality",
+    "title": "Loyalty Point Redemption (Reimbursement)",
+    "description": "Recording revenue when a guest stays for 'Free' using points and the brand reimburses the hotel.",
+    "entries": [
+      { "account": "Receivable: Brand Loyalty Fund", "type": "Asset (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Room Revenue (Redemption)", "type": "Revenue (+)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "The hotel doesn't get the full room rate; the brand pays a lower 'reimbursement rate' (often based on occupancy levels) to cover the cost of the free stay."
+  },
+  {
+    "slug": "hospitality-linen-terry-amortization",
+    "category": "Hospitality",
+    "title": "Linen and Terry Amortization",
+    "description": "Monthly expense for the gradual wear and tear of bedsheets and towels.",
+    "entries": [
+      { "account": "Operating Supplies Expense: Linen", "type": "Expense (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Linen/Terry (Operating Asset)", "type": "Asset (-)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "In hotels, linen isn't 'inventory' that is sold; it is an operating asset. It is capitalized and then amortized (expensed) over its useful life (usually 12-24 months)."
+  },
+  {
+    "slug": "hospitality-ffe-reserve-funding",
+    "category": "Hospitality",
+    "title": "FF&E Reserve Funding (Capex)",
+    "description": "Setting aside cash for future replacement of Furniture, Fixtures & Equipment.",
+    "entries": [
+      { "account": "Restricted Cash: FF&E Reserve", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Cash (Unrestricted)", "type": "Asset (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Banks and Management Agreements usually require the owner to set aside 3-5% of Total Revenue into a separate account to pay for future renovations."
+  },
+  {
+    "slug": "hospitality-complimentary-room-marketing",
+    "category": "Hospitality",
+    "title": "Complimentary Room for Influencer/PR",
+    "description": "Internal tracking of the cost of providing a free room for marketing purposes.",
+    "entries": [
+      { "account": "Marketing Expense: PR Stays", "type": "Expense (+)", "dr": 30.00, "cr": 0 },
+      { "account": "Rooms Department Cost (Credit)", "type": "Expense (-)", "dr": 0, "cr": 30.00 }
+    ],
+    "explanation": "You don't record revenue for a comp room. Instead, you move the 'cost' (cleaning, laundry, utilities) out of the Rooms department and into Marketing."
+  },
+  {
+    "slug": "hospitality-laundry-outsourcing-expense",
+    "category": "Hospitality",
+    "title": "Outsourced Laundry Service Bill",
+    "description": "Recording the monthly cost of an external company washing the hotel's linen.",
+    "entries": [
+      { "account": "Laundry Operating Expense", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Accounts Payable: Laundry Co", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "If the hotel doesn't have an internal 'On-Premise Laundry' (OPL), this is a significant recurring operating cost for the Rooms department."
+  },
+  {
+    "slug": "hospitality-brand-marketing-assessment",
+    "category": "Hospitality",
+    "title": "Global Marketing Fund Assessment",
+    "description": "Recording the fee paid to the brand to fund global TV ads and the central website.",
+    "entries": [
+      { "account": "Marketing Fees: Brand Assessment", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Due to Brand", "type": "Liability (+)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "Most brands charge a fixed % of room revenue to pay for the 'Big Picture' marketing that individual hotels cannot afford on their own."
+  },
+
+  {
+    "slug": "agri-purchase-biological-asset",
+    "category": "Agriculture",
+    "title": "Initial Purchase of Livestock",
+    "description": "Recording the purchase of young animals for breeding or eventual sale.",
+    "entries": [
+      { "account": "Biological Assets (Livestock)", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Livestock is recorded as a biological asset. Under IAS 41, it should ideally be recorded at fair value minus costs to sell."
+  },
+  {
+    "slug": "agri-livestock-birth-recognition",
+    "category": "Agriculture",
+    "title": "Recognition of New Births (Progeny)",
+    "description": "Recording the birth of calves, lambs, or chicks which increases the herd size.",
+    "entries": [
+      { "account": "Biological Assets (Livestock)", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Gain from Birth of Livestock", "type": "Revenue (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "When an animal is born, you gain an asset for 'free.' You record the fair value of the newborn immediately as income."
+  },
+  {
+    "slug": "agri-biological-transformation-growth",
+    "category": "Agriculture",
+    "title": "Biological Growth (Physical Change)",
+    "description": "Adjusting the value of animals as they get older, heavier, and more valuable.",
+    "entries": [
+      { "account": "Biological Assets (Livestock)", "type": "Asset (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Change in Fair Value (Physical)", "type": "Revenue (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "IAS 41 requires you to separate growth into 'Price Change' and 'Physical Change.' This entry records the value added because the animals grew larger."
+  },
+  {
+    "slug": "agri-maintenance-costs-feeding",
+    "category": "Agriculture",
+    "title": "Livestock Maintenance (Feed & Vet)",
+    "description": "Recording the day-to-day costs of keeping the animals healthy.",
+    "entries": [
+      { "account": "Agricultural Operating Expenses", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Unlike manufacturing, you generally do NOT capitalize feed and vet costs into the asset value. They are expensed as incurred because growth is captured via the Fair Value adjustment."
+  },
+  {
+    "slug": "agri-death-of-livestock",
+    "category": "Agriculture",
+    "title": "Death of Livestock (Loss)",
+    "description": "Removing an animal from the books due to disease or accident.",
+    "entries": [
+      { "account": "Loss on Biological Assets (Death)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Biological Assets (Livestock)", "type": "Asset (-)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "When an animal dies, the entire fair value of that asset is written off as an immediate loss."
+  },
+  {
+    "slug": "agri-sale-of-live-livestock",
+    "category": "Agriculture",
+    "title": "Sale of Live Animals",
+    "description": "Recording the revenue from selling a live animal to another farmer or market.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Biological Assets (Livestock)", "type": "Asset (-)", "dr": 0, "cr": 1100.00 },
+      { "account": "Gain on Sale of Livestock", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "The biological asset is removed at its current book (fair) value. Any difference between the sale price and book value is a gain or loss."
+  },
+  {
+    "slug": "agri-government-grant-biological",
+    "category": "Agriculture",
+    "title": "Government Grant (Unconditional)",
+    "description": "Recording a subsidy received from the government related to biological assets.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Government Grant Income", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Under IAS 41, an unconditional grant related to biological assets measured at fair value is recognized as income the moment it becomes receivable."
+  },
+
+  {
+    "slug": "agri-bearer-plant-capitalization",
+    "category": "Agriculture",
+    "title": "Planting Bearer Plants (Orchard/Vineyard)",
+    "description": "Recording the cost of planting fruit trees or vines that will produce for many years.",
+    "entries": [
+      { "account": "Bearer Plants (PPE)", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash / Wages Payable", "type": "Mixed", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Under IAS 16, bearer plants are treated like Fixed Assets (Machinery). You capitalize the cost of planting and tending to them until they reach maturity."
+  },
+  {
+    "slug": "agri-bearer-plant-depreciation",
+    "category": "Agriculture",
+    "title": "Depreciation of Bearer Plants",
+    "description": "Annual depreciation of fruit trees over their productive life.",
+    "entries": [
+      { "account": "Depreciation Expense (Orchard)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Because bearer plants are PPE, they must be depreciated over their useful life (e.g., 20 years for an orange grove)."
+  },
+  {
+    "slug": "agri-unharvested-crops-fairvalue",
+    "category": "Agriculture",
+    "title": "Unharvested Crops (Standing Crops)",
+    "description": "Recognizing the value of crops still in the field at year-end.",
+    "entries": [
+      { "account": "Biological Assets (Crops)", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Unrealized Gain on Crop Growth", "type": "Revenue (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Crops in the field are biological assets. Even if not harvested, if they have grown, their increased value must be recognized as profit."
+  },
+  {
+    "slug": "agri-harvesting-produce-to-inventory",
+    "category": "Agriculture",
+    "title": "Harvesting Crops (Transformation)",
+    "description": "The moment a crop is picked, it stops being a 'Biological Asset' and becomes 'Inventory'.",
+    "entries": [
+      { "account": "Inventory (Harvested Produce)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Biological Assets (Crops)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "At the point of harvest, the produce is measured at Fair Value. This value becomes the 'Cost' for the inventory account going forward."
+  },
+  {
+    "slug": "agri-land-preparation-tilling",
+    "category": "Agriculture",
+    "title": "Land Preparation Costs",
+    "description": "Costs for tilling, plowing, and preparing soil for a new season.",
+    "entries": [
+      { "account": "Land Preparation Expense", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "General soil preparation for annual crops is usually expensed in the period it occurs."
+  },
+  {
+    "slug": "agri-fertilizer-inventory-purchase",
+    "category": "Agriculture",
+    "title": "Purchase of Fertilizer/Seeds",
+    "description": "Recording the bulk purchase of farming inputs.",
+    "entries": [
+      { "account": "Supplies Inventory (Agri)", "type": "Asset (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "These are not expenses until they are actually spread on the field or planted in the ground."
+  },
+  {
+    "slug": "agri-harvest-loss-spoilage",
+    "category": "Agriculture",
+    "title": "Post-Harvest Spoilage (Inventory)",
+    "description": "Recording the loss of picked produce that rotted in storage.",
+    "entries": [
+      { "account": "Inventory Loss (Spoilage)", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Inventory (Harvested Produce)", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Once harvested, the produce follows IAS 2 (Inventory) rules. Any spoilage is an immediate expense."
+  },
+
+
+  {
+    "slug": "agri-wool-shearing-recognition",
+    "category": "Agriculture",
+    "title": "Shearing Sheep (Agricultural Produce)",
+    "description": "Recording the harvest of wool from live sheep.",
+    "entries": [
+      { "account": "Inventory (Wool)", "type": "Asset (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Gain on Harvest (Produce)", "type": "Revenue (+)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Wool is 'Agricultural Produce.' The gain is recognized at the moment of shearing at its fair value."
+  },
+  {
+    "slug": "agri-slaughter-transformation",
+    "category": "Agriculture",
+    "title": "Livestock Slaughter (Biological to Inventory)",
+    "description": "Moving an animal from the biological asset account to the meat inventory account.",
+    "entries": [
+      { "account": "Inventory (Carcass/Meat)", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Biological Assets (Livestock)", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "The animal ceases to be a biological asset the moment it is slaughtered. It enters inventory at its fair value at the point of slaughter."
+  },
+  {
+    "slug": "agri-milk-production-daily",
+    "category": "Agriculture",
+    "title": "Daily Milk Production",
+    "description": "Recording the fair value of milk collected from dairy cows.",
+    "entries": [
+      { "account": "Inventory (Milk)", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Revenue from Agricultural Produce", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "Milk is produce. It is recorded as inventory at fair value minus costs to sell at the moment of milking."
+  },
+  {
+    "slug": "agri-sale-of-harvested-produce",
+    "category": "Agriculture",
+    "title": "Sale of Harvested Produce",
+    "description": "Recording the final sale of stored grain, wool, or milk.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 6000.00, "cr": 0 },
+      { "account": "Sales Revenue (Produce)", "type": "Revenue (+)", "dr": 0, "cr": 6000.00 },
+      { "account": "Cost of Goods Sold", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Inventory (Harvested Produce)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Once harvested, the sale follows standard retail/wholesale accounting rules."
+  },
+  {
+    "slug": "agri-breeding-fees-genetics",
+    "category": "Agriculture",
+    "title": "Breeding & Artificial Insemination Fees",
+    "description": "Paying for specialized breeding services to improve herd quality.",
+    "entries": [
+      { "account": "Breeding Expense", "type": "Expense (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "These are considered operating expenses unless they relate to a specific project to create a new type of biological asset."
+  },
+  {
+    "slug": "agri-irrigation-water-utility",
+    "category": "Agriculture",
+    "title": "Irrigation & Water Costs",
+    "description": "Recording the heavy utility costs for crop watering.",
+    "entries": [
+      { "account": "Utilities: Water/Irrigation", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "A major operating cost in farming, tracked separately to analyze crop yield vs. water cost."
+  },
+
+
+
+  {
+    "slug": "healthcare-patient-billing-gross",
+    "category": "Healthcare",
+    "title": "Initial Patient Billing (Gross Charges)",
+    "description": "Recording the full 'chargemaster' price for medical services before insurance discounts.",
+    "entries": [
+      { "account": "Patient Accounts Receivable", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Patient Service Revenue (Gross)", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Hospitals always bill the full list price first. This is called 'Gross Revenue' and is used to track the total volume of work performed."
+  },
+  {
+    "slug": "healthcare-contractual-adjustment-insurance",
+    "category": "Healthcare",
+    "title": "Contractual Adjustment (Insurance Discount)",
+    "description": "Adjusting the receivable to reflect the lower amount the insurance company is legally required to pay.",
+    "entries": [
+      { "account": "Contractual Adjustments", "type": "Contra-Revenue (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Patient Accounts Receivable", "type": "Asset (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "This is the most critical healthcare entry. It reduces revenue from 'Gross' to 'Net Realizable Value.' It represents the difference between the hospital's price and the insurance company's allowed rate."
+  },
+  {
+    "slug": "healthcare-capitation-revenue-fixed",
+    "category": "Healthcare",
+    "title": "Capitation Revenue (Fixed Fee per Member)",
+    "description": "Recording a monthly fixed payment from an insurance company to cover all services for a group of members.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Capitation Revenue", "type": "Revenue (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "In managed care, the clinic gets paid a flat fee every month regardless of whether the patients show up or not. This shifts the financial risk from the insurer to the provider."
+  },
+  {
+    "slug": "healthcare-third-party-payer-settlement",
+    "category": "Healthcare",
+    "title": "Third-Party Payer Settlement (True-up)",
+    "description": "Adjusting the books at year-end when final insurance/government reimbursements are confirmed.",
+    "entries": [
+      { "account": "Patient Service Revenue", "type": "Revenue (+/-)", "dr": 0, "cr": 500.00 },
+      { "account": "Estimated Third-Party Settlements", "type": "Asset/Liability", "dr": 500.00, "cr": 0 }
+    ],
+    "explanation": "Insurance payments are often 'estimated' until a final audit is done by the payer. This entry 'trues-up' those estimates."
+  },
+  {
+    "slug": "healthcare-bad-debt-provision",
+    "category": "Healthcare",
+    "title": "Provision for Uncollectible Patient Accounts",
+    "description": "Estimating the amount of 'Self-Pay' balances that will likely never be paid.",
+    "entries": [
+      { "account": "Bad Debt Expense (Healthcare)", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Allowance for Doubtful Accounts", "type": "Contra-Asset (+)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "Unlike 'Charity Care' (which you already have), Bad Debt is for patients who are *expected* to pay but don't. It is an operating expense."
+  },
+  {
+    "slug": "healthcare-concierge-membership-deferral",
+    "category": "Healthcare",
+    "title": "Concierge Medicine Membership Fees",
+    "description": "Recording an annual fee paid by a patient for priority access to a doctor.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Deferred Membership Revenue", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Common in modern clinics. Since the service is provided over a year, the fee is a liability (unearned) and recognized at $100 per month."
+  },
+  {
+    "slug": "healthcare-patient-copay-collection",
+    "category": "Healthcare",
+    "title": "Collection of Patient Co-payment",
+    "description": "Recording the cash paid by the patient at the time of service (the 'out-of-pocket' portion).",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Patient Accounts Receivable", "type": "Asset (-)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "The co-pay reduces the total receivable. The remaining balance will be billed to the insurance provider."
+  },
+
+  {
+    "slug": "healthcare-malpractice-insurance-accrual",
+    "category": "Healthcare",
+    "title": "Medical Malpractice Insurance Premium",
+    "description": "Accruing the monthly cost of professional liability insurance for doctors.",
+    "entries": [
+      { "account": "Malpractice Insurance Expense", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Prepaid Insurance / Payable", "type": "Asset/Liability", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Malpractice insurance is one of the highest operating costs for clinics. It is usually paid annually but must be expensed monthly."
+  },
+  {
+    "slug": "healthcare-physician-productivity-bonus",
+    "category": "Healthcare",
+    "title": "Physician Productivity Bonus (RVU Based)",
+    "description": "Recording a bonus for a doctor based on their volume of 'Relative Value Units' (RVUs).",
+    "entries": [
+      { "account": "Physician Compensation Expense", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Accrued Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Most doctors aren't just on a flat salary; they get paid based on how many procedures they perform. This must be calculated and accrued at month-end."
+  },
+  {
+    "slug": "healthcare-bio-med-equipment-maintenance",
+    "category": "Healthcare",
+    "title": "Medical Equipment Maintenance (Bio-Med)",
+    "description": "Recording the cost of calibrating and repairing specialized medical machines (MRI, X-ray).",
+    "entries": [
+      { "account": "Medical Equipment Maintenance", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Bio-medical engineering costs are unique to healthcare and are tracked separately from general building maintenance."
+  },
+  {
+    "slug": "healthcare-pharmaceutical-rebate-accrual",
+    "category": "Healthcare",
+    "title": "Pharmaceutical Volume Rebate",
+    "description": "Recording a credit earned from a drug manufacturer for purchasing large quantities of medicine.",
+    "entries": [
+      { "account": "Accounts Receivable / Payable", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Medical Supplies Expense (Credit)", "type": "Expense (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Rebates from drug companies reduce the hospital's cost of supplies, effectively increasing their margin on pharmacy sales."
+  },
+  {
+    "slug": "healthcare-blood-bank-inventory-charge",
+    "category": "Healthcare",
+    "title": "Blood Bank Inventory Usage",
+    "description": "Recording the cost of blood units used during a surgery.",
+    "entries": [
+      { "account": "Medical Supplies Expense (Blood)", "type": "Expense (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Blood Bank Inventory", "type": "Asset (-)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "Blood is a highly perishable and specialized inventory item. Its usage is tracked patient-by-patient."
+  },
+  {
+    "slug": "healthcare-malpractice-claim-reserve",
+    "category": "Healthcare",
+    "title": "Provision for Uninsured Malpractice Claims",
+    "description": "Recording a liability for an 'Incurred But Not Reported' (IBNR) medical legal claim.",
+    "entries": [
+      { "account": "Malpractice Loss Expense", "type": "Expense (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Malpractice Claim Reserve", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Hospitals must estimate and set aside funds for potential lawsuits that have occurred but haven't been filed yet (Self-insurance logic)."
+  },
+
+
+  {
+    "slug": "healthcare-consignment-implant-usage",
+    "category": "Healthcare",
+    "title": "Usage of Consignment Implants (Joints/Stents)",
+    "description": "Recording the purchase and immediate usage of a medical device owned by a vendor until the moment of surgery.",
+    "entries": [
+      { "account": "Medical Supplies Expense (Implants)", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Accounts Payable: Device Vendor", "type": "Liability (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Hospitals often don't 'own' expensive implants (like artificial hips). They sit in the hospital, but the hospital only 'buys' them from the vendor the second they are put into a patient."
+  },
+  {
+    "slug": "healthcare-patient-trust-fund-deposit",
+    "category": "Healthcare",
+    "title": "Patient Trust Fund Deposit (Nursing Home)",
+    "description": "Recording cash held on behalf of a long-term care patient for their personal use.",
+    "entries": [
+      { "account": "Restricted Cash (Patient Funds)", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Liability to Patients", "type": "Liability (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "The hospital acts as a bank for long-term patients. This is an agency transaction; the money does not belong to the hospital."
+  },
+  {
+    "slug": "healthcare-medical-records-fee-income",
+    "category": "Healthcare",
+    "title": "Medical Records Request Fee",
+    "description": "Recording the administrative fee charged to lawyers or patients for copies of medical records.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 25.00, "cr": 0 },
+      { "account": "Other Operating Revenue (Records)", "type": "Revenue (+)", "dr": 0, "cr": 25.00 }
+    ],
+    "explanation": "This is incidental revenue generated by the Health Information Management (HIM) department."
+  },
+  {
+    "slug": "healthcare-physician-recruitment-advance",
+    "category": "Healthcare",
+    "title": "Physician Recruitment Loan (Forgivable)",
+    "description": "Recording an advance payment to a new doctor that is 'forgiven' if they stay for 3 years.",
+    "entries": [
+      { "account": "Physician Recruitment Loans", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "To attract doctors, hospitals give large cash sign-on bonuses. These are recorded as assets and then 'forgiven' (expensed) over several years of service."
+  },
+  {
+    "slug": "healthcare-cafeteria-giftshop-revenue",
+    "category": "Healthcare",
+    "title": "Hospital Ancillary Revenue (Retail)",
+    "description": "Recording daily sales from the hospital cafeteria or gift shop.",
+    "entries": [
+      { "account": "Cash / Credit Card", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Non-Patient Revenue: Retail", "type": "Revenue (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "These are 'Other Operated Departments' that generate revenue from visitors and staff rather than patients."
+  },
+
+  {
+    "slug": "healthcare-claim-denial-provision",
+    "category": "Healthcare",
+    "title": "Provision for Denied Claims",
+    "description": "Recording a reserve for insurance claims that are expected to be rejected due to coding or eligibility errors.",
+    "entries": [
+      { "account": "Contractual Adjustments (Denials)", "type": "Contra-Revenue (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Allowance for Denied Claims", "type": "Contra-Asset (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Revenue Cycle Management (RCM) experts know that ~5-10% of claims get denied. This entry ensures you don't overstate your assets by accounting for those rejections before they happen."
+  },
+  {
+    "slug": "healthcare-telehealth-platform-fee",
+    "category": "Healthcare",
+    "title": "Telehealth Platform Revenue (Net of Fee)",
+    "description": "Recording revenue from a virtual visit where the platform provider takes a service fee.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 85.00, "cr": 0 },
+      { "account": "Technology Service Fee", "type": "Expense (+)", "dr": 15.00, "cr": 0 },
+      { "account": "Telehealth Service Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "Telehealth is often billed through third-party platforms. Like 'Talabat' for restaurants, you must record the Gross Revenue to track your clinical volume accurately."
+  },
+  {
+    "slug": "healthcare-value-based-incentive-accrual",
+    "category": "Healthcare",
+    "title": "Value-Based Care Quality Incentive",
+    "description": "Recording an accrued bonus from an insurer for hitting patient health outcome targets.",
+    "entries": [
+      { "account": "Incentive Receivable", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Quality Incentive Revenue", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Modern healthcare pays for 'Value' (quality) not just 'Volume.' If data shows you reduced patient readmissions, you earn a bonus that must be accrued."
+  },
+  {
+    "slug": "healthcare-medicare-cost-report-liability",
+    "category": "Healthcare",
+    "title": "Medicare Cost Report Settlement (Payable)",
+    "description": "Recording a liability when a government audit determines the hospital was overpaid in the prior year.",
+    "entries": [
+      { "account": "Patient Service Revenue (Adjustment)", "type": "Revenue (-)", "dr": 20000.00, "cr": 0 },
+      { "account": "Due to Third-Party Payers (Govt)", "type": "Liability (+)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "Government payers (Medicare/Medicaid) pay 'interim' rates. At year-end, a 'Cost Report' is filed. If you were overpaid based on actual costs, you must record a liability to pay it back."
+  },
+  {
+    "slug": "healthcare-gme-teaching-funding",
+    "category": "Healthcare",
+    "title": "Graduate Medical Education (GME) Funding",
+    "description": "Recording government subsidies received for training medical residents.",
+    "entries": [
+      { "account": "Cash / Grant Receivable", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "GME Program Revenue", "type": "Revenue (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Teaching hospitals receive specific funding to offset the cost of salaries for doctors in training (Residents). This is a non-patient revenue stream."
+  },
+  {
+    "slug": "healthcare-biohazard-waste-disposal",
+    "category": "Healthcare",
+    "title": "Biohazardous Waste Disposal Expense",
+    "description": "Recording the high cost of disposing of regulated medical waste (sharps, chemicals).",
+    "entries": [
+      { "account": "Environmental / Waste Expense", "type": "Expense (+)", "dr": 600.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 600.00 }
+    ],
+    "explanation": "Medical waste cannot go in standard trash. The disposal is highly regulated and expensive, representing a significant operating cost for surgical centers."
+  },
+  {
+    "slug": "healthcare-emr-software-capitalization",
+    "category": "Healthcare",
+    "title": "EMR/EHR System Capitalization",
+    "description": "Recording the multi-million dollar cost of implementing an Electronic Medical Record system (like Epic or Cerner).",
+    "entries": [
+      { "account": "Intangible Asset: EMR System", "type": "Asset (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "Cash / Notes Payable", "type": "Mixed", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "EMR systems are the 'brain' of a hospital. Implementation costs (coding, licensing) are capitalized and amortized over 5-10 years."
+  },
+  {
+    "slug": "healthcare-certificate-of-need-con",
+    "category": "Healthcare",
+    "title": "Certificate of Need (CON) Intangible",
+    "description": "Recording the legal and application costs to obtain a government permit to expand a hospital wing.",
+    "entries": [
+      { "account": "Intangible Assets: Licenses", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "In many regions, you cannot simply open a hospital; you must prove the community 'needs' it. This permit (CON) is a valuable intangible asset."
+  },
+  {
+    "slug": "healthcare-340b-drug-discount-margin",
+    "category": "Healthcare",
+    "title": "340B Drug Pricing Program Savings",
+    "description": "Recording the purchase of outpatient drugs at a significant federal discount.",
+    "entries": [
+      { "account": "Pharmacy Inventory", "type": "Asset (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "The 340B program allows safety-net hospitals to buy drugs at steep discounts. When these are sold at normal insurance rates, the hospital captures a high margin to fund charity care."
+  },
+  {
+    "slug": "healthcare-home-health-travel-reimbursement",
+    "category": "Healthcare",
+    "title": "Home Healthcare Staff Travel Cost",
+    "description": "Recording mileage and travel time for nurses providing care in patient homes.",
+    "entries": [
+      { "account": "Staff Travel Expense", "type": "Expense (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Cash / Wages Payable", "type": "Mixed", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "For Home Health agencies, travel is a core operating cost. Unlike in-hospital care, 'windshield time' must be tracked and expensed to analyze visit profitability."
+  },
+
+  
+  {
+    "slug": "healthcare-clinical-trial-deferred-revenue",
+    "category": "Healthcare",
+    "title": "Clinical Trial Funding (Pharma Contract)",
+    "description": "Recording an upfront payment from a pharmaceutical company to conduct a multi-year drug trial.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Deferred Research Revenue", "type": "Liability (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Teaching hospitals act as research centers. This money is a liability until the hospital hits specific 'milestones' (e.g., enrolling 100 patients), at which point it is recognized as revenue."
+  },
+  {
+    "slug": "healthcare-elective-surgery-deposit",
+    "category": "Healthcare",
+    "title": "Elective Surgery Pre-payment",
+    "description": "Recording a cash deposit for a non-emergency or cosmetic procedure before the surgery date.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Patient Deposits / Unearned Revenue", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "For elective procedures, hospitals often require payment upfront. This is a liability until the surgery is performed and the clinical record is closed."
+  },
+  {
+    "slug": "healthcare-aco-shared-savings-bonus",
+    "category": "Healthcare",
+    "title": "ACO Shared Savings Bonus Accrual",
+    "description": "Accruing a bonus from a government/payer because the healthcare network reduced the total cost of care for a population.",
+    "entries": [
+      { "account": "Shared Savings Receivable", "type": "Asset (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "ACO Incentive Revenue", "type": "Revenue (+)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "Accountable Care Organizations (ACOs) are rewarded for efficiency. If the hospital keeps patients healthy and out of the ER, the payer shares the 'savings' with the hospital."
+  },
+  {
+    "slug": "healthcare-mob-rental-income",
+    "category": "Healthcare",
+    "title": "Medical Office Building (MOB) Rental",
+    "description": "Recording rent received from independent doctors who lease space in a hospital-owned building.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Rental Income (Real Estate)", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Large hospitals are also real estate companies. They lease 'MOB' space to private practices to ensure those doctors refer patients to the hospital's surgical center."
+  },
+  {
+    "slug": "healthcare-self-insurance-trust-funding",
+    "category": "Healthcare",
+    "title": "Funding a Self-Insurance Trust",
+    "description": "Transferring cash into a restricted trust account to cover future employee health or malpractice claims.",
+    "entries": [
+      { "account": "Restricted Cash (Self-Insurance Trust)", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash (Unrestricted)", "type": "Asset (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Massive healthcare systems 'insure themselves.' They set up a legal trust to pay claims, which moves the cash from 'available' to 'restricted' status."
+  },
+  {
+    "slug": "healthcare-joint-venture-equity-pickup",
+    "category": "Healthcare",
+    "title": "JV Equity Pickup (Imaging Center/Lab)",
+    "description": "Recording the hospital's share of profit from a 50/50 joint venture partnership in a Diagnostic Imaging Center.",
+    "entries": [
+      { "account": "Investment in Joint Venture", "type": "Asset (+)", "dr": 4000.00, "cr": 0 },
+      { "account": "Equity in Earnings of Affiliates", "type": "Revenue (+)", "dr": 0, "cr": 4000.00 }
+    ],
+    "explanation": "Hospitals often partner with private companies to run labs or MRI centers. Under the equity method, the hospital records its share of the venture's monthly profit."
+  },
+  {
+    "slug": "healthcare-robotic-surgical-system-lease",
+    "category": "Healthcare",
+    "title": "Capital Lease of Robotic System (da Vinci)",
+    "description": "Initial recognition of a surgical robot and the corresponding lease liability.",
+    "entries": [
+      { "account": "Medical Equipment (Right-of-Use)", "type": "Asset (+)", "dr": 200000.00, "cr": 0 },
+      { "account": "Lease Liability (Long-Term)", "type": "Liability (+)", "dr": 0, "cr": 200000.00 }
+    ],
+    "explanation": "High-tech robots are often leased rather than bought. This IFRS 16/ASC 842 entry brings the $2M+ asset and debt onto the balance sheet."
+  },
+  {
+    "slug": "healthcare-patient-credit-balance-refund",
+    "category": "Healthcare",
+    "title": "Patient Overpayment Refund",
+    "description": "Processing a cash refund to a patient when both the insurance and the patient overpaid the total bill.",
+    "entries": [
+      { "account": "Patient Service Revenue (Adjustment)", "type": "Revenue (-)", "dr": 150.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "If a patient's account has a credit balance (they paid $200 but insurance covered everything), the hospital is legally required to refund that cash."
+  },
+  {
+    "slug": "healthcare-ibnr-claims-accrual",
+    "category": "Healthcare",
+    "title": "IBNR (Incurred But Not Reported) Accrual",
+    "description": "Estimating the cost of medical services that have been provided to employees but haven't been billed yet (Self-insured).",
+    "entries": [
+      { "account": "Employee Benefit Expense", "type": "Expense (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "IBNR Claim Liability", "type": "Liability (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "For hospitals that self-insure their staff, they must estimate 'hidden' claims that are currently in the mail or still being coded at the clinic."
+  },
+  {
+    "slug": "healthcare-pharmacy-compounding-inventory",
+    "category": "Healthcare",
+    "title": "Pharmacy Compounding (WIP to Finished)",
+    "description": "Recording the internal labor and material costs to create a specialized chemotherapy IV bag.",
+    "entries": [
+      { "account": "Pharmacy Inventory (Finished Goods)", "type": "Asset (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Pharmacy Supplies (Raw Materials)", "type": "Asset (-)", "dr": 0, "cr": 700.00 },
+      { "account": "Wages Payable (Pharmacist Labor)", "type": "Liability (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "In-patient pharmacies are like tiny factories. They combine raw drugs and labor to create a finished 'product' for a specific patient."
+  },
+
+
+  {
+    "slug": "logistics-freight-revenue-recognition",
+    "category": "Logistics",
+    "title": "Freight Revenue Recognition (Bill of Lading)",
+    "description": "Recording revenue for a shipment once the goods have been delivered or the contract terms are met.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Freight Service Revenue", "type": "Revenue (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "Under IFRS 15, revenue is recognized when control of the service passes to the customer, usually upon confirmed delivery for short-haul or pro-rata for long-haul."
+  },
+  {
+    "slug": "logistics-3pl-storage-billing",
+    "category": "Logistics",
+    "title": "3PL Monthly Storage Fees",
+    "description": "Charging a client for warehouse space used during the month based on pallet count or square footage.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Warehouse Storage Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "This is recurring service revenue for Third-Party Logistics (3PL) providers, typically billed at the end of every month."
+  },
+  {
+    "slug": "logistics-fuel-usage-adjustment",
+    "category": "Logistics",
+    "title": "Recording Actual Fuel Usage",
+    "description": "Moving the cost of fuel from the prepaid fuel card to the operating expense account based on actual consumption.",
+    "entries": [
+      { "account": "Fuel & Oil Expense", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Prepaid Fuel", "type": "Asset (-)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Following your 'Fuel Card Replenishment' entry, this recognizes the actual expense when the truck is refilled."
+  },
+  {
+    "slug": "logistics-outsourced-freight-subcontractor",
+    "category": "Logistics",
+    "title": "Outsourced Freight (Sub-contractor)",
+    "description": "Recording the cost of hiring a third-party driver or carrier to fulfill a customer order.",
+    "entries": [
+      { "account": "Purchased Transportation Expense", "type": "Expense (+)", "dr": 1800.00, "cr": 0 },
+      { "account": "Accounts Payable: Carrier", "type": "Liability (+)", "dr": 0, "cr": 1800.00 }
+    ],
+    "explanation": "In 'Asset-Light' logistics, the company bills the client $2500 and pays a sub-contractor $1800, capturing a margin on the coordination."
+  },
+  {
+    "slug": "logistics-customs-duties-agency-pass-through",
+    "category": "Logistics",
+    "title": "Customs Duties (Agency Pass-through)",
+    "description": "Recording the payment of government duties on behalf of a client.",
+    "entries": [
+      { "account": "Due from Client (Customs)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Customs clearing agents do not record duties as an expense or revenue. It is a 'Balance Sheet only' transaction because they are just an intermediary for the client."
+  },
+  {
+    "slug": "logistics-marine-transit-insurance",
+    "category": "Logistics",
+    "title": "Goods-in-Transit (Marine) Insurance",
+    "description": "Recording the insurance premium for a high-value international shipment.",
+    "entries": [
+      { "account": "Transit Insurance Expense", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "This is a direct cost of the shipment (COGS) used to protect against cargo loss or damage during transit."
+  },
+  {
+    "slug": "logistics-terminal-handling-charges-thc",
+    "category": "Logistics",
+    "title": "Terminal Handling Charges (THC)",
+    "description": "Recording the fees paid to a port authority for loading/unloading containers.",
+    "entries": [
+      { "account": "Port & Handling Expense", "type": "Expense (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "These are mandatory costs at ports like Aqaba or Jebel Ali to move containers from the ship to the yard."
+  },
+  {
+    "slug": "logistics-fleet-tyre-replacement-capitalization",
+    "category": "Logistics",
+    "title": "Fleet Tyre Replacement (Component Accounting)",
+    "description": "Recording the bulk replacement of truck tyres which will last for more than one year.",
+    "entries": [
+      { "account": "Fleet Spare Parts (Inventory/Asset)", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Tyres are high-wear items. Large fleets treat them as inventory or a separate component of the truck asset and expense them based on mileage or time."
+  },
+  {
+    "slug": "logistics-cod-collection-last-mile",
+    "category": "Logistics",
+    "title": "COD Collection (Last Mile Delivery)",
+    "description": "Recording the cash collected from a customer at the door on behalf of an E-commerce vendor.",
+    "entries": [
+      { "account": "Cash in Hand (Courier)", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Due to Merchant (COD Funds)", "type": "Liability (+)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "For companies like Aramex, the cash collected isn't theirs. It's a liability until they transfer it back to the merchant (less their delivery fee)."
+  },
+  {
+    "slug": "logistics-detention-truck-waiting-fee",
+    "category": "Logistics",
+    "title": "Truck Detention Fees (Customer Delay)",
+    "description": "Charging a customer for keeping a driver waiting at the loading dock past the free-time limit.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 75.00, "cr": 0 },
+      { "account": "Detention Revenue", "type": "Revenue (+)", "dr": 0, "cr": 75.00 }
+    ],
+    "explanation": "Unlike Port Demurrage (which is an expense), this is revenue the logistics company earns when the *client* causes a delay."
+  },
+  {
+    "slug": "logistics-warehouse-shrinkage-claim",
+    "category": "Logistics",
+    "title": "Warehouse Shrinkage (3PL Responsibility)",
+    "description": "Recording a loss when the warehouse loses or damages a client's inventory.",
+    "entries": [
+      { "account": "Inventory Loss Claim Expense", "type": "Expense (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Payable to Client", "type": "Liability (+)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "In 3PL contracts, the warehouse is liable for inventory accuracy. If items are missing, the warehouse must reimburse the client at cost."
+  },
+  {
+    "slug": "logistics-major-truck-overhaul",
+    "category": "Logistics",
+    "title": "Major Engine Overhaul (Capitalization)",
+    "description": "Recording a significant engine rebuild that extends the truck's life by 5 years.",
+    "entries": [
+      { "account": "Vehicles (Fleet Asset)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Routine oil changes are expensed. But a rebuild that restores the asset's utility is capitalized under IAS 16 and depreciated."
+  },
+  {
+    "slug": "logistics-tolls-weighbridge-fees",
+    "category": "Logistics",
+    "title": "Highway Tolls & Weighbridge Fees",
+    "description": "Recording the daily cash/tag costs for road usage and weight compliance.",
+    "entries": [
+      { "account": "Tolls & Permit Expense", "type": "Expense (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "These are immediate operating expenses necessary for every long-haul journey."
+  },
+  {
+    "slug": "logistics-picking-packing-labor-allocation",
+    "category": "Logistics",
+    "title": "Fulfillment Labor (Picking & Packing)",
+    "description": "Recording the direct labor cost associated with preparing 3PL orders for shipment.",
+    "entries": [
+      { "account": "Direct Operating Labor", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "For 3PL companies, warehouse labor is a 'Direct Cost' (COGS) rather than an administrative expense."
+  },
+  {
+    "slug": "logistics-container-deposit-refund",
+    "category": "Logistics",
+    "title": "Shipping Line Container Deposit",
+    "description": "Recording a refundable deposit paid to a shipping line to take a container out of the port.",
+    "entries": [
+      { "account": "Refundable Deposits (Port)", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "This is an asset, not an expense. The money is returned once the empty container is returned to the shipping line's yard."
+  },
+  {
+    "slug": "logistics-deadhead-repositioning-cost",
+    "category": "Logistics",
+    "title": "Deadhead / Empty Repositioning",
+    "description": "Recording the fuel and labor cost of moving an empty truck to a new pickup location.",
+    "entries": [
+      { "account": "Repositioning Expense", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Cash / Fuel Account", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Deadheading (driving empty) is a major efficiency metric in logistics. These costs are expensed immediately but tracked for route optimization."
+  },
+  {
+    "slug": "logistics-reefer-electricity-accrual",
+    "category": "Logistics",
+    "title": "Cold Storage (Reefer) Electricity Accrual",
+    "description": "Recording the estimated high-power utility cost for temperature-controlled warehousing.",
+    "entries": [
+      { "account": "Utilities: Cold Storage", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Accrued Liabilities", "type": "Liability (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Cold storage logistics have energy costs 10x higher than dry storage. This must be accrued to match the monthly storage revenue."
+  },
+  {
+    "slug": "logistics-accident-insurance-claim-receivable",
+    "category": "Logistics",
+    "title": "Fleet Accident Insurance Claim",
+    "description": "Recording the expected reimbursement from insurance after a truck accident.",
+    "entries": [
+      { "account": "Insurance Claim Receivable", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Gain/Loss on Asset Disposal", "type": "Mixed", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "If a truck is damaged, you record a receivable for the amount the insurance company has agreed to pay to cover the repair or total loss."
+  },
+  {
+    "slug": "logistics-freight-forwarding-commission",
+    "category": "Logistics",
+    "title": "Freight Forwarding Commission",
+    "description": "Recording the fee earned for arranging transportation without touching the goods.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Commission Revenue (Forwarding)", "type": "Revenue (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "For agents who act as intermediaries, only the fee is revenue (Net Basis), not the total freight cost."
+  },
+  {
+    "slug": "logistics-vehicle-tracking-gps-subscription",
+    "category": "Logistics",
+    "title": "Telematics & GPS Subscription Fees",
+    "description": "Monthly fee for fleet management and tracking software.",
+    "entries": [
+      { "account": "IT & Telematics Expense", "type": "Expense (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "This is a fixed operating cost for modern fleets to ensure safety and route compliance."
+  },
+  {
+    "slug": "logistics-bill-of-lading-documentation-fee",
+    "category": "Logistics",
+    "title": "Documentation & BL Fees",
+    "description": "Recording revenue for preparing shipping documents and Bill of Ladings.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Documentation Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "These small fees add up for freight forwarders and are recognized as soon as the documents are issued."
+  },
+  {
+    "slug": "logistics-heavy-vehicle-license-tax",
+    "category": "Logistics",
+    "title": "Annual Heavy Vehicle Road Tax",
+    "description": "Paying the annual government registration fee for a commercial truck.",
+    "entries": [
+      { "account": "Prepaid Taxes/Licenses", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "This is a prepaid asset that is amortized at $100 per month into the 'Taxes & Licenses' expense account."
+  },
+  {
+    "slug": "logistics-warehouse-racking-depreciation",
+    "category": "Logistics",
+    "title": "Depreciation of Warehouse Racking",
+    "description": "Annual depreciation of the specialized steel structures used for pallet storage.",
+    "entries": [
+      { "account": "Depreciation Expense (Warehouse)", "type": "Expense (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Racking is a fixed asset with a typical life of 10-15 years. This ensures the cost of the warehouse setup is spread over its useful life."
+  },
+  {
+    "slug": "logistics-container-leasing-monthly",
+    "category": "Logistics",
+    "title": "Monthly Container Lease Payment",
+    "description": "Recording the cost of renting shipping containers from a leasing company.",
+    "entries": [
+      { "account": "Equipment Rental Expense", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "If the containers are not owned, the monthly lease is a direct operating expense of the shipping department."
+  },
+
+  {
+    "slug": "logistics-fuel-surcharge-revenue",
+    "category": "Logistics",
+    "title": "Fuel Surcharge (Revenue)",
+    "description": "Charging the client an additional variable fee to offset rising diesel/bunker prices.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Freight Revenue (Surcharges)", "type": "Revenue (+)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "Fuel surcharges are standard in logistics. They allow the carrier to protect margins without changing the base contract rate."
+  },
+  {
+    "slug": "logistics-freight-claim-subrogation",
+    "category": "Logistics",
+    "title": "Freight Claim Subrogation",
+    "description": "Recording the recovery of a damage claim from a sub-contractor's insurance company.",
+    "entries": [
+      { "account": "Cash / Insurance Receivable", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Claim Settlement Income (or Loss Offset)", "type": "Revenue/Expense (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "If your sub-contractor damages goods, you pay your client first (Expense) and then 'subrogate' (reclaim) the money from the sub-contractor's insurance."
+  },
+  {
+    "slug": "logistics-lcl-consolidation-margin",
+    "category": "Logistics",
+    "title": "LCL Consolidation (Margin Accounting)",
+    "description": "Recording the revenue from 'Less than Container Load' clients versus the 'Full Container Load' cost paid to the ship.",
+    "entries": [
+      { "account": "Accounts Receivable (Multiple Clients)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Freight Cost (FCL Buy Rate)", "type": "Expense (+)", "dr": 3500.00, "cr": 0 },
+      { "account": "Freight Revenue (LCL Sell Rate)", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 },
+      { "account": "Accounts Payable (Shipping Line)", "type": "Liability (+)", "dr": 0, "cr": 3500.00 }
+    ],
+    "explanation": "This is the core profit model for Freight Forwarders: buying a whole container space and selling it in 'slices' to small shippers."
+  },
+  {
+    "slug": "logistics-bonded-warehouse-tax-liability",
+    "category": "Logistics",
+    "title": "Bonded Warehouse (Deferred Tax Tracking)",
+    "description": "Tracking the potential VAT/Duty liability for goods held in a bonded area (Memo Entry logic).",
+    "entries": [
+      { "account": "Inventory in Bond (Client Goods)", "type": "Disclosure", "dr": 10000.00, "cr": 0 },
+      { "account": "Contingent Duty Liability", "type": "Disclosure", "dr": 0, "cr": 1600.00 }
+    ],
+    "explanation": "In a bonded warehouse, taxes aren't paid until goods leave. The 3PL doesn't own the goods, but they are legally responsible to the government for the tax if the goods go missing."
+  },
+  {
+    "slug": "logistics-intermodal-drayage-cost",
+    "category": "Logistics",
+    "title": "Intermodal Drayage (Short-haul)",
+    "description": "Recording the cost of moving a container from a ship to a rail yard (Drayage).",
+    "entries": [
+      { "account": "Drayage Expense", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Drayage is a specific niche of logistics focusing only on the short distances between ports, warehouses, and rail heads."
+  },
+  {
+    "slug": "logistics-bunker-adjustment-factor-baf",
+    "category": "Logistics",
+    "title": "Bunker Adjustment Factor (BAF) Surcharge",
+    "description": "Recording the oceanic fuel surcharge (Bunker) charged by the shipping line.",
+    "entries": [
+      { "account": "Ocean Freight Cost", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Accounts Payable (Carrier)", "type": "Liability (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "BAF is a fluctuating charge based on the cost of ship fuel (Bunker). It is almost always billed separately from the base ocean freight."
+  },
+  {
+    "slug": "logistics-reverse-logistics-returns",
+    "category": "Logistics",
+    "title": "Reverse Logistics (Returns Handling)",
+    "description": "Recording the service fee for processing a returned E-commerce item.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 10.00, "cr": 0 },
+      { "account": "Returns Processing Revenue", "type": "Revenue (+)", "dr": 0, "cr": 10.00 }
+    ],
+    "explanation": "Handling returns is more labor-intensive than shipping. Shippers charge a 'Return Handling Fee' per item processed back into inventory."
+  },
+  {
+    "slug": "logistics-cargo-lien-accrual",
+    "category": "Logistics",
+    "title": "Cargo Lien (Bad Debt Defense)",
+    "description": "Reclassifying client inventory as a 'Lien' asset when the client fails to pay freight charges.",
+    "entries": [
+      { "account": "Inventory Held under Lien", "type": "Asset (Restricted)", "dr": 1000.00, "cr": 0 },
+      { "account": "Accounts Receivable (Overdue)", "type": "Asset (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Under maritime and transport law, if a client doesn't pay, the logistics provider can legally hold (and eventually sell) the goods to recover the debt."
+  },
+  {
+    "slug": "logistics-container-demurrage-income",
+    "category": "Logistics",
+    "title": "Demurrage Income (Company-Owned Containers)",
+    "description": "Revenue earned by a container leasing or shipping line when a client keeps a container too long.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Demurrage Revenue", "type": "Revenue (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "If you own the containers, the penalty paid by the client is your revenue (opposite of the Demurrage Expense entry)."
+  },
+  {
+    "slug": "logistics-vessel-time-charter-payment",
+    "category": "Logistics",
+    "title": "Ship Chartering (Time Charter Payment)",
+    "description": "Recording the massive pre-payment for 'renting' an entire ship for 30 days.",
+    "entries": [
+      { "account": "Prepaid Charter Hire", "type": "Asset (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "In high-level shipping, you don't book a container; you 'charter' the vessel. This is a prepaid expense that is amortized daily over the voyage."
+  },
+  {
+    "slug": "logistics-cross-docking-labor-fee",
+    "category": "Logistics",
+    "title": "Cross-Docking Service Revenue",
+    "description": "Recording revenue for moving goods directly from an incoming truck to an outgoing truck without storage.",
+    "entries": [
+      { "account": "Cash / Receivable", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Cross-Docking Revenue", "type": "Revenue (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Cross-docking saves storage costs but requires high labor intensity. It is billed as a 'throughput' fee."
+  },
+  {
+    "slug": "logistics-reefer-monitoring-fees",
+    "category": "Logistics",
+    "title": "Reefer Monitoring (Cold Chain)",
+    "description": "Charging for the specialized labor of checking temperatures on a cold-storage container every 4 hours.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Value-Added Service Revenue", "type": "Revenue (+)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "In Pharma or Food logistics, 'Monitoring' is a premium service billed separately from the freight itself."
+  },
+  {
+    "slug": "logistics-empty-container-storage-billing",
+    "category": "Logistics",
+    "title": "Empty Container Depot Storage",
+    "description": "Charging a shipping line for storing their empty 'empties' in your yard.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Depot Storage Revenue", "type": "Revenue (+)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Container yards make money not only on full goods but on the 'real estate' used by empty steel boxes waiting for their next voyage."
+  },
+
+  
+  {
+    "slug": "logistics-general-average-contribution",
+    "category": "Logistics",
+    "title": "General Average Contribution (Maritime Law)",
+    "description": "Recording a liability when a ship's captain sacrifices cargo or incurs extraordinary expense to save the vessel.",
+    "entries": [
+      { "account": "General Average Loss/Expense", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Provision for General Average", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Under maritime law (York-Antwerp Rules), if a ship catches fire and some cargo is thrown overboard to save the rest, ALL cargo owners must split the cost. This is a rare but massive financial hit for shippers."
+  },
+  {
+    "slug": "logistics-canal-toll-accrual-suez-panama",
+    "category": "Logistics",
+    "title": "Canal Transit Tolls (Suez / Panama)",
+    "description": "Accruing the massive fees required for a vessel to pass through a major international canal.",
+    "entries": [
+      { "account": "Voyage Operating Expense", "type": "Expense (+)", "dr": 250000.00, "cr": 0 },
+      { "account": "Canal Authority Payable", "type": "Liability (+)", "dr": 0, "cr": 250000.00 }
+    ],
+    "explanation": "Canal tolls for large ships can cost hundreds of thousands of dollars. For shipping lines, these are specific 'Voyage Costs' that must be accrued the moment the ship enters the queue."
+  },
+  {
+    "slug": "logistics-fuel-derivative-hedge-gain",
+    "category": "Logistics",
+    "title": "Fuel Price Hedge (Derivative Adjustment)",
+    "description": "Adjusting the fair value of a fuel swap contract used to lock in diesel or bunker prices.",
+    "entries": [
+      { "account": "Derivative Asset (Hedge)", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Unrealized Gain on Fuel Hedge (OCI)", "type": "Equity (+)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Logistics giants use derivatives to stay profitable if fuel prices spike. Under IFRS 9, these must be revalued monthly, usually through Other Comprehensive Income (OCI)."
+  },
+  {
+    "slug": "logistics-incoterms-ddp-duty-recognition",
+    "category": "Logistics",
+    "title": "DDP Sale (Duty Paid Recognition)",
+    "description": "Recording a sale under 'Delivered Duty Paid' where the seller is responsible for import taxes.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 1160.00, "cr": 0 },
+      { "account": "Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1000.00 },
+      { "account": "Import Duty Expense", "type": "Expense (+)", "dr": 160.00, "cr": 0 }
+    ],
+    "explanation": "In DDP shipments, the logistics provider (or seller) absorbs the tax. Unlike a pass-through, the duty is a direct operating expense of the sale."
+  },
+  {
+    "slug": "logistics-stevedoring-labor-contract",
+    "category": "Logistics",
+    "title": "Stevedoring & Shore Handling Fees",
+    "description": "Recording the cost of specialized dock labor used to load/unload a ship.",
+    "entries": [
+      { "account": "Direct Operating Cost: Stevedoring", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Accounts Payable: Port Labor", "type": "Liability (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Stevedoring is a specialized labor category in port logistics. It is a variable cost that scales directly with tonnage or container count."
+  },
+  {
+    "slug": "logistics-vessel-salvage-award-receivable",
+    "category": "Logistics",
+    "title": "Maritime Salvage Award (Revenue)",
+    "description": "Recording revenue earned for assisting a vessel in distress at sea.",
+    "entries": [
+      { "account": "Salvage Receivable", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Other Operating Revenue: Salvage", "type": "Revenue (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Under international law, if your ship saves another ship, you are entitled to a 'Salvage Award' (a % of the value saved). This is recognized when the maritime court/arbitrator finalizes the award."
+  },
+  {
+    "slug": "logistics-emissions-trading-ets-accrual",
+    "category": "Logistics",
+    "title": "Carbon Emissions (ETS) Liability",
+    "description": "Accruing the cost of carbon credits required for international shipping emissions (EU ETS logic).",
+    "entries": [
+      { "account": "Environmental Compliance Expense", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Accrued Emissions Liability", "type": "Liability (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Modern logistics (especially in Europe) must pay for their carbon footprint. This entry matches the cost of emissions to the month the voyage occurred."
+  },
+  {
+    "slug": "logistics-project-heavy-lift-mobilization",
+    "category": "Logistics",
+    "title": "Project Logistics: Mobilization Fee",
+    "description": "Recording the cost of moving specialized heavy-lift cranes to a job site.",
+    "entries": [
+      { "account": "Contract Assets / WIP", "type": "Asset (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "In 'Project Logistics' (moving windmills or factories), getting the equipment to the site (Mobilization) is a massive upfront cost that is capitalized as WIP and recognized as revenue over the project life."
+  },
+  {
+    "slug": "logistics-port-agency-disbursement-account",
+    "category": "Logistics",
+    "title": "Port Agency Disbursement (D/A)",
+    "description": "Handling funds provided by a ship owner to an agent to pay for port expenses.",
+    "entries": [
+      { "account": "Cash (Restricted Client Funds)", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Disbursement Account (D/A) Liability", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Port agents act as 'bankers' for ships. They receive a lump sum (Proforma D/A), pay the port, and return the balance. It is a pass-through on the balance sheet."
+  },
+  {
+    "slug": "logistics-supply-chain-finance-factoring",
+    "category": "Logistics",
+    "title": "Reverse Factoring (Supplier Payment)",
+    "description": "When a bank pays a logistics sub-contractor early on behalf of the main company.",
+    "entries": [
+      { "account": "Accounts Payable: Carrier", "type": "Liability (-)", "dr": 1000.00, "cr": 0 },
+      { "account": "Bank Financing (SCF Liability)", "type": "Liability (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "In Supply Chain Finance (SCF), the logistics firm moves its debt from a 'Trade Payable' to a 'Bank Debt' because the bank paid the trucker immediately."
+  },
+
+
+  
+  {
+    "slug": "manufacturing-raw-materials-issue-to-wip",
+    "category": "Manufacturing",
+    "title": "Issuing Raw Materials to Production",
+    "description": "Moving the cost of materials from the warehouse to the assembly line (Work-in-Process).",
+    "entries": [
+      { "account": "Work-in-Process (WIP) Inventory", "type": "Asset (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Raw Materials Inventory", "type": "Asset (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "This represents the moment raw steel or plastic is 'consumed' by a specific production job."
+  },
+  {
+    "slug": "manufacturing-indirect-materials-issue",
+    "category": "Manufacturing",
+    "title": "Usage of Indirect Materials (Factory Supplies)",
+    "description": "Recording materials used in the factory that aren't part of the final product (e.g., lubricants, cleaning rags).",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Factory Supplies Inventory", "type": "Asset (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "Indirect materials cannot be traced to a single unit, so they flow through the Overhead account instead of WIP."
+  },
+  {
+    "slug": "manufacturing-applied-overhead-standard",
+    "category": "Manufacturing",
+    "title": "Applying Manufacturing Overhead (Applied)",
+    "description": "Allocating estimated indirect costs to products based on a predetermined rate (e.g., $5 per machine hour).",
+    "entries": [
+      { "account": "Work-in-Process (WIP) Inventory", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Manufacturing Overhead (Applied)", "type": "Contra-Expense (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "This is a core CMA concept. Since actual overhead isn't known until the bills arrive, we use an 'Applied' rate to cost products in real-time."
+  },
+  {
+    "slug": "manufacturing-completion-of-goods-cogm",
+    "category": "Manufacturing",
+    "title": "Transfer of WIP to Finished Goods (COGM)",
+    "description": "Recording the completion of the manufacturing process.",
+    "entries": [
+      { "account": "Finished Goods Inventory", "type": "Asset (+)", "dr": 6700.00, "cr": 0 },
+      { "account": "Work-in-Process (WIP) Inventory", "type": "Asset (-)", "dr": 0, "cr": 6700.00 }
+    ],
+    "explanation": "This represents the 'Cost of Goods Manufactured'. The product is now ready for sale and sitting in the shipping warehouse."
+  },
+  {
+    "slug": "manufacturing-sale-of-finished-goods-cogs",
+    "category": "Manufacturing",
+    "title": "Sale of Finished Goods (COGS Recognition)",
+    "description": "Recording the cost of the product sold to a customer.",
+    "entries": [
+      { "account": "Cost of Goods Sold (COGS)", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Finished Goods Inventory", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "This follows the matching principle—expensing the production cost only when the revenue is earned."
+  },
+  {
+    "slug": "manufacturing-factory-utility-accrual",
+    "category": "Manufacturing",
+    "title": "Factory Utility Accrual (Electricity/Water)",
+    "description": "Recording the actual cost of running the machines for the month.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Utilities Payable", "type": "Liability (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "Factory utilities are a component of actual overhead. They are compared against 'Applied Overhead' at month-end."
+  },
+  {
+    "slug": "manufacturing-factory-rent-allocation",
+    "category": "Manufacturing",
+    "title": "Factory Rent vs. Admin Office Rent",
+    "description": "Splitting rent between production and administrative use.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Rent Expense (Administrative)", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Rent for the production floor is a product cost (Overhead), while rent for the sales office is a period cost (Expense)."
+  },
+  {
+    "slug": "manufacturing-indirect-labor-supervisor",
+    "category": "Manufacturing",
+    "title": "Indirect Labor (Supervisor Salaries)",
+    "description": "Recording wages for factory staff who don't touch the product directly.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 4000.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 4000.00 }
+    ],
+    "explanation": "Supervisor and maintenance salaries are 'productized' via overhead application, rather than being expensed directly like admin salaries."
+  },
+  {
+    "slug": "manufacturing-factory-equipment-depreciation",
+    "category": "Manufacturing",
+    "title": "Factory Equipment Depreciation",
+    "description": "Recording the wear and tear of production machinery.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Unlike a delivery truck, factory machine depreciation is a component of product cost (Overhead)."
+  },
+  {
+    "slug": "manufacturing-raw-material-import-freight",
+    "category": "Manufacturing",
+    "title": "Inbound Freight on Raw Materials",
+    "description": "Adding the cost of shipping materials to the factory into the inventory value.",
+    "entries": [
+      { "account": "Raw Materials Inventory", "type": "Asset (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Under IAS 2, all costs to bring inventory to its present location and condition must be capitalized."
+  },
+
+
+  {
+    "slug": "manufacturing-material-price-variance-purchase",
+    "category": "Manufacturing",
+    "title": "Material Price Variance (at Purchase)",
+    "description": "Recording the difference between actual price paid and standard price allowed.",
+    "entries": [
+      { "account": "Raw Materials (at Standard)", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Material Price Variance (Unfavorable)", "type": "Expense (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 1050.00 }
+    ],
+    "explanation": "This entry highlights immediately if the purchasing department is overpaying for steel/plastic compared to the budget."
+  },
+  {
+    "slug": "manufacturing-material-usage-variance",
+    "category": "Manufacturing",
+    "title": "Material Quantity (Usage) Variance",
+    "description": "Recording the excess material used in production compared to the standard requirement.",
+    "entries": [
+      { "account": "Work-in-Process (at Standard)", "type": "Asset (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Material Usage Variance (Unfavorable)", "type": "Expense (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Raw Materials (at Standard)", "type": "Asset (-)", "dr": 0, "cr": 900.00 }
+    ],
+    "explanation": "This entry highlights if the factory floor is wasting material (scrapping too much) or if the machines are inefficient."
+  },
+  {
+    "slug": "manufacturing-labor-rate-variance",
+    "category": "Manufacturing",
+    "title": "Direct Labor Rate Variance",
+    "description": "Recording the difference between actual wages paid and standard labor rates.",
+    "entries": [
+      { "account": "Work-in-Process (at Standard)", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Labor Rate Variance (Favorable)", "type": "Gain (-)", "dr": 0, "cr": 100.00 },
+      { "account": "Wages Payable (Actual)", "type": "Liability (+)", "dr": 0, "cr": 1900.00 }
+    ],
+    "explanation": "If we used cheaper, less-skilled labor than the budget planned, we record a 'Favorable' rate variance."
+  },
+  {
+    "slug": "manufacturing-labor-efficiency-variance",
+    "category": "Manufacturing",
+    "title": "Direct Labor Efficiency Variance",
+    "description": "Recording the extra hours worked compared to the standard time allowed for a job.",
+    "entries": [
+      { "account": "Work-in-Process (at Standard)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Labor Efficiency Variance (Unfavorable)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Labor Applied (Actual Hours)", "type": "Clearing", "dr": 0, "cr": 5500.00 }
+    ],
+    "explanation": "This is a key KPI for factory managers. It shows how much money was lost because production took longer than it should have."
+  },
+
+
+  {
+    "slug": "manufacturing-variable-overhead-spending-variance",
+    "category": "Manufacturing",
+    "title": "Variable Overhead Spending Variance",
+    "description": "Recording the difference between actual variable overhead costs and the amount expected for the actual hours worked.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Variable OH Spending Variance (Unfavorable)", "type": "Expense (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Accounts Payable / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 550.00 }
+    ],
+    "explanation": "This tells you if you paid more for electricity or lubricants per hour of machine time than you planned."
+  },
+  {
+    "slug": "manufacturing-variable-overhead-efficiency-variance",
+    "category": "Manufacturing",
+    "title": "Variable Overhead Efficiency Variance",
+    "description": "Recording the cost impact of using more or fewer machine hours than the standard allowed for production.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Applied)", "type": "Contra-Expense (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Variable OH Efficiency Variance (Unfavorable)", "type": "Expense (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (-)", "dr": 0, "cr": 1100.00 }
+    ],
+    "explanation": "If your machines are slow and take longer to make a product, you use more electricity. This entry captures that inefficiency cost."
+  },
+  {
+    "slug": "manufacturing-fixed-overhead-budget-variance",
+    "category": "Manufacturing",
+    "title": "Fixed Overhead Budget (Spending) Variance",
+    "description": "Recording the difference between actual fixed costs (like factory insurance) and the budgeted amount.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 2100.00, "cr": 0 },
+      { "account": "Fixed OH Budget Variance (Unfavorable)", "type": "Expense (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 2200.00 }
+    ],
+    "explanation": "Fixed costs shouldn't change with production volume. If they do (e.g., insurance rates go up), it is captured here."
+  },
+  {
+    "slug": "manufacturing-fixed-overhead-volume-variance",
+    "category": "Manufacturing",
+    "title": "Fixed Overhead Volume Variance",
+    "description": "Adjusting for the 'under-utilization' of the factory's capacity.",
+    "entries": [
+      { "account": "Fixed OH Volume Variance (Unfavorable)", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Manufacturing Overhead (Applied)", "type": "Contra-Expense (+)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "If you built a factory for 10,000 units but only made 8,000, your 'fixed cost per unit' is too high. This variance highlights that idle capacity cost."
+  },
+
+
+
+  {
+    "slug": "manufacturing-normal-spoilage-to-wip",
+    "category": "Manufacturing",
+    "title": "Recording Normal Spoilage",
+    "description": "Adding the cost of expected/unavoidable waste to the cost of the good units produced.",
+    "entries": [
+      { "account": "Work-in-Process (Good Units)", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Work-in-Process (Spoiled Units)", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Normal spoilage is considered a product cost. The 'good' products absorb the cost of the 'bad' ones that are expected in a normal run."
+  },
+  {
+    "slug": "manufacturing-abnormal-spoilage-loss",
+    "category": "Manufacturing",
+    "title": "Recording Abnormal Spoilage (Loss)",
+    "description": "Recording a loss for unexpected waste (e.g., machine error or operator negligence).",
+    "entries": [
+      { "account": "Loss from Abnormal Spoilage", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Work-in-Process (WIP)", "type": "Asset (-)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "Abnormal spoilage is NOT a product cost. It goes directly to the P&L as a separate line item so management can investigate the failure."
+  },
+  {
+    "slug": "manufacturing-rework-costs-normal",
+    "category": "Manufacturing",
+    "title": "Normal Rework Costs",
+    "description": "Recording the labor and material used to fix a defective unit that was caught by QC.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Wages Payable / Raw Materials", "type": "Liability/Asset (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "If rework is expected, the cost is usually charged to Overhead and spread across all products."
+  },
+  {
+    "slug": "manufacturing-machine-preventive-maintenance",
+    "category": "Manufacturing",
+    "title": "Routine Preventive Maintenance",
+    "description": "Recording the cost of scheduled servicing for factory robots or assembly belts.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Cash / Maintenance Supplies", "type": "Asset (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Routine maintenance is an indirect production cost. It is essential for keeping the factory running and is part of actual overhead."
+  },
+  {
+    "slug": "manufacturing-machine-breakdown-repair",
+    "category": "Manufacturing",
+    "title": "Emergency Breakdown Repair",
+    "description": "Recording the unplanned repair cost of a machine that halted production.",
+    "entries": [
+      { "account": "Repair & Maintenance Expense", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Accounts Payable / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Major unplanned repairs are often expensed immediately as a period cost to highlight the financial impact of the downtime."
+  },
+  {
+    "slug": "manufacturing-tooling-molds-replacement",
+    "category": "Manufacturing",
+    "title": "Replacement of Consumable Tooling/Molds",
+    "description": "Recording the purchase of specialized molds that wear out after a set number of uses.",
+    "entries": [
+      { "account": "Factory Supplies (Tooling)", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Molds are often 'prepaid' assets. They are expensed into Overhead based on the number of units they produce (Units of Production method)."
+  },
+  {
+    "slug": "manufacturing-inventory-step-down-allocation",
+    "category": "Manufacturing",
+    "title": "Service Department Cost Allocation (Step-down)",
+    "description": "Allocating the cost of the Maintenance department to the Production departments.",
+    "entries": [
+      { "account": "Overhead: Assembly Dept", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Overhead: Finishing Dept", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Overhead: Maintenance Dept", "type": "Expense (-)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Maintenance doesn't 'make' anything, but its costs must be moved to the departments that actually produce units so they can be included in the product cost."
+  },
+
+
+  {
+    "slug": "manufacturing-nrv-write-down-finished-goods",
+    "category": "Manufacturing",
+    "title": "Inventory Write-down to Net Realizable Value (NRV)",
+    "description": "Adjusting the value of finished goods when the market price falls below the production cost.",
+    "entries": [
+      { "account": "Cost of Goods Sold (or Loss)", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Finished Goods Inventory", "type": "Asset (-)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Under IAS 2, inventory must be reported at the lower of cost or NRV. If you can't sell the product for more than it cost to make, you must take the loss immediately."
+  },
+  {
+    "slug": "manufacturing-raw-material-obsolescence-reserve",
+    "category": "Manufacturing",
+    "title": "Provision for Raw Material Obsolescence",
+    "description": "Creating a reserve for materials that are expiring or no longer needed due to product design changes.",
+    "entries": [
+      { "account": "Inventory Obsolescence Expense", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Allowance for Obsolescence", "type": "Contra-Asset (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Instead of removing the material physically, we create a 'bucket' (allowance) to show that some of our stock is likely worthless."
+  },
+  {
+    "slug": "manufacturing-idle-capacity-expense",
+    "category": "Manufacturing",
+    "title": "Unallocated Overhead (Idle Capacity)",
+    "description": "Charging fixed overhead to the P&L because production volume was significantly below normal capacity.",
+    "entries": [
+      { "account": "Idle Capacity Expense", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "IAS 2 states that fixed overhead should be allocated to products based on 'normal' capacity. If the factory is half-empty, that 'wasted' rent and insurance cannot be added to the product cost; it must be expensed as a loss."
+  },
+  {
+    "slug": "manufacturing-self-constructed-asset-labor",
+    "category": "Manufacturing",
+    "title": "Capitalizing Labor for In-House Machine Build",
+    "description": "Recording the cost of factory engineers building a new piece of production equipment for the company's own use.",
+    "entries": [
+      { "account": "Construction in Progress (Asset)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Salaries & Wages (Factory)", "type": "Expense (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "If your own staff builds a machine, their salary for that time is not a 'period expense.' It is part of the cost of the machine and must be moved to the balance sheet."
+  },
+  {
+    "slug": "manufacturing-major-machine-overhaul",
+    "category": "Manufacturing",
+    "title": "Major Overhaul (Asset Life Extension)",
+    "description": "Capitalizing a significant repair that increases the output or life of a machine.",
+    "entries": [
+      { "account": "Machinery & Equipment", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Minor repairs are expensed. However, a major rebuild that makes a machine 'better than new' is capitalized and depreciated over the new remaining life."
+  },
+  {
+    "slug": "manufacturing-specialized-tooling-impairment",
+    "category": "Manufacturing",
+    "title": "Impairment of Specialized Tooling",
+    "description": "Writing off the value of molds or tools because the specific product they make has been discontinued.",
+    "entries": [
+      { "account": "Loss on Impairment", "type": "Expense (+)", "dr": 4000.00, "cr": 0 },
+      { "account": "Accumulated Impairment (Tooling)", "type": "Contra-Asset (+)", "dr": 0, "cr": 4000.00 }
+    ],
+    "explanation": "If a tool can only make 'Product X' and you stop selling 'Product X,' that tool is worthless regardless of its physical condition. This is a permanent loss."
+  },
+  {
+    "slug": "manufacturing-contract-manufacturing-tolling",
+    "category": "Manufacturing",
+    "title": "Tolling Arrangement Revenue (Service Only)",
+    "description": "Recording revenue when the factory processes raw materials owned by a customer.",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Manufacturing Service Revenue", "type": "Revenue (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "In a 'Tolling' deal, the factory doesn't buy raw materials. It just sells its labor and machine time. No COGS (Inventory) is recorded, only the operating costs of the factory."
+  },
+  {
+    "slug": "manufacturing-safety-equipment-ppe",
+    "category": "Manufacturing",
+    "title": "Purchase of Personal Protective Equipment (PPE)",
+    "description": "Recording the purchase of safety gear (helmets, gloves, goggles) for factory workers.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Safety gear is an indirect production cost (Overhead). It is required for the factory to operate safely."
+  },
+  {
+    "slug": "manufacturing-prototype-development-costs",
+    "category": "Manufacturing",
+    "title": "Product Prototype Development (Expensing Phase)",
+    "description": "Recording materials and labor used to create an initial prototype before mass production.",
+    "entries": [
+      { "account": "Research & Development Expense", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Raw Materials / Wages Payable", "type": "Mixed", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Unless specific capitalization criteria are met, the cost of 'testing and trying' new designs is expensed immediately as R&D."
+  },
+  {
+    "slug": "manufacturing-byproduct-inventory-recognition",
+    "category": "Manufacturing",
+    "title": "Recognizing Byproduct Inventory at Harvest",
+    "description": "Recording the value of a byproduct when it is produced, reducing the cost of the main product.",
+    "entries": [
+      { "account": "Byproduct Inventory", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Work-in-Process (Main Product)", "type": "Asset (-)", "dr": 0, "cr": 100.00 }
+    ],
+    "explanation": "Instead of waiting to sell the byproduct, some factories recognize its value immediately to lower the 'net cost' of the main items they are making."
+  },
+
+
+
+  {
+    "slug": "manufacturing-outsourced-production-contract",
+    "category": "Manufacturing",
+    "title": "Outsourced Manufacturing (Contract Manufacturer)",
+    "description": "Recording the cost when an external factory (CMO) produces the product for you.",
+    "entries": [
+      { "account": "Finished Goods Inventory", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Raw Materials Inventory (at CM)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 },
+      { "account": "Contract Manufacturing Expense", "type": "Expense (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Even if you don't make it, you own the materials. When the external factory finishes, you convert your raw materials plus their service fee into Finished Goods."
+  },
+  {
+    "slug": "manufacturing-variance-proration-yearend",
+    "category": "Manufacturing",
+    "title": "Year-End Variance Proration",
+    "description": "Allocating variances across WIP, Finished Goods, and COGS rather than just dumping them in COGS.",
+    "entries": [
+      { "account": "Work-in-Process Inventory", "type": "Asset (+)", "dr": 100.00, "cr": 0 },
+      { "account": "Finished Goods Inventory", "type": "Asset (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Cost of Goods Sold", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Material Price Variance", "type": "Expense (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "If variances are 'material,' auditors require you to spread the extra cost across all inventory that was touched by those costs, not just the items already sold."
+  },
+  {
+    "slug": "manufacturing-inter-plant-wip-transfer",
+    "category": "Manufacturing",
+    "title": "Inter-Plant WIP Transfer",
+    "description": "Moving semi-finished goods from one company factory to another for final processing.",
+    "entries": [
+      { "account": "WIP: Factory B (Finishing)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "WIP: Factory A (Assembly)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "This tracks the physical location of value within the company's internal supply chain."
+  },
+  {
+    "slug": "manufacturing-aro-machine-dismantling",
+    "category": "Manufacturing",
+    "title": "Asset Retirement Obligation (ARO) Accrual",
+    "description": "Recording the future cost of safely dismantling heavy machinery at the end of its life.",
+    "entries": [
+      { "account": "Machinery & Equipment", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "ARO Liability", "type": "Liability (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "If a specialized machine requires a $2,000 clean-up cost in 10 years, you must capitalize that cost today and depreciate it over the machine's life."
+  },
+  {
+    "slug": "manufacturing-vendor-managed-inventory-vmi",
+    "category": "Manufacturing",
+    "title": "Vendor Managed Inventory (Consignment Buy)",
+    "description": "Recording the purchase of raw materials that were already sitting in your warehouse but owned by the vendor.",
+    "entries": [
+      { "account": "Raw Materials Inventory", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "In VMI, you only 'buy' the material and record the liability the moment you pull the item from the shelf to use it in production."
+  },
+  {
+    "slug": "manufacturing-environmental-fine-non-deductible",
+    "category": "Manufacturing",
+    "title": "Environmental Penalty (Non-Deductible)",
+    "description": "Recording a government fine for a factory emission violation.",
+    "entries": [
+      { "account": "Environmental Fines & Penalties", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "While this is a factory expense, it is usually disallowed for tax purposes. It is a 'Period Cost' and never part of the product cost."
+  },
+  {
+    "slug": "manufacturing-product-recall-provision",
+    "category": "Manufacturing",
+    "title": "Provision for Product Recall",
+    "description": "Estimating and recording the cost of a future product recall based on a known defect.",
+    "entries": [
+      { "account": "Product Recall Expense", "type": "Expense (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Provision for Recalls", "type": "Liability (+)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "Following the Prudence principle, if you know a batch is bad, you must record the estimated cost of retrieving and fixing it immediately."
+  },
+  {
+    "slug": "manufacturing-energy-efficiency-rebate",
+    "category": "Manufacturing",
+    "title": "Government Energy Efficiency Grant",
+    "description": "Recording a grant received for installing solar panels or high-efficiency motors in the factory.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Deferred Grant Income (Liability)", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Grants for assets are recognized as revenue over the same period the asset is depreciated, to match the benefit to the cost."
+  },
+  {
+    "slug": "manufacturing-intercompany-profit-elimination",
+    "category": "Manufacturing",
+    "title": "Unrealized Intercompany Profit Elimination",
+    "description": "Eliminating the 'markup' added when the manufacturing branch sells inventory to the retail branch of the same company.",
+    "entries": [
+      { "account": "Retained Earnings (or Revenue)", "type": "Equity (-)", "dr": 500.00, "cr": 0 },
+      { "account": "Inventory (Asset)", "type": "Asset (-)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "If the factory sells a unit to its own store for $10 profit, that profit isn't 'real' until the store sells it to a real customer. This entry 'cleans' the inventory value for consolidation."
+  },
+  {
+    "slug": "manufacturing-royalty-expense-patented-process",
+    "category": "Manufacturing",
+    "title": "Royalty for Patented Production Process",
+    "description": "Recording a fee paid to a 3rd party for every unit produced using their technology.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 2.00, "cr": 0 },
+      { "account": "Accrued Royalties Payable", "type": "Liability (+)", "dr": 0, "cr": 2.00 }
+    ],
+    "explanation": "Licensing fees for a production method are part of the 'Indirect Product Cost' and flow through overhead into the unit cost."
+  },
+  {
+    "slug": "manufacturing-inventory-periodic-to-perpetual",
+    "category": "Manufacturing",
+    "title": "Physical Count Adjustment (Shortage)",
+    "description": "Adjusting the digital system to match the physical count in the warehouse.",
+    "entries": [
+      { "account": "Inventory Shrinkage Expense", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Raw Materials / Finished Goods", "type": "Asset (-)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "The 'Moment of Truth' where errors, theft, or evaporation are recorded as a loss to ensure the Balance Sheet is accurate."
+  },
+  {
+    "slug": "manufacturing-custom-machine-installation",
+    "category": "Manufacturing",
+    "title": "Machine Installation & Testing Costs",
+    "description": "Capitalizing the technical labor and materials used to set up a new production line.",
+    "entries": [
+      { "account": "Machinery & Equipment", "type": "Asset (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Cash / Wages Payable", "type": "Mixed", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Under IAS 16, all costs to bring an asset to 'working condition for its intended use' must be added to the asset value."
+  },
+  {
+    "slug": "manufacturing-staff-training-capitalization-limit",
+    "category": "Manufacturing",
+    "title": "New Machine Training (Expensing)",
+    "description": "Recording the cost of training staff to use a new robotic arm.",
+    "entries": [
+      { "account": "Staff Training Expense", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Crucial distinction: You capitalize the machine setup, but you generally MUST expense the staff training. Knowledge cannot be 'owned' as a tangible asset."
+  },
+  {
+    "slug": "manufacturing-production-tax-excise",
+    "category": "Manufacturing",
+    "title": "Excise Duty on Production",
+    "description": "Recording the tax owed to the government for producing specific goods (e.g., tobacco, fuel, luxury items).",
+    "entries": [
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Excise Tax Payable", "type": "Liability (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "In many countries, tax is triggered at the 'Moment of Manufacture,' not the moment of sale. This tax becomes a part of the product's cost."
+  },
+  {
+    "slug": "manufacturing-green-energy-carbon-credit-sale",
+    "category": "Manufacturing",
+    "title": "Sale of Excess Carbon Credits",
+    "description": "Recording revenue when a clean factory sells its unused pollution permits.",
+    "entries": [
+      { "account": "Cash / Receivable", "type": "Asset (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Other Operating Income (Carbon Credits)", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "If a factory operates below its emission limit, it can monetize its efficiency. This is a non-core revenue stream."
+  },
+  {
+    "slug": "manufacturing-research-to-development-transition",
+    "category": "Manufacturing",
+    "title": "Capitalizing Development Costs (Success)",
+    "description": "Moving costs from the P&L to the Balance Sheet once a new product becomes commercially viable.",
+    "entries": [
+      { "account": "Capitalized Development (Intangible)", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "R&D Expense (Reversal)", "type": "Expense (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Under IFRS (IAS 38), once a product reaches 'Technical Feasibility,' you stop expensing and start capitalizing."
+  },
+  {
+    "slug": "manufacturing-direct-labor-shift-differential",
+    "category": "Manufacturing",
+    "title": "Night Shift Premium (Labor Cost)",
+    "description": "Recording the extra wages paid to workers on the 2nd or 3rd shift.",
+    "entries": [
+      { "account": "Work-in-Process (WIP)", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Overtime and shift premiums paid to direct laborers are part of the 'Direct Labor' component of product cost."
+  },
+  {
+    "slug": "manufacturing-over-applied-overhead-closing",
+    "category": "Manufacturing",
+    "title": "Closing Over-applied Overhead",
+    "description": "Adjusting COGS when the factory was more efficient than the standard estimate.",
+    "entries": [
+      { "account": "Manufacturing Overhead (Applied)", "type": "Clearing", "dr": 5000.00, "cr": 0 },
+      { "account": "Manufacturing Overhead (Control)", "type": "Expense (-)", "dr": 0, "cr": 4500.00 },
+      { "account": "Cost of Goods Sold", "type": "Expense (-)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "The final closing entry to zero out the temporary overhead accounts and reduce COGS for the 'savings' achieved."
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ]
+
+
