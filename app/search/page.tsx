@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react"; // 1. We imported Suspense
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import entriesData from "../../data/entries.json"; 
@@ -22,11 +23,9 @@ interface Entry {
 
 const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-// Upgraded to highlight multiple separate words
 function Highlight({ text, query }: { text: string; query: string }) {
   if (!query.trim()) return <>{text}</>;
   
-  // Split query into words and create a regex to highlight any of them
   const terms = query.trim().split(/\s+/).filter(Boolean).map(escapeRegExp);
   const regex = new RegExp(`(\\b(?:${terms.join('|')}))`, "gi");
   
@@ -47,17 +46,16 @@ function Highlight({ text, query }: { text: string; query: string }) {
   );
 }
 
-export default function SearchPage() {
+// 2. We renamed the main logic to "SearchContent"
+function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q")?.trim() || "";
 
-  // 1. Tokenize the search: Split the user's typing into individual words
   const searchTerms = query.toLowerCase().split(/\s+/).filter(Boolean);
 
   const results = (entriesData as Entry[]).filter((entry) => {
     if (searchTerms.length === 0) return false;
 
-    // 2. Pool all the data of the entry into one giant searchable string
     const searchableContent = [
       entry.title,
       entry.category,
@@ -66,10 +64,7 @@ export default function SearchPage() {
       ...(entry.entries || []).map(row => row.account)
     ].join(" ").toLowerCase();
 
-    // 3. AND Logic: EVERY word the user typed must exist in this entry
     return searchTerms.every(term => {
-      // \b ensures it matches the start of a word (so "rent" won't match "current")
-      // but "unrestr" will match "unrestricted"
       const regex = new RegExp(`\\b${escapeRegExp(term)}`, 'i');
       return regex.test(searchableContent);
     });
@@ -78,7 +73,6 @@ export default function SearchPage() {
   return (
     <main className="min-h-screen bg-white font-sans text-slate-900 py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        
         <div className="mb-16 pb-8 border-b border-slate-100">
           <h1 className="text-4xl font-black text-slate-900 tracking-tight">
             Search results for: <span className="text-emerald-600">&quot;{query}&quot;</span>
@@ -93,7 +87,6 @@ export default function SearchPage() {
             {results.map((entry) => {
               let snippet = entry.description;
               
-              // Find the snippet based on the FIRST word the user typed
               const firstTerm = searchTerms[0];
               if (firstTerm) {
                 const matchRegex = new RegExp(`\\b${escapeRegExp(firstTerm)}`, 'i');
@@ -137,8 +130,24 @@ export default function SearchPage() {
             <p className="text-slate-400 mt-2 max-w-xs mx-auto text-sm leading-relaxed">Try using fewer words or broader terms.</p>
           </div>
         )}
-        
       </div>
     </main>
+  );
+}
+
+// 3. We create a NEW default export that wraps the SearchContent in <Suspense>
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen bg-white flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4 text-slate-400">
+          {/* A professional loading spinner */}
+          <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="font-bold tracking-widest uppercase text-xs">Loading Hub Data...</p>
+        </div>
+      </main>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 }
