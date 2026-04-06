@@ -7268,7 +7268,2090 @@
       { "account": "Utilities Expense", "type": "Expense (-)", "dr": 0, "cr": 680.00 }
     ],
     "explanation": "Reversing entries are made on the first day of a new period so that when the actual vendor invoice arrives, the net expense recorded is correct with no double counting."
+  },
+
+  {
+    "slug": "re-cash-purchase-building",
+    "category": "Real Estate",
+    "title": "Cash Purchase of Commercial Building",
+    "description": "Recording the outright purchase of a commercial building paid in full.",
+    "entries": [
+      { "account": "Building (Fixed Asset)", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "The building is recorded at its full purchase price. Land and building costs should be separated because land is never depreciated, while the building is depreciated over its useful life."
+  },
+  {
+    "slug": "re-mortgage-financed-purchase",
+    "category": "Real Estate",
+    "title": "Mortgage-Financed Property Purchase",
+    "description": "Buying a building with a 20% down payment and an 80% bank mortgage.",
+    "entries": [
+      { "account": "Building (Fixed Asset)", "type": "Asset (+)", "dr": 1000000.00, "cr": 0 },
+      { "account": "Cash / Bank (Down Payment)", "type": "Asset (-)", "dr": 0, "cr": 200000.00 },
+      { "account": "Mortgage Loan Payable", "type": "Liability (+)", "dr": 0, "cr": 800000.00 }
+    ],
+    "explanation": "The full fair value of the building is recorded as an asset. The down payment reduces cash and the remaining balance becomes a long-term liability to the bank."
+  },
+  {
+    "slug": "re-title-legal-fees-capitalized",
+    "category": "Real Estate",
+    "title": "Title Registration & Legal Fees (Capitalized)",
+    "description": "Capitalizing legal fees, title registration costs, and notary charges into the cost of the property.",
+    "entries": [
+      { "account": "Building / Land (Fixed Asset)", "type": "Asset (+)", "dr": 8500.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 8500.00 }
+    ],
+    "explanation": "Under IAS 16, all costs necessary to bring the asset to its intended use must be capitalized. Legal fees, title search costs, and registration charges are part of the acquisition cost of the property."
+  },
+  {
+    "slug": "re-property-transfer-tax",
+    "category": "Real Estate",
+    "title": "Property Transfer Tax (Land Registration Fee)",
+    "description": "Recording the government transfer tax paid when registering a property in Jordan.",
+    "entries": [
+      { "account": "Building / Land (Fixed Asset)", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "In Jordan, the land registration fee paid to the Lands & Survey Department is a capitalized acquisition cost, not an expense. It forms part of the property's total cost on the balance sheet."
+  },
+  {
+    "slug": "re-due-diligence-costs",
+    "category": "Real Estate",
+    "title": "Pre-Acquisition Due Diligence Costs",
+    "description": "Paying for property surveys, environmental assessments, and structural inspections before completing a purchase.",
+    "entries": [
+      { "account": "Building / Land (Fixed Asset)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Due diligence costs directly attributable to acquiring a specific property are capitalized as part of the asset cost. If the deal falls through, these costs are expensed immediately."
+  },
+  {
+    "slug": "re-failed-acquisition-costs-expensed",
+    "category": "Real Estate",
+    "title": "Failed Property Acquisition Costs (Expensed)",
+    "description": "Writing off legal and survey costs for a property deal that did not complete.",
+    "entries": [
+      { "account": "Acquisition Costs Expense", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "If an acquisition is abandoned, the costs cannot be capitalized because no asset was acquired. They must be immediately expensed to the income statement."
+  },
+  {
+    "slug": "re-land-building-cost-split",
+    "category": "Real Estate",
+    "title": "Land and Building Cost Allocation",
+    "description": "Splitting a lump-sum property purchase price between land and building based on an independent valuation.",
+    "entries": [
+      { "account": "Land", "type": "Asset (+)", "dr": 300000.00, "cr": 0 },
+      { "account": "Building", "type": "Asset (+)", "dr": 700000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1000000.00 }
+    ],
+    "explanation": "Land and building must be recorded separately. Land is never depreciated under IAS 16, so this split is critical for accurate depreciation calculations. The allocation is typically based on a professional valuer's report."
+  },
+  {
+    "slug": "re-broker-commission-purchase",
+    "category": "Real Estate",
+    "title": "Buyer's Broker Commission on Acquisition",
+    "description": "Capitalizing the real estate agent's commission paid when purchasing a property.",
+    "entries": [
+      { "account": "Building / Land (Fixed Asset)", "type": "Asset (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "Broker commissions paid by the buyer are part of the acquisition cost and must be capitalized into the asset. This increases the depreciable base of the building portion."
+  },
+  {
+    "slug": "re-cip-contractor-progress-billing",
+    "category": "Real Estate",
+    "title": "Contractor Progress Billing (CIP)",
+    "description": "Recording a milestone payment to the main contractor as construction progresses.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Accounts Payable (Contractor)", "type": "Liability (+)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "All construction costs accumulate in the CIP account while the building is being built. CIP is a special fixed asset account — it is not depreciated until construction is complete and the building is placed into service."
+  },
+  {
+    "slug": "re-cip-architect-engineer-fees",
+    "category": "Real Estate",
+    "title": "Architect & Engineering Fees (CIP)",
+    "description": "Capitalizing design and engineering consultancy fees into the construction project cost.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Accounts Payable (Consultant)", "type": "Liability (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Professional fees directly related to a construction project are capitalized as part of the project cost, not expensed. They form part of the total cost of the completed building."
+  },
+  {
+    "slug": "re-cip-building-permit-fees",
+    "category": "Real Estate",
+    "title": "Building Permit & Municipality Fees (CIP)",
+    "description": "Capitalizing the government permit fees required to legally commence construction.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Building permits and municipality approvals are a prerequisite for construction. These fees are directly attributable to the project and are therefore capitalized into the CIP account."
+  },
+  {
+    "slug": "re-cip-capitalized-interest-ias23",
+    "category": "Real Estate",
+    "title": "Capitalized Borrowing Costs — Construction Loan (IAS 23)",
+    "description": "Adding monthly interest on a construction loan to the CIP asset during the build period.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Interest Payable / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Under IAS 23, interest on borrowings specifically used to finance a 'qualifying asset' (a building under construction) must be capitalized, not expensed, until the asset is ready for use."
+  },
+  {
+    "slug": "re-cip-retention-payable-contractor",
+    "category": "Real Estate",
+    "title": "Contractor Retention Withheld (CIP)",
+    "description": "Withholding 10% of each progress payment as retention until project completion and defects period.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 450000.00 },
+      { "account": "Retention Payable (Contractor)", "type": "Liability (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Retention is withheld as a performance guarantee. Even though you have not paid the full amount, the full contract value is still part of the CIP asset."
+  },
+  {
+    "slug": "re-cip-retention-release",
+    "category": "Real Estate",
+    "title": "Release of Contractor Retention",
+    "description": "Paying the retained amount to the contractor after the defects liability period ends.",
+    "entries": [
+      { "account": "Retention Payable (Contractor)", "type": "Liability (-)", "dr": 50000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Once the defects liability period has passed and the contractor has remedied all snags, the retention is released. This clears the liability with no impact on the asset value."
+  },
+  {
+    "slug": "re-cip-to-fixed-asset-transfer",
+    "category": "Real Estate",
+    "title": "Transfer of CIP to Fixed Asset (Completion)",
+    "description": "Reclassifying the completed building from Construction in Progress to a depreciable Fixed Asset.",
+    "entries": [
+      { "account": "Building (Fixed Asset)", "type": "Asset (+)", "dr": 2500000.00, "cr": 0 },
+      { "account": "Construction in Progress (CIP)", "type": "Asset (-)", "dr": 0, "cr": 2500000.00 }
+    ],
+    "explanation": "This is the critical transfer entry made when the building receives its occupancy certificate. Depreciation begins from this date, not from when construction started."
+  },
+  {
+    "slug": "re-cip-change-order-increase",
+    "category": "Real Estate",
+    "title": "Construction Change Order — Scope Increase",
+    "description": "Recording additional costs approved under a variation order from the developer to the contractor.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 75000.00, "cr": 0 },
+      { "account": "Accounts Payable (Contractor)", "type": "Liability (+)", "dr": 0, "cr": 75000.00 }
+    ],
+    "explanation": "Approved change orders increase the total construction cost. They are capitalized into CIP and increase the eventual cost of the completed building."
+  },
+  {
+    "slug": "re-cip-project-delay-penalty",
+    "category": "Real Estate",
+    "title": "Contractor Delay Penalty (Liquidated Damages)",
+    "description": "Deducting a penalty from the contractor's payment for failing to complete on time.",
+    "entries": [
+      { "account": "Accounts Payable (Contractor)", "type": "Liability (-)", "dr": 25000.00, "cr": 0 },
+      { "account": "Other Income (LD Recovery)", "type": "Revenue (+)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "Liquidated damages recovered from a contractor for late delivery reduce the amount owed to them. They are recorded as other income because they offset the financial loss from delays."
+  },
+  {
+    "slug": "re-cip-infrastructure-contribution",
+    "category": "Real Estate",
+    "title": "Infrastructure Contribution to Municipality",
+    "description": "Paying a mandatory infrastructure levy to the municipality as a condition of the building permit.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 30000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 30000.00 }
+    ],
+    "explanation": "Mandatory government contributions required to develop a plot (road access, utilities connection) are directly attributable to the project and must be capitalized into CIP."
+  },
+  {
+    "slug": "re-ip-initial-recognition-cost",
+    "category": "Real Estate",
+    "title": "Initial Recognition of Investment Property (at Cost)",
+    "description": "Recording a building purchased specifically to generate rental income as an investment property under IAS 40.",
+    "entries": [
+      { "account": "Investment Property (at Cost)", "type": "Asset (+)", "dr": 800000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 800000.00 }
+    ],
+    "explanation": "Under IAS 40, a property held to earn rental income or for capital appreciation is classified as Investment Property, not PPE. It can be measured at cost or fair value."
+  },
+  {
+    "slug": "re-ip-fair-value-gain-annual",
+    "category": "Real Estate",
+    "title": "Investment Property Annual Fair Value Gain",
+    "description": "Increasing the carrying value of an investment property following an independent valuation.",
+    "entries": [
+      { "account": "Investment Property", "type": "Asset (+)", "dr": 120000.00, "cr": 0 },
+      { "account": "Gain on Fair Value (P&L)", "type": "Revenue (+)", "dr": 0, "cr": 120000.00 }
+    ],
+    "explanation": "Under the IAS 40 Fair Value model, any increase in a property's market value goes directly to the income statement — unlike PPE revaluation which goes to OCI. The property is not depreciated."
+  },
+  {
+    "slug": "re-ip-fair-value-loss-annual",
+    "category": "Real Estate",
+    "title": "Investment Property Annual Fair Value Loss",
+    "description": "Reducing the carrying value of an investment property when market values decline.",
+    "entries": [
+      { "account": "Loss on Fair Value (P&L)", "type": "Expense (+)", "dr": 80000.00, "cr": 0 },
+      { "account": "Investment Property", "type": "Asset (-)", "dr": 0, "cr": 80000.00 }
+    ],
+    "explanation": "Under IAS 40, decreases in fair value also go directly to the income statement. This can significantly impact reported profits in a falling market."
+  },
+  {
+    "slug": "re-ip-transfer-owner-occupied-to-investment",
+    "category": "Real Estate",
+    "title": "Transfer: Owner-Occupied Property → Investment Property",
+    "description": "Reclassifying a building the company previously used itself, now leased out to a third party.",
+    "entries": [
+      { "account": "Investment Property (at Fair Value)", "type": "Asset (+)", "dr": 600000.00, "cr": 0 },
+      { "account": "Building (PPE at Cost)", "type": "Asset (-)", "dr": 0, "cr": 500000.00 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (-)", "dr": 80000.00, "cr": 0 },
+      { "account": "Revaluation Surplus (OCI)", "type": "Equity (+)", "dr": 0, "cr": 180000.00 }
+    ],
+    "explanation": "When transferring from PPE to Investment Property at fair value, the gain is initially recognized in OCI (not P&L), consistent with PPE revaluation rules."
+  },
+  {
+    "slug": "re-ip-transfer-investment-to-inventory",
+    "category": "Real Estate",
+    "title": "Transfer: Investment Property → Inventory (for Sale)",
+    "description": "Moving a building from Investment Property to inventory when the developer decides to sell it.",
+    "entries": [
+      { "account": "Property Inventory (for Sale)", "type": "Asset (+)", "dr": 750000.00, "cr": 0 },
+      { "account": "Investment Property", "type": "Asset (-)", "dr": 0, "cr": 750000.00 }
+    ],
+    "explanation": "When the intention changes from holding to selling, the property transfers to inventory at its current carrying value (fair value). No gain or loss is recorded at the transfer date."
+  },
+  {
+    "slug": "re-ip-disposal-gain",
+    "category": "Real Estate",
+    "title": "Disposal of Investment Property — Gain",
+    "description": "Recording the sale of an investment property for more than its carrying value.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 900000.00, "cr": 0 },
+      { "account": "Investment Property", "type": "Asset (-)", "dr": 0, "cr": 750000.00 },
+      { "account": "Gain on Disposal of Investment Property", "type": "Revenue (+)", "dr": 0, "cr": 150000.00 }
+    ],
+    "explanation": "Gains on disposal of investment property go to the income statement. The asset is removed at its last revalued carrying amount."
+  },
+  {
+    "slug": "re-ip-disposal-loss",
+    "category": "Real Estate",
+    "title": "Disposal of Investment Property — Loss",
+    "description": "Recording the sale of an investment property for less than its carrying value.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 600000.00, "cr": 0 },
+      { "account": "Loss on Disposal of Investment Property", "type": "Expense (+)", "dr": 150000.00, "cr": 0 },
+      { "account": "Investment Property", "type": "Asset (-)", "dr": 0, "cr": 750000.00 }
+    ],
+    "explanation": "If the property sells below its carrying value, the difference is an immediate loss on the income statement."
+  },
+  {
+    "slug": "re-offplan-deposit-received",
+    "category": "Real Estate",
+    "title": "Off-Plan Unit Sale — Initial Deposit Received",
+    "description": "Recording a booking deposit from a buyer for an apartment that has not yet been built.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Advance from Buyers (Deferred Revenue)", "type": "Liability (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Cash collected before the building is complete is a liability. Under IFRS 15, revenue is only recognized when control of the unit passes to the buyer — typically at handover."
+  },
+  {
+    "slug": "re-offplan-instalment-collection",
+    "category": "Real Estate",
+    "title": "Off-Plan Instalment Collection",
+    "description": "Collecting a construction-linked instalment from an off-plan buyer as per the payment schedule.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "Advance from Buyers (Deferred Revenue)", "type": "Liability (+)", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "Each instalment collected adds to the deferred revenue balance. No revenue is recognized until handover. The balance sheet grows on both the asset and liability sides simultaneously."
+  },
+  {
+    "slug": "re-offplan-revenue-at-handover",
+    "category": "Real Estate",
+    "title": "Revenue Recognition at Unit Handover (IFRS 15)",
+    "description": "Recognizing the full sale price as revenue when a completed apartment is handed over to the buyer.",
+    "entries": [
+      { "account": "Advance from Buyers (Deferred Revenue)", "type": "Liability (-)", "dr": 750000.00, "cr": 0 },
+      { "account": "Property Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 750000.00 }
+    ],
+    "explanation": "Under IFRS 15, control passes to the buyer at handover. The full deferred revenue liability is released to the income statement at that single point in time."
+  },
+  {
+    "slug": "re-offplan-cogs-at-handover",
+    "category": "Real Estate",
+    "title": "Cost of Sales Recognition at Handover",
+    "description": "Recognizing the construction cost of a completed unit as Cost of Sales when it is handed over.",
+    "entries": [
+      { "account": "Cost of Property Sold", "type": "Expense (+)", "dr": 450000.00, "cr": 0 },
+      { "account": "Property Inventory / CIP", "type": "Asset (-)", "dr": 0, "cr": 450000.00 }
+    ],
+    "explanation": "Revenue and cost of sales must be matched. The accumulated construction cost of the unit is transferred to Cost of Property Sold at the same time the sale revenue is recognized."
+  },
+  {
+    "slug": "re-completed-unit-sale-cash",
+    "category": "Real Estate",
+    "title": "Sale of Completed Unit (Cash)",
+    "description": "Recording the sale of a ready residential unit paid in full by the buyer.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 850000.00, "cr": 0 },
+      { "account": "Property Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 850000.00 },
+      { "account": "Cost of Property Sold", "type": "Expense (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Property Inventory", "type": "Asset (-)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "For a ready unit sold at closing, both revenue and COGS are recognized simultaneously at the point of sale."
+  },
+  {
+    "slug": "re-completed-unit-sale-mortgage",
+    "category": "Real Estate",
+    "title": "Sale of Completed Unit (Buyer Uses Mortgage)",
+    "description": "Recording a unit sale where the buyer finances the purchase through a bank mortgage.",
+    "entries": [
+      { "account": "Accounts Receivable (Bank/Buyer)", "type": "Asset (+)", "dr": 850000.00, "cr": 0 },
+      { "account": "Property Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 850000.00 },
+      { "account": "Cost of Property Sold", "type": "Expense (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Property Inventory", "type": "Asset (-)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "When a buyer uses a bank mortgage, the developer records a receivable from the buyer's bank. Cash arrives after the bank processes the disbursement, typically within a few days of signing."
+  },
+  {
+    "slug": "re-broker-commission-on-sale",
+    "category": "Real Estate",
+    "title": "Sales Broker Commission Expense",
+    "description": "Recording the commission paid to an external real estate agent for closing a unit sale.",
+    "entries": [
+      { "account": "Sales Commission Expense", "type": "Expense (+)", "dr": 25500.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 25500.00 }
+    ],
+    "explanation": "Agent commissions (typically 2-3% of sale price) are a selling expense in the period the sale is completed. They are not capitalized into the property cost."
+  },
+  {
+    "slug": "re-buyer-cancellation-deposit-forfeited",
+    "category": "Real Estate",
+    "title": "Buyer Cancellation — Deposit Forfeited",
+    "description": "Retaining a buyer's deposit when they cancel the purchase agreement per the contract terms.",
+    "entries": [
+      { "account": "Advance from Buyers (Deferred Revenue)", "type": "Liability (-)", "dr": 50000.00, "cr": 0 },
+      { "account": "Forfeited Deposit Income", "type": "Revenue (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "When a buyer legally cancels and forfeits their deposit, the deferred revenue liability is released to income. The developer has fulfilled no obligation but is contractually entitled to keep the funds."
+  },
+  {
+    "slug": "re-buyer-cancellation-refund",
+    "category": "Real Estate",
+    "title": "Buyer Cancellation — Deposit Refunded",
+    "description": "Refunding a buyer's deposit when the developer is at fault for the cancellation.",
+    "entries": [
+      { "account": "Advance from Buyers (Deferred Revenue)", "type": "Liability (-)", "dr": 50000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "If the developer fails to deliver on time or breaches the contract, the deposit must be refunded. This simply clears the liability with no income recorded."
+  },
+  {
+    "slug": "re-post-handover-payment-plan",
+    "category": "Real Estate",
+    "title": "Post-Handover Payment Plan (Receivable)",
+    "description": "Recording a receivable for the balance of a unit price to be paid after handover over 3 years.",
+    "entries": [
+      { "account": "Long-Term Receivable (Post-Handover)", "type": "Asset (+)", "dr": 300000.00, "cr": 0 },
+      { "account": "Property Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 300000.00 }
+    ],
+    "explanation": "Revenue is recognized at handover regardless of when cash is collected. The outstanding post-handover balance is a long-term receivable. An imputed interest adjustment may be required if the plan is interest-free."
+  },
+  {
+    "slug": "re-sale-of-land-plot",
+    "category": "Real Estate",
+    "title": "Sale of Raw Land Plot",
+    "description": "Recording the sale of an undeveloped land plot to another developer.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Land Inventory / Fixed Asset", "type": "Asset (-)", "dr": 0, "cr": 350000.00 },
+      { "account": "Gain on Sale of Land", "type": "Revenue (+)", "dr": 0, "cr": 150000.00 }
+    ],
+    "explanation": "Land held for sale is removed from inventory at its cost. The difference between sale price and cost is a gain recognized immediately."
+  },
+  {
+    "slug": "re-rental-income-monthly",
+    "category": "Real Estate",
+    "title": "Monthly Rental Income Recognition",
+    "description": "Recognizing one month of earned rental income from a commercial tenant.",
+    "entries": [
+      { "account": "Accounts Receivable / Cash", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Rental Income", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Rental income is recognized monthly as the right to use the property is provided. This applies whether rent is collected in advance or arrears."
+  },
+  {
+    "slug": "re-advance-rent-received-unearned",
+    "category": "Real Estate",
+    "title": "Advance Rent Received (Unearned)",
+    "description": "Recording 12 months of rent received upfront from a commercial tenant at lease commencement.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 60000.00, "cr": 0 },
+      { "account": "Unearned Rental Revenue", "type": "Liability (+)", "dr": 0, "cr": 60000.00 }
+    ],
+    "explanation": "Common in Jordan where landlords require 12 months in advance. The cash is not revenue yet — it is a liability representing the obligation to provide accommodation each month."
+  },
+  {
+    "slug": "re-advance-rent-monthly-recognition",
+    "category": "Real Estate",
+    "title": "Monthly Recognition of Advance Rent",
+    "description": "Recognizing one month of rental income from the previously collected advance.",
+    "entries": [
+      { "account": "Unearned Rental Revenue", "type": "Liability (-)", "dr": 5000.00, "cr": 0 },
+      { "account": "Rental Income", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Each month, JOD 5,000 is moved from the deferred liability to earned revenue as the tenant occupies and uses the space."
+  },
+  {
+    "slug": "re-straight-line-lease-incentive",
+    "category": "Real Estate",
+    "title": "Straight-Line Lease Revenue (With Rent Escalation)",
+    "description": "Recording rental income on a straight-line basis over a lease with annual rent increases.",
+    "entries": [
+      { "account": "Cash / Bank (Actual Rent)", "type": "Asset (+)", "dr": 4000.00, "cr": 0 },
+      { "account": "Accrued Rental Revenue", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Rental Income (Straight-Line)", "type": "Revenue (+)", "dr": 0, "cr": 4500.00 }
+    ],
+    "explanation": "If a lease has rent escalations, the total lease revenue is averaged and recognized evenly each month. Early months have a lower cash receipt but higher P&L revenue, with the difference accrued."
+  },
+  {
+    "slug": "re-tenant-deposit-received",
+    "category": "Real Estate",
+    "title": "Tenant Security Deposit Received",
+    "description": "Recording a refundable security deposit paid by a new tenant at lease commencement.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Tenant Deposits Payable", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Security deposits are not income. They are liabilities because the landlord must return them at the end of the lease if the tenant has not caused damage."
+  },
+  {
+    "slug": "re-tenant-deposit-refund",
+    "category": "Real Estate",
+    "title": "Tenant Security Deposit Refund",
+    "description": "Returning a tenant's security deposit at the end of the lease after inspection.",
+    "entries": [
+      { "account": "Tenant Deposits Payable", "type": "Liability (-)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "This clears the deposit liability once the property has been inspected and no deductions are required."
+  },
+  {
+    "slug": "re-tenant-deposit-forfeited",
+    "category": "Real Estate",
+    "title": "Tenant Deposit Partially Forfeited (Damage)",
+    "description": "Retaining part of a tenant's deposit to cover the cost of repairs after they vacate.",
+    "entries": [
+      { "account": "Tenant Deposits Payable", "type": "Liability (-)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash / Bank (Refunded)", "type": "Asset (-)", "dr": 0, "cr": 7000.00 },
+      { "account": "Other Income (Forfeited Deposit)", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "If a tenant causes damage, the cost is recovered from the deposit. The retained portion is recognized as Other Income since the obligation to refund is extinguished."
+  },
+  {
+    "slug": "re-late-payment-penalty-income",
+    "category": "Real Estate",
+    "title": "Late Rent Payment Penalty",
+    "description": "Charging a tenant a penalty fee for paying rent after the contractual due date.",
+    "entries": [
+      { "account": "Accounts Receivable (Tenant)", "type": "Asset (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Penalty Income (Late Payment)", "type": "Revenue (+)", "dr": 0, "cr": 250.00 }
+    ],
+    "explanation": "Late payment penalties are recognized as Other Income when charged to the tenant. They compensate the landlord for the time value of money lost from delayed receipts."
+  },
+  {
+    "slug": "re-service-charge-billed-tenant",
+    "category": "Real Estate",
+    "title": "Service Charge Billed to Tenant",
+    "description": "Billing a commercial tenant for their share of common area maintenance (CAM) costs.",
+    "entries": [
+      { "account": "Accounts Receivable (Tenant — CAM)", "type": "Asset (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Service Charge / CAM Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Many commercial leases are 'triple net' — tenants pay their proportional share of building operating costs. This is recognized as revenue when billed."
+  },
+  {
+    "slug": "re-vacancy-rental-accrual-reversal",
+    "category": "Real Estate",
+    "title": "Vacancy — Reversal of Rental Accrual",
+    "description": "Reversing accrued rental income for a unit that becomes vacant mid-month.",
+    "entries": [
+      { "account": "Rental Income", "type": "Revenue (-)", "dr": 2500.00, "cr": 0 },
+      { "account": "Accrued Rental Revenue", "type": "Asset (-)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "If a tenant vacates earlier than expected and rent cannot be collected for that period, any previously accrued income must be reversed to avoid overstating revenue."
+  },
+  {
+    "slug": "re-mgmt-fee-revenue-recognition",
+    "category": "Real Estate",
+    "title": "Property Management Fee Revenue",
+    "description": "Recording the monthly management fee earned for managing a property on behalf of an owner.",
+    "entries": [
+      { "account": "Accounts Receivable (Owner)", "type": "Asset (+)", "dr": 600.00, "cr": 0 },
+      { "account": "Property Management Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 600.00 }
+    ],
+    "explanation": "Management fees (typically 5-10% of collected rent) are recognized as revenue in the month the management service is provided."
+  },
+  {
+    "slug": "re-mgmt-maintenance-recharge-to-owner",
+    "category": "Real Estate",
+    "title": "Maintenance Cost Recharged to Owner",
+    "description": "Passing through a plumbing repair cost to the property owner after arranging the fix.",
+    "entries": [
+      { "account": "Accounts Receivable (Owner)", "type": "Asset (+)", "dr": 350.00, "cr": 0 },
+      { "account": "Maintenance Expense (Gross)", "type": "Expense (+)", "dr": 350.00, "cr": 0 },
+      { "account": "Maintenance Recovery Revenue", "type": "Revenue (+)", "dr": 0, "cr": 350.00 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 350.00 }
+    ],
+    "explanation": "The manager pays the contractor, records the expense, and immediately bills the owner. The net effect is zero income — the manager is simply a pass-through agent for this cost."
+  },
+  {
+    "slug": "re-mgmt-owner-distribution-payout",
+    "category": "Real Estate",
+    "title": "Owner Net Rental Distribution",
+    "description": "Remitting the net rental proceeds to the property owner after deducting management fees and expenses.",
+    "entries": [
+      { "account": "Due to Landlord / Owner", "type": "Liability (-)", "dr": 4400.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 4400.00 }
+    ],
+    "explanation": "This clears the liability to the owner created when rent was collected. The distribution is net of the management fee and any approved expenses."
+  },
+  {
+    "slug": "re-mgmt-vacancy-loss-provision",
+    "category": "Real Estate",
+    "title": "Vacancy Loss Provision",
+    "description": "Estimating and recording the expected income loss from a unit that is currently empty.",
+    "entries": [
+      { "account": "Vacancy Loss Expense", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Provision for Vacancy Loss", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "For larger managed portfolios, a provision for vacancy is created at year-end to reflect the economic reality that not all units will be occupied 100% of the time."
+  },
+  {
+    "slug": "re-building-maintenance-expense",
+    "category": "Real Estate",
+    "title": "Building Maintenance Expense",
+    "description": "Recording routine maintenance costs for a managed property (painting, minor repairs).",
+    "entries": [
+      { "account": "Building Maintenance Expense", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "Routine maintenance that preserves the building in its current condition is expensed immediately. Only improvements that extend the asset's life are capitalized."
+  },
+  {
+    "slug": "re-facilities-management-contract",
+    "category": "Real Estate",
+    "title": "Facilities Management Contract (Annual)",
+    "description": "Paying an FM company annually to manage the building's technical systems and maintenance.",
+    "entries": [
+      { "account": "Prepaid FM Costs", "type": "Asset (+)", "dr": 36000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 36000.00 }
+    ],
+    "explanation": "An annual FM contract is a prepaid asset. JOD 3,000 moves to FM Expense each month to match the cost to the period the service is provided."
+  },
+  {
+    "slug": "re-elevator-service-contract",
+    "category": "Real Estate",
+    "title": "Elevator / Lift Annual Service Contract",
+    "description": "Paying the annual maintenance fee for elevator certification and servicing.",
+    "entries": [
+      { "account": "Prepaid Maintenance (Elevator)", "type": "Asset (+)", "dr": 4800.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 4800.00 }
+    ],
+    "explanation": "Elevator service contracts are mandatory in most jurisdictions for multi-floor buildings. The annual fee is prepaid and amortized monthly."
+  },
+  {
+    "slug": "re-common-area-utilities",
+    "category": "Real Estate",
+    "title": "Common Area Utilities (Electricity / Water)",
+    "description": "Recording utility costs for shared areas — lobbies, parking, corridors — in a multi-tenant building.",
+    "entries": [
+      { "account": "Common Area Utilities Expense", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Accrued Liabilities / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Common area utilities are an operating cost of the building. In a triple-net lease arrangement, these are typically recharged to tenants through the service charge mechanism."
+  },
+  {
+    "slug": "re-property-insurance-annual",
+    "category": "Real Estate",
+    "title": "Annual Property & Liability Insurance",
+    "description": "Paying the yearly insurance premium covering the building structure and public liability.",
+    "entries": [
+      { "account": "Prepaid Insurance (Property)", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Building insurance is a prepaid asset, expensed at JOD 1,000 per month over the 12-month coverage period."
+  },
+  {
+    "slug": "re-security-service-contract",
+    "category": "Real Estate",
+    "title": "Security Guard Service (Monthly)",
+    "description": "Recording the monthly cost of a contracted security company for the building.",
+    "entries": [
+      { "account": "Security Service Expense", "type": "Expense (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Accounts Payable (Security Co.)", "type": "Liability (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "Security is a recurring operating cost. It is expensed monthly as the service is rendered."
+  },
+  {
+    "slug": "re-landscaping-cleaning-contract",
+    "category": "Real Estate",
+    "title": "Landscaping & Cleaning Services",
+    "description": "Monthly payment to a company for maintaining gardens and common area cleanliness.",
+    "entries": [
+      { "account": "Landscaping & Cleaning Expense", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Accounts Payable / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Ongoing cleaning and landscaping are necessary to maintain the property's appeal and value. They are period expenses, not capital improvements."
+  },
+  {
+    "slug": "re-sinking-fund-contribution",
+    "category": "Real Estate",
+    "title": "Owners Association Sinking Fund Contribution",
+    "description": "Making a monthly contribution to the building's sinking fund for future major repairs.",
+    "entries": [
+      { "account": "Sinking Fund (Restricted Asset)", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Sinking fund contributions are restricted cash set aside for future capital expenditure (roof replacement, façade renovation). They remain an asset until spent."
+  },
+  {
+    "slug": "re-sinking-fund-release-for-repair",
+    "category": "Real Estate",
+    "title": "Sinking Fund Release for Major Repair",
+    "description": "Using accumulated sinking fund cash to pay for a major roof replacement.",
+    "entries": [
+      { "account": "Building (Fixed Asset) / Maintenance Expense", "type": "Asset/Expense (+)", "dr": 45000.00, "cr": 0 },
+      { "account": "Sinking Fund (Restricted Asset)", "type": "Asset (-)", "dr": 0, "cr": 45000.00 }
+    ],
+    "explanation": "When the repair qualifies as a capital improvement it is debited to the asset; if it is merely maintenance it is debited to expense. Either way, the sinking fund is drawn down."
+  },
+  {
+    "slug": "re-mortgage-drawdown",
+    "category": "Real Estate",
+    "title": "Mortgage Loan Drawdown",
+    "description": "Receiving the first tranche of a construction mortgage from the bank.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 2000000.00, "cr": 0 },
+      { "account": "Mortgage Loan Payable", "type": "Liability (+)", "dr": 0, "cr": 2000000.00 }
+    ],
+    "explanation": "Construction mortgages are often drawn in tranches as construction milestones are achieved. Each drawdown increases the loan liability."
+  },
+  {
+    "slug": "re-mortgage-monthly-repayment",
+    "category": "Real Estate",
+    "title": "Monthly Mortgage Repayment (Principal + Interest)",
+    "description": "Recording the monthly installment on a property mortgage.",
+    "entries": [
+      { "account": "Mortgage Loan Payable (Principal)", "type": "Liability (-)", "dr": 8000.00, "cr": 0 },
+      { "account": "Interest Expense", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 13000.00 }
+    ],
+    "explanation": "Each payment reduces the principal debt and recognizes the monthly borrowing cost. The interest portion is the only expense — the principal repayment is a balance sheet movement."
+  },
+  {
+    "slug": "re-loan-origination-fee-amortization",
+    "category": "Real Estate",
+    "title": "Loan Origination Fee Amortization",
+    "description": "Monthly amortization of the upfront bank arrangement fee on a property mortgage.",
+    "entries": [
+      { "account": "Interest Expense (Effective Rate)", "type": "Expense (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Unamortized Loan Costs", "type": "Contra-Liability (-)", "dr": 0, "cr": 250.00 }
+    ],
+    "explanation": "Under IFRS 9, loan arrangement fees are not expensed upfront. They are deducted from the loan carrying value and amortized over the loan term using the effective interest rate method."
+  },
+  {
+    "slug": "re-mortgage-refinancing-gain",
+    "category": "Real Estate",
+    "title": "Mortgage Refinancing — Gain on Early Settlement",
+    "description": "Settling an existing mortgage early at a discount and recording the gain.",
+    "entries": [
+      { "account": "Mortgage Loan Payable", "type": "Liability (-)", "dr": 500000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 480000.00 },
+      { "account": "Gain on Debt Extinguishment", "type": "Revenue (+)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "If a bank agrees to settle the loan at a discount, the difference between the carrying value and the amount paid is a gain recognized immediately on the income statement."
+  },
+  {
+    "slug": "re-escrow-release-on-completion",
+    "category": "Real Estate",
+    "title": "Escrow Release on Project Completion",
+    "description": "Releasing restricted escrow funds to the developer upon obtaining the building completion certificate.",
+    "entries": [
+      { "account": "Cash / Bank (Unrestricted)", "type": "Asset (+)", "dr": 200000.00, "cr": 0 },
+      { "account": "Cash in Escrow (Restricted)", "type": "Asset (-)", "dr": 0, "cr": 200000.00 }
+    ],
+    "explanation": "Escrow accounts hold buyer payments in trust during construction. Upon legal completion, the regulator releases the funds to the developer."
+  },
+  {
+    "slug": "re-mezzanine-finance-drawdown",
+    "category": "Real Estate",
+    "title": "Mezzanine Finance Drawdown",
+    "description": "Receiving subordinated debt from a mezzanine lender to top up the equity gap in a development.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Mezzanine Loan Payable", "type": "Liability (+)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "Mezzanine debt sits between senior debt and equity. It carries higher interest than a bank mortgage and is common in large real estate developments to bridge the funding gap."
+  },
+  {
+    "slug": "re-building-depreciation-straightline",
+    "category": "Real Estate",
+    "title": "Building Depreciation (Straight-Line)",
+    "description": "Monthly depreciation charge on a commercial building over its useful life.",
+    "entries": [
+      { "account": "Depreciation Expense (Building)", "type": "Expense (+)", "dr": 8333.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (Building)", "type": "Contra-Asset (+)", "dr": 0, "cr": 8333.00 }
+    ],
+    "explanation": "A building costing JOD 1,000,000 depreciated over 10 years (straight-line, excluding land) produces JOD 8,333/month. Land value is excluded from the depreciable base."
+  },
+  {
+    "slug": "re-component-accounting-roof",
+    "category": "Real Estate",
+    "title": "Component Accounting — Roof Replacement",
+    "description": "Capitalizing a new roof as a separate asset component and removing the old roof's book value.",
+    "entries": [
+      { "account": "Building — Roof Component", "type": "Asset (+)", "dr": 80000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (Old Roof)", "type": "Contra-Asset (-)", "dr": 20000.00, "cr": 0 },
+      { "account": "Loss on Disposal (Old Roof)", "type": "Expense (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Building — Roof Component (Old)", "type": "Asset (-)", "dr": 0, "cr": 30000.00 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 80000.00 }
+    ],
+    "explanation": "Under IAS 16 component accounting, each significant part of a building (roof, HVAC, structure) is depreciated separately. When a component is replaced, the old one is derecognized and the new one is capitalized."
+  },
+  {
+    "slug": "re-hvac-component-depreciation",
+    "category": "Real Estate",
+    "title": "Component Depreciation — HVAC System",
+    "description": "Monthly depreciation on the building's central air conditioning system as a separate component.",
+    "entries": [
+      { "account": "Depreciation Expense (HVAC)", "type": "Expense (+)", "dr": 1667.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (HVAC)", "type": "Contra-Asset (+)", "dr": 0, "cr": 1667.00 }
+    ],
+    "explanation": "HVAC systems have a shorter useful life (typically 10-15 years) than the building structure (40-50 years). Component accounting ensures each part is depreciated at the correct rate."
+  },
+  {
+    "slug": "re-building-impairment",
+    "category": "Real Estate",
+    "title": "Impairment of Building (PPE)",
+    "description": "Writing down a building's carrying value when its recoverable amount falls below book value.",
+    "entries": [
+      { "account": "Impairment Loss (Building)", "type": "Expense (+)", "dr": 150000.00, "cr": 0 },
+      { "account": "Accumulated Impairment (Building)", "type": "Contra-Asset (+)", "dr": 0, "cr": 150000.00 }
+    ],
+    "explanation": "Under IAS 36, if a building's recoverable amount (higher of fair value less costs to sell, or value in use) falls below its carrying amount, an impairment loss must be recognized."
+  },
+  {
+    "slug": "re-building-disposal-gain",
+    "category": "Real Estate",
+    "title": "Sale of Owner-Occupied Building — Gain",
+    "description": "Removing a building and its accumulated depreciation and recording the profit on sale.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 900000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (-)", "dr": 200000.00, "cr": 0 },
+      { "account": "Building (Cost)", "type": "Asset (-)", "dr": 0, "cr": 800000.00 },
+      { "account": "Gain on Disposal of Building", "type": "Revenue (+)", "dr": 0, "cr": 300000.00 }
+    ],
+    "explanation": "The gain is the difference between the sale proceeds and the net book value (cost minus accumulated depreciation). Both the asset and its depreciation must be 'flushed out' at disposal."
+  },
+  {
+    "slug": "re-building-disposal-loss",
+    "category": "Real Estate",
+    "title": "Sale of Owner-Occupied Building — Loss",
+    "description": "Recording a loss when a building is sold for less than its net book value.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (-)", "dr": 150000.00, "cr": 0 },
+      { "account": "Loss on Disposal of Building", "type": "Expense (+)", "dr": 150000.00, "cr": 0 },
+      { "account": "Building (Cost)", "type": "Asset (-)", "dr": 0, "cr": 800000.00 }
+    ],
+    "explanation": "If the sale proceeds are less than the net book value, the shortfall is an immediate loss on the income statement."
+  },
+  {
+    "slug": "re-demolition-old-structure",
+    "category": "Real Estate",
+    "title": "Demolition of Existing Structure",
+    "description": "Writing off an old building on purchased land that must be demolished before new construction.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (Old Building)", "type": "Contra-Asset (-)", "dr": 80000.00, "cr": 0 },
+      { "account": "Old Building (Cost)", "type": "Asset (-)", "dr": 0, "cr": 100000.00 },
+      { "account": "Cash / Bank (Demo Cost)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "The cost to demolish is capitalized into CIP because it is a necessary step to prepare the site. The old building's net book value is also transferred to CIP as part of the new project cost."
+  },
+  {
+    "slug": "re-ifrs16-lessee-initial-recognition",
+    "category": "Real Estate",
+    "title": "IFRS 16 Lease — Initial Recognition (Lessee)",
+    "description": "Recording a Right-of-Use asset and lease liability when signing a long-term office or retail lease.",
+    "entries": [
+      { "account": "Right-of-Use Asset (Building)", "type": "Asset (+)", "dr": 350000.00, "cr": 0 },
+      { "account": "Lease Liability", "type": "Liability (+)", "dr": 0, "cr": 350000.00 }
+    ],
+    "explanation": "Under IFRS 16, almost all leases with a term over 12 months must be recognized on the balance sheet. The ROU asset and lease liability are both initially measured at the present value of future lease payments."
+  },
+  {
+    "slug": "re-ifrs16-monthly-payment-split",
+    "category": "Real Estate",
+    "title": "IFRS 16 Monthly Lease Payment Split",
+    "description": "Splitting the monthly lease payment between principal reduction and interest expense.",
+    "entries": [
+      { "account": "Interest Expense (Lease)", "type": "Expense (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Lease Liability (Principal)", "type": "Liability (-)", "dr": 7500.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Each lease payment is split: the interest portion is an income statement expense and the balance reduces the lease liability on the balance sheet."
+  },
+  {
+    "slug": "re-rou-asset-depreciation",
+    "category": "Real Estate",
+    "title": "Right-of-Use Asset Depreciation",
+    "description": "Monthly depreciation of the ROU asset over the shorter of the lease term or the asset's useful life.",
+    "entries": [
+      { "account": "Depreciation Expense (ROU)", "type": "Expense (+)", "dr": 4861.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (ROU)", "type": "Contra-Asset (+)", "dr": 0, "cr": 4861.00 }
+    ],
+    "explanation": "A JOD 350,000 ROU asset over a 6-year lease is depreciated at JOD 4,861/month. The ROU asset depreciates while the lease liability is reduced by principal payments — these are two separate calculations."
+  },
+  {
+    "slug": "re-rou-asset-impairment",
+    "category": "Real Estate",
+    "title": "Impairment of Right-of-Use Asset",
+    "description": "Writing down an ROU asset when the leased space is no longer needed (e.g., vacated early).",
+    "entries": [
+      { "account": "Impairment Loss (ROU Asset)", "type": "Expense (+)", "dr": 80000.00, "cr": 0 },
+      { "account": "Right-of-Use Asset", "type": "Asset (-)", "dr": 0, "cr": 80000.00 }
+    ],
+    "explanation": "If a leased premises is vacated but the lease obligation continues, the ROU asset must be tested for impairment and written down to its recoverable amount."
+  },
+  {
+    "slug": "re-vat-on-property-sale-jordan",
+    "category": "Real Estate",
+    "title": "VAT on Property Sale (Jordan)",
+    "description": "Recording the 16% Sales Tax on the sale of a commercial property in Jordan.",
+    "entries": [
+      { "account": "Cash / Accounts Receivable", "type": "Asset (+)", "dr": 1160000.00, "cr": 0 },
+      { "account": "Property Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1000000.00 },
+      { "account": "Sales Tax Payable (VAT Output)", "type": "Liability (+)", "dr": 0, "cr": 160000.00 }
+    ],
+    "explanation": "Commercial property sales in Jordan are subject to 16% Sales Tax. Residential property is generally exempt. VAT collected is a liability to the ISTD."
+  },
+  {
+    "slug": "re-vat-on-rental-income",
+    "category": "Real Estate",
+    "title": "VAT on Commercial Rental Income",
+    "description": "Adding 16% VAT to a commercial rental invoice in Jordan.",
+    "entries": [
+      { "account": "Accounts Receivable (Tenant)", "type": "Asset (+)", "dr": 5800.00, "cr": 0 },
+      { "account": "Rental Income", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 },
+      { "account": "Sales Tax Payable (VAT Output)", "type": "Liability (+)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "Commercial property rental in Jordan attracts 16% VAT. The landlord acts as a tax collector — the VAT is not income but a liability to be remitted to the ISTD."
+  },
+  {
+    "slug": "re-capital-gains-tax-provision",
+    "category": "Real Estate",
+    "title": "Capital Gains Tax Provision on Property Sale",
+    "description": "Accruing the estimated tax on the profit made from selling a property.",
+    "entries": [
+      { "account": "Capital Gains Tax Expense", "type": "Expense (+)", "dr": 30000.00, "cr": 0 },
+      { "account": "Capital Gains Tax Payable", "type": "Liability (+)", "dr": 0, "cr": 30000.00 }
+    ],
+    "explanation": "In Jordan, gains on property sales may be subject to income tax. The estimated liability is accrued in the same period as the gain so the P&L reflects the true net profit from the transaction."
+  },
+  {
+    "slug": "re-withholding-tax-on-rental",
+    "category": "Real Estate",
+    "title": "Withholding Tax on Rental Income (Tenant Deducts)",
+    "description": "Recording rental income net of 5% withholding tax deducted by the corporate tenant.",
+    "entries": [
+      { "account": "Cash / Bank (Net Received)", "type": "Asset (+)", "dr": 4750.00, "cr": 0 },
+      { "account": "Withholding Tax Receivable", "type": "Asset (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Rental Income", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "When a company pays rent to an individual or entity, it withholds 5% and remits it to the ISTD. The landlord records the full rental income and the withholding as a tax prepayment asset."
+  },
+  {
+    "slug": "re-deferred-tax-revaluation-surplus",
+    "category": "Real Estate",
+    "title": "Deferred Tax on Revaluation Surplus",
+    "description": "Recording the deferred tax liability arising from an upward revaluation of an investment property.",
+    "entries": [
+      { "account": "Revaluation Surplus (OCI)", "type": "Equity (-)", "dr": 32000.00, "cr": 0 },
+      { "account": "Deferred Tax Liability", "type": "Liability (+)", "dr": 0, "cr": 32000.00 }
+    ],
+    "explanation": "A property revaluation surplus is a temporary difference between accounting value and tax base. Under IAS 12, a deferred tax liability must be recognized for the tax that will eventually be paid when the property is sold."
+  },
+  {
+    "slug": "re-zakat-real-estate-ksa",
+    "category": "Real Estate",
+    "title": "Zakat on Real Estate Assets (Saudi Arabia)",
+    "description": "Accruing Zakat on property development inventory and real estate assets held by a KSA company.",
+    "entries": [
+      { "account": "Zakat Expense", "type": "Expense (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Zakat Payable (ZATCA)", "type": "Liability (+)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "In Saudi Arabia, property development companies must pay Zakat on their Zakatable base, which includes land inventory and work-in-progress. Investment properties held long-term may be exempt."
+  },
+  {
+    "slug": "re-strata-owners-association-fee",
+    "category": "Real Estate",
+    "title": "Owners Association Annual Fee",
+    "description": "Paying the annual strata or homeowners association fee for a unit owned in a managed development.",
+    "entries": [
+      { "account": "Prepaid Association Fees", "type": "Asset (+)", "dr": 3600.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 3600.00 }
+    ],
+    "explanation": "Association fees covering a full year are prepaid assets, amortized at JOD 300/month into Association Fee Expense."
+  },
+  {
+    "slug": "re-municipality-property-levies",
+    "category": "Real Estate",
+    "title": "Municipality Building Levies",
+    "description": "Recording annual municipality levies charged on commercial and residential buildings.",
+    "entries": [
+      { "account": "Property Tax & Levies Expense", "type": "Expense (+)", "dr": 4800.00, "cr": 0 },
+      { "account": "Cash / Municipality Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 4800.00 }
+    ],
+    "explanation": "Municipality levies are recurring annual charges on property ownership. They are expensed in the period they relate to."
+  },
+  {
+    "slug": "re-sale-leaseback-with-gain",
+    "category": "Real Estate",
+    "title": "Sale-and-Leaseback Transaction — Gain",
+    "description": "Selling an office building and immediately leasing it back, recording the gain under IFRS 16.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 5000000.00, "cr": 0 },
+      { "account": "Right-of-Use Asset", "type": "Asset (+)", "dr": 400000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation", "type": "Contra-Asset (-)", "dr": 500000.00, "cr": 0 },
+      { "account": "Building (Cost)", "type": "Asset (-)", "dr": 0, "cr": 3000000.00 },
+      { "account": "Lease Liability", "type": "Liability (+)", "dr": 0, "cr": 500000.00 },
+      { "account": "Gain on Sale-Leaseback", "type": "Revenue (+)", "dr": 0, "cr": 2400000.00 }
+    ],
+    "explanation": "Under IFRS 16, a sale-leaseback produces a partial gain. The seller-lessee only recognizes the gain relating to the rights transferred to the buyer-lessor, and retains a ROU asset for the rights it keeps."
+  },
+  {
+    "slug": "re-joint-venture-land-contribution",
+    "category": "Real Estate",
+    "title": "Land Contribution to Joint Venture",
+    "description": "Contributing land to a real estate JV in exchange for a 50% ownership stake.",
+    "entries": [
+      { "account": "Investment in Joint Venture", "type": "Asset (+)", "dr": 2000000.00, "cr": 0 },
+      { "account": "Land (Fixed Asset)", "type": "Asset (-)", "dr": 0, "cr": 1500000.00 },
+      { "account": "Gain on Contribution to JV", "type": "Revenue (+)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "When contributing assets to a JV, the interest received is recorded at fair value. The difference between fair value and book value of the contributed land is a gain — but only for the portion of ownership transferred to the other party."
+  },
+  {
+    "slug": "re-jv-equity-pickup-profit",
+    "category": "Real Estate",
+    "title": "Joint Venture Share of Profit (Equity Method)",
+    "description": "Recording the company's share of a real estate joint venture's annual net income.",
+    "entries": [
+      { "account": "Investment in Joint Venture", "type": "Asset (+)", "dr": 150000.00, "cr": 0 },
+      { "account": "Share of JV Profit", "type": "Revenue (+)", "dr": 0, "cr": 150000.00 }
+    ],
+    "explanation": "Under the equity method (IFRS 11), the investor increases its investment value by its share of the JV's profit. This is not a dividend — it is an accrual of economic benefit."
+  },
+  {
+    "slug": "re-developer-vat-input-on-construction",
+    "category": "Real Estate",
+    "title": "VAT Input on Construction Costs",
+    "description": "Recording recoverable VAT paid on contractor invoices during the construction phase.",
+    "entries": [
+      { "account": "Construction in Progress (CIP)", "type": "Asset (+)", "dr": 1000000.00, "cr": 0 },
+      { "account": "VAT Input Tax (16%)", "type": "Asset (+)", "dr": 160000.00, "cr": 0 },
+      { "account": "Accounts Payable (Contractor)", "type": "Liability (+)", "dr": 0, "cr": 1160000.00 }
+    ],
+    "explanation": "VAT paid to contractors is a recoverable input tax, not part of the building cost. It is claimed back against the VAT charged on unit sales. Separating it from CIP is essential for correct tax filing."
+  },
+  {
+    "slug": "re-property-handover-snag-provision",
+    "category": "Real Estate",
+    "title": "Provision for Post-Handover Snagging",
+    "description": "Accruing the estimated cost of defect repairs expected after handing units over to buyers.",
+    "entries": [
+      { "account": "Warranty & Snagging Expense", "type": "Expense (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Provision for Snagging (Liability)", "type": "Liability (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Prudence requires recognizing the cost of defects in the same period as the related handover revenue. Based on historical data, developers estimate a percentage of revenue as the expected snagging cost."
+  },
+  {
+    "slug": "re-property-marketing-costs",
+    "category": "Real Estate",
+    "title": "Property Marketing & Show Unit Costs",
+    "description": "Recording the cost of building and furnishing a show apartment for sales purposes.",
+    "entries": [
+      { "account": "Marketing Expense (Show Unit)", "type": "Expense (+)", "dr": 80000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 80000.00 }
+    ],
+    "explanation": "Show unit costs are selling expenses. They are expensed when incurred rather than capitalized into project costs, as they do not form part of the saleable property."
+  },
+  {
+    "slug": "re-pre-opening-costs-expensed",
+    "category": "Real Estate",
+    "title": "Pre-Opening Operating Costs (Expensed)",
+    "description": "Recording costs incurred before a completed building is ready to generate rental income.",
+    "entries": [
+      { "account": "Pre-Opening Expense", "type": "Expense (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Pre-opening administrative and marketing costs are expensed as incurred. Unlike construction costs, they cannot be capitalized under IAS 38 as there is no identifiable future economic benefit directly attributable to them."
+  },
+  {
+    "slug": "re-property-tax-annual-accrual",
+    "category": "Real Estate",
+    "title": "Annual Property Tax Monthly Accrual",
+    "description": "Accruing one-twelfth of the annual property tax each month.",
+    "entries": [
+      { "account": "Property Tax Expense", "type": "Expense (+)", "dr": 600.00, "cr": 0 },
+      { "account": "Accrued Property Tax Payable", "type": "Liability (+)", "dr": 0, "cr": 600.00 }
+    ],
+    "explanation": "Even though the property tax bill arrives once a year, the cost relates to all 12 months. Accruing monthly prevents a profit distortion in the month the bill arrives."
+  },
+  {
+    "slug": "re-goodwill-on-acquisition-portfolio",
+    "category": "Real Estate",
+    "title": "Goodwill on Acquisition of Property Portfolio",
+    "description": "Recording goodwill when acquiring a real estate company for more than the fair value of its property assets.",
+    "entries": [
+      { "account": "Investment Properties (Fair Value)", "type": "Asset (+)", "dr": 10000000.00, "cr": 0 },
+      { "account": "Goodwill", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 10500000.00 }
+    ],
+    "explanation": "When acquiring a property company rather than individual assets, any premium paid over the net fair value of assets acquired is recorded as goodwill under IFRS 3."
+  },
+  {
+    "slug": "re-long-term-debt-reclassification",
+    "category": "Real Estate",
+    "title": "Reclassification of Current Portion of Mortgage",
+    "description": "Moving the portion of a mortgage due within the next 12 months from long-term to current liabilities.",
+    "entries": [
+      { "account": "Mortgage Loan (Long-Term)", "type": "Liability (-)", "dr": 120000.00, "cr": 0 },
+      { "account": "Current Portion of Mortgage", "type": "Liability (+)", "dr": 0, "cr": 120000.00 }
+    ],
+    "explanation": "At each year-end, the portion of mortgage principal payable within the next 12 months must be presented as a current liability so that the balance sheet accurately shows short-term obligations."
+  },
+  {
+    "slug": "re-intercompany-property-loan",
+    "category": "Real Estate",
+    "title": "Intercompany Loan for Property Development",
+    "description": "Recording a loan from the parent company to a subsidiary SPV set up for a development project.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 5000000.00, "cr": 0 },
+      { "account": "Due to Parent Company (Intercompany)", "type": "Liability (+)", "dr": 0, "cr": 5000000.00 }
+    ],
+    "explanation": "Real estate developers often use Special Purpose Vehicles (SPVs) for individual projects. Funding from the parent is an intercompany liability at the SPV level."
+  },
+  {
+    "slug": "re-spv-equity-injection",
+    "category": "Real Estate",
+    "title": "Equity Injection into Development SPV",
+    "description": "The parent company subscribing to shares in a newly formed project SPV.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 2000000.00, "cr": 0 },
+      { "account": "Share Capital", "type": "Equity (+)", "dr": 0, "cr": 100000.00 },
+      { "account": "Share Premium / APIC", "type": "Equity (+)", "dr": 0, "cr": 1900000.00 }
+    ],
+    "explanation": "SPVs are typically funded with a small par value share capital and a large share premium. This structure is common in real estate project finance arrangements."
+  },
+
+  {
+    "slug": "con-mobilization-advance-amortization",
+    "category": "Construction",
+    "title": "Mobilization Advance — Monthly Amortization",
+    "description": "Reducing the mobilization advance liability as work progresses and the advance is recovered through deductions on progress billings.",
+    "entries": [
+      { "account": "Advance from Client (Liability)", "type": "Liability (-)", "dr": 25000.00, "cr": 0 },
+      { "account": "Accounts Receivable (Progress Billing)", "type": "Asset (-)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "Mobilization advances are typically recovered by deducting a fixed percentage from each progress certificate. This entry reduces the liability as each invoice is issued, until the full advance is recovered."
+  },
+  {
+    "slug": "con-bid-bond-tender-deposit",
+    "category": "Construction",
+    "title": "Bid Bond / Tender Guarantee Deposit",
+    "description": "Recording the cash margin paid to the bank to issue a bid bond when submitting a tender.",
+    "entries": [
+      { "account": "Restricted Cash (Bid Bond Margin)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "A bid bond is a guarantee that the contractor will sign the contract if awarded the project. The cash margin is restricted — it is still the company's asset but cannot be spent until the bid bond is released."
+  },
+  {
+    "slug": "con-bid-bond-release",
+    "category": "Construction",
+    "title": "Bid Bond Release (Post-Award or Rejection)",
+    "description": "Releasing the bid bond margin back to the current account after the tender result.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Restricted Cash (Bid Bond Margin)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Once the tender is awarded to another party or the contractor has signed the contract, the bid bond is released and the cash becomes freely available again."
+  },
+  {
+    "slug": "con-lg-advance-payment-guarantee-fee",
+    "category": "Construction",
+    "title": "Advance Payment Guarantee — Bank Fee",
+    "description": "Recording the bank's annual commission for issuing an Advance Payment Guarantee (APG) on behalf of the contractor.",
+    "entries": [
+      { "account": "Bank Charges / Finance Expense", "type": "Expense (+)", "dr": 1500.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Clients require an APG before releasing a mobilization advance. The bank issues this guarantee for a fee (typically 1-2% per annum of the guarantee amount), which is an operating finance cost."
+  },
+  {
+    "slug": "con-lg-margin-deposit",
+    "category": "Construction",
+    "title": "Letter of Guarantee (LG) Cash Margin",
+    "description": "Recording cash blocked by the bank as collateral for issuing a performance or advance payment guarantee.",
+    "entries": [
+      { "account": "Restricted Cash (LG Margin)", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Banks often require contractors to block 10-30% of the guarantee value as cash collateral. This is still the contractor's asset — it is reclassified from unrestricted cash to restricted cash."
+  },
+  {
+    "slug": "con-project-insurance-premium",
+    "category": "Construction",
+    "title": "Contractor All-Risk (CAR) Insurance Premium",
+    "description": "Paying the annual Contractor All-Risk insurance premium for a construction project.",
+    "entries": [
+      { "account": "Prepaid Project Insurance", "type": "Asset (+)", "dr": 18000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 18000.00 }
+    ],
+    "explanation": "CAR insurance is mandatory on most construction contracts. The premium is prepaid and amortized monthly over the project duration as it is directly attributable to the contract cost."
+  },
+  {
+    "slug": "con-site-establishment-costs",
+    "category": "Construction",
+    "title": "Site Establishment Costs",
+    "description": "Capitalizing the initial cost of setting up the construction site — fencing, signage, temporary roads, and site offices.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Project)", "type": "Asset (+)", "dr": 35000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 35000.00 }
+    ],
+    "explanation": "Site setup costs are directly attributable to the contract and are capitalized into WIP. They will become part of Cost of Sales when the project revenue is recognized."
+  },
+  {
+    "slug": "con-progress-billing-invoice-raised",
+    "category": "Construction",
+    "title": "Progress Billing — Invoice Raised to Client",
+    "description": "Issuing a monthly progress certificate invoice to the client based on work completed.",
+    "entries": [
+      { "account": "Accounts Receivable (Progress Billing)", "type": "Asset (+)", "dr": 200000.00, "cr": 0 },
+      { "account": "Billings on Contracts (Contra-WIP)", "type": "Liability (+)", "dr": 0, "cr": 200000.00 }
+    ],
+    "explanation": "Progress billing creates a receivable from the client. The 'Billings on Contracts' account is a contra account used to track the cumulative amount billed versus revenue earned under the percentage of completion method."
+  },
+  {
+    "slug": "con-revenue-percentage-completion",
+    "category": "Construction",
+    "title": "Contract Revenue Recognition — % of Completion",
+    "description": "Recognizing revenue based on the percentage of the project physically completed at month-end.",
+    "entries": [
+      { "account": "Contract Revenue (P&L)", "type": "Revenue (+)", "dr": 0, "cr": 180000.00 },
+      { "account": "Work-in-Progress (WIP)", "type": "Asset (+)", "dr": 180000.00, "cr": 0 }
+    ],
+    "explanation": "Under IFRS 15, revenue on long-term contracts is recognized over time as performance obligations are satisfied. The percentage is calculated as (costs incurred to date / total estimated costs) × contract price."
+  },
+  {
+    "slug": "con-over-billing-excess-billings",
+    "category": "Construction",
+    "title": "Over-Billing (Billings Exceed Revenue Earned)",
+    "description": "Recording the liability when the amount invoiced to the client exceeds the revenue actually earned based on completion.",
+    "entries": [
+      { "account": "Billings in Excess of Revenue (Liability)", "type": "Liability (+)", "dr": 0, "cr": 50000.00 },
+      { "account": "Contract Revenue", "type": "Revenue (-)", "dr": 50000.00, "cr": 0 }
+    ],
+    "explanation": "If a contractor bills ahead of actual work done, the excess is a liability (deferred revenue). This is common in front-loaded payment schedules. It represents an obligation to perform future work."
+  },
+  {
+    "slug": "con-under-billing-revenue-exceeds-billings",
+    "category": "Construction",
+    "title": "Under-Billing (Revenue Earned Exceeds Billings)",
+    "description": "Recording the asset when revenue earned based on completion exceeds the amount invoiced to date.",
+    "entries": [
+      { "account": "Costs and Estimated Earnings in Excess of Billings (Asset)", "type": "Asset (+)", "dr": 75000.00, "cr": 0 },
+      { "account": "Contract Revenue", "type": "Revenue (+)", "dr": 0, "cr": 75000.00 }
+    ],
+    "explanation": "Under-billing (or 'unbilled revenue') occurs when work is done but invoicing lags. This is a key balance sheet item in construction — it represents earned but not yet billed revenue and is effectively a receivable."
+  },
+  {
+    "slug": "con-retention-receivable-release",
+    "category": "Construction",
+    "title": "Retention Receivable — Release at Practical Completion",
+    "description": "Collecting the withheld retention amount from the client after achieving practical completion and the defects period ending.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "Retention Receivable", "type": "Asset (-)", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "Retention is typically released in two stages — 50% at practical completion and 50% after the defects liability period. This entry clears the long-held receivable when the client finally pays."
+  },
+  {
+    "slug": "con-claims-revenue-accrual",
+    "category": "Construction",
+    "title": "Contractual Claim Revenue Accrual",
+    "description": "Accruing revenue for a claim submitted to the client for additional costs caused by employer-risk events (e.g., design changes, delays).",
+    "entries": [
+      { "account": "Claims Receivable", "type": "Asset (+)", "dr": 85000.00, "cr": 0 },
+      { "account": "Contract Revenue (Claims)", "type": "Revenue (+)", "dr": 0, "cr": 85000.00 }
+    ],
+    "explanation": "Under IFRS 15, claim revenue is recognized only when it is highly probable it will not be reversed. Claims must be formally submitted, supported by cost evidence, and the client must have acknowledged liability or the contract terms must support the claim."
+  },
+  {
+    "slug": "con-disputed-variation-order",
+    "category": "Construction",
+    "title": "Disputed Variation Order — Contingent Revenue",
+    "description": "Recording a variation order submitted to the client that is under dispute and not yet approved.",
+    "entries": [
+      { "account": "Disputed Claims Receivable (Memo)", "type": "Asset (+)", "dr": 40000.00, "cr": 0 },
+      { "account": "Contingent Revenue (Not Recognized)", "type": "Disclosure", "dr": 0, "cr": 40000.00 }
+    ],
+    "explanation": "Disputed variations are disclosed but NOT recognized as revenue under IFRS 15 until the constraint on variable consideration is lifted. Premature recognition of disputed amounts is a common audit finding in construction."
+  },
+  {
+    "slug": "con-price-escalation-clause-revenue",
+    "category": "Construction",
+    "title": "Price Escalation Clause — Revenue Adjustment",
+    "description": "Increasing the contract value due to a contractual price escalation clause triggered by rising material or fuel costs.",
+    "entries": [
+      { "account": "Accounts Receivable (Escalation)", "type": "Asset (+)", "dr": 30000.00, "cr": 0 },
+      { "account": "Contract Revenue (Escalation)", "type": "Revenue (+)", "dr": 0, "cr": 30000.00 }
+    ],
+    "explanation": "Many long-term contracts include price adjustment clauses tied to published indices (steel prices, fuel costs). Once the formula is applied and agreed, the additional revenue is recognized."
+  },
+  {
+    "slug": "con-milestone-payment-received",
+    "category": "Construction",
+    "title": "Milestone Payment Received from Client",
+    "description": "Collecting a payment linked to achieving a specific project milestone (e.g., structural completion).",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Accounts Receivable (Progress Billing)", "type": "Asset (-)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "Milestone payments clear the progress billing receivable. The cash receipt does not create revenue — revenue was recognized earlier when the work was performed."
+  },
+  {
+    "slug": "con-final-account-settlement",
+    "category": "Construction",
+    "title": "Final Account Settlement",
+    "description": "Recording the agreed final contract value after all variations, claims, and adjustments are settled.",
+    "entries": [
+      { "account": "Accounts Receivable (Final Account)", "type": "Asset (+)", "dr": 120000.00, "cr": 0 },
+      { "account": "Contract Revenue (Final Account Adjustment)", "type": "Revenue (+)", "dr": 0, "cr": 120000.00 }
+    ],
+    "explanation": "The final account is negotiated and agreed at project close. Any difference between the final agreed amount and previously recognized revenue is booked as a revenue adjustment in the period of agreement."
+  },
+  {
+    "slug": "con-material-purchase-cash",
+    "category": "Construction",
+    "title": "Material Purchase — Cash (Site)",
+    "description": "Buying construction materials (steel, cement, blocks) with cash for immediate site use.",
+    "entries": [
+      { "account": "Material Inventory / WIP (Site)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Materials paid in cash are still assets until consumed on site. Small cash purchases are common in construction for urgent material needs."
+  },
+  {
+    "slug": "con-material-issued-to-site-wip",
+    "category": "Construction",
+    "title": "Material Issued from Store to Site (WIP)",
+    "description": "Moving materials from the central warehouse to a specific project site.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Project A)", "type": "Asset (+)", "dr": 45000.00, "cr": 0 },
+      { "account": "Material Inventory (Store)", "type": "Asset (-)", "dr": 0, "cr": 45000.00 }
+    ],
+    "explanation": "When materials leave the central store for a specific job, the cost transfers from general inventory to the project's WIP. This is essential for accurate job costing."
+  },
+  {
+    "slug": "con-material-return-to-store",
+    "category": "Construction",
+    "title": "Surplus Material Returned to Store",
+    "description": "Returning unused materials from a project site back to the central warehouse.",
+    "entries": [
+      { "account": "Material Inventory (Store)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Work-in-Progress (WIP — Project A)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Unused materials are returned and credited back to the originating project's WIP. This prevents inflating the project cost and keeps the store balance accurate."
+  },
+  {
+    "slug": "con-material-wastage-on-site",
+    "category": "Construction",
+    "title": "Material Wastage / Breakage on Site",
+    "description": "Writing off materials damaged or wasted beyond acceptable norms on the construction site.",
+    "entries": [
+      { "account": "Material Wastage Expense", "type": "Expense (+)", "dr": 3500.00, "cr": 0 },
+      { "account": "Work-in-Progress / Material Inventory", "type": "Asset (-)", "dr": 0, "cr": 3500.00 }
+    ],
+    "explanation": "Normal wastage is usually built into the bill of quantities. Abnormal wastage (theft, negligence, accidents) is expensed separately so project managers can identify efficiency problems."
+  },
+  {
+    "slug": "con-import-duties-materials",
+    "category": "Construction",
+    "title": "Import Duties on Imported Materials",
+    "description": "Capitalizing customs duties paid on imported structural steel or specialist equipment into the material cost.",
+    "entries": [
+      { "account": "Material Inventory / WIP", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Import duties are part of the cost to bring materials to the site. They are capitalized into the material cost, not expensed separately, following IAS 2."
+  },
+  {
+    "slug": "con-fuel-consumables-plant",
+    "category": "Construction",
+    "title": "Fuel & Consumables for Plant and Machinery",
+    "description": "Recording diesel and lubricants used by excavators, cranes, and generators on site.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Project)", "type": "Asset (+)", "dr": 6000.00, "cr": 0 },
+      { "account": "Prepaid Fuel / Cash", "type": "Asset (-)", "dr": 0, "cr": 6000.00 }
+    ],
+    "explanation": "Fuel directly consumed in project operations is a direct cost allocated to WIP, not a general overhead. Tracking per-project fuel consumption is a key cost control measure."
+  },
+  {
+    "slug": "con-supplier-advance-payment",
+    "category": "Construction",
+    "title": "Advance Payment to Material Supplier",
+    "description": "Paying a cement or rebar supplier in advance to secure materials at an agreed price.",
+    "entries": [
+      { "account": "Advances to Suppliers", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Supplier advances are current assets, not expenses. They are offset against the supplier's invoices as materials are delivered."
+  },
+  {
+    "slug": "con-supplier-advance-offset-delivery",
+    "category": "Construction",
+    "title": "Supplier Advance Offset Against Delivery",
+    "description": "Clearing the advance when the supplier delivers materials and invoices the project.",
+    "entries": [
+      { "account": "Material Inventory / WIP", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Advances to Suppliers", "type": "Asset (-)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "When materials arrive, the advance is offset against the invoice value. If there is a remaining balance after offsetting, cash or payables are used for the difference."
+  },
+  {
+    "slug": "con-site-payroll-gross-wages",
+    "category": "Construction",
+    "title": "Site Workers Monthly Payroll (Gross)",
+    "description": "Recording the gross wages for all site-based staff — foremen, masons, carpenters, and laborers.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Direct Labor)", "type": "Asset (+)", "dr": 60000.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 60000.00 }
+    ],
+    "explanation": "Site labor is a direct project cost allocated to WIP. All wages for workers whose time is directly attributable to the project are capitalized, not expensed."
+  },
+  {
+    "slug": "con-ssc-site-workers-jordan",
+    "category": "Construction",
+    "title": "Social Security Contribution — Site Workers (Jordan)",
+    "description": "Recording the employer's SSC obligation for Jordanian site workers.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Labor Cost)", "type": "Asset (+)", "dr": 8550.00, "cr": 0 },
+      { "account": "SSC Payable (14.25% Employer Share)", "type": "Liability (+)", "dr": 0, "cr": 8550.00 }
+    ],
+    "explanation": "The employer's 14.25% SSC contribution is part of the true cost of site labor and is allocated to WIP. The employee's 7.5% share is deducted from wages payable."
+  },
+  {
+    "slug": "con-overtime-site-workers",
+    "category": "Construction",
+    "title": "Overtime — Site Workers (Peak Activity)",
+    "description": "Accruing overtime wages for site workers during an accelerated construction phase.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Labor)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Accrued Wages (Site)", "type": "Liability (+)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Overtime for site workers is a direct project cost. It is allocated to the specific project's WIP and will flow into Cost of Sales when the related revenue is recognized."
+  },
+  {
+    "slug": "con-eosb-provision-site-staff",
+    "category": "Construction",
+    "title": "EOSB Monthly Provision — Site Staff",
+    "description": "Accruing the end-of-service benefit for long-term site employees as required by Jordanian labor law.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Labor Cost)", "type": "Asset (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Provision for EOSB (Site Staff)", "type": "Liability (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "EOSB for site workers is a direct labor cost and is allocated to WIP. For office and admin staff, EOSB goes to overhead expense. This distinction is critical for accurate project cost reporting."
+  },
+  {
+    "slug": "con-worker-accommodation-costs",
+    "category": "Construction",
+    "title": "Worker Accommodation & Camp Costs",
+    "description": "Recording the cost of housing, meals, and transportation provided to workers at a remote construction site.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Site Overhead)", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Worker accommodation and welfare costs are direct project costs, especially for remote sites. They are allocated to the project WIP as part of site overhead."
+  },
+  {
+    "slug": "con-safety-ppe-expense",
+    "category": "Construction",
+    "title": "Safety Gear / PPE (Site Workers)",
+    "description": "Purchasing hard hats, safety boots, harnesses, and hi-vis vests for all site personnel.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Site Overhead)", "type": "Asset (+)", "dr": 4500.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 4500.00 }
+    ],
+    "explanation": "Safety equipment is a mandatory direct project cost. It is allocated to WIP rather than expensed because it is directly attributable to specific contract activity."
+  },
+  {
+    "slug": "con-foreign-worker-visa-mobilization",
+    "category": "Construction",
+    "title": "Foreign Worker Visa & Mobilization Costs",
+    "description": "Recording the visa fees, medical exams, and flight costs to mobilize foreign laborers to the site.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Labor Mobilization)", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Worker mobilization costs are directly attributable to the project and are capitalized to WIP. They are amortized over the expected tenure of those workers on the project."
+  },
+  {
+    "slug": "con-labour-only-subcontractor",
+    "category": "Construction",
+    "title": "Labour-Only Subcontractor Cost",
+    "description": "Recording the cost of a gang of workers supplied by a labour-only subcontractor (materials are provided by the main contractor).",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Labour Sub)", "type": "Asset (+)", "dr": 22000.00, "cr": 0 },
+      { "account": "Accounts Payable (Labour Sub)", "type": "Liability (+)", "dr": 0, "cr": 22000.00 }
+    ],
+    "explanation": "Labour-only subcontractors are common in construction. Their costs are direct labor to WIP, separate from specialist subcontractors who also supply materials."
+  },
+  {
+    "slug": "con-staff-transport-to-site",
+    "category": "Construction",
+    "title": "Staff Transport to and from Site",
+    "description": "Recording the cost of daily bus transport for workers between accommodation and the construction site.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Site Overhead)", "type": "Asset (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Site transport is an essential cost of delivering the contract. It is a direct project cost allocated to WIP."
+  },
+  {
+    "slug": "con-indirect-labor-site-supervisors",
+    "category": "Construction",
+    "title": "Indirect Labor — Site Engineers & Supervisors",
+    "description": "Recording the salary costs of site managers, quantity surveyors, and engineers who supervise multiple activities.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Site Overhead)", "type": "Asset (+)", "dr": 18000.00, "cr": 0 },
+      { "account": "Wages Payable (Supervisory)", "type": "Liability (+)", "dr": 0, "cr": 18000.00 }
+    ],
+    "explanation": "Supervisory staff who work exclusively on one project are an indirect project cost allocated to that project's WIP as site overhead."
+  },
+  {
+    "slug": "con-subcontract-invoice-accrual",
+    "category": "Construction",
+    "title": "Subcontractor Invoice Accrual",
+    "description": "Accruing the cost of work completed by a specialist subcontractor before their invoice is received.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Subcontract)", "type": "Asset (+)", "dr": 120000.00, "cr": 0 },
+      { "account": "Accrued Subcontract Costs", "type": "Liability (+)", "dr": 0, "cr": 120000.00 }
+    ],
+    "explanation": "To accurately report project costs at month-end, subcontractor costs must be accrued based on work certified, even if the invoice has not yet been received. This is critical for correct percentage-of-completion calculations."
+  },
+  {
+    "slug": "con-subcontract-advance-paid",
+    "category": "Construction",
+    "title": "Subcontractor Advance Payment",
+    "description": "Paying a specialist subcontractor an advance to mobilize and procure materials.",
+    "entries": [
+      { "account": "Advances to Subcontractors", "type": "Asset (+)", "dr": 30000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 30000.00 }
+    ],
+    "explanation": "Subcontractor advances are assets until the work is performed. They are recovered by deducting from future payment certificates — similar to how client advances are recovered."
+  },
+  {
+    "slug": "con-subcontract-advance-amortization",
+    "category": "Construction",
+    "title": "Subcontractor Advance — Recovery Deduction",
+    "description": "Deducting the subcontractor advance from a progress payment certificate as work is completed.",
+    "entries": [
+      { "account": "Accounts Payable (Subcontractor)", "type": "Liability (-)", "dr": 10000.00, "cr": 0 },
+      { "account": "Advances to Subcontractors", "type": "Asset (-)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "The advance is recovered proportionally from each progress payment. This reduces the subcontractor advance asset without recording an expense — it is a balance sheet offset."
+  },
+  {
+    "slug": "con-subcontract-retention-release",
+    "category": "Construction",
+    "title": "Subcontractor Retention Release",
+    "description": "Releasing the retained amount to a subcontractor after their portion of works is complete and the defects period passes.",
+    "entries": [
+      { "account": "Retention Payable (Subcontractor)", "type": "Liability (-)", "dr": 20000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "This mirrors the retention receivable from the client but from the subcontractor's perspective — the main contractor holds retention from subcontractors as a quality guarantee."
+  },
+  {
+    "slug": "con-subcontractor-backcharge",
+    "category": "Construction",
+    "title": "Subcontractor Back-Charge",
+    "description": "Deducting costs from a subcontractor's payment for remedial work or damage they caused.",
+    "entries": [
+      { "account": "Accounts Payable (Subcontractor)", "type": "Liability (-)", "dr": 5000.00, "cr": 0 },
+      { "account": "Work-in-Progress (WIP — Cost Recovery)", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "When a subcontractor causes damage or forces the main contractor to perform remedial work, the cost is 'back-charged' by deducting from the sub's next payment certificate. It reduces the WIP cost for the project."
+  },
+  {
+    "slug": "con-subcontractor-termination-penalty",
+    "category": "Construction",
+    "title": "Subcontractor Termination Costs",
+    "description": "Recording costs associated with terminating a non-performing subcontractor mid-contract.",
+    "entries": [
+      { "account": "Subcontractor Termination Expense", "type": "Expense (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "Termination costs — including demobilization, settlement of unpaid work, and costs to complete the works using an alternative subcontractor — are expensed as they represent an inefficiency loss rather than a productive cost."
+  },
+  {
+    "slug": "con-withholding-tax-subcontractor",
+    "category": "Construction",
+    "title": "Withholding Tax Deducted from Subcontractor",
+    "description": "Deducting withholding tax from a domestic subcontractor's payment as required by Jordanian tax law.",
+    "entries": [
+      { "account": "Accounts Payable (Subcontractor)", "type": "Liability (-)", "dr": 100000.00, "cr": 0 },
+      { "account": "Withholding Tax Payable (ISTD)", "type": "Liability (+)", "dr": 0, "cr": 5000.00 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 95000.00 }
+    ],
+    "explanation": "In Jordan, companies must withhold 5% tax from payments to certain domestic contractors and subcontractors and remit it to the ISTD. The subcontractor receives the net amount."
+  },
+  {
+    "slug": "con-subcontract-final-account",
+    "category": "Construction",
+    "title": "Subcontractor Final Account Settlement",
+    "description": "Recording the agreed final payment to a subcontractor after all work, variations, and disputes are resolved.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Subcontract)", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Accounts Payable (Subcontractor)", "type": "Liability (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "The final account may include agreed variations not previously certified. Any additional cost above what was already accrued is added to WIP in the period the settlement is agreed."
+  },
+  {
+    "slug": "con-specialist-consultant-fee",
+    "category": "Construction",
+    "title": "Specialist Consultant Fee (Structural / MEP)",
+    "description": "Paying a structural engineer or MEP consultant for specialist design and supervision services.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Consultancy)", "type": "Asset (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Accounts Payable (Consultant)", "type": "Liability (+)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "Specialist consultants engaged for a specific project are a direct project cost capitalized to WIP. General design consultants not tied to a specific project would be overhead."
+  },
+  {
+    "slug": "con-plant-equipment-purchase",
+    "category": "Construction",
+    "title": "Plant & Equipment Purchase (Owned)",
+    "description": "Buying a construction excavator or concrete mixer for use across multiple projects.",
+    "entries": [
+      { "account": "Plant & Machinery (Fixed Asset)", "type": "Asset (+)", "dr": 150000.00, "cr": 0 },
+      { "account": "Cash / Loan Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 150000.00 }
+    ],
+    "explanation": "Owned plant is a fixed asset depreciated over its useful life. The depreciation (not the purchase cost) is allocated to projects as a usage charge."
+  },
+  {
+    "slug": "con-plant-depreciation-to-wip",
+    "category": "Construction",
+    "title": "Plant Depreciation Allocated to Project WIP",
+    "description": "Charging a project with its share of plant depreciation based on machine hours used.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Plant Cost)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (Plant)", "type": "Contra-Asset (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Depreciation of owned plant is allocated to specific projects based on hours of utilization. This ensures each project bears its fair share of the equipment cost."
+  },
+  {
+    "slug": "con-plant-hire-rental",
+    "category": "Construction",
+    "title": "Plant Hire / Equipment Rental",
+    "description": "Recording the weekly rental of an excavator or tower crane from a plant hire company.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Plant Hire)", "type": "Asset (+)", "dr": 18000.00, "cr": 0 },
+      { "account": "Accounts Payable (Plant Company)", "type": "Liability (+)", "dr": 0, "cr": 18000.00 }
+    ],
+    "explanation": "Hired plant costs are a direct project cost allocated to WIP. Renting is preferred when equipment is needed for a short period or when capital is constrained."
+  },
+  {
+    "slug": "con-crane-hire",
+    "category": "Construction",
+    "title": "Tower Crane Monthly Hire",
+    "description": "Recording the monthly hire charge for a tower crane on a multi-storey building project.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Crane Hire)", "type": "Asset (+)", "dr": 35000.00, "cr": 0 },
+      { "account": "Accounts Payable (Crane Company)", "type": "Liability (+)", "dr": 0, "cr": 35000.00 }
+    ],
+    "explanation": "Tower cranes are the single largest plant hire cost on many high-rise projects. The monthly charge is a direct project cost regardless of crane utilization during the month."
+  },
+  {
+    "slug": "con-scaffolding-hire",
+    "category": "Construction",
+    "title": "Scaffolding Hire",
+    "description": "Recording the monthly rental of scaffolding system for the building façade works.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Scaffolding)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Accounts Payable (Scaffolding Co.)", "type": "Liability (+)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Scaffolding hire is a direct project cost. Scaffolding systems are almost universally hired rather than purchased as they are project-specific in size and configuration."
+  },
+  {
+    "slug": "con-small-tools-consumables",
+    "category": "Construction",
+    "title": "Small Tools & Consumables",
+    "description": "Purchasing hand tools, drill bits, saw blades, and other consumables for site use.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Site Overhead)", "type": "Asset (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "Small tools under a capitalization threshold are expensed as direct project costs in the month purchased. They are allocated to the project consuming them."
+  },
+  {
+    "slug": "con-site-office-setup",
+    "category": "Construction",
+    "title": "Site Office Setup (Temporary Buildings)",
+    "description": "Recording the cost of portable site offices, cabins, and site-specific facilities.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Site Overhead)", "type": "Asset (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "Temporary site buildings are project costs capitalized to WIP. At project end, they may be sold, transferred to another project, or written off if no residual value."
+  },
+  {
+    "slug": "con-site-utilities",
+    "category": "Construction",
+    "title": "Site Utilities — Electricity and Water",
+    "description": "Paying for temporary electricity supply and water connection to the construction site.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Site Overhead)", "type": "Asset (+)", "dr": 4500.00, "cr": 0 },
+      { "account": "Cash / Utility Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 4500.00 }
+    ],
+    "explanation": "Site utilities are essential direct costs. Temporary power connections and water usage for concrete mixing and dust suppression are all direct project charges."
+  },
+  {
+    "slug": "con-site-security-cost",
+    "category": "Construction",
+    "title": "Site Security (Guard Service)",
+    "description": "Monthly cost of a contracted security company protecting the construction site from theft and unauthorized access.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Site Overhead)", "type": "Asset (+)", "dr": 3500.00, "cr": 0 },
+      { "account": "Accounts Payable (Security Co.)", "type": "Liability (+)", "dr": 0, "cr": 3500.00 }
+    ],
+    "explanation": "Site security is a direct project cost. Theft of materials and tools is a significant risk on construction sites, making security an essential expense."
+  },
+  {
+    "slug": "con-plant-maintenance-repair",
+    "category": "Construction",
+    "title": "Plant Maintenance & Repair on Site",
+    "description": "Recording the cost of repairing a breakdown of company-owned plant machinery on site.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Plant Cost)", "type": "Asset (+)", "dr": 6000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 6000.00 }
+    ],
+    "explanation": "Routine maintenance on project-deployed plant is a direct project cost. Major overhauls that extend the plant's useful life would be capitalized into the asset."
+  },
+  {
+    "slug": "con-plant-transfer-between-projects",
+    "category": "Construction",
+    "title": "Plant Transfer Between Projects",
+    "description": "Moving an owned excavator from Project A to Project B mid-contract.",
+    "entries": [
+      { "account": "WIP — Project B (Plant Charge)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "WIP — Project A (Plant Credit)", "type": "Asset (-)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Plant transfers are an internal recharge between projects. The sending project is credited and the receiving project is charged based on an agreed internal hire rate for the period of use."
+  },
+  {
+    "slug": "con-head-office-overhead-recharge",
+    "category": "Construction",
+    "title": "Head Office Overhead Recharge to Project",
+    "description": "Allocating a portion of head office running costs (salaries, rent, IT) to each active project.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — HO Overhead)", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Head Office Overhead Pool", "type": "Expense (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Head office overheads are allocated to projects using a predetermined rate (e.g., % of direct costs or revenue). This ensures the full cost of delivery is captured in each project's WIP."
+  },
+  {
+    "slug": "con-over-applied-overhead-closing",
+    "category": "Construction",
+    "title": "Closing Over-Applied Overhead",
+    "description": "Adjusting at year-end when the overhead absorbed into projects exceeds actual overhead incurred.",
+    "entries": [
+      { "account": "Manufacturing / Project Overhead (Applied)", "type": "Clearing", "dr": 10000.00, "cr": 0 },
+      { "account": "Manufacturing / Project Overhead (Control)", "type": "Expense (-)", "dr": 0, "cr": 8000.00 },
+      { "account": "Cost of Sales (Reduction)", "type": "Expense (-)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "If projects absorbed more overhead than was actually incurred, cost of sales was overstated. The over-applied amount is credited back, reducing COGS and improving reported profit."
+  },
+  {
+    "slug": "con-under-applied-overhead-closing",
+    "category": "Construction",
+    "title": "Closing Under-Applied Overhead",
+    "description": "Adjusting at year-end when actual overhead exceeded the amount absorbed into project costs.",
+    "entries": [
+      { "account": "Cost of Sales (Overhead Shortfall)", "type": "Expense (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Manufacturing / Project Overhead (Control)", "type": "Expense (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Under-applied overhead means projects were under-costed. The shortfall is charged to Cost of Sales so that the full overhead burden is reflected in the period's results."
+  },
+  {
+    "slug": "con-wip-write-down-onerous-contract",
+    "category": "Construction",
+    "title": "WIP Write-Down — Onerous Contract",
+    "description": "Reducing the WIP balance when a project is confirmed as loss-making and the WIP value exceeds recoverable amount.",
+    "entries": [
+      { "account": "Loss on Onerous Contract", "type": "Expense (+)", "dr": 180000.00, "cr": 0 },
+      { "account": "Work-in-Progress (WIP)", "type": "Asset (-)", "dr": 0, "cr": 180000.00 }
+    ],
+    "explanation": "When WIP costs exceed the remaining revenue to be earned, the excess cannot remain as an asset. It must be written down immediately under the prudence principle (IAS 37)."
+  },
+  {
+    "slug": "con-project-closeout-wip-to-cogs",
+    "category": "Construction",
+    "title": "Project Close-Out — WIP to Cost of Sales",
+    "description": "Transferring all remaining WIP costs to Cost of Sales upon project completion and final revenue recognition.",
+    "entries": [
+      { "account": "Cost of Construction (COGS)", "type": "Expense (+)", "dr": 3500000.00, "cr": 0 },
+      { "account": "Work-in-Progress (WIP)", "type": "Asset (-)", "dr": 0, "cr": 3500000.00 }
+    ],
+    "explanation": "At project completion, all accumulated WIP is flushed to Cost of Sales to match the final revenue recognition. This is the ultimate matching entry for a long-term construction contract."
+  },
+  {
+    "slug": "con-defects-provision-post-completion",
+    "category": "Construction",
+    "title": "Defects Liability Provision — Post Completion",
+    "description": "Accruing the estimated cost of remedying defects during the defects liability period.",
+    "entries": [
+      { "account": "Defects Provision Expense", "type": "Expense (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Provision for Defects (Liability)", "type": "Liability (+)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Under the matching principle, the cost of expected defect rectification is recognized in the same period as the contract revenue. Based on historical data, contractors estimate this as a percentage of contract value."
+  },
+  {
+    "slug": "con-warranty-claim-settled",
+    "category": "Construction",
+    "title": "Warranty / Defect Claim Settled",
+    "description": "Using the defects provision to pay for remedial work on a completed project during the warranty period.",
+    "entries": [
+      { "account": "Provision for Defects (Liability)", "type": "Liability (-)", "dr": 15000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "When defect costs are incurred, they are charged against the provision. No new expense is recognized — the cost was already accrued when the project was completed."
+  },
+  {
+    "slug": "con-construction-loan-drawdown",
+    "category": "Construction",
+    "title": "Construction Loan Drawdown",
+    "description": "Drawing down a tranche of a project finance loan to fund construction activities.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 2000000.00, "cr": 0 },
+      { "account": "Construction Loan Payable", "type": "Liability (+)", "dr": 0, "cr": 2000000.00 }
+    ],
+    "explanation": "Project finance loans are drawn in tranches as construction costs are incurred. Each drawdown is backed by a certified valuation of work completed."
+  },
+  {
+    "slug": "con-construction-loan-repayment",
+    "category": "Construction",
+    "title": "Construction Loan Repayment (Principal + Interest)",
+    "description": "Making a monthly repayment on the project finance loan after the construction phase.",
+    "entries": [
+      { "account": "Construction Loan Payable (Principal)", "type": "Liability (-)", "dr": 100000.00, "cr": 0 },
+      { "account": "Interest Expense", "type": "Expense (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 115000.00 }
+    ],
+    "explanation": "After completion, the construction loan transitions to a term loan repaid over the agreed schedule. The interest portion is expensed as a period cost."
+  },
+  {
+    "slug": "con-letter-of-credit-material-import",
+    "category": "Construction",
+    "title": "Letter of Credit for Material Import",
+    "description": "Opening a documentary letter of credit with the bank to import specialist materials from abroad.",
+    "entries": [
+      { "account": "Restricted Cash (L/C Margin)", "type": "Asset (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Bank Charges (L/C Fee)", "type": "Expense (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 51000.00 }
+    ],
+    "explanation": "A Letter of Credit guarantees the overseas supplier payment. The bank charges a fee (typically 1-2%) and may require a cash margin to be blocked as collateral."
+  },
+  {
+    "slug": "con-lc-settlement-on-delivery",
+    "category": "Construction",
+    "title": "L/C Settlement — Materials Received",
+    "description": "Releasing the L/C and recording the materials when the supplier's shipping documents are presented.",
+    "entries": [
+      { "account": "Material Inventory / WIP", "type": "Asset (+)", "dr": 200000.00, "cr": 0 },
+      { "account": "Restricted Cash (L/C Margin)", "type": "Asset (-)", "dr": 0, "cr": 50000.00 },
+      { "account": "Cash in Bank (Balance)", "type": "Asset (-)", "dr": 0, "cr": 150000.00 }
+    ],
+    "explanation": "When the shipping documents are presented and accepted, the bank pays the supplier and the materials are received into inventory. The L/C margin is released."
+  },
+  {
+    "slug": "con-retention-bond-in-lieu",
+    "category": "Construction",
+    "title": "Retention Bond (In Lieu of Cash Retention)",
+    "description": "Recording a bank guarantee provided to the client instead of withholding cash retention.",
+    "entries": [
+      { "account": "Bank Charges (Bond Fee)", "type": "Expense (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Accounts Receivable (Full, No Retention Held)", "type": "Asset (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Some contractors offer a bank guarantee ('retention bond') so the client holds no cash retention. The contractor receives full payment but pays a bank fee for the bond. This improves cash flow significantly."
+  },
+  {
+    "slug": "con-invoice-factoring-progress-claim",
+    "category": "Construction",
+    "title": "Factoring of Progress Invoice",
+    "description": "Selling a certified progress invoice to a factoring company to receive immediate cash.",
+    "entries": [
+      { "account": "Cash in Bank (Advance)", "type": "Asset (+)", "dr": 190000.00, "cr": 0 },
+      { "account": "Factoring Fee / Finance Charge", "type": "Expense (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Accounts Receivable (Progress Invoice)", "type": "Asset (-)", "dr": 0, "cr": 200000.00 }
+    ],
+    "explanation": "Contractors with long payment cycles can factor certified invoices for immediate cash. The discount charged by the factor (typically 3-6%) is a finance cost."
+  },
+  {
+    "slug": "con-vat-on-progress-billing",
+    "category": "Construction",
+    "title": "VAT on Progress Billing Invoice (Output)",
+    "description": "Charging 16% VAT on a progress certificate raised to a client in Jordan.",
+    "entries": [
+      { "account": "Accounts Receivable (Progress Billing)", "type": "Asset (+)", "dr": 232000.00, "cr": 0 },
+      { "account": "Contract Revenue", "type": "Revenue (+)", "dr": 0, "cr": 200000.00 },
+      { "account": "VAT Output Tax Payable", "type": "Liability (+)", "dr": 0, "cr": 32000.00 }
+    ],
+    "explanation": "Construction services in Jordan are subject to 16% VAT. The contractor charges VAT on each progress certificate and remits the net VAT (output minus input) to the ISTD."
+  },
+  {
+    "slug": "con-vat-input-on-materials",
+    "category": "Construction",
+    "title": "VAT Input on Material Purchases",
+    "description": "Recording recoverable VAT on material purchases from VAT-registered suppliers.",
+    "entries": [
+      { "account": "Material Inventory / WIP", "type": "Asset (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "VAT Input Tax (16%)", "type": "Asset (+)", "dr": 16000.00, "cr": 0 },
+      { "account": "Accounts Payable (Supplier)", "type": "Liability (+)", "dr": 0, "cr": 116000.00 }
+    ],
+    "explanation": "VAT on material and subcontractor purchases is a recoverable input tax. It is not part of the material cost — it is a separate asset offset against the VAT collected on billings."
+  },
+  {
+    "slug": "con-withholding-tax-remittance-istd",
+    "category": "Construction",
+    "title": "Withholding Tax Remittance to ISTD",
+    "description": "Paying accumulated withholding taxes deducted from subcontractors to the ISTD.",
+    "entries": [
+      { "account": "Withholding Tax Payable (ISTD)", "type": "Liability (-)", "dr": 15000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Withholding taxes must be remitted to the ISTD within the statutory deadline (usually the 15th of the following month). Failure to remit attracts penalties."
+  },
+  {
+    "slug": "con-corporate-tax-provision",
+    "category": "Construction",
+    "title": "Corporate Income Tax Provision (Year-End)",
+    "description": "Accruing the estimated income tax on the construction company's annual taxable profit.",
+    "entries": [
+      { "account": "Income Tax Expense", "type": "Expense (+)", "dr": 120000.00, "cr": 0 },
+      { "account": "Income Tax Payable (ISTD)", "type": "Liability (+)", "dr": 0, "cr": 120000.00 }
+    ],
+    "explanation": "Construction companies often have significant year-end adjustments for long-term contracts. The tax provision is based on taxable profit, which may differ from accounting profit due to timing differences."
+  },
+  {
+    "slug": "con-zakat-wip-ksa",
+    "category": "Construction",
+    "title": "Zakat on WIP and Contract Assets (Saudi Arabia)",
+    "description": "Accruing Zakat on the construction company's Zakatable base including WIP and net working capital.",
+    "entries": [
+      { "account": "Zakat Expense", "type": "Expense (+)", "dr": 80000.00, "cr": 0 },
+      { "account": "Zakat Payable (ZATCA)", "type": "Liability (+)", "dr": 0, "cr": 80000.00 }
+    ],
+    "explanation": "In Saudi Arabia, construction companies pay Zakat instead of income tax. The Zakatable base includes equity, long-term liabilities, and certain adjustments. WIP is typically included in the calculation."
+  },
+  {
+    "slug": "con-import-duty-plant",
+    "category": "Construction",
+    "title": "Import Duty on Imported Plant & Machinery",
+    "description": "Capitalizing customs duties on imported construction equipment (e.g., excavator, tower crane).",
+    "entries": [
+      { "account": "Plant & Machinery (Fixed Asset)", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Import duties on plant are part of the asset's total cost and are capitalized. They increase the depreciable base of the equipment."
+  },
+  {
+    "slug": "con-municipality-building-levy",
+    "category": "Construction",
+    "title": "Municipality Building Development Levy",
+    "description": "Paying a government levy charged on the construction of new buildings in a municipality.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Project Costs)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Municipality building levies are a required cost of legal construction and are capitalized as part of the project WIP — they are directly attributable to the specific construction activity."
+  },
+  {
+    "slug": "con-surplus-material-sale-third-party",
+    "category": "Construction",
+    "title": "Surplus Material Sold to Third Party",
+    "description": "Selling leftover materials (sand, aggregate, blocks) at project close-out to another contractor.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Material Inventory / WIP", "type": "Asset (-)", "dr": 0, "cr": 6000.00 },
+      { "account": "Gain on Sale of Surplus Material", "type": "Revenue (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Surplus materials recovered at project close are sold at market rate. The gain (sale price minus book value) is Other Income for the contractor."
+  },
+  {
+    "slug": "con-plant-disposal-project-end",
+    "category": "Construction",
+    "title": "Plant Disposal at Project End",
+    "description": "Selling or writing off site plant (generators, site huts) at the end of a construction project.",
+    "entries": [
+      { "account": "Cash / Scrap Value", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (Plant)", "type": "Contra-Asset (-)", "dr": 40000.00, "cr": 0 },
+      { "account": "Plant & Machinery (Cost)", "type": "Asset (-)", "dr": 0, "cr": 50000.00 },
+      { "account": "Loss on Disposal of Plant", "type": "Expense (+)", "dr": 5000.00, "cr": 0 }
+    ],
+    "explanation": "Project-specific plant is disposed of at close-out. The asset and its accumulated depreciation are removed and any gain or loss on disposal is recognized immediately."
+  },
+  {
+    "slug": "con-liquidated-damages-paid-client",
+    "category": "Construction",
+    "title": "Liquidated Damages Paid to Client (Delay)",
+    "description": "Recording the penalty paid to the client for failing to achieve practical completion by the contractual date.",
+    "entries": [
+      { "account": "Liquidated Damages Expense", "type": "Expense (+)", "dr": 60000.00, "cr": 0 },
+      { "account": "Accounts Receivable (Deducted from Billing)", "type": "Asset (-)", "dr": 0, "cr": 60000.00 }
+    ],
+    "explanation": "Liquidated damages (LDs) are usually deducted by the client from outstanding progress payments. They are a direct project cost — never capitalized — and reduce the project's overall profitability."
+  },
+  {
+    "slug": "con-defects-liability-period-expense",
+    "category": "Construction",
+    "title": "Defects Liability Period Repair Cost",
+    "description": "Recording the actual cost of remedying a structural crack identified during the defects liability period.",
+    "entries": [
+      { "account": "Provision for Defects (Liability)", "type": "Liability (-)", "dr": 20000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable (Remedial Sub)", "type": "Asset/Liability (-)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "Defect repairs during the warranty period are charged against the provision previously set up. If the provision is exhausted, additional costs become an immediate expense."
+  },
+  {
+    "slug": "con-joint-venture-project-setup",
+    "category": "Construction",
+    "title": "Joint Venture Project — Initial Contribution",
+    "description": "Recording the cash contribution to a construction joint venture (JV) formed to bid and execute a large project.",
+    "entries": [
+      { "account": "Investment in JV (Construction)", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "Large infrastructure projects are often executed through JVs between two or more contractors. The initial cash contribution is an investment asset, valued using the equity method under IFRS 11."
+  },
+  {
+    "slug": "con-jv-profit-share",
+    "category": "Construction",
+    "title": "Construction JV — Share of Profit",
+    "description": "Recording the proportional share of a joint venture project's net income.",
+    "entries": [
+      { "account": "Investment in JV (Construction)", "type": "Asset (+)", "dr": 75000.00, "cr": 0 },
+      { "account": "Share of JV Profit (P&L)", "type": "Revenue (+)", "dr": 0, "cr": 75000.00 }
+    ],
+    "explanation": "Under the equity method, the investor records its share of the JV's profit as income and increases the investment carrying value. This is not a dividend — no cash is received."
+  },
+  {
+    "slug": "con-project-intercompany-loan",
+    "category": "Construction",
+    "title": "Intercompany Loan to Project SPV",
+    "description": "The parent construction company lending funds to a Special Purpose Vehicle set up for a specific project.",
+    "entries": [
+      { "account": "Loan to SPV (Intercompany)", "type": "Asset (+)", "dr": 3000000.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 3000000.00 }
+    ],
+    "explanation": "Large contractors often ring-fence projects in SPVs for risk management. Funding from the parent is an intercompany receivable at the parent level and an intercompany payable at the SPV level."
+  },
+  {
+    "slug": "con-eot-claim-cost-accrual",
+    "category": "Construction",
+    "title": "Extension of Time (EOT) Cost Claim",
+    "description": "Accruing the additional prolongation costs associated with an extension of time granted by the client.",
+    "entries": [
+      { "account": "Claims Receivable (Prolongation)", "type": "Asset (+)", "dr": 95000.00, "cr": 0 },
+      { "account": "Contract Revenue (Prolongation Claim)", "type": "Revenue (+)", "dr": 0, "cr": 95000.00 }
+    ],
+    "explanation": "When a contractor is granted an EOT due to employer-risk events, they are entitled to prolongation costs (site overhead for the extended period). Revenue is recognized when it is highly probable of recovery."
+  },
+  {
+    "slug": "con-prelims-monthly-cost",
+    "category": "Construction",
+    "title": "Preliminary & General (P&G) Monthly Cost",
+    "description": "Recording the time-related preliminary costs that run monthly throughout the project (management, security, utilities).",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Preliminaries)", "type": "Asset (+)", "dr": 45000.00, "cr": 0 },
+      { "account": "Various Payables / Cash", "type": "Asset/Liability (-)", "dr": 0, "cr": 45000.00 }
+    ],
+    "explanation": "Preliminary and general costs (P&G or 'prelims') are the time-related overhead of running the site — site management, security, power, water, and site facilities. They are tracked separately from measured work."
+  },
+  {
+    "slug": "con-nominated-supplier-payment",
+    "category": "Construction",
+    "title": "Nominated Supplier / Subcontractor Payment",
+    "description": "Paying a supplier nominated by the client directly, in accordance with the main contract.",
+    "entries": [
+      { "account": "Work-in-Progress (WIP — Nominated)", "type": "Asset (+)", "dr": 80000.00, "cr": 0 },
+      { "account": "Accounts Payable (Nominated Supplier)", "type": "Liability (+)", "dr": 0, "cr": 80000.00 }
+    ],
+    "explanation": "Nominated suppliers are selected by the client but contracted through the main contractor. Their costs are included in the main contract value and in WIP."
+  },
+  {
+    "slug": "con-contract-asset-reclassification",
+    "category": "Construction",
+    "title": "Contract Asset Reclassified to Receivable",
+    "description": "Moving an unbilled contract asset to a trade receivable once the progress certificate is formally issued.",
+    "entries": [
+      { "account": "Accounts Receivable (Certified Progress)", "type": "Asset (+)", "dr": 150000.00, "cr": 0 },
+      { "account": "Contract Asset (Unbilled Revenue)", "type": "Asset (-)", "dr": 0, "cr": 150000.00 }
+    ],
+    "explanation": "Under IFRS 15, earned-but-not-yet-billed revenue is a 'Contract Asset.' Once the right to invoice becomes unconditional (certificate issued and approved), it is reclassified to a standard trade receivable."
+  },
+  {
+    "slug": "con-expected-credit-loss-receivable",
+    "category": "Construction",
+    "title": "Expected Credit Loss — Construction Receivables",
+    "description": "Provisioning for potential non-collection of certified progress invoices from a financially stressed client.",
+    "entries": [
+      { "account": "Impairment Loss (ECL)", "type": "Expense (+)", "dr": 30000.00, "cr": 0 },
+      { "account": "Allowance for Impairment (Receivables)", "type": "Contra-Asset (+)", "dr": 0, "cr": 30000.00 }
+    ],
+    "explanation": "Under IFRS 9, contractors must assess and provision for expected credit losses on their progress receivables. Client financial difficulties, disputes, or country risk can all trigger an ECL provision."
+  },
+  {
+    "slug": "con-variation-order-approved",
+    "category": "Construction",
+    "title": "Approved Variation Order — Cost and Revenue",
+    "description": "Recording both the additional revenue and the direct cost for a formally approved variation order.",
+    "entries": [
+      { "account": "Accounts Receivable (VO Billing)", "type": "Asset (+)", "dr": 58000.00, "cr": 0 },
+      { "account": "Work-in-Progress (VO Direct Cost)", "type": "Asset (+)", "dr": 40000.00, "cr": 0 },
+      { "account": "Contract Revenue (Variation)", "type": "Revenue (+)", "dr": 0, "cr": 50000.00 },
+      { "account": "VAT Output (16%)", "type": "Liability (+)", "dr": 0, "cr": 8000.00 },
+      { "account": "Cash / Payables (VO Costs)", "type": "Asset/Liability (-)", "dr": 0, "cr": 40000.00 }
+    ],
+    "explanation": "An approved variation order is treated as an extension of the existing contract. Revenue and costs are recognized together, ensuring the gross margin on the variation is correctly reported."
   }
+
+
+
 
 ]
 
