@@ -6319,8 +6319,956 @@
       { "account": "Cost of Goods Sold", "type": "Expense (-)", "dr": 0, "cr": 500.00 }
     ],
     "explanation": "The final closing entry to zero out the temporary overhead accounts and reduce COGS for the 'savings' achieved."
-  }
+  },
 
+
+  {
+    "slug": "restaurant-dinein-cash-sale",
+    "category": "Restaurant",
+    "title": "Dine-In Cash Sale",
+    "description": "Recording a standard table sale paid in cash at the end of the meal.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 116.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 },
+      { "account": "Sales Tax Payable (VAT Output 16%)", "type": "Liability (+)", "dr": 0, "cr": 16.00 }
+    ],
+    "explanation": "The full amount received includes 16% VAT (Jordan). Revenue is only the pre-tax amount. The tax collected belongs to the ISTD and is a liability until remitted."
+  },
+  {
+    "slug": "restaurant-dinein-card-sale",
+    "category": "Restaurant",
+    "title": "Dine-In Credit/Debit Card Sale",
+    "description": "Recording a table sale paid by card, with a POS processing fee deducted by the bank.",
+    "entries": [
+      { "account": "Cash in Bank (Net)", "type": "Asset (+)", "dr": 113.08, "cr": 0 },
+      { "account": "Bank Processing Fees", "type": "Expense (+)", "dr": 2.92, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 },
+      { "account": "Sales Tax Payable (VAT Output 16%)", "type": "Liability (+)", "dr": 0, "cr": 16.00 }
+    ],
+    "explanation": "Always record the full sale price as revenue. The bank processing fee (typically 2.5%) is a separate selling expense, not a reduction of revenue."
+  },
+  {
+    "slug": "restaurant-takeaway-sale-cash",
+    "category": "Restaurant",
+    "title": "Takeaway / To-Go Order (Cash)",
+    "description": "Recording a customer who orders and pays at the counter for food to take away.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 58.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 50.00 },
+      { "account": "Sales Tax Payable (VAT Output 16%)", "type": "Liability (+)", "dr": 0, "cr": 8.00 }
+    ],
+    "explanation": "Takeaway revenue is recorded at the point of handover to the customer. VAT applies the same way as dine-in sales."
+  },
+  {
+    "slug": "restaurant-split-bill-card-cash",
+    "category": "Restaurant",
+    "title": "Split Bill (Part Cash, Part Card)",
+    "description": "Recording a table where two guests split the bill — one pays cash, the other pays by card.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 58.00, "cr": 0 },
+      { "account": "Cash in Bank (Net Card)", "type": "Asset (+)", "dr": 56.55, "cr": 0 },
+      { "account": "Bank Processing Fees", "type": "Expense (+)", "dr": 1.45, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 },
+      { "account": "Sales Tax Payable (VAT Output 16%)", "type": "Liability (+)", "dr": 0, "cr": 16.00 }
+    ],
+    "explanation": "Split payments require you to record each payment method separately while keeping the total revenue and VAT intact as one transaction."
+  },
+  {
+    "slug": "restaurant-pos-void-cancelled-order",
+    "category": "Restaurant",
+    "title": "POS Void / Cancelled Order",
+    "description": "Reversing a sale that was incorrectly entered into the POS system before payment was collected.",
+    "entries": [
+      { "account": "Food Sales Revenue", "type": "Revenue (-)", "dr": 50.00, "cr": 0 },
+      { "account": "Sales Tax Payable (VAT Output)", "type": "Liability (-)", "dr": 8.00, "cr": 0 },
+      { "account": "Cash in Hand", "type": "Asset (-)", "dr": 0, "cr": 58.00 }
+    ],
+    "explanation": "A void cancels a transaction as if it never happened. It is a direct reversal of the original entry. This is different from a refund, which happens after payment has been collected."
+  },
+  {
+    "slug": "restaurant-service-charge-collected",
+    "category": "Restaurant",
+    "title": "Service Charge Collected from Customer",
+    "description": "Recording the 10% service charge added to the bill that belongs to the staff.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 10.00, "cr": 0 },
+      { "account": "Service Charge Payable (Staff)", "type": "Liability (+)", "dr": 0, "cr": 10.00 }
+    ],
+    "explanation": "Service charges are NOT restaurant revenue. They are collected on behalf of the staff and held as a liability until distributed via payroll."
+  },
+  {
+    "slug": "restaurant-service-charge-distributed",
+    "category": "Restaurant",
+    "title": "Service Charge Distribution to Staff",
+    "description": "Paying out the accumulated monthly service charge pool to waitstaff and kitchen team.",
+    "entries": [
+      { "account": "Service Charge Payable (Staff)", "type": "Liability (-)", "dr": 1500.00, "cr": 0 },
+      { "account": "Cash / Wages Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "This clears the liability created every time a service charge was collected. The distribution can be cash or added to the payroll run."
+  },
+  {
+    "slug": "restaurant-tips-cash-received",
+    "category": "Restaurant",
+    "title": "Cash Tips Left on Table",
+    "description": "Recording cash tips left by customers directly on the table for the waiting staff.",
+    "entries": [
+      { "account": "Cash in Hand (Tips)", "type": "Asset (+)", "dr": 20.00, "cr": 0 },
+      { "account": "Tips Payable to Staff", "type": "Liability (+)", "dr": 0, "cr": 20.00 }
+    ],
+    "explanation": "Tips belong to the staff, not the restaurant. The cash is held briefly as a liability until handed to the team at the end of the shift."
+  },
+  {
+    "slug": "restaurant-tips-card-collected",
+    "category": "Restaurant",
+    "title": "Card Tips Added to POS Bill",
+    "description": "Recording a tip the customer adds to their card payment at the end of the meal.",
+    "entries": [
+      { "account": "Cash in Bank (Net)", "type": "Asset (+)", "dr": 9.75, "cr": 0 },
+      { "account": "Bank Processing Fees", "type": "Expense (+)", "dr": 0.25, "cr": 0 },
+      { "account": "Tips Payable to Staff", "type": "Liability (+)", "dr": 0, "cr": 10.00 }
+    ],
+    "explanation": "Card tips come in net of the bank's processing fee. The restaurant absorbs the fee but must still pass the full $10 tip to the staff."
+  },
+  {
+    "slug": "restaurant-customer-refund-cash",
+    "category": "Restaurant",
+    "title": "Customer Refund (Cash)",
+    "description": "Issuing a cash refund to a dissatisfied customer for a meal that was returned.",
+    "entries": [
+      { "account": "Sales Returns & Allowances", "type": "Contra-Revenue (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Sales Tax Payable (VAT)", "type": "Liability (-)", "dr": 8.00, "cr": 0 },
+      { "account": "Cash in Hand", "type": "Asset (-)", "dr": 0, "cr": 58.00 }
+    ],
+    "explanation": "Using Sales Returns (not a direct debit to Revenue) lets you track the volume of refunds as a KPI. VAT must also be reversed since no taxable supply ultimately occurred."
+  },
+  {
+    "slug": "restaurant-manager-comp-meal",
+    "category": "Restaurant",
+    "title": "Manager Comp / Complimentary Meal",
+    "description": "A manager approves a free meal for a VIP guest or to resolve a complaint.",
+    "entries": [
+      { "account": "Marketing & Guest Relations Expense", "type": "Expense (+)", "dr": 45.00, "cr": 0 },
+      { "account": "Food Inventory (at Cost)", "type": "Asset (-)", "dr": 0, "cr": 45.00 }
+    ],
+    "explanation": "You do NOT record the menu price as a sale. You move the cost of the raw ingredients out of inventory and into a marketing/guest relations expense account."
+  },
+  {
+    "slug": "restaurant-loyalty-points-earned-deferral",
+    "category": "Restaurant",
+    "title": "Customer Loyalty Points Earned (Revenue Deferral)",
+    "description": "Deferring a portion of a sale's value for loyalty points earned by the customer at the time of purchase.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 116.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 95.00 },
+      { "account": "Sales Tax Payable (VAT)", "type": "Liability (+)", "dr": 0, "cr": 16.00 },
+      { "account": "Loyalty Points Liability", "type": "Liability (+)", "dr": 0, "cr": 5.00 }
+    ],
+    "explanation": "Under IFRS 15, if points have a standalone value, you cannot recognize the full revenue at time of sale. The points portion is deferred as a liability until redeemed or expired."
+  },
+  {
+    "slug": "restaurant-loyalty-points-redeemed",
+    "category": "Restaurant",
+    "title": "Customer Loyalty Points Redeemed",
+    "description": "A customer uses accumulated points to pay for part of their meal.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 46.40, "cr": 0 },
+      { "account": "Loyalty Points Liability", "type": "Liability (-)", "dr": 10.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 48.62 },
+      { "account": "Sales Tax Payable (VAT)", "type": "Liability (+)", "dr": 0, "cr": 7.78 }
+    ],
+    "explanation": "When points are redeemed, the deferred liability is converted to earned revenue. The remaining balance is collected in cash."
+  },
+  {
+    "slug": "restaurant-coupon-voucher-redemption",
+    "category": "Restaurant",
+    "title": "Coupon / Voucher Redemption",
+    "description": "A customer presents a printed or digital coupon for a discount on their meal.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 92.80, "cr": 0 },
+      { "account": "Sales Discounts (Coupons)", "type": "Contra-Revenue (+)", "dr": 10.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 100.00 },
+      { "account": "Sales Tax Payable (VAT)", "type": "Liability (+)", "dr": 0, "cr": 2.80 }
+    ],
+    "explanation": "Recording the full sale and a separate discount lets you analyze exactly how much revenue was given away in promotions without distorting your gross revenue figure."
+  },
+  {
+    "slug": "restaurant-staff-meal-discount",
+    "category": "Restaurant",
+    "title": "Staff Meal (50% Discount Policy)",
+    "description": "An employee eats at the restaurant and pays half price per the staff discount policy.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 25.00, "cr": 0 },
+      { "account": "Employee Benefits: Staff Meals", "type": "Expense (+)", "dr": 25.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "The cash portion is standard revenue. The discounted 50% is an employee benefit expense — the restaurant absorbs this cost. No VAT is charged on staff meals in most Jordan interpretations."
+  },
+  {
+    "slug": "restaurant-catering-advance-deposit",
+    "category": "Restaurant",
+    "title": "Catering Order Advance Deposit",
+    "description": "Receiving a deposit from a corporate client for a large catering event next month.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Advance from Customers (Catering)", "type": "Liability (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "The food has not been prepared yet, so this is a liability. Revenue is only recognized when the catering event is completed and the food is delivered."
+  },
+  {
+    "slug": "restaurant-catering-revenue-recognition",
+    "category": "Restaurant",
+    "title": "Catering Event Revenue Recognition",
+    "description": "Recognizing revenue when the catering order is delivered and the event takes place.",
+    "entries": [
+      { "account": "Advance from Customers (Catering)", "type": "Liability (-)", "dr": 1000.00, "cr": 0 },
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 392.00, "cr": 0 },
+      { "account": "Catering Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1200.00 },
+      { "account": "Sales Tax Payable (VAT)", "type": "Liability (+)", "dr": 0, "cr": 192.00 }
+    ],
+    "explanation": "The deposit is cleared, the remaining balance is billed as a receivable, and the full revenue (net of VAT) is recognized on the event date."
+  },
+  {
+    "slug": "restaurant-gift-card-sale",
+    "category": "Restaurant",
+    "title": "Sale of Restaurant Gift Card",
+    "description": "A customer purchases a prepaid gift card to give as a present.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Gift Card Liability", "type": "Liability (+)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "A gift card is not a sale. It is a liability because the restaurant owes the holder food worth JOD 50. Revenue is only recognized when the card is spent at the counter."
+  },
+  {
+    "slug": "restaurant-gift-card-redemption",
+    "category": "Restaurant",
+    "title": "Gift Card Redemption",
+    "description": "A customer uses a gift card to pay for their meal.",
+    "entries": [
+      { "account": "Gift Card Liability", "type": "Liability (-)", "dr": 50.00, "cr": 0 },
+      { "account": "Food Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 43.10 },
+      { "account": "Sales Tax Payable (VAT)", "type": "Liability (+)", "dr": 0, "cr": 6.90 }
+    ],
+    "explanation": "When the card is used, the liability converts to earned revenue. VAT is recognized at the point of use, not at the point of sale of the card."
+  },
+  {
+    "slug": "restaurant-gift-card-breakage",
+    "category": "Restaurant",
+    "title": "Gift Card Breakage (Unredeemed Balance)",
+    "description": "Recognizing revenue from gift card balances that are statistically unlikely to ever be redeemed.",
+    "entries": [
+      { "account": "Gift Card Liability", "type": "Liability (-)", "dr": 200.00, "cr": 0 },
+      { "account": "Other Income (Gift Card Breakage)", "type": "Revenue (+)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Using historical data, if 5% of gift cards are never redeemed, you can recognize that portion as Other Income over time. This is called 'breakage' under IFRS 15."
+  },
+  {
+    "slug": "restaurant-raw-ingredients-purchase-cash",
+    "category": "Restaurant",
+    "title": "Purchase of Raw Ingredients (Cash)",
+    "description": "Buying fresh vegetables, meat, and dairy from a market vendor for cash.",
+    "entries": [
+      { "account": "Food & Beverage Inventory", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "Raw ingredients are assets until used in cooking. They only become an expense (Cost of Sales) when they are consumed to produce a meal that is sold."
+  },
+  {
+    "slug": "restaurant-raw-ingredients-purchase-credit",
+    "category": "Restaurant",
+    "title": "Purchase of Raw Ingredients (On Credit)",
+    "description": "Receiving a weekly delivery of ingredients from a supplier with a 30-day payment term.",
+    "entries": [
+      { "account": "Food & Beverage Inventory", "type": "Asset (+)", "dr": 2000.00, "cr": 0 },
+      { "account": "Accounts Payable (Supplier)", "type": "Liability (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Purchasing on credit creates a liability. The inventory is an asset the moment it arrives at the restaurant, regardless of when you pay for it."
+  },
+  {
+    "slug": "restaurant-beverage-alcohol-purchase",
+    "category": "Restaurant",
+    "title": "Purchase of Beverages / Alcohol",
+    "description": "Buying soft drinks, juices, and beverages from a distributor.",
+    "entries": [
+      { "account": "Beverage Inventory", "type": "Asset (+)", "dr": 800.00, "cr": 0 },
+      { "account": "VAT Input Tax (16%)", "type": "Asset (+)", "dr": 128.00, "cr": 0 },
+      { "account": "Accounts Payable (Beverage Supplier)", "type": "Liability (+)", "dr": 0, "cr": 928.00 }
+    ],
+    "explanation": "Beverage inventory is tracked separately from food to help calculate the Beverage Cost % (a key F&B KPI). VAT on the purchase is a recoverable input tax."
+  },
+  {
+    "slug": "restaurant-inbound-freight-supplies",
+    "category": "Restaurant",
+    "title": "Inbound Freight on Ingredient Delivery",
+    "description": "Paying a delivery fee for ingredients to be brought from a wholesaler to the restaurant.",
+    "entries": [
+      { "account": "Food & Beverage Inventory", "type": "Asset (+)", "dr": 50.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 50.00 }
+    ],
+    "explanation": "Under IAS 2, all costs required to bring inventory to its present location must be capitalized into the inventory value — including delivery fees."
+  },
+  {
+    "slug": "restaurant-supplier-return-credit-note",
+    "category": "Restaurant",
+    "title": "Return of Spoiled Goods to Supplier",
+    "description": "Sending back a delivery of tomatoes that arrived damaged, and receiving a credit note.",
+    "entries": [
+      { "account": "Accounts Payable (Supplier)", "type": "Liability (-)", "dr": 300.00, "cr": 0 },
+      { "account": "Food & Beverage Inventory", "type": "Asset (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "The credit note reduces what you owe the supplier and removes the damaged goods from your inventory balance. No expense is recorded."
+  },
+  {
+    "slug": "restaurant-early-payment-discount-supplier",
+    "category": "Restaurant",
+    "title": "Early Payment Discount from Supplier",
+    "description": "Paying a supplier invoice early and receiving a 2% cash discount.",
+    "entries": [
+      { "account": "Accounts Payable (Supplier)", "type": "Liability (-)", "dr": 1000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 980.00 },
+      { "account": "Food & Beverage Inventory", "type": "Asset (-)", "dr": 0, "cr": 20.00 }
+    ],
+    "explanation": "The discount reduces the effective cost of the inventory. In a perpetual system, the saving is credited back to inventory rather than being recorded as income."
+  },
+  {
+    "slug": "restaurant-cogs-daily-consumption",
+    "category": "Restaurant",
+    "title": "Daily Food Cost (Inventory to COGS)",
+    "description": "Recording the cost of ingredients consumed to produce the day's meals sold.",
+    "entries": [
+      { "account": "Cost of Food Sold (COGS)", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Food & Beverage Inventory", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "This is done daily or weekly based on actual kitchen consumption. Food Cost % = COGS / Food Revenue. A typical restaurant targets 28-35%."
+  },
+  {
+    "slug": "restaurant-beverage-cogs-consumption",
+    "category": "Restaurant",
+    "title": "Daily Beverage Cost (Inventory to COGS)",
+    "description": "Recording the cost of beverages consumed during the day's service.",
+    "entries": [
+      { "account": "Cost of Beverages Sold (COGS)", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Beverage Inventory", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Beverage COGS is tracked separately from food COGS so the Beverage Cost % can be monitored independently — usually targeting 20-25%."
+  },
+  {
+    "slug": "restaurant-packaging-consumables-expense",
+    "category": "Restaurant",
+    "title": "Packaging & Disposables Expense",
+    "description": "Recording the cost of takeaway boxes, bags, napkins, and cups used during the week.",
+    "entries": [
+      { "account": "Packaging & Disposables Expense", "type": "Expense (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Supplies Inventory / Cash", "type": "Asset/Liability (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "Packaging costs are a direct cost of delivery and takeaway sales. They are expensed as consumed rather than being tracked as detailed COGS."
+  },
+  {
+    "slug": "restaurant-inventory-physical-count-adjustment",
+    "category": "Restaurant",
+    "title": "Physical Inventory Count Adjustment (Shortage)",
+    "description": "Adjusting the books when the physical stock count is lower than the system balance at month-end.",
+    "entries": [
+      { "account": "Inventory Shrinkage Expense", "type": "Expense (+)", "dr": 180.00, "cr": 0 },
+      { "account": "Food & Beverage Inventory", "type": "Asset (-)", "dr": 0, "cr": 180.00 }
+    ],
+    "explanation": "Common causes are over-portioning, staff theft, or counting errors. This entry ensures the balance sheet reflects what is physically in the kitchen."
+  },
+  {
+    "slug": "restaurant-cooking-gas-lpg-accrual",
+    "category": "Restaurant",
+    "title": "Kitchen Gas (LPG) Accrual",
+    "description": "Recording the estimated cost of cooking gas used in the kitchen before the bill arrives.",
+    "entries": [
+      { "account": "Kitchen Utilities: Gas", "type": "Expense (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Accrued Liabilities", "type": "Liability (+)", "dr": 0, "cr": 250.00 }
+    ],
+    "explanation": "Gas is often billed monthly or when the cylinder is replaced. Accruing it monthly ensures the P&L reflects the true cost of operating the kitchen each period."
+  },
+  {
+    "slug": "restaurant-abnormal-spoilage-loss",
+    "category": "Restaurant",
+    "title": "Abnormal Food Spoilage (Power Cut / Fridge Failure)",
+    "description": "Writing off a large batch of inventory lost due to an unexpected refrigeration failure.",
+    "entries": [
+      { "account": "Loss from Abnormal Spoilage", "type": "Expense (+)", "dr": 600.00, "cr": 0 },
+      { "account": "Food & Beverage Inventory", "type": "Asset (-)", "dr": 0, "cr": 600.00 }
+    ],
+    "explanation": "Unlike normal spoilage (which is built into food cost), abnormal losses from avoidable events are recorded separately as a loss so management can identify and address the cause."
+  },
+  {
+    "slug": "restaurant-monthly-payroll-entry",
+    "category": "Restaurant",
+    "title": "Monthly Payroll (Gross Salaries)",
+    "description": "Recording the total payroll expense for all restaurant staff at month-end.",
+    "entries": [
+      { "account": "Salaries & Wages Expense", "type": "Expense (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Salaries Payable", "type": "Liability (+)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "The gross payroll is expensed in the month it is earned. The net amount paid to staff, after deductions for SSC and income tax, is a separate entry when cash leaves the bank."
+  },
+  {
+    "slug": "restaurant-ssc-jordan-payroll",
+    "category": "Restaurant",
+    "title": "Social Security Contribution (Jordan) — Restaurant",
+    "description": "Recording the employer's SSC share and the employee's deduction for restaurant staff.",
+    "entries": [
+      { "account": "SSC Expense (Employer 14.25%)", "type": "Expense (+)", "dr": 1140.00, "cr": 0 },
+      { "account": "SSC Payable (Total 21.75%)", "type": "Liability (+)", "dr": 0, "cr": 1740.00 },
+      { "account": "Salaries Payable (Employee Deduction 7.5%)", "type": "Liability (-)", "dr": 600.00, "cr": 0 }
+    ],
+    "explanation": "In Jordan, the employer pays 14.25% and the employee contributes 7.5% of gross salary. Both are remitted to the Social Security Corporation (SSC) monthly."
+  },
+  {
+    "slug": "restaurant-net-salary-payment",
+    "category": "Restaurant",
+    "title": "Net Salary Payment to Staff",
+    "description": "Paying the take-home salary to employees after all statutory deductions.",
+    "entries": [
+      { "account": "Salaries Payable", "type": "Liability (-)", "dr": 7400.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 7400.00 }
+    ],
+    "explanation": "This clears the liability for net pay. The SSC and income tax deductions are remitted to the authorities in separate entries."
+  },
+  {
+    "slug": "restaurant-income-tax-withholding-payroll",
+    "category": "Restaurant",
+    "title": "Employee Income Tax Withholding (Jordan)",
+    "description": "Deducting income tax from a senior restaurant manager's monthly salary.",
+    "entries": [
+      { "account": "Salaries Payable", "type": "Liability (-)", "dr": 150.00, "cr": 0 },
+      { "account": "Income Tax Payable (ISTD)", "type": "Liability (+)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "For staff whose income exceeds the tax-exempt threshold, the employer is legally required to withhold and remit income tax monthly to the ISTD."
+  },
+  {
+    "slug": "restaurant-overtime-accrual",
+    "category": "Restaurant",
+    "title": "Overtime Accrual (Weekend Shifts)",
+    "description": "Recording extra hours worked by kitchen and floor staff during a busy weekend.",
+    "entries": [
+      { "account": "Overtime Expense", "type": "Expense (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Accrued Wages", "type": "Liability (+)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "Overtime must be matched to the period in which it was worked. If a peak weekend falls at month-end, the expense belongs in that month even if paid next week."
+  },
+  {
+    "slug": "restaurant-eosb-monthly-provision",
+    "category": "Restaurant",
+    "title": "Monthly EOSB Provision — Restaurant Staff",
+    "description": "Accruing the end-of-service gratuity liability for restaurant employees as required by Jordanian labor law.",
+    "entries": [
+      { "account": "EOSB Expense", "type": "Expense (+)", "dr": 350.00, "cr": 0 },
+      { "account": "Provision for EOSB", "type": "Liability (+)", "dr": 0, "cr": 350.00 }
+    ],
+    "explanation": "Jordanian labor law requires a gratuity payment when an employee leaves. Accruing monthly prevents a large unexpected expense when a long-serving chef or manager resigns."
+  },
+  {
+    "slug": "restaurant-eosb-actual-payout",
+    "category": "Restaurant",
+    "title": "EOSB Payout — Departing Employee",
+    "description": "Paying the gratuity to a waiter who has resigned after 3 years of service.",
+    "entries": [
+      { "account": "Provision for EOSB", "type": "Liability (-)", "dr": 1800.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1800.00 }
+    ],
+    "explanation": "This clears the provision built up over the employee's tenure. No new expense is recorded because the cost was already recognized monthly."
+  },
+  {
+    "slug": "restaurant-salary-advance-staff",
+    "category": "Restaurant",
+    "title": "Salary Advance to Employee",
+    "description": "A waiter requests an advance of JOD 200 against next month's salary.",
+    "entries": [
+      { "account": "Employee Advances", "type": "Asset (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "An advance is a company asset (receivable), not an expense. It will be deducted from the employee's next payroll run."
+  },
+  {
+    "slug": "restaurant-salary-advance-deduction-payroll",
+    "category": "Restaurant",
+    "title": "Salary Advance Deduction from Payroll",
+    "description": "Recovering a previously issued salary advance by deducting it from the monthly payroll.",
+    "entries": [
+      { "account": "Salaries Payable", "type": "Liability (-)", "dr": 200.00, "cr": 0 },
+      { "account": "Employee Advances", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "This clears the advance from the balance sheet. The employee receives a lower net pay this month since the advance has already been spent."
+  },
+  {
+    "slug": "restaurant-bonus-accrual-ramadan",
+    "category": "Restaurant",
+    "title": "Ramadan Season Bonus Accrual",
+    "description": "Accruing performance bonuses for kitchen and floor staff at the end of Ramadan season.",
+    "entries": [
+      { "account": "Bonus Expense", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Bonuses Payable", "type": "Liability (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Bonuses must be matched to the period of performance. If the bonus is for Ramadan's peak, it belongs in that month's P&L even if paid after Eid."
+  },
+  {
+    "slug": "restaurant-rent-prepaid-initial",
+    "category": "Restaurant",
+    "title": "Annual Rent Payment (Prepaid)",
+    "description": "Paying one year of rent upfront to the landlord at the start of the lease.",
+    "entries": [
+      { "account": "Prepaid Rent", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Common in Jordan where landlords often demand 6–12 months upfront. The full payment is an asset; JOD 1,000 moves to Rent Expense each month."
+  },
+  {
+    "slug": "restaurant-rent-monthly-recognition",
+    "category": "Restaurant",
+    "title": "Monthly Rent Expense Recognition",
+    "description": "Moving one month of rent from the prepaid asset to the expense account.",
+    "entries": [
+      { "account": "Rent Expense", "type": "Expense (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Prepaid Rent", "type": "Asset (-)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Each month this entry is made to ensure the P&L shows the correct occupancy cost regardless of when the cash was paid."
+  },
+  {
+    "slug": "restaurant-rent-withholding-tax-jordan",
+    "category": "Restaurant",
+    "title": "Rent Payment with Withholding Tax (Jordan)",
+    "description": "Paying monthly rent to an individual landlord and withholding 5% tax as required by Jordanian law.",
+    "entries": [
+      { "account": "Rent Expense", "type": "Expense (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "Withholding Tax Payable (ISTD)", "type": "Liability (+)", "dr": 0, "cr": 50.00 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 950.00 }
+    ],
+    "explanation": "When a company rents from an individual (not a company), Jordanian law requires withholding 5% of the gross rent and paying it to the ISTD on behalf of the landlord."
+  },
+  {
+    "slug": "restaurant-electricity-water-accrual",
+    "category": "Restaurant",
+    "title": "Monthly Electricity & Water Accrual",
+    "description": "Estimating and recording the utility costs for the month before the bills arrive.",
+    "entries": [
+      { "account": "Utilities Expense (Electricity)", "type": "Expense (+)", "dr": 600.00, "cr": 0 },
+      { "account": "Utilities Expense (Water)", "type": "Expense (+)", "dr": 80.00, "cr": 0 },
+      { "account": "Accrued Liabilities", "type": "Liability (+)", "dr": 0, "cr": 680.00 }
+    ],
+    "explanation": "Restaurants are heavy utility users. Accruing these costs monthly ensures the P&L shows the real cost of running the kitchen in each period."
+  },
+  {
+    "slug": "restaurant-internet-pos-subscription",
+    "category": "Restaurant",
+    "title": "Internet & POS Software Monthly Fee",
+    "description": "Recording the monthly subscription for internet connection and the cloud-based POS system.",
+    "entries": [
+      { "account": "IT & Software Expense", "type": "Expense (+)", "dr": 120.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 120.00 }
+    ],
+    "explanation": "POS software and internet are essential operating costs for a restaurant. They are expensed in the month they are used."
+  },
+  {
+    "slug": "restaurant-security-deposit-paid",
+    "category": "Restaurant",
+    "title": "Security Deposit Paid to Landlord",
+    "description": "Paying a refundable deposit at the start of the restaurant lease.",
+    "entries": [
+      { "account": "Refundable Deposits (Landlord)", "type": "Asset (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Deposits are not expenses. They are assets because the money will be returned at the end of the lease, assuming the premises are in good condition."
+  },
+  {
+    "slug": "restaurant-leasehold-improvements",
+    "category": "Restaurant",
+    "title": "Leasehold Improvements (Fit-Out)",
+    "description": "Capitalizing the cost of tiling, kitchen ventilation, and interior fit-out of a rented restaurant space.",
+    "entries": [
+      { "account": "Leasehold Improvements", "type": "Asset (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "Permanent improvements to a rented space are capitalized as an asset and depreciated over the shorter of the lease term or the improvement's useful life."
+  },
+  {
+    "slug": "restaurant-leasehold-depreciation",
+    "category": "Restaurant",
+    "title": "Monthly Depreciation — Leasehold Improvements",
+    "description": "Expensing one month's depreciation on the restaurant fit-out.",
+    "entries": [
+      { "account": "Depreciation Expense (Fit-Out)", "type": "Expense (+)", "dr": 417.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (Leasehold)", "type": "Contra-Asset (+)", "dr": 0, "cr": 417.00 }
+    ],
+    "explanation": "A JOD 25,000 fit-out over a 5-year lease is depreciated at JOD 417/month. This reflects the true monthly cost of the physical restaurant setup."
+  },
+  {
+    "slug": "restaurant-kitchen-equipment-purchase",
+    "category": "Restaurant",
+    "title": "Kitchen Equipment Purchase (Oven / Grill)",
+    "description": "Buying a commercial convection oven for the kitchen.",
+    "entries": [
+      { "account": "Kitchen Equipment", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Equipment with a useful life over one year is capitalized as a fixed asset, not expensed immediately. It will be depreciated over its expected life (typically 5–10 years)."
+  },
+  {
+    "slug": "restaurant-kitchen-equipment-depreciation",
+    "category": "Restaurant",
+    "title": "Monthly Kitchen Equipment Depreciation",
+    "description": "Monthly depreciation charge on ovens, fridges, and other kitchen assets.",
+    "entries": [
+      { "account": "Depreciation Expense (Equipment)", "type": "Expense (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Accumulated Depreciation (Equipment)", "type": "Contra-Asset (+)", "dr": 0, "cr": 250.00 }
+    ],
+    "explanation": "A JOD 5,000 oven depreciated over 5 years (straight-line) produces JOD 250/month of depreciation expense on the P&L."
+  },
+  {
+    "slug": "restaurant-equipment-maintenance-repair",
+    "category": "Restaurant",
+    "title": "Equipment Maintenance & Repair",
+    "description": "Paying a technician to service the commercial refrigerator.",
+    "entries": [
+      { "account": "Repairs & Maintenance Expense", "type": "Expense (+)", "dr": 120.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 120.00 }
+    ],
+    "explanation": "Routine maintenance and minor repairs are expensed immediately. Only a major overhaul that extends the asset's useful life would be capitalized."
+  },
+  {
+    "slug": "restaurant-prepaid-social-media-ads",
+    "category": "Restaurant",
+    "title": "Prepaid Social Media Ad Campaign",
+    "description": "Paying JOD 900 upfront for a 3-month Instagram and Facebook campaign.",
+    "entries": [
+      { "account": "Prepaid Advertising", "type": "Asset (+)", "dr": 900.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 900.00 }
+    ],
+    "explanation": "Advertising covering multiple future months is a prepaid asset. JOD 300 moves to Advertising Expense each month as the campaign runs."
+  },
+  {
+    "slug": "restaurant-monthly-ad-expense-recognition",
+    "category": "Restaurant",
+    "title": "Monthly Advertising Expense Recognition",
+    "description": "Moving one month of the prepaid ad campaign from asset to expense.",
+    "entries": [
+      { "account": "Marketing & Advertising Expense", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Prepaid Advertising", "type": "Asset (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "This ensures each month's P&L reflects the actual marketing spend for that period, regardless of when the cash was paid."
+  },
+  {
+    "slug": "restaurant-influencer-barter-food",
+    "category": "Restaurant",
+    "title": "Food Blogger / Influencer Meal (Barter)",
+    "description": "Hosting an influencer for a free meal in exchange for a review post on their social channels.",
+    "entries": [
+      { "account": "Marketing & Advertising Expense", "type": "Expense (+)", "dr": 65.00, "cr": 0 },
+      { "account": "Food & Beverage Inventory (at Cost)", "type": "Asset (-)", "dr": 0, "cr": 65.00 }
+    ],
+    "explanation": "Record the cost of the raw ingredients (not the menu price) as a marketing expense. No revenue is recorded since no cash was exchanged."
+  },
+  {
+    "slug": "restaurant-vat-output-on-sales",
+    "category": "Restaurant",
+    "title": "VAT Output Tax Filing Preparation",
+    "description": "Summarizing the total VAT collected from food sales during the month for ISTD filing.",
+    "entries": [
+      { "account": "Sales Tax Payable (VAT Output)", "type": "Liability (-)", "dr": 2400.00, "cr": 0 },
+      { "account": "VAT Input Tax (Purchases)", "type": "Asset (-)", "dr": 0, "cr": 1200.00 },
+      { "account": "VAT Payable to ISTD (Net)", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "At the end of the VAT period, Output VAT (collected from customers) is netted against Input VAT (paid on purchases). Only the difference is remitted to the ISTD."
+  },
+  {
+    "slug": "restaurant-vat-remittance-istd",
+    "category": "Restaurant",
+    "title": "VAT Remittance to ISTD (Jordan)",
+    "description": "Paying the net VAT liability to the Income & Sales Tax Department.",
+    "entries": [
+      { "account": "VAT Payable to ISTD (Net)", "type": "Liability (-)", "dr": 1200.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "This is the final step in the VAT cycle — transferring the net tax collected on behalf of the government to the ISTD by the filing deadline."
+  },
+  {
+    "slug": "restaurant-vat-input-on-purchases",
+    "category": "Restaurant",
+    "title": "VAT Input Tax on Ingredient Purchase",
+    "description": "Recording the recoverable 16% VAT paid on a food supply invoice from a registered vendor.",
+    "entries": [
+      { "account": "Food & Beverage Inventory", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
+      { "account": "VAT Input Tax (16%)", "type": "Asset (+)", "dr": 160.00, "cr": 0 },
+      { "account": "Accounts Payable (Supplier)", "type": "Liability (+)", "dr": 0, "cr": 1160.00 }
+    ],
+    "explanation": "The VAT paid to a VAT-registered supplier is a recoverable asset. It is deducted from the VAT you collected from customers when filing the monthly return."
+  },
+  {
+    "slug": "restaurant-vat-reverse-charge-online-ads",
+    "category": "Restaurant",
+    "title": "VAT Reverse Charge on Google/Meta Ads",
+    "description": "Self-assessing VAT on a digital advertising invoice from a foreign provider.",
+    "entries": [
+      { "account": "Marketing & Advertising Expense", "type": "Expense (+)", "dr": 500.00, "cr": 0 },
+      { "account": "VAT Input (Reverse Charge)", "type": "Asset (+)", "dr": 80.00, "cr": 0 },
+      { "account": "VAT Output (Reverse Charge)", "type": "Liability (+)", "dr": 0, "cr": 80.00 },
+      { "account": "Accounts Payable / Cash", "type": "Liability (+)", "dr": 0, "cr": 500.00 }
+    ],
+    "explanation": "When a Jordanian restaurant buys services from abroad (Google, Meta), it must self-assess the VAT. The Input and Output entries usually net to zero but both must appear on the tax return."
+  },
+  {
+    "slug": "restaurant-corporate-income-tax-provision",
+    "category": "Restaurant",
+    "title": "Corporate Income Tax Provision",
+    "description": "Accruing the estimated income tax on the restaurant's annual profit.",
+    "entries": [
+      { "account": "Income Tax Expense", "type": "Expense (+)", "dr": 3500.00, "cr": 0 },
+      { "account": "Income Tax Payable (ISTD)", "type": "Liability (+)", "dr": 0, "cr": 3500.00 }
+    ],
+    "explanation": "Income tax is accrued at year-end based on taxable profit. The actual payment to the ISTD may happen months later but the expense belongs to the current fiscal year."
+  },
+  {
+    "slug": "restaurant-municipality-license-fee",
+    "category": "Restaurant",
+    "title": "Annual Municipality & Health License Fee",
+    "description": "Paying the annual operating license and food safety permit fees.",
+    "entries": [
+      { "account": "Prepaid Licenses & Permits", "type": "Asset (+)", "dr": 600.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 600.00 }
+    ],
+    "explanation": "Annual licenses cover the full year and are recorded as prepaid assets, then amortized at JOD 50/month into License & Permit Expense."
+  },
+  {
+    "slug": "restaurant-ndf-fine-non-deductible",
+    "category": "Restaurant",
+    "title": "Health Inspection Fine (Non-Deductible)",
+    "description": "Recording a penalty issued by the municipality for a food safety violation.",
+    "entries": [
+      { "account": "Fines & Penalties Expense", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "Government fines are recorded as an expense for accounting purposes but are typically non-deductible for income tax. This means the cost cannot be used to reduce taxable profit."
+  },
+  {
+    "slug": "restaurant-petty-cash-establishment",
+    "category": "Restaurant",
+    "title": "Petty Cash Float — Kitchen & Floor",
+    "description": "Setting up a small cash float for daily minor purchases like spices and small supplies.",
+    "entries": [
+      { "account": "Petty Cash", "type": "Asset (+)", "dr": 150.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 150.00 }
+    ],
+    "explanation": "A petty cash float allows kitchen staff to make small urgent purchases without going through the bank. The balance stays fixed at JOD 150 unless deliberately changed."
+  },
+  {
+    "slug": "restaurant-petty-cash-replenishment",
+    "category": "Restaurant",
+    "title": "Petty Cash Replenishment",
+    "description": "Replenishing the kitchen petty cash float after it has been spent on small daily items.",
+    "entries": [
+      { "account": "Kitchen Supplies Expense", "type": "Expense (+)", "dr": 35.00, "cr": 0 },
+      { "account": "Cleaning Supplies Expense", "type": "Expense (+)", "dr": 20.00, "cr": 0 },
+      { "account": "Miscellaneous Expense", "type": "Expense (+)", "dr": 12.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 67.00 }
+    ],
+    "explanation": "You do NOT credit Petty Cash when replenishing. You debit the specific expenses and credit the main bank account to restore the float to its full balance."
+  },
+  {
+    "slug": "restaurant-cash-drawer-shortage",
+    "category": "Restaurant",
+    "title": "End-of-Day Cash Drawer Shortage",
+    "description": "Recording a discrepancy when the physical cash in the till is less than the POS daily sales report.",
+    "entries": [
+      { "account": "Cash Over and Short Expense", "type": "Expense (+)", "dr": 8.00, "cr": 0 },
+      { "account": "Cash in Hand", "type": "Asset (-)", "dr": 0, "cr": 8.00 }
+    ],
+    "explanation": "Small shortages are common in cash-heavy businesses and are expensed immediately. Large or recurring shortages should trigger an internal investigation."
+  },
+  {
+    "slug": "restaurant-cash-drawer-overage",
+    "category": "Restaurant",
+    "title": "End-of-Day Cash Drawer Overage",
+    "description": "Recording extra cash found in the till at the end of the day.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 5.00, "cr": 0 },
+      { "account": "Cash Over and Short (Income)", "type": "Other Income (+)", "dr": 0, "cr": 5.00 }
+    ],
+    "explanation": "An overage means a customer was under-changed or a payment was double-collected. The extra amount is recorded as Other Income."
+  },
+  {
+    "slug": "restaurant-bank-reconciliation-interest",
+    "category": "Restaurant",
+    "title": "Bank Reconciliation — Interest Earned",
+    "description": "Adjusting the general ledger for interest income shown on the monthly bank statement.",
+    "entries": [
+      { "account": "Cash in Bank", "type": "Asset (+)", "dr": 12.50, "cr": 0 },
+      { "account": "Interest Income", "type": "Revenue (+)", "dr": 0, "cr": 12.50 }
+    ],
+    "explanation": "Interest earned is typically discovered during the monthly bank reconciliation. This 'book-side' adjustment ensures the GL matches the actual bank balance."
+  },
+  {
+    "slug": "restaurant-bank-service-charges",
+    "category": "Restaurant",
+    "title": "Bank Service Charges",
+    "description": "Recording monthly bank maintenance fees and wire transfer charges deducted by the bank.",
+    "entries": [
+      { "account": "Bank Charges Expense", "type": "Expense (+)", "dr": 20.00, "cr": 0 },
+      { "account": "Cash in Bank", "type": "Asset (-)", "dr": 0, "cr": 20.00 }
+    ],
+    "explanation": "Usually discovered during the monthly bank reconciliation. This entry ensures the company's ledger matches the bank statement."
+  },
+  {
+    "slug": "restaurant-delivery-own-fleet-fuel",
+    "category": "Restaurant",
+    "title": "Own Delivery Fleet Fuel Cost",
+    "description": "Recording fuel expenses for the restaurant's in-house delivery motorbikes.",
+    "entries": [
+      { "account": "Delivery Fuel Expense", "type": "Expense (+)", "dr": 120.00, "cr": 0 },
+      { "account": "Cash / Prepaid Fuel", "type": "Asset (-)", "dr": 0, "cr": 120.00 }
+    ],
+    "explanation": "Fuel for delivery vehicles is a direct cost of the delivery revenue stream. Tracking it separately enables calculation of the profitability of own-fleet delivery."
+  },
+  {
+    "slug": "restaurant-delivery-driver-wages",
+    "category": "Restaurant",
+    "title": "Delivery Driver Wages",
+    "description": "Recording the wages for in-house delivery staff separate from kitchen and floor payroll.",
+    "entries": [
+      { "account": "Delivery Staff Wages", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Separating delivery labor from kitchen labor allows the restaurant to accurately calculate the cost and profitability of its own-fleet delivery channel."
+  },
+  {
+    "slug": "restaurant-cleaning-supplies-expense",
+    "category": "Restaurant",
+    "title": "Cleaning & Hygiene Supplies",
+    "description": "Recording the weekly purchase of cleaning products, sanitizers, and hygiene supplies.",
+    "entries": [
+      { "account": "Cleaning & Hygiene Expense", "type": "Expense (+)", "dr": 180.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 180.00 }
+    ],
+    "explanation": "Hygiene supplies are a direct operating cost for any food establishment. They are expensed as used and are often subject to health inspection scrutiny."
+  },
+  {
+    "slug": "restaurant-uniform-purchase-staff",
+    "category": "Restaurant",
+    "title": "Staff Uniform Purchase",
+    "description": "Buying branded aprons, shirts, and caps for the kitchen and floor team.",
+    "entries": [
+      { "account": "Staff Uniforms Expense", "type": "Expense (+)", "dr": 350.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 350.00 }
+    ],
+    "explanation": "Uniforms are typically expensed in the period purchased unless they are a significant amount covering multiple years, in which case they may be capitalized."
+  },
+  {
+    "slug": "restaurant-insurance-annual-prepaid",
+    "category": "Restaurant",
+    "title": "Annual Restaurant Insurance Premium",
+    "description": "Paying the yearly commercial insurance for the restaurant premises and contents.",
+    "entries": [
+      { "account": "Prepaid Insurance", "type": "Asset (+)", "dr": 2400.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 2400.00 }
+    ],
+    "explanation": "Insurance covering 12 months is a prepaid asset. JOD 200 moves to Insurance Expense each month to match the cost to the period it protects."
+  },
+  {
+    "slug": "restaurant-insurance-monthly-amortization",
+    "category": "Restaurant",
+    "title": "Monthly Insurance Expense Recognition",
+    "description": "Moving one month of prepaid insurance to the expense account.",
+    "entries": [
+      { "account": "Insurance Expense", "type": "Expense (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Prepaid Insurance", "type": "Asset (-)", "dr": 0, "cr": 200.00 }
+    ],
+    "explanation": "This standard month-end entry ensures the P&L reflects the cost of insurance coverage for each specific month."
+  },
+  {
+    "slug": "restaurant-happy-hour-discount",
+    "category": "Restaurant",
+    "title": "Happy Hour Price Reduction",
+    "description": "Recording discounted beverage sales during the daily happy hour promotion.",
+    "entries": [
+      { "account": "Cash in Hand", "type": "Asset (+)", "dr": 46.40, "cr": 0 },
+      { "account": "Sales Discounts (Promotions)", "type": "Contra-Revenue (+)", "dr": 11.60, "cr": 0 },
+      { "account": "Beverage Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 50.00 },
+      { "account": "Sales Tax Payable (VAT)", "type": "Liability (+)", "dr": 0, "cr": 8.00 }
+    ],
+    "explanation": "Recording the full price and a discount separately allows management to track the true cost of running the promotion versus the gross revenue potential."
+  },
+  {
+    "slug": "restaurant-food-safety-pest-control",
+    "category": "Restaurant",
+    "title": "Pest Control Service",
+    "description": "Monthly payment to an extermination company for health compliance.",
+    "entries": [
+      { "account": "Cleaning & Pest Control Expense", "type": "Expense (+)", "dr": 80.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 80.00 }
+    ],
+    "explanation": "Pest control is a mandatory expense for any food business. It is a recurring operating cost and is often checked during health authority inspections."
+  },
+  {
+    "slug": "restaurant-music-entertainment-license",
+    "category": "Restaurant",
+    "title": "Background Music License Fee",
+    "description": "Paying an annual copyright license to play background music legally in the restaurant.",
+    "entries": [
+      { "account": "Entertainment & License Expense", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Playing music in a commercial venue requires a license. This is an operating expense that supports the dining atmosphere."
+  },
+  {
+    "slug": "restaurant-crockery-glassware-writeoff",
+    "category": "Restaurant",
+    "title": "Crockery & Glassware Breakage",
+    "description": "Expensing broken plates, glasses, and cutlery from the floor.",
+    "entries": [
+      { "account": "Operating Supplies: Breakage Expense", "type": "Expense (+)", "dr": 55.00, "cr": 0 },
+      { "account": "Operating Supplies (Inventory)", "type": "Asset (-)", "dr": 0, "cr": 55.00 }
+    ],
+    "explanation": "Crockery is tracked as an operating supply. Regular physical counts reveal the monthly breakage rate, which is then expensed to keep inventory accurate."
+  },
+  {
+    "slug": "restaurant-loan-principal-interest",
+    "category": "Restaurant",
+    "title": "Monthly Bank Loan Repayment",
+    "description": "Paying the monthly installment on a bank loan taken to open the restaurant.",
+    "entries": [
+      { "account": "Notes Payable (Principal)", "type": "Liability (-)", "dr": 1500.00, "cr": 0 },
+      { "account": "Interest Expense", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1800.00 }
+    ],
+    "explanation": "Every loan payment is split between reducing the principal debt and paying the cost of borrowing (interest). Only the interest is an expense."
+  },
+  {
+    "slug": "restaurant-accrued-interest-loan",
+    "category": "Restaurant",
+    "title": "Accruing Monthly Loan Interest",
+    "description": "Recording interest that has accumulated on the restaurant's bank loan before the payment date.",
+    "entries": [
+      { "account": "Interest Expense", "type": "Expense (+)", "dr": 300.00, "cr": 0 },
+      { "account": "Interest Payable", "type": "Liability (+)", "dr": 0, "cr": 300.00 }
+    ],
+    "explanation": "Under the accrual basis, interest is an expense in the month it accrues, not when it is paid. This ensures the P&L shows the true monthly cost of debt."
+  },
+  {
+    "slug": "restaurant-shareholder-loan-injection",
+    "category": "Restaurant",
+    "title": "Owner Cash Injection (Shareholder Loan)",
+    "description": "The restaurant owner puts in personal money to cover a slow month's operating costs.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Due to Shareholder (Loan)", "type": "Liability (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "Common in restaurant startups and SMEs. The owner's personal funds are a liability for the business because they must eventually be repaid. This is NOT equity unless formally structured as a capital contribution."
+  },
+  {
+    "slug": "restaurant-prior-month-accrual-reversal",
+    "category": "Restaurant",
+    "title": "Reversal of Prior Month Accrual",
+    "description": "Reversing the utility accrual at the start of the new month to avoid double-counting when the actual bill arrives.",
+    "entries": [
+      { "account": "Accrued Liabilities", "type": "Liability (-)", "dr": 680.00, "cr": 0 },
+      { "account": "Utilities Expense", "type": "Expense (-)", "dr": 0, "cr": 680.00 }
+    ],
+    "explanation": "Reversing entries are made on the first day of a new period so that when the actual vendor invoice arrives, the net expense recorded is correct with no double counting."
+  }
 
 ]
 
