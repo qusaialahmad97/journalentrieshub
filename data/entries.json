@@ -19267,6 +19267,655 @@
       { "account": "Crude Oil Inventory (Reduced by RIK Volume)", "type": "Asset (-)", "dr": 0, "cr": 1500000.00 }
     ],
     "explanation": "Some governments elect to take their royalty as physical oil lifted from the field. The RIK is measured at fair value on the lifting date and reduces the company's inventory. Revenue is not recognized on the government's share."
+  },
+
+  {
+    "slug": "ps-bid-proposal-cost-expensed",
+    "category": "Professional Services",
+    "title": "Proposal & Bid Cost Expensed",
+    "description": "Expensing internal staff time and out-of-pocket costs preparing an RFP or bid submission.",
+    "entries": [
+      { "account": "Business Development Expense", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Cash / Staff Cost Allocated", "type": "Asset/Liability (−)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Pre-contract bid costs do not meet the IFRS 15 capitalization criteria because no contract exists yet. They are expensed immediately. Only incremental costs to obtain a contract that is actually won are eligible for capitalization."
+  },
+  {
+    "slug": "ps-contract-acquisition-cost-capitalized",
+    "category": "Professional Services",
+    "title": "Incremental Contract Acquisition Cost Capitalized (IFRS 15)",
+    "description": "Capitalizing the sales commission paid only upon winning a multi-year professional services contract.",
+    "entries": [
+      { "account": "Contract Acquisition Costs (Asset)", "type": "Asset (+)", "dr": 6000.00, "cr": 0 },
+      { "account": "Commissions Payable", "type": "Liability (+)", "dr": 0, "cr": 6000.00 }
+    ],
+    "explanation": "Under IFRS 15.91, incremental costs to obtain a contract (commissions paid only on winning) are capitalized if they are recoverable and the contract exceeds 12 months. They are amortized over the expected contract period — here 24 months at JOD 250/month."
+  },
+  {
+    "slug": "ps-contract-acquisition-cost-amortization",
+    "category": "Professional Services",
+    "title": "Contract Acquisition Cost — Monthly Amortization",
+    "description": "Releasing one month of the capitalized sales commission over the service contract term.",
+    "entries": [
+      { "account": "Sales Commission Expense (Amortized)", "type": "Expense (+)", "dr": 250.00, "cr": 0 },
+      { "account": "Contract Acquisition Costs (Asset)", "type": "Asset (−)", "dr": 0, "cr": 250.00 }
+    ],
+    "explanation": "A JOD 6,000 capitalized acquisition cost over a 24-month contract amortizes at JOD 250/month. This prevents front-loading the commission expense in month one and matches cost to the revenue stream it generated."
+  },
+  {
+    "slug": "ps-contract-fulfilment-cost-capitalized",
+    "category": "Professional Services",
+    "title": "Contract Fulfilment Cost Capitalized (Setup / Mobilization)",
+    "description": "Capitalizing pre-delivery setup costs that directly relate to a specific client engagement — such as system configuration, onboarding scripts, and initial staff training.",
+    "entries": [
+      { "account": "Contract Fulfilment Costs (Asset)", "type": "Asset (+)", "dr": 4500.00, "cr": 0 },
+      { "account": "Cash / Wages Payable", "type": "Asset/Liability (−)", "dr": 0, "cr": 4500.00 }
+    ],
+    "explanation": "Under IFRS 15.95, costs that directly relate to satisfying a future performance obligation and generate resources to be used in that satisfaction may be capitalized. Setup costs for a client-specific outsourcing engagement meet this test; general training does not."
+  },
+  {
+    "slug": "ps-client-deposit-advance-received",
+    "category": "Professional Services",
+    "title": "Client Advance / Mobilization Deposit Received",
+    "description": "Recording an upfront cash deposit from a new client before any services are delivered.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 10000.00, "cr": 0 },
+      { "account": "Advance from Client (Unearned Revenue)", "type": "Liability (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Until services are delivered, the advance is a contract liability. Revenue is recognized only as work is performed. If the engagement is cancelled before services begin, the deposit is refundable (unless the contract specifies otherwise)."
+  },
+  {
+    "slug": "ps-advance-offset-against-invoice",
+    "category": "Professional Services",
+    "title": "Client Advance Offset Against Progress Invoice",
+    "description": "Applying the client's advance deposit against the first billing milestone.",
+    "entries": [
+      { "account": "Advance from Client (Unearned Revenue)", "type": "Liability (−)", "dr": 5000.00, "cr": 0 },
+      { "account": "Accounts Receivable (Invoice Balance Due)", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "Professional Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "When the milestone is reached, the full revenue is recognized. The advance is offset, leaving only the remaining balance as a receivable. The client owes JOD 5,000 in cash (the invoice less the deposit already held)."
+  },
+  {
+    "slug": "ps-time-and-materials-revenue-weekly",
+    "category": "Professional Services",
+    "title": "Time-and-Materials Revenue — Weekly Billing",
+    "description": "Recognizing weekly revenue under a T&M engagement where the firm bills hours at agreed rates.",
+    "entries": [
+      { "account": "Accounts Receivable (T&M Invoice)", "type": "Asset (+)", "dr": 7200.00, "cr": 0 },
+      { "account": "Professional Fee Revenue (T&M)", "type": "Revenue (+)", "dr": 0, "cr": 7200.00 }
+    ],
+    "explanation": "Under a T&M contract, each hour worked is a satisfied performance obligation and revenue is recognized as hours are delivered. 40 hours × JOD 180/hr = JOD 7,200. Invoicing is triggered by the approved timesheet."
+  },
+  {
+    "slug": "ps-fixed-fee-revenue-over-time",
+    "category": "Professional Services",
+    "title": "Fixed-Fee Engagement — Revenue Over Time (% Completion)",
+    "description": "Recognizing a portion of a fixed fee based on project completion percentage at month-end.",
+    "entries": [
+      { "account": "Contract Asset (Unbilled Revenue)", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Professional Fee Revenue (Fixed Fee)", "type": "Revenue (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Under IFRS 15, fixed-fee contracts where the firm delivers a continuous service are recognized over time. Revenue = (costs incurred to date / total estimated costs) × total contract fee. A contract asset is used when revenue outpaces billing milestones."
+  },
+  {
+    "slug": "ps-fixed-fee-billing-milestone-reached",
+    "category": "Professional Services",
+    "title": "Fixed-Fee Milestone Invoice Raised",
+    "description": "Billing the client when a contractual milestone is achieved, converting the contract asset to a receivable.",
+    "entries": [
+      { "account": "Accounts Receivable (Milestone Invoice)", "type": "Asset (+)", "dr": 20000.00, "cr": 0 },
+      { "account": "Contract Asset (Unbilled Revenue)", "type": "Asset (−)", "dr": 0, "cr": 15000.00 },
+      { "account": "Professional Fee Revenue (Fixed Fee)", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "The milestone invoice converts previously recognized contract asset revenue to a receivable, and recognizes any additional revenue earned since the last reporting date. The right to bill is now unconditional."
+  },
+  {
+    "slug": "ps-wip-timesheet-cost-accrual",
+    "category": "Professional Services",
+    "title": "WIP Accrual — Month-End Timesheet Hours Not Yet Billed",
+    "description": "Accruing month-end work in progress for hours worked by fee earners but not yet invoiced to the client.",
+    "entries": [
+      { "account": "Unbilled Receivables / Contract Asset (WIP)", "type": "Asset (+)", "dr": 8500.00, "cr": 0 },
+      { "account": "Professional Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 8500.00 }
+    ],
+    "explanation": "Accrual-basis firms must recognize revenue as work is performed, not when billed. WIP represents hours approved on timesheets at the month-end but for which no invoice has yet been raised. It is reclassified to Accounts Receivable when the invoice is issued."
+  },
+  {
+    "slug": "ps-wip-converted-to-receivable",
+    "category": "Professional Services",
+    "title": "WIP Converted to Accounts Receivable on Invoicing",
+    "description": "Reclassifying the WIP contract asset to a trade receivable when the client invoice is issued.",
+    "entries": [
+      { "account": "Accounts Receivable (Client Invoice)", "type": "Asset (+)", "dr": 8500.00, "cr": 0 },
+      { "account": "Unbilled Receivables / Contract Asset (WIP)", "type": "Asset (−)", "dr": 0, "cr": 8500.00 }
+    ],
+    "explanation": "Issuing the invoice makes the right to payment unconditional. The contract asset (conditional right) is reclassified to a trade receivable (unconditional right). No revenue is recognized at this point — it was already booked when the work was performed."
+  },
+  {
+    "slug": "ps-direct-staff-cost-engagement",
+    "category": "Professional Services",
+    "title": "Direct Staff Cost Allocated to Engagement",
+    "description": "Allocating a consultant's salary cost to a specific client project based on time recorded on the timesheet.",
+    "entries": [
+      { "account": "Engagement Direct Labor Cost (COGS)", "type": "Expense (+)", "dr": 3500.00, "cr": 0 },
+      { "account": "Salaries Payable (Allocated)", "type": "Liability (−)", "dr": 0, "cr": 3500.00 }
+    ],
+    "explanation": "Professional services cost of revenue is primarily staff time. Time recorded against a billable project code is the direct cost matched to that engagement's revenue. The remaining unallocated salary is overhead."
+  },
+  {
+    "slug": "ps-indirect-overhead-allocation",
+    "category": "Professional Services",
+    "title": "Overhead Allocation to Engagements (Indirect Cost)",
+    "description": "Apportioning office rent, IT, and support staff costs across client engagements using a standard overhead rate.",
+    "entries": [
+      { "account": "Engagement Overhead Cost (Allocated)", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Overhead Pool (Cleared)", "type": "Expense (−)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Indirect costs (office, IT, admin) are pooled and then allocated to engagements using a predetermined rate — often as a percentage of direct labor hours or cost. This ensures each engagement bears its fair share of the cost structure."
+  },
+  {
+    "slug": "ps-sub-consultant-cost",
+    "category": "Professional Services",
+    "title": "Sub-Consultant / Sub-Contractor Cost",
+    "description": "Recording the cost of an external specialist engaged to support a client project.",
+    "entries": [
+      { "account": "Sub-Consultant Cost (Engagement COGS)", "type": "Expense (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Accounts Payable (Sub-Consultant)", "type": "Liability (+)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Sub-consultant fees are a direct project cost matched to the engagement revenue. If the firm passes the cost through to the client with a markup, the gross amount is billed as revenue and the sub-consultant fee is a COGS item. Withholding tax obligations apply in Jordan."
+  },
+  {
+    "slug": "ps-sub-consultant-passthrough-billing",
+    "category": "Professional Services",
+    "title": "Sub-Consultant Cost Passed Through to Client (at Cost)",
+    "description": "Billing the client exactly the sub-consultant's cost with no markup as a direct recharge.",
+    "entries": [
+      { "account": "Accounts Receivable (Sub-Consultant Recharge)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Sub-Consultant Revenue (Pass-Through)", "type": "Revenue (+)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "Where the contract specifies pass-through at cost with no margin, the firm is acting as an agent for the specific sub-service. Under IFRS 15, if the firm is principal (controls the sub's output), gross revenue is recognized. If agent, only the margin is revenue. Pass-through at cost with no markup typically results in agent treatment and zero net margin on this line."
+  },
+  {
+    "slug": "ps-disbursements-client-recharged",
+    "category": "Professional Services",
+    "title": "Disbursements / Out-of-Pocket Expenses — Client Recharged",
+    "description": "Recharging travel, printing, courier, and filing fees to the client under the engagement letter.",
+    "entries": [
+      { "account": "Accounts Receivable (Disbursements Invoice)", "type": "Asset (+)", "dr": 850.00, "cr": 0 },
+      { "account": "Disbursement Recovery Revenue", "type": "Revenue (+)", "dr": 0, "cr": 850.00 },
+      { "account": "Travel & Disbursement Expense (Gross)", "type": "Expense (+)", "dr": 850.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (−)", "dr": 0, "cr": 850.00 }
+    ],
+    "explanation": "Disbursements are presented gross — full expense and full recovery revenue. Netting is not permitted under IFRS 15 if the firm controls the service (e.g., arranges travel on behalf of the client). Gross presentation shows the true cost and recovery."
+  },
+  {
+    "slug": "ps-disbursements-absorbed",
+    "category": "Professional Services",
+    "title": "Non-Rechargeable Disbursements Absorbed by Firm",
+    "description": "Recording out-of-pocket costs that the engagement letter does not permit the firm to recover from the client.",
+    "entries": [
+      { "account": "Engagement Disbursement Expense (Non-Recoverable)", "type": "Expense (+)", "dr": 320.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (−)", "dr": 0, "cr": 320.00 }
+    ],
+    "explanation": "Where the contract caps disbursements or excludes certain categories (e.g., internal printing, local taxis), those costs are absorbed as an operating expense reducing the engagement margin. They are not billed to the client."
+  },
+  {
+    "slug": "ps-vat-on-professional-fee-invoice",
+    "category": "Professional Services",
+    "title": "VAT on Professional Fee Invoice (Jordan 16%)",
+    "description": "Adding 16% Sales Tax to a professional services invoice issued to a Jordanian corporate client.",
+    "entries": [
+      { "account": "Accounts Receivable (VAT-Inclusive Invoice)", "type": "Asset (+)", "dr": 11600.00, "cr": 0 },
+      { "account": "Professional Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 10000.00 },
+      { "account": "VAT Output Tax Payable (16%)", "type": "Liability (+)", "dr": 0, "cr": 1600.00 }
+    ],
+    "explanation": "Professional services (legal, accounting, consulting, engineering) are subject to Jordan's 16% General Sales Tax when supplied to registered businesses. The VAT collected is a liability to the ISTD and is not the firm's revenue."
+  },
+  {
+    "slug": "ps-wht-deducted-by-client-jordan",
+    "category": "Professional Services",
+    "title": "Withholding Tax Deducted by Client (Jordan)",
+    "description": "Recording the WHT deducted by the client before remitting payment for professional services.",
+    "entries": [
+      { "account": "Cash / Bank (Net Payment Received)", "type": "Asset (+)", "dr": 9500.00, "cr": 0 },
+      { "account": "WHT Receivable / Prepaid Tax (ISTD)", "type": "Asset (+)", "dr": 500.00, "cr": 0 },
+      { "account": "Accounts Receivable (Invoice Cleared)", "type": "Asset (−)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "In Jordan, companies paying professional fees to individuals or certain entities must withhold 5% income tax and remit it to the ISTD. The firm records the full revenue, receives the net cash, and holds the WHT as a prepaid tax asset creditable against its annual income tax."
+  },
+  {
+    "slug": "ps-credit-note-fee-reduction",
+    "category": "Professional Services",
+    "title": "Credit Note Issued — Fee Reduction Agreed with Client",
+    "description": "Issuing a credit note when the firm agrees to reduce fees following a client dispute over service quality.",
+    "entries": [
+      { "account": "Professional Fee Revenue (Reversal)", "type": "Revenue (−)", "dr": 2000.00, "cr": 0 },
+      { "account": "VAT Output Tax Payable (VAT Reversed)", "type": "Liability (−)", "dr": 320.00, "cr": 0 },
+      { "account": "Accounts Receivable (Credit Applied)", "type": "Asset (−)", "dr": 0, "cr": 2320.00 }
+    ],
+    "explanation": "A credit note reduces revenue and VAT in the period it is issued. If the original invoice was in a prior period, the credit is recognized in the current period — not a prior-period restatement unless material. VAT on the credit note is also reversed."
+  },
+  {
+    "slug": "ps-write-down-wip-irrecoverable",
+    "category": "Professional Services",
+    "title": "WIP Write-Down — Irrecoverable Engagement Hours",
+    "description": "Writing down WIP when hours worked cannot be billed because the engagement was terminated or the work product is rejected.",
+    "entries": [
+      { "account": "WIP Write-Down Expense", "type": "Expense (+)", "dr": 5500.00, "cr": 0 },
+      { "account": "Unbilled Receivables / Contract Asset (WIP)", "type": "Asset (−)", "dr": 0, "cr": 5500.00 }
+    ],
+    "explanation": "When billed hours become uncollectable (client refuses to pay, scope dispute, or engagement terminated), the WIP is impaired. The write-down reverses previously recognized revenue. This is a key risk management issue for professional firms billing under T&M contracts."
+  },
+  {
+    "slug": "ps-bad-debt-provision-client-ar",
+    "category": "Professional Services",
+    "title": "Allowance for Doubtful Client Receivables",
+    "description": "Provisioning for professional fee invoices where collection is uncertain due to client financial difficulty.",
+    "entries": [
+      { "account": "Bad Debt Expense (Professional Fees)", "type": "Expense (+)", "dr": 7500.00, "cr": 0 },
+      { "account": "Allowance for Doubtful Accounts", "type": "Contra-Asset (+)", "dr": 0, "cr": 7500.00 }
+    ],
+    "explanation": "Under IFRS 9, trade receivables must be assessed for expected credit losses. When a client enters financial distress or disputes an invoice, a specific provision is raised. The allowance reduces the net receivable on the balance sheet without removing the legal claim."
+  },
+  {
+    "slug": "ps-bad-debt-writeoff-client",
+    "category": "Professional Services",
+    "title": "Client Receivable Written Off (Unrecoverable)",
+    "description": "Writing off a client invoice confirmed as unrecoverable after all collection efforts have failed.",
+    "entries": [
+      { "account": "Allowance for Doubtful Accounts", "type": "Contra-Asset (−)", "dr": 7500.00, "cr": 0 },
+      { "account": "Accounts Receivable (Client Invoice)", "type": "Asset (−)", "dr": 0, "cr": 7500.00 }
+    ],
+    "explanation": "The write-off removes the receivable from the balance sheet. No new expense is recognized if the allowance was already set up. The legal claim against the client may continue even after write-off."
+  },
+  {
+    "slug": "ps-bad-debt-recovered-after-writeoff",
+    "category": "Professional Services",
+    "title": "Client Debt Recovered After Write-Off",
+    "description": "Recording unexpected payment from a client whose invoice was previously written off.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Bad Debt Recovery Income", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Recovered amounts from previously written-off clients are recognized as Other Income (or a reduction in bad debt expense) when cash is received. They are not credited back to the original revenue line."
+  },
+  {
+    "slug": "ps-long-term-contract-loss-provision",
+    "category": "Professional Services",
+    "title": "Onerous Fixed-Fee Contract — Loss Provision",
+    "description": "Recognizing an immediate loss when the estimated cost to complete a fixed-fee engagement exceeds the remaining fee to be earned.",
+    "entries": [
+      { "account": "Loss on Onerous Contract (Expense)", "type": "Expense (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Provision for Onerous Contract (Liability)", "type": "Liability (+)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "When a fixed-fee engagement becomes loss-making (scope creep, underestimated complexity), the expected total loss must be recognized immediately under IAS 37 and IFRS 15. Waiting until the engagement closes understates current-period liabilities."
+  },
+  {
+    "slug": "ps-contra-revenue-early-payment-discount",
+    "category": "Professional Services",
+    "title": "Early Payment Discount Offered to Client",
+    "description": "Offering a 2% discount if the client pays within 10 days of invoice date.",
+    "entries": [
+      { "account": "Cash / Bank (Net Received)", "type": "Asset (+)", "dr": 9800.00, "cr": 0 },
+      { "account": "Sales Discount (Early Payment)", "type": "Contra-Revenue (+)", "dr": 200.00, "cr": 0 },
+      { "account": "Accounts Receivable (Invoice Cleared)", "type": "Asset (−)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Early payment discounts are contra-revenue. Using a contra account instead of directly reducing revenue allows management to track the cost of the discount policy. Under IFRS 15, variable consideration (including discounts) must be estimated at contract inception."
+  },
+  {
+    "slug": "ps-deferred-revenue-subscription-services",
+    "category": "Professional Services",
+    "title": "Retainer / Subscription Service — Annual Upfront Payment",
+    "description": "A client pays a full-year retainer for on-call legal or advisory services billed annually in advance.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 36000.00, "cr": 0 },
+      { "account": "Deferred Retainer Revenue (Liability)", "type": "Liability (+)", "dr": 0, "cr": 36000.00 }
+    ],
+    "explanation": "Annual retainer payments received before services are delivered are deferred revenue. JOD 3,000 is recognized each month as the firm stands ready to provide services. The firm's obligation is availability, not a specific deliverable."
+  },
+  {
+    "slug": "ps-retainer-monthly-recognition",
+    "category": "Professional Services",
+    "title": "Monthly Retainer Revenue Recognition",
+    "description": "Releasing one month of the deferred annual retainer to earned revenue.",
+    "entries": [
+      { "account": "Deferred Retainer Revenue", "type": "Liability (−)", "dr": 3000.00, "cr": 0 },
+      { "account": "Retainer / Subscription Revenue", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Each month, the performance obligation (being available and providing services on-call) is satisfied. The deferred liability decreases and revenue is recognized. Unused retainer hours do not roll over unless the contract explicitly allows it."
+  },
+  {
+    "slug": "ps-retainer-unused-hours-breakage",
+    "category": "Professional Services",
+    "title": "Retainer Breakage — Unused Hours Lapsed",
+    "description": "Recognizing revenue from retainer hours that expired unused at the end of the contract period.",
+    "entries": [
+      { "account": "Deferred Retainer Revenue (Lapsed)", "type": "Liability (−)", "dr": 1500.00, "cr": 0 },
+      { "account": "Retainer Breakage Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1500.00 }
+    ],
+    "explanation": "Under IFRS 15, breakage revenue (lapsed unused entitlements) is recognized when the likelihood of the client exercising remaining rights becomes remote. Historical data on usage patterns is used to estimate the breakage rate."
+  },
+  {
+    "slug": "ps-success-fee-contingency-lifted",
+    "category": "Professional Services",
+    "title": "Contingent Success Fee — Constraint Lifted at Deal Close",
+    "description": "Recognizing a fully contingent M&A success fee once the transaction completes and the fee is no longer variable.",
+    "entries": [
+      { "account": "Accounts Receivable (Success Fee)", "type": "Asset (+)", "dr": 250000.00, "cr": 0 },
+      { "account": "Success Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 250000.00 }
+    ],
+    "explanation": "Under IFRS 15.56, highly variable success fees are constrained until the uncertainty is resolved. Upon deal close (the triggering event), the constraint is lifted and the full fee is recognized immediately. No revenue was recognized during the advisory process."
+  },
+  {
+    "slug": "ps-performance-bonus-variable-fee",
+    "category": "Professional Services",
+    "title": "Performance Bonus — Variable Fee Earned",
+    "description": "Recognizing a performance bonus when the client confirms the firm exceeded agreed KPI targets.",
+    "entries": [
+      { "account": "Accounts Receivable (Performance Bonus)", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Variable Fee Revenue (Bonus)", "type": "Revenue (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Variable consideration (performance bonuses, KPI uplifts) is recognized only when it is highly probable the amount will not be significantly reversed. Formal client confirmation that KPIs were met lifts the revenue constraint."
+  },
+  {
+    "slug": "ps-engagement-scope-change-addendum",
+    "category": "Professional Services",
+    "title": "Contract Modification — Additional Scope Agreed",
+    "description": "Recording additional revenue when a change order adds new services to an existing engagement.",
+    "entries": [
+      { "account": "Accounts Receivable (Additional Scope Invoice)", "type": "Asset (+)", "dr": 18000.00, "cr": 0 },
+      { "account": "Professional Fee Revenue (Change Order)", "type": "Revenue (+)", "dr": 0, "cr": 18000.00 }
+    ],
+    "explanation": "Under IFRS 15, a contract modification adding distinct services at their standalone selling price is treated as a new contract. The additional revenue is recognized as the new services are delivered. If the price is not at SSP, the modification adjusts the original contract prospectively or as a catch-up."
+  },
+  {
+    "slug": "ps-partner-profit-distribution",
+    "category": "Professional Services",
+    "title": "Partner Profit Distribution (Partnership)",
+    "description": "Recording the quarterly distribution of profits to equity partners in a professional services partnership.",
+    "entries": [
+      { "account": "Partners' Capital Accounts (Distribution)", "type": "Equity (−)", "dr": 80000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (−)", "dr": 0, "cr": 80000.00 }
+    ],
+    "explanation": "In a partnership, profit distributions to partners reduce their capital accounts — they are not a salary or expense of the firm. Partners are taxed individually on their share of profit, not on the distribution. This is distinct from an employee bonus."
+  },
+  {
+    "slug": "ps-partner-drawings-advance",
+    "category": "Professional Services",
+    "title": "Partner Monthly Drawings (Advance Against Profit)",
+    "description": "A partner withdraws a monthly drawing against their expected annual profit share.",
+    "entries": [
+      { "account": "Partner Drawings (Contra-Capital)", "type": "Equity (−)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (−)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "Monthly drawings are advances against profit — not salaries. At year-end, total drawings are offset against the partner's profit share. If drawings exceed profit, the partner owes the difference back to the firm. Drawings reduce the partner's capital account."
+  },
+  {
+    "slug": "ps-salaried-staff-payroll-gross",
+    "category": "Professional Services",
+    "title": "Professional Staff Monthly Payroll (Gross)",
+    "description": "Recording gross salaries for associates, analysts, and support staff.",
+    "entries": [
+      { "account": "Staff Salaries Expense", "type": "Expense (+)", "dr": 45000.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 45000.00 }
+    ],
+    "explanation": "Professional staff salaries are the primary cost of revenue. They are matched to the periods in which services are delivered. Allocation between billable and non-billable time drives the utilization rate — a critical KPI for professional firms."
+  },
+  {
+    "slug": "ps-ssc-employer-jordan-staff",
+    "category": "Professional Services",
+    "title": "SSC Employer Contribution — Professional Staff (Jordan)",
+    "description": "Recording the 14.25% employer SSC contribution for Jordanian professional services employees.",
+    "entries": [
+      { "account": "SSC Expense — Employer (14.25%)", "type": "Expense (+)", "dr": 6412.50, "cr": 0 },
+      { "account": "SSC Payable", "type": "Liability (+)", "dr": 0, "cr": 6412.50 }
+    ],
+    "explanation": "SSC is part of the true employment cost. For a professional services firm, it should be tracked as a separate line within staff costs and allocated between billable and non-billable categories for utilization rate reporting."
+  },
+  {
+    "slug": "ps-eosb-provision-professional-staff",
+    "category": "Professional Services",
+    "title": "EOSB Monthly Provision — Professional Staff (Jordan)",
+    "description": "Accruing the end-of-service gratuity for Jordanian employees of the professional services firm.",
+    "entries": [
+      { "account": "EOSB Expense (Professional Staff)", "type": "Expense (+)", "dr": 2250.00, "cr": 0 },
+      { "account": "Provision for EOSB", "type": "Liability (+)", "dr": 0, "cr": 2250.00 }
+    ],
+    "explanation": "Jordanian labor law requires EOSB provisioning for all permanent staff. For professional firms with high staff turnover (especially associates), careful EOSB tracking prevents unexpected costs when employees depart."
+  },
+  {
+    "slug": "ps-billable-expense-staff-travel",
+    "category": "Professional Services",
+    "title": "Staff Travel Expense — Billable Engagement",
+    "description": "Recording a consultant's flights and hotel costs for a client site visit to be recharged.",
+    "entries": [
+      { "account": "Engagement Disbursement — Travel (Rechargeable)", "type": "Expense (+)", "dr": 1800.00, "cr": 0 },
+      { "account": "Cash / Credit Card Payable", "type": "Asset/Liability (−)", "dr": 0, "cr": 1800.00 }
+    ],
+    "explanation": "Billable travel expenses are first recorded as an operating expense when incurred. A separate recharge entry (or combined with the monthly invoice) transfers the cost to the client. The firm's P&L shows the gross expense and the corresponding recovery revenue."
+  },
+  {
+    "slug": "ps-non-billable-staff-training",
+    "category": "Professional Services",
+    "title": "Non-Billable Staff Training & CPD",
+    "description": "Recording CPD courses, exam fees, and technical training that cannot be recharged to clients.",
+    "entries": [
+      { "account": "Staff Training & CPD Expense", "type": "Expense (+)", "dr": 1200.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (−)", "dr": 0, "cr": 1200.00 }
+    ],
+    "explanation": "Continuing Professional Development (CPD) is a mandatory requirement for licensed professionals (lawyers, auditors, engineers). It is expensed as incurred and cannot be capitalized. It is classified as an overhead reducing the firm's net margin."
+  },
+  {
+    "slug": "ps-professional-license-renewal",
+    "category": "Professional Services",
+    "title": "Annual Professional License & Bar/CPA Registration Fee",
+    "description": "Paying annual renewal fees for professional licenses — bar association, CPA institute, engineering syndicate.",
+    "entries": [
+      { "account": "Professional Dues & License Fees", "type": "Expense (+)", "dr": 800.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (−)", "dr": 0, "cr": 800.00 }
+    ],
+    "explanation": "Professional license fees are mandatory to practice legally. They are an operating expense recognized in the year they relate to. Multi-year licenses are prepaid and amortized monthly."
+  },
+  {
+    "slug": "ps-malpractice-insurance-prepaid",
+    "category": "Professional Services",
+    "title": "Professional Indemnity Insurance Premium (Prepaid)",
+    "description": "Paying the annual professional indemnity insurance premium — already in the dataset as a point-in-time entry; this is the separate prepaid recognition.",
+    "entries": [
+      { "account": "Prepaid PII — Professional Indemnity", "type": "Asset (+)", "dr": 4800.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (−)", "dr": 0, "cr": 4800.00 }
+    ],
+    "explanation": "Professional indemnity insurance covering 12 months is prepaid and amortized at JOD 400/month. Without current PII, most firms cannot legally practice. It is a fundamental cost of operating in professional services."
+  },
+  {
+    "slug": "ps-pii-monthly-amortization",
+    "category": "Professional Services",
+    "title": "Professional Indemnity Insurance — Monthly Amortization",
+    "description": "Releasing one month of the prepaid PII premium to the income statement.",
+    "entries": [
+      { "account": "Professional Indemnity Insurance Expense", "type": "Expense (+)", "dr": 400.00, "cr": 0 },
+      { "account": "Prepaid PII", "type": "Asset (−)", "dr": 0, "cr": 400.00 }
+    ],
+    "explanation": "Each month, JOD 400 of the annual PII premium is recognized as an expense. This matches the cost to the period the coverage protects, regardless of the upfront payment date."
+  },
+  {
+    "slug": "ps-engagement-closeout-wip-written-off",
+    "category": "Professional Services",
+    "title": "Engagement Close-Out — Unbilled WIP Written Off",
+    "description": "Writing off residual WIP on an engagement that is closed with the client's final invoice already issued.",
+    "entries": [
+      { "account": "WIP Write-Off (Engagement Close-Out)", "type": "Expense (+)", "dr": 3200.00, "cr": 0 },
+      { "account": "Unbilled Receivables / Contract Asset (WIP)", "type": "Asset (−)", "dr": 0, "cr": 3200.00 }
+    ],
+    "explanation": "At engagement close, any remaining WIP that was not invoiced (because the firm absorbed cost overruns or agreed a fixed scope) is written off. This is a normal part of engagement profitability management."
+  },
+  {
+    "slug": "ps-engagement-profitability-final-revenue",
+    "category": "Professional Services",
+    "title": "Engagement Close-Out — Final Revenue True-Up",
+    "description": "Recognizing the final tranche of revenue on a fixed-fee project once all deliverables are confirmed complete.",
+    "entries": [
+      { "account": "Accounts Receivable (Final Invoice)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Contract Asset (Unbilled — Cleared)", "type": "Asset (−)", "dr": 0, "cr": 5000.00 },
+      { "account": "Professional Fee Revenue (Final Tranche)", "type": "Revenue (+)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "At project completion, the final invoice is raised and all remaining contract assets are converted to receivables. Any revenue not yet recognized (deferred under milestones or percentage-of-completion) is recognized at this point."
+  },
+  {
+    "slug": "ps-client-refund-advance-cancellation",
+    "category": "Professional Services",
+    "title": "Client Advance Refunded — Engagement Cancelled",
+    "description": "Refunding an unused client advance when a project is cancelled before meaningful services are delivered.",
+    "entries": [
+      { "account": "Advance from Client (Unearned Revenue)", "type": "Liability (−)", "dr": 10000.00, "cr": 0 },
+      { "account": "Cash / Bank (Refund)", "type": "Asset (−)", "dr": 0, "cr": 10000.00 }
+    ],
+    "explanation": "If the engagement contract allows for full refund on cancellation with no work done, the entire advance is refunded. The liability is cleared. If some work was performed, revenue for services rendered is recognized first and the remainder is refunded."
+  },
+  {
+    "slug": "ps-referral-fee-paid-to-introducer",
+    "category": "Professional Services",
+    "title": "Referral / Introducer Fee Paid",
+    "description": "Paying a referral fee to a third party who introduced a new client to the firm.",
+    "entries": [
+      { "account": "Referral Fee Expense (Business Development)", "type": "Expense (+)", "dr": 3000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable (Introducer)", "type": "Asset/Liability (−)", "dr": 0, "cr": 3000.00 }
+    ],
+    "explanation": "Referral fees paid to introducers are a business development expense. They cannot be capitalized as contract acquisition costs under IFRS 15 because they are paid to a third party, not an employee of the firm. Ethical rules for legal and accounting firms must be observed."
+  },
+  {
+    "slug": "ps-referral-fee-received",
+    "category": "Professional Services",
+    "title": "Referral Fee Received from Another Firm",
+    "description": "Receiving a referral fee from a law firm or advisor for directing a client to them.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 2500.00, "cr": 0 },
+      { "account": "Referral Fee Income (Other Income)", "type": "Revenue (+)", "dr": 0, "cr": 2500.00 }
+    ],
+    "explanation": "Referral income is Other Income — it is recognized when the referral qualifies per the agreement (e.g., client signs a contract with the referred firm). Regulatory restrictions on fee-sharing between professionals must be observed."
+  },
+  {
+    "slug": "ps-joint-engagement-revenue-split",
+    "category": "Professional Services",
+    "title": "Joint Engagement — Revenue Sharing Between Firms",
+    "description": "Recording the firm's share of revenue on a joint mandate where two firms collaborate and split fees.",
+    "entries": [
+      { "account": "Accounts Receivable (Joint Engagement Share)", "type": "Asset (+)", "dr": 30000.00, "cr": 0 },
+      { "account": "Payable to Co-Firm (Their Share)", "type": "Liability (+)", "dr": 0, "cr": 15000.00 },
+      { "account": "Professional Fee Revenue (Own Share)", "type": "Revenue (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Where two firms handle a mandate jointly (e.g., legal co-counsel), the lead firm invoices the client for the full amount and remits the other firm's share. Only the lead firm's own revenue share is recognized as income — the co-firm's share is a liability."
+  },
+  {
+    "slug": "ps-secondment-staff-recharged",
+    "category": "Professional Services",
+    "title": "Staff Secondment — Salary Recharged to Client",
+    "description": "Recharging the salary cost of a seconded employee placed full-time with a client for a defined period.",
+    "entries": [
+      { "account": "Accounts Receivable (Secondment Recharge)", "type": "Asset (+)", "dr": 8000.00, "cr": 0 },
+      { "account": "Secondment Revenue (Recharge)", "type": "Revenue (+)", "dr": 0, "cr": 8000.00 }
+    ],
+    "explanation": "When staff are seconded to a client on a cost-recharge basis, the salary is both an expense of the firm and a recharge to the client. The gross presentation — expense and revenue separately — is required if the firm remains the employer and bears employment risk."
+  },
+  {
+    "slug": "ps-intellectual-property-sale",
+    "category": "Professional Services",
+    "title": "Sale of Intellectual Property / Report Licence",
+    "description": "Selling a licence to use a proprietary methodology, benchmark study, or research report to multiple clients.",
+    "entries": [
+      { "account": "Cash / Accounts Receivable", "type": "Asset (+)", "dr": 5000.00, "cr": 0 },
+      { "account": "IP Licence Revenue", "type": "Revenue (+)", "dr": 0, "cr": 5000.00 }
+    ],
+    "explanation": "When the firm licences its own IP (databases, proprietary models, published research) to a client for use over a defined period, revenue is recognized at a point in time (for access licences) or over time (for usage-based licences). This is separate from the royalty income entry for third-party IP."
+  },
+  {
+    "slug": "ps-research-development-cost-firm",
+    "category": "Professional Services",
+    "title": "Internal Research & Thought Leadership Cost",
+    "description": "Recording the internal cost of producing proprietary research, whitepapers, and market reports used for business development.",
+    "entries": [
+      { "account": "Research & Thought Leadership Expense", "type": "Expense (+)", "dr": 6500.00, "cr": 0 },
+      { "account": "Staff Wages Payable / Cash", "type": "Asset/Liability (−)", "dr": 0, "cr": 6500.00 }
+    ],
+    "explanation": "Internal research that is not commissioned by a specific client is a marketing and business development cost. Under IAS 38, research costs cannot be capitalized. Only development costs meeting six specific criteria may be capitalized as intangible assets."
+  },
+  {
+    "slug": "ps-client-entertainment-non-deductible",
+    "category": "Professional Services",
+    "title": "Client Entertainment Expense (Non-Deductible)",
+    "description": "Recording the cost of a client dinner for relationship development.",
+    "entries": [
+      { "account": "Client Entertainment Expense", "type": "Expense (+)", "dr": 450.00, "cr": 0 },
+      { "account": "Cash / Credit Card", "type": "Asset (−)", "dr": 0, "cr": 450.00 }
+    ],
+    "explanation": "Client entertainment is an operating expense for accounting purposes but is typically disallowed for income tax in Jordan. When computing taxable income, this amount is added back. The firm must document the business purpose and attendees for the expense to be defensible."
+  },
+  {
+    "slug": "ps-engagement-management-fee-franchisee",
+    "category": "Professional Services",
+    "title": "Network / Franchise Management Fee Paid to Global Firm",
+    "description": "Recording the monthly fee paid by a local professional services firm to its global network (e.g., Big Four affiliation, legal network).",
+    "entries": [
+      { "account": "Network / Affiliation Fee Expense", "type": "Expense (+)", "dr": 5500.00, "cr": 0 },
+      { "account": "Accounts Payable (Global Network)", "type": "Liability (+)", "dr": 0, "cr": 5500.00 }
+    ],
+    "explanation": "Member firms of global professional networks pay affiliation fees (typically a percentage of revenue) for the right to use the brand, share methodologies, and access referrals. This is a recurring overhead expense."
+  },
+  {
+    "slug": "ps-corporate-income-tax-provision-ps",
+    "category": "Professional Services",
+    "title": "Corporate Income Tax Provision — Professional Services Firm",
+    "description": "Accruing the annual income tax on the firm's taxable profit.",
+    "entries": [
+      { "account": "Income Tax Expense", "type": "Expense (+)", "dr": 18000.00, "cr": 0 },
+      { "account": "Income Tax Payable (ISTD)", "type": "Liability (+)", "dr": 0, "cr": 18000.00 }
+    ],
+    "explanation": "Professional services entities incorporated as companies pay corporate income tax. Partnerships are typically transparent for tax — partners pay personal income tax on their share. The applicable Jordanian rate depends on the entity type and sector."
+  },
+  {
+    "slug": "ps-deferred-revenue-annual-report-subscription",
+    "category": "Professional Services",
+    "title": "Annual Research Subscription — Deferred Revenue",
+    "description": "Collecting an annual subscription fee for access to a proprietary market intelligence platform.",
+    "entries": [
+      { "account": "Cash / Bank", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Deferred Subscription Revenue", "type": "Liability (+)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "Annual subscriptions to reports, data platforms, or advisory services are deferred and recognized monthly at JOD 1,000. Revenue is earned as the client has access to the platform — a continuous performance obligation."
+  },
+  {
+    "slug": "ps-deferred-subscription-monthly-release",
+    "category": "Professional Services",
+    "title": "Research Subscription — Monthly Revenue Release",
+    "description": "Releasing one month of the deferred annual subscription to earned revenue.",
+    "entries": [
+      { "account": "Deferred Subscription Revenue", "type": "Liability (−)", "dr": 1000.00, "cr": 0 },
+      { "account": "Subscription Revenue (Research / Data)", "type": "Revenue (+)", "dr": 0, "cr": 1000.00 }
+    ],
+    "explanation": "Monthly release matches revenue to the period in which the subscriber has access to the platform. At year-end, if all 12 months have been released, the deferred revenue balance is zero."
+  },
+  {
+    "slug": "ps-office-lease-cost-professional-firm",
+    "category": "Professional Services",
+    "title": "Office Lease — Monthly Expense (Professional Firm)",
+    "description": "Recording the monthly office lease cost for a law firm, consulting firm, or accounting practice.",
+    "entries": [
+      { "account": "Rent Expense (Office)", "type": "Expense (+)", "dr": 4500.00, "cr": 0 },
+      { "account": "Prepaid Rent (Released)", "type": "Asset (−)", "dr": 0, "cr": 4500.00 }
+    ],
+    "explanation": "Office space is the second largest cost after staff for most professional services firms. Under IFRS 16, longer leases are on-balance sheet. Short leases (under 12 months) or low-value leases may be expensed directly under the exemption."
+  },
+  {
+    "slug": "ps-software-tools-annual-subscription",
+    "category": "Professional Services",
+    "title": "Practice Management / Legal Tech Software Subscription",
+    "description": "Paying for annual subscriptions to billing software, legal research databases, or document management platforms.",
+    "entries": [
+      { "account": "Prepaid Software Subscriptions", "type": "Asset (+)", "dr": 9600.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (−)", "dr": 0, "cr": 9600.00 }
+    ],
+    "explanation": "Annual subscriptions to Westlaw, iManage, Salesforce, or similar practice management tools are prepaid assets amortized at JOD 800/month. These are essential overhead costs for professional services firms."
   }
 
 
