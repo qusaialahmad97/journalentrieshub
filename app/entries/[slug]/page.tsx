@@ -4,6 +4,13 @@ import entries from "../../../data/entries.json";
 import Comments from "../../components/Comments";
 import { Metadata } from "next";
 
+// 1. UPDATED INTERFACE: Added the Practitioner Notes structure
+interface PractitionerNotes {
+  erp_application?: string;
+  audit_triggers?: string;
+  required_documentation?: string;
+}
+
 interface JournalEntry {
   slug: string;
   title: string;
@@ -11,6 +18,7 @@ interface JournalEntry {
   description: string;
   explanation: string;
   entries: { account: string; type: string; dr: number; cr: number }[];
+  practitioner_notes?: PractitionerNotes; // Added this line
 }
 
 export async function generateMetadata({ 
@@ -106,7 +114,6 @@ export default async function EntryPage({
       <main className="min-h-screen bg-slate-50 py-12 px-4 font-sans text-black">
         <div className="max-w-4xl mx-auto">
           
-          {/* NEW: SEO Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest mb-6" aria-label="Breadcrumb">
             <Link href="/" className="text-slate-400 hover:text-emerald-600 transition-colors">Hub</Link>
             <span className="text-slate-300">/</span>
@@ -117,7 +124,6 @@ export default async function EntryPage({
             <span className="text-slate-500 truncate max-w-[150px] md:max-w-none">{entry.title}</span>
           </nav>
 
-          {/* Share Hook */}
           <div className="flex justify-end items-center mb-6">
             <div className="flex gap-2">
               <a 
@@ -153,18 +159,24 @@ export default async function EntryPage({
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
-                    {entry.entries.map((line, idx) => (
-                      <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                        <td className="px-6 py-4 font-semibold text-slate-800">{line.account}</td>
-                        <td className="px-6 py-4 text-slate-500 italic text-sm">{line.type}</td>
-                        <td className="px-6 py-4 text-right text-emerald-600 font-bold">
-                          {line.dr > 0 ? line.dr.toLocaleString(undefined, { minimumFractionDigits: 2 }) : "-"}
-                        </td>
-                        <td className="px-6 py-4 text-right text-rose-600 font-bold">
-                          {line.cr > 0 ? line.cr.toLocaleString(undefined, { minimumFractionDigits: 2 }) : "-"}
-                        </td>
-                      </tr>
-                    ))}
+                    {entry.entries.map((line, idx) => {
+                      const isCredit = line.type.toLowerCase() === 'cr' || line.cr > 0;
+                      
+                      return (
+                        <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                          <td className={`px-6 py-4 font-semibold text-slate-800 ${isCredit ? 'pl-12' : ''}`}>
+                            {line.account}
+                          </td>
+                          <td className="px-6 py-4 text-slate-500 italic text-sm">{line.type}</td>
+                          <td className="px-6 py-4 text-right text-emerald-600 font-bold">
+                            {line.dr > 0 ? line.dr.toLocaleString(undefined, { minimumFractionDigits: 2 }) : "-"}
+                          </td>
+                          <td className="px-6 py-4 text-right text-rose-600 font-bold">
+                            {line.cr > 0 ? line.cr.toLocaleString(undefined, { minimumFractionDigits: 2 }) : "-"}
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
@@ -175,6 +187,53 @@ export default async function EntryPage({
                 </h3>
                 <p className="text-blue-800 leading-relaxed italic">{entry.explanation}</p>
               </div>
+
+              {/* 2. NEW: PRACTITIONER & COMPLIANCE NOTES */}
+              {entry.practitioner_notes && (
+                <div className="mt-10 mb-6">
+                  <h3 className="text-lg font-bold text-slate-900 border-b border-slate-200 pb-4 mb-6">
+                    Practitioner & Systems Framework
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {/* ERP Application Info */}
+                    {entry.practitioner_notes.erp_application && (
+                      <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl flex flex-col h-full">
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2">
+                          💻 ERP Architecture
+                        </h4>
+                        <p className="text-slate-700 text-sm leading-relaxed flex-grow">
+                          {entry.practitioner_notes.erp_application}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Audit Triggers */}
+                    {entry.practitioner_notes.audit_triggers && (
+                      <div className="bg-rose-50 border border-rose-100 p-6 rounded-2xl flex flex-col h-full">
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-rose-500 mb-3 flex items-center gap-2">
+                          ⚠️ Audit Flags
+                        </h4>
+                        <p className="text-rose-900 text-sm leading-relaxed flex-grow">
+                          {entry.practitioner_notes.audit_triggers}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Required Documentation (Spans full width at bottom) */}
+                    {entry.practitioner_notes.required_documentation && (
+                      <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl md:col-span-2">
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-3 flex items-center gap-2">
+                          📄 Required Documentation
+                        </h4>
+                        <p className="text-emerald-900 text-sm leading-relaxed">
+                          {entry.practitioner_notes.required_documentation}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
 
               {/* Lead Magnet Section */}
               <div className="mt-12 p-1 bg-gradient-to-br from-emerald-400 to-blue-600 rounded-2xl shadow-lg">
@@ -202,7 +261,7 @@ export default async function EntryPage({
 
               {/* Author Box */}
               <div className="mt-12 p-8 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col md:flex-row items-center gap-6">
-                <div className="w-20 h-20 rounded-full bg-slate-200 overflow-hidden border-2 border-emerald-500 relative flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-slate-200 overflow-hidden border-2 border-emerald-500 relative flex items-center justify-center shrink-0">
                   <span className="text-slate-400 font-bold text-xl uppercase">QA</span>
                 </div>
                 <div className="flex-1 text-center md:text-left">
