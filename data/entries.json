@@ -24298,7 +24298,1138 @@
       "audit_triggers": "Auditors require independent aircraft appraisals for fleets where fair value is the key measure of recoverable amount. For VIU models, test the key assumptions (revenue yield, fuel price, maintenance costs, route utilisation) against management's plans and market data. Aircraft with impairment indicators include: narrowbody fleets on thin routes, older-generation aircraft (A320ceo, B737NG) facing competition from A320neo/MAX, and aircraft parked for extended periods. Confirm impairment reversal assessment in subsequent periods (IAS 36 reversals are permitted for PPE).",
       "required_documentation": "Aircraft fleet appraisal report (independent appraiser), VIU model with key assumptions, CGU definition and supporting rationale, impairment trigger assessment, recoverable amount calculation (higher of VIU and FVLCD), IAS 36 disclosure requirements (CGU, carrying amount, recoverable amount, key assumptions), and subsequent-year reversal assessment."
     }
+  },
+
+  
+  {
+    "slug": "auto-new-vehicle-sale",
+    "category": "Automotive & Dealerships",
+    "title": "New Vehicle Sale — Cash / Finance Customer",
+    "description": "Recording the sale of a new vehicle to a retail customer paying cash or arranging third-party financing.",
+    "entries": [
+      { "account": "Cash / Finance Company Receivable", "type": "Asset (+)", "dr": 28500.00, "cr": 0 },
+      { "account": "New Vehicle Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 28500.00 },
+      { "account": "Cost of Goods Sold — New Vehicle", "type": "Expense (+)", "dr": 26200.00, "cr": 0 },
+      { "account": "New Vehicle Inventory", "type": "Asset (-)", "dr": 0, "cr": 26200.00 }
+    ],
+    "explanation": "Revenue on new vehicle sales is recognized when the vehicle title passes to the customer — typically at delivery and signing. The COGS is the vehicle's cost (invoice price from the manufacturer plus any pre-delivery preparation costs). The gross profit margin on new vehicles is typically thin (2-5%), making F&I (Finance & Insurance) and service revenue critical to dealership profitability.",
+    "practitioner_notes": {
+      "erp_application": "New vehicle sales are processed in the Dealer Management System (DMS) — CDK Global, Reynolds & Reynolds, or Dealertrack. The DMS generates the retail deal jacket, calculates COGS from the inventory record, and posts the revenue and COGS entries to the GL simultaneously at deal closing. Each vehicle is tracked in inventory by VIN (Vehicle Identification Number). The DMS interfaces with the manufacturer's portal for order tracking and incentive claims. F&I (Finance & Insurance) products sold simultaneously with the vehicle are tracked as separate revenue lines.",
+      "audit_triggers": "Auditors test vehicle sales against signed buyer's orders and title transfer documents. Confirm that revenue is recognized at delivery (not at order or deposit). Review deals at period-end — vehicles signed but not yet delivered should remain in inventory with a customer deposit liability (not revenue). Test that manufacturer incentives (customer cash rebates applied at point of sale) are correctly reflected in the net selling price and not duplicated. Confirm the COGS matches the inventory record for the specific VIN.",
+      "required_documentation": "Signed buyer's order and delivery receipt, title transfer documentation, VIN-level inventory record (cost), DMS deal jacket, manufacturer invoice (Monroney sticker), customer deposit register (for vehicles ordered but not yet delivered), and F&I product schedule on the deal."
+    }
+  },
+  {
+    "slug": "auto-used-vehicle-sale",
+    "category": "Automotive & Dealerships",
+    "title": "Used Vehicle Sale — Retail Customer",
+    "description": "Recording the sale of a pre-owned vehicle from the dealership's used car lot.",
+    "entries": [
+      { "account": "Cash / Finance Company Receivable", "type": "Asset (+)", "dr": 18000.00, "cr": 0 },
+      { "account": "Used Vehicle Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 18000.00 },
+      { "account": "Cost of Goods Sold — Used Vehicle", "type": "Expense (+)", "dr": 15800.00, "cr": 0 },
+      { "account": "Used Vehicle Inventory", "type": "Asset (-)", "dr": 0, "cr": 15800.00 }
+    ],
+    "explanation": "Used vehicle sales have higher gross margins than new vehicles (8-15%) but require more active management. The cost basis of each used vehicle depends on its source — trade-in (valued at trade allowance), auction purchase, or dealer-to-dealer transfer. Reconditioning costs (service labor and parts) are added to the vehicle's cost basis before sale.",
+    "practitioner_notes": {
+      "erp_application": "Used vehicle inventory is tracked by VIN in the DMS with a cost basis that accumulates from acquisition through reconditioning. Trade-in vehicles are received at the trade allowance value agreed during the new vehicle deal. Auction purchases are recorded at hammer price plus buyer's fees. Reconditioning costs (detailing, mechanical repairs, new tires) are posted to the vehicle's inventory record as they are incurred. At sale, the DMS derecognizes the vehicle at its accumulated cost. Used vehicle gross profit is a key performance metric tracked daily by the used car manager.",
+      "audit_triggers": "Auditors test used vehicle inventory existence and valuation — physical lot count reconciled to DMS inventory. Confirm that all reconditioning costs are captured in the vehicle's cost basis (not expensed separately). Test used vehicle pricing against market guides (JD Power, Black Book, MMR) to assess NRV — vehicles priced below market book value may require write-down. Review aged used vehicle inventory (over 60 days) — stale inventory typically requires mark-down to market. Confirm trade-in valuations are recorded at the trade allowance (not the customer's perceived value or the vehicle's retail potential).",
+      "required_documentation": "VIN-level used vehicle inventory record (acquisition cost + reconditioning), signed buyer's order and delivery receipt, used vehicle inspection and reconditioning work order, auction purchase documents (if applicable), trade-in appraisal and buyer's order reference, NRV assessment for aged inventory, and used vehicle inventory aging report (30/60/90+ day buckets)."
+    }
+  },
+  {
+    "slug": "auto-trade-in-vehicle-received",
+    "category": "Automotive & Dealerships",
+    "title": "Trade-In Vehicle Received",
+    "description": "Recording the acquisition of a customer's trade-in vehicle as part of a new or used vehicle deal.",
+    "entries": [
+      { "account": "Used Vehicle Inventory (Trade-In)", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "New Vehicle Sales Revenue (Reduced)", "type": "Revenue (-)", "dr": 0, "cr": 0 },
+      { "account": "Trade Allowance Applied (Contra)", "type": "Liability (-)", "dr": 12000.00, "cr": 0 }
+    ],
+    "explanation": "A trade-in vehicle is acquired at the trade allowance value agreed on the buyer's order. The trade allowance reduces the customer's net payment for the new vehicle. The trade-in is recorded in used vehicle inventory at the trade allowance value — this becomes the cost basis. If the trade allowance exceeds the vehicle's actual market value (an 'over-allow'), the excess is effectively a discount on the new vehicle price and should be reflected in the deal's gross profit.",
+    "practitioner_notes": {
+      "erp_application": "In the DMS, the trade-in creates a used vehicle inventory record at the trade allowance value. The buyer's order shows the new vehicle price, the trade allowance applied (reducing the customer's out-of-pocket), and the net deal. Over-allowances (where the trade value exceeds market) reduce new vehicle gross profit and must be tracked. The dealership then reconditions and retails the trade-in, or wholesales it at auction. Market value tools (KBB Instant Cash Offer, Carfax Market Value, Black Book) are used at appraisal. Some DMS platforms flag over-allowed vehicles for management review.",
+      "audit_triggers": "Auditors test trade-in values against market appraisal tools to identify systematic over-allowances (a method to obscure new vehicle discounting). Over-allows should reduce new vehicle gross profit. Confirm the trade-in inventory record is created at the trade allowance (not the vehicle's book value or customer's claimed value). Review used vehicle inventory for trade-ins that are priced below their trade allowance cost — these require write-down. Test that title for the trade-in transfers correctly and the lien payoff (if the customer has financing on the trade) is processed and paid.",
+      "required_documentation": "Buyer's order showing trade allowance, trade-in appraisal worksheet (market value assessment), vehicle inspection checklist, title receipt for the trade-in, lien payoff letter and payment confirmation (if trade is encumbered), used vehicle inventory record creation at trade allowance, and over-allow analysis by deal."
+    }
+  },
+  {
+    "slug": "auto-manufacturer-incentive-holdback",
+    "category": "Automotive & Dealerships",
+    "title": "Manufacturer Holdback and Dealer Incentive",
+    "description": "Recording the holdback credit and retail sales incentive received from the vehicle manufacturer.",
+    "entries": [
+      { "account": "Manufacturer Incentive Receivable", "type": "Asset (+)", "dr": 850.00, "cr": 0 },
+      { "account": "Manufacturer Incentive Revenue / Cost Reduction", "type": "Revenue (+)", "dr": 0, "cr": 850.00 }
+    ],
+    "explanation": "Manufacturers provide dealers with holdbacks (a percentage of MSRP retained by the manufacturer and returned to the dealer, typically 2-3% of MSRP) and various retail incentives (per-unit bonus for volume targets, model-specific stair-step incentives). These are recognized as a reduction in vehicle cost (or additional revenue) when earned — upon retail sale for per-unit incentives or upon achievement of volume targets for stair-step incentives.",
+    "practitioner_notes": {
+      "erp_application": "Manufacturer incentives are tracked in the DMS and reconciled monthly against the manufacturer's dealer statement. Holdback is credited to the dealer when a vehicle is retailed — it reduces the effective cost of the vehicle and improves gross profit. Stair-step volume incentives require careful accounting: if the incentive is earned only upon reaching a volume threshold, it is recognized only when the threshold is achieved (IFRS 15 variable consideration constraint — highly probable to be earned before recognition). The manufacturer's monthly statement must be reconciled to the DMS incentive claims to identify disputes.",
+      "audit_triggers": "Auditors test manufacturer incentive receivables against the manufacturer's dealer statement at period-end. For stair-step incentives near a threshold, assess whether the target is 'highly probable' to be met before recognizing the full incentive — premature recognition of unearned stair-step incentives is a common error. Reconcile total incentive claims submitted to the manufacturer to incentives paid and received. Review for any incentive clawbacks (vehicles returned to manufacturer, misrepresented sales) that reduce previously recognized income.",
+      "required_documentation": "Manufacturer dealer statement, per-unit holdback calculation (MSRP × holdback percentage), stair-step incentive program terms and threshold achievement tracking, incentive claim submissions to manufacturer, incentive receivable reconciliation to manufacturer statement, clawback register, and incentive program change notifications."
+    }
+  },
+  {
+    "slug": "auto-fi-product-revenue",
+    "category": "Automotive & Dealerships",
+    "title": "F&I Revenue — Finance Reserve and Insurance Products",
+    "description": "Recording revenue from Finance & Insurance products sold in conjunction with a vehicle sale.",
+    "entries": [
+      { "account": "F&I Receivable / Cash", "type": "Asset (+)", "dr": 2800.00, "cr": 0 },
+      { "account": "Finance Reserve Income", "type": "Revenue (+)", "dr": 0, "cr": 1200.00 },
+      { "account": "Product Revenue (VSC, GAP, Paint Prot.)", "type": "Revenue (+)", "dr": 0, "cr": 1600.00 }
+    ],
+    "explanation": "F&I is the most profitable department in most dealerships. Revenue includes: (1) finance reserve — the spread between the 'buy rate' from the lender and the 'sell rate' to the customer, paid to the dealer by the finance company; (2) insurance and protection products — Vehicle Service Contracts (VSC), GAP insurance, tire and wheel protection, paint protection. Each product has distinct IFRS 15 revenue recognition timing.",
+    "practitioner_notes": {
+      "erp_application": "F&I revenue is tracked in the DMS per deal. Finance reserve (the dealer markup on the customer's interest rate) is recognized when the loan is funded — the finance company pays the reserve to the dealer at deal funding. VSC and protection products are assessed under IFRS 15: if the dealer is an agent (the product is underwritten by a third-party insurance company), only the dealer's commission/markup is revenue; if the dealer is a principal (the dealer bears the warranty risk), the full product price is revenue with future claims as expenses. Most dealers act as agents — net revenue presentation applies.",
+      "audit_triggers": "Auditors assess the principal vs. agent classification for each F&I product. VSCs with dealer-retained risk (dealer-obligor) are principal arrangements — full revenue recognition with warranty reserve required. VSCs underwritten by a third party are agent arrangements — net commission only. Test finance reserve recognition timing — reserves should be recognized when the loan is funded, not at deal closing. Review for chargeback exposure — if a customer pays off a loan early, the finance company charges back a portion of the finance reserve (variable consideration constraint applies to the portion subject to chargeback risk).",
+      "required_documentation": "F&I product provider agreements (dealer-obligor vs. third-party underwriter), IFRS 15 principal/agent analysis per product type, finance reserve schedule (buy rate vs. sell rate per lender), deal funding confirmation from finance company, chargeback reserve calculation (for early payoff finance reserve clawbacks), VSC claims reserve (if dealer-obligor), and F&I penetration and PVR (Per Vehicle Retailed) report."
+    }
+  },
+  {
+    "slug": "auto-service-labor-revenue",
+    "category": "Automotive & Dealerships",
+    "title": "Fixed Operations — Service Labor Revenue",
+    "description": "Recording labor revenue from customer-pay and warranty service work completed in the dealership's service department.",
+    "entries": [
+      { "account": "Accounts Receivable (Service — Customer Pay)", "type": "Asset (+)", "dr": 3500.00, "cr": 0 },
+      { "account": "Service Labor Revenue (Customer Pay)", "type": "Revenue (+)", "dr": 0, "cr": 3500.00 }
+    ],
+    "explanation": "Dealership service departments generate revenue from three sources: customer-pay (retail customers paying directly), warranty (manufacturer pays for repairs under warranty), and internal (service work on dealership-owned vehicles). Service labor revenue is recognized when the repair order is closed and the vehicle is returned to the customer. Service departments ('fixed operations') typically generate 40-50% of a dealership's total gross profit despite being a fraction of total revenue.",
+    "practitioner_notes": {
+      "erp_application": "Service work is tracked by repair order (RO) in the DMS. Each RO captures the labor hours (flat-rate technician time), parts used, and the customer's authorization. Revenue is recognized when the RO is closed and the customer approves the final invoice. Open ROs at period-end represent work-in-progress — partially completed jobs are either recognized based on percentage of completion or deferred until closure, per the dealership's accounting policy. Labor is billed at the published labor rate per hour; technicians are paid at a lower flat-rate pay scale, generating shop labor margin.",
+      "audit_triggers": "Auditors test service revenue against closed repair orders and customer invoices. Confirm that open ROs at period-end are properly tracked as WIP (not recognized as revenue). Test that customer-pay, warranty, and internal categories are correctly classified — misclassification affects the dealer's effective labor rate calculation. Review service department cash — service cashiers process payments and daily receipts must be reconciled to the bank. Test the completeness of parts charges on each RO (parts used in repair should generate parts revenue).",
+      "required_documentation": "Closed repair orders (customer signature, labor hours, parts list, final invoice), open RO report at period-end, service cashier daily reconciliation, labor rate schedule, customer pay vs. warranty vs. internal RO split, technician flat-rate pay vs. customer labor rate margin analysis, and customer authorization for additional repairs."
+    }
+  },
+  {
+    "slug": "auto-warranty-repair-oem",
+    "category": "Automotive & Dealerships",
+    "title": "Warranty Repair — OEM Reimbursement",
+    "description": "Recording the labor and parts revenue earned from the manufacturer for completing warranty repairs.",
+    "entries": [
+      { "account": "Warranty Receivable (Manufacturer)", "type": "Asset (+)", "dr": 1800.00, "cr": 0 },
+      { "account": "Warranty Labor Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1100.00 },
+      { "account": "Warranty Parts Revenue", "type": "Revenue (+)", "dr": 0, "cr": 700.00 }
+    ],
+    "explanation": "When a dealer performs warranty repairs on behalf of the manufacturer, the dealer submits a warranty claim and is reimbursed at warranty labor and parts rates (typically lower than retail rates). Revenue is recognized when the warranty RO is closed and the claim is submitted. Warranty claims are subject to manufacturer audit — claims rejected after payment are chargebacks that reduce revenue.",
+    "practitioner_notes": {
+      "erp_application": "Warranty claims are submitted through the manufacturer's dealer portal (e.g., GM's Global Warranty Management, Ford's OASIS, Toyota's Warranty Claims system). Each warranty RO is submitted with the claim code, labor time, and parts used. Reimbursement arrives within 30-60 days. The DMS tracks the warranty receivable by claim. Dealers must keep detailed repair documentation (technician notes, parts photographs, customer complaint records) — poor documentation is the primary cause of warranty claim rejection. Some manufacturers require pre-authorization for major warranty repairs.",
+      "audit_triggers": "Auditors test warranty receivables against manufacturer reimbursement statements. Confirm that warranty labor rates applied match the manufacturer's currently approved warranty labor rate (dealers can apply for rate increases). Test for warranty claim chargebacks — rejected claims reduce revenue in the period of rejection. Review pre-authorization compliance for major claim types. Assess the warranty claim rejection rate — systematic rejections indicate documentation or process issues. Confirm that parts used in warranty work are separately tracked and reimbursed at the approved warranty parts rate.",
+      "required_documentation": "Warranty claim submissions with supporting RO documentation, manufacturer reimbursement statement, approved warranty labor rate certificate, pre-authorization records for major repairs, warranty chargeback register, claim rejection analysis by code, and manufacturer warranty audit correspondence."
+    }
+  },
+  {
+    "slug": "auto-parts-retail-sale",
+    "category": "Automotive & Dealerships",
+    "title": "Parts Department — Retail and Wholesale Parts Sale",
+    "description": "Recording the sale of OEM and aftermarket parts to retail customers and wholesale accounts.",
+    "entries": [
+      { "account": "Cash / Parts Accounts Receivable", "type": "Asset (+)", "dr": 1250.00, "cr": 0 },
+      { "account": "Parts Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 1250.00 },
+      { "account": "Cost of Parts Sold", "type": "Expense (+)", "dr": 750.00, "cr": 0 },
+      { "account": "Parts Inventory", "type": "Asset (-)", "dr": 0, "cr": 750.00 }
+    ],
+    "explanation": "Dealership parts departments sell OEM parts to retail customers (counter sales), internal service department (internal parts transfers charged to repair orders), and wholesale accounts (independent repair shops, body shops, fleet customers). Parts gross margin is typically 25-35%. The manufacturer controls pricing through the suggested retail price and wholesale program discounts.",
+    "practitioner_notes": {
+      "erp_application": "Parts sales are processed through the DMS parts module or point-of-sale terminal. Internal parts transfers to the service department are priced at a markup over cost and charged to the relevant repair order. Wholesale accounts receive volume-based discounts and are billed on credit terms. Parts inventory is maintained by part number in the DMS at the manufacturer's cost plus freight. The DMS generates automatic replenishment orders based on velocity and days-supply targets. Slow-moving and obsolete parts require periodic write-down — the manufacturer may offer a return allowance program for aged parts.",
+      "audit_triggers": "Auditors perform or observe a parts physical inventory count and reconcile to the DMS inventory. Test parts pricing — retail parts should be billed at or above cost; deeply discounted counter sales may indicate unapproved discounting. Review slow-moving parts inventory aging (90/180/360+ days) and confirm NRV write-downs are applied. Confirm manufacturer return allowance credits for obsolete parts are recognized when earned. Test wholesale account receivable aging for bad debt risk.",
+      "required_documentation": "Parts physical inventory count sheets, DMS inventory reconciliation, parts sales invoices (retail and wholesale), internal parts transfer charges to ROs, wholesale account receivable aging, slow-moving inventory analysis, manufacturer return allowance program claim, NRV write-down calculation, and freight-in cost inclusion in inventory cost."
+    }
+  },
+  {
+    "slug": "auto-vehicle-inventory-flooring",
+    "category": "Automotive & Dealerships",
+    "title": "Vehicle Inventory Floor Plan — New Vehicle Financing",
+    "description": "Recording the floor plan loan drawn when a new vehicle is received from the manufacturer.",
+    "entries": [
+      { "account": "New Vehicle Inventory", "type": "Asset (+)", "dr": 26200.00, "cr": 0 },
+      { "account": "Floor Plan Payable (Captive / Bank)", "type": "Liability (+)", "dr": 0, "cr": 26200.00 }
+    ],
+    "explanation": "Dealers do not own their new vehicle inventory outright — it is financed by floor plan (wholesale) lenders, typically the manufacturer's captive finance company (Ford Motor Credit, Toyota Financial Services, Mercedes-Benz Financial) or a third-party lender. The floor plan loan is drawn automatically when a vehicle is received from the manufacturer. Interest accrues daily on each vehicle until it is sold and the loan is 'curtailed' (paid off).",
+    "practitioner_notes": {
+      "erp_application": "The floor plan payable is managed in the DMS finance module and reconciled monthly to the floor plan lender's statement. Each vehicle has its own floor plan entry identified by VIN. Interest accrues daily and is typically charged monthly. Some manufacturers offer a free-floor period (e.g., 90 days free of interest) on new vehicle shipments as a sales incentive to dealers — during this period, no interest is charged. When a vehicle is sold, the dealer must curtail (pay off) the floor plan for that VIN within a few days of receiving payment from the finance company. Delayed curtailment creates interest expense and potential 'out of trust' risk (selling vehicles without paying off the floor plan is a serious violation).",
+      "audit_triggers": "Auditors test the floor plan payable balance against the floor plan lender's statement and the DMS inventory. 'Out of trust' verification is critical — every sold vehicle (by VIN) should have a corresponding curtailment. Dealers selling vehicles and not curtailing the floor plan (using the sale proceeds for other purposes) are 'out of trust' — a serious fraud indicator. Test the period-end floor plan balance: vehicles sold near period-end should have curtailments in transit. Confirm interest expense agrees to the floor plan lender's interest charges.",
+      "required_documentation": "Floor plan lender monthly statement (by VIN), DMS floor plan payable reconciliation, curtailment records for sold vehicles, out-of-trust assessment (sold VINs with outstanding floor plan balance), free-floor period tracking, floor plan interest expense reconciliation, and franchise agreement floor plan requirements."
+    }
+  },
+  {
+    "slug": "auto-floor-plan-interest",
+    "category": "Automotive & Dealerships",
+    "title": "Floor Plan Interest Expense",
+    "description": "Recording monthly interest accrued on the vehicle floor plan loan.",
+    "entries": [
+      { "account": "Floor Plan Interest Expense", "type": "Expense (+)", "dr": 18500.00, "cr": 0 },
+      { "account": "Accrued Floor Plan Interest / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 18500.00 }
+    ],
+    "explanation": "Floor plan interest is a direct cost of carrying new vehicle inventory. It accrues daily on the outstanding balance for each VIN. In high-rate environments, floor plan interest can significantly erode new vehicle gross profit — particularly for slow-turning inventory. Some manufacturers provide floor plan assistance (interest reimbursement) to dealers as part of their incentive programs.",
+    "practitioner_notes": {
+      "erp_application": "Floor plan interest is invoiced monthly by the floor plan lender based on the daily outstanding balance per VIN multiplied by the daily interest rate (prime rate plus spread). The interest statement is reconciled to the DMS floor plan records. Manufacturer floor plan assistance (interest credits) reduce the net floor plan interest expense — these are recognized when earned (vehicle retailed with assistance). Floor plan interest is a key metric in dealer operations — high interest costs relative to gross profit (floor plan 'hurdle rate') indicate overinventory or slow inventory turn.",
+      "audit_triggers": "Auditors reconcile floor plan interest expense to the lender's monthly statements. Confirm that manufacturer floor plan assistance credits are correctly offset against interest expense (not recorded as revenue). Test the daily interest calculation for reasonableness — rate × average balance. Review whether any vehicles have been on floor plan beyond the contractual curtailment period without being sold (requires increased provisioning or curtailment demand from the lender).",
+      "required_documentation": "Floor plan lender interest statement, daily floor plan balance per VIN, interest rate documentation (prime + spread per agreement), manufacturer floor plan assistance program terms and credit amounts, floor plan interest-to-gross-profit ratio analysis, and aged inventory report showing vehicles with interest cost exceeding gross margin."
+    }
+  },
+  {
+    "slug": "auto-demo-vehicle-transfer",
+    "category": "Automotive & Dealerships",
+    "title": "Demo Vehicle — Transfer from Inventory to PPE",
+    "description": "Reclassifying a new vehicle from inventory to a demonstrator (demo) vehicle used for test drives and management use.",
+    "entries": [
+      { "account": "Demo Vehicle (PPE / Other Asset)", "type": "Asset (+)", "dr": 26200.00, "cr": 0 },
+      { "account": "New Vehicle Inventory", "type": "Asset (-)", "dr": 0, "cr": 26200.00 }
+    ],
+    "explanation": "Demo vehicles are taken out of new vehicle inventory and reclassified as fixed assets (or other assets) when placed into use as demonstrators for test drives or management vehicles. The floor plan loan on the demo vehicle continues — the dealer pays interest on the demo vehicle during its use period. At end of demo period, the vehicle is sold as a used vehicle at the accumulated cost basis.",
+    "practitioner_notes": {
+      "erp_application": "The DMS tracks demo vehicles separately from new vehicle inventory. When a vehicle is designated as a demo, the DMS reclassifies it from new inventory to the demo account. The floor plan lender is notified — some lenders require a curtailment on demo vehicles after a specified period. Depreciation on the demo vehicle (mileage accumulation) reduces its value — on sale as a used vehicle, the COGS is the demo vehicle's depreciated cost. Some manufacturers provide demo allowances (reimbursements for the loss in value from use as a demonstrator). Manufacturer and tax rules regulate demo usage (business purpose, mileage limits, employee benefit implications).",
+      "audit_triggers": "Auditors confirm demo vehicles are correctly reclassified from inventory (eliminating them from new vehicle inventory count). Test that the floor plan for the demo vehicle is either curtailed or the lender has approved continued floor plan financing. Review demo vehicle mileage — high-mileage demos require write-down before sale. Confirm manufacturer demo allowance credits are recognized correctly. Test that employee use of demos for personal purposes is tracked for income tax purposes (taxable benefit).",
+      "required_documentation": "Demo vehicle designation record (VIN, date designated, reason), DMS reclassification from new inventory to demo, floor plan lender notification and approval, mileage log for demo period, manufacturer demo allowance program terms, depreciation calculation on demo vehicle, sale record at end of demo period (as used vehicle), and employee benefit tax reporting."
+    }
+  },
+  {
+    "slug": "auto-vehicle-reconditioning-cost",
+    "category": "Automotive & Dealerships",
+    "title": "Used Vehicle Reconditioning Cost",
+    "description": "Capitalizing the cost of mechanical repairs, detailing, and parts into a used vehicle's inventory cost.",
+    "entries": [
+      { "account": "Used Vehicle Inventory (Reconditioning)", "type": "Asset (+)", "dr": 850.00, "cr": 0 },
+      { "account": "Internal Labor (Reconditioning Transfer)", "type": "Expense (-)", "dr": 0, "cr": 500.00 },
+      { "account": "Parts Used in Reconditioning", "type": "Asset (-)", "dr": 0, "cr": 350.00 }
+    ],
+    "explanation": "Reconditioning costs (mechanical repairs, detailing, cosmetic work, new tires) incurred to make a used vehicle retail-ready are capitalised into the vehicle's cost basis. These costs are charged as internal repair orders (IROs) in the service department at a transfer cost rate. The used vehicle manager approves each reconditioning expense — excessive reconditioning erodes gross profit.",
+    "practitioner_notes": {
+      "erp_application": "Reconditioning is tracked through internal repair orders (IROs) in the DMS. When service work is performed on a used vehicle, the labor is charged at the internal transfer rate (below retail rate — this keeps reconditioning cost reasonable while still generating service department gross profit on the labor). Parts used in reconditioning are charged at cost from parts inventory. The DMS accumulates all IRO charges against the VIN in the used vehicle inventory record. The used vehicle manager reviews each vehicle's total reconditioning cost against the expected retail gross profit to approve or limit further work.",
+      "audit_triggers": "Auditors test the reconditioning accumulation on a sample of used vehicles — confirm all costs are captured in the vehicle's cost basis and not expensed directly. Test the internal transfer labor rate against the approved internal rate schedule (should be cost, not retail). Review vehicles with high reconditioning costs relative to expected gross profit — these may require NRV assessment. Confirm parts used in reconditioning are deducted from parts inventory (and not billed at retail on an internal RO).",
+      "required_documentation": "Internal repair orders (IROs) per VIN, labor transfer rate schedule, parts cost from DMS parts module, used vehicle cost accumulation by VIN (acquisition + reconditioning), gross profit estimate at time of reconditioning approval, NRV assessment for high-cost reconditioning vehicles, and reconditioning cost as a percentage of vehicle cost analysis."
+    }
+  },
+  {
+    "slug": "auto-wholesale-vehicle-sale",
+    "category": "Automotive & Dealerships",
+    "title": "Wholesale Vehicle Disposal — Auction or Dealer-to-Dealer",
+    "description": "Recording the sale of excess used inventory at auction or to another dealer below retail.",
+    "entries": [
+      { "account": "Cash / Auction Receivable", "type": "Asset (+)", "dr": 11500.00, "cr": 0 },
+      { "account": "Wholesale Vehicle Revenue", "type": "Revenue (+)", "dr": 0, "cr": 11500.00 },
+      { "account": "Cost of Wholesale Vehicle", "type": "Expense (+)", "dr": 12400.00, "cr": 0 },
+      { "account": "Used Vehicle Inventory", "type": "Asset (-)", "dr": 0, "cr": 12400.00 }
+    ],
+    "explanation": "Aged, damaged, or excess used vehicles are wholesaled at auction (Manheim, ADESA, Copart) or to other dealers. Wholesale sales typically generate a loss — the vehicle's accumulated cost (acquisition + reconditioning) usually exceeds the wholesale selling price. This wholesale loss is a normal cost of doing business in used vehicle operations. Revenue is recognized when the vehicle title transfers at auction.",
+    "practitioner_notes": {
+      "erp_application": "Wholesale vehicle disposals are tracked separately from retail used vehicle sales in the DMS — wholesale gross profit (typically a loss) is reported separately to avoid inflating retail gross profit metrics. Auction proceeds are received net of auction fees (typically $150-300 per vehicle), which are additional costs of disposal. The DMS recognizes the disposal when the auction confirms the sale and the title is transferred. Some dealers use automated auction services (ACV Auctions, Carvana Trade) that provide instant wholesale bids — these are processed the same way.",
+      "audit_triggers": "Auditors test wholesale vehicle disposals for completeness — all VINs removed from used vehicle inventory should have a corresponding sale record (retail or wholesale). Confirm that auction fees are included in the cost of disposal. Review the pattern of wholesale losses — systematic large losses may indicate vehicles being acquired at uneconomically high trade-in values (over-allowances). Test that wholesale revenue is presented separately from retail used vehicle revenue in management reporting.",
+      "required_documentation": "Auction sale confirmation (VIN, hammer price, buyer fees), title transfer documentation, DMS disposal record, VIN cost basis at disposition (acquisition + reconditioning), wholesale loss analysis, aged inventory report justifying wholesale decision, and net proceeds calculation (hammer price less buyer fees)."
+    }
+  },
+  {
+    "slug": "auto-vehicle-lease-facilitation",
+    "category": "Automotive & Dealerships",
+    "title": "Vehicle Lease — Dealer-Facilitated Finance Lease",
+    "description": "Recording the dealership's revenue when a customer leases a vehicle arranged through the manufacturer's captive finance company.",
+    "entries": [
+      { "account": "Cash / Finance Company (Vehicle Sale)", "type": "Asset (+)", "dr": 28500.00, "cr": 0 },
+      { "account": "New Vehicle Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 28500.00 },
+      { "account": "Cost of Goods Sold — Leased Vehicle", "type": "Expense (+)", "dr": 26200.00, "cr": 0 },
+      { "account": "New Vehicle Inventory", "type": "Asset (-)", "dr": 0, "cr": 26200.00 }
+    ],
+    "explanation": "In a consumer lease arrangement facilitated by a dealership, the dealer sells the vehicle to the captive finance company (e.g., BMW Financial Services) at the agreed selling price. The dealer records this as a normal vehicle sale — the finance company takes title and leases to the consumer. The dealer earns the new vehicle gross profit plus any F&I products sold alongside the lease. The dealer has no residual value risk (that belongs to the finance company).",
+    "practitioner_notes": {
+      "erp_application": "In the DMS, a consumer lease is treated as a sale to the finance company — the dealer recognizes the full selling price as revenue and clears the vehicle from inventory at cost. The dealer's role ends at delivery. The consumer's lease contract is between the consumer and the finance company — the dealer is not a party to the lease. The DMS generates the retail sale and the floor plan curtailment simultaneously. Manufacturer lease subvention (subsidized money factors/interest rates to stimulate leasing) is not the dealer's revenue — it is the manufacturer's cost paid to the finance company.",
+      "audit_triggers": "Auditors confirm that the dealer is correctly recognizing a vehicle sale (to the finance company) rather than being a lessor in a lease. The dealer should have no RV (residual value) risk or exposure from the consumer lease. Test that the selling price to the finance company matches the capitalized cost on the consumer's lease agreement. Confirm floor plan curtailment occurs simultaneously with the sale. Review any balloon payment guarantees the dealer may have provided to the finance company — these create contingent liabilities.",
+      "required_documentation": "Consumer lease agreement (showing captive finance company as lessor), dealer's sale invoice to the finance company, floor plan curtailment record, DMS deal jacket, manufacturer subvention program documentation, and any dealer residual value guarantee confirmation (should be none in standard arrangements)."
+    }
+  },
+  {
+    "slug": "auto-dealer-rental-fleet",
+    "category": "Automotive & Dealerships",
+    "title": "Rental / Loaner Fleet Vehicle — Capitalisation and Depreciation",
+    "description": "Recording the cost of a courtesy loaner vehicle assigned to the service department fleet.",
+    "entries": [
+      { "account": "Service Loaner Fleet (PPE)", "type": "Asset (+)", "dr": 22000.00, "cr": 0 },
+      { "account": "New Vehicle Inventory (Transfer)", "type": "Asset (-)", "dr": 0, "cr": 22000.00 }
+    ],
+    "explanation": "Dealerships maintain a fleet of courtesy loaner vehicles for service customers during repairs. These vehicles are typically acquired from new inventory at cost and transferred to the fixed assets (loaner fleet) account. They are depreciated over their service life (typically 12-18 months) and then sold as used vehicles. Some manufacturers subsidize the loaner fleet through dealer support programs.",
+    "practitioner_notes": {
+      "erp_application": "Loaner fleet vehicles are tracked separately in the DMS as fixed assets with depreciation configured over the intended service period (typically by months or mileage accumulation). The vehicles are floor-plan curtailed when transferred out of new inventory (the dealer owns the loaner outright or finances it separately). Monthly depreciation is posted to the service department cost centre. At the end of the loaner period, the vehicle is sold as a used vehicle at its depreciated carrying value — the sale price above the NBV is a gain. Manufacturer loaner support (monthly stipend per loaner vehicle) is recognized as income when earned.",
+      "audit_triggers": "Auditors confirm the loaner fleet is properly segregated from new vehicle inventory (so it is not counted in new inventory for floor plan purposes). Test that depreciation is based on a realistic useful life — loaners accumulate high mileage quickly. Confirm manufacturer loaner support payments are recognized when earned. Review the loaner fleet sale records when retired — the proceeds should be compared to NBV, with any gain/loss recognized in the period of sale.",
+      "required_documentation": "Loaner fleet vehicle register (VIN, date placed in service, cost, monthly depreciation), floor plan curtailment record at transfer from inventory, manufacturer loaner support program terms and monthly payments, mileage log, depreciation schedule, sale record at end of service period, and gain/loss calculation at disposal."
+    }
+  },
+  {
+    "slug": "auto-manufacturer-dealer-chargeback",
+    "category": "Automotive & Dealerships",
+    "title": "Manufacturer Chargeback — Warranty Claim Rejection",
+    "description": "Recording the reversal of previously recognized warranty revenue when a manufacturer rejects a warranty claim.",
+    "entries": [
+      { "account": "Warranty Labor Revenue (Reversal)", "type": "Revenue (-)", "dr": 450.00, "cr": 0 },
+      { "account": "Manufacturer Chargeback Payable / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 450.00 }
+    ],
+    "explanation": "Manufacturers conduct dealer warranty audits and reject claims where documentation is inadequate, the repair was unnecessary, or procedures were not followed. Rejected claims result in chargebacks — the manufacturer recovers the previously paid warranty reimbursement. Chargebacks reduce warranty revenue in the period they are assessed.",
+    "practitioner_notes": {
+      "erp_application": "Warranty chargebacks are received from the manufacturer via the dealer portal. The DMS records the chargeback against the original warranty claim. If the dealer disputes the chargeback, an appeal process is initiated — disputed chargebacks may require a provision for the expected uncollectible amount while the appeal is pending. High chargeback rates indicate warranty documentation or technician training issues. The manufacturer's warranty audit findings must be addressed promptly to avoid audit failures that can result in increased audit frequency and financial exposure.",
+      "audit_triggers": "Auditors reconcile warranty chargebacks to the manufacturer's audit reports. Test that chargebacks are recorded in the period assessed, not deferred. Review the dispute process for pending appeals — assess the probability of recovery for disputed chargebacks and adjust the provision accordingly. Confirm that systematic chargeback patterns (specific claim types, specific technicians) are being addressed by management. Test the chargeback reserve adequacy — if warranty audits are pending, an additional provision may be required.",
+      "required_documentation": "Manufacturer chargeback notices (claim number, reason code, amount), warranty audit report, appeal submissions for disputed chargebacks, chargeback reserve calculation, chargeback rate analysis by claim type and technician, dispute resolution outcomes, and manufacturer audit correspondence."
+    }
+  },
+  {
+    "slug": "auto-customer-satisfaction-csi",
+    "category": "Automotive & Dealerships",
+    "title": "CSI Bonus — Manufacturer Customer Satisfaction Incentive",
+    "description": "Recording the bonus received from the manufacturer for achieving customer satisfaction index (CSI) targets.",
+    "entries": [
+      { "account": "Manufacturer CSI Bonus Receivable", "type": "Asset (+)", "dr": 35000.00, "cr": 0 },
+      { "account": "Manufacturer Bonus Revenue (CSI)", "type": "Revenue (+)", "dr": 0, "cr": 35000.00 }
+    ],
+    "explanation": "Manufacturers pay dealers bonuses (often significant — $50,000-$300,000+ per year) for achieving customer satisfaction index (CSI) scores above targets. CSI bonuses are measured by third-party surveys of recent buyers. These bonuses affect the dealer's ability to purchase additional vehicle allocations and maintain the franchise. CSI bonuses are recognized when the achievement period is confirmed and the bonus is earned.",
+    "practitioner_notes": {
+      "erp_application": "CSI bonus programs run on quarterly or annual measurement cycles. The DMS tracks the expected CSI bonus based on the dealer's running score against the target. The bonus is recognized under IFRS 15 only when it is highly probable that a significant revenue reversal will not occur — this requires the measurement period to be substantially complete and the score to be conclusively above the threshold. Premature recognition of CSI bonuses at the start of the measurement period (when the outcome is uncertain) is incorrect. The manufacturer's dealer statement confirms the earned CSI bonus.",
+      "audit_triggers": "Auditors assess the CSI bonus recognition timing — confirm the measurement period is complete and the score is confirmed before recognition. For quarterly CSI bonuses still in progress at year-end, assess whether the bonus meets the IFRS 15 'highly probable' threshold for variable consideration. Review the manufacturer's CSI measurement methodology — any survey disputes or methodological changes could affect the bonus outcome. Test that CSI bonuses are separately disclosed from vehicle sales incentives in management accounts.",
+      "required_documentation": "Manufacturer CSI program terms (measurement period, target score, bonus schedule), CSI score report by period, manufacturer dealer statement confirming CSI bonus earned, IFRS 15 variable consideration assessment, CSI score history (for probability assessment), and customer satisfaction survey methodology documentation."
+    }
+  },
+  {
+    "slug": "auto-service-absorption",
+    "category": "Automotive & Dealerships",
+    "title": "Fixed Operations Absorption — Overhead Coverage",
+    "description": "Demonstrating the fixed operations gross profit covering dealership overhead (absorption).",
+    "entries": [
+      { "account": "Service & Parts Gross Profit (Memo)", "type": "Memo", "dr": 0, "cr": 0 },
+      { "account": "Dealership Overhead Expense (Memo)", "type": "Memo", "dr": 0, "cr": 0 }
+    ],
+    "explanation": "Service and parts gross profit as a percentage of total dealership overhead is called 'absorption rate.' A 100% absorption rate means the dealership's fixed operations pay all of the dealership's overhead — the vehicle sales departments operate at pure profit. Absorption is a key metric in automotive retail — dealers target 70-100%+ absorption. This is a management reporting metric, not a specific accounting entry.",
+    "practitioner_notes": {
+      "erp_application": "Absorption is calculated in the dealership's management reporting system (often a dealer 20 Group composite or DMS management reporting module). Fixed operations gross profit = service labor gross profit + parts gross profit + body shop gross profit. Total overhead = all fixed expenses (rent, insurance, utilities, administrative salaries, advertising, floor plan interest). Absorption % = Fixed Ops Gross / Total Overhead × 100. A high absorption rate provides resilience during vehicle sales downturns — dealerships with 100%+ absorption remain profitable even if vehicle sales decline significantly. Manufacturers often publish absorption benchmarks for their dealer network.",
+      "audit_triggers": "This is primarily a management reporting metric rather than an auditable accounting entry. Auditors reviewing the dealership's overall financial performance should confirm that the components of fixed operations gross profit and overhead are correctly classified in the DMS chart of accounts — misclassification of selling expenses as overhead (inflating the overhead base) would distort the absorption calculation. Review whether management compensation is appropriately allocated between sales and fixed operations.",
+      "required_documentation": "Monthly dealership financial statement (DMS-generated), fixed operations gross profit by department (service, parts, body shop), total dealership overhead schedule, absorption rate calculation, dealer 20 Group benchmark comparison, and manufacturer network performance standard."
+    }
+  },
+  {
+    "slug": "auto-body-shop-repair-revenue",
+    "category": "Automotive & Dealerships",
+    "title": "Body Shop — Collision Repair Revenue",
+    "description": "Recording revenue from collision repair work performed in the dealership's body shop.",
+    "entries": [
+      { "account": "Insurance / Customer Receivable (Body Shop)", "type": "Asset (+)", "dr": 4800.00, "cr": 0 },
+      { "account": "Body Shop Labor Revenue", "type": "Revenue (+)", "dr": 0, "cr": 2800.00 },
+      { "account": "Body Shop Parts Revenue", "type": "Revenue (+)", "dr": 0, "cr": 2000.00 }
+    ],
+    "explanation": "Dealership body shops perform collision and cosmetic repair work, predominantly paid by auto insurers. Revenue is recognized when repair work is complete and the vehicle is delivered to the owner. Body shops work from insurer-approved estimates (typically using CCC One, Audatex, or Mitchell estimating systems). Supplemental costs identified during repair may require insurer re-approval before the work is performed.",
+    "practitioner_notes": {
+      "erp_application": "Body shop work is tracked through repair orders in the DMS or a separate body shop management system. Each RO captures the labor hours (flat-rate paint and body technicians), parts used, and the approved insurance estimate. Revenue is recognized at RO closure when the vehicle is returned. Insurance payments are received directly from the insurer (or through the customer as the insured). Sublets (work sent to outside vendors — glass, alignment) are charged to the customer at a markup. Parts used in body repair are either OEM (required by some insurers) or aftermarket/LKQ — the type affects parts cost and revenue.",
+      "audit_triggers": "Auditors test body shop revenue against completed ROs and insurer payment remittances. Confirm that supplemental charges (additional damage found during repair) are properly authorized by the insurer before billing. Test that sublet work billed to customers at a markup is presented gross (if the dealership controls the sublet work) or net (if the dealership is merely an agent arranging the sublet). Review insurance direct pay arrangements — some insurers pay the shop directly, bypassing the customer.",
+      "required_documentation": "Body shop repair orders (insurer estimate, supplemental approvals, RO closure), insurer payment remittances, OEM vs. aftermarket parts documentation, sublet work invoices and markup schedule, IFRS 15 principal/agent assessment for sublets, body shop WIP (open ROs) at period-end, and insurer direct pay agreement."
+    }
+  },
+  {
+    "slug": "auto-dealer-principal-payplan",
+    "category": "Automotive & Dealerships",
+    "title": "Salesperson and Manager Pay Plan — Commission Accrual",
+    "description": "Accruing monthly sales commissions and bonuses for vehicle salespeople, F&I managers, and service advisors.",
+    "entries": [
+      { "account": "Sales Commission Expense", "type": "Expense (+)", "dr": 185000.00, "cr": 0 },
+      { "account": "Commissions Payable", "type": "Liability (+)", "dr": 0, "cr": 185000.00 }
+    ],
+    "explanation": "Automotive retail compensation is heavily variable — salespeople earn a percentage of vehicle gross profit (mini commissions on low-gross deals, flat bonuses on high-gross deals) plus volume bonuses. F&I managers earn a percentage of F&I income. Service advisors earn a commission on service labor sold. Monthly pay plans must be accrued in the period the performance is earned, typically paid in the following month.",
+    "practitioner_notes": {
+      "erp_application": "Pay plan calculations are performed in the DMS or payroll system based on each salesperson's deal log for the month. New vehicle salespeople typically earn 20-30% of front-end gross profit plus back-end (F&I products on their deals). F&I managers earn a percentage of total F&I PVR. The DMS generates a pay plan worksheet per employee at month-end, which is approved by the general manager before payroll processing. Vehicle sales commissions are accrued in the month the vehicle is sold and paid in the following month's payroll.",
+      "audit_triggers": "Auditors test commission accruals against the DMS deal log and pay plan worksheets. Confirm that the commission rate applied matches the current pay plan document. For F&I commissions, test the PVR calculation against the deal records. Review sales manager over-rides (additional commissions for management) for authorization. Confirm that commissions accrued in December are paid in January (timing difference) and not recognized in both periods.",
+      "required_documentation": "Pay plan agreements per employee (signed), DMS deal log for the month, pay plan calculation worksheet, commission accrual journal, payroll records for the following month, general manager approval of pay plan calculations, and pay plan change documentation."
+    }
+  },
+  {
+    "slug": "auto-advertising-cooperative",
+    "category": "Automotive & Dealerships",
+    "title": "Manufacturer Co-Op Advertising Funds",
+    "description": "Recording dealer advertising co-op funds earned from the manufacturer for qualifying advertising spend.",
+    "entries": [
+      { "account": "Co-Op Advertising Receivable", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Advertising Expense (Net of Co-Op)", "type": "Expense (-)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "Manufacturers reimburse dealers for a portion of their advertising expenditure on qualifying media (typically 50-75% of cost, up to an annual cap) through co-operative advertising programs. Co-op funds are recognized as an offset against advertising expense when the qualifying advertising runs and the reimbursement claim is submitted and approved. The dealer's net advertising cost is reduced by the co-op received.",
+    "practitioner_notes": {
+      "erp_application": "Co-op advertising programs require dealers to submit claims with proof of performance (invoices, tear sheets, affidavits of performance for broadcast media). The manufacturer's co-op portal processes the claim and confirms the reimbursement amount. Reimbursements are credited against advertising expense (not recognized as revenue) — the dealer's net advertising cost is disclosed on the management financial statement. Some manufacturers audit co-op claims annually — improper claims create chargeback exposure.",
+      "audit_triggers": "Auditors test co-op receivables against approved claims in the manufacturer's co-op portal. Confirm that only qualifying advertising expenses generate co-op reimbursement. Review the proof of performance documentation for broadcast advertising — fake affidavits submitted to claim co-op is a fraud risk. Test that co-op credits reduce advertising expense (not recognized as income). Assess the accrual for co-op earned on advertising run but not yet claimed — dealers may delay claims but should accrue the receivable when the qualifying expense occurs.",
+      "required_documentation": "Manufacturer co-op program terms (qualifying media, reimbursement rate, annual cap), advertising invoices submitted with co-op claims, proof of performance documentation, manufacturer co-op portal claim approval, co-op receivable reconciliation, and annual co-op audit correspondence."
+    }
+  },
+  {
+    "slug": "auto-new-vehicle-inventory-nrv",
+    "category": "Automotive & Dealerships",
+    "title": "New Vehicle Inventory NRV Write-Down",
+    "description": "Writing down new vehicle inventory to net realizable value when market prices fall below cost.",
+    "entries": [
+      { "account": "Inventory Write-Down Expense (New Vehicles)", "type": "Expense (+)", "dr": 95000.00, "cr": 0 },
+      { "account": "New Vehicle Inventory (Write-Down)", "type": "Asset (-)", "dr": 0, "cr": 95000.00 }
+    ],
+    "explanation": "New vehicle inventory is carried at the lower of cost and net realizable value (IAS 2). When market prices decline below the dealer's cost plus floor plan interest (the total cost of carrying the vehicle), a write-down is required. This is particularly relevant for large SUVs during fuel price spikes, electric vehicles with rapid price cuts, or any model with excess market supply.",
+    "practitioner_notes": {
+      "erp_application": "NRV assessment is performed periodically (typically quarterly) by comparing each vehicle's total carrying cost (invoice + freight + prep + accrued floor plan interest) to the current market selling price (from JD Power, Edmunds True Market Value, or the dealer's own recent transaction data for that model). Vehicles where the market selling price is below total carrying cost require a write-down to NRV. The DMS does not automatically perform NRV testing — this requires a manual analysis combining DMS inventory data with external market pricing. Manufacturer price increases or new incentive programs can restore NRV above cost, allowing write-down reversals (IAS 2 permits reversal to the lesser of original cost and revised NRV).",
+      "audit_triggers": "Auditors test NRV for models with declining market values, excess production (high days-supply nationally), or significant manufacturer price cuts. Tesla's frequent price adjustments created systematic NRV issues for Tesla dealers globally. Test market pricing sources for appropriateness — should reflect the actual market in the dealer's local area, not national average. Confirm that floor plan interest accrued to date is included in the total cost basis. Test that NRV write-down reversals (if prices recover) are capped at the original cost.",
+      "required_documentation": "New vehicle inventory aging and cost per VIN, market price evidence per model (JD Power, Edmunds, or comparable recent transaction data), NRV calculation (market price - estimated selling costs vs. total carrying cost), write-down journal by VIN, manufacturer price change notifications, and write-down reversal assessment when prices recover."
+    }
+  },
+  {
+    "slug": "auto-franchise-right-intangible",
+    "category": "Automotive & Dealerships",
+    "title": "Dealer Franchise Agreement — Intangible Asset",
+    "description": "Recording the value of an automotive franchise right acquired in a dealership purchase transaction.",
+    "entries": [
+      { "account": "Intangible Asset — Franchise / Blue Sky", "type": "Asset (+)", "dr": 8500000.00, "cr": 0 },
+      { "account": "Cash / Consideration Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 8500000.00 }
+    ],
+    "explanation": "When a dealership is acquired, the purchase price typically includes substantial 'blue sky' — the premium paid above tangible net asset value for the manufacturer franchise agreement, customer relationships, and the dealership's market position. Blue sky is recognized as an intangible asset (franchise right) under IAS 38. Most franchise rights are treated as indefinite-life intangibles (the manufacturer franchise agreement has no specified end date) and tested annually for impairment rather than amortized.",
+    "practitioner_notes": {
+      "erp_application": "The franchise intangible is recorded in the intangible assets module at the fair value allocated in the purchase price allocation (PPA) for dealership acquisitions. Large dealer groups (AutoNation, Penske, Lithia, Al Mansour Automotive) hold significant franchise intangible portfolios. The indefinite useful life assessment is based on the expectation that the manufacturer franchise will be renewed indefinitely as long as the dealer maintains performance standards. Annual IAS 36 impairment testing uses the CGU — typically the individual dealership point or the brand franchise for multi-point operations.",
+      "audit_triggers": "Auditors challenge the indefinite life determination — if there are specific contract termination provisions or the manufacturer has a pattern of not renewing, amortisation over the contract life may be required. Test annual impairment: the dealership's earnings trajectory, franchise market values (transactions of comparable dealerships in the market), and manufacturer sales performance requirements all affect the impairment assessment. Review for blue sky write-down triggers: a manufacturer reducing the brand's product lineup, a manufacturer financial difficulty, or the dealership losing its franchise standard compliance.",
+      "required_documentation": "Dealership acquisition agreement, purchase price allocation report (blue sky / franchise intangible identification and valuation), manufacturer franchise agreement, annual IAS 36 impairment test (comparative transaction multiples, DCF, franchise market data), franchise performance compliance report, and manufacturer brand health indicators."
+    }
+  },
+  {
+    "slug": "auto-warranty-reserve-dealer-obligor",
+    "category": "Automotive & Dealerships",
+    "title": "Vehicle Service Contract Reserve — Dealer-Obligor VSC",
+    "description": "Accruing the warranty reserve for future claims on dealer-obligated vehicle service contracts.",
+    "entries": [
+      { "account": "VSC Revenue (Recognized over Contract Period)", "type": "Revenue (+)", "dr": 0, "cr": 0 },
+      { "account": "VSC Warranty Reserve (Liability)", "type": "Liability (+)", "dr": 0, "cr": 2500.00 },
+      { "account": "VSC Revenue Provision Expense", "type": "Expense (+)", "dr": 2500.00, "cr": 0 }
+    ],
+    "explanation": "Where a dealer sells a Vehicle Service Contract for which the dealer retains the risk (dealer-obligor), the full VSC selling price is recognized as revenue, but an offsetting provision is established for expected future claims. The dealer is effectively acting as an insurer — the VSC revenue is recognized over the contract period and claims are charged against the reserve as they occur. Regulatory requirements in many states/jurisdictions require dealers to maintain capital reserves for dealer-obligor VSCs.",
+    "practitioner_notes": {
+      "erp_application": "Dealer-obligor VSC programs require the dealer to establish and maintain a claims reserve account. The VSC selling price is initially deferred and recognized over the contract term (since the dealer has an ongoing obligation to pay claims). The reserve is estimated based on actuarial data on expected failure rates and repair costs for the covered vehicle model and age. Some dealers fund the reserve with an administrator/reinsurer and the reserve is held in a separate trust account (regulatory requirement in many jurisdictions).",
+      "audit_triggers": "Auditors assess whether dealer-obligor VSC revenue is appropriately deferred and recognized over the contract term. Test the reserve adequacy against historical claims experience. Confirm that the reserve is funded in a separate account if required by state/local regulation. Review actuarial assumptions supporting the claims reserve — claims rates and repair costs per covered system. Assess whether any reinsurance arrangement changes the accounting (if the dealer has purchased stop-loss reinsurance, the reinsurance receivable is a separate asset).",
+      "required_documentation": "VSC dealer-obligor program terms, actuarial reserve analysis (expected claims by model and coverage year), VSC deferred revenue schedule (recognized over contract term), claims paid to date vs. reserve, separate trust/reserve account statement (if regulatory required), reinsurance agreement (if applicable), and state regulatory compliance confirmation."
+    }
+  },
+  {
+    "slug": "auto-dealer-reserve-fi-chargeback",
+    "category": "Automotive & Dealerships",
+    "title": "F&I Finance Reserve Chargeback — Early Loan Payoff",
+    "description": "Recording the clawback of dealer finance reserve when a customer pays off their auto loan early.",
+    "entries": [
+      { "account": "Finance Reserve Chargeback Expense", "type": "Expense (+)", "dr": 350.00, "cr": 0 },
+      { "account": "F&I Chargeback Payable / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 350.00 }
+    ],
+    "explanation": "Finance companies claw back a portion of the dealer's finance reserve (the spread earned on the customer's interest rate) when the customer pays off the loan before the 'chargeback window' expires (typically 90-120 days for full chargeback, declining rates up to 6 months). Chargebacks are a significant variable consideration risk for F&I revenue and must be provisioned.",
+    "practitioner_notes": {
+      "erp_application": "Finance reserve chargebacks are received from the finance company and debited from the dealer's reserve account. The DMS tracks each deal's finance reserve earned and the at-risk amount during the chargeback window. A chargeback reserve (provision) should be established at the time of sale based on historical early payoff rates. The reserve is released as deals age beyond the chargeback window. Some finance companies allow dealers to 'flat cancel' a deal (return the vehicle and unwind the financing) — these are treated as deal reversals, not chargebacks.",
+      "audit_triggers": "Auditors test the chargeback reserve against historical early payoff rates. Confirm the reserve methodology adequately covers the at-risk finance reserve during the chargeback window. For high-volume F&I operations, the aggregate chargeback exposure at period-end can be material — test that the provision is not underestimated. Review the finance company's chargeback statements and reconcile to the provision. For flat cancel deals, confirm the vehicle is returned to inventory and the floor plan is re-established.",
+      "required_documentation": "Finance company chargeback statements, deal-level finance reserve earned and chargeback exposure by deal, chargeback reserve methodology (based on historical early payoff rates), historical early payoff rate data by lender, chargeback window terms per finance company agreement, flat cancel records and vehicle return confirmation, and aggregate at-risk finance reserve at period-end."
+    }
+  },
+  {
+    "slug": "auto-accounts-payable-manufacturer",
+    "category": "Automotive & Dealerships",
+    "title": "Manufacturer Statement Reconciliation — Dealer Account",
+    "description": "Reconciling the dealer's open payables and receivables with the manufacturer's monthly dealer account statement.",
+    "entries": [
+      { "account": "Manufacturer Receivable / Payable (Net)", "type": "Asset/Liability", "dr": 0, "cr": 0 },
+      { "account": "Various — Incentives, Warranty, Parts Credits", "type": "Various", "dr": 0, "cr": 0 }
+    ],
+    "explanation": "The manufacturer's monthly dealer statement is the primary reconciliation document in dealer accounting. It summarizes: vehicle invoices charged, holdback credits, warranty claim payments, parts statements, co-op advertising credits, CSI bonuses, and floor plan statement charges. The dealer's accounting department must reconcile this statement line by line to the DMS records monthly.",
+    "practitioner_notes": {
+      "erp_application": "The manufacturer's dealer statement is received monthly and entered into the DMS as a statement reconciliation. Each line item is matched to the corresponding DMS record: vehicle received (match to inventory receipt), warranty paid (match to warranty claim), holdback credit (match to retail sale), parts invoice (match to parts purchase). Unmatched items are investigated and resolved. The net balance due to or from the manufacturer flows through the accounts payable or receivable module. Some manufacturers now provide electronic data interchange (EDI) feeds that allow automated reconciliation in the DMS.",
+      "audit_triggers": "Auditors review the manufacturer statement reconciliation process as a key internal control in dealer accounting. Unreconciled statement items represent potential recording errors in either the DMS or the manufacturer's records. Test that the reconciliation is performed monthly and reviewed by the controller. For large dealer groups with multiple manufacturers, the aggregate manufacturer receivable/payable balance is material. Confirm that disputed items in the statement reconciliation are escalated and resolved within the manufacturer's dispute resolution timeline.",
+      "required_documentation": "Manufacturer monthly dealer statement, DMS reconciliation worksheet (item-by-item match), unreconciled item investigation log, disputed items escalation records, controller sign-off on monthly reconciliation, and prior-month reconciling items cleared confirmation."
+    }
+  },
+  {
+    "slug": "auto-dealer-group-consolidation",
+    "category": "Automotive & Dealerships",
+    "title": "Dealer Group — Intercompany Elimination (Multi-Rooftop)",
+    "description": "Eliminating intercompany transactions between dealership points in a multi-rooftop dealer group.",
+    "entries": [
+      { "account": "Intercompany Revenue (Eliminated)", "type": "Revenue (-)", "dr": 250000.00, "cr": 0 },
+      { "account": "Intercompany COGS (Eliminated)", "type": "Expense (-)", "dr": 0, "cr": 250000.00 }
+    ],
+    "explanation": "Large dealer groups operate multiple rooftops (individual dealerships) as separate legal entities. When one rooftop sells a vehicle to another (dealer-to-dealer transfers for inventory balancing), the revenue and COGS must be eliminated in the consolidated financial statements. Similarly, management fees charged between entities are eliminated on consolidation.",
+    "practitioner_notes": {
+      "erp_application": "Multi-rooftop dealer groups use a consolidating accounting system (or module within their ERP) to eliminate intercompany transactions. Common intercompany transactions include: (1) vehicle transfers between rooftops at a transfer price; (2) management fees from holding company to operating entities; (3) parts sold between rooftops at internal pricing; (4) shared services (IT, HR, accounting) billed at cost allocation. Each rooftop maintains its own DMS and legal entity books; the consolidating system aggregates and eliminates. The intercompany balances must net to zero on consolidation.",
+      "audit_triggers": "Auditors perform the intercompany reconciliation to confirm all intercompany transactions are identified and eliminated. Test that vehicles transferred between rooftops are eliminated in revenue and COGS — unrealized profit from intercompany vehicle transfers persists in the transferee's inventory until the vehicle is sold to a third party. Confirm management fees between entities are at arm's length (for tax purposes) and eliminated on consolidation. Review intercompany loan balances and interest elimination.",
+      "required_documentation": "Intercompany transaction register by entity pair, consolidating elimination worksheet, vehicle transfer records between rooftops, management fee agreements and invoices, intercompany loan agreements and interest calculations, consolidation journal eliminating entries, and entity-level vs. consolidated financial statement reconciliation."
+    }
+  },
+  {
+    "slug": "auto-service-technician-payroll",
+    "category": "Automotive & Dealerships",
+    "title": "Flat-Rate Technician Payroll",
+    "description": "Recording technician wages based on flat-rate hours flagged on completed repair orders.",
+    "entries": [
+      { "account": "Technician Wages — Flat Rate", "type": "Expense (+)", "dr": 85000.00, "cr": 0 },
+      { "account": "Wages Payable", "type": "Liability (+)", "dr": 0, "cr": 85000.00 }
+    ],
+    "explanation": "Automotive technicians are typically paid on a 'flat-rate' system — they earn a fixed amount per published repair time regardless of how long the repair actually takes. A technician who completes a 3.0 hour job in 2.0 hours earns 3.0 hours of pay. This incentivizes efficiency. The dealership billed the customer for 3.0 hours at the retail labor rate; the technician earned 3.0 hours at their flat-rate pay. The spread is the service department's labor gross profit.",
+    "practitioner_notes": {
+      "erp_application": "Flat-rate hours are tracked by the DMS service module — each repair operation code (op-code) has a published flat-rate time (from Motor, Chilton, or the manufacturer's time guide). As technicians close work on repair orders, their flag hours accumulate. Monthly payroll is calculated as total flag hours × flat-rate pay per hour. The DMS generates a technician productivity report showing flag hours, sold hours (billed to customer), and efficiency ratio. The labor gross profit = (sold hours × retail labor rate) - (flag hours × flat-rate pay). Technicians below 100% efficiency (flagging fewer hours than worked) are a cost concern.",
+      "audit_triggers": "Auditors test technician payroll calculations against the DMS flag hour report. Confirm the flat-rate pay per hour matches the technician's pay plan agreement. Review technician efficiency ratios — efficiency over 130-140% may indicate op-code manipulation (flagging more hours than the published time for the repair). Test that warranty flag hours are separately tracked — warranty repairs may be paid at a different flat-rate time than customer-pay. Confirm payroll tax and social security deductions are correctly calculated on the gross flat-rate pay.",
+      "required_documentation": "Technician pay plan agreements (flat-rate pay per hour), DMS flag hour report by technician, efficiency ratio analysis, warranty vs. customer-pay flag hour split, payroll register, technician productivity benchmark comparison, and payroll tax calculation and remittance."
+    }
+  },
+  {
+    "slug": "auto-eosb-provision-jordan",
+    "category": "Automotive & Dealerships",
+    "title": "EOSB Provision — Dealer Staff (Jordan)",
+    "description": "Accruing end-of-service benefits for Jordanian automotive dealership employees.",
+    "entries": [
+      { "account": "EOSB Expense — Dealer Staff", "type": "Expense (+)", "dr": 18500.00, "cr": 0 },
+      { "account": "Provision for EOSB", "type": "Liability (+)", "dr": 0, "cr": 18500.00 }
+    ],
+    "explanation": "Jordanian automotive dealerships (Ziad Mango Group, Al Mansour Automotive, NATCO) must accrue EOSB for all Jordanian employees under the Labour Law. For dealerships with long-serving sales managers, service advisors, and technicians, the EOSB liability can be significant. The EOSB is allocated between sales departments and fixed operations based on employee function.",
+    "practitioner_notes": {
+      "erp_application": "EOSB is calculated monthly per employee from the HR/payroll system. For dealership staff, the allocation is: new vehicle sales team → new vehicle department; service technicians and advisors → service department; parts staff → parts department; administrative staff → overhead. For IAS 19 purposes, the EOSB obligation for senior long-service employees (general managers, senior technicians with 15+ years) can be material — actuarial valuation may be required. EOSB payments on departure are deducted from the provision.",
+      "audit_triggers": "Auditors confirm the EOSB allocation to cost centres matches the employee function classification in the HR system. Test the IAS 19 materiality threshold — for a large dealership group, the total EOSB liability for senior staff warrants actuarial valuation. Confirm EOSB for commissioned salespeople uses their total gross compensation (including commissions) in the calculation base, not just the base salary. Test the provision roll-forward and confirm departures are deducted correctly.",
+      "required_documentation": "EOSB provision schedule per employee, cost centre allocation by function, IAS 19 materiality assessment, actuarial valuation (if required), EOSB payment records for departed staff, Jordanian Labour Law compliance, payroll rate confirmation including commissions, and provision balance reconciliation."
+    }
+  },
+  {
+    "slug": "auto-ssc-employer-jordan",
+    "category": "Automotive & Dealerships",
+    "title": "SSC Employer Contribution — Dealer Staff (Jordan)",
+    "description": "Recording the 14.25% employer SSC for Jordanian dealership employees.",
+    "entries": [
+      { "account": "SSC Expense — Employer (14.25%)", "type": "Expense (+)", "dr": 22800.00, "cr": 0 },
+      { "account": "SSC Payable", "type": "Liability (+)", "dr": 0, "cr": 22800.00 }
+    ],
+    "explanation": "Dealer staff in Jordan (salespeople, technicians, service advisors, parts staff) are subject to employer SSC at 14.25% of gross salaries, subject to the SSC ceiling. For commission-based salespeople, the SSC applies to total compensation including commissions. The SSC is allocated to the relevant department cost centre alongside the underlying salary.",
+    "practitioner_notes": {
+      "erp_application": "SSC is calculated automatically by the payroll system on all Jordanian employees' gross compensation. For commissioned salespeople, the variable commission component is included in the SSC base (up to the ceiling). The SSC expense is allocated to department cost centres (new vehicle sales, used vehicle, service, parts, F&I, overhead) proportionately to the underlying payroll. The SSC is remitted to the Social Security Corporation by the 15th of the following month. Non-Jordanian employees (expatriate managers, specialist technicians on work permits) are generally excluded.",
+      "audit_triggers": "Auditors reconcile total SSC expense to payroll (including commissions) × 14.25% with the ceiling applied per employee. Confirm timely remittance. For commissioned staff with fluctuating monthly income, confirm the SSC is calculated on actual monthly compensation (not an average or fixed amount). Review SSC exemption for expatriate staff and confirm work permit documentation. Test the departmental allocation of SSC against the payroll allocation.",
+      "required_documentation": "Payroll register including commissions, SSC calculation per employee, SSC ceiling application, SSC remittance receipt, expatriate SSC exemption documentation, departmental payroll and SSC allocation, and SSC employee registration certificates."
+    }
+  },
+  {
+    "slug": "auto-gst-vehicle-sale-jordan",
+    "category": "Automotive & Dealerships",
+    "title": "GST on New Vehicle Sale (Jordan 16%)",
+    "description": "Recording General Sales Tax collected from the customer on new vehicle sales in Jordan.",
+    "entries": [
+      { "account": "Customer Receivable / Cash (Tax Inclusive)", "type": "Asset (+)", "dr": 33060.00, "cr": 0 },
+      { "account": "New Vehicle Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 28500.00 },
+      { "account": "GST Output Tax Payable (16%)", "type": "Liability (+)", "dr": 0, "cr": 4560.00 }
+    ],
+    "explanation": "New vehicle sales in Jordan are subject to 16% General Sales Tax (GST), calculated on the vehicle selling price. The dealer collects GST from the customer and remits it to the ISTD. Vehicle revenue is the GST-exclusive selling price. GST collected on parts, service labor, and F&I products follow the same treatment — each is subject to the applicable GST rate.",
+    "practitioner_notes": {
+      "erp_application": "The DMS billing system is configured to apply GST at the applicable rate to vehicle sales, service labor, and parts. The GST is separately identified on the customer's invoice. The DMS generates the monthly GST output tax report for filing the GST return with the ISTD. Input GST on dealership purchases (vehicles received from the manufacturer, parts inventory, workshop supplies) is separately claimed against output tax in the monthly GST return, resulting in a net GST payment or refund. Special vehicle categories (electric vehicles, commercial vehicles) may have different GST rates or exemptions per Jordanian regulations.",
+      "audit_triggers": "Auditors reconcile GST output tax to the DMS sales report and GST returns filed. Confirm that vehicle prices quoted to customers include GST disclosure (as required by consumer protection regulations). Test input GST claims against purchase invoices. For demonstrator vehicles transferred from inventory to fixed assets, confirm that any GST on the internal transfer is correctly treated. Review the GST treatment of trade-in vehicles received — the trade-in may be subject to GST based on the trade allowance value.",
+      "required_documentation": "DMS GST output tax report, GST return filings, ISTD payment receipts, customer invoices showing GST separately, input GST purchase documentation, GST rate schedule for different vehicle categories, trade-in GST treatment assessment, and GST refund claims (if input GST exceeds output in high-inventory purchase periods)."
+    }
+  },
+  {
+    "slug": "auto-customs-duty-import-vehicle",
+    "category": "Automotive & Dealerships",
+    "title": "Import Duty on Imported Vehicles",
+    "description": "Recording customs duties and import fees on new vehicles imported from overseas manufacturers.",
+    "entries": [
+      { "account": "New Vehicle Inventory (Import Cost)", "type": "Asset (+)", "dr": 3200.00, "cr": 0 },
+      { "account": "Cash / Customs Duty Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 3200.00 }
+    ],
+    "explanation": "Vehicles imported into Jordan from non-GCC countries are subject to customs duties (rate varies by vehicle origin and type, typically 0-30%), plus the luxury excise tax (20-45% on certain vehicle values) and GST. These import taxes are part of the vehicle's cost and are capitalized into inventory. Jordan's free trade agreements affect the applicable customs duty rates by country of origin.",
+    "practitioner_notes": {
+      "erp_application": "Import duties and excise taxes are calculated by the customs clearance agent based on the vehicle's CIF (Cost, Insurance, Freight) value and HS tariff code. The duty is paid to Jordanian Customs at the port of entry before the vehicle is released. The total cost capitalized into inventory is: manufacturer invoice + shipping freight + insurance + customs duty + excise tax + customs clearance fees. The DMS inventory record reflects this total landed cost. Jordan's bilateral free trade agreements (with the EU, US, and Arab League) may provide preferential or zero duty rates for vehicles from certain origins — the certificate of origin is critical.",
+      "audit_triggers": "Auditors test import duties capitalized into vehicle inventory against the customs declarations for each vehicle or shipment. Confirm the correct tariff classification (HS code) is applied — misclassification can result in under or over-payment of duties. Test that certificates of origin are on file for vehicles claiming preferential duty rates. Confirm that the total landed cost calculation is complete and correctly loaded into the DMS inventory record for each VIN.",
+      "required_documentation": "Customs declaration (per vehicle or shipment), import duty payment receipt, HS tariff classification and duty rate, certificate of origin (for preferential rate claims), CIF value calculation, total landed cost calculation per VIN, DMS inventory cost loading, and clearance agent invoice."
+    }
+  },
+  {
+    "slug": "auto-vehicle-delivery-expense",
+    "category": "Automotive & Dealerships",
+    "title": "Vehicle Delivery Preparation Expense",
+    "description": "Recording the cost of preparing a new vehicle for customer delivery (PDI — Pre-Delivery Inspection).",
+    "entries": [
+      { "account": "New Vehicle Inventory (PDI Cost)", "type": "Asset (+)", "dr": 350.00, "cr": 0 },
+      { "account": "Internal Labor / Parts (PDI Transfer)", "type": "Expense (-)", "dr": 0, "cr": 350.00 }
+    ],
+    "explanation": "Pre-Delivery Inspection (PDI) involves cleaning, fueling, activating features, and inspecting each new vehicle before customer delivery. PDI costs (labor, fuel, accessories installed at delivery) are capitalised into vehicle inventory cost, reducing the gross profit by the PDI cost when the vehicle is sold. Some manufacturers reimburse dealers for PDI through dealer preparation allowances.",
+    "practitioner_notes": {
+      "erp_application": "PDI is performed as an internal work order (IWO) in the DMS service department. The labor and materials are charged to the new vehicle inventory record at cost (not retail). The PDI IWO is automatically generated when a new vehicle is received from the manufacturer and cleared when the vehicle is delivered to the customer. Manufacturer PDI allowances (reimbursements for dealer preparation) reduce the effective PDI cost in the vehicle's cost record. The PDI cost is a required component of new vehicle unit economics analysis.",
+      "audit_triggers": "Auditors test PDI costs capitalized into vehicle inventory against the IWO records. Confirm that manufacturer PDI allowances are correctly offset against the PDI cost in the vehicle record. Test that PDI cost is included in the cost of goods sold when the vehicle is retailed. Review whether any accessories installed at delivery (floor mats, window tint, protection film) are being correctly capitalised into the vehicle cost or separately invoiced to the customer.",
+      "required_documentation": "PDI internal work orders by VIN, PDI labor and materials cost, manufacturer PDI allowance program terms and credits, new vehicle inventory cost record per VIN showing PDI, installed accessories tracking, and PDI allowance reconciliation to manufacturer statement."
+    }
+  },
+  
+  {
+    "slug": "mine-exploration-cost-expensed",
+    "category": "Mining & Extractive Industries",
+    "title": "Exploration Cost — Expensed (Pre-IFRS 6 Threshold)",
+    "description": "Recording early-stage geological survey and exploration costs before a mineral resource is identified.",
+    "entries": [
+      { "account": "Exploration Expense", "type": "Expense (+)", "dr": 850000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 850000.00 }
+    ],
+    "explanation": "Early-stage exploration costs (initial geological mapping, geophysical surveys, geochemical sampling) incurred before the company has rights to explore a specific area or before the technical feasibility of extraction is demonstrated are generally expensed. Once exploration rights are obtained, the entity may elect to capitalise subsequent exploration and evaluation costs under IFRS 6.",
+    "practitioner_notes": {
+      "erp_application": "Exploration costs are tracked in the ERP by project code corresponding to each exploration licence or prospect area. Before exploration rights are secured, all costs flow directly to the exploration expense account in the P&L. Once a licence is obtained, the company's accounting policy (capitalise or expense under the IFRS 6 election) determines subsequent treatment. The project code structure captures costs by licence area, enabling licence-level cost tracking for impairment assessment. Geological and geophysical (G&G) costs are often the largest component — tracked separately from drilling and sampling costs.",
+      "audit_triggers": "Auditors test whether the company has applied its IFRS 6 accounting policy consistently — the policy election (capitalise or expense E&E costs) must be applied consistently across all exploration areas. Confirm that costs incurred before exploration rights are obtained are not capitalised. Test the project code structure to ensure costs are correctly allocated to the right licence area. Review the cut-off between pre-exploration (expensed) and exploration phase (policy-dependent) for licence areas recently acquired.",
+      "required_documentation": "Geological survey reports, geophysical and geochemical survey invoices, exploration licence application records, IFRS 6 accounting policy documentation, project code register by licence area, cost allocation schedule, and exploration budget vs. actual report."
+    }
+  },
+  {
+    "slug": "mine-exploration-evaluation-asset",
+    "category": "Mining & Extractive Industries",
+    "title": "Exploration & Evaluation Asset — IFRS 6 Capitalisation",
+    "description": "Capitalizing exploration and evaluation costs under the company's IFRS 6 accounting policy.",
+    "entries": [
+      { "account": "Exploration & Evaluation Assets (E&E)", "type": "Asset (+)", "dr": 3500000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 3500000.00 }
+    ],
+    "explanation": "Under IFRS 6, entities with an accounting policy to capitalise exploration and evaluation expenditure record drilling costs, sampling, assaying, technical studies, and directly attributable overhead as E&E assets. E&E assets are held on the balance sheet until a resource is proved (transferred to development assets) or the area is abandoned (impaired and expensed). E&E assets are not amortised — they are tested for impairment when indicators arise.",
+    "practitioner_notes": {
+      "erp_application": "E&E assets are recorded in the intangible or non-current asset module of the ERP by licence or project area. Each drilling programme, assay campaign, and technical study is captured against the relevant licence code. The ERP maintains the cumulative E&E expenditure per licence — this is the balance subject to impairment testing. The transition from E&E to development assets (when technical and commercial viability is established) is a manual reclassification requiring Board or investment committee approval. Some companies maintain E&E assets as intangibles (pre-development) and PPE (for tangible drilling assets).",
+      "audit_triggers": "Auditors test the capitalisation of E&E costs against the company's stated accounting policy. Confirm that all capitalised costs are directly attributable to exploration activities in the specific licence area (general overhead that cannot be attributed to a specific licence is expensed). Test E&E assets for impairment indicators — the IFRS 6 impairment triggers include: the licence period expiring without renewal, the decision to discontinue exploration in a specific area, or the absence of budgeted expenditure for the area in future periods. Confirm the reclassification from E&E to development assets is properly documented and authorised.",
+      "required_documentation": "IFRS 6 accounting policy, exploration licence register (area, term, renewal status), E&E asset roll-forward by licence (additions, reclassifications, impairments), drilling programme invoices and completion reports, resource estimate (JORC/NI 43-101) supporting the technical viability assessment, Board approval for reclassification to development, and impairment indicator assessment."
+    }
+  },
+  {
+    "slug": "mine-resource-impairment-ee",
+    "category": "Mining & Extractive Industries",
+    "title": "E&E Asset Impairment — Licence Abandonment",
+    "description": "Writing off exploration assets when a licence area is abandoned after unsuccessful exploration.",
+    "entries": [
+      { "account": "Impairment Loss — E&E Assets", "type": "Expense (+)", "dr": 4200000.00, "cr": 0 },
+      { "account": "Exploration & Evaluation Assets", "type": "Asset (-)", "dr": 0, "cr": 4200000.00 }
+    ],
+    "explanation": "When exploration in a licence area is unsuccessful and the entity decides not to proceed, or when the licence expires without renewal, the accumulated E&E asset is written off in full. This is the 'dry hole' cost recognition — the economic risk of exploration. In mining, most exploration programmes ultimately fail to discover economically viable mineral deposits.",
+    "practitioner_notes": {
+      "erp_application": "E&E impairment is triggered by a formal abandonment decision — recorded as a project closure in the ERP project management module. The closure triggers the impairment assessment and full write-off of the E&E asset balance for that licence. Exploration licence surrender documentation is filed with the relevant mining regulatory authority. The write-off is presented separately in the income statement as an impairment of E&E assets. Any remaining tangible assets at the exploration site (drilling rigs, camp infrastructure) are separately assessed for impairment or disposal.",
+      "audit_triggers": "Auditors test impairment triggers at each reporting date — licence expiry dates, budget decisions, and management communications about exploration intent. The IFRS 6 impairment indicators must be assessed at every reporting date for all active E&E assets. For areas where exploration has stalled (no recent drilling activity, no budget allocation), an impairment indicator likely exists. Confirm that the abandonment decision is documented by management before the write-off is posted — post-period abandonments may be non-adjusting events requiring disclosure.",
+      "required_documentation": "Board or management abandonment decision document, exploration licence surrender letter to the regulatory authority, E&E asset balance at impairment date, IFRS 6 impairment indicator assessment, technical report confirming no viable resource was identified, tangible asset disposal plan for remaining exploration infrastructure, and financial statement disclosure of the write-off."
+    }
+  },
+  {
+    "slug": "mine-development-cost-capitalized",
+    "category": "Mining & Extractive Industries",
+    "title": "Mine Development Cost — Shaft Sinking and Access",
+    "description": "Capitalising the cost of mine shaft construction, access road development, and infrastructure during the development phase.",
+    "entries": [
+      { "account": "Mine Development Assets (PPE)", "type": "Asset (+)", "dr": 18500000.00, "cr": 0 },
+      { "account": "Cash / Contractor Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 18500000.00 }
+    ],
+    "explanation": "Once technical and commercial viability of a mineral deposit is established (JORC-compliant resource estimate, positive feasibility study), all subsequent development expenditures are capitalised as mine development assets. These include shaft sinking, decline development, haul roads, processing plant construction, tailings storage facilities, and mine site infrastructure. Development assets are amortised on the unit-of-production basis once the mine commences production.",
+    "practitioner_notes": {
+      "erp_application": "Mine development costs are tracked in the capital project management module (SAP PS, Oracle Projects, or mining-specific ERP such as Pronto, Sage X3) by project phase (shaft sinking, development headings, plant construction). The capital project accumulates all directly attributable costs — contractor fees, materials, mining engineering, project management, and directly attributable portion of mine management. IAS 23 borrowing cost capitalisation may apply during the development phase. Development assets are reclassified from CWIP (Capital Work-in-Progress) to the mine development PPE category on commissioning.",
+      "audit_triggers": "Auditors test the decision point that triggered the transition from E&E to development (the feasibility study and resource estimate). Confirm IAS 23 borrowing cost capitalisation is correctly applied — the qualifying period starts when expenditure is incurred, borrowing costs are being incurred, and activities necessary to prepare the asset for use are in progress. Test that development costs exclude general overhead and costs that do not contribute to the mine's development. Review stripping costs incurred during development — initial pre-production stripping costs are capitalised as part of the mine development asset.",
+      "required_documentation": "Feasibility study (positive NPV supporting commercial viability), JORC-compliant resource estimate, Board investment decision and capital budget approval, capital project WBS, contractor invoices and completion certificates, IAS 23 borrowing cost calculation, commissioning certification, and CWIP-to-PPE transfer journal on mine commissioning."
+    }
+  },
+  {
+    "slug": "mine-ore-production-inventory",
+    "category": "Mining & Extractive Industries",
+    "title": "Ore Production — Transfer to Inventory",
+    "description": "Recording the production of run-of-mine (ROM) ore and transfer to stockpile inventory.",
+    "entries": [
+      { "account": "Ore Stockpile Inventory", "type": "Asset (+)", "dr": 4800000.00, "cr": 0 },
+      { "account": "Mining Cost (Production)", "type": "Expense (-)", "dr": 0, "cr": 4800000.00 }
+    ],
+    "explanation": "As ore is extracted from the mine, the production costs (drilling, blasting, loading, hauling, crushing) are accumulated as the cost of production. These costs are transferred to ore stockpile inventory when the ore reaches the stockpile. The cost per tonne of ore produced is a critical operational metric — it drives all subsequent inventory valuations and cost of sales calculations.",
+    "practitioner_notes": {
+      "erp_application": "Ore production costs are captured in the mine operating cost centres (drilling, blasting, loading, hauling, processing) in the ERP. At the end of each period, the total production costs are divided by the tonnes of ore produced to calculate the cost per tonne. This unit cost is applied to the ore tonnes transferred to the stockpile. The production module captures tonnes mined, ore grade (metal content per tonne), and recovery rates. The mine's production cost model (LOM — Life of Mine cost model) provides the expected unit cost range for budgeting and benchmarking.",
+      "audit_triggers": "Auditors test the production cost calculation — tonnes produced multiplied by cost per tonne should equal total production costs. Confirm that all production costs (contractor mining costs, explosives, haulage) are captured before the unit cost is calculated. Test ore stockpile quantities through physical survey or GPS-based volume measurement — ore stockpiles are significant assets that cannot be physically counted but can be measured. Review the allocation of mine overhead (management, services, utilities) to production cost vs. period cost. Test the grade of ore in the stockpile against the mine's geological model.",
+      "required_documentation": "Mine production report (tonnes mined, ore grade, recovery), production cost centre report, ore stockpile survey (volume measurement), cost per tonne calculation, mine overhead allocation methodology, ore grade reconciliation to geological model, and LOM cost plan vs. actual analysis."
+    }
+  },
+  {
+    "slug": "mine-processing-cost-concentrate",
+    "category": "Mining & Extractive Industries",
+    "title": "Ore Processing — Cost Transferred to Concentrate Inventory",
+    "description": "Recording the cost of processing ore through a concentrator or processing plant to produce metal concentrate.",
+    "entries": [
+      { "account": "Concentrate Inventory", "type": "Asset (+)", "dr": 3200000.00, "cr": 0 },
+      { "account": "Ore Stockpile Inventory (Processed)", "type": "Asset (-)", "dr": 0, "cr": 1800000.00 },
+      { "account": "Processing Costs (Transferred to Inventory)", "type": "Expense (-)", "dr": 0, "cr": 1400000.00 }
+    ],
+    "explanation": "As ore is fed from the stockpile through the processing plant (crushing, grinding, flotation, leaching), processing costs accumulate and the ore's metal content is concentrated into a saleable product (copper concentrate, gold doré, iron ore pellets). The cost of the concentrate is the ore cost plus processing costs, divided by the tonnes of concentrate produced. The ore stockpile is reduced and concentrate inventory is created.",
+    "practitioner_notes": {
+      "erp_application": "Processing costs are tracked in the plant operating cost centres (power, reagents, maintenance, labour). The process converts ore tonnes to concentrate tonnes at a specific recovery rate. The total cost transferred to concentrate inventory includes: ore cost (from stockpile) + processing costs (plant operating costs). The cost per tonne of concentrate is the primary inventory valuation metric. For operations where processing and mining are performed by different contractors or entities, the transfer pricing between stages must be at arm's length. The production module tracks input tonnes (ore feed), output tonnes (concentrate), and metal recovery (percentage of in-situ metal recovered in concentrate).",
+      "audit_triggers": "Auditors test the ore-to-concentrate conversion at the plant. Confirm the recovery rate applied is consistent with the plant's actual metallurgical performance data — overestimating recovery reduces COGS (beneficial) but may overstate inventory value. Test that processing costs are fully captured before the cost per tonne is calculated. Review the allocation of shared plant costs between different ore types or product streams if the plant processes multiple products. Confirm the concentrate inventory quantity against dispatch and sales records.",
+      "required_documentation": "Plant production report (ore feed tonnes, concentrate produced, metal recovery rate), processing cost centre report, concentrate assay certificates (metal grade confirmation), cost per tonne of concentrate calculation, ore stockpile consumption record, concentrate dispatch records, and metallurgical reconciliation report."
+    }
+  },
+  {
+    "slug": "mine-mineral-sales-revenue",
+    "category": "Mining & Extractive Industries",
+    "title": "Mineral Sales Revenue — Concentrate Delivery",
+    "description": "Recognizing revenue from the sale of copper concentrate, iron ore, or other mineral product to a smelter or trader.",
+    "entries": [
+      { "account": "Trade Receivable (Smelter / Trader)", "type": "Asset (+)", "dr": 12500000.00, "cr": 0 },
+      { "account": "Mineral Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 12500000.00 }
+    ],
+    "explanation": "Mineral sales revenue is recognized when control of the concentrate or ore passes to the buyer — typically at the point of loading onto the transport vessel or truck (FOB), or at delivery to the smelter or refinery (CIF). The revenue is provisionally measured at the shipment date using prevailing metal prices, with final pricing based on the metal price at the 'quotation period' specified in the off-take agreement.",
+    "practitioner_notes": {
+      "erp_application": "Mineral sales are processed in the ERP against the off-take agreement with the smelter or trader. The initial invoice is raised at the provisional price (spot price on the shipment date or a period average). The off-take agreement specifies the quotation period (e.g., the month of arrival at the smelter), which determines the final price. If the final price differs from the provisional price, a price adjustment entry is posted. Smelter treatment and refining charges (TC/RC) and penalties for impurities in the concentrate reduce the realized price — these are presented as deductions from revenue (not cost of sales).",
+      "audit_triggers": "Auditors confirm revenue recognition at the correct point of control transfer (shipment date for FOB). Test provisional pricing against the prevailing metal price on the shipment date. For shipments with quotation periods spanning the reporting date, assess the fair value of the price adjustment — this creates a provisional pricing adjustment (PPA) receivable or payable that is marked to market at each period-end. Confirm TC/RC deductions are correctly presented as revenue reductions per the off-take contract. Review any disputed shipment weights or assay grades — these create contingent adjustments.",
+      "required_documentation": "Off-take agreement (pricing formula, quotation period, TC/RC structure), bill of lading or delivery receipt (control transfer evidence), provisional invoice at shipment price, concentrate assay report (grade and weight), TC/RC deduction calculation, provisional pricing adjustment calculation at period-end, and final invoice on quotation period close."
+    }
+  },
+  {
+    "slug": "mine-provisional-pricing-adjustment",
+    "category": "Mining & Extractive Industries",
+    "title": "Provisional Pricing Adjustment — Metal Price Movement",
+    "description": "Adjusting mineral sales revenue for the change in metal price between shipment date and the quotation period.",
+    "entries": [
+      { "account": "Trade Receivable (Price Adjustment)", "type": "Asset (+)", "dr": 850000.00, "cr": 0 },
+      { "account": "Revenue — Provisional Price Adjustment", "type": "Revenue (+)", "dr": 0, "cr": 850000.00 }
+    ],
+    "explanation": "Concentrate off-take agreements typically use 'quotational period' pricing — the final price is the average metal price in a specified period after shipment (commonly the month of smelter arrival). Between the provisional invoice (at shipment) and final settlement, the metal price may move significantly. The outstanding receivable is marked to fair value at each period-end, with the adjustment recognised as revenue or contra-revenue.",
+    "practitioner_notes": {
+      "erp_application": "The provisional pricing adjustment is managed in the ERP's commodity pricing module or treasury system. At each reporting date, the outstanding 'provisionally priced' tonnes (shipments where the quotation period has not yet closed) are valued at the forward metal price for the relevant quotation month. The mark-to-market adjustment is posted as a revenue adjustment. Many mining companies separately disclose provisional pricing adjustments in management accounts to show the underlying business performance versus commodity price movements. The ERP must track each shipment by quotation period end date.",
+      "audit_triggers": "Auditors test the provisional pricing receivable balance against outstanding shipments and the metal forward price at the reporting date. Confirm the quotation period for each outstanding shipment matches the off-take contract. Test that the forward price used for mark-to-market is sourced from an observable market (LME forward prices for copper, gold fix, iron ore index). Assess IFRS 9 classification — the provisional pricing receivable contains an embedded derivative (commodity price link) that must be assessed under IFRS 9. If the receivable fails the SPPI test due to the commodity pricing link, it may be classified at FVTPL.",
+      "required_documentation": "Off-take agreement (quotation period definition, pricing formula), outstanding shipment schedule (tonnes, provisional price, quotation period close date), LME or index forward price at reporting date, provisional pricing adjustment calculation, IFRS 9 embedded derivative assessment, and sensitivity analysis of provisional pricing receivable to metal price movements."
+    }
+  },
+  {
+    "slug": "mine-royalty-expense",
+    "category": "Mining & Extractive Industries",
+    "title": "Government Royalty Expense",
+    "description": "Recording the royalty payable to the government or resource owner based on mineral production or revenue.",
+    "entries": [
+      { "account": "Royalty Expense", "type": "Expense (+)", "dr": 1800000.00, "cr": 0 },
+      { "account": "Royalty Payable (Government)", "type": "Liability (+)", "dr": 0, "cr": 1800000.00 }
+    ],
+    "explanation": "Mineral royalties are payments to the sovereign (government or land owner) for the right to extract mineral resources. Royalties are typically calculated as a percentage of gross revenue (ad valorem), a fixed amount per tonne of mineral produced (specific royalty), or a percentage of net profits (profit-based royalty). Royalties are a production cost and are expensed when the mineral is produced or sold, depending on the royalty basis.",
+    "practitioner_notes": {
+      "erp_application": "Royalty expense is calculated in the ERP by applying the royalty rate to the relevant base (production volumes, gross revenue, or net profits per the royalty agreement). Ad valorem royalties are calculated monthly based on invoiced sales. Specific royalties are calculated based on tonnes mined or sold. The royalty is typically payable quarterly or semi-annually. The mining concession or lease agreement specifies the royalty rate, base, and calculation methodology. In some jurisdictions, royalties are deductible for income tax; in others, they are not — the tax treatment significantly affects the effective royalty burden.",
+      "audit_triggers": "Auditors test royalty expense against the applicable royalty rate and the production/sales base. Confirm the royalty base (revenue, production, profit) matches the concession agreement. Review whether royalty rates have changed (regulatory changes are common in resource nationalism environments) and the change is reflected in the calculation from the effective date. Test the royalty payable balance against the payment schedule. Assess the income tax deductibility of the royalty — a non-deductible royalty increases the effective tax rate and must be disclosed.",
+      "required_documentation": "Mining concession agreement (royalty rate and base), government royalty calculation schedule, production and sales data supporting the calculation, royalty payment receipts, royalty rate change notifications from the regulatory authority, income tax deductibility assessment, and royalty sensitivity analysis (impact of production changes)."
+    }
+  },
+  {
+    "slug": "mine-stripping-activity-asset",
+    "category": "Mining & Extractive Industries",
+    "title": "Stripping Activity Asset — Open Pit Waste Removal",
+    "description": "Capitalising waste rock removal costs that provide access to ore to be extracted in future periods.",
+    "entries": [
+      { "account": "Stripping Activity Asset (PPE)", "type": "Asset (+)", "dr": 5500000.00, "cr": 0 },
+      { "account": "Mining Operations Cost (Stripping)", "type": "Expense (-)", "dr": 0, "cr": 5500000.00 }
+    ],
+    "explanation": "In open pit mining, stripping (removing overburden/waste rock to access ore) generates significant costs. Under IFRIC 20, stripping costs during production that provide access to ore to be mined in future periods (improved access to ore body) are capitalised as a Stripping Activity Asset (SAA) and amortised over the ore life that benefits from the stripping. Stripping costs that only provide access to ore being mined now are expensed as production costs.",
+    "practitioner_notes": {
+      "erp_application": "Stripping costs are separated in the ERP between 'current period ore access' (expensed) and 'future ore access' (capitalised as SAA). The separation requires the mine's geological and mine planning team to identify which stripping activity improves access to future ore. The waste-to-ore ratio (strip ratio) is monitored continuously — periods of high strip ratio (more waste removed per tonne of ore mined) indicate that stripping activity asset capitalisation is likely. The SAA is amortised using the expected volumes of ore to be mined from the improved component of the ore body, using the units-of-production method.",
+      "audit_triggers": "Auditors test the technical basis for SAA capitalisation — the mine's geologist or mine planner must provide documentation identifying which stripping activity benefits future ore access. Test the strip ratio in capitalisation periods against the mine's average strip ratio — unusually high capitalisation during low-strip-ratio periods is a red flag. Review the amortisation rate against the mine plan — if the ore body benefited by the stripping is not extracted on schedule, the SAA is potentially over-capitalised. Confirm that the SAA is not amortised faster than the ore it provides access to is mined.",
+      "required_documentation": "IFRIC 20 accounting policy, mine plan showing the ore component accessed by each stripping campaign, strip ratio analysis (period vs. LOM average), SAA capitalisation approval by mine technical team, SAA amortisation schedule (units-of-production), ore production from the benefited component, and mine planning software output (Surpac, Vulcan, Datamine)."
+    }
+  },
+  {
+    "slug": "mine-uop-amortisation",
+    "category": "Mining & Extractive Industries",
+    "title": "Mine Assets — Units-of-Production Amortisation",
+    "description": "Amortising mine development assets and stripping activity assets on a units-of-production basis.",
+    "entries": [
+      { "account": "Amortisation — Mine Development Assets", "type": "Expense (+)", "dr": 4200000.00, "cr": 0 },
+      { "account": "Accumulated Amortisation — Mine Assets", "type": "Contra-Asset (+)", "dr": 0, "cr": 4200000.00 }
+    ],
+    "explanation": "Mine development assets are amortised using the units-of-production (UoP) method — the charge in each period is proportional to the ore or metal produced in that period relative to the total proved and probable reserves. UoP amortisation links the consumption of the mine asset to the consumption of the mineral reserve, providing the best matching of cost to revenue in extractive industries.",
+    "practitioner_notes": {
+      "erp_application": "UoP amortisation is calculated in the ERP as: (production in the period / total remaining ore reserves at the start of the period) × net book value of the mine asset. The reserve estimate is updated annually by a competent person (JORC or NI 43-101 compliant) — reserve revisions directly affect the future amortisation rate. Upward reserve revisions reduce the amortisation rate (spreading cost over more production); downward revisions increase the rate. The ERP must be updated when reserve estimates change to recalculate the amortisation rate prospectively. The amortisation rate per tonne is a key management metric.",
+      "audit_triggers": "Auditors test the UoP amortisation rate against the current resource estimate — any reserve revision should trigger a recalculation of the amortisation rate. Confirm that the reserve estimate used is the 'proved and probable' reserve (not the resource, which has a lower confidence level). Test production data used in the amortisation calculation against mine production reports. For significant reserve revisions, assess whether the revision is an estimate change (prospective — IAS 8) or an error correction (retrospective). Review whether the mine's remaining life (based on current reserves and production rates) is shorter than the asset's depreciation period — if so, accelerated amortisation or impairment is required.",
+      "required_documentation": "Reserve estimate report (JORC or NI 43-101, signed by a Competent Person), period production report (tonnes mined), UoP rate calculation (production / total reserves × NBV), reserve revision history, amortisation rate change documentation (if reserves revised), mine life calculation, and comparison of UoP charge to straight-line equivalent (for disclosure)."
+    }
+  },
+  {
+    "slug": "mine-rehabilitation-provision",
+    "category": "Mining & Extractive Industries",
+    "title": "Mine Rehabilitation / Closure Provision",
+    "description": "Recognising the provision for the estimated cost of restoring the mine site at end of life.",
+    "entries": [
+      { "account": "Mine Rehabilitation Asset (Increase in Cost)", "type": "Asset (+)", "dr": 8500000.00, "cr": 0 },
+      { "account": "Rehabilitation Provision (Liability)", "type": "Liability (+)", "dr": 0, "cr": 8500000.00 }
+    ],
+    "explanation": "When a mining operation commences (or when an obligation to restore disturbed land is created by regulation), a rehabilitation provision is recognised under IAS 37. The provision equals the present value of the estimated future restoration costs (earthworks, revegetation, water treatment, tailings management). The corresponding debit is capitalised as part of the mine asset (not expensed) — it is the 'cost of creating the obligation to restore.' The asset component is amortised over the mine life using UoP; the provision unwinds using a discount rate.",
+    "practitioner_notes": {
+      "erp_application": "The rehabilitation provision is maintained in the ERP's non-current provisions module. It is initially calculated when mining disturbs the land and updated annually as: (a) disturbance progresses (new provisions raised for newly disturbed areas), (b) cost estimates are revised (changes in technology, regulatory requirements, rehabilitation methods), and (c) the discount rate changes (provisions are discounted at a risk-free rate). Each year, the unwinding of the discount is recognised as a finance cost (not operating expense). Changes in the estimated closure cost result in an adjustment to both the provision and the mine asset (not the income statement — except for fully amortised assets where the adjustment is expensed directly).",
+      "audit_triggers": "Auditors test the rehabilitation provision estimate against the most recent closure cost study. Confirm the estimate includes all areas disturbed to date and reflects the current mine plan (including future disturbance). Test the discount rate used — it should be a pre-tax risk-free rate appropriate to the currency and term of the provision. Review any changes in rehabilitation requirements imposed by the regulatory authority — mandatory changes increase the provision and the asset component. Confirm the unwinding of the discount (finance cost) is presented separately from operating costs. Test the provision against the amount lodged with the regulatory authority (bonds or guarantees).",
+      "required_documentation": "Closure cost study (by a qualified environmental engineer), disturbance area mapping, discount rate used and source (government bond rate by country and currency), provision roll-forward (opening + new disturbance + cost revisions + unwinding - expenditure = closing), regulatory bond/guarantee lodged, environmental impact assessment, rehabilitation plan approval from the regulatory authority, and sensitivity analysis to cost estimates and discount rate."
+    }
+  },
+  {
+    "slug": "mine-rehabilitation-provision-unwinding",
+    "category": "Mining & Extractive Industries",
+    "title": "Rehabilitation Provision — Unwinding of Discount",
+    "description": "Recording the annual increase in the rehabilitation provision due to the passage of time (discount unwinding).",
+    "entries": [
+      { "account": "Finance Cost — Provision Unwinding", "type": "Expense (+)", "dr": 680000.00, "cr": 0 },
+      { "account": "Rehabilitation Provision (Increased)", "type": "Liability (+)", "dr": 0, "cr": 680000.00 }
+    ],
+    "explanation": "The rehabilitation provision is discounted to present value at inception. As the closure date approaches, the provision increases (unwinds) — the present value converges toward the nominal cost of rehabilitation. This increase is classified as a finance cost (unwinding of the discount), not an operating cost. It is calculated as: opening provision balance × discount rate.",
+    "practitioner_notes": {
+      "erp_application": "The unwinding journal is posted monthly or annually in the ERP's finance module. The rate is the original discount rate applied when the provision was recognised — changes in market risk-free rates affect new provisions but the unwinding of existing provisions uses the original locked-in rate. For provisions in foreign currencies, there is an additional FX translation element — the provision is retranslated at the closing rate (IAS 21) with translation differences in OCI. The unwinding is disclosed separately in the finance cost note. Total rehabilitation provision unwinding can be a significant finance charge for mature mining operations.",
+      "audit_triggers": "Auditors confirm the discount rate used for unwinding matches the rate at which the provision was established (locked-in rate). Test that the unwinding calculation is applied to the opening provision balance (before the year's additions from new disturbance). For operations in non-functional currency countries, confirm FX translation is applied correctly — the provision balance in local currency is translated at the closing rate with differences in OCI. Confirm the unwinding is classified as finance cost, not operating cost, in the income statement.",
+      "required_documentation": "Provision roll-forward showing the unwinding component separately, original discount rate documentation, provision balance at start of period, unwinding calculation (balance × rate), FX translation workings (for foreign currency provisions), finance cost note disclosure, and historical discount rate schedule by provision tranche."
+    }
+  },
+  {
+    "slug": "mine-concentrate-cogs",
+    "category": "Mining & Extractive Industries",
+    "title": "Cost of Sales — Mineral Concentrate Sold",
+    "description": "Recognizing the cost of concentrate inventory sold to the smelter.",
+    "entries": [
+      { "account": "Cost of Sales — Mineral Concentrate", "type": "Expense (+)", "dr": 8200000.00, "cr": 0 },
+      { "account": "Concentrate Inventory", "type": "Asset (-)", "dr": 0, "cr": 8200000.00 }
+    ],
+    "explanation": "The cost of mineral concentrate sold is the accumulated production cost per tonne (mining costs + processing costs + amortisation of mine assets) allocated to the tonnes sold. COGS is recognised simultaneously with revenue on the shipment date (or delivery date). The cost includes the UoP amortisation component — this means the non-cash amortisation of the mine development asset is part of COGS and must be disclosed separately.",
+    "practitioner_notes": {
+      "erp_application": "COGS is computed in the production costing module — the cost per tonne of concentrate is applied to the tonnes of concentrate in each shipment. The cost per tonne aggregates: ore mining cost + processing cost + mine amortisation + stripping activity asset amortisation + allocated site overhead. At period-end, the ending inventory balance is calculated and the movement determines the cost of sales (opening inventory + production costs - closing inventory = COGS). The non-cash component of COGS (UoP amortisation) is disclosed separately as it is a significant item in mining income statements.",
+      "audit_triggers": "Auditors test COGS by reconciling the production cost model to the COGS in the income statement. Confirm the unit cost calculation is correct and consistent with prior periods. Test inventory movements — opening + production costs - closing should equal COGS. For shipments near period-end, test the cut-off — COGS and revenue should be recognised in the same period for each shipment. Review the non-cash COGS component (amortisation) to confirm it matches the amortisation schedule. Test that royalties are presented separately from COGS if they are a government impost rather than a production cost.",
+      "required_documentation": "Production cost model (mining + processing + overhead + amortisation per tonne), concentrate inventory movement schedule, COGS calculation by shipment, non-cash COGS component (UoP amortisation), period-end inventory count or measurement, shipment timing documentation for cut-off testing, and COGS reconciliation to management cost report."
+    }
+  },
+  {
+    "slug": "mine-inventory-nrv",
+    "category": "Mining & Extractive Industries",
+    "title": "Ore Stockpile NRV Write-Down",
+    "description": "Writing down ore stockpile inventory to net realizable value when metal prices decline below cost.",
+    "entries": [
+      { "account": "Inventory Write-Down — Ore Stockpile", "type": "Expense (+)", "dr": 2100000.00, "cr": 0 },
+      { "account": "Ore Stockpile Inventory", "type": "Asset (-)", "dr": 0, "cr": 2100000.00 }
+    ],
+    "explanation": "Ore stockpile and concentrate inventory are carried at the lower of cost and net realizable value (IAS 2). NRV is the estimated selling price (at current metal prices) less estimated costs of completion (processing for ore, shipping and TC/RC for concentrate) and selling. When metal prices fall sharply, the NRV of ore stockpiles can fall below production cost — requiring a write-down.",
+    "practitioner_notes": {
+      "erp_application": "NRV testing is performed at each reporting date for all inventory categories. The NRV calculation for ore stockpile is: (ore grade × metal price × plant recovery) less processing cost to convert to saleable product, less freight and selling costs. For concentrate inventory in transit, NRV is the provisional selling price less remaining TC/RC and freight. The NRV write-down is recognised as a period cost. IAS 2 permits reversal of NRV write-downs in subsequent periods if metal prices recover — the reversal is recognised as a reduction in COGS in the reversal period.",
+      "audit_triggers": "Auditors test NRV at period-end using the prevailing metal price and the actual cost structure (not budgeted costs). For ore in a heap leach or stockpile with a long processing time, the NRV calculation must include discounting to reflect the time value of money if the processing period is extended. Confirm that the metal price used for NRV is the spot price at the reporting date (not a management forecast). Test reversal of previous write-downs — reversals cannot exceed the original write-down amount.",
+      "required_documentation": "Metal price at reporting date (LME closing, iron ore index), ore grade survey, plant recovery rate, processing cost per tonne, NRV calculation by stockpile type, write-down journal and approval, reversal assessment in subsequent periods, and NRV sensitivity analysis to metal price changes."
+    }
+  },
+  {
+    "slug": "mine-impairment-cgu",
+    "category": "Mining & Extractive Industries",
+    "title": "Mine Asset Impairment — CGU Assessment",
+    "description": "Recognising an impairment of a mining operation's assets when recoverable amount falls below carrying value.",
+    "entries": [
+      { "account": "Impairment Loss — Mine Assets", "type": "Expense (+)", "dr": 45000000.00, "cr": 0 },
+      { "account": "Mine Development Assets (PPE)", "type": "Asset (-)", "dr": 0, "cr": 35000000.00 },
+      { "account": "E&E Assets", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 },
+      { "account": "Goodwill (Mine CGU)", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 }
+    ],
+    "explanation": "Mine assets are tested for impairment under IAS 36 when impairment indicators arise — a decline in metal prices, increase in operating costs, reduction in reserve estimates, or changes in regulation. The recoverable amount (higher of value-in-use and fair value less costs to sell) is calculated for the mine as a Cash-Generating Unit (CGU). If the recoverable amount is below the carrying value of mine assets, an impairment is recognised.",
+    "practitioner_notes": {
+      "erp_application": "Mine impairment testing is performed at the CGU level — typically the individual mine operation. The impairment model (DCF-based value-in-use or fair value less costs to sell based on market comparable transactions) is built in the mine's financial planning tool. Key inputs include: LOM production plan, long-term metal price assumptions, operating cost forecasts, capital expenditure plan, and the appropriate discount rate (WACC). The goodwill allocated to the mine CGU is tested first, then underlying assets pro-rata. Impairment reversal is permitted for mine assets (excluding goodwill) if conditions improve.",
+      "audit_triggers": "Auditors engage valuation specialists for material mining impairments. Key assumptions challenged: long-term metal price (compared to analyst consensus and futures), discount rate (WACC — mining companies carry significant risk premiums), production profile (reserve vs. resource, mining dilution), and operating cost escalation. For FVLCS-based tests, confirm comparable transaction multiples or discounted cash flow values used reflect current market conditions. For value-in-use models, test that the cash flows reflect IAS 36 requirements (Board-approved plans, no speculative enhancements). Review whether the goodwill allocation to mine CGUs is appropriate and has been consistently applied.",
+      "required_documentation": "IAS 36 impairment model (DCF or comparable transaction approach), long-term metal price assumptions and source, discount rate (WACC) derivation, LOM production plan and reserve estimate, operating cost and capex forecasts, CGU definition and goodwill allocation, comparable transaction data (if FVLCS approach), sensitivity analysis to key assumptions, Board approval of LOM plan, and independent valuation (for material impairments)."
+    }
+  },
+  {
+    "slug": "mine-gold-dore-production",
+    "category": "Mining & Extractive Industries",
+    "title": "Gold Doré Production — Transfer to Bullion Inventory",
+    "description": "Recording the production of gold doré bars from the carbon-in-leach (CIL) or heap leach circuit.",
+    "entries": [
+      { "account": "Gold Doré Inventory", "type": "Asset (+)", "dr": 6800000.00, "cr": 0 },
+      { "account": "Ore Stockpile / In-Process Inventory", "type": "Asset (-)", "dr": 0, "cr": 2400000.00 },
+      { "account": "Processing Costs (Transferred)", "type": "Expense (-)", "dr": 0, "cr": 4400000.00 }
+    ],
+    "explanation": "Gold miners produce doré bars (impure gold-silver alloy) at site and transport them to refineries for further purification. The doré inventory is valued at production cost — the accumulated mining and processing cost per ounce of gold (and silver) contained. Doré is a significant balance sheet item for gold miners between production and sale at the refinery.",
+    "practitioner_notes": {
+      "erp_application": "Doré production is tracked in the production module by pour date and bar number. Each bar has an assay certificate showing the gold and silver content (in troy ounces). The cost per ounce is calculated by dividing total production costs (mining + processing + site overhead + amortisation) by the gold-equivalent ounces produced. The doré inventory balance represents bars produced but not yet sold or refined. Doré in transit to the refinery is 'bullion in transit' — maintained in inventory until title passes to the refinery or buyer. Security and insurance coverage are critical for doré in transit.",
+      "audit_triggers": "Auditors physically count or confirm doré bars at site — bars are typically numbered and weighed, with assay certificates confirming gold content. Confirm bars in transit with the logistics provider and insurer. Test the cost per ounce calculation against the period's production cost and ounces produced. Review the valuation of the silver by-product component in the doré — some miners credit silver by-product credits against the cost of gold production (reducing gold COGS). Confirm the doré is not subject to any forward sale that would require mark-to-market accounting.",
+      "required_documentation": "Doré bar register (bar number, weight, assay certificate), period production report (ounces poured), cost per ounce calculation, bullion in transit insurance and logistics documentation, refinery assay certificate (confirming gold/silver content), silver by-product credit treatment, and doré sales contracts (for forward-sold inventory disclosure)."
+    }
+  },
+  {
+    "slug": "mine-streaming-agreement-upfront",
+    "category": "Mining & Extractive Industries",
+    "title": "Streaming Agreement — Upfront Payment Received",
+    "description": "Recording the upfront cash payment received from a precious metals streamer in exchange for the right to purchase future production at a fixed price.",
+    "entries": [
+      { "account": "Cash / Bank (Streaming Proceeds)", "type": "Asset (+)", "dr": 100000000.00, "cr": 0 },
+      { "account": "Deferred Streaming Liability", "type": "Liability (+)", "dr": 0, "cr": 100000000.00 }
+    ],
+    "explanation": "In a streaming agreement, a mining company receives a large upfront payment and commits to sell a fixed percentage of future metal production to the streamer at a below-market fixed price (the 'stream price'). The upfront payment is deferred as a liability and recognised as revenue as metal is delivered to the streamer. The stream is similar to a forward sale obligation — a significant financing instrument in mining.",
+    "practitioner_notes": {
+      "erp_application": "The streaming liability is recognised at the upfront cash received. As metal is delivered under the stream, the deferred liability is reduced and revenue is recognised. The recognition rate is calculated as: (metal delivered to streamer / total expected deliveries under the stream) × upfront cash payment. Alternatively, IFRS 9 treatment may classify the stream as a financial liability measured at amortised cost (if the delivery obligation is a contractual obligation to deliver a fixed amount of cash or another financial asset). The classification — contract liability under IFRS 15 vs. financial liability under IFRS 9 — requires careful analysis and significantly affects income statement presentation.",
+      "audit_triggers": "Auditors assess whether the streaming agreement is classified as: (a) a contract liability under IFRS 15 (recognised as revenue as performance obligations are satisfied — metal deliveries), (b) a financial liability under IFRS 9 (measured at amortised cost with interest expense), or (c) a derivative (if the delivery is at the company's or streamer's discretion). The classification drives the entire income statement and balance sheet treatment. For IFRS 15 treatment, test the delivery schedule and deferred liability release. For IFRS 9 treatment, test the EIR calculation and amortised cost. Confirm the streaming liability is correctly presented as a non-current liability (or split current/non-current per the expected delivery schedule).",
+      "required_documentation": "Streaming agreement (delivery obligations, stream price, upfront payment terms), IFRS 9/15/IAS 32 classification analysis, deferred liability recognition schedule (based on delivery profile), metal delivery records to streamer, revenue recognised per delivery, EIR calculation (if IFRS 9 treatment), streaming liability roll-forward, and LOM production plan supporting the delivery profile."
+    }
+  },
+  {
+    "slug": "mine-offtake-prepayment-liability",
+    "category": "Mining & Extractive Industries",
+    "title": "Offtake Prepayment — Advance from Smelter",
+    "description": "Recording an advance payment received from a smelter or trader against future concentrate deliveries.",
+    "entries": [
+      { "account": "Cash / Bank (Advance)", "type": "Asset (+)", "dr": 25000000.00, "cr": 0 },
+      { "account": "Offtake Prepayment Liability", "type": "Liability (+)", "dr": 0, "cr": 25000000.00 }
+    ],
+    "explanation": "Miners sometimes receive advance payments from off-takers (smelters, traders) against future production deliveries. The advance is a financial liability until the concentrate is delivered — at which point it offsets against the concentrate sales receivable. These arrangements are a form of commodity-linked financing common in junior mining where bank debt is difficult to obtain.",
+    "practitioner_notes": {
+      "erp_application": "The prepayment liability is maintained in the ERP's non-current or current liabilities module depending on the expected delivery timeline. As concentrate is delivered under the off-take agreement, the prepayment liability is applied against the concentrate receivable. Interest may or may not be explicit in the arrangement — if there is a below-market stream price implied by the advance, a financing component must be assessed under IFRS 9/15. The arrangement must be reviewed for embedded derivatives (the off-take price may be linked to metal prices — creating a commodity price derivative embedded in the liability).",
+      "audit_triggers": "Auditors assess whether the prepayment arrangement contains a significant financing component (IFRS 15 para. 60-65) — if the buyer is providing financing, the cash price equivalent should be determined and the difference allocated to interest expense. Test the embedded derivative assessment — if the advance amount or repayment is linked to future metal prices, an embedded derivative requiring bifurcation under IFRS 9 may exist. Confirm the prepayment liability is being applied correctly as concentrate is delivered. Review the security provided by the miner to the off-taker (typically security over the mine asset or production).",
+      "required_documentation": "Offtake prepayment agreement (advance amount, delivery obligations, repayment mechanism), IFRS 9/15 classification and significant financing component assessment, embedded derivative analysis, delivery record and prepayment application, security documents, interest calculation (if explicit or implicit), and prepayment liability roll-forward."
+    }
+  },
+  {
+    "slug": "mine-corporate-income-tax",
+    "category": "Mining & Extractive Industries",
+    "title": "Corporate Income Tax — Mining Operation",
+    "description": "Accruing income tax on the mining company's taxable profit from mineral extraction.",
+    "entries": [
+      { "account": "Income Tax Expense (Current)", "type": "Expense (+)", "dr": 22000000.00, "cr": 0 },
+      { "account": "Income Tax Payable", "type": "Liability (+)", "dr": 0, "cr": 22000000.00 }
+    ],
+    "explanation": "Mining companies face complex tax regimes that often include royalties (which may or may not be income tax deductible), resource rent taxes (profit-based additional taxes triggered when returns exceed a threshold), and ring-fencing (where losses in one mine cannot be offset against profits in another). Significant deferred tax timing differences arise from accelerated capital allowances on mine assets versus UoP amortisation used for accounting.",
+    "practitioner_notes": {
+      "erp_application": "Tax computation for mining operations typically requires specialist tax software (Thomson Reuters ONESOURCE, CorpTax) given the complexity of mining tax regimes. Key mining tax features: (1) accelerated capital allowances (capital expenditure may be immediately deductible for tax, creating a large DTA in development years), (2) royalty deductibility (ad valorem royalties may be deductible; specific royalties vary), (3) resource rent taxes (additional profit-based tax layers), (4) exploration cost deductibility (expensed immediately for tax vs. capitalised for accounting), (5) ring-fencing by mine or by jurisdiction. The ERP must maintain the tax cost base of each mine asset separately from the accounting NBV.",
+      "audit_triggers": "Auditors test the reconciliation between accounting profit and taxable profit — the large timing differences in mining make this reconciliation complex and a key audit area. Test accelerated capital allowance claims against the capital expenditure register. Assess the resource rent tax calculation — the threshold return and rate are jurisdiction-specific and change with metal prices. Review ring-fencing — confirm losses at one operation cannot be offset against income from another in the tax return. Confirm royalties are correctly included or excluded from the tax calculation per the relevant jurisdiction's mining tax law.",
+      "required_documentation": "Tax computation (accounting profit to taxable profit reconciliation), capital allowance schedule (tax cost base vs. accounting NBV), resource rent tax calculation, royalty deductibility assessment, deferred tax schedule (timing differences by category), tax loss carryforward schedule (by jurisdiction and ring-fence), mining tax law applicable in each jurisdiction, and tax adviser's opinion on key judgements."
+    }
+  },
+  {
+    "slug": "mine-deferred-tax-capital-allowance",
+    "category": "Mining & Extractive Industries",
+    "title": "Deferred Tax — Accelerated Capital Allowances vs. UoP Amortisation",
+    "description": "Recording the deferred tax on the timing difference between accelerated tax depreciation and accounting UoP amortisation.",
+    "entries": [
+      { "account": "Deferred Tax Asset (Development Capex)", "type": "Asset (+)", "dr": 15000000.00, "cr": 0 },
+      { "account": "Deferred Tax Benefit", "type": "Revenue (+)", "dr": 0, "cr": 15000000.00 }
+    ],
+    "explanation": "In many mining jurisdictions, capital expenditure on mine development is immediately deductible for tax (100% deduction in year of expenditure) while for accounting it is capitalised and amortised over the mine life using UoP. This creates a large deferred tax asset in the development years (tax benefit taken upfront; accounting charge spread over mine life). As the mine produces, the DTA unwinds — higher taxable profits relative to accounting profits in production years.",
+    "practitioner_notes": {
+      "erp_application": "The deferred tax calculation for mining requires maintaining a shadow 'tax asset register' that tracks the tax written-down value of each mining asset separately from the accounting NBV. The DTA = (accounting NBV - tax written-down value) × tax rate. For development-stage operations with 100% capital allowances, the tax WDV reaches zero in the first year of the allowance — the entire accounting NBV represents a DTA. As production proceeds, the DTA unwinds each year as UoP amortisation reduces the accounting NBV while the tax WDV (already zero) remains at zero. The DTA is recognised only to the extent it is probable that future taxable profits will be available for utilisation.",
+      "audit_triggers": "Auditors test the DTA recoverability assessment — for mines with long development periods or mines in lower-grade commodity environments, the probability of recovering large DTAs against future taxable profits requires careful analysis. Test the LOM financial model's projected taxable profits against the DTA balance. Confirm that the shadow tax asset register correctly reflects all capital allowances taken in prior periods. Review the ring-fencing constraint — if the DTA can only be utilised against future profits from the same mine (due to ring-fencing), the recovery timeline may extend significantly.",
+      "required_documentation": "Shadow tax asset register (tax WDV vs. accounting NBV per asset), capital allowance calculations per jurisdiction, DTA recoverability assessment (LOM projected taxable profits), ring-fencing analysis, deferred tax roll-forward, effective tax rate reconciliation, and tax adviser confirmation of applicable capital allowance rates and deductibility rules."
+    }
+  },
+  {
+    "slug": "mine-joint-venture-accounting",
+    "category": "Mining & Extractive Industries",
+    "title": "Joint Venture Mine — Proportionate Share Accounting",
+    "description": "Recording the owner's proportionate share of a joint operation mine's assets, liabilities, revenues, and costs.",
+    "entries": [
+      { "account": "JV Mine Assets (Proportionate Share)", "type": "Asset (+)", "dr": 45000000.00, "cr": 0 },
+      { "account": "JV Liabilities (Proportionate Share)", "type": "Liability (+)", "dr": 0, "cr": 12000000.00 },
+      { "account": "Net Investment in JV Assets", "type": "Equity (+)", "dr": 0, "cr": 33000000.00 }
+    ],
+    "explanation": "Many major mines are operated as joint ventures or unincorporated joint operations (UJOs). Under IFRS 11, a joint operation — where each party has rights to the assets and obligations for the liabilities — is accounted for by recognising the owner's proportionate share of the JV's assets, liabilities, revenues, and costs in its own financial statements. This differs from a joint venture (equity method) where only the net investment is recognised.",
+    "practitioner_notes": {
+      "erp_application": "Joint operation accounting is maintained by the operator, who provides each participant with a monthly management statement showing their proportionate share of costs, production, and capital. Each participant records these proportionate amounts in their own ERP as if they directly owned that share of the mine. The operator's management statements must comply with the joint operating agreement (JOA) and be audited separately. For large multi-billion dollar mines (BHP-Rio JVs, Escondida, Olympic Dam), the proportionate share can be a major component of each participant's financial statements.",
+      "audit_triggers": "Auditors confirm the IFRS 11 classification — is the mine a joint operation (proportionate share accounting) or a joint venture (equity method)? The key test is whether each party has direct rights to the assets and obligations for the liabilities under the contractual arrangement. Test the proportionate share calculation against the JOA ownership percentages. Confirm that the operator's monthly management statements are complete and accurately reflect the mine's activity. Review whether any changes in ownership percentage (farm-ins, farm-outs) have been correctly accounted for.",
+      "required_documentation": "Joint operating agreement (JOA — ownership percentages, operator responsibilities), IFRS 11 classification analysis, operator monthly management statements, proportionate share calculation, audit of operator's financial statements, JOA amendment history, and farm-in/farm-out transaction accounting (if ownership changed during the period)."
+    }
+  },
+  {
+    "slug": "mine-metal-hedging-derivative",
+    "category": "Mining & Extractive Industries",
+    "title": "Metal Price Hedging — Forward Sale Contract",
+    "description": "Recording the fair value of gold or copper forward contracts used to hedge future production revenue.",
+    "entries": [
+      { "account": "Metal Hedge Derivative (Liability)", "type": "Liability (+)", "dr": 0, "cr": 8500000.00 },
+      { "account": "OCI — Cash Flow Hedge Reserve (Equity)", "type": "Equity (-)", "dr": 8500000.00, "cr": 0 }
+    ],
+    "explanation": "Mining companies use metal forward contracts to hedge the price they receive for future production. When hedging under IFRS 9 cash flow hedge accounting, fair value changes on the derivative go to OCI (not P&L) and are recycled to revenue when the hedged production is sold. An increase in the spot price creates a loss on the forward (liability position), while an unhedged producer would benefit from the higher price — the hedge 'locks in' the earlier lower price.",
+    "practitioner_notes": {
+      "erp_application": "Metal hedge derivatives are managed in the treasury management system (TMS — Openlink, Finastra, or equivalent commodity risk system). At each reporting date, the forward contracts are marked to market using LME or gold fix forward prices. For a short-side hedge (the miner has sold forward), a rising metal price creates a mark-to-market loss on the hedge (the miner has locked in a lower selling price). The effective portion goes to OCI; any ineffectiveness goes to P&L. When production is delivered into the hedge, the OCI balance is recycled to reduce (or increase) revenue. Mining companies often disclose the average hedge price vs. spot price to show the opportunity cost or benefit of hedging.",
+      "audit_triggers": "Auditors test the fair value of metal derivatives against independent commodity price data (LME forward curves, gold forward rates). Confirm IFRS 9 hedge designation documentation — the relationship between the hedge instrument and hedged item (future production) must be formally documented at inception. Test hedge effectiveness — for a straightforward commodity forward, effectiveness should be high. Confirm the hedged production volumes are consistent with the mine's production plan. Review whether any hedge positions have been unwound or restructured (creating gains/losses that may be deferred in OCI).",
+      "required_documentation": "Hedge derivative contract confirmations, IFRS 9 hedge designation documentation, LME or gold forward price at reporting date, mark-to-market valuation, hedge effectiveness testing, OCI roll-forward (fair value changes - recycled to revenue = closing balance), production plan supporting hedged volumes, and hedge position disclosure (volume hedged, average hedge price, period of delivery)."
+    }
+  },
+  {
+    "slug": "mine-reclamation-fund-contribution",
+    "category": "Mining & Extractive Industries",
+    "title": "Reclamation Fund — Mandatory Regulatory Contribution",
+    "description": "Recording mandatory cash contributions to a government-administered mine reclamation fund.",
+    "entries": [
+      { "account": "Reclamation Fund Asset (Restricted)", "type": "Asset (+)", "dr": 1200000.00, "cr": 0 },
+      { "account": "Cash / Bank", "type": "Asset (-)", "dr": 0, "cr": 1200000.00 }
+    ],
+    "explanation": "Many jurisdictions require miners to contribute cash to a government-held mine reclamation fund or post security bonds. These contributions are recorded as restricted financial assets — they cannot be used for operations. The restricted asset offsets part of the rehabilitation provision liability (but does not eliminate the accounting provision, which is measured at the present value of the full rehabilitation cost).",
+    "practitioner_notes": {
+      "erp_application": "Reclamation fund contributions are tracked in the restricted assets section of the ERP balance sheet. The fund balance earns interest, which is credited to the fund (reducing the company's future contribution requirement). The fund is not netted against the rehabilitation provision on the balance sheet — both the full provision (gross liability) and the fund (separate asset) are presented. IFRIC 5 governs the accounting for interests in decommissioning, restoration, and rehabilitation funds — the right to receive a reimbursement from the fund is recognised separately from the liability.",
+      "audit_triggers": "Auditors obtain direct confirmation of the reclamation fund balance from the government custodian. Confirm that the fund is classified as a restricted asset (not available for operations). Test interest earned on the fund is credited to the fund (and may reduce future contribution requirements). Confirm that the accounting rehabilitation provision (PV of total estimated closure cost) is not reduced by the fund balance — they are presented gross. Review whether the fund balance plus expected future contributions are sufficient to cover the full rehabilitation liability — a deficiency creates additional future contribution obligations.",
+      "required_documentation": "Reclamation fund government statement, fund contribution schedule per regulation, fund balance confirmation from the government custodian, IFRIC 5 accounting treatment, rehabilitation provision balance (separate, not netted), interest earned on fund, fund sufficiency assessment (fund vs. full rehabilitation liability), and regulatory correspondence on contribution requirements."
+    }
+  },
+  {
+    "slug": "mine-royalty-income-lessor",
+    "category": "Mining & Extractive Industries",
+    "title": "Royalty Income — Mineral Rights Lessor",
+    "description": "Recording royalty income earned by a landowner or mineral rights holder when a miner extracts minerals from their property.",
+    "entries": [
+      { "account": "Royalty Receivable", "type": "Asset (+)", "dr": 450000.00, "cr": 0 },
+      { "account": "Royalty Income", "type": "Revenue (+)", "dr": 0, "cr": 450000.00 }
+    ],
+    "explanation": "Entities that own mineral rights or surface rights over mineralized land earn royalties from mining companies extracting minerals under licence. Royalty income is recognized as the mineral is extracted (usage-based) — the IFRS 15 sales-based royalty exception applies. The royalty is calculated based on reports submitted by the mining company showing production volumes and metal prices.",
+    "practitioner_notes": {
+      "erp_application": "Royalty income receivables are tracked against the production reports received from the mining operator. The royalty is recognized when the underlying mineral is produced or sold (usage-based), not when cash is received. For royalties based on revenue (NSR — Net Smelter Return royalties), the income equals the miner's net revenue from that mineral times the royalty percentage. The royalty receivable is an IFRS 9 financial asset at amortised cost. For publicly listed royalty companies (Franco-Nevada, Royal Gold, Wheaton Precious Metals), royalty income is the primary revenue stream — the portfolio of royalties is the core asset.",
+      "audit_triggers": "Auditors obtain production and revenue reports from the mine operator and independently calculate the royalty due. For NSR royalties, test the operator's net smelter return calculation — the deductions from gross revenue (TC/RC, transport, penalties) reduce the NSR base and therefore the royalty. Confirm the royalty rate and base per the royalty deed. Review the creditworthiness of the mining operator — royalty receivables have counterparty risk. For royalties with minimum payments or advance royalties, assess whether the minimum payment creates a liability.",
+      "required_documentation": "Royalty deed (royalty percentage, base, payment terms), mine operator's production and revenue report, royalty calculation, royalty receivable reconciliation, advance royalty or minimum payment terms, operator credit assessment (IFRS 9 ECL), and royalty audit rights (for verification of operator's reports)."
+    }
+  },
+  {
+    "slug": "mine-tailings-dam-construction",
+    "category": "Mining & Extractive Industries",
+    "title": "Tailings Storage Facility — Capital Construction",
+    "description": "Capitalising the construction cost of a tailings storage facility (TSF) for processing waste.",
+    "entries": [
+      { "account": "Tailings Storage Facility (PPE)", "type": "Asset (+)", "dr": 35000000.00, "cr": 0 },
+      { "account": "Cash / Contractor Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 35000000.00 }
+    ],
+    "explanation": "Tailings storage facilities are critical and often controversial infrastructure for processing residue. The TSF is capitalised as a mine development asset and amortised over its operational life (UoP method aligned with the mine's production life). TSF failures have catastrophic environmental consequences (Brumadinho, Samarco) — the regulatory and liability implications are enormous. TSF design, construction, and monitoring costs are all capitalised as part of the TSF asset.",
+    "practitioner_notes": {
+      "erp_application": "TSF construction is tracked as a major capital project in the ERP project module, typically spanning multiple years. The initial construction, annual heightening (as the TSF fills with tailings), and monitoring infrastructure are all capitalised. The TSF is a single asset but with stages — each heightening campaign adds to the asset at its incremental cost. The TSF asset is amortised using UoP based on the tonnes of tailings it will accommodate over its life, which aligns with the mine's production life. The rehabilitation provision includes TSF closure costs (capping, revegetation, long-term water monitoring).",
+      "audit_triggers": "Auditors confirm the TSF is classified as a mine asset (PPE, not investment property). Test the capitalisation of heightening costs — each heightening extends the TSF's capacity and is capitalised. Confirm the TSF meets current regulatory standards — post-Brumadinho, TSF design standards have tightened significantly (GISTM — Global Industry Standard on Tailings Management). Assess whether any TSF stability issues (seismic risk, water saturation) represent impairment indicators. Review the rehabilitation provision for TSF closure — long-term water treatment obligations can persist for decades after mine closure.",
+      "required_documentation": "TSF design and construction permits, geotechnical stability report (independent), capital project cost tracking, TSF capacity calculation and UoP amortisation schedule, annual heightening capital programme, GISTM compliance assessment, TSF monitoring programme, rehabilitation provision for TSF closure (including long-term water treatment), and TSF emergency action plan."
+    }
+  },
+  {
+    "slug": "mine-water-treatment-opex",
+    "category": "Mining & Extractive Industries",
+    "title": "Ongoing Water Treatment and Environmental Monitoring",
+    "description": "Recording the ongoing cost of water treatment and environmental monitoring at an operating mine.",
+    "entries": [
+      { "account": "Environmental Operating Cost", "type": "Expense (+)", "dr": 850000.00, "cr": 0 },
+      { "account": "Accounts Payable / Accrued Liabilities", "type": "Liability (+)", "dr": 0, "cr": 850000.00 }
+    ],
+    "explanation": "Operating mines incur ongoing environmental costs — acid mine drainage treatment, water quality monitoring, groundwater management, and dust suppression. These are operating costs (not capital) and are expensed as incurred. They are a direct production cost that should be included in the mine's cost per tonne calculation. Post-closure water treatment costs are part of the rehabilitation provision.",
+    "practitioner_notes": {
+      "erp_application": "Environmental operating costs are tracked in a dedicated environmental cost centre within the mine's operating cost structure. They are allocated to the mine's production cost per tonne — reducing the mine's operating margin. For operations in water-stressed regions (increasingly common with climate change), water management costs are growing. Post-closure water treatment commitments (perpetual treatment of acid mine drainage) must be reflected in the rehabilitation provision — the discounted present value of perpetual treatment costs is a significant and growing rehabilitation liability.",
+      "audit_triggers": "Auditors confirm that ongoing environmental costs are expensed (not capitalised as mine assets). Test that the rehabilitation provision includes the present value of post-closure water treatment commitments — the perpetuity value of ongoing water treatment is a complex estimate requiring specialist input. Review regulatory compliance — environmental monitoring reports submitted to the regulator identify any deficiencies creating potential fines or remediation obligations. Assess whether any environmental incidents during the period create additional provision requirements (spills, exceedances of permitted discharge limits).",
+      "required_documentation": "Environmental management plan, water treatment cost invoices, environmental monitoring reports (submitted to the regulatory authority), water quality data, post-closure water treatment provision calculation (including perpetuity estimate for acid mine drainage), environmental regulatory correspondence, incident register (spills, exceedances), and rehabilitation provision update for post-closure treatment."
+    }
+  },
+  {
+    "slug": "mine-smelter-treatment-refining-charge",
+    "category": "Mining & Extractive Industries",
+    "title": "Smelter Treatment and Refining Charges (TC/RC)",
+    "description": "Recording the treatment and refining charges payable to the smelter as a deduction from mineral revenue.",
+    "entries": [
+      { "account": "Treatment & Refining Charges (TC/RC)", "type": "Revenue (-)", "dr": 1800000.00, "cr": 0 },
+      { "account": "Accounts Payable (Smelter TC/RC)", "type": "Liability (+)", "dr": 0, "cr": 1800000.00 }
+    ],
+    "explanation": "Concentrate producers pay smelters a treatment charge (TC — per dry metric tonne of concentrate) and refining charge (RC — per pound of metal refined) to process their concentrate into refined metal. TC/RC are deducted from the concentrate revenue — they are not a separate expense but a reduction in the selling price. TC/RC are negotiated annually between miners and smelters, and are a key commercial term in concentrate off-take agreements.",
+    "practitioner_notes": {
+      "erp_application": "TC/RC are calculated and deducted from the concentrate invoice in the ERP billing module. The off-take agreement specifies the TC (in US$/dmt of concentrate) and RC (in US cents per pound of payable metal). These are deducted from the gross metal value to arrive at the net payable amount. Concentrate with high impurity levels (arsenic, fluorine, bismuth) may attract additional penalties that are deducted similarly. TC/RC are presented as a deduction from revenue (not a separate line item in cost of sales) — this is an important presentation choice affecting gross margin metrics.",
+      "audit_triggers": "Auditors test TC/RC deductions against the signed off-take agreement for each shipment. Confirm that TC/RC rates applied match the current benchmark or contractual rates. Review impurity penalty deductions for each shipment — confirm penalty triggers and rates match the contract. Test whether TC/RC is presented as a revenue deduction (appropriate, as it is part of the pricing mechanism) or as cost of sales (potentially misleading). For annual TC/RC benchmark negotiations, assess whether the contracted rates are at market benchmark levels.",
+      "required_documentation": "Off-take agreement (TC/RC schedule, penalty provisions), benchmark TC/RC rate publications (CRU, Wood Mackenzie), shipment invoice with TC/RC deduction, concentrate assay certificate (for penalty calculation), TC/RC presentation policy (revenue deduction vs. cost of sales), and annual TC/RC negotiation documentation."
+    }
+  },
+  {
+    "slug": "mine-concentrate-freight-insurance",
+    "category": "Mining & Extractive Industries",
+    "title": "Concentrate Freight and Marine Insurance",
+    "description": "Recording shipping and insurance costs on concentrate transport from mine to smelter.",
+    "entries": [
+      { "account": "Freight and Shipping Expense (or Revenue Deduction)", "type": "Expense (+)", "dr": 650000.00, "cr": 0 },
+      { "account": "Accounts Payable (Shipping Company / Insurer)", "type": "Liability (+)", "dr": 0, "cr": 650000.00 }
+    ],
+    "explanation": "Concentrate is transported from the mine to the smelter by truck, rail, and ship. Freight costs may be borne by the miner (FOB shipping point) or the smelter (delivered pricing). Marine insurance protects the concentrate in transit against loss. Under FOB terms, freight is an expense; under CIF terms, it is included in the delivered price. The treatment affects revenue measurement.",
+    "practitioner_notes": {
+      "erp_application": "Freight costs are captured in the ERP based on shipping invoices from freight forwarders and shipping companies. Under FOB pricing, the miner recognises revenue at the port of loading and freight is a separate operating expense. Under CIF pricing, revenue is higher (includes freight) but freight cost is an offsetting expense — the net is the same. Marine insurance premiums are paid for each shipment — a prepaid cost recognised as the vessel is in transit. The shipping terms (FOB, CIF, CFR) determine the revenue recognition point and freight expense treatment.",
+      "audit_triggers": "Auditors confirm the shipping terms in the off-take agreement and ensure the revenue recognition point matches (FOB = loading port, CIF = destination). Test that freight is an expense under FOB terms (not included in revenue). Confirm marine insurance provides coverage for the full value of concentrate in transit. Review concentrate in transit at period-end — the quantity and value of concentrate on vessels are significant assets that must be confirmed through shipping documents.",
+      "required_documentation": "Off-take agreement (shipping terms — FOB or CIF), bill of lading per shipment, freight invoices, marine insurance certificates, concentrate in transit schedule at period-end, revenue recognition policy (loading port vs. destination), and shipping company performance data (delivery confirmation)."
+    }
+  },
+  {
+    "slug": "mine-resource-rent-tax",
+    "category": "Mining & Extractive Industries",
+    "title": "Resource Rent Tax (Profits-Based Additional Tax)",
+    "description": "Accruing a resource rent tax or super profits tax triggered when mining returns exceed a threshold rate.",
+    "entries": [
+      { "account": "Resource Rent Tax Expense", "type": "Expense (+)", "dr": 8500000.00, "cr": 0 },
+      { "account": "Resource Rent Tax Payable", "type": "Liability (+)", "dr": 0, "cr": 8500000.00 }
+    ],
+    "explanation": "Several mining jurisdictions impose resource rent taxes (Australia's MRRT, Papua New Guinea's MRAT, various African regimes) triggered when the rate of return on mining investment exceeds a specified threshold (e.g., the long-term bond rate plus 7%). These are profit-based levies in addition to corporate income tax. Under IAS 12, resource rent taxes may be income taxes (if they are a tax on income) or operating levies (requiring IAS 37 treatment) — the distinction affects deferred tax accounting.",
+    "practitioner_notes": {
+      "erp_application": "Resource rent tax calculations are typically performed outside the core ERP in specialist tax models that apply the complex uplift, threshold, and credit mechanisms specific to each jurisdiction's legislation. The result is fed into the ERP as a provision. The key judgment is whether the RRT constitutes an income tax for IAS 12 purposes — if it does, deferred tax must be calculated. The tax base of mining assets under the RRT regime (which may use different starting values and allowance rates than the corporate income tax regime) creates additional deferred tax complexity.",
+      "audit_triggers": "Auditors engage specialist mining tax advisers for resource rent tax assessments. The IAS 12 vs. IAS 37 classification is the primary accounting judgment — income taxes require deferred tax accounting; non-income levies do not. Test the RRT threshold calculation — the 'allowance' mechanism (uplift on project expenditure) reduces the taxable amount. Confirm that the project expenditure used in the allowance calculation matches the capital expenditure records. Review the RRT in the context of the effective tax rate — high combined royalty + income tax + RRT burdens can make operations marginal.",
+      "required_documentation": "Resource rent tax legislation and regulations, RRT calculation model (project expenditure, uplift allowances, threshold return, taxable profit), IAS 12 vs. IAS 37 classification analysis, deferred RRT calculation (if IAS 12 applies), RRT payment schedule, specialist tax adviser's opinion, and effective total tax rate reconciliation (royalty + CIT + RRT as a percentage of pre-tax income)."
+    }
+  },
+  {
+    "slug": "mine-sustaining-capex",
+    "category": "Mining & Extractive Industries",
+    "title": "Sustaining Capital Expenditure vs. Operating Cost",
+    "description": "Recording sustaining capital expenditure that maintains the mine's productive capacity at the existing level.",
+    "entries": [
+      { "account": "Mine Plant & Equipment (Sustaining Capex)", "type": "Asset (+)", "dr": 4200000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 4200000.00 }
+    ],
+    "explanation": "Sustaining capital expenditure (sustaining capex) replaces worn equipment, maintains infrastructure, and sustains production at existing levels — as distinct from growth capex which increases capacity. Sustaining capex is capitalised and depreciated over the equipment's useful life. The World Gold Council's AISC (All-In Sustaining Cost) metric specifically includes sustaining capex — it has become the industry's primary cost reporting standard.",
+    "practitioner_notes": {
+      "erp_application": "Sustaining capex is classified separately from growth capex in the ERP project management module and capital budget. The capital vs. operating expenditure boundary is a significant judgment area in mining: equipment replacement above the capitalization threshold is sustaining capex; consumable replacement (drill bits, wear parts, tyres on haul trucks) is operating expenditure. Some operators use a 'betterment' test — only costs that extend the equipment's life or improve its capability are capitalised; like-for-like replacement may be expensed depending on policy. AISC reporting requires disclosure of sustaining capex as a component of the cost metric.",
+      "audit_triggers": "Auditors test the capital vs. operating classification of maintenance and replacement expenditures. For haul truck tyre replacement (a significant cost in open pit mining), the treatment varies — some classify as sustaining capex (capitalise and amortise), others as operating consumable (expense). Confirm the company's capitalisation policy is consistently applied. Review AISC disclosure — sustaining capex included in AISC should agree to the capital expenditure schedule. Test that growth capex (expanding the mine) is correctly excluded from AISC.",
+      "required_documentation": "Capital vs. operating expenditure policy, sustaining capex project register, equipment replacement records, AISC calculation reconciliation, sustaining vs. growth capex split disclosure, component replacement accounting analysis (IAS 16), haul truck tyre treatment documentation, and capital budget allocation by category."
+    }
+  },
+  {
+    "slug": "mine-aisc-cost-disclosure",
+    "category": "Mining & Extractive Industries",
+    "title": "All-In Sustaining Cost (AISC) — Non-GAAP Disclosure",
+    "description": "Calculating and disclosing the World Gold Council AISC metric for a gold mining operation.",
+    "entries": [
+      { "account": "AISC Components (Non-GAAP Memo Entry)", "type": "Memo", "dr": 0, "cr": 0 },
+      { "account": "Total AISC per Ounce (Disclosure Only)", "type": "Memo", "dr": 0, "cr": 0 }
+    ],
+    "explanation": "AISC (All-In Sustaining Cost) is a non-GAAP industry metric developed by the World Gold Council representing the full cost of maintaining a mine in production, excluding growth capex and corporate costs. AISC = mining costs + processing costs + G&A + royalties + sustaining capex + mine closure costs per ounce of gold produced. It is the primary cost benchmark used by investors and analysts to compare gold miner efficiency.",
+    "practitioner_notes": {
+      "erp_application": "AISC is calculated from the ERP's cost data but presented as a non-GAAP supplementary metric. The reconciliation from reported GAAP cost of sales to AISC bridges: starting from GAAP COGS (which includes depreciation/amortisation), removing non-cash items (D&A), adding sustaining capex (cash capital expenditure), adding royalties (if not in COGS), adding corporate-level G&A attributable to the mine, and dividing by ounces sold (or produced, depending on disclosure policy). The World Gold Council's 2013 guidance and subsequent updates define the components. Each component is sourced from the ERP cost centres.",
+      "audit_triggers": "Auditors do not audit non-GAAP metrics but review them for consistency with GAAP figures and internal consistency. The primary risk is that AISC is used to misrepresent the mine's cost profile — overstating production, understating royalties, or excluding sustaining capex from the AISC calculation. Confirm the AISC-to-GAAP reconciliation is disclosed with equal or greater prominence than the non-GAAP metric itself. Test that the components are sourced consistently from the same cost data used in GAAP reporting.",
+      "required_documentation": "AISC calculation workings (by component), GAAP-to-AISC reconciliation, World Gold Council AISC guidance compliance, production (ounces) used as the denominator, sustaining capex schedule (AISC component), royalty amount included in AISC, non-GAAP disclosure policy and prominence guidelines, and audit committee approval of AISC disclosure."
+    }
+  },
+  {
+    "slug": "mine-eosb-provision-jordan",
+    "category": "Mining & Extractive Industries",
+    "title": "EOSB Provision — Mining Staff (Jordan)",
+    "description": "Accruing end-of-service benefits for Jordanian mining company employees.",
+    "entries": [
+      { "account": "EOSB Expense — Mining Staff", "type": "Expense (+)", "dr": 85000.00, "cr": 0 },
+      { "account": "Provision for EOSB", "type": "Liability (+)", "dr": 0, "cr": 85000.00 }
+    ],
+    "explanation": "Jordanian mining companies (Jordan Phosphate Mines Company — JPMC, Arab Potash Company — APC, and other extractive operators) must accrue EOSB for all Jordanian staff under the Labour Law. For mining operations with large blue-collar workforces (miners, operators, maintenance technicians), the aggregate EOSB can be very significant. The EOSB is allocated to production cost centres (mine operations, processing plant) and overhead.",
+    "practitioner_notes": {
+      "erp_application": "EOSB is calculated monthly per employee and allocated to the mine's production cost centre (thus included in the cost per tonne calculation) for operational staff, and to overhead for management and administrative staff. For mines with long-service workforce cohorts (many Jordanian mining operations have multi-generational workforces), IAS 19 actuarial valuation is required. The actuarial assumptions for mining workforces include higher accident and disability rates, affecting both the attrition assumption and the liability pattern. EOSB for production staff flows through COGS as part of the mine's operating cost.",
+      "audit_triggers": "Auditors test the allocation of EOSB to production cost centres — EOSB for miners and operators should be included in the cost per tonne (affecting inventory valuation and COGS), not just in overhead. Confirm the IAS 19 actuarial assumptions are appropriate for mining workforces (higher injury rates, specific salary escalation patterns in unionised mining environments). Test the provision roll-forward and confirm departures are deducted correctly. Review whether any early retirement programs or voluntary separation schemes create a restructuring obligation under IAS 37.",
+      "required_documentation": "EOSB provision schedule per employee and cost centre, IAS 19 actuarial valuation, actuarial assumptions (discount rate, salary growth, attrition, occupational injury rate), EOSB inclusion in cost per tonne calculation, provision roll-forward, early retirement scheme assessment (if applicable), and Jordanian Labour Law compliance."
+    }
+  },
+  {
+    "slug": "mine-ssc-employer-jordan",
+    "category": "Mining & Extractive Industries",
+    "title": "SSC Employer Contribution — Mining Staff (Jordan)",
+    "description": "Recording the 14.25% employer SSC contribution for Jordanian mining company employees.",
+    "entries": [
+      { "account": "SSC Expense — Employer (14.25%)", "type": "Expense (+)", "dr": 125000.00, "cr": 0 },
+      { "account": "SSC Payable", "type": "Liability (+)", "dr": 0, "cr": 125000.00 }
+    ],
+    "explanation": "SSC applies to all Jordanian employees in mining operations. For blue-collar mining and processing staff, the SSC is calculated on basic wages plus any shift allowances. The SSC is allocated to the same cost centres as the underlying wages — mine operations staff SSC is included in the cost per tonne of ore produced, making it a production cost.",
+    "practitioner_notes": {
+      "erp_application": "SSC for mining operations is calculated on the full gross compensation including shift premiums, hazard allowances, and overtime. For unionised mining workforces, the wage base can be complex. SSC is allocated to production cost centres (mine operations, processing, maintenance) for blue-collar staff and to overhead for management. As a production cost, SSC is part of the cost per tonne and flows into inventory valuation. The SSC ceiling applies per employee — for highly paid mining engineers and managers, the ceiling limits the SSC base.",
+      "audit_triggers": "Auditors reconcile SSC expense to payroll multiplied by 14.25% with the ceiling applied. Confirm SSC is allocated to production cost centres for operational staff (affecting COGS and inventory valuation). For expatriate mining engineers and specialists on work permits, confirm the SSC exemption or bilateral agreement treatment. Test timely remittance to the SSC — late payment in mining attracts penalties.",
+      "required_documentation": "Payroll register including shift allowances and overtime, SSC ceiling application per employee, SSC remittance receipts, production vs. overhead SSC allocation, expatriate SSC treatment documentation, cost per tonne SSC component, and SSC registration for all eligible employees."
+    }
+  },
+  {
+    "slug": "mine-gst-mineral-sales-jordan",
+    "category": "Mining & Extractive Industries",
+    "title": "GST Treatment — Mineral Exports (Jordan)",
+    "description": "Recording the zero-rated GST treatment of mineral concentrate exports from Jordan.",
+    "entries": [
+      { "account": "Trade Receivable (Export Customer)", "type": "Asset (+)", "dr": 12500000.00, "cr": 0 },
+      { "account": "Mineral Export Revenue (Zero-Rated GST)", "type": "Revenue (+)", "dr": 0, "cr": 12500000.00 }
+    ],
+    "explanation": "Mineral exports from Jordan (phosphate, potash, other minerals) are typically zero-rated for GST purposes — the miner charges 0% GST on exports and can recover input GST paid on domestic purchases (equipment, services). This is distinct from the GST-exempt classification — zero-rating preserves the input tax recovery right. The ISTD's rules on export zero-rating for mineral products must be carefully applied.",
+    "practitioner_notes": {
+      "erp_application": "The ERP billing system applies the zero-rating GST code to export mineral sales invoices. The export documentation (bill of lading, customs export declaration) must be retained to support the zero-rating claim. Input GST on domestic purchases (local contractor services, local equipment, maintenance parts) is recovered in the monthly GST return — the zero-rated export status makes the mine a fully taxable business for input GST recovery purposes (unlike exempt supplies, which restrict input GST recovery). The net effect is favourable — no output GST on exports, full input GST recovery on domestic inputs.",
+      "audit_triggers": "Auditors confirm the zero-rating treatment is supported by export documentation. Test that input GST claims on domestic purchases are valid — any purchases used for non-business purposes are not claimable. Confirm the GST return correctly claims input GST. For domestic mineral sales (if any), confirm the correct output GST rate is applied. Review whether the ISTD has audited the zero-rating claims and whether any assessments are outstanding.",
+      "required_documentation": "Export mineral sales invoices (zero-rated GST), customs export declarations and bills of lading, ISTD GST return filings, input GST recovery on domestic purchases, zero-rating eligibility confirmation, ISTD audit correspondence, and GST registration certificate confirming export business status."
+    }
+  },
+  {
+    "slug": "mine-import-duty-mining-equipment",
+    "category": "Mining & Extractive Industries",
+    "title": "Import Duty Exemption — Mining Equipment",
+    "description": "Recording the import of mining equipment benefiting from a duty exemption under a mining investment agreement.",
+    "entries": [
+      { "account": "Mining Equipment (PPE — Duty Exempt)", "type": "Asset (+)", "dr": 8500000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 8500000.00 }
+    ],
+    "explanation": "Mining companies in Jordan and other MENA jurisdictions often negotiate duty exemptions for imported capital equipment under their mining concession agreements or investment promotion laws. Capital equipment (haul trucks, crushers, processing equipment) exempt from import duty is capitalised at the ex-duty cost. If an exemption is not available, customs duties are capitalised as part of the asset cost.",
+    "practitioner_notes": {
+      "erp_application": "Duty-exempt equipment imports are processed through customs with the exemption certificate from the Ministry of Investment or Mining Authority. The equipment is capitalised in the ERP at the CIF cost (no customs duty added since it is exempt). The exemption certificate is maintained in the asset file. If duty exemption is partial (some items exempt, others dutiable), the duty on dutiable items is capitalised into those items' cost. Duty exemption availability often depends on the equipment being listed in the mining concession agreement's approved equipment schedule.",
+      "audit_triggers": "Auditors confirm the duty exemption is properly authorised by the relevant ministry — each exempt item should have a specific exemption approval. Test that the equipment is used for mining purposes within the concession area (conditions for the exemption typically require this). Confirm that duty-free equipment not ultimately used for the approved purpose may require duty payment — creating a contingent liability. Review whether any exemption certificates have expired or are at risk of cancellation.",
+      "required_documentation": "Duty exemption certificate (per equipment item or batch), mining concession agreement (equipment schedule), customs import declaration showing zero duty, ministry approval letter, equipment description and quantity, usage confirmation (equipment deployed at the mine site), and exemption expiry date monitoring."
+    }
   }
+
+
 
 
 
