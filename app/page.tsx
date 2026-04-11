@@ -20,6 +20,15 @@ interface Entry {
 
 const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+// NEW: The SEO slug generator
+const generateCategorySlug = (categoryName: string) => {
+  return categoryName
+    .toLowerCase()
+    .replace(/ & /g, '-and-')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+};
+
 export default function HomePage() {
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
@@ -32,9 +41,7 @@ export default function HomePage() {
 
   const primaryPillars = ["Tax", "IFRS", "Advanced"];
   
-  // ---------------------------------------------------------
-  // NEW LOGIC: Count entries per category
-  // ---------------------------------------------------------
+  // Count entries per category
   const categoryCounts = (entriesData as Entry[]).reduce((acc, entry) => {
     if (entry.category) {
       acc[entry.category] = (acc[entry.category] || 0) + 1;
@@ -42,11 +49,11 @@ export default function HomePage() {
     return acc;
   }, {} as Record<string, number>);
 
-  // Convert the tally into an array of objects: { name: "Agriculture", count: 4 }
+  // Convert the tally into an array
   const secondaryIndustries = Object.entries(categoryCounts)
     .filter(([catName]) => !primaryPillars.includes(catName) && catName !== "General")
     .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count); // Bonus: Sorts them so the categories with the most entries appear first!
+    .sort((a, b) => b.count - a.count);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -129,7 +136,7 @@ export default function HomePage() {
           {/* FLOATING SEARCH BAR */}
           <div className="relative max-w-2xl mx-auto" ref={searchRef}>
             <div className={`relative z-50 flex items-center bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border transition-all duration-300 ${
-              showDropdown && query ? 'rounded-t-[24px] border-slate-200' : 'rounded-full border-transparent hover:border-emerald-200'
+              showDropdown && query ? 'rounded-t-3xl border-slate-200' : 'rounded-full border-transparent hover:border-emerald-200'
             }`}>
               <div className="pl-6 text-slate-400">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +162,7 @@ export default function HomePage() {
 
             {/* FLOATING DROPDOWN */}
             {showDropdown && query && (
-              <div className="absolute top-full left-0 w-full bg-white shadow-[0_30px_60px_rgba(0,0,0,0.15)] rounded-b-[24px] border-x border-b border-slate-200 z-[100] overflow-hidden text-left">
+              <div className="absolute top-full left-0 w-full bg-white shadow-[0_30px_60px_rgba(0,0,0,0.15)] rounded-b-3xl border-x border-b border-slate-200 z-100 overflow-hidden text-left">
                 {dropdownResults.length > 0 ? (
                   <div className="py-2">
                     {dropdownResults.map((entry) => (
@@ -205,7 +212,8 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
-          <Link href="/categories/Tax" className="group relative bg-white border border-slate-200 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
+          {/* UPDATED: primary pillar links also use the SEO slug generator */}
+          <Link href={`/categories/${generateCategorySlug("Tax")}`} className="group relative bg-white border border-slate-200 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
             <div className="w-16 h-16 bg-emerald-600 text-white rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl shadow-emerald-200 mb-10 transform group-hover:rotate-6 transition-transform">T</div>
             <h3 className="text-2xl font-black mb-4">Tax & VAT</h3>
             <p className="text-slate-500 leading-relaxed mb-10 text-sm">Jordanian VAT compliance, Withholding Tax, and regional Zakat entries.</p>
@@ -214,7 +222,7 @@ export default function HomePage() {
             </div>
           </Link>
 
-          <Link href="/categories/IFRS" className="group relative bg-slate-900 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.3)]">
+          <Link href={`/categories/${generateCategorySlug("IFRS")}`} className="group relative bg-slate-900 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.3)]">
             <div className="w-16 h-16 bg-white text-slate-900 rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl mb-10 transform group-hover:rotate-6 transition-transform">I</div>
             <h3 className="text-2xl font-black mb-4 text-white">IFRS Hub</h3>
             <p className="text-slate-400 leading-relaxed mb-10 text-sm">IFRS 16 Leases, IFRS 15 Revenue, and complex consolidation logic.</p>
@@ -223,8 +231,8 @@ export default function HomePage() {
             </div>
           </Link>
 
-          <Link href="/categories/Advanced" className="group relative bg-white border border-slate-200 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
-            <div className="w-16 h-16 bg-blue-600 text-white rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl shadow-blue-200 mb-10 transform group-hover:rotate-6 transition-transform text-blue-100">A</div>
+          <Link href={`/categories/${generateCategorySlug("Advanced")}`} className="group relative bg-white border border-slate-200 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
+            <div className="w-16 h-16 bg-blue-600 text-white rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl shadow-blue-200 mb-10 transform group-hover:rotate-6 transition-transform">A</div>
             <h3 className="text-2xl font-black mb-4">Advanced</h3>
             <p className="text-slate-500 leading-relaxed mb-10 text-sm">Equity methods, Bond amortizations, and intercompany reconciliations.</p>
             <div className="flex items-center text-blue-600 font-black text-xs uppercase tracking-widest gap-2 group-hover:gap-4 transition-all">
@@ -233,21 +241,20 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* 3. SECONDARY INDUSTRY GRID - NOW WITH COUNTS! */}
+        {/* 3. SECONDARY INDUSTRY GRID - NOW SECURE WITH SLUGS */}
         <div className="pt-20 border-t border-slate-100">
           <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-12 text-center">Browse Specialized Industries</h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {secondaryIndustries.map((industry) => (
               <Link 
                 key={industry.name}
-                href={`/categories/${encodeURIComponent(industry.name)}`}
-                className="group p-8 bg-white border border-slate-100 rounded-[32px] text-center transition-all hover:border-emerald-500 hover:shadow-xl hover:bg-emerald-50/30"
+                href={`/categories/${generateCategorySlug(industry.name)}`}
+                className="group p-8 bg-white border border-slate-100 rounded-4xl text-center transition-all hover:border-emerald-500 hover:shadow-xl hover:bg-emerald-50/30"
               >
                 <span className="block text-slate-800 font-bold group-hover:text-emerald-700 transition-colors">
                   {industry.name}
                 </span>
                 
-                {/* Displaying the dynamic entry count here */}
                 <span className="text-[9px] text-slate-400 font-black uppercase tracking-widest mt-2 block opacity-80">
                   {industry.count} {industry.count === 1 ? 'Entry' : 'Entries'}
                 </span>
@@ -269,7 +276,7 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Master Your <span className="text-emerald-500">Career.</span></h2>
           
           {status === "success" ? (
-            <div className="bg-emerald-500/20 text-emerald-400 p-8 rounded-[32px] border border-emerald-500/30 animate-in fade-in zoom-in max-w-lg mx-auto">
+            <div className="bg-emerald-500/20 text-emerald-400 p-8 rounded-4xl border border-emerald-500/30 animate-in fade-in zoom-in max-w-lg mx-auto">
               <p className="font-bold text-lg text-white mb-2">You&apos;re in! 🎉</p>
               <p className="text-emerald-400">Welcome to the Hub. Check your inbox for your first technical accounting guide.</p>
             </div>

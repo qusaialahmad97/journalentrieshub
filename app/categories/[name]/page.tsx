@@ -10,34 +10,50 @@ interface JournalEntry {
   description: string;
 }
 
-// 1. Point #6: Category-Specific Meta Tags
+// 1. The SEO slug generator (same as homepage)
+const generateCategorySlug = (categoryName: string) => {
+  return categoryName
+    .toLowerCase()
+    .replace(/ & /g, '-and-')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+};
+
+// 2. Metadata generation using the original category name
 export async function generateMetadata({ 
   params 
 }: { 
   params: Promise<{ name: string }> 
 }): Promise<Metadata> {
   const { name } = await params;
-  const categoryName = decodeURIComponent(name);
   
+  // Find a matching entry to get the true, beautifully formatted category name
+  const matchingEntry = (entries as JournalEntry[]).find(
+    (e) => generateCategorySlug(e.category) === name
+  );
+  
+  // If found, use "Pharmaceuticals & Biotech". If not, fallback to the slug text.
+  const displayCategoryName = matchingEntry ? matchingEntry.category : name.replace(/-/g, ' ');
+
   return {
-    title: `${categoryName} Journal Entries & Guides | Journal Entries Hub`,
-    description: `Master ${categoryName} accounting with our comprehensive library of real-world journal entries, IFRS analysis, and professional templates.`,
+    title: `${displayCategoryName} Journal Entries & Guides | Journal Entries Hub`,
+    description: `Master ${displayCategoryName} accounting with our comprehensive library of real-world journal entries, IFRS analysis, and professional templates.`,
     alternates: {
       canonical: `https://www.journalentrieshub.com/categories/${name}`,
     },
     openGraph: {
-      title: `${categoryName} Accounting Resources`,
-      description: `Expert-verified journal entries for ${categoryName}.`,
+      title: `${displayCategoryName} Accounting Resources`,
+      description: `Expert-verified journal entries for ${displayCategoryName}.`,
       type: "website",
     }
   };
 }
 
-// 2. Pre-generate the category pages for speed (SSG)
+// 3. Pre-generate the category pages using the HYPHENATED slugs for speed (SSG)
 export async function generateStaticParams() {
   const categories = Array.from(new Set(entries.map((e) => e.category)));
   return categories.map((cat) => ({
-    name: encodeURIComponent(cat),
+    name: generateCategorySlug(cat),
   }));
 }
 
@@ -47,21 +63,23 @@ export default async function CategoryPage({
   params: Promise<{ name: string }> 
 }) {
   const { name } = await params;
-  const categoryName = decodeURIComponent(name);
   
+  // Filter entries using the slug generator
   const filteredEntries = (entries as JournalEntry[]).filter(
-    (e) => e.category.toLowerCase() === categoryName.toLowerCase()
+    (e) => generateCategorySlug(e.category) === name
   );
 
   if (filteredEntries.length === 0) return notFound();
 
-  // --- POINT #16: ITEMLIST & COLLECTION SCHEMA ---
-  // This tells Google exactly how many expert resources are in this category.
+  // Extract the beautiful display name from the first matched entry
+  const displayCategoryName = filteredEntries[0].category;
+
+  // --- ITEMLIST & COLLECTION SCHEMA ---
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": `${categoryName} Accounting Resources`,
-    "description": `Professional resources and journal entries for ${categoryName}.`,
+    "name": `${displayCategoryName} Accounting Resources`,
+    "description": `Professional resources and journal entries for ${displayCategoryName}.`,
     "url": `https://www.journalentrieshub.com/categories/${name}`,
     "numberOfItems": filteredEntries.length,
     "itemListElement": filteredEntries.map((e, index) => ({
@@ -91,14 +109,14 @@ export default async function CategoryPage({
           
           {/* Pillar Header */}
           <header className="mb-12 border-b border-slate-200 pb-10">
-            <Link href="/" className="text-emerald-600 font-bold text-sm mb-4 block hover:translate-x-1 transition-transform">
+            <Link href="/#categories" className="text-emerald-600 font-bold text-sm mb-4 block hover:translate-x-1 transition-transform">
               ← Back to All Categories
             </Link>
             <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 capitalize tracking-tight">
-              {categoryName} <span className="text-emerald-500 text-3xl md:text-4xl block md:inline">Knowledge Center</span>
+              {displayCategoryName} <span className="text-emerald-500 text-3xl md:text-4xl block md:inline">Knowledge Center</span>
             </h1>
             <p className="text-slate-600 text-lg max-w-3xl leading-relaxed font-medium">
-              Explore our verified library of {categoryName} transactions. Every entry is reviewed for 
+              Explore our verified library of {displayCategoryName} transactions. Every entry is reviewed for 
               IFRS compliance and real-world accuracy by our technical accounting team.
             </p>
           </header>
@@ -132,7 +150,7 @@ export default async function CategoryPage({
 
           {/* Bottom Call to Action */}
           <div className="mt-20 p-12 bg-slate-900 rounded-[40px] text-center text-white">
-            <h3 className="text-2xl font-bold mb-4">Need a specific {categoryName} entry?</h3>
+            <h3 className="text-2xl font-bold mb-4">Need a specific {displayCategoryName} entry?</h3>
             <p className="text-slate-400 mb-8 max-w-md mx-auto">Our team is constantly updating the hub. If you can&apos;t find what you need, suggest a new entry below.</p>
             <Link href="/about" className="inline-block bg-emerald-600 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-500 transition-colors">
               Contact Expert
