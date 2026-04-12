@@ -1,6 +1,15 @@
 import { MetadataRoute } from 'next'
 import entries from "../data/entries.json";
 
+// NEW: The exact same SEO slug generator used in your pages
+const generateCategorySlug = (categoryName: string) => {
+  return categoryName
+    .toLowerCase()
+    .replace(/ & /g, '-and-')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.journalentrieshub.com';
 
@@ -15,7 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 2. Dynamic Category Pillar URLs (The authority hubs)
   const categories = Array.from(new Set(entries.map((e) => e.category)));
   const categoryUrls = categories.map((cat) => ({
-    url: `${baseUrl}/categories/${encodeURIComponent(cat)}`,
+    // FIX: Using the slug generator instead of encodeURIComponent
+    url: `${baseUrl}/categories/${generateCategorySlug(cat)}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9, // Higher priority than entries because they are "Pillars"
