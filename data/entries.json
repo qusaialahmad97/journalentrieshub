@@ -26124,7 +26124,1092 @@
       "audit_triggers": "Auditors will focus heavily on IT General Controls (ITGC) for the smart meters and the blockchain/IoT platform calculating the trades to ensure billing accuracy and prevent tampering.",
       "required_documentation": "Microgrid participation agreement, smart meter logs, distributed ledger transaction reports."
     }
+  },
+  
+  {
+    "slug": "pe-capital-call-lp-funding",
+    "category": "Private Equity & Investment Funds",
+    "title": "Capital Call - LP Funding Received",
+    "description": "Recording the receipt of called capital from Limited Partners (LPs) in response to a capital call notice issued by the General Partner (GP) to fund a new portfolio investment or fund expenses.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 5000000.00, "cr": 0 },
+      { "account": "LP Capital Contributions Receivable", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 }
+    ],
+    "explanation": "When the GP issues a capital call notice, a receivable is established against each LP's unfunded commitment. Upon receipt of wire transfers from LPs, the receivable is extinguished and cash is recognized. The capital is recorded as a contribution to partners' capital, not revenue.",
+    "practitioner_notes": {
+      "erp_application": "Most fund accounting platforms (Allvue, Investran, Geneva) maintain a capital account ledger per LP. The call amount is allocated pro-rata to each LP's capital account based on their committed percentage. Ensure the call notice date and funding due date are tracked separately for default interest calculations.",
+      "audit_triggers": "Auditors will reconcile LP capital account statements to the subscription agreements and the LP register. Unfunded commitment schedules will be tested for accuracy against the LPA (Limited Partnership Agreement).",
+      "required_documentation": "Capital call notice, LP subscription agreements, wire transfer confirmations, LP commitment schedule showing funded vs. unfunded commitments."
+    }
+  },
+  {
+    "slug": "pe-capital-call-investment-deployment",
+    "category": "Private Equity & Investment Funds",
+    "title": "Capital Call - Deployment into Portfolio Investment",
+    "description": "Recording the deployment of called capital into a new or follow-on portfolio company investment (equity purchase or loan), funded directly from LP capital call proceeds.",
+    "entries": [
+      { "account": "Investments at Fair Value - Portfolio Company A", "type": "Asset (+)", "dr": 4800000.00, "cr": 0 },
+      { "account": "Organizational / Deal Costs (Capitalized)", "type": "Asset (+)", "dr": 200000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 }
+    ],
+    "explanation": "The total invested cost is allocated between the investment itself and any directly attributable transaction costs (legal, due diligence, advisory fees) that are capitalized as part of the cost basis under ASC 946. Expensing vs. capitalizing deal costs depends on the fund's accounting policy and whether it qualifies as an Investment Company under ASC 946.",
+    "practitioner_notes": {
+      "erp_application": "Each portfolio investment should be set up as a distinct position/security in the fund's portfolio accounting system with its own cost lot. Track the legal entity structure (e.g., direct equity, blocker corp, debt instrument) as it drives subsequent fair value and income treatment.",
+      "audit_triggers": "Auditors will verify the investment purchase price against executed transaction documents (SPA, closing statement). Deal cost capitalization policy will be scrutinized and must be consistent with prior periods.",
+      "required_documentation": "Executed Stock Purchase Agreement (SPA) or subscription agreement, closing statement, wire transfer confirmation, board approval minutes, deal cost invoices."
+    }
+  },
+  {
+    "slug": "pe-management-fee-accrual-and-offset",
+    "category": "Private Equity & Investment Funds",
+    "title": "Management Fee - Accrual and GP Offset Against Capital Call",
+    "description": "Accruing the periodic management fee owed to the GP and applying the standard 80% (or LPA-specified percentage) monitoring/transaction fee offset to reduce the management fee charged to LPs.",
+    "entries": [
+      { "account": "Management Fee Expense", "type": "Expense (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Management Fee Offset (Portfolio Fee Income)", "type": "Expense (-)", "dr": 0, "cr": 200000.00 },
+      { "account": "Management Fees Payable - GP", "type": "Liability (+)", "dr": 0, "cr": 300000.00 }
+    ],
+    "explanation": "The gross management fee (typically 1.5%–2.0% of committed or invested capital p.a.) is reduced by the LPA-mandated offset percentage of any monitoring fees, transaction fees, or board fees received by the GP from portfolio companies. The net amount is what LPs effectively bear. This offset is a critical LP protection mechanism.",
+    "practitioner_notes": {
+      "erp_application": "Fund accounting systems should track gross management fee, offset income received by the GP, and the net fee charged to the fund as separate line items for LP reporting transparency. The fee basis (committed vs. invested capital) typically shifts at the end of the investment period per the LPA.",
+      "audit_triggers": "Auditors will recalculate the management fee from scratch using the LPA fee provisions, verify the offset amounts against GP-provided schedules of portfolio company fees received, and confirm the effective net fee rate to LPs.",
+      "required_documentation": "LPA fee provisions, management fee calculation schedule, GP certificate of portfolio company fees received (monitoring, transaction, board fees), LP capital account statements."
+    }
+  },
+  {
+    "slug": "pe-fair-value-mark-to-market-unrealized-gain",
+    "category": "Private Equity & Investment Funds",
+    "title": "Portfolio Investment - Fair Value Mark-to-Market (Unrealized Gain)",
+    "description": "Recording the quarterly or annual fair value adjustment on a private equity portfolio company investment under ASC 820, resulting in an unrealized gain flowing through the fund's income statement.",
+    "entries": [
+      { "account": "Investments at Fair Value - Portfolio Company B", "type": "Asset (+)", "dr": 1200000.00, "cr": 0 },
+      { "account": "Net Change in Unrealized Appreciation - Investments", "type": "Income (+)", "dr": 0, "cr": 1200000.00 }
+    ],
+    "explanation": "Under ASC 946 (Investment Companies) and ASC 820, private equity funds carry portfolio investments at fair value with all unrealized gains and losses flowing through the income statement each period. Fair value is typically determined using a combination of market multiples (EV/EBITDA), recent transaction comparables, discounted cash flow (DCF), or the price of a recent round of financing.",
+    "practitioner_notes": {
+      "erp_application": "The fair value adjustment is recorded as a mark in the portfolio accounting system. The cost basis does not change — only the fair value layer is updated. NAV per unit/share calculations must reflect the updated fair value for LP reporting.",
+      "audit_triggers": "Fair value estimates for illiquid private investments are one of the highest-risk audit areas. Auditors (often using a valuation specialist) will independently validate the valuation methodology, comparable company multiples, financial projections, and DLOM (Discount for Lack of Marketability) applied. Expect significant back-and-forth on Level 3 inputs.",
+      "required_documentation": "Valuation committee memo and sign-off, Board-approved valuation policy, comparable company analysis, portfolio company financial statements (trailing LTM), DCF model, third-party valuation report (if obtained)."
+    }
+  },
+  {
+    "slug": "pe-fair-value-mark-to-market-unrealized-loss",
+    "category": "Private Equity & Investment Funds",
+    "title": "Portfolio Investment - Fair Value Mark-to-Market (Unrealized Loss / Write-Down)",
+    "description": "Recording a downward fair value adjustment on a portfolio investment reflecting deteriorating company performance, market multiple compression, or credit distress.",
+    "entries": [
+      { "account": "Net Change in Unrealized Depreciation - Investments", "type": "Expense (+)", "dr": 3500000.00, "cr": 0 },
+      { "account": "Investments at Fair Value - Portfolio Company C", "type": "Asset (-)", "dr": 0, "cr": 3500000.00 }
+    ],
+    "explanation": "When a portfolio company's performance deteriorates (revenue decline, covenant breach, market multiple compression), the fund must write down the carrying fair value. For investment companies under ASC 946, this flows directly through the Statement of Operations as a realized or unrealized loss — there is no separate OCI treatment. A full write-down to zero represents a realized loss upon disposition.",
+    "practitioner_notes": {
+      "erp_application": "Systems must distinguish between 'unrealized depreciation' (still held) and 'realized loss' (disposed/written off). The NAV impact must be allocated to LP capital accounts, reducing each LP's ending capital balance proportionally.",
+      "audit_triggers": "Management's impairment triggers and the timeliness of write-downs are heavily scrutinized. Auditors look for evidence that GPs are not delaying write-downs on underperforming assets to inflate NAV and management fees. Portfolio company covenant compliance certificates and lender communications are key evidence.",
+      "required_documentation": "Updated valuation model, portfolio company management accounts, lender/creditor correspondence, valuation committee minutes documenting the write-down rationale and approval."
+    }
+  },
+  {
+    "slug": "pe-gp-lp-distribution-return-of-capital",
+    "category": "Private Equity & Investment Funds",
+    "title": "GP/LP Distribution - Return of Capital (Pre-Carried Interest)",
+    "description": "Recording a distribution to LPs representing a return of invested capital from a portfolio company exit or recapitalization proceeds, before any carried interest or performance fee threshold has been met.",
+    "entries": [
+      { "account": "LP Capital Accounts (Pro-Rata per LP)", "type": "Equity (-)", "dr": 8000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 8000000.00 }
+    ],
+    "explanation": "Pre-hurdle distributions are purely a return of contributed capital and reduce each LP's capital account balance. No income or gain is recognized until the LP has received back all contributed capital (and preferred return, if applicable per the LPA). The distribution waterfall sequence must be checked before processing: (1) Return of Capital → (2) Preferred Return → (3) GP Catch-Up → (4) Carried Interest split.",
+    "practitioner_notes": {
+      "erp_application": "Fund accounting systems must run the full waterfall calculation engine before posting any distribution. Each LP's capital account is debited by their pro-rata share. Generate LP distribution notices showing cumulative contributions, prior distributions, and closing capital account balance.",
+      "audit_triggers": "Auditors will recompute the waterfall calculation from scratch against the LPA provisions. They verify that no carried interest was paid before the preferred return hurdle was cleared (clawback risk).",
+      "required_documentation": "Exit proceeds wire confirmation, distribution waterfall calculation workbook, LPA waterfall provisions, LP distribution notices, updated LP capital account statements."
+    }
+  },
+  {
+    "slug": "pe-gp-carried-interest-distribution-waterfall",
+    "category": "Private Equity & Investment Funds",
+    "title": "GP/LP Distribution - Carried Interest (Performance Fee) via Waterfall",
+    "description": "Recording the GP's carried interest distribution after LPs have received their full capital return and preferred return (hurdle rate), representing the GP's 20% (or LPA-specified) profit share on investment gains.",
+    "entries": [
+      { "account": "LP Capital Accounts - Profit Share (80%)", "type": "Equity (-)", "dr": 4000000.00, "cr": 0 },
+      { "account": "GP Capital Account / Carried Interest Payable (20%)", "type": "Equity (-) / Liability (+)", "dr": 1000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 }
+    ],
+    "explanation": "Once the preferred return hurdle (typically 8% IRR) is satisfied, the GP 'catch-up' provision (if in the LPA) allows the GP to receive 100% of distributions until it has received its full carried interest percentage on all profits. After catch-up, the remaining profit is split 80/20 (LP/GP). The carried interest is a profits interest and is treated as a capital gain for tax purposes in most structures — not ordinary income.",
+    "practitioner_notes": {
+      "erp_application": "Carried interest distributions to the GP reduce the GP's capital account in the fund's books. If the carried interest is held in a separate carry vehicle (common in institutional fund structures), the payment flows to that entity rather than the GP management company directly.",
+      "audit_triggers": "The waterfall calculation is the #1 audit focus item in PE fund audits. Auditors will recalculate the entire fund-level IRR (or deal-by-deal, depending on the LPA), verify the hurdle has been cleared, recompute the catch-up, and trace the final split to the LPA.",
+      "required_documentation": "Full waterfall calculation model (fund-level and/or deal-by-deal), IRR calculation with cash flow schedule, LPA waterfall and carried interest provisions, prior distribution history by LP, GP distribution notice."
+    }
+  },
+  {
+    "slug": "pe-gp-clawback-liability-accrual",
+    "category": "Private Equity & Investment Funds",
+    "title": "GP Clawback Obligation - Accrual of Contingent Liability",
+    "description": "Recognizing a contingent clawback liability for the GP when early carried interest distributions may need to be returned to LPs due to subsequent underperforming investments causing the overall fund IRR to fall below the preferred return hurdle.",
+    "entries": [
+      { "account": "Clawback Expense / Reduction in Carried Interest Income", "type": "Expense (+)", "dr": 750000.00, "cr": 0 },
+      { "account": "Clawback Liability Payable to LPs", "type": "Liability (+)", "dr": 0, "cr": 750000.00 }
+    ],
+    "explanation": "A clawback obligation arises when a GP has received carried interest on early profitable exits, but subsequent losses in the portfolio cause the fund's overall return to fall below the preferred return hurdle on a blended basis. The GP must return the excess carry to LPs. Many LPAs require the GP to hold carried interest in an escrow account to fund potential clawback obligations.",
+    "practitioner_notes": {
+      "erp_application": "Clawback calculations are typically run at each quarter-end and year-end using the 'as-if liquidation' method — modeling the fund as if all remaining investments were liquidated at current fair value and computing whether the GP would owe money back. This is a complex iterative calculation.",
+      "audit_triggers": "Auditors will assess the probability and measurement of the clawback liability under ASC 450 (Contingencies). If probable and estimable, it must be accrued. The as-if liquidation model inputs (fair values) are subject to the same scrutiny as the fair value marks.",
+      "required_documentation": "Clawback calculation model (as-if liquidation basis), prior carried interest distribution history, current portfolio fair value marks, LPA clawback provisions and escrow requirements, legal opinion if amount is disputed."
+    }
+  },
+  {
+    "slug": "pe-subscription-credit-facility-drawdown",
+    "category": "Private Equity & Investment Funds",
+    "title": "Subscription Credit Facility - Drawdown to Fund Investment",
+    "description": "Recording a drawdown on the fund's subscription credit facility (a short-term credit line secured by LP unfunded commitments) used to fund a portfolio investment before a formal capital call is issued to LPs.",
+    "entries": [
+      { "account": "Investments at Fair Value - Portfolio Company D", "type": "Asset (+)", "dr": 6000000.00, "cr": 0 },
+      { "account": "Subscription Credit Facility Payable", "type": "Liability (+)", "dr": 0, "cr": 6000000.00 }
+    ],
+    "explanation": "Subscription lines (or 'capital call lines') allow GPs to fund investments quickly without waiting for LP capital calls (which can take 10 business days). The credit line is secured by LP unfunded commitments. The drawdown is recognized as a liability of the fund. A subsequent capital call is issued to repay the facility, at which point the liability is extinguished and replaced with LP capital contributions.",
+    "practitioner_notes": {
+      "erp_application": "The credit facility balance must be included in the fund's NAV calculation as a liability. Heavy use of subscription lines can inflate IRR metrics by compressing the time period between LP capital calls and distributions — a practice increasingly scrutinized by LPs and regulators. Track the facility balance, maturity date, and interest rate.",
+      "audit_triggers": "Auditors assess whether the credit facility is appropriately classified as short-term or long-term and whether the interest expense is properly accrued and allocated to LP capital accounts. LP advisory board consent may be required per the LPA for facilities above certain thresholds.",
+      "required_documentation": "Credit agreement with the lending bank, borrowing base certificate, facility drawdown notice, collateral schedule (LP unfunded commitments pledged), LPAC consent (if required by LPA)."
+    }
+  },
+  {
+    "slug": "pe-realized-gain-on-exit",
+    "category": "Private Equity & Investment Funds",
+    "title": "Portfolio Company Exit - Realized Gain Recognition",
+    "description": "Recording the full disposal of a portfolio company investment (via M&A sale, IPO secondary, or recapitalization), recognizing the realized gain as the difference between total exit proceeds and the investment's cost basis.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents / Escrow Receivable", "type": "Asset (+)", "dr": 15000000.00, "cr": 0 },
+      { "account": "Net Unrealized Appreciation Reversal - Portfolio Company E", "type": "Income (-)", "dr": 4000000.00, "cr": 0 },
+      { "account": "Investments at Cost Basis - Portfolio Company E", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 },
+      { "account": "Net Realized Gain on Investments", "type": "Income (+)", "dr": 0, "cr": 14000000.00 }
+    ],
+    "explanation": "Upon full exit, any previously recorded unrealized appreciation on the position is reversed, the cost basis is removed, and the total economic gain (proceeds minus original cost) is recognized as a realized gain. Under ASC 946, realized and unrealized gains/losses are presented separately in the Statement of Operations. Escrow holdbacks from M&A deals should be recorded as a receivable and released upon satisfaction of conditions.",
+    "practitioner_notes": {
+      "erp_application": "The gain/loss calculation must be done on a lot-by-lot basis (FIFO, LIFO, or specific lot identification per fund policy). Rollover equity retained in the buyer's entity must be fair valued and recorded as a new investment position rather than proceeds.",
+      "audit_triggers": "Auditors will trace exit proceeds to the closing statement and wire confirmations, recompute the realized gain from the original cost basis lots, and assess proper treatment of transaction expenses, escrow arrangements, and any retained equity rollover.",
+      "required_documentation": "Signed purchase and sale agreement, final closing statement, wire transfer confirmation, escrow agreement and holdback schedule, original investment cost basis lot schedule, rollover equity valuation (if applicable)."
+    }
+  },
+  
+  {
+    "slug": "pe-fund-formation-organizational-costs",
+    "category": "Private Equity & Investment Funds",
+    "title": "Fund Formation - Organizational Costs Capitalized",
+    "description": "Recording legal, registration, and structuring costs incurred during the formation of a new private equity fund prior to the first closing.",
+    "entries": [
+      { "account": "Organizational Costs - Deferred Asset", "type": "Asset (+)", "dr": 450000.00, "cr": 0 },
+      { "account": "Accounts Payable - Legal & Formation Fees", "type": "Liability (+)", "dr": 0, "cr": 450000.00 }
+    ],
+    "explanation": "Costs incurred to organize the fund (LP agreement drafting, regulatory filings, placement agent structuring fees) are capitalized as organizational costs. Under ASC 946, investment companies typically expense these at fund inception or amortize over a short period (commonly 12–60 months). The LPA will specify whether these are borne by the fund or the GP management company.",
+    "practitioner_notes": {
+      "erp_application": "Set up a deferred organizational cost asset account. Configure amortization schedule based on fund policy — most PE funds use 60-month straight-line amortization from the first closing date. Track separately from deal costs.",
+      "audit_triggers": "Auditors will assess whether organizational costs meet the capitalization threshold and whether the amortization period is reasonable and consistently applied. Costs that primarily benefit the GP (not the fund) should not be charged to the fund.",
+      "required_documentation": "Invoices from legal counsel and formation agents, LPA provision on organizational cost allocation, fund formation timeline, amortization schedule."
+    }
+  },
+  {
+    "slug": "pe-fund-formation-organizational-costs-amortization",
+    "category": "Private Equity & Investment Funds",
+    "title": "Fund Formation - Organizational Costs Amortization (Monthly)",
+    "description": "Recording the monthly amortization of capitalized fund organizational costs over the elected amortization period.",
+    "entries": [
+      { "account": "Organizational Cost Amortization Expense", "type": "Expense (+)", "dr": 7500.00, "cr": 0 },
+      { "account": "Accumulated Amortization - Organizational Costs", "type": "Asset (-)", "dr": 0, "cr": 7500.00 }
+    ],
+    "explanation": "The monthly amortization charge ($450,000 / 60 months = $7,500/month) reduces the net carrying value of organizational costs on the balance sheet. This expense is allocated to all LP capital accounts pro-rata each period, reducing NAV per unit.",
+    "practitioner_notes": {
+      "erp_application": "Automate the monthly journal entry in the fund accounting system. Ensure the expense is included in the management expense ratio (MER) disclosure to LPs in the quarterly reports.",
+      "audit_triggers": "Auditors verify the amortization calculation ties to the original cost basis and elected period. Fully amortized balances should be written off.",
+      "required_documentation": "Original capitalization entry, amortization schedule, fund policy document on organizational cost treatment."
+    }
+  },
+  {
+    "slug": "pe-placement-agent-fee",
+    "category": "Private Equity & Investment Funds",
+    "title": "Placement Agent Fee - Fund Raise Commission",
+    "description": "Recording the placement agent fee paid to third-party capital raisers upon closing of LP commitments, typically 1%–2% of committed capital raised.",
+    "entries": [
+      { "account": "Placement Agent Fee Expense", "type": "Expense (+)", "dr": 2000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 2000000.00 }
+    ],
+    "explanation": "Placement agent fees are paid by the fund or the GP (per LPA terms) to registered broker-dealers who source LP commitments. When borne by the fund, these are an expense that reduces LP NAV. Some LPAs allow placement fees to offset management fees. SEC regulations require placement agents to be registered broker-dealers under Dodd-Frank.",
+    "practitioner_notes": {
+      "erp_application": "Classify separately from organizational costs. If the LPA specifies that placement fees offset management fees, record the offset at the time of fee billing. Track the total placement fees paid per LP introduced for regulatory disclosure.",
+      "audit_triggers": "Auditors verify the placement agent is a registered broker-dealer (FINRA/SEC registered) to assess regulatory compliance. The fee calculation will be rechecked against the placement agreement and LP commitment amounts.",
+      "required_documentation": "Placement agent agreement, FINRA registration confirmation, closing certificate of LP commitments, fee calculation schedule, wire transfer confirmation."
+    }
+  },
+  {
+    "slug": "pe-first-closing-lp-commitment-register",
+    "category": "Private Equity & Investment Funds",
+    "title": "First Closing - LP Commitment Register & Equalization",
+    "description": "Recording the equalization payment required from LPs joining at a subsequent closing to place them on equal economic footing with LPs from the first closing, including interest on prior capital calls.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 320000.00, "cr": 0 },
+      { "account": "Equalization Interest Income", "type": "Income (+)", "dr": 0, "cr": 20000.00 },
+      { "account": "LP Capital Contributions - Late Closer", "type": "Equity (+)", "dr": 0, "cr": 300000.00 }
+    ],
+    "explanation": "LPs joining at a second or final closing must pay their pro-rata share of all prior capital calls plus an equalization interest charge (typically 6%–8% p.a. on missed calls). The interest component compensates existing LPs for the opportunity cost of having deployed capital while the late closer was not yet in the fund.",
+    "practitioner_notes": {
+      "erp_application": "Equalization calculations must be run for each late-closer LP individually based on the specific calls they missed and the days elapsed. The interest received is typically reallocated to existing LP capital accounts, not retained as fund income.",
+      "audit_triggers": "Auditors verify the equalization calculation for each subsequent-closing LP, confirm the interest rate matches the LPA, and ensure the reallocation to existing LPs is correctly processed.",
+      "required_documentation": "Subscription agreement for subsequent-closing LP, equalization calculation workbook, LPA provisions on subsequent closings, wire transfer confirmation."
+    }
+  },
+  {
+    "slug": "pe-capital-call-receivable-default",
+    "category": "Private Equity & Investment Funds",
+    "title": "LP Default on Capital Call - Defaulting LP Penalty",
+    "description": "Recording the accounting treatment when an LP fails to fund a capital call by the due date, triggering default provisions under the LPA including penalty interest and potential forfeiture of LP interest.",
+    "entries": [
+      { "account": "Capital Call Receivable - Defaulting LP", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "LP Unfunded Commitment Liability (Reclassification)", "type": "Liability (-)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "When an LP defaults, the receivable remains on the books but is reclassified to a default receivable. The GP typically has remedies including: charging default interest (10%–15% p.a.), reducing the defaulting LP's interest, selling the LP interest to a third party at a discount, or in extreme cases forfeiting the LP's interest. The non-defaulting LPs may be required to fund the shortfall via an additional call.",
+    "practitioner_notes": {
+      "erp_application": "Flag the LP as 'defaulting' in the capital account ledger. Cease allocating fund income to the defaulting LP if the LPA permits this. Track the accrual of default interest separately. Document all GP cure notices and legal correspondence.",
+      "audit_triggers": "Auditors assess the collectibility of the defaulting LP receivable and whether an allowance is required. Legal opinions on the enforceability of default provisions will be reviewed.",
+      "required_documentation": "Capital call notice, LP default notice, LPA default provisions, GP legal counsel opinion, correspondence with defaulting LP, cure period timeline."
+    }
+  },
+  {
+    "slug": "pe-capital-call-non-defaulting-lp-shortfall",
+    "category": "Private Equity & Investment Funds",
+    "title": "LP Default - Non-Defaulting LP Shortfall Funding",
+    "description": "Recording the additional capital call issued to non-defaulting LPs to cover the shortfall created by a defaulting LP, as permitted under the LPA.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "LP Capital Contributions - Non-Defaulting LPs (Additional)", "type": "Equity (+)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "Non-defaulting LPs are called upon to fund the defaulting LP's share pro-rata to their existing commitments. This increases the non-defaulting LPs' funded contributions and reduces their remaining unfunded commitment. The additional call amount is tracked separately for purposes of calculating the defaulting LP's penalty/forfeiture.",
+    "practitioner_notes": {
+      "erp_application": "Issue revised capital call notices to non-defaulting LPs. Update the LP register to reflect increased funded contributions and decreased unfunded commitments for each non-defaulting LP. Cross-reference to the original defaulting LP receivable.",
+      "audit_triggers": "Auditors confirm the shortfall funding is authorized by the LPA, verify the pro-rata allocation to non-defaulting LPs, and assess the impact on the defaulting LP's economic interest.",
+      "required_documentation": "Amended capital call notice, LPA default and shortfall provisions, updated LP commitment schedule, wire confirmations from non-defaulting LPs."
+    }
+  },
+  {
+    "slug": "pe-recycled-capital-reinvestment",
+    "category": "Private Equity & Investment Funds",
+    "title": "Recycled Capital - Reinvestment of Returned Proceeds",
+    "description": "Recording the reinvestment of early exit proceeds or dividend recap proceeds back into new portfolio investments within the investment period, as permitted by the LPA recycling provision.",
+    "entries": [
+      { "account": "Investments at Fair Value - Portfolio Company F (New)", "type": "Asset (+)", "dr": 3000000.00, "cr": 0 },
+      { "account": "Recycled Capital - Reinvested Proceeds", "type": "Equity (Memo)", "dr": 0, "cr": 3000000.00 }
+    ],
+    "explanation": "Many LPAs allow the GP to recycle returned capital (from exits, dividends, or recaps) within the investment period rather than distributing it to LPs. Recycled capital does not count against the fund's investable capital limit, allowing the GP to effectively invest more than the total committed capital. The LPA typically caps recycling at a percentage of committed capital (e.g., 120%).",
+    "practitioner_notes": {
+      "erp_application": "Maintain a recycled capital tracker showing amounts recycled, dates, source transactions, and deployment transactions. This is critical for LP reporting and verifying the fund has not exceeded the LPA's recycling cap.",
+      "audit_triggers": "Auditors recalculate total deployed capital including recycled amounts to ensure the LPA cap is not breached. Management fee calculations may be affected if recycled capital changes the invested capital base.",
+      "required_documentation": "LPA recycling provisions, recycled capital calculation schedule, source exit/recap closing documents, new investment deployment documents."
+    }
+  },
+  {
+    "slug": "pe-broken-deal-costs-expense",
+    "category": "Private Equity & Investment Funds",
+    "title": "Broken Deal Costs - Failed Transaction Expense",
+    "description": "Expensing due diligence, legal, and advisory costs incurred on a potential portfolio investment that did not close (broken deal / aborted transaction).",
+    "entries": [
+      { "account": "Broken Deal Costs Expense", "type": "Expense (+)", "dr": 185000.00, "cr": 0 },
+      { "account": "Accounts Payable - Legal & Advisory (Broken Deal)", "type": "Liability (+)", "dr": 0, "cr": 185000.00 }
+    ],
+    "explanation": "When a potential acquisition falls through, all costs incurred (legal due diligence, financial due diligence, management consulting, travel) must be immediately expensed — they cannot be capitalized since no asset was acquired. The LPA specifies whether broken deal costs are borne by the fund (reducing LP NAV) or by the GP management company.",
+    "practitioner_notes": {
+      "erp_application": "Maintain a deal pipeline project code for each potential investment. If the deal closes, accumulated costs are capitalized to the investment. If broken, costs are immediately expensed and the project code is closed. Some GPs recover broken deal costs from deal fees on future successful transactions.",
+      "audit_triggers": "Auditors verify that costs allocated to the fund versus the GP management company are consistent with the LPA. Any cost-sharing arrangements between funds must be clearly documented.",
+      "required_documentation": "LOI or NDA showing the transaction was pursued, invoices for DD costs, board/IC memo documenting the decision to abort the transaction, LPA broken deal cost provisions."
+    }
+  },
+  {
+    "slug": "pe-fund-expense-audit-legal-admin",
+    "category": "Private Equity & Investment Funds",
+    "title": "Fund Operating Expenses - Audit, Legal & Fund Administration",
+    "description": "Recording recurring fund-level operating expenses including annual audit fees, fund counsel legal fees, fund administrator fees, and D&O insurance premiums.",
+    "entries": [
+      { "account": "Audit Fee Expense", "type": "Expense (+)", "dr": 120000.00, "cr": 0 },
+      { "account": "Legal Fee Expense - Fund Counsel", "type": "Expense (+)", "dr": 45000.00, "cr": 0 },
+      { "account": "Fund Administration Fee Expense", "type": "Expense (+)", "dr": 60000.00, "cr": 0 },
+      { "account": "D&O Insurance Premium Expense", "type": "Expense (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Accounts Payable - Fund Expenses", "type": "Liability (+)", "dr": 0, "cr": 250000.00 }
+    ],
+    "explanation": "Fund-level expenses (distinct from portfolio company expenses) reduce LP NAV and are typically outlined as fund-borne costs in the LPA. These are separate from the management fee and must be disclosed in LP quarterly reports. GP overhead costs (salaries, office rent) are NOT fund expenses — they are covered by the management fee.",
+    "practitioner_notes": {
+      "erp_application": "Create a fund expense budget at the start of each year. Accrue monthly estimates and true-up quarterly when invoices are received. Allocate all expenses to LP capital accounts in the quarterly NAV calculation.",
+      "audit_triggers": "Auditors verify that fund expenses are LPA-permitted fund costs and not GP overhead misallocated to the fund. Related-party transactions (e.g., fund administrator affiliated with the GP) require enhanced disclosure.",
+      "required_documentation": "LPA permitted fund expense list, invoices from service providers, D&O insurance policy, fund administrator agreement, engagement letters."
+    }
+  },
+  {
+    "slug": "pe-preferred-return-accrual",
+    "category": "Private Equity & Investment Funds",
+    "title": "Preferred Return (Hurdle Rate) - Quarterly Accrual",
+    "description": "Accruing the LP preferred return (typically 8% per annum) on contributed and uncalled capital for purposes of tracking the hurdle threshold that must be cleared before the GP earns carried interest.",
+    "entries": [
+      { "account": "Preferred Return Accrual - LP Accounts (Memo/Sub-ledger)", "type": "Equity Memo (+)", "dr": 400000.00, "cr": 0 },
+      { "account": "Preferred Return Payable to LPs (Waterfall Tracker)", "type": "Equity Memo (+)", "dr": 0, "cr": 400000.00 }
+    ],
+    "explanation": "The preferred return (or 'hurdle rate') is not a cash payment obligation — it is an economic threshold that LPs must receive before the GP participates in profits via carried interest. The accrual is maintained in a sub-ledger waterfall tracker and is used in the distribution waterfall calculation. It compounds annually (or as specified in the LPA) on each LP's contributed capital from the date each capital call was funded.",
+    "practitioner_notes": {
+      "erp_application": "Maintain the preferred return calculation in the waterfall model, not as a balance sheet liability. Track independently for each LP and each capital call tranche (since different tranches have different funding dates and thus different accrual start dates). Compound per LPA specifications (annually, daily, or simple interest).",
+      "audit_triggers": "Auditors recompute the preferred return accrual from scratch, verifying the starting date of each tranche, the compounding method, and the rate. Errors in preferred return calculations are among the most common PE fund audit findings.",
+      "required_documentation": "LPA preferred return provisions, funded capital call history by LP with dates, preferred return calculation model, waterfall tracker."
+    }
+  },
+  {
+    "slug": "pe-management-fee-step-down-post-investment-period",
+    "category": "Private Equity & Investment Funds",
+    "title": "Management Fee - Step-Down After Investment Period Ends",
+    "description": "Recording the reduction in management fee basis when the fund transitions from the investment period (fee on committed capital) to the post-investment period (fee on invested/cost basis of remaining portfolio).",
+    "entries": [
+      { "account": "Management Fee Expense (Post-Investment Period Rate)", "type": "Expense (+)", "dr": 280000.00, "cr": 0 },
+      { "account": "Management Fee Payable - GP", "type": "Liability (+)", "dr": 0, "cr": 280000.00 }
+    ],
+    "explanation": "The LPA typically provides for a step-down in the management fee basis after the investment period ends (usually Year 5–6 of a 10-year fund). During the investment period, fees are typically 2% of committed capital. Post-investment period, fees step down to 1.5%–2% of invested capital (cost basis of remaining portfolio), which declines as investments are exited. This entry reflects the lower fee under the new basis.",
+    "practitioner_notes": {
+      "erp_application": "Update the management fee calculation parameters in the fund accounting system at the end of the investment period. The fee basis now references the net invested capital schedule (cost basis minus write-downs and realized exits). Set up automated recalculation quarterly as the portfolio changes.",
+      "audit_triggers": "Auditors verify the investment period end date (per LPA) and confirm the fee basis has correctly shifted. Overcharging management fees post-investment period is a common SEC enforcement area for PE GPs.",
+      "required_documentation": "LPA investment period definition and fee step-down provisions, investment period end date determination memo, invested capital schedule (cost basis of remaining portfolio), fee calculation workbook."
+    }
+  },
+  {
+    "slug": "pe-management-fee-waiver-gp-coinvest",
+    "category": "Private Equity & Investment Funds",
+    "title": "Management Fee Waiver - GP Co-Investment Reduction",
+    "description": "Recording the reduction of management fees when the GP elects to waive fees in exchange for a profits interest or co-investment right, a common tax-efficient structuring technique.",
+    "entries": [
+      { "account": "Management Fee Expense (Gross)", "type": "Expense (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Management Fee Waiver - GP Profits Interest", "type": "Expense (-)", "dr": 0, "cr": 150000.00 },
+      { "account": "Management Fee Payable - GP (Net)", "type": "Liability (+)", "dr": 0, "cr": 350000.00 }
+    ],
+    "explanation": "A management fee waiver allows the GP to forgo ordinary income (management fees) in exchange for an increased profits interest in the fund. This is a tax planning technique — the GP substitutes ordinary income (fully taxable) for capital gains treatment on the waived amount (taxed at lower capital gains rates). The waiver must be structured as a 'disguised sale' safe harbor to avoid IRS recharacterization.",
+    "practitioner_notes": {
+      "erp_application": "Document the fee waiver election in writing prior to the period to which it relates (IRS requirement). The waived amount is tracked as an additional profits interest allocation in the fund's tax capital accounts. Coordinate with the fund's tax advisors on proper K-1 reporting.",
+      "audit_triggers": "The IRS has scrutinized management fee waiver structures heavily. Auditors will confirm the waiver was properly elected in advance, the arrangement meets the requirements of IRS Notice 2005-43, and K-1 allocations are consistent with the waiver.",
+      "required_documentation": "Fee waiver election document (signed prior to period), LPA amendment or side letter authorizing the waiver, tax advisor opinion, K-1 allocation schedule."
+    }
+  },
+  {
+    "slug": "pe-subscription-credit-facility-repayment",
+    "category": "Private Equity & Investment Funds",
+    "title": "Subscription Credit Facility - Repayment via LP Capital Call",
+    "description": "Recording the repayment of the subscription line of credit using proceeds from the LP capital call that was issued to fund the facility repayment.",
+    "entries": [
+      { "account": "Subscription Credit Facility Payable", "type": "Liability (-)", "dr": 6000000.00, "cr": 0 },
+      { "account": "Interest Expense - Subscription Credit Facility", "type": "Expense (+)", "dr": 18000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 6018000.00 }
+    ],
+    "explanation": "When the capital call proceeds are received from LPs, the subscription line is repaid in full including accrued interest. The interest cost is typically allocated to LP capital accounts as a fund expense. The net effect is that LPs fund the investment at a slight delay with a small interest cost, but the GP benefits from faster deal execution.",
+    "practitioner_notes": {
+      "erp_application": "Track the interest accrual on the facility daily based on the outstanding balance and the credit agreement rate (typically SOFR + spread). Ensure the interest expense is included in the fund's expense ratio disclosure to LPs.",
+      "audit_triggers": "Auditors confirm the facility balance per the bank statement, recompute interest expense, and verify the facility is within the borrowing base limits (typically 25%–50% of unfunded LP commitments as collateral).",
+      "required_documentation": "Bank credit agreement, borrowing base certificate, wire transfer for repayment, interest accrual calculation, LP capital call notice (matching repayment amount)."
+    }
+  },
+  {
+    "slug": "pe-nav-credit-facility-drawdown",
+    "category": "Private Equity & Investment Funds",
+    "title": "NAV-Based Credit Facility - Drawdown for LP Liquidity",
+    "description": "Recording a drawdown on a NAV-based credit facility (secured against the fair value of the fund's portfolio rather than unfunded LP commitments) used to provide LP liquidity or fund follow-on investments in a mature fund.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 10000000.00, "cr": 0 },
+      { "account": "NAV Credit Facility Payable - Senior Lender", "type": "Liability (+)", "dr": 0, "cr": 10000000.00 }
+    ],
+    "explanation": "NAV facilities are used by mature PE funds (typically post-investment period) where unfunded LP commitments are exhausted. The facility is secured by the fund's portfolio investment fair values (typically lenders advance 15%–25% of portfolio NAV). These are more expensive than subscription lines and are used for follow-on investments, LP liquidity needs, or bridging to exits.",
+    "practitioner_notes": {
+      "erp_application": "The NAV facility is a senior liability of the fund that takes priority over LP interests in a wind-down scenario. Ensure the facility is clearly disclosed in LP quarterly reports. The lender will require quarterly portfolio NAV certification and may include NAV-based maintenance covenants.",
+      "audit_triggers": "Auditors assess the fair value of the pledged portfolio assets supporting the facility. Covenant compliance certificates must be tested. The facility significantly changes the fund's risk profile and LP distributions waterfall.",
+      "required_documentation": "NAV credit agreement, portfolio NAV certification letter, lender borrowing base calculation, LP advisory committee consent, quarterly covenant compliance certificate."
+    }
+  },
+  {
+    "slug": "pe-management-company-revenue-fee-income",
+    "category": "Private Equity & Investment Funds",
+    "title": "GP Management Company - Management Fee Revenue Recognition",
+    "description": "Recording management fee revenue at the GP management company level (separate entity from the fund), when the management company receives the net management fee from the fund it manages.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 300000.00, "cr": 0 },
+      { "account": "Management Fee Revenue", "type": "Revenue (+)", "dr": 0, "cr": 300000.00 }
+    ],
+    "explanation": "This entry is recorded in the GP management company's books (e.g., ABC Capital Management LLC), not in the fund's books. The management company recognizes the net management fee (after offsets) as revenue under ASC 606. This revenue is used to pay GP staff salaries, office rent, and other overhead. The management company and the fund are separate legal entities with separate financial statements.",
+    "practitioner_notes": {
+      "erp_application": "Maintain completely separate accounting systems or entities for the GP management company and each fund. Intercompany transactions must be properly eliminated if consolidated reporting is prepared. Management company revenues are subject to ordinary income tax rates.",
+      "audit_triggers": "Auditors of the management company (if separately audited) verify fee revenue agrees to the fund's expense records. Related-party disclosures are required. Any expenses of the management company improperly pushed to the fund will be identified.",
+      "required_documentation": "Management agreement between the fund and the GP management company, fee calculation schedule, wire transfer from fund to management company."
+    }
+  },
+  
+  {
+    "slug": "pe-coinvestment-lp-direct-participation",
+    "category": "Private Equity & Investment Funds",
+    "title": "Co-Investment - LP Direct Participation Alongside Fund",
+    "description": "Recording the fund's investment in a portfolio company where LPs are also investing directly alongside the fund (co-investment), and the fund books only its own allocated portion.",
+    "entries": [
+      { "account": "Investments at Fair Value - Portfolio Company G (Fund Share)", "type": "Asset (+)", "dr": 20000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 20000000.00 }
+    ],
+    "explanation": "In a co-investment, the fund invests its allocated portion while select LPs invest additional capital directly into the same portfolio company via a separate co-investment vehicle (typically at reduced or zero management fee and carry). The fund books only its own share — the LP co-investment vehicle is a separate entity not consolidated into the fund's financial statements.",
+    "practitioner_notes": {
+      "erp_application": "Set up the co-investment vehicle as a separate fund/entity in the portfolio accounting system. The fund and co-invest vehicle hold securities in the same portfolio company but their financials are reported separately. Ensure pro-rata fair value marks are applied consistently across both vehicles.",
+      "audit_triggers": "Auditors verify the allocation of the investment between the fund and co-invest vehicle is fair and consistent with the LPA co-investment rights provisions. Any preferential allocation to favored LPs requires disclosure.",
+      "required_documentation": "Co-investment side letter or LPA provisions, allocation memo from investment committee, co-invest vehicle subscription documents, portfolio company cap table showing fund vs. co-invest vehicle ownership."
+    }
+  },
+  {
+    "slug": "pe-coinvestment-vehicle-setup-no-fee-no-carry",
+    "category": "Private Equity & Investment Funds",
+    "title": "Co-Investment Vehicle - No Fee / No Carry Structure Setup",
+    "description": "Recording the initial LP capital contribution into a standalone co-investment special purpose vehicle (SPV) that charges zero management fee and zero carried interest, investing alongside the main fund.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 5000000.00, "cr": 0 },
+      { "account": "LP Capital Contributions - Co-Invest Vehicle", "type": "Equity (+)", "dr": 0, "cr": 5000000.00 }
+    ],
+    "explanation": "Co-invest SPVs are single-purpose entities formed for one specific investment. LPs who receive co-invest rights (typically larger LPs as a preferred economic concession) contribute capital directly. Since no ongoing management is required, these vehicles charge no management fee or carry, providing LPs with lower-cost exposure to specific deals.",
+    "practitioner_notes": {
+      "erp_application": "Each co-invest SPV requires its own set of books and annual financial statements. GP carries administrative burden for these vehicles. Ensure proper state registration of each SPV (typically Delaware LLC or LP).",
+      "audit_triggers": "If audited, the SPV audit is straightforward — single investment, single set of LPs. The main risk is valuation consistency between the SPV and the main fund holding the same portfolio company.",
+      "required_documentation": "SPV operating agreement, LP subscription documents, wire transfer confirmation, investment committee allocation memo."
+    }
+  },
+  {
+    "slug": "pe-side-pocket-illiquid-asset-segregation",
+    "category": "Private Equity & Investment Funds",
+    "title": "Side Pocket - Segregation of Illiquid / Special Asset",
+    "description": "Recording the transfer of a portfolio investment into a side pocket structure to ring-fence an illiquid or hard-to-value asset from the main fund's liquid portfolio, preventing unfair dilution for incoming and exiting investors.",
+    "entries": [
+      { "account": "Side Pocket Investment - Portfolio Company H", "type": "Asset (+)", "dr": 2500000.00, "cr": 0 },
+      { "account": "Investments at Fair Value - Main Portfolio", "type": "Asset (-)", "dr": 0, "cr": 2500000.00 }
+    ],
+    "explanation": "Side pockets are more common in hedge funds but used in some PE structures when a specific investment becomes illiquid, enters distress, or involves a restructuring that makes fair valuation difficult. The asset is moved to a separate sub-account (side pocket) with restricted liquidity. Only LPs invested at the time of the side pocket designation participate in that investment's economics.",
+    "practitioner_notes": {
+      "erp_application": "Create a separate series or sub-ledger for the side pocket in the fund accounting system. Existing LP interests are bifurcated into main fund interests and side pocket interests. New investors do not participate in the side pocket. All future income, expenses, and gains/losses are tracked separately.",
+      "audit_triggers": "Auditors scrutinize the valuation of side pocket assets heavily (by definition they are hard to value). The fairness of the side pocket designation (which LPs are included/excluded) and the methodology used for valuation require detailed documentation.",
+      "required_documentation": "Investment committee memo authorizing side pocket designation, LPA side pocket provisions or investor consent, valuation policy for the specific asset, LP notification of side pocket creation."
+    }
+  },
+  {
+    "slug": "pe-secondary-lp-interest-transfer-seller",
+    "category": "Private Equity & Investment Funds",
+    "title": "LP Interest Transfer (Secondary) - Seller's Accounting",
+    "description": "Recording the sale of an LP's interest in the fund to a secondary buyer, from the perspective of the fund recognizing the transfer and updating the LP register.",
+    "entries": [
+      { "account": "LP Capital Account - Transferring LP (Derecognition)", "type": "Equity (-)", "dr": 8000000.00, "cr": 0 },
+      { "account": "LP Capital Account - Secondary Buyer (Recognition)", "type": "Equity (+)", "dr": 0, "cr": 8000000.00 }
+    ],
+    "explanation": "When an LP sells its fund interest in the secondary market, the fund itself does not receive or pay cash — it simply updates its LP register. The fund records the derecognition of the seller's capital account and the recognition of the buyer's capital account at the same carrying value. Any gain or loss is realized by the selling LP on their own books, not in the fund.",
+    "practitioner_notes": {
+      "erp_application": "The fund's administrator processes the transfer upon receipt of GP consent (required in most LPAs), executed transfer agreement, and AML/KYC completion for the incoming LP. The unfunded commitment transfers to the new LP at the same amount.",
+      "audit_triggers": "Auditors verify GP consent was obtained per the LPA, the transfer was properly documented, and the incoming LP completed all AML/KYC requirements. The unfunded commitment transfer must be confirmed.",
+      "required_documentation": "LP transfer agreement, GP consent letter, AML/KYC documentation for incoming LP, updated LP register, unfunded commitment transfer confirmation."
+    }
+  },
+  {
+    "slug": "pe-secondary-gp-led-restructuring",
+    "category": "Private Equity & Investment Funds",
+    "title": "GP-Led Secondary Restructuring - Continuation Fund",
+    "description": "Recording the transfer of select portfolio assets from an existing fund into a new continuation vehicle (GP-led secondary), where existing LPs can cash out or roll into the new vehicle.",
+    "entries": [
+      { "account": "Investment in Continuation Vehicle - Portfolio Co. I", "type": "Asset (+)", "dr": 25000000.00, "cr": 0 },
+      { "account": "Investments at Fair Value - Portfolio Co. I (Old Fund)", "type": "Asset (-)", "dr": 0, "cr": 25000000.00 }
+    ],
+    "explanation": "GP-led secondaries allow a GP to extend the life of high-performing assets beyond the main fund's term. The asset is transferred at independently determined fair value to a new continuation vehicle. Existing LPs can elect to receive cash (paid by secondary investors buying into the continuation vehicle) or roll their interest into the new vehicle. A fairness opinion from an independent advisor is market standard.",
+    "practitioner_notes": {
+      "erp_application": "The continuation vehicle is a new legal entity requiring its own fund setup, including GP entity, LPA, and fund accounting system. The old fund derecognizes the asset at fair value (which should match the consideration received from the continuation vehicle). No gain/loss arises if transferred at NAV.",
+      "audit_triggers": "GP-led secondaries are heavily scrutinized for conflicts of interest. Auditors (and LPs/LPAC) will review the independent valuation/fairness opinion, the process for ensuring LPs received fair value, and SEC compliance (these transactions are now subject to enhanced SEC disclosure requirements).",
+      "required_documentation": "Independent fairness opinion, LPAC consent, LP election forms (cash out vs. roll), continuation vehicle LPA, transfer agreement at agreed valuation, SEC Form ADV disclosures."
+    }
+  },
+  {
+    "slug": "pe-portfolio-debt-investment-unitranche",
+    "category": "Private Equity & Investment Funds",
+    "title": "Direct Lending - Unitranche Loan Investment (BDC / Credit Fund)",
+    "description": "Recording the origination of a unitranche senior secured loan to a middle-market portfolio company by a credit-focused PE fund or Business Development Company (BDC).",
+    "entries": [
+      { "account": "Loan Investment - Unitranche Senior Secured (Portfolio Co. J)", "type": "Asset (+)", "dr": 12000000.00, "cr": 0 },
+      { "account": "Deferred Loan Origination Fees (OID)", "type": "Asset (-) / Contra", "dr": 0, "cr": 240000.00 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 11760000.00 }
+    ],
+    "explanation": "Direct lending funds originate secured loans to portfolio companies. The loan is recorded at face value net of any original issue discount (OID) or upfront fees paid. OID is amortized over the loan term using the effective interest method, increasing the loan's carrying value toward par and recognizing additional interest income. Under ASC 946, BDCs and credit funds carry loans at fair value each period.",
+    "practitioner_notes": {
+      "erp_application": "Set up each loan as a separate security position with amortization schedules for OID and fees. Track the effective interest rate, payment schedule, covenants, and PIK toggle provisions. Fair value marks will deviate from amortized cost if credit spreads change.",
+      "audit_triggers": "Auditors validate the loan terms against the executed credit agreement, verify OID amortization methodology, and assess the fair value measurement (particularly for Level 3 illiquid loans). Non-accrual policy must be documented and consistently applied.",
+      "required_documentation": "Executed credit agreement, promissory note, OID/fee schedule, effective interest rate calculation, lien search confirmation, portfolio company financial statements."
+    }
+  },
+  {
+    "slug": "pe-pik-interest-income-accrual",
+    "category": "Private Equity & Investment Funds",
+    "title": "PIK Interest - Payment-in-Kind Interest Income Accrual",
+    "description": "Accruing PIK (Payment-in-Kind) interest on a portfolio company loan where interest is added to the principal balance rather than paid in cash, increasing the loan's face amount.",
+    "entries": [
+      { "account": "Loan Investment - PIK Interest Capitalized (Portfolio Co. K)", "type": "Asset (+)", "dr": 90000.00, "cr": 0 },
+      { "account": "PIK Interest Income", "type": "Income (+)", "dr": 0, "cr": 90000.00 }
+    ],
+    "explanation": "PIK loans allow cash-constrained borrowers to accrue interest rather than pay it currently. The interest compounds by increasing the loan principal. For the fund, PIK interest is recognized as income even though no cash is received. This creates a non-cash income component that must be disclosed separately to LPs, as it inflates net income without corresponding cash flows available for distribution.",
+    "practitioner_notes": {
+      "erp_application": "Track PIK principal separately from cash-pay principal in the loan ledger. PIK interest accruals increase the cost basis of the loan. When the loan is repaid or sold, the full PIK principal plus cash principal is received. Fair value marks must reflect the full PIK-accreted principal.",
+      "audit_triggers": "Auditors verify PIK elections (some loans have toggle provisions between cash and PIK) are documented per the credit agreement. Non-cash income must be clearly labeled in the financial statements and LP reports.",
+      "required_documentation": "Credit agreement PIK provisions, PIK election notices, PIK interest calculation schedule, amortization table showing PIK accreted principal."
+    }
+  },
+  {
+    "slug": "pe-mezzanine-investment-warrant-coverage",
+    "category": "Private Equity & Investment Funds",
+    "title": "Mezzanine Debt Investment - Warrant Coverage Bifurcation",
+    "description": "Recording a mezzanine loan investment where the fund receives equity warrants as additional compensation (kicker), requiring bifurcation of the proceeds between the debt and warrant components.",
+    "entries": [
+      { "account": "Mezzanine Loan Investment - Portfolio Co. L", "type": "Asset (+)", "dr": 7500000.00, "cr": 0 },
+      { "account": "Warrant Investment - Portfolio Co. L (Equity Kicker)", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 8000000.00 }
+    ],
+    "explanation": "Mezzanine loans typically include warrant coverage (the right to purchase equity in the portfolio company) as compensation for the higher risk/junior position. The total investment proceeds are bifurcated between the loan (fair value at date of investment) and the warrant (residual value). The warrant is recorded as a separate equity investment and marked to fair value each period independently.",
+    "practitioner_notes": {
+      "erp_application": "Maintain the loan and warrant as two separate positions in the portfolio system, even if issued together. The loan OID created by the warrant bifurcation is amortized into interest income over the loan term using the effective interest method. The warrant is revalued using Black-Scholes or other option pricing models.",
+      "audit_triggers": "Auditors challenge the bifurcation methodology — particularly the fair value assigned to the warrants at origination. If the warrant value is understated, the effective yield on the loan is understated. Option pricing model inputs (volatility, risk-free rate) are subject to scrutiny.",
+      "required_documentation": "Credit agreement with warrant coverage terms, warrant agreement, bifurcation valuation model, effective interest rate calculation including OID from warrant bifurcation."
+    }
+  },
+  {
+    "slug": "pe-preferred-equity-investment-accrued-dividends",
+    "category": "Private Equity & Investment Funds",
+    "title": "Preferred Equity Investment - Accrued PIK Dividends",
+    "description": "Recording the quarterly accrual of cumulative PIK dividends on a preferred equity investment in a portfolio company, increasing the liquidation preference and recorded investment value.",
+    "entries": [
+      { "account": "Preferred Equity Investment - Portfolio Co. M (PIK Dividend)", "type": "Asset (+)", "dr": 125000.00, "cr": 0 },
+      { "account": "Dividend Income - Preferred (PIK / Non-Cash)", "type": "Income (+)", "dr": 0, "cr": 125000.00 }
+    ],
+    "explanation": "Cumulative preferred equity typically accrues dividends at a fixed rate (e.g., 8%–12% p.a.) that compounds on the liquidation preference if not paid in cash (PIK). This increases the fund's carrying value of the preferred investment and creates non-cash income. Upon exit, the full accreted liquidation preference (original investment plus cumulative PIK dividends) is received before common equity participates.",
+    "practitioner_notes": {
+      "erp_application": "Track the liquidation preference separately from the original investment cost. The liquidation preference schedule should be maintained and updated each quarter. Fair value of the preferred is based on the higher of liquidation preference value or conversion/exit value.",
+      "audit_triggers": "Auditors verify the dividend accrual rate and compounding frequency against the preferred stock certificate or investment agreement. The fair value of preferred equity (particularly in stressed scenarios where the portfolio company may not have sufficient equity value to cover the liquidation preference) requires careful assessment.",
+      "required_documentation": "Preferred stock certificate or investment agreement, dividend accrual calculation schedule, liquidation preference waterfall analysis, fair value assessment memo."
+    }
+  },
+  {
+    "slug": "pe-dividend-recapitalization-proceeds",
+    "category": "Private Equity & Investment Funds",
+    "title": "Dividend Recapitalization - Proceeds Received by Fund",
+    "description": "Recording the receipt of a special dividend from a portfolio company funded by new third-party debt at the portfolio company level (dividend recapitalization), returning capital to the fund without a full exit.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 8000000.00, "cr": 0 },
+      { "account": "Investments at Fair Value - Portfolio Co. N (Cost Basis Reduction)", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 },
+      { "account": "Net Realized Gain - Dividend Recap", "type": "Income (+)", "dr": 0, "cr": 3000000.00 }
+    ],
+    "explanation": "A dividend recap allows the fund to receive cash from a portfolio company by having the company borrow debt and pay a special dividend. For the fund, this is accounted for as a return of capital (up to cost basis) with any excess recognized as realized gain. The fund retains its equity stake post-recap. The portfolio company's fair value post-recap is lower due to the new debt on its balance sheet.",
+    "practitioner_notes": {
+      "erp_application": "Update the cost basis of the investment to reflect the return of capital. The subsequent fair value mark must reflect the portfolio company's post-recap balance sheet (higher leverage = lower equity value, partially offset by cash received). Track the original cost basis for DPI (Distributions to Paid-In) calculation.",
+      "audit_triggers": "Auditors assess the classification of recap proceeds (return of capital vs. dividend income). The post-recap fair value mark is scrutinized to ensure the increased leverage and interest burden are properly reflected. Tax withholding may apply if the portfolio company is structured internationally.",
+      "required_documentation": "Portfolio company board resolution declaring special dividend, new credit agreement for the portfolio company debt, wire transfer confirmation, post-recap valuation analysis, cost basis schedule."
+    }
+  },
+  
+  {
+    "slug": "pe-blocker-corporation-setup-taxable-lps",
+    "category": "Private Equity & Investment Funds",
+    "title": "Blocker Corporation - Setup for Tax-Exempt and Foreign LPs",
+    "description": "Recording the capitalization of a blocker corporation (C-Corp) interposed between the fund and a portfolio company to shield tax-exempt LPs (pension funds, endowments) and foreign LPs from UBTI and FDAP income.",
+    "entries": [
+      { "account": "Investment in Blocker Corporation - Portfolio Co. O", "type": "Asset (+)", "dr": 10000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 10000000.00 }
+    ],
+    "explanation": "Tax-exempt LPs (universities, pension funds) are subject to UBTI (Unrelated Business Taxable Income) if they invest directly in operating businesses through pass-through entities. Foreign LPs face FDAP withholding and ECI (Effectively Connected Income) risks. A blocker C-Corp absorbs the UBTI/ECI at the corporate level, pays corporate tax, and pays dividends to the fund — converting operating income into dividend income for the LP, which is not UBTI.",
+    "practitioner_notes": {
+      "erp_application": "The blocker corporation is a separate legal entity with its own tax return (Form 1120) and books. The fund's investment in the blocker is a single equity investment line item. The blocker's own portfolio investment is on the blocker's books. Consolidation into the fund's financials depends on whether the fund is deemed to control the blocker.",
+      "audit_triggers": "Auditors assess the blocker's tax position — corporate tax accruals at the blocker level reduce the net return to LPs that use it. The economic cost of the blocker (corporate taxes) vs. the benefit (UBTI protection) must be documented. IRS scrutiny of blocker structures is significant.",
+      "required_documentation": "Blocker corporation formation documents (Delaware C-Corp), corporate resolution, subscription of shares, tax advisor memo on UBTI/FDAP analysis, blocker's separate financial statements and tax returns."
+    }
+  },
+  {
+    "slug": "pe-ubti-blocker-corporate-tax-accrual",
+    "category": "Private Equity & Investment Funds",
+    "title": "Blocker Corporation - Corporate Income Tax Accrual",
+    "description": "Recording the corporate income tax accrual at the blocker corporation level on operating income (interest, dividends, capital gains) earned from the portfolio investment held by the blocker.",
+    "entries": [
+      { "account": "Income Tax Expense - Blocker Corporation", "type": "Expense (+)", "dr": 700000.00, "cr": 0 },
+      { "account": "Income Taxes Payable - Federal & State", "type": "Liability (+)", "dr": 0, "cr": 700000.00 }
+    ],
+    "explanation": "The blocker C-Corp is a taxable entity and pays federal corporate income tax (21%) plus applicable state taxes on its net income. This tax drag reduces the net return passed back to the fund and ultimately to LPs who invested through the blocker. The trade-off is the elimination of UBTI risk for tax-exempt LPs, who are often willing to accept the tax drag as the cost of protection.",
+    "practitioner_notes": {
+      "erp_application": "The blocker files Form 1120 annually. Estimated quarterly tax payments (Form 1120-W) are required to avoid underpayment penalties. The blocker's income and deductions are separate from the fund's K-1 schedule — LPs investing through the blocker receive dividend income, not a K-1.",
+      "audit_triggers": "Auditors review the blocker's tax provision calculation. ASC 740 (income taxes) applies at the blocker level. Uncertain tax positions (UTPs) must be assessed. State tax nexus analysis is required if the blocker has operations or portfolio investments in multiple states.",
+      "required_documentation": "Blocker Form 1120 (tax return), tax provision workpapers, estimated tax payment receipts, state nexus analysis, ASC 740 uncertain tax position documentation."
+    }
+  },
+  {
+    "slug": "pe-foreign-lp-withholding-tax-distribution",
+    "category": "Private Equity & Investment Funds",
+    "title": "Foreign LP Withholding Tax - FIRPTA / FDAP Distribution",
+    "description": "Recording the withholding of US federal tax on distributions to foreign LPs under FIRPTA (Foreign Investment in Real Property Tax Act) or FDAP (Fixed, Determinable, Annual, Periodic income) rules.",
+    "entries": [
+      { "account": "LP Capital Account - Foreign LP Distribution", "type": "Equity (-)", "dr": 1000000.00, "cr": 0 },
+      { "account": "Withholding Tax Payable - IRS (Foreign LP)", "type": "Liability (+)", "dr": 0, "cr": 210000.00 },
+      { "account": "Cash & Cash Equivalents (Net Distribution)", "type": "Asset (-)", "dr": 0, "cr": 790000.00 }
+    ],
+    "explanation": "US partnerships (including PE funds) are required to withhold tax on distributions to foreign LPs. For effectively connected income (ECI), withholding is at the highest applicable tax rate (37% for individuals, 21% for corporations). FIRPTA applies to gains from disposition of US real property interests. Tax treaties may reduce the withholding rate. The withheld amount is remitted to the IRS via Form 8813.",
+    "practitioner_notes": {
+      "erp_application": "Track foreign LP withholding positions by LP and by income character (ECI, FDAP, capital gain). The fund must file Form 8805 for each foreign LP and Form 8804 for the partnership as a whole. Withholding certificates (Form W-8BEN-E) from foreign LPs determine the applicable treaty rates.",
+      "audit_triggers": "Auditors verify withholding calculations and tax remittances. Failure to withhold results in the fund being liable for the tax plus penalties. Foreign LP immigration status and treaty eligibility documentation must be current.",
+      "required_documentation": "W-8BEN-E from each foreign LP, withholding calculation by income character, Form 8813 (quarterly remittance), Form 8804 and 8805 (annual filings), tax treaty analysis memo."
+    }
+  },
+  {
+    "slug": "pe-fund-of-funds-investment-underlying",
+    "category": "Private Equity & Investment Funds",
+    "title": "Fund of Funds - Investment in Underlying PE Fund",
+    "description": "Recording an investment made by a fund of funds (FoF) vehicle into an underlying PE fund as a Limited Partner, with look-through treatment for financial reporting.",
+    "entries": [
+      { "account": "Investment in Underlying Fund - XYZ PE Fund III (LP Interest)", "type": "Asset (+)", "dr": 15000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 15000000.00 }
+    ],
+    "explanation": "A fund of funds invests capital commitments into multiple underlying PE funds, providing LP diversification. The FoF records its LP interest in each underlying fund at cost initially, then adjusts to fair value each period based on the underlying fund's NAV (LP's proportionate share of the underlying fund's net assets). Under ASC 946, the practical expedient (NAV as fair value) is typically used for these Level 3 LP interests.",
+    "practitioner_notes": {
+      "erp_application": "Maintain a position record for each underlying fund LP interest. Fair value is updated based on the underlying fund's quarterly NAV reports (with a quarter lag if reports are not timely). The FoF must also track unfunded commitments to underlying funds as contingent obligations.",
+      "audit_triggers": "Auditors assess whether the NAV practical expedient is applicable and whether the underlying funds' NAVs are audited or unaudited. Significant differences between the FoF's NAV reports and the underlying fund's audited financials must be investigated.",
+      "required_documentation": "LP subscription agreement to underlying fund, underlying fund quarterly NAV report, commitment schedule (funded vs. unfunded by underlying fund), fair value assessment workpapers."
+    }
+  },
+  {
+    "slug": "pe-fof-double-fee-layer-disclosure",
+    "category": "Private Equity & Investment Funds",
+    "title": "Fund of Funds - Double Fee Layer Accrual and Disclosure",
+    "description": "Recording the FoF-level management fee and carried interest in addition to the underlying fund fees, representing the 'double fee' layer borne by FoF investors.",
+    "entries": [
+      { "account": "FoF Management Fee Expense (0.5% on NAV)", "type": "Expense (+)", "dr": 125000.00, "cr": 0 },
+      { "account": "Underlying Fund Fees (Embedded in NAV - Memo)", "type": "Expense (Memo)", "dr": 300000.00, "cr": 0 },
+      { "account": "Management Fee Payable - FoF GP", "type": "Liability (+)", "dr": 0, "cr": 125000.00 }
+    ],
+    "explanation": "FoF investors bear two layers of fees: (1) the underlying funds' management fees (typically 1.5%–2%) and carry (20%), embedded in the underlying fund's NAV, and (2) the FoF-level fees (typically 0.5%–1% management fee and 5%–10% carry). The total fee load is a key disclosure requirement. LPs must understand that the FoF fees are in addition to — not instead of — the underlying fund fees.",
+    "practitioner_notes": {
+      "erp_application": "The underlying fund fees are NOT recorded as separate line items in the FoF's books — they are captured in the declining NAV of the LP interests. The FoF only records its own management fee and carry. Disclose the total fee load (both layers) in LP reports and DDQs.",
+      "audit_triggers": "Auditors and investors scrutinize the total fee disclosure. SEC guidance requires FoFs to disclose the full economic cost to investors including embedded underlying fund fees. Undisclosed fee layers are a regulatory risk.",
+      "required_documentation": "Underlying fund fee schedules and LPAs, FoF management agreement, total fee disclosure in offering documents and LP reports, fee load calculation showing both layers."
+    }
+  },
+  {
+    "slug": "pe-distressed-debt-investment-par-discount",
+    "category": "Private Equity & Investment Funds",
+    "title": "Distressed Debt Investment - Purchase at Discount to Par",
+    "description": "Recording the purchase of a distressed portfolio company's debt securities at a significant discount to face value (e.g., 40 cents on the dollar) with intent to either recover par through restructuring or convert to equity.",
+    "entries": [
+      { "account": "Distressed Debt Investment - Portfolio Co. P (Senior Secured)", "type": "Asset (+)", "dr": 4000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 4000000.00 }
+    ],
+    "explanation": "Distressed debt is purchased at a market price well below face value ($10M face at 40 cents = $4M cost). The fund records the investment at actual cost paid (purchase price), not face value. If the fund recovers more than cost (through restructuring, par paydown, or debt-to-equity conversion), the excess is a realized gain. The potential return is the difference between par ($10M) and cost ($4M) = $6M gain.",
+    "practitioner_notes": {
+      "erp_application": "Track face value, cost basis, and fair value as three separate data points for each distressed position. Fair value fluctuates with market prices (if traded) or valuation model outputs. If the fund accumulates enough debt to control the restructuring (fulcrum security), the investment thesis changes significantly.",
+      "audit_triggers": "Auditors assess fair value for distressed debt — these are typically Level 2 or Level 3 instruments. Credit deterioration triggers and non-accrual assessment are key areas. If the fund is converting debt to equity, the accounting for the conversion (gain/loss recognition vs. cost carryover) requires careful analysis.",
+      "required_documentation": "Trade confirmations for debt purchase, face value and CUSIP/security identifier, credit agreement for the underlying debt instrument, restructuring timeline and expected outcomes."
+    }
+  },
+  {
+    "slug": "pe-debt-to-equity-conversion-restructuring",
+    "category": "Private Equity & Investment Funds",
+    "title": "Distressed - Debt-to-Equity Conversion in Restructuring",
+    "description": "Recording the conversion of distressed debt holdings into equity of the reorganized portfolio company pursuant to a Chapter 11 plan of reorganization or out-of-court restructuring.",
+    "entries": [
+      { "account": "Equity Investment - Reorganized Portfolio Co. P (Post-Reorg)", "type": "Asset (+)", "dr": 6500000.00, "cr": 0 },
+      { "account": "Distressed Debt Investment - Portfolio Co. P (Pre-Reorg)", "type": "Asset (-)", "dr": 0, "cr": 4000000.00 },
+      { "account": "Net Realized Gain - Debt-to-Equity Conversion", "type": "Income (+)", "dr": 0, "cr": 2500000.00 }
+    ],
+    "explanation": "When distressed debt converts to equity in a reorganization, the fund derecognizes the debt investment at cost and recognizes the new equity at its initial fair value (determined by the confirmed reorganization plan or independent valuation of the reorganized entity). The difference between the new equity's fair value and the original debt cost is recognized as a realized gain or loss.",
+    "practitioner_notes": {
+      "erp_application": "The new equity position is set up as a fresh investment with a new cost basis equal to its fair value at conversion. All prior unrealized appreciation/depreciation on the debt is reversed and replaced with the realized gain/loss. Tax treatment of the gain may differ from book treatment — consult tax advisors on the specific restructuring mechanics.",
+      "audit_triggers": "Auditors require an independent valuation of the reorganized equity at the conversion date. The fair value determination must be well-supported given the inherent uncertainty of newly reorganized companies. Court-confirmed plan of reorganization is key supporting documentation.",
+      "required_documentation": "Confirmed plan of reorganization (Chapter 11) or restructuring support agreement (out-of-court), new equity issuance documents, independent valuation of reorganized equity, tax advisor memo on gain/loss character."
+    }
+  },
+  {
+    "slug": "pe-full-write-off-portfolio-company",
+    "category": "Private Equity & Investment Funds",
+    "title": "Portfolio Company - Full Write-Off (Total Loss)",
+    "description": "Recording the complete write-off of a portfolio company investment to zero upon bankruptcy filing, liquidation, or determination that the investment has no remaining recoverable value.",
+    "entries": [
+      { "account": "Net Realized Loss on Investments - Write-Off", "type": "Expense (+)", "dr": 5500000.00, "cr": 0 },
+      { "account": "Net Unrealized Depreciation Reversal - Portfolio Co. Q", "type": "Income (+/- Reversal)", "dr": 0, "cr": 1500000.00 },
+      { "account": "Investments at Fair Value - Portfolio Co. Q", "type": "Asset (-)", "dr": 0, "cr": 4000000.00 }
+    ],
+    "explanation": "When a portfolio company is determined to have zero recoverable value, the investment is written off entirely. Previously recorded unrealized depreciation is reversed (offsetting the realized loss) so that the net economic loss to the fund equals the original cost basis. The total realized loss equals the original cost ($5.5M), while the unrealized reversal and the remaining carrying value ($4M) combine to extinguish the asset.",
+    "practitioner_notes": {
+      "erp_application": "Close the position in the portfolio system. The write-off triggers a realized loss that flows into the fund's income statement and reduces LP capital accounts. Inform LPs in the quarterly report of the write-off. The realized loss may be recyclable for tax loss harvesting purposes.",
+      "audit_triggers": "Auditors verify the basis for the write-off determination — specifically whether the write-off event (bankruptcy, liquidation, board decision) has actually occurred and is documented. Early write-offs of struggling but not-yet-bankrupt companies require strong evidence of zero recovery expectation.",
+      "required_documentation": "Bankruptcy filing (if applicable), liquidation notice, board of directors write-off resolution, legal opinion confirming no recovery prospects, GP IC memo documenting the decision."
+    }
+  },
+  {
+    "slug": "pe-currency-hedging-fx-forward-international",
+    "category": "Private Equity & Investment Funds",
+    "title": "Currency Hedging - FX Forward to Hedge EUR-Denominated Investment",
+    "description": "Recording a forward foreign exchange contract entered into by the fund to hedge the USD/EUR currency risk on a European portfolio company investment denominated in Euros.",
+    "entries": [
+      { "account": "FX Forward Contract - Fair Value Asset", "type": "Asset (+)", "dr": 180000.00, "cr": 0 },
+      { "account": "Unrealized Gain on FX Hedge - P&L", "type": "Income (+)", "dr": 0, "cr": 180000.00 }
+    ],
+    "explanation": "When the fund holds a EUR-denominated investment, USD strengthening erodes the USD value of returns. An FX forward contract locks in a future exchange rate, converting the EUR exit proceeds into a known USD amount. Under ASC 815, the forward contract is marked to fair value each period. Most PE funds do not designate the hedge as a formal accounting hedge (ASC 815 cash flow hedge) due to complexity — the mark-to-market goes straight to P&L.",
+    "practitioner_notes": {
+      "erp_application": "Record the forward at cost (zero at inception) and mark to fair value each period using the current forward rate for the remaining contract term. The fair value change goes to P&L. Separately track the foreign currency translation of the underlying EUR investment — the two should partially offset.",
+      "audit_triggers": "Auditors verify the fair value of the forward contract using market data (Bloomberg forward curves). Hedge effectiveness documentation is required if cash flow hedge accounting is applied. Many PE funds avoid formal hedge accounting due to the testing burden.",
+      "required_documentation": "FX forward confirmation (ISDA documentation), ISDA Master Agreement with counterparty bank, forward rate at inception, fair value calculation at period end using current forward rates."
+    }
+  },
+  {
+    "slug": "pe-fx-translation-foreign-subsidiary",
+    "category": "Private Equity & Investment Funds",
+    "title": "Foreign Currency Translation - EUR Investment Remeasurement",
+    "description": "Recording the foreign currency translation adjustment on a EUR-denominated portfolio company investment when converting to the fund's USD functional currency at period end.",
+    "entries": [
+      { "account": "Investments at Fair Value - European Portfolio Co. R (USD)", "type": "Asset (+/-)", "dr": 250000.00, "cr": 0 },
+      { "account": "Net Change in Unrealized Appreciation - FX Component", "type": "Income (+)", "dr": 0, "cr": 250000.00 }
+    ],
+    "explanation": "Investment companies (ASC 946) translate foreign currency investments at the current period-end spot rate rather than historical rates. Both the underlying investment fair value change AND the currency translation effect flow through the income statement (not OCI), unlike non-investment company entities where currency translation goes to OCI. This simplifies the accounting but creates income volatility from FX movements.",
+    "practitioner_notes": {
+      "erp_application": "Maintain the investment's fair value in its local currency (EUR) and translate to USD at each period-end spot rate. The total USD fair value change includes both the EUR fair value change and the FX rate change — both are recorded as unrealized appreciation/depreciation. Disclose FX impact separately in LP reports.",
+      "audit_triggers": "Auditors verify period-end spot rates used for translation (typically WM/Reuters 4pm London fix or Bloomberg). The breakout of performance between investment value change and FX translation should be clearly documented for LP reporting.",
+      "required_documentation": "EUR-denominated investment valuation report, period-end spot rate source, FX translation calculation workpapers, LP report showing local currency vs. USD returns."
+    }
+  },
+  
+  {
+    "slug": "pe-in-kind-distribution-portfolio-stock",
+    "category": "Private Equity & Investment Funds",
+    "title": "In-Kind Distribution - Public Stock Distribution to LPs (Post-IPO)",
+    "description": "Recording the distribution of publicly traded shares (received via IPO lock-up expiration of a portfolio company) directly to LPs in-kind rather than selling and distributing cash.",
+    "entries": [
+      { "account": "LP Capital Accounts - In-Kind Distribution (Fair Value)", "type": "Equity (-)", "dr": 12000000.00, "cr": 0 },
+      { "account": "Net Realized Gain - In-Kind Distribution", "type": "Income (+)", "dr": 0, "cr": 7000000.00 },
+      { "account": "Investments - Public Equity (Portfolio Co. S - Post-IPO)", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 }
+    ],
+    "explanation": "When a portfolio company IPOs, the fund typically receives publicly traded shares subject to a 6-month lock-up. Upon lock-up expiration, the fund may distribute shares in-kind to LPs (who then decide individually when to sell) rather than selling in the market. The distribution is recorded at the fair value of the shares on the distribution date, with realized gain equal to fair value minus cost basis.",
+    "practitioner_notes": {
+      "erp_application": "Process the in-kind distribution through DTCC (for public shares). Each LP receives shares pro-rata. The fund records a realized gain equal to the fair value of shares distributed minus cost basis. LPs receive shares into their brokerage accounts and recognize their own gain/loss on eventual sale.",
+      "audit_triggers": "Auditors verify the fair value used for the in-kind distribution (typically the closing market price on distribution date or VWAP). Lock-up agreement compliance must be confirmed. Rule 144 volume limitations may restrict distribution timing.",
+      "required_documentation": "IPO prospectus and lock-up agreement, share distribution notice to LPs, brokerage transfer confirmations (DTCC DTC transfer), fair value calculation (closing price on distribution date), Form 8949 considerations for tax."
+    }
+  },
+  {
+    "slug": "pe-escrow-holdback-receivable-ma-exit",
+    "category": "Private Equity & Investment Funds",
+    "title": "M&A Exit - Escrow Holdback Receivable (Rep & Warranty)",
+    "description": "Recording the portion of M&A exit proceeds held in escrow pending satisfaction of representations and warranties, recorded as a contingent receivable at estimated fair value.",
+    "entries": [
+      { "account": "Escrow Receivable - Exit Holdback (Portfolio Co. T)", "type": "Asset (+)", "dr": 1500000.00, "cr": 0 },
+      { "account": "Net Realized Gain - Escrow (Estimated Recoverable)", "type": "Income (+)", "dr": 0, "cr": 1500000.00 }
+    ],
+    "explanation": "M&A purchase agreements typically hold back 5%–15% of purchase price in escrow for 12–24 months to cover indemnification claims by the buyer for breach of reps and warranties. The fund records the escrow at estimated fair value (probability-weighted expected recovery). If rep & warranty insurance was purchased, the escrow may be smaller. Subsequent changes in the escrow estimate are marked through P&L.",
+    "practitioner_notes": {
+      "erp_application": "Set up the escrow as a separate receivable in the fund's books. Re-evaluate the estimated recovery at each quarter-end based on status of any buyer claims. Upon release, record cash receipt and true-up any difference between estimated and actual recovery.",
+      "audit_triggers": "Auditors scrutinize the probability of full escrow recovery, particularly if the buyer has indicated indemnification claims. Legal counsel opinion on the merits of any buyer claims is key evidence. The escrow balance significantly affects the fund's reported DPI ratio.",
+      "required_documentation": "Purchase agreement escrow provisions, escrow agent agreement, any buyer claim notices received, legal counsel opinion on claim merits, rep & warranty insurance policy (if applicable)."
+    }
+  },
+  {
+    "slug": "pe-escrow-release-true-up",
+    "category": "Private Equity & Investment Funds",
+    "title": "M&A Exit - Escrow Release (Full or Partial)",
+    "description": "Recording the release of M&A escrow proceeds upon expiration of the rep & warranty period, with recognition of the difference between estimated and actual amounts received.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 1200000.00, "cr": 0 },
+      { "account": "Realized Loss - Escrow True-Down (Buyer Claim Settled)", "type": "Expense (+)", "dr": 300000.00, "cr": 0 },
+      { "account": "Escrow Receivable - Exit Holdback (Portfolio Co. T)", "type": "Asset (-)", "dr": 0, "cr": 1500000.00 }
+    ],
+    "explanation": "Upon escrow release, the fund receives cash (net of any buyer claims settled from the escrow). If the actual release is less than the previously estimated receivable, the shortfall is recognized as a realized loss. If more is received than estimated (buyer withdrew claims), the excess is an additional realized gain.",
+    "practitioner_notes": {
+      "erp_application": "Close out the escrow receivable upon release. True-up the realized gain/loss. Update the DPI calculation with the actual cash received. Distribute the released escrow cash to LPs through the waterfall if the fund is past the investment period.",
+      "audit_triggers": "Auditors verify the escrow release calculation, confirmation from the escrow agent, and settlement documentation for any buyer claims offset against the escrow.",
+      "required_documentation": "Escrow agent release notice, escrow settlement calculation, buyer claim settlement documentation, wire transfer confirmation of release proceeds."
+    }
+  },
+  {
+    "slug": "pe-earnout-payment-received",
+    "category": "Private Equity & Investment Funds",
+    "title": "M&A Exit - Earnout Payment Received (Contingent Consideration)",
+    "description": "Recording the receipt of an earnout payment from the acquirer of a portfolio company, triggered when the portfolio company achieves agreed post-closing performance milestones.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 2000000.00, "cr": 0 },
+      { "account": "Earnout Receivable - Portfolio Co. U (Derecognition)", "type": "Asset (-)", "dr": 0, "cr": 1600000.00 },
+      { "account": "Net Realized Gain - Earnout True-Up", "type": "Income (+)", "dr": 0, "cr": 400000.00 }
+    ],
+    "explanation": "Earnouts are contingent consideration paid by the buyer if the portfolio company achieves specific revenue, EBITDA, or other milestones post-closing. The fund initially records the earnout at estimated fair value (probability-weighted). When actually received, any difference from the estimated fair value is recognized as additional realized gain or loss. Earnouts can extend 2–5 years post-exit.",
+    "practitioner_notes": {
+      "erp_application": "Track earnout milestones and measurement periods in the fund's sub-ledger. Update the fair value estimate each quarter based on portfolio company performance versus target metrics. Coordinate with fund counsel if the acquirer disputes the milestone achievement.",
+      "audit_triggers": "Auditors verify the milestone achievement calculation per the purchase agreement formula. Any disputes with the acquirer regarding earnout computation require disclosure as a contingent liability. The fair value of uncollected earnouts is a key audit estimate.",
+      "required_documentation": "Purchase agreement earnout provisions, milestone measurement calculation, acquirer's earnout notice and payment, any dispute correspondence, fair value assessment of remaining uncollected earnout."
+    }
+  },
+  {
+    "slug": "pe-carried-interest-vehicle-gp-entity",
+    "category": "Private Equity & Investment Funds",
+    "title": "Carried Interest Vehicle - Allocation to GP Carry Pool",
+    "description": "Recording the carried interest allocation to the separate GP carry vehicle (or carry pool) at the fund level, representing the GP's accrued economic entitlement to future profits distributions.",
+    "entries": [
+      { "account": "Carried Interest Allocation - GP Carry Vehicle", "type": "Equity (-)", "dr": 3000000.00, "cr": 0 },
+      { "account": "GP Capital Account / Carry Vehicle Interest", "type": "Equity (+)", "dr": 0, "cr": 3000000.00 }
+    ],
+    "explanation": "The carried interest is typically not held by the GP management company directly but by a separate carry vehicle (e.g., ABC Capital Carry Fund III LP) owned by the deal team members. The fund allocates profits to the carry vehicle based on the waterfall calculation. The carry vehicle then distributes to individual carry holders per the internal carry allocation schedule. This separation provides deal team incentive alignment and estate planning benefits.",
+    "practitioner_notes": {
+      "erp_application": "The fund's LP register includes the carry vehicle as a partner with a specific carry interest (not a capital commitment). The carry vehicle has its own books and tax return. Internal carry allocation schedules (by deal team member) are maintained by the GP management company, not the fund.",
+      "audit_triggers": "Auditors confirm the carry vehicle's economic interest terms match the LPA provisions. The carry vehicle's books are typically reviewed (not fully audited) by the fund auditors to ensure consistency of capital account balances.",
+      "required_documentation": "Carry vehicle partnership agreement, GP carry allocation schedule by individual, LPA carried interest provisions, waterfall calculation supporting the carry allocation."
+    }
+  },
+  {
+    "slug": "pe-gp-commitment-gp-coinvestment-capital",
+    "category": "Private Equity & Investment Funds",
+    "title": "GP Commitment - General Partner's Own Capital Contribution",
+    "description": "Recording the GP's mandatory co-investment (typically 1%–3% of total fund commitments) contributed alongside LP capital to align incentives, known as the GP commitment or 'skin in the game'.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 2000000.00, "cr": 0 },
+      { "account": "GP Capital Account - Committed Capital", "type": "Equity (+)", "dr": 0, "cr": 2000000.00 }
+    ],
+    "explanation": "The GP (or its principals) must contribute a minimum percentage of fund commitments (often 1%–5%) as their own 'skin in the game.' This aligns GP and LP interests. The GP capital is subject to the same call and distribution waterfall as LP capital but typically receives a proportionate share of carried interest (since the GP is also an LP in its own fund). Institutional LPs increasingly require higher GP commitments.",
+    "practitioner_notes": {
+      "erp_application": "The GP capital account is maintained separately from LP capital accounts in the fund's books. GP capital calls are processed on the same schedule as LP capital calls (pro-rata to commitment). The GP's capital is at risk alongside LP capital — losses reduce the GP capital account first in some LPA structures.",
+      "audit_triggers": "Auditors verify the GP has funded its committed percentage by examining wire transfer confirmations and reconciling to the LP register. Under-funding of the GP commitment is a breach of the LPA.",
+      "required_documentation": "LPA GP commitment provisions, GP commitment capital call notices, wire transfer confirmations from GP or its principals, GP capital account statement."
+    }
+  },
+  {
+    "slug": "pe-portfolio-company-add-on-acquisition",
+    "category": "Private Equity & Investment Funds",
+    "title": "Portfolio Company - Follow-On Investment (Add-On Acquisition)",
+    "description": "Recording a follow-on capital contribution to a portfolio company to fund its acquisition of a smaller add-on company (buy-and-build strategy), increasing the fund's cost basis.",
+    "entries": [
+      { "account": "Investments at Fair Value - Portfolio Co. V (Add-On Capital)", "type": "Asset (+)", "dr": 4500000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 4500000.00 }
+    ],
+    "explanation": "In a buy-and-build strategy, the fund makes follow-on equity investments into an existing portfolio company to fund add-on acquisitions. Each follow-on is recorded as a separate cost lot (tranche), increasing the total invested capital. The blended cost basis per share changes with each tranche. Fair value is assessed on the combined platform company including the add-on.",
+    "practitioner_notes": {
+      "erp_application": "Maintain separate cost lots for each equity tranche (initial investment + each add-on). The fair value is assessed on the fully combined platform. Track the multiple on invested capital (MOIC) using the total invested cost across all tranches.",
+      "audit_triggers": "Auditors verify the follow-on investment is authorized by the fund's IC and is within the fund's follow-on investment budget. Valuation of the combined platform post-add-on requires integration synergy assumptions to be documented.",
+      "required_documentation": "Investment committee approval memo for add-on, add-on acquisition closing documents, updated portfolio company cap table, combined platform valuation memo."
+    }
+  },
+  {
+    "slug": "pe-cross-fund-investment-conflicts",
+    "category": "Private Equity & Investment Funds",
+    "title": "Cross-Fund Investment - Co-Investment Between Two Funds (Same GP)",
+    "description": "Recording an investment made jointly by Fund III and Fund IV managed by the same GP in the same portfolio company, requiring careful allocation of investment terms and conflicts of interest documentation.",
+    "entries": [
+      { "account": "Investments at Fair Value - Portfolio Co. W (Fund III Share)", "type": "Asset (+)", "dr": 15000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents - Fund III", "type": "Asset (-)", "dr": 0, "cr": 15000000.00 }
+    ],
+    "explanation": "When a deal is too large for a single fund or when the successor fund's investment period has started, GPs may allocate investments across multiple funds they manage. This creates significant conflicts of interest (each fund's LPs have competing interests). The SEC requires written allocation policies and disclosure to all affected funds' LPACs. Pricing must be identical for both funds entering at the same time.",
+    "practitioner_notes": {
+      "erp_application": "Both Fund III and Fund IV record their respective shares at identical cost per share/unit. Maintain a cross-fund investment register showing all positions where two or more funds managed by the same GP co-invest. Future follow-ons and exit decisions for cross-fund investments require extra LPAC oversight.",
+      "audit_triggers": "Cross-fund investments are a top SEC examination priority for PE GPs. Auditors and SEC examiners review the GP's written allocation policy, LPAC disclosures, and verify identical pricing for both funds. Post-closing adjustments that benefit one fund over another are particularly scrutinized.",
+      "required_documentation": "Written cross-fund investment allocation policy, LPAC disclosure and consent for both funds, identical term sheet/SPA for both funds, allocation memo from IC, Form ADV disclosure."
+    }
+  },
+  {
+    "slug": "pe-bridge-financing-to-portfolio-company",
+    "category": "Private Equity & Investment Funds",
+    "title": "Bridge Financing - Short-Term Loan to Portfolio Company",
+    "description": "Recording a short-term bridge loan extended by the PE fund directly to a portfolio company to cover an immediate capital need (e.g., pending closing of permanent financing or a capital call).",
+    "entries": [
+      { "account": "Bridge Loan Receivable - Portfolio Co. X", "type": "Asset (+)", "dr": 1000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 1000000.00 }
+    ],
+    "explanation": "PE funds occasionally extend short-term bridge loans to portfolio companies pending arrival of permanent capital. These are recorded as loans (not equity investments) and accrue interest at the agreed rate. Bridge loans must be authorized by the LPA (fund-to-portfolio-company loans are a related party transaction) and disclosed to LPs. These loans typically convert to equity or are repaid within 6–12 months.",
+    "practitioner_notes": {
+      "erp_application": "Record bridge loans separately from equity investments in the portfolio accounting system. Accrue interest receivable monthly. Monitor conversion or repayment timelines. If the loan converts to equity, derecognize the loan and recognize equity at the conversion terms.",
+      "audit_triggers": "Fund-to-portfolio-company loans are related party transactions requiring heightened audit scrutiny. Auditors verify LPA authorization, arm's-length interest rates, and that the loan does not create UBTI for tax-exempt LPs (interest income from operating company loans can be UBTI).",
+      "required_documentation": "LPA provision authorizing fund-to-portfolio-company loans, promissory note, board resolution of portfolio company approving the loan, LPAC disclosure, interest accrual schedule."
+    }
+  },
+  {
+    "slug": "pe-lp-distribution-recalled-reinvestment",
+    "category": "Private Equity & Investment Funds",
+    "title": "Distribution Recall - LP Distribution Recalled for Reinvestment",
+    "description": "Recording the recall of a previously distributed amount from LPs to fund a new investment, as permitted by the LPA's distribution recall provision (typically limited to return of capital distributions only).",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 3000000.00, "cr": 0 },
+      { "account": "LP Capital Contributions - Recalled Distribution", "type": "Equity (+)", "dr": 0, "cr": 3000000.00 }
+    ],
+    "explanation": "Some LPAs permit the GP to recall prior distributions (typically limited to return of capital, not profit distributions) within the investment period to fund new investments or cover organizational expenses. This is distinct from a new capital call on unfunded commitments — it requires LPs to return cash they have already received. Recall provisions are controversial with LPs and must be clearly specified in the LPA.",
+    "practitioner_notes": {
+      "erp_application": "Issue recall notices to each LP specifying the amount, the basis (e.g., return of capital from prior distribution), and the deadline. Update each LP's capital account to reflect the re-contribution. The recalled amount typically reduces the LP's remaining unfunded commitment.",
+      "audit_triggers": "Auditors verify the LPA recall provision authorizes the specific recall. The notice must comply with LPA timing requirements. Tracking recalled amounts and ensuring they are within LPA caps requires detailed records.",
+      "required_documentation": "LPA distribution recall provision, recall notice issued to LPs, wire transfer confirmations from LPs, updated LP capital account statements showing re-contribution, IC approval for reinvestment."
+    }
+  },
+  
+  {
+    "slug": "pe-nav-calculation-quarterly-lp-statement",
+    "category": "Private Equity & Investment Funds",
+    "title": "NAV Calculation - Quarterly LP Capital Account Statement",
+    "description": "Recording all components of the quarterly NAV calculation that flows into each LP's capital account statement, including investment fair value changes, income, expenses, and distributions.",
+    "entries": [
+      { "account": "Investments at Fair Value (Net Change)", "type": "Asset (+/-)", "dr": 2200000.00, "cr": 0 },
+      { "account": "Net Realized Gain (Exits)", "type": "Income (+)", "dr": 0, "cr": 800000.00 },
+      { "account": "Net Unrealized Appreciation (Marks)", "type": "Income (+)", "dr": 0, "cr": 1400000.00 },
+      { "account": "Fund Expenses (Audit, Legal, Admin)", "type": "Expense (+)", "dr": 85000.00, "cr": 0 },
+      { "account": "Management Fee Expense (Net of Offsets)", "type": "Expense (+)", "dr": 375000.00, "cr": 0 },
+      { "account": "LP Capital Accounts (Net NAV Change)", "type": "Equity (+)", "dr": 0, "cr": 1740000.00 }
+    ],
+    "explanation": "The quarterly NAV calculation aggregates all income (realized gains, unrealized marks, interest, dividends), less all expenses (management fees, fund expenses), to arrive at the net change in fund NAV. This net change is allocated to LP capital accounts pro-rata to their ownership percentage. The LP's ending capital account balance equals prior balance + contributions - distributions + allocated net income.",
+    "practitioner_notes": {
+      "erp_application": "Run the full NAV calculation in the fund accounting system after all quarter-end marks are finalized. Generate individual LP capital account statements showing beginning balance, contributions, distributions, income allocation, expense allocation, and ending balance. Reconcile total NAV to the sum of all individual LP capital accounts.",
+      "audit_triggers": "The LP capital account statement reconciliation is a fundamental audit procedure. Auditors verify total allocated income equals fund income, all LP accounts are included, and the pro-rata allocation percentages are correct.",
+      "required_documentation": "Quarterly NAV workpapers, individual LP capital account statements, fund-level income statement, LP ownership percentage schedule, reconciliation of total LP capital to fund net assets."
+    }
+  },
+  {
+    "slug": "pe-ilpa-reporting-fee-expense-template",
+    "category": "Private Equity & Investment Funds",
+    "title": "ILPA Fee Reporting - Standardized Fee & Expense Disclosure",
+    "description": "Preparing the ILPA (Institutional Limited Partners Association) standardized fee and expense reporting template disclosure, reconciling all fees from the fund to the GP management company and portfolio companies.",
+    "entries": [
+      { "account": "Management Fees (Gross) - Fund Level", "type": "Expense Disclosure", "dr": 2000000.00, "cr": 0 },
+      { "account": "Management Fee Offsets (Portfolio Company Fees)", "type": "Offset Disclosure", "dr": 0, "cr": 600000.00 },
+      { "account": "Management Fees (Net) - LP Effective Cost", "type": "Net Expense", "dr": 1400000.00, "cr": 0 },
+      { "account": "Fund Expenses (Partnership-Level)", "type": "Expense Disclosure", "dr": 250000.00, "cr": 0 },
+      { "account": "Portfolio Company Monitoring Fees (GP-Received)", "type": "Income Disclosure (GP Level)", "dr": 0, "cr": 750000.00 }
+    ],
+    "explanation": "The ILPA Fee Reporting Template (adopted post-2016) requires GPs to disclose all fees received from portfolio companies, management fees charged to the fund, offsets applied, and any fees retained by the GP that are not offset. This provides LPs with full transparency on the total economic cost of the fund relationship and any fee income the GP earns from portfolio companies.",
+    "practitioner_notes": {
+      "erp_application": "The ILPA template requires data from both the fund's books (management fees, fund expenses) and the GP management company's books (portfolio company monitoring fees received). Establish a data aggregation process to compile all required data fields quarterly.",
+      "audit_triggers": "While ILPA reporting is not subject to a separate audit, fund auditors may review the template for consistency with the audited financial statements. SEC examiners have used ILPA template data to identify fee disclosure failures during examinations.",
+      "required_documentation": "Completed ILPA Fee Reporting Template, GP certification of portfolio company fees received, reconciliation of ILPA template to audited financial statements, LPA fee and offset provisions."
+    }
+  },
+  {
+    "slug": "pe-dpi-tvpi-irr-calculation",
+    "category": "Private Equity & Investment Funds",
+    "title": "Fund Performance Metrics - DPI, RVPI, TVPI, and IRR Calculation",
+    "description": "Calculating and recording the standard PE fund performance metrics: DPI (Distributions to Paid-In), RVPI (Residual Value to Paid-In), TVPI (Total Value to Paid-In), and Net IRR for LP reporting.",
+    "entries": [
+      { "account": "Total Contributed Capital (Paid-In)", "type": "Memo: Capital", "dr": 80000000.00, "cr": 0 },
+      { "account": "Total Distributions to LPs (Cash + In-Kind)", "type": "Memo: DPI Numerator", "dr": 0, "cr": 52000000.00 },
+      { "account": "Remaining Portfolio Fair Value (NAV)", "type": "Memo: RVPI Numerator", "dr": 0, "cr": 64000000.00 },
+      { "account": "TVPI = (52M + 64M) / 80M = 1.45x", "type": "Memo: Performance", "dr": 0, "cr": 0 },
+      { "account": "Net IRR (after fees, carried interest)", "type": "Memo: Performance", "dr": 0, "cr": 0 }
+    ],
+    "explanation": "DPI = Distributions / Paid-In Capital (measures cash-on-cash return). RVPI = Remaining NAV / Paid-In Capital (measures unrealized value). TVPI = DPI + RVPI (total value multiple). Net IRR is the LP's actual annualized return after all fees and carried interest. These are the four metrics every LP demands in quarterly reports. TVPI of 1.45x means LPs have received $1.45 in value for every $1.00 invested.",
+    "practitioner_notes": {
+      "erp_application": "Most fund accounting platforms calculate these metrics automatically from the cash flow history. Net IRR requires the exact timing of all capital calls and distributions (to the day). Gross IRR (before fees and carry) is also reported for comparison. Report both fund-level and deal-level metrics.",
+      "audit_triggers": "Auditors do not typically audit IRR calculations, but they do audit the inputs (cash flows, dates, NAV) that feed into the calculation. DPI calculations are directly verified against the distribution history. TVPI is verified against the audited NAV.",
+      "required_documentation": "Capital call history with dates, distribution history with dates, current period NAV, IRR calculation model (Excel or fund system output), LP quarterly report showing all four metrics."
+    }
+  },
+  {
+    "slug": "pe-credit-fund-leveraged-loan-fair-value",
+    "category": "Private Equity & Investment Funds",
+    "title": "Credit Fund - Broadly Syndicated Leveraged Loan (Level 2 Fair Value)",
+    "description": "Recording the mark-to-market fair value adjustment on a broadly syndicated leveraged loan held by a credit-focused PE fund, using observable market prices (Level 2 under ASC 820).",
+    "entries": [
+      { "account": "Leveraged Loan Investment - Portfolio Co. Y (Fair Value Adjustment)", "type": "Asset (-)", "dr": 0, "cr": 180000.00 },
+      { "account": "Net Change in Unrealized Depreciation - Credit Portfolio", "type": "Expense (+)", "dr": 180000.00, "cr": 0 }
+    ],
+    "explanation": "Broadly syndicated loans trade in an active secondary market (the Loan Syndications and Trading Association / LSTA market). Prices are quoted as a percentage of par (e.g., 97.5 cents). The fund marks loans to these observable market prices each period — a Level 2 fair value measurement. A decline from 98.0 to 97.2 cents on a $22.5M face loan = $180K unrealized depreciation.",
+    "practitioner_notes": {
+      "erp_application": "Obtain loan prices from a recognized pricing service (Markit, Bloomberg, IHS Pricing Direct). Apply the end-of-period price to the face amount outstanding. Document the pricing source and methodology for each loan. Record the fair value adjustment as unrealized appreciation/depreciation.",
+      "audit_triggers": "Auditors verify prices against an independent pricing service. For loans without active market prices, auditors challenge the Level 2 vs. Level 3 classification. The hierarchy of pricing inputs (dealer quotes, market transactions, model) must be documented.",
+      "required_documentation": "Pricing vendor report showing loan prices at period end, loan portfolio schedule with face amounts and CUSIP/facility identifiers, fair value hierarchy classification memo, pricing policy document."
+    }
+  },
+  {
+    "slug": "pe-venture-capital-safe-note-investment",
+    "category": "Private Equity & Investment Funds",
+    "title": "Venture Capital - SAFE Note Investment (Simple Agreement for Future Equity)",
+    "description": "Recording an investment in a SAFE (Simple Agreement for Future Equity) note issued by an early-stage portfolio company, which converts to equity upon a qualifying financing round or exit.",
+    "entries": [
+      { "account": "SAFE Note Investment - Early Stage Co. Z", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "SAFEs are used by early-stage startups (especially in Y Combinator ecosystem) as a simple investment vehicle that converts to preferred equity upon a priced financing round. Unlike convertible notes, SAFEs have no interest rate, no maturity date, and no debt characteristics. For the fund, a SAFE is recorded as an equity-like investment at cost and subsequently marked to estimated fair value using the ASC 820 framework. Valuation before conversion is highly uncertain.",
+    "practitioner_notes": {
+      "erp_application": "Record the SAFE at cost initially. Fair value at each subsequent period is estimated based on the calibration methodology — if a new funding round occurs, use the implied valuation from the new round (adjusted for SAFE discount or valuation cap). If no new round, use probability-weighted scenario analysis.",
+      "audit_triggers": "SAFE valuations are among the most difficult to audit (pre-revenue, pre-product companies with no observable market data). Auditors rely heavily on management's probability-weighted scenario analysis. Any new financing rounds between year-end and audit completion date are post-balance sheet events requiring disclosure.",
+      "required_documentation": "Executed SAFE agreement, valuation cap and discount rate terms, fair value assessment memo (post-money valuation of most recent round if available), probability-weighted scenario analysis, portfolio company cap table."
+    }
+  },
+  {
+    "slug": "pe-venture-capital-safe-conversion-equity",
+    "category": "Private Equity & Investment Funds",
+    "title": "Venture Capital - SAFE Note Conversion to Preferred Equity",
+    "description": "Recording the conversion of a SAFE note into Series A Preferred Stock upon a qualifying priced round, at the SAFE's conversion terms (valuation cap or discount to round price, whichever is more favorable).",
+    "entries": [
+      { "account": "Preferred Equity Investment - Series A (Portfolio Co. Z)", "type": "Asset (+)", "dr": 750000.00, "cr": 0 },
+      { "account": "SAFE Note Investment - Portfolio Co. Z", "type": "Asset (-)", "dr": 0, "cr": 500000.00 },
+      { "account": "Net Unrealized Appreciation on SAFE Conversion", "type": "Income (+)", "dr": 0, "cr": 250000.00 }
+    ],
+    "explanation": "Upon a qualifying Series A financing, the SAFE converts to preferred equity at the better of the valuation cap or the priced round discount. If the SAFE had a $5M valuation cap and the Series A prices the company at $15M, the SAFE converts at $5M (the cap), giving the fund 3x more shares than new Series A investors at the same price. The difference between the SAFE's cost and the converted equity's fair value is recognized as unrealized appreciation.",
+    "practitioner_notes": {
+      "erp_application": "Calculate the number of shares received at conversion based on the SAFE terms (valuation cap, discount, MFN provisions). Record the new preferred equity position at fair value (which equals the Series A price per share × shares received). The gain at conversion flows through P&L as unrealized appreciation since the fund still holds the investment.",
+      "audit_triggers": "Auditors verify the conversion calculation against the SAFE terms and the Series A financing documents. The new preferred share count and the implied fair value per share at conversion must be confirmed against the company's post-conversion cap table.",
+      "required_documentation": "SAFE agreement conversion terms, Series A term sheet and stock purchase agreement, post-conversion cap table, conversion calculation workpapers, updated portfolio company valuation."
+    }
+  },
+  {
+    "slug": "pe-infrastructure-fund-revenue-producing-asset",
+    "category": "Private Equity & Investment Funds",
+    "title": "Infrastructure Fund - Revenue-Producing Asset (Toll Road / Utility)",
+    "description": "Recording the investment in a revenue-producing infrastructure asset (toll road, airport, utility) and the recognition of operating distribution income received from the asset.",
+    "entries": [
+      { "account": "Infrastructure Investment - Toll Road Concession (Fair Value)", "type": "Asset (+)", "dr": 50000000.00, "cr": 0 },
+      { "account": "Cash & Cash Equivalents", "type": "Asset (-)", "dr": 0, "cr": 50000000.00 }
+    ],
+    "explanation": "Infrastructure funds invest in long-duration, cash-yielding assets (toll roads, airports, ports, utilities, renewables). Unlike traditional PE buyouts, infrastructure investments generate regular operating distributions. The fund records the initial investment at cost, then marks to fair value using DCF methodology with long-term inflation-linked cash flow projections and infrastructure-specific discount rates (typically 8%–12% nominal).",
+    "practitioner_notes": {
+      "erp_application": "Infrastructure valuations require specialized DCF models with 20–40 year projection horizons. Key inputs: traffic/throughput projections, tariff escalation (CPI-linked), OpEx profiles, capital maintenance requirements, and concession end dates. Document all assumptions in the valuation committee memo.",
+      "audit_triggers": "Infrastructure asset DCF valuations are sensitive to discount rate assumptions. Auditors using valuation specialists will independently derive the appropriate discount rate range. Changes in interest rates materially impact infrastructure fair values — interest rate sensitivity analysis is required.",
+      "required_documentation": "Concession agreement or operating license, historical traffic/throughput data, DCF valuation model, comparable transaction analysis, independent engineering report, regulatory agreement summary."
+    }
+  },
+  {
+    "slug": "pe-infrastructure-distribution-income-receipt",
+    "category": "Private Equity & Investment Funds",
+    "title": "Infrastructure Fund - Operating Distribution Income from Asset",
+    "description": "Recording the periodic operating distributions received from an infrastructure portfolio asset (e.g., quarterly dividend from a utility concession company), classified as investment income.",
+    "entries": [
+      { "account": "Cash & Cash Equivalents", "type": "Asset (+)", "dr": 1200000.00, "cr": 0 },
+      { "account": "Dividend / Distribution Income - Infrastructure Asset", "type": "Income (+)", "dr": 0, "cr": 1200000.00 }
+    ],
+    "explanation": "Unlike growth-equity PE investments, infrastructure assets generate regular cash income (dividends or distributions from the underlying operating companies). This income is recognized when received (cash basis) or when declared (accrual basis per the fund's policy). Infrastructure funds often have higher distribution yields to LPs than traditional PE funds due to this regular cash generation.",
+    "practitioner_notes": {
+      "erp_application": "Track distribution income separately from capital gains in the fund's P&L. Infrastructure income distributions may have specific tax character (e.g., a return of capital component if the infrastructure company has depreciation deductions). Coordinate with tax advisors for K-1 character determination.",
+      "audit_triggers": "Auditors verify distribution receipts against the portfolio company's declaration notices and board resolutions. The income character (ordinary vs. return of capital) must be confirmed with the underlying infrastructure company's tax advisors.",
+      "required_documentation": "Portfolio company distribution declaration notice, board resolution authorizing distribution, wire transfer confirmation, tax character analysis from infrastructure company's tax advisors."
+    }
+  },
+  {
+    "slug": "pe-real-assets-depreciation-oil-gas-depletion",
+    "category": "Private Equity & Investment Funds",
+    "title": "Real Assets Fund - Oil & Gas Investment Depletion Allowance",
+    "description": "Recording the depletion allowance on an oil and gas mineral rights or working interest investment held by a natural resources PE fund, reducing the investment's carrying value as reserves are extracted.",
+    "entries": [
+      { "account": "Depletion Expense - Oil & Gas Working Interest", "type": "Expense (+)", "dr": 320000.00, "cr": 0 },
+      { "account": "Accumulated Depletion - Oil & Gas Investment", "type": "Asset (-)", "dr": 0, "cr": 320000.00 }
+    ],
+    "explanation": "Natural resource investments are depleted as the underlying reserves are extracted. Cost depletion is calculated using the units-of-production method: (Cost Basis / Total Estimated Recoverable Reserves) × Units Produced During Period. For investment companies under ASC 946 carrying assets at fair value, this may be superseded by the fair value mark — but depletion is still relevant for cost-basis tracking and tax reporting.",
+    "practitioner_notes": {
+      "erp_application": "Maintain a reserve schedule (certified by a petroleum engineer annually per SEC rules) showing total estimated reserves by category (proved, probable). The depletion rate changes each period as production updates the reserve estimate. This is distinct from the fair value mark driven by commodity prices.",
+      "audit_triggers": "Auditors require a reserve certification from an independent petroleum engineer (required annually under SEC rules for public companies; best practice for PE funds). Reserve estimate changes materially affect both depletion expense and fair value.",
+      "required_documentation": "Independent petroleum engineer reserve certification, units-of-production calculation schedule, production reports for the period, oil and gas revenue receipts."
+    }
+  },
+  {
+    "slug": "pe-reinvestment-period-end-remaining-commitment",
+    "category": "Private Equity & Investment Funds",
+    "title": "Investment Period End - Unused Commitment Write-Back to LPs",
+    "description": "Recording the permanent reduction of unfunded LP commitments at the end of the investment period when the GP elects not to call remaining uncommitted capital, releasing LPs from their funding obligation.",
+    "entries": [
+      { "account": "LP Unfunded Commitment Obligation (Released)", "type": "Commitment Memo (-)", "dr": 0, "cr": 12000000.00 },
+      { "account": "GP Commitment Released", "type": "Commitment Memo (-)", "dr": 0, "cr": 240000.00 },
+      { "account": "Total Unfunded Commitments Released (Memo Entry)", "type": "Memo", "dr": 12240000.00, "cr": 0 }
+    ],
+    "explanation": "At the end of the investment period, uncalled LP commitments (the portion of total committed capital not yet called) may be permanently released if the GP determines they will not be needed. This is a memo/off-balance sheet reduction since unfunded commitments are not on the fund's balance sheet. LPs are notified that their remaining commitment obligation has been eliminated, improving their capital planning.",
+    "practitioner_notes": {
+      "erp_application": "Update each LP's unfunded commitment balance to zero (or to the remaining amount reserved for follow-on investments if the LPA permits continued calls for follow-ons after investment period end). Issue formal written notice to each LP confirming the release.",
+      "audit_triggers": "Auditors verify the investment period end date (which triggers the release) against the LPA definition. The remaining unfunded commitment schedule must be reconciled to the LP register. Any retained commitment for permitted post-investment-period calls must be justified by the LPA.",
+      "required_documentation": "LPA investment period end provisions, investment period end determination memo, LP unfunded commitment release notice, updated LP commitment schedule showing zero remaining unfunded commitment."
+    }
   }
+
+
+
+
+
+
 
 
 
