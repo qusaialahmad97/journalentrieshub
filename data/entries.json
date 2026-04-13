@@ -25427,7 +25427,707 @@
       "audit_triggers": "Auditors confirm the duty exemption is properly authorised by the relevant ministry — each exempt item should have a specific exemption approval. Test that the equipment is used for mining purposes within the concession area (conditions for the exemption typically require this). Confirm that duty-free equipment not ultimately used for the approved purpose may require duty payment — creating a contingent liability. Review whether any exemption certificates have expired or are at risk of cancellation.",
       "required_documentation": "Duty exemption certificate (per equipment item or batch), mining concession agreement (equipment schedule), customs import declaration showing zero duty, ministry approval letter, equipment description and quantity, usage confirmation (equipment deployed at the mine site), and exemption expiry date monitoring."
     }
+  },
+  
+  {
+    "slug": "renewable-ppe-construction-wip",
+    "category": "Renewable Energy & ESG",
+    "title": "Capitalization of Renewable Asset Construction (WIP)",
+    "description": "Recording the costs incurred during the construction phase of a renewable energy asset, such as a solar farm or wind turbine.",
+    "entries": [
+      { "account": "Construction in Progress (CIP) - Solar/Wind", "type": "Asset (+)", "dr": 1500000.00, "cr": 0 },
+      { "account": "Accounts Payable / Cash", "type": "Liability/Asset (-)", "dr": 0, "cr": 1500000.00 }
+    ],
+    "explanation": "During the construction of renewable energy facilities, direct costs (materials, EPC contractor invoices, direct labor) are capitalized into a Construction in Progress (CIP) account. These assets are not depreciated until they reach Commercial Operation Date (COD) and are ready for their intended use.",
+    "practitioner_notes": {
+      "erp_application": "Tracked via project accounting modules within the ERP. Each solar farm or wind project should have a distinct WBS (Work Breakdown Structure) code to track budget vs. actuals.",
+      "audit_triggers": "Auditors will vouch additions to CIP to EPC contracts and invoices. They will heavily scrutinize the capitalization of internal costs (e.g., project management time) to ensure they directly relate to bringing the asset to its location and condition.",
+      "required_documentation": "EPC contracts, contractor progress billings, timesheets for capitalized internal labor, and capitalization policy."
+    }
+  },
+  {
+    "slug": "renewable-capitalized-interest",
+    "category": "Renewable Energy & ESG",
+    "title": "Capitalization of Borrowing Costs (Green Project Finance)",
+    "description": "Capitalizing interest expense incurred on project financing during the active construction phase of a qualifying renewable asset.",
+    "entries": [
+      { "account": "Construction in Progress (CIP) - Solar/Wind", "type": "Asset (+)", "dr": 125000.00, "cr": 0 },
+      { "account": "Interest Expense", "type": "Expense (-)", "dr": 0, "cr": 125000.00 }
+    ],
+    "explanation": "Under IAS 23 and ASC 835-20, borrowing costs directly attributable to the acquisition or construction of a qualifying asset (like a wind farm taking substantial time to build) must be capitalized as part of the asset's cost, rather than expensed.",
+    "practitioner_notes": {
+      "erp_application": "Usually calculated outside the core ERP in a spreadsheet or a specialized debt management system, then entered via manual journal. Capitalization must cease when the asset reaches COD.",
+      "audit_triggers": "Auditors will recalculate the capitalization rate (weighted average cost of borrowings or specific project debt rate) and ensure interest capitalization stopped exactly at the Commercial Operation Date.",
+      "required_documentation": "Project finance agreements, interest calculations, COD certificates, and proof of active construction during the period."
+    }
+  },
+  {
+    "slug": "renewable-aro-recognition",
+    "category": "Renewable Energy & ESG",
+    "title": "Asset Retirement Obligation (ARO) - Decommissioning",
+    "description": "Initial recognition of the liability to dismantle and remove renewable energy equipment (e.g., wind turbines, solar panels) and restore the land at the end of the lease/useful life.",
+    "entries": [
+      { "account": "Property, Plant & Equipment (ARO Asset)", "type": "Asset (+)", "dr": 400000.00, "cr": 0 },
+      { "account": "Asset Retirement Obligation (ARO) Liability", "type": "Liability (+)", "dr": 0, "cr": 400000.00 }
+    ],
+    "explanation": "Renewable energy operators are typically legally bound to decommission assets and restore the site. The present value of these estimated future costs is capitalized as part of the asset's cost and simultaneously recognized as a liability (IAS 37 / ASC 410-20).",
+    "practitioner_notes": {
+      "erp_application": "The ARO asset is depreciated over the useful life of the plant, while the ARO liability is accreted (increased) over time through an interest/accretion charge until it matches the estimated future cash outflow.",
+      "audit_triggers": "Significant estimates are involved: inflation rates, discount rates, and estimated future contractor costs. Auditors usually require a third-party decommissioning study to validate the cost estimates.",
+      "required_documentation": "Land lease agreements (restoration clauses), third-party engineering decommissioning cost estimates, discount rate calculations, and management's memo on assumptions."
+    }
+  },
+  {
+    "slug": "renewable-aro-accretion",
+    "category": "Renewable Energy & ESG",
+    "title": "ARO Accretion Expense",
+    "description": "Recording the periodic accretion expense (interest) to increase the ARO liability to its future expected payout amount.",
+    "entries": [
+      { "account": "Accretion Expense (Interest)", "type": "Expense (+)", "dr": 18000.00, "cr": 0 },
+      { "account": "Asset Retirement Obligation (ARO) Liability", "type": "Liability (+)", "dr": 0, "cr": 18000.00 }
+    ],
+    "explanation": "Because the ARO was recorded at present value, the liability must grow over time until the decommissioning date. This growth is recorded as accretion expense, representing the time value of money.",
+    "practitioner_notes": {
+      "erp_application": "Set up as a recurring automated journal entry in the ERP based on the ARO amortization schedule established at asset inception.",
+      "audit_triggers": "Verification that the accretion rate matches the discount rate used at initial recognition, and that accretion is calculated correctly over the period.",
+      "required_documentation": "ARO roll-forward schedule, original discount rate documentation."
+    }
+  },
+  {
+    "slug": "renewable-cod-reclassification",
+    "category": "Renewable Energy & ESG",
+    "title": "Reclassification from CIP to Operating Assets (COD)",
+    "description": "Moving the accumulated costs of a renewable asset from Construction in Progress to active Property, Plant & Equipment upon reaching Commercial Operation Date.",
+    "entries": [
+      { "account": "Solar/Wind Plant in Service (PPE)", "type": "Asset (+)", "dr": 25000000.00, "cr": 0 },
+      { "account": "Construction in Progress (CIP)", "type": "Asset (-)", "dr": 0, "cr": 25000000.00 }
+    ],
+    "explanation": "Once the asset is fully constructed, connected to the grid, and commercially viable, it is transferred out of WIP. Depreciation commences on this date.",
+    "practitioner_notes": {
+      "erp_application": "Triggers the capitalization of the final asset in the Fixed Asset Register (FAR). Depreciation parameters (useful life, salvage value) are finalized and activated.",
+      "audit_triggers": "Auditors will closely review the COD certificate from the utility/grid operator to ensure depreciation started in the correct accounting period.",
+      "required_documentation": "Interconnection agreement, COD certificate from independent engineer, final commissioning tests."
+    }
+  },
+  {
+    "slug": "vppa-initial-mtm-gain",
+    "category": "Renewable Energy & ESG",
+    "title": "Virtual Power Purchase Agreement (VPPA) - Unrealized Gain",
+    "description": "Recording the mark-to-market (MtM) unrealized gain on a VPPA derivative contract when forward market electricity prices rise above the contract's fixed strike price.",
+    "entries": [
+      { "account": "Derivative Asset - VPPA", "type": "Asset (+)", "dr": 850000.00, "cr": 0 },
+      { "account": "Unrealized Gain on Derivatives (P&L or OCI)", "type": "Revenue/Equity (+)", "dr": 0, "cr": 850000.00 }
+    ],
+    "explanation": "A VPPA is typically a financial Contract for Differences (CfD). Since no physical power is delivered, it fails the 'own-use' exemption and must be accounted for as a derivative at fair value (IFRS 9 / ASC 815). If market prices rise, the contract is \"in the money\" for the off-taker.",
+    "practitioner_notes": {
+      "erp_application": "VPPA derivatives are complex and usually tracked in specialized Treasury Management Systems (TMS) or external valuation reports, with summary entries booked to the ERP at month/quarter-end.",
+      "audit_triggers": "Valuation relies on highly subjective forward price curves for electricity nodes. Auditors will engage their internal valuation specialists to independently model the VPPA fair value.",
+      "required_documentation": "VPPA contract, forward electricity pricing curves (e.g., from PJM, ERCOT), third-party valuation reports, and hedge accounting documentation (if applying cash flow hedge accounting)."
+    }
+  },
+  {
+    "slug": "vppa-settlement-payment-received",
+    "category": "Renewable Energy & ESG",
+    "title": "VPPA Monthly Settlement - Cash Received",
+    "description": "Recording the monthly financial settlement of a VPPA when the floating market price exceeds the fixed strike price, resulting in a payment from the project to the corporate buyer.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 120000.00, "cr": 0 },
+      { "account": "Realized Gain on VPPA Settlement", "type": "Revenue (+)", "dr": 0, "cr": 120000.00 }
+    ],
+    "explanation": "In a CfD, if the variable market electricity price > fixed contract price, the renewable energy project pays the corporate buyer the difference. This acts as a financial hedge against the buyer's physical electricity costs.",
+    "practitioner_notes": {
+      "erp_application": "Recorded in the cash receipts module. If hedge accounting is applied, the realized gain may be mapped to offset utility expenses rather than showing as separate revenue.",
+      "audit_triggers": "Reconciliation of the settlement statement from the project developer to the cash received and the original VPPA pricing terms.",
+      "required_documentation": "Monthly settlement statement from the developer, bank statement, VPPA contract."
+    }
+  },
+  {
+    "slug": "rec-generation-minting",
+    "category": "Renewable Energy & ESG",
+    "title": "Renewable Energy Certificates (REC) - Generation",
+    "description": "Recognizing RECs generated by a renewable energy facility upon producing megawatt-hours (MWh) of clean electricity.",
+    "entries": [
+      { "account": "Inventory - RECs", "type": "Asset (+)", "dr": 45000.00, "cr": 0 },
+      { "account": "Other Income / Government Grants", "type": "Revenue (+)", "dr": 0, "cr": 45000.00 }
+    ],
+    "explanation": "When a facility generates power, it is issued RECs (e.g., 1 REC per 1 MWh). These are typically recognized as inventory (held for sale) or intangible assets (held for compliance) at fair value, representing an additional revenue stream separate from physical electricity sales.",
+    "practitioner_notes": {
+      "erp_application": "RECs are tracked in a specialized registry (e.g., WREGIS, PJM-GATS). The ERP inventory module must track REC vintages (year of generation) as prices vary by vintage.",
+      "audit_triggers": "Auditors will reconcile the MWh produced via meter data to the RECs minted in the registry, and test the fair value applied at initial recognition.",
+      "required_documentation": "Generation meter data, registry minting reports, market pricing data for RECs."
+    }
+  },
+  {
+    "slug": "rec-sale-to-third-party",
+    "category": "Renewable Energy & ESG",
+    "title": "Sale of Renewable Energy Certificates (RECs)",
+    "description": "Recording the sale of generated RECs to a third party (e.g., a utility needing to meet Renewable Portfolio Standards).",
+    "entries": [
+      { "account": "Accounts Receivable", "type": "Asset (+)", "dr": 60000.00, "cr": 0 },
+      { "account": "Revenue - REC Sales", "type": "Revenue (+)", "dr": 0, "cr": 60000.00 },
+      { "account": "Cost of Goods Sold - RECs", "type": "Expense (+)", "dr": 45000.00, "cr": 0 },
+      { "account": "Inventory - RECs", "type": "Asset (-)", "dr": 0, "cr": 45000.00 }
+    ],
+    "explanation": "When RECs are sold independently of electricity (unbundled), revenue is recognized upon the transfer of control (usually when RECs are transferred in the tracking registry). The carrying value of the RECs is expensed as COGS.",
+    "practitioner_notes": {
+      "erp_application": "Requires a standard sales order and fulfillment process in the ERP. The 'shipment' is the transfer of the digital certificate in the registry.",
+      "audit_triggers": "Verification of the transfer of control via the tracking registry (proof of delivery). Testing of the profit margin to ensure inventory was appropriately costed.",
+      "required_documentation": "REC purchase and sale agreement (REC PSA), registry transfer confirmation, sales invoice."
+    }
+  },
+  {
+    "slug": "carbon-offset-purchase-voluntary",
+    "category": "Renewable Energy & ESG",
+    "title": "Purchase of Voluntary Carbon Offsets (VERs)",
+    "description": "A corporation purchasing Verified Emission Reductions (VERs) to offset its Scope 1, 2, or 3 emissions to meet voluntary Net Zero targets.",
+    "entries": [
+      { "account": "Prepaid Expenses / Intangible Assets - Carbon Credits", "type": "Asset (+)", "dr": 250000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 250000.00 }
+    ],
+    "explanation": "Voluntary carbon credits purchased to offset future emissions are generally capitalized as an intangible asset or prepaid expense until they are officially retired/surrendered against the company's emissions.",
+    "practitioner_notes": {
+      "erp_application": "Tracked as an intangible asset. The company must monitor the vintage and project type, as offset quality is increasingly scrutinized.",
+      "audit_triggers": "Confirmation of existence through a recognized registry (e.g., Verra, Gold Standard). Assessment of impairment if the market value of the offsets drops significantly.",
+      "required_documentation": "Purchase agreement, registry holding statement, proof of payment."
+    }
+  },
+  {
+    "slug": "carbon-offset-retirement",
+    "category": "Renewable Energy & ESG",
+    "title": "Retirement of Carbon Offsets",
+    "description": "Recognizing the expense when carbon offsets are officially retired in a registry to claim the environmental benefit (neutralize emissions).",
+    "entries": [
+      { "account": "ESG / Environmental Compliance Expense", "type": "Expense (+)", "dr": 100000.00, "cr": 0 },
+      { "account": "Prepaid Expenses / Intangible Assets - Carbon Credits", "type": "Asset (-)", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "A carbon credit has no further value once retired; the environmental benefit has been consumed. The capitalized cost is moved to the income statement as an operating expense.",
+    "practitioner_notes": {
+      "erp_application": "A manual journal entry triggered by the operational ESG team providing proof of retirement. Often recognized at year-end alongside the final GHG footprint calculation.",
+      "audit_triggers": "Auditors will verify the retirement certificate to ensure the company has the right to make 'carbon neutral' claims and prevent greenwashing.",
+      "required_documentation": "Retirement certificate from Verra/Gold Standard showing the specific serial numbers permanently retired on behalf of the entity."
+    }
+  },
+  {
+    "slug": "green-bond-issuance",
+    "category": "Renewable Energy & ESG",
+    "title": "Issuance of a Green Bond",
+    "description": "Issuing a green bond where the proceeds are strictly ring-fenced for financing eligible environmental projects.",
+    "entries": [
+      { "account": "Cash - Restricted (Green Bond Proceeds)", "type": "Asset (+)", "dr": 50000000.00, "cr": 0 },
+      { "account": "Long-Term Debt - Green Bonds", "type": "Liability (+)", "dr": 0, "cr": 50000000.00 }
+    ],
+    "explanation": "Accounted for as standard debt under IFRS 9 / ASC 470, but proceeds are typically held in a restricted cash account. They can only be drawn down to fund projects that meet the criteria defined in the company's Green Bond Framework.",
+    "practitioner_notes": {
+      "erp_application": "The bank account receiving the funds must be tagged as restricted. Treasury modules will track the amortization of bond issuance costs.",
+      "audit_triggers": "Strict auditing of the 'Use of Proceeds'. If funds are used for non-green purposes, the company breaches the bond covenant, which could trigger immediate repayment and severe reputational damage.",
+      "required_documentation": "Bond indenture, Green Bond Framework, Second Party Opinion (SPO) from an ESG rating agency, bank statements."
+    }
+  },
+  {
+    "slug": "green-bond-use-of-proceeds",
+    "category": "Renewable Energy & ESG",
+    "title": "Green Bond - Deployment of Proceeds",
+    "description": "Transferring funds from the restricted green bond account to the general operating account to reimburse the company for eligible green project expenditures.",
+    "entries": [
+      { "account": "Cash - Unrestricted", "type": "Asset (+)", "dr": 5000000.00, "cr": 0 },
+      { "account": "Cash - Restricted (Green Bond Proceeds)", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 }
+    ],
+    "explanation": "As the company incurs CAPEX on eligible green projects (e.g., building a solar farm), it draws down the restricted cash to replenish its general funds.",
+    "practitioner_notes": {
+      "erp_application": "Requires a strict mapping between the CAPEX WBS codes and the restricted cash drawdown to ensure perfect traceability for annual Green Bond reporting.",
+      "audit_triggers": "Vouching the transfer to the specific invoices of the eligible green project. Auditors verify that the project aligns with the pre-approved Green Bond Framework.",
+      "required_documentation": "Internal funds transfer requests, eligible project invoices, management attestation of eligibility."
+    }
+  },
+  {
+    "slug": "sll-interest-penalty-missed-kpi",
+    "category": "Renewable Energy & ESG",
+    "title": "Sustainability-Linked Loan (SLL) - Interest Rate Penalty",
+    "description": "Recording increased interest expense due to a margin step-up on an SLL because the company failed to meet its predetermined ESG KPIs (e.g., diversity targets or GHG reduction).",
+    "entries": [
+      { "account": "Interest Expense", "type": "Expense (+)", "dr": 25000.00, "cr": 0 },
+      { "account": "Accrued Interest Payable", "type": "Liability (+)", "dr": 0, "cr": 25000.00 }
+    ],
+    "explanation": "In an SLL, the interest rate fluctuates based on the borrower's ESG performance. If a KPI is missed, a penalty (margin step-up) is applied. This is treated as an adjustment to the effective interest rate of the loan.",
+    "practitioner_notes": {
+      "erp_application": "The loan master data in the Treasury module must be updated with the new interest rate effective from the KPI testing date.",
+      "audit_triggers": "Auditors will review the annual ESG KPI audit report (usually verified by a third party) and ensure the interest rate calculation correctly incorporates the step-up/step-down provisions of the credit agreement.",
+      "required_documentation": "Credit agreement, annual ESG performance report, third-party assurance statement on KPIs, bank interest statement."
+    }
+  },
+  {
+    "slug": "government-grant-green-tech-receipt",
+    "category": "Renewable Energy & ESG",
+    "title": "Receipt of Government Grant for Green Tech",
+    "description": "Receiving a cash grant from the government (e.g., Inflation Reduction Act incentives) to fund the purchase of renewable energy equipment.",
+    "entries": [
+      { "account": "Cash", "type": "Asset (+)", "dr": 2000000.00, "cr": 0 },
+      { "account": "Deferred Income - Government Grants", "type": "Liability (+)", "dr": 0, "cr": 2000000.00 }
+    ],
+    "explanation": "Under IAS 20, grants related to assets are initially recognized as deferred income (or deducted from the asset's carrying amount). They are not recognized as immediate income to ensure they are matched against the depreciation of the asset they funded.",
+    "practitioner_notes": {
+      "erp_application": "Set up a deferred revenue schedule in the ERP that mirrors the depreciation schedule of the associated green asset.",
+      "audit_triggers": "Ensuring the company has met all the conditions attached to the grant (e.g., domestic content requirements, prevailing wage requirements). If conditions aren't met, the grant may be repayable.",
+      "required_documentation": "Grant award letter, proof of cash receipt, documentation proving compliance with grant stipulations."
+    }
+  },
+  {
+    "slug": "government-grant-amortization",
+    "category": "Renewable Energy & ESG",
+    "title": "Amortization of Government Grant",
+    "description": "Recognizing a portion of the deferred green tech government grant as income over the useful life of the funded asset.",
+    "entries": [
+      { "account": "Deferred Income - Government Grants", "type": "Liability (-)", "dr": 100000.00, "cr": 0 },
+      { "account": "Other Income - Grant Amortization", "type": "Revenue (+)", "dr": 0, "cr": 100000.00 }
+    ],
+    "explanation": "The deferred grant is systematically recognized in profit or loss over the periods in which the entity recognizes as expenses the related costs (depreciation) which the grants are intended to compensate.",
+    "practitioner_notes": {
+      "erp_application": "Automated monthly entry tied to the Fixed Asset depreciation run. If the asset is impaired or disposed of, the remaining deferred grant is immediately recognized.",
+      "audit_triggers": "Matching the amortization rate of the grant to the depreciation rate of the underlying asset.",
+      "required_documentation": "Amortization schedule, Fixed Asset Register (FAR)."
+    }
+  },
+  {
+    "slug": "bess-arbitrage-revenue",
+    "category": "Renewable Energy & ESG",
+    "title": "Battery Energy Storage System (BESS) - Grid Arbitrage Revenue",
+    "description": "Recording revenue generated by a battery storage system discharging (selling) electricity back to the grid during peak pricing hours.",
+    "entries": [
+      { "account": "Accounts Receivable - ISO/Utility", "type": "Asset (+)", "dr": 35000.00, "cr": 0 },
+      { "account": "Revenue - Energy Arbitrage", "type": "Revenue (+)", "dr": 0, "cr": 35000.00 }
+    ],
+    "explanation": "BESS facilities buy power when it is cheap and sell it when it is expensive. The sale of discharged power is recognized as revenue under IFRS 15 based on the MWh delivered to the grid.",
+    "practitioner_notes": {
+      "erp_application": "Revenue is usually recorded net of 'charging costs' (Cost of Sales) in management reporting, though gross presentation is required for statutory accounts.",
+      "audit_triggers": "Reconciliation of the Independent System Operator (ISO) settlement statements to the physical meter data (discharge MWh).",
+      "required_documentation": "ISO settlement statements, meter data, nodal pricing historical data."
+    }
+  },
+  {
+    "slug": "bess-charging-cost",
+    "category": "Renewable Energy & ESG",
+    "title": "BESS - Grid Charging Cost",
+    "description": "Recording the cost of electricity purchased from the grid to charge a Battery Energy Storage System during off-peak hours.",
+    "entries": [
+      { "account": "Cost of Goods Sold - Grid Electricity", "type": "Expense (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Accounts Payable - ISO/Utility", "type": "Liability (+)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "The cost to charge the battery is effectively the inventory cost of the power. However, because power cannot be easily stored long-term and is constantly cycled, it is typically expensed directly to COGS as the battery charges and discharges in the same month.",
+    "practitioner_notes": {
+      "erp_application": "Depending on the grid operator, charging costs and discharging revenues might be settled net. However, accounting standards usually require gross presentation in the GL.",
+      "audit_triggers": "Verification of negative locational marginal pricing (LMP). In some cases, the battery is paid to charge (negative pricing), which is treated as revenue rather than a cost reduction.",
+      "required_documentation": "Utility invoices, meter charging data."
+    }
+  },
+  {
+    "slug": "esg-legacy-asset-impairment",
+    "category": "Renewable Energy & ESG",
+    "title": "Impairment of Fossil Fuel Asset (Stranded Asset)",
+    "description": "Recognizing an impairment loss on a legacy coal or gas plant due to new environmental regulations or carbon taxes that make the asset economically unviable.",
+    "entries": [
+      { "account": "Impairment Loss on PPE", "type": "Expense (+)", "dr": 15000000.00, "cr": 0 },
+      { "account": "Accumulated Impairment - PPE", "type": "Asset (-)", "dr": 0, "cr": 15000000.00 }
+    ],
+    "explanation": "Under IAS 36 / ASC 360, if the carrying amount of an asset exceeds its recoverable amount (due to a transition risk like carbon pricing), the asset is impaired. ESG factors are a major trigger for impairment testing in heavy industries.",
+    "practitioner_notes": {
+      "erp_application": "Reduces the net book value of the asset in the Fixed Asset Register, leading to lower depreciation charges in future periods.",
+      "audit_triggers": "Auditors will intensely scrutinize the Discounted Cash Flow (DCF) model used to determine the Value in Use. They will check if future carbon tax assumptions and early decommissioning dates align with the company's stated Net Zero targets.",
+      "required_documentation": "Impairment memo, DCF valuation model, future carbon pricing curves, management's strategic transition plan."
+    }
+  },
+  {
+    "slug": "environmental-provision-contamination",
+    "category": "Renewable Energy & ESG",
+    "title": "Provision for Environmental Clean-up",
+    "description": "Accruing a liability for the legal or constructive obligation to remediate environmental contamination (e.g., a chemical spill or legacy soil pollution).",
+    "entries": [
+      { "account": "Environmental Remediation Expense", "type": "Expense (+)", "dr": 2500000.00, "cr": 0 },
+      { "account": "Provision for Environmental Liabilities", "type": "Liability (+)", "dr": 0, "cr": 2500000.00 }
+    ],
+    "explanation": "If a company has contaminated land and has a present obligation to clean it up (due to laws or published company policy), it must recognize a provision for the best estimate of the remediation costs (IAS 37 / ASC 410-30).",
+    "practitioner_notes": {
+      "erp_application": "Tracked as a long-term liability. When actual clean-up costs are incurred, they are debited against this provision, not expensed again.",
+      "audit_triggers": "Assessment of whether the obligation is probable and measurable. Auditors will rely heavily on legal counsel letters and environmental engineering estimates.",
+      "required_documentation": "Environmental impact assessment, legal correspondence, engineering cost estimates, regulatory notices."
+    }
+  },
+  {
+    "slug": "cap-and-trade-liability",
+    "category": "Renewable Energy & ESG",
+    "title": "Accrual of Carbon Emission Liability (Cap-and-Trade)",
+    "description": "Accruing a liability for greenhouse gas emissions generated during the period under a compliance Cap-and-Trade system (e.g., EU ETS).",
+    "entries": [
+      { "account": "Carbon Compliance Expense", "type": "Expense (+)", "dr": 800000.00, "cr": 0 },
+      { "account": "Carbon Emission Liability", "type": "Liability (+)", "dr": 0, "cr": 800000.00 }
+    ],
+    "explanation": "As a facility emits CO2, it incurs an obligation to surrender carbon allowances at the end of the compliance period. The liability is typically accrued monthly based on actual emissions at the current market price of allowances.",
+    "practitioner_notes": {
+      "erp_application": "A monthly manual accrual. At year-end, the liability is settled by surrendering government-granted allowances or purchased allowances.",
+      "audit_triggers": "Reconciliation of the accrued liability to the actual emissions reported by the Continuous Emissions Monitoring System (CEMS) and verified by a third-party GHG auditor.",
+      "required_documentation": "Monthly emissions reports, market pricing data for EUAs (or local equivalent), third-party emission verification report."
+    }
+  },
+  {
+    "slug": "esg-reporting-consulting",
+    "category": "Renewable Energy & ESG",
+    "title": "ESG & Sustainability Reporting Costs",
+    "description": "Recording fees paid to consultants and auditors for preparing and assuring the annual ESG / Sustainability Report.",
+    "entries": [
+      { "account": "Professional Fees - ESG Advisory", "type": "Expense (+)", "dr": 150000.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 150000.00 }
+    ],
+    "explanation": "Costs related to compiling carbon footprints, drafting sustainability reports (e.g., CSRD, SASB, TCFD), and obtaining third-party limited assurance are treated as period operating expenses (OPEX).",
+    "practitioner_notes": {
+      "erp_application": "Coded to the Sustainability or Corporate Affairs cost center. Cannot be capitalized as they do not generate future economic benefits.",
+      "audit_triggers": "Standard expense vouching. Ensure proper cut-off so expenses are recorded in the year the service was provided.",
+      "required_documentation": "Consulting contracts, assurance engagement letters, invoices."
+    }
+  },
+  {
+    "slug": "biomass-fuel-purchase",
+    "category": "Renewable Energy & ESG",
+    "title": "Purchase of Biomass Fuel Inventory",
+    "description": "Purchasing organic matter (wood pellets, agricultural waste) to be combusted for renewable energy generation.",
+    "entries": [
+      { "account": "Inventory - Biomass Fuel", "type": "Asset (+)", "dr": 300000.00, "cr": 0 },
+      { "account": "Accounts Payable", "type": "Liability (+)", "dr": 0, "cr": 300000.00 }
+    ],
+    "explanation": "Unlike wind or solar, biomass requires physical fuel. The purchased biomass is recorded as raw material inventory and expensed to COGS as it is consumed in the boiler.",
+    "practitioner_notes": {
+      "erp_application": "Requires robust inventory management (weighbridges, moisture content adjustments). Biomass quality degrades over time, requiring potential inventory write-downs.",
+      "audit_triggers": "Auditors will observe the physical inventory count of stockpiles. Because measuring piles of woodchips is imprecise, they rely on aerial drone surveys or geometric volume calculations.",
+      "required_documentation": "Weighbridge tickets, supplier invoices, inventory count sheets, moisture lab reports."
+    }
+  },
+  {
+    "slug": "solar-lease-lessee-ifrs16",
+    "category": "Renewable Energy & ESG",
+    "title": "Solar Equipment Lease setup (Lessee - IFRS 16)",
+    "description": "Initial recognition of a Right-of-Use (ROU) asset and lease liability for a corporate building installing leased rooftop solar panels.",
+    "entries": [
+      { "account": "Right-of-Use (ROU) Asset - Solar Equipment", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
+      { "account": "Lease Liability", "type": "Liability (+)", "dr": 0, "cr": 500000.00 }
+    ],
+    "explanation": "Under IFRS 16 / ASC 842, long-term leases of solar equipment (where the lessee consumes the power and controls the asset) must be capitalized on the balance sheet at the present value of future lease payments.",
+    "practitioner_notes": {
+      "erp_application": "Managed within the ERP Lease Accounting module, which handles the PV calculation and generates monthly depreciation and interest amortization entries.",
+      "audit_triggers": "Auditors will check the determination of the incremental borrowing rate used to discount the liability and verify that non-lease components (e.g., maintenance) are appropriately separated if elected.",
+      "required_documentation": "Solar lease agreement, incremental borrowing rate memo, lease amortization schedule."
+    }
+  },
+  {
+    "slug": "community-grant-social-esg",
+    "category": "Renewable Energy & ESG",
+    "title": "Community Investment Grant (The 'S' in ESG)",
+    "description": "Recording a cash donation or grant made to a local community affected by the company's operations, as part of the company's social responsibility initiatives.",
+    "entries": [
+      { "account": "Community Investment / Donations Expense", "type": "Expense (+)", "dr": 50000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 50000.00 }
+    ],
+    "explanation": "Voluntary contributions to community development, indigenous relations, or local education are recognized immediately as an expense. This supports the social pillar of the company's ESG profile.",
+    "practitioner_notes": {
+      "erp_application": "Tracked in a specific GL account for CSR (Corporate Social Responsibility) to facilitate easy aggregation for the annual Sustainability Report.",
+      "audit_triggers": "Compliance checks against the company's Anti-Bribery and Corruption (ABC) policies (e.g., FCPA, UK Bribery Act) to ensure donations are legitimate and not disguised political contributions.",
+      "required_documentation": "Grant application from the NGO/community, internal approval matrix, proof of payment, anti-corruption clearance."
+    }
+  },
+  
+  {
+    "slug": "tax-equity-initial-contribution",
+    "category": "Renewable Energy & ESG",
+    "title": "Tax Equity Partnership - Initial Funding",
+    "description": "Recording the initial cash contribution from a tax equity investor (e.g., a bank) into a renewable energy project partnership (YieldCo or flip structure).",
+    "entries": [
+      { "account": "Cash - Restricted (Project Account)", "type": "Asset (+)", "dr": 150000000.00, "cr": 0 },
+      { "account": "Non-Controlling Interest - Tax Equity / Tax Equity Liability", "type": "Equity/Liability (+)", "dr": 0, "cr": 150000000.00 }
+    ],
+    "explanation": "In US renewable finance, tax equity investors provide capital in exchange for the majority of early tax benefits (ITCs/PTCs and MACRS depreciation). Depending on the structure (partnership flip vs. sale-leaseback), this is recorded either as a liability or as Non-Controlling Interest (NCI) within equity.",
+    "practitioner_notes": {
+      "erp_application": "Requires complex consolidation setups in the ERP. Project SPVs (Special Purpose Vehicles) are tracked separately, and the tax equity slice is eliminated or broken out during consolidation.",
+      "audit_triggers": "Auditors will review the LLC Operating Agreement to determine if the contribution should be classed as debt (liability) or equity under ASC 810 / ASC 480 based on redemption rights and liquidation preferences.",
+      "required_documentation": "LLC Operating Agreement, Equity Capital Contribution Notice, Bank Statements."
+    }
+  },
+  {
+    "slug": "tax-equity-hlbv-income",
+    "category": "Renewable Energy & ESG",
+    "title": "Tax Equity - HLBV Income/Loss Allocation",
+    "description": "Allocating project income or loss to the tax equity investor using the Hypothetical Liquidation at Book Value (HLBV) method.",
+    "entries": [
+      { "account": "Non-Controlling Interest - Tax Equity", "type": "Equity (-)", "dr": 4500000.00, "cr": 0 },
+      { "account": "HLBV Income Allocation (P&L)", "type": "Revenue (+)", "dr": 0, "cr": 4500000.00 }
+    ],
+    "explanation": "Because tax equity partnerships do not allocate economics based on strict ownership percentages (they 'flip' over time), standard equity accounting fails. HLBV calculates how much the investor would receive if the partnership liquidated at book value at the end of the period minus the beginning of the period.",
+    "practitioner_notes": {
+      "erp_application": "HLBV calculations are notoriously complex and run in dedicated financial models outside the ERP. The resulting delta is booked via manual journal entry at period-end.",
+      "audit_triggers": "Heavy audit scrutiny on the HLBV model. Auditors recalculate the hypothetical liquidation waterfall based on the exact distribution tiers defined in the LLC agreement.",
+      "required_documentation": "HLBV tracking model, period-end project balance sheet, partnership agreement waterfall provisions."
+    }
+  },
+  {
+    "slug": "itc-deferral-recognition",
+    "category": "Renewable Energy & ESG",
+    "title": "Investment Tax Credit (ITC) - Initial Recognition (Deferral Method)",
+    "description": "Recognizing the federal Investment Tax Credit (ITC) upon a solar project reaching Commercial Operation Date (COD).",
+    "entries": [
+      { "account": "Income Taxes Payable / Tax Receivable", "type": "Liability (-)", "dr": 30000000.00, "cr": 0 },
+      { "account": "Deferred Investment Tax Credit", "type": "Liability (+)", "dr": 0, "cr": 30000000.00 }
+    ],
+    "explanation": "Under the deferral method (ASC 740), the ITC is not recognized immediately in the income statement. It directly reduces taxes payable (or creates a refund) but establishes a deferred liability that is amortized to income over the useful life of the solar asset.",
+    "practitioner_notes": {
+      "erp_application": "The Deferred ITC is mapped to amortize automatically on the exact same schedule (usually 30-35 years) as the underlying Fixed Asset.",
+      "audit_triggers": "Verification of the 'Eligible Basis'—auditors heavily test which construction costs qualify for the ITC percentage. Inclusion of non-eligible costs (e.g., transmission lines outside the project) can trigger IRS recapture.",
+      "required_documentation": "Cost segregation study (to determine eligible basis), placed-in-service documentation, tax returns."
+    }
+  },
+  {
+    "slug": "ptc-generation-recognition",
+    "category": "Renewable Energy & ESG",
+    "title": "Production Tax Credit (PTC) - Generation",
+    "description": "Recognizing Production Tax Credits earned based on the actual MWh of electricity generated by a wind farm.",
+    "entries": [
+      { "account": "Tax Receivable - PTCs", "type": "Asset (+)", "dr": 125000.00, "cr": 0 },
+      { "account": "Income Tax Benefit - PTCs", "type": "Revenue/Tax Reduction (+)", "dr": 0, "cr": 125000.00 }
+    ],
+    "explanation": "Unlike the ITC which is upfront, PTCs are earned over the first 10 years of a wind project's life based on metered generation. The credits flow directly to the P&L in the period the electricity is generated, typically reducing the income tax provision.",
+    "practitioner_notes": {
+      "erp_application": "Calculated monthly based on the generation meter. Ensure the ERP tracks the 10-year expiration window for PTC eligibility per site.",
+      "audit_triggers": "Reconciliation of the PTC calculation to the physical generation meter data and grid settlement statements.",
+      "required_documentation": "Generation meter data, independent engineering reports confirming PTC eligibility, tax provision workpapers."
+    }
+  },
+  {
+    "slug": "green-hydrogen-electrolyzer-capex",
+    "category": "Renewable Energy & ESG",
+    "title": "Capitalization of Green Hydrogen Electrolyzer",
+    "description": "Recording the final installation and commissioning costs of an industrial electrolyzer used to split water into green hydrogen using renewable power.",
+    "entries": [
+      { "account": "PPE - Hydrogen Production Facility", "type": "Asset (+)", "dr": 45000000.00, "cr": 0 },
+      { "account": "Construction in Progress (CIP)", "type": "Asset (-)", "dr": 0, "cr": 45000000.00 }
+    ],
+    "explanation": "Standard fixed asset capitalization, but critical for establishing the basis for green energy tax credits (like the 45V credit in the US). Includes equipment, specialized safety valves, and high-pressure storage tanks.",
+    "practitioner_notes": {
+      "erp_application": "The electrolyzer plant usually requires separate componentization in the Fixed Asset Register. The stack (which degrades over 5-7 years) must be depreciated separately from the balance of plant (20+ years).",
+      "audit_triggers": "Reviewing the componentization schedule to ensure the highly degradable electrolyzer cells are not amortized over too long a period.",
+      "required_documentation": "OEM equipment invoices, commissioning reports, componentization memo."
+    }
+  },
+  {
+    "slug": "green-hydrogen-inventory-costing",
+    "category": "Renewable Energy & ESG",
+    "title": "Green Hydrogen - Inventory Cost Allocation",
+    "description": "Allocating the direct costs (renewable power, purified water) and overhead (electrolyzer depreciation) into the cost of green hydrogen inventory.",
+    "entries": [
+      { "account": "Inventory - Green Hydrogen Gas", "type": "Asset (+)", "dr": 85000.00, "cr": 0 },
+      { "account": "Utility Expense - Renewable Power", "type": "Expense (-)", "dr": 0, "cr": 60000.00 },
+      { "account": "Utility Expense - Water", "type": "Expense (-)", "dr": 0, "cr": 5000.00 },
+      { "account": "Depreciation Expense (Overhead Allocation)", "type": "Expense (-)", "dr": 0, "cr": 20000.00 }
+    ],
+    "explanation": "Green hydrogen is an inventoried manufactured good. Under standard absorption costing (IAS 2 / ASC 330), direct materials (water), direct energy (power), and a portion of fixed manufacturing overhead (depreciation of the facility) must be capitalized into the inventory cost until sold.",
+    "practitioner_notes": {
+      "erp_application": "Tracked in the ERP manufacturing/process costing module. Requires a standard routing that consumes MWh of electricity and liters of water per kg of hydrogen produced.",
+      "audit_triggers": "Testing the overhead allocation rate. Auditors ensure that power used for non-production purposes (facility lighting) is expensed, while direct production power is capitalized to inventory.",
+      "required_documentation": "Bill of Materials (BOM) for hydrogen, meter readings for power/water, standard costing models."
+    }
+  },
+  {
+    "slug": "ccus-45q-tax-credit",
+    "category": "Renewable Energy & ESG",
+    "title": "Carbon Capture (CCUS) - 45Q Tax Credit Accrual",
+    "description": "Recognizing tax credits generated by permanently capturing and geologically sequestering industrial CO2 emissions.",
+    "entries": [
+      { "account": "Tax Receivable - 45Q Credits", "type": "Asset (+)", "dr": 425000.00, "cr": 0 },
+      { "account": "Other Income / Tax Benefit - CCUS", "type": "Revenue (+)", "dr": 0, "cr": 425000.00 }
+    ],
+    "explanation": "In the US, Section 45Q provides a per-ton tax credit for carbon oxide captured and safely stored. This acts similarly to a PTC and is recorded as the metric tons are injected into Class VI wells.",
+    "practitioner_notes": {
+      "erp_application": "Accrual based on the telemetry data from the injection well flow meters. Subject to strict EPA MRV (Monitoring, Reporting, and Verification) plans.",
+      "audit_triggers": "High risk of recapture if CO2 leaks. Auditors verify the volumes injected against EPA submittals and check for any recorded surface leakage events.",
+      "required_documentation": "EPA MRV reporting, injection well flow meter logs, lifecycle GHG analysis."
+    }
+  },
+  {
+    "slug": "ev-fleet-accelerated-degradation",
+    "category": "Renewable Energy & ESG",
+    "title": "EV Fleet - Accelerated Battery Impairment/Depreciation",
+    "description": "Recording an accelerated depreciation charge or impairment on a commercial EV fleet due to faster-than-expected battery degradation (e.g., heavy fast-charging use).",
+    "entries": [
+      { "account": "Depreciation Expense / Impairment - EV Batteries", "type": "Expense (+)", "dr": 75000.00, "cr": 0 },
+      { "account": "Accumulated Depreciation - Commercial EV Fleet", "type": "Asset (-)", "dr": 0, "cr": 75000.00 }
+    ],
+    "explanation": "EV batteries degrade based on charging cycles and thermal stress, not just time. If telematics show a fleet's battery health (State of Health - SoH) has degraded below the expected useful life curve, an adjustment to accumulated depreciation is required.",
+    "practitioner_notes": {
+      "erp_application": "If fleet batteries are componentized from the chassis, this entry adjusts the battery component. ERP fixed asset modules may require a change in useful life parameters going forward.",
+      "audit_triggers": "Auditors will pull telematics reports (e.g., Geotab) to verify the SoH of the batteries and validate management's assumptions on remaining useful life.",
+      "required_documentation": "Fleet telematics reports showing battery SoH, revised depreciation schedule, management memo on asset life."
+    }
+  },
+  {
+    "slug": "physical-ppa-npns",
+    "category": "Renewable Energy & ESG",
+    "title": "Physical PPA - Power Delivery (NPNS Exception)",
+    "description": "Recording the sale of electricity under a long-term physical Power Purchase Agreement that qualifies for the Normal Purchase Normal Sale (NPNS) scope exception.",
+    "entries": [
+      { "account": "Accounts Receivable - PPA Offtaker", "type": "Asset (+)", "dr": 310000.00, "cr": 0 },
+      { "account": "Revenue - Electricity Sales (Physical)", "type": "Revenue (+)", "dr": 0, "cr": 310000.00 }
+    ],
+    "explanation": "While long-term fixed-price contracts usually meet the definition of a derivative, physical power delivery contracts that the entity fully intends to fulfill (deliver physical electrons) qualify for the NPNS exception. Therefore, they avoid complex mark-to-market derivative accounting and are treated as normal revenue under IFRS 15 / ASC 606 upon delivery.",
+    "practitioner_notes": {
+      "erp_application": "Standard Accounts Receivable billing process triggered by monthly meter reads.",
+      "audit_triggers": "Verification that the contract actually qualifies for NPNS (e.g., no net settlement clauses, entity has the physical capacity to deliver). If it fails NPNS, the entire contract must be marked-to-market.",
+      "required_documentation": "Physical PPA contract, NPNS election memo, meter delivery data."
+    }
+  },
+  {
+    "slug": "trading-firming-shaping-fees",
+    "category": "Renewable Energy & ESG",
+    "title": "Firming and Shaping Costs (Renewable Intermittency)",
+    "description": "Paying a fee to a trading desk to 'firm and shape' intermittent solar/wind power into a continuous, flat baseload block of power for a 24/7 corporate facility.",
+    "entries": [
+      { "account": "Energy Trading Fees / Firming Costs", "type": "Expense (+)", "dr": 45000.00, "cr": 0 },
+      { "account": "Accounts Payable - Trading Desk", "type": "Liability (+)", "dr": 0, "cr": 45000.00 }
+    ],
+    "explanation": "Because a corporate buyer needs power at night when solar isn't producing, they pay a proxy trading firm to absorb the intermittent renewable energy and supply steady grid power. The cost of this service is expensed as an energy procurement overhead.",
+    "practitioner_notes": {
+      "erp_application": "Recorded as part of the overall utility/energy cost center. Delineated from the actual raw energy cost for management reporting.",
+      "audit_triggers": "Vouching to the physical sleeving or firming agreement with the energy trader.",
+      "required_documentation": "Firming/Sleeving agreement, monthly trader settlement statements."
+    }
+  },
+  {
+    "slug": "embedded-derivative-ppa",
+    "category": "Renewable Energy & ESG",
+    "title": "Mark-to-Market of Embedded Derivative in a PPA",
+    "description": "Recording the unrealized loss on an embedded derivative separated from a host power contract (e.g., a PPA with pricing tied to an unrelated commodity index like natural gas).",
+    "entries": [
+      { "account": "Unrealized Loss on Derivatives (P&L)", "type": "Expense (+)", "dr": 125000.00, "cr": 0 },
+      { "account": "Embedded Derivative Liability", "type": "Liability (+)", "dr": 0, "cr": 125000.00 }
+    ],
+    "explanation": "If a contract contains pricing features not clearly and closely related to the host contract (like electricity priced off a gas index), the embedded feature must be bifurcated (separated) and accounted for as a standalone derivative at fair value.",
+    "practitioner_notes": {
+      "erp_application": "Bifurcated derivatives are tracked via specialized Treasury/Risk management systems. The entry is booked back to the ERP at month-end.",
+      "audit_triggers": "Auditors rigorously review all long-term supply contracts for embedded derivatives. Valuation models for these are heavily scrutinized by internal quant teams.",
+      "required_documentation": "PPA contract, bifurcation analysis memo, complex valuation model (e.g., Monte Carlo simulation)."
+    }
+  },
+  {
+    "slug": "afforestation-biological-asset-gain",
+    "category": "Renewable Energy & ESG",
+    "title": "Afforestation (IAS 41) - Fair Value Gain on Timber",
+    "description": "Recognizing the annual biological growth of a forest planted explicitly for carbon sequestration and eventual sustainable harvest.",
+    "entries": [
+      { "account": "Biological Assets - Standing Timber", "type": "Asset (+)", "dr": 250000.00, "cr": 0 },
+      { "account": "Fair Value Gain on Biological Assets (P&L)", "type": "Revenue (+)", "dr": 0, "cr": 250000.00 }
+    ],
+    "explanation": "Under IAS 41 (Agriculture), living plants (biological assets) are measured at fair value less costs to sell. As trees grow over the year, their increased mass and market value are recognized immediately in the P&L as an unrealized gain.",
+    "practitioner_notes": {
+      "erp_application": "Tracked in specialized forestry modules or external spreadsheets. The asset is non-current but distinct from standard PPE.",
+      "audit_triggers": "Highly specialized audit area. Relies on third-party 'cruising' reports (sample tree measurements by foresters) and complex discounted cash flow models based on future timber prices.",
+      "required_documentation": "Forestry cruise reports, DCF valuation model, timber market pricing curves."
+    }
+  },
+  {
+    "slug": "afforestation-silviculture-capex",
+    "category": "Renewable Energy & ESG",
+    "title": "Capitalization of Silviculture Costs",
+    "description": "Capitalizing the costs of maintaining a newly planted forest (e.g., weed control, fertilization, thinning) prior to maturity.",
+    "entries": [
+      { "account": "Biological Assets - Standing Timber", "type": "Asset (+)", "dr": 40000.00, "cr": 0 },
+      { "account": "Cash / Accounts Payable", "type": "Asset/Liability (-)", "dr": 0, "cr": 40000.00 }
+    ],
+    "explanation": "Direct costs incurred to grow and maintain biological assets before they reach maturity or are harvested are capitalized into the carrying amount of the biological asset.",
+    "practitioner_notes": {
+      "erp_application": "Similar to a WIP process. Costs are collected in a cost center and settled to the Biological Asset account at period end.",
+      "audit_triggers": "Distinguishing between capitalization (costs that enhance growth) and standard maintenance expense (costs that just maintain current state, though forestry often capitalizes most early-stage costs).",
+      "required_documentation": "Contractor invoices for spraying/thinning, forestry management plan."
+    }
+  },
+  {
+    "slug": "waste-to-energy-tipping-fee",
+    "category": "Renewable Energy & ESG",
+    "title": "Waste-to-Energy - Tipping Fee Revenue",
+    "description": "Recognizing revenue for accepting municipal solid waste at a biomass/incinerator facility, prior to generating power from it.",
+    "entries": [
+      { "account": "Accounts Receivable - Municipalities", "type": "Asset (+)", "dr": 180000.00, "cr": 0 },
+      { "account": "Revenue - Waste Tipping Fees", "type": "Revenue (+)", "dr": 0, "cr": 180000.00 }
+    ],
+    "explanation": "Waste-to-Energy (WtE) plants have two distinct revenue streams: selling the generated electricity and charging municipalities a 'tipping fee' to accept their garbage. This records the service of waste disposal.",
+    "practitioner_notes": {
+      "erp_application": "Triggered by the weighbridge integration with the ERP. As a garbage truck is weighed in and out, the net tonnage generates a sales invoice.",
+      "audit_triggers": "Reconciliation of the weighbridge software logs to the invoiced tonnage. Checking for proper cutoff at month-end.",
+      "required_documentation": "Weighbridge tickets, municipal waste contracts, sales register."
+    }
+  },
+  {
+    "slug": "solar-panel-recycling-scrap",
+    "category": "Renewable Energy & ESG",
+    "title": "Circular Economy - Solar Panel Scrap Revenue",
+    "description": "Recording revenue from selling end-of-life decommissioned solar panels to a specialized recycling firm that recovers silver, copper, and silicon.",
+    "entries": [
+      { "account": "Accounts Receivable - Recycler", "type": "Asset (+)", "dr": 15000.00, "cr": 0 },
+      { "account": "Other Income - Scrap/Recycling Sales", "type": "Revenue (+)", "dr": 0, "cr": 15000.00 }
+    ],
+    "explanation": "As part of circular economy initiatives, renewable components are recycled rather than landfilled. The sale of these materials generates scrap revenue, separate from the core energy business.",
+    "practitioner_notes": {
+      "erp_application": "Recorded as miscellaneous or 'Other Income'. The actual decommissioning of the panels would separately trigger the utilization of the ARO (Asset Retirement Obligation) liability.",
+      "audit_triggers": "Ensuring the scrapped assets were properly written off the Fixed Asset Register. Verifying the physical transfer of the hazardous e-waste to licensed facilities.",
+      "required_documentation": "Scrap sale invoice, bill of lading, certificate of destruction/recycling from the vendor."
+    }
+  },
+  
+  {
+    "slug": "jv-equity-method-investment",
+    "category": "Renewable Energy & ESG",
+    "title": "Joint Venture - Equity Method Investment (Wind/Solar)",
+    "description": "Recognizing the initial investment and the subsequent proportional share of net income from a jointly controlled renewable energy project.",
+    "entries": [
+      { "account": "Investment in Joint Venture", "type": "Asset (+)", "dr": 5000000.00, "cr": 0 },
+      { "account": "Cash", "type": "Asset (-)", "dr": 0, "cr": 5000000.00 },
+      { "account": "Investment in Joint Venture", "type": "Asset (+)", "dr": 450000.00, "cr": 0 },
+      { "account": "Equity in Earnings of Joint Venture", "type": "Revenue (+)", "dr": 0, "cr": 450000.00 }
+    ],
+    "explanation": "Because renewable projects are incredibly capital intensive, developers often form Joint Ventures (JVs) to share risk. Under IFRS 11 / ASC 323, if an entity has joint control over the net assets, it must use the Equity Method. The investment is recorded at cost on the balance sheet and increases/decreases based on the investor's share of the JV's bottom-line net income.",
+    "practitioner_notes": {
+      "erp_application": "The JV operates its own independent ERP and ledger. At month-end, the parent company books a manual top-level journal entry to record its percentage share of the JV's final net income.",
+      "audit_triggers": "Auditors will meticulously review the JV operating agreement. If the parent company actually has operational control (e.g., they make all the key decisions despite owning only 50%), they must fully consolidate the asset rather than using the one-line equity method.",
+      "required_documentation": "JV Agreement, JV audited financial statements, memo on control and consolidation."
+    }
+  },
+  {
+    "slug": "feed-in-tariff-revenue",
+    "category": "Renewable Energy & ESG",
+    "title": "Feed-in Tariff (FiT) Revenue Recognition",
+    "description": "Recognizing revenue from selling renewable electricity to the grid at a government-mandated, above-market fixed premium rate.",
+    "entries": [
+      { "account": "Accounts Receivable - State Utility", "type": "Asset (+)", "dr": 85000.00, "cr": 0 },
+      { "account": "Revenue - FiT Electricity Sales", "type": "Revenue (+)", "dr": 0, "cr": 85000.00 }
+    ],
+    "explanation": "Feed-in Tariffs (FiTs) are policy mechanisms designed to accelerate green investment by offering long-term contracts (15-20 years) to renewable producers. The price paid is usually higher than the standard wholesale market price. Revenue is recognized under IFRS 15 as MWh are delivered.",
+    "practitioner_notes": {
+      "erp_application": "Standard Accounts Receivable process. However, some utilities break the payment into two lines: the base market price and the FiT premium subsidy. Both generally roll up into total revenue.",
+      "audit_triggers": "Verification of the specific FiT tier the asset qualified for (older assets usually have much higher FiT rates). Auditors will check the expiration date of the FiT contract, as a drop-off to standard market rates can trigger an impairment test.",
+      "required_documentation": "FiT contract/award letter from the government or utility, monthly delivery meter data."
+    }
+  },
+  {
+    "slug": "microgrid-p2p-trading-revenue",
+    "category": "Renewable Energy & ESG",
+    "title": "Microgrid - Peer-to-Peer (P2P) Energy Trading Revenue",
+    "description": "Recording the sale of excess solar energy from one corporate facility directly to an adjacent facility operating on the same localized, decentralized microgrid.",
+    "entries": [
+      { "account": "Accounts Receivable - Microgrid Participant", "type": "Asset (+)", "dr": 12000.00, "cr": 0 },
+      { "account": "Revenue - Distributed Energy Sales", "type": "Revenue (+)", "dr": 0, "cr": 12000.00 }
+    ],
+    "explanation": "In decentralized microgrids, localized entities can trade power behind the main utility meter. When Facility A's solar panels overproduce, they sell the electrons directly to Facility B. Revenue is recognized based on the transfer of power measured by local smart meters, bypassing the traditional utility.",
+    "practitioner_notes": {
+      "erp_application": "This is a rapidly evolving area. Billing is often managed outside the ERP via distributed ledgers (blockchain) or IoT smart contract platforms, which then push summarized monthly billing data into the ERP via API.",
+      "audit_triggers": "Auditors will focus heavily on IT General Controls (ITGC) for the smart meters and the blockchain/IoT platform calculating the trades to ensure billing accuracy and prevent tampering.",
+      "required_documentation": "Microgrid participation agreement, smart meter logs, distributed ledger transaction reports."
+    }
   }
+
+
+
 
 
 
