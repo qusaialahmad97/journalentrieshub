@@ -23668,6 +23668,1051 @@
   },
   
   {
+    "slug": "crypto-asu-2023-08-fv-gain-income",
+    "category": "Cryptocurrency",
+    "title": "Bitcoin Treasury \u2014 Unrealised Fair Value Gain Through Net Income (ASU 2023-08, US GAAP)",
+    "description": "Recording the unrealised fair value increase on Bitcoin held as a treasury asset under ASU 2023-08 (effective for fiscal years beginning after December 15, 2024) \u2014 with ALL changes in fair value flowing through net income, not OCI.",
+    "entries": [
+      {
+        "account": "Cryptocurrency Asset \u2014 Bitcoin (FV Increase)",
+        "type": "Asset (+)",
+        "dr": 180000.0,
+        "cr": 0
+      },
+      {
+        "account": "Unrealised Gain on Cryptocurrency (Net Income \u2014 P&L)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 180000.0
+      }
+    ],
+    "explanation": "ASU 2023-08 (Accounting for and Disclosure of Crypto Assets, effective January 2025 for calendar-year public companies) fundamentally changes US GAAP for in-scope crypto assets. The old model required impairment-only recognition (losses immediately, gains only on sale). The new model requires FAIR VALUE THROUGH NET INCOME \u2014 both unrealised gains AND unrealised losses are recognised in net income every reporting period. In-scope assets: fungible crypto assets listed on recognised exchanges (Bitcoin, Ethereum) that are not securities, do not grant the holder specific rights, and are held by a non-investment company. Tesla, MicroStrategy, and corporate Bitcoin treasury holders are directly affected. This eliminates the asymmetry of the old model (where companies could only recognise downside losses but had to wait for disposal to recognise upside gains).",
+    "practitioner_notes": {
+      "erp_application": "Under ASU 2023-08, the crypto asset account is remeasured to fair value at every reporting date (quarterly for public companies, annually for private). The fair value is the principal market price (typically the exchange where the company most often trades) or the most advantageous market price under ASC 820. The gain or loss flows to a new income statement line item ('unrealised gain/loss on crypto assets') \u2014 not OCI. The old impairment model entries must be reversed on adoption (the cumulative-effect adjustment is recognised in retained earnings on the adoption date). Lot-level cost tracking is no longer needed for remeasurement (but remains needed for tax purposes, since tax still uses a realization model).",
+      "audit_triggers": "Auditors verify the fair value source is a Level 1 input (quoted price in an active market) \u2014 for Bitcoin and Ethereum, this is straightforward from Coinbase, Kraken, or similar exchanges. The 'principal market' determination must be documented \u2014 the market where the company most frequently transacts or where the highest volume occurs. For the adoption period, auditors test the cumulative-effect adjustment to retained earnings is correctly calculated (difference between FV at adoption and prior carrying cost). The FASB's ASU 2023-08 does NOT apply to wrapped tokens, LP tokens, NFTs, or crypto with embedded rights \u2014 those assets are out of scope and continue under prior GAAP.",
+      "required_documentation": "ASU 2023-08 scope assessment (confirming in-scope vs. out-of-scope assets), principal market documentation (exchange selection), fair value at each reporting date (from principal market, Level 1 ASC 820), cumulative-effect adoption adjustment calculation, unrealised gain/loss roll-forward by asset, updated accounting policy memo (ASU 2023-08 adoption)."
+    }
+  },
+  {
+    "slug": "crypto-asu-2023-08-fv-loss-income",
+    "category": "Cryptocurrency",
+    "title": "Bitcoin Treasury \u2014 Unrealised Fair Value Loss Through Net Income (ASU 2023-08, US GAAP)",
+    "description": "Recording the unrealised fair value decrease on Bitcoin held as a treasury asset under ASU 2023-08 \u2014 recognised immediately in net income (no impairment test required, and losses are reversible in future periods).",
+    "entries": [
+      {
+        "account": "Unrealised Loss on Cryptocurrency (Net Income \u2014 P&L)",
+        "type": "Expense (+)",
+        "dr": 95000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cryptocurrency Asset \u2014 Bitcoin (FV Decrease)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 95000.0
+      }
+    ],
+    "explanation": "Under ASU 2023-08, unrealised losses are recognised in net income in the period they occur \u2014 identical treatment to unrealised gains. This replaces the old impairment model (where losses were permanent write-downs that could not be reversed). Under the new model: if Bitcoin falls from $60,000 to $55,500 per coin, the $4,500 decline per coin is recognised as a loss in net income. If Bitcoin subsequently recovers to $62,000, the full $6,500 appreciation from the previously impaired level is recognised as a gain \u2014 the new model eliminates the irreversible impairment concept. Companies like MicroStrategy (which held massive Bitcoin treasuries) lobbied heavily for this standard because the old model created extreme income statement volatility asymmetry.",
+    "practitioner_notes": {
+      "erp_application": "The fair value remeasurement is applied to the ENTIRE portfolio balance \u2014 not lot by lot. The carrying value of the crypto asset at each period-end is the total fair value (quantity \u00d7 price at reporting date). The change from prior period carrying value is the unrealised gain or loss. Unlike the impairment model, there is no floor \u2014 the carrying value floats with the market price each period. Deferred tax must be considered: as the carrying value changes each period (both up and down), the deferred tax asset or liability also changes. This creates additional income statement volatility from the deferred tax effect on the unrealised mark-to-market.",
+      "audit_triggers": "Under ASU 2023-08, the traditional impairment procedures (lowest intra-period price testing, lot-by-lot analysis) are replaced by straightforward period-end fair value confirmation. Auditors simply confirm: (1) the quantity held at period-end, (2) the Level 1 price at period-end from the principal market, (3) the mathematical gain/loss calculation. The audit becomes simpler for the remeasurement step but adds complexity in the deferred tax calculation (the temporary difference between book FV and the tax cost basis changes every period).",
+      "required_documentation": "Quantity of crypto assets held at period-end (from custody platform), principal market price at period-end closing (Level 1 ASC 820), prior period carrying value, unrealised gain/loss calculation, deferred tax calculation on the book/tax temporary difference, and income statement presentation of unrealised gain/loss line item."
+    }
+  },
+  {
+    "slug": "crypto-asu-2023-08-adoption-adjustment",
+    "category": "Cryptocurrency",
+    "title": "ASU 2023-08 Adoption \u2014 Cumulative-Effect Adjustment to Retained Earnings",
+    "description": "Recording the transition adjustment when a company adopts ASU 2023-08 \u2014 recognising the difference between the fair value of crypto assets at adoption date and their prior carrying value (impaired cost) directly in retained earnings.",
+    "entries": [
+      {
+        "account": "Cryptocurrency Asset (Step-Up from Impaired Cost to FV at Adoption)",
+        "type": "Asset (+)",
+        "dr": 420000.0,
+        "cr": 0
+      },
+      {
+        "account": "Retained Earnings (Cumulative-Effect Adjustment at Adoption)",
+        "type": "Equity (+)",
+        "dr": 0,
+        "cr": 420000.0
+      }
+    ],
+    "explanation": "ASU 2023-08 uses a modified retrospective transition approach \u2014 the cumulative effect of adopting the new standard is recorded as an adjustment to the opening balance of retained earnings as of the adoption date. For companies that previously impaired crypto assets under the old model, the carrying value at adoption may be BELOW fair value. The step-up from impaired carrying value to fair value at adoption is recognised directly in retained earnings (not through the income statement). Example: Company held Bitcoin at impaired carrying cost of $880,000 (after multiple impairments from original cost of $1.5M). At adoption, Bitcoin's FV = $1,300,000. The $420,000 difference goes to retained earnings \u2014 a direct equity boost without any income statement impact.",
+    "practitioner_notes": {
+      "erp_application": "The adoption adjustment requires: (1) identify all in-scope crypto assets at the adoption date, (2) determine their current FV (Level 1 price), (3) compare to their carrying value (original cost less any impairments), (4) post the difference to retained earnings. The adoption date entry resets the cost basis to FV for all subsequent remeasurements. Tax: the adoption creates a new book/tax temporary difference (book FV is now higher than tax cost basis), requiring a deferred tax liability to be recognised simultaneously \u2014 offset against the retained earnings credit.",
+      "audit_triggers": "Auditors verify the completeness of in-scope assets (all qualifying fungible crypto assets must be included \u2014 no cherry-picking which assets to adopt for). The fair value at adoption must be independently confirmed. The deferred tax impact of the adoption must be correctly calculated and disclosed. First-year adoption disclosures are extensive: the FASB requires disclosure of the nature of crypto assets held, fair values by significant crypto type, and the impact of the adoption on retained earnings.",
+      "required_documentation": "Inventory of all crypto assets at adoption date, scope assessment for each asset (in-scope vs. out-of-scope), fair value at adoption date (Level 1 prices), prior carrying value by asset, cumulative-effect adjustment calculation, deferred tax on adoption-date temporary difference, adoption disclosure note, and updated accounting policy."
+    }
+  },
+  {
+    "slug": "crypto-inventory-broker-dealer",
+    "category": "Cryptocurrency",
+    "title": "Cryptocurrency Held as Inventory (Broker-Dealer / Market Maker)",
+    "description": "Recording cryptocurrency held for trading by a broker-dealer or market maker as inventory under IAS 2 \u2014 measured at fair value less costs to sell (NRV), with all changes through P&L.",
+    "entries": [
+      {
+        "account": "Cryptocurrency Inventory (Held for Sale \u2014 Trading)",
+        "type": "Asset (+)",
+        "dr": 2500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash (Acquisition Cost)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 2500000.0
+      }
+    ],
+    "explanation": "Commodity broker-traders who hold cryptocurrency as inventory in the ordinary course of business measure it at FAIR VALUE LESS COSTS TO SELL under IAS 2.3(b) \u2014 with changes recognised in profit or loss. This treatment differs from the IAS 38 intangible asset model (cost less impairment) and is more economically representative for entities whose business is trading crypto. Eligibility for broker-dealer treatment requires that the entity's principal business is buying and selling crypto assets with the intention of selling in the near term or earning a margin. Market makers, OTC desks, and proprietary trading firms qualify.",
+    "practitioner_notes": {
+      "erp_application": "Crypto inventory under IAS 2.3(b) is marked to fair value less costs to sell at each reporting date \u2014 similar to a commodity trading portfolio. The mark-to-market adjustment flows through cost of goods sold or a separate trading income line. This model eliminates the asymmetry of the IAS 38 cost model (gains recognised only on disposal) \u2014 both unrealised gains and losses flow through P&L immediately. The inventory is NOT tested for impairment under IAS 36 \u2014 the NRV model already captures all value decreases. For broker-dealers, this model aligns financial reporting with the economic reality of their trading operations.",
+      "audit_triggers": "Auditors verify that the broker-dealer treatment is appropriate \u2014 the entity must be buying and selling crypto in the ordinary course of business as a commodity broker-trader, not holding as a long-term investment. Test the fair value measurement (Level 1 for Bitcoin/Ethereum; Level 2 or 3 for illiquid altcoins). Confirm that costs to sell (transaction fees, exchange fees) are deducted from fair value to arrive at NRV. Verify the inventory balance against the custody platform holdings. Assess whether any cryptocurrency is held long-term (which might not qualify for broker-dealer inventory treatment).",
+      "required_documentation": "Business model documentation confirming broker-dealer or market maker activity, fair value less costs to sell calculation at period-end, custody platform holding confirmation, trading volume analysis (to support short-term trading intent), IAS 2.3(b) policy election documentation, NRV calculation by asset type."
+    }
+  },
+  {
+    "slug": "crypto-inventory-nrv-writedown",
+    "category": "Cryptocurrency",
+    "title": "Cryptocurrency Inventory \u2014 Write-Down to NRV (Market Price Fall)",
+    "description": "Writing down cryptocurrency inventory to net realizable value when market price falls below the acquisition cost \u2014 the inventory model analogue to IAS 38 impairment, but reversible when prices recover.",
+    "entries": [
+      {
+        "account": "Cost of Sales \u2014 Crypto Inventory Write-Down to NRV",
+        "type": "Expense (+)",
+        "dr": 350000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cryptocurrency Inventory (NRV Write-Down)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 350000.0
+      }
+    ],
+    "explanation": "Under IAS 2 for entities NOT using the broker-dealer fair value model, inventory is measured at the LOWER OF COST AND NRV. When market price falls below cost, inventory is written down to NRV. Unlike IAS 38 impairments (which are irreversible), IAS 2 NRV write-downs ARE REVERSIBLE \u2014 if the crypto price subsequently recovers above the previously written-down level, the reversal is recognised as a reduction of cost of sales (up to the original cost). This reversibility is a key advantage of the inventory model over the IAS 38 intangible asset cost model.",
+    "practitioner_notes": {
+      "erp_application": "NRV write-downs for cryptocurrency inventory are assessed at each period-end by comparing the carrying cost to the closing market price less estimated selling costs (exchange fees). If the current price is below carrying cost, the write-down is posted. The write-down is reversed in a subsequent period if the NRV has recovered \u2014 the reversal is limited to the amount of the original write-down (carrying value cannot exceed original cost). Track the write-down history by lot to ensure reversal limits are enforced.",
+      "audit_triggers": "Auditors confirm NRV using current market prices at the reporting date from a named exchange. Test that reversals do not exceed the original write-down amount (IAS 2.33 cap). For inventory with multiple write-down layers (written down multiple times over multiple periods), the reversal cap must be tracked at the lot level. Assess whether the IAS 2 inventory treatment (reversible write-down) vs. the IAS 38 intangible treatment (irreversible impairment) has been correctly elected and consistently applied.",
+      "required_documentation": "Market price at period-end (from named exchange), original cost basis by lot, NRV calculation (market price less selling costs), write-down calculation, prior period write-down history (for reversal cap assessment), reversal journal (if applicable), and IAS 2 vs. IAS 38 policy election documentation."
+    }
+  },
+  {
+    "slug": "crypto-mining-pool-fee",
+    "category": "Cryptocurrency",
+    "title": "Mining Pool Fee Expense (Pool Operator's Share)",
+    "description": "Recording the fee paid to a mining pool operator \u2014 typically 1\u20133% of mining rewards \u2014 deducted directly from pool payouts.",
+    "entries": [
+      {
+        "account": "Mining Pool Fee Expense (COGS)",
+        "type": "Expense (+)",
+        "dr": 840.0,
+        "cr": 0
+      },
+      {
+        "account": "Mining Revenue (Gross \u2014 Reduced by Pool Fee)",
+        "type": "Revenue (-)",
+        "dr": 0,
+        "cr": 840.0
+      }
+    ],
+    "explanation": "Mining pools aggregate computing power from multiple miners and distribute rewards proportionally. The pool operator deducts a 1\u20133% fee from all rewards before distributing to participating miners. Two presentation approaches are acceptable: (1) GROSS \u2014 recognise full mining revenue before the fee, then record the pool fee as a separate COGS expense; or (2) NET \u2014 recognise only the net proceeds received from the pool (after fee deduction). The gross presentation is more transparent and consistent with IFRS 15 principal treatment (the miner is the principal earning the block reward). The pool fee is directly attributable to generating the mining revenue \u2014 correctly classified as COGS, not G&A.",
+    "practitioner_notes": {
+      "erp_application": "Pool fee data is obtained from the mining pool's API (Foundry USA, Antpool, F2Pool, Slushpool all provide detailed payout data). The fee is deducted before the net payout is credited to the miner's wallet. Under gross presentation: revenue is the gross reward; pool fee is a separate COGS line. Under net presentation: only the net payout is recorded as revenue. Choose consistently and disclose the policy. Pool fee rates vary by pool and payment method (FPPS vs. PPS+ vs. PPLNS payment schemes have different economics).",
+      "audit_triggers": "Auditors reconcile pool fee expense to the pool payout reports (gross reward vs. net payout) and verify the fee rate matches the pool's published schedule. Assess whether gross or net presentation is appropriate based on control over the mining process. For mining companies disclosing 'effective mining cost per Bitcoin,' the pool fee must be included in the unit cost calculation.",
+      "required_documentation": "Mining pool payout report (gross reward, fee deducted, net payout), pool operator agreement (fee rate schedule, payment method), blockchain confirmation of net payout received, pool fee expense allocation to COGS, and revenue presentation policy (gross vs. net)."
+    }
+  },
+  {
+    "slug": "crypto-mining-colocation-fee",
+    "category": "Cryptocurrency",
+    "title": "Mining Co-Location Hosting Fee Expense",
+    "description": "Recording fees paid to a third-party data centre operator for hosting and operating mining equipment \u2014 a major operating cost for asset-light mining companies that own hardware but rent facility space.",
+    "entries": [
+      {
+        "account": "Co-Location Hosting Fee \u2014 Mining (COGS)",
+        "type": "Expense (+)",
+        "dr": 280000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable (Data Centre Operator)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 280000.0
+      }
+    ],
+    "explanation": "Many mining companies separate hardware ownership from facility operation \u2014 they own ASIC miners but host them in third-party facilities (co-location data centres) that provide rack space, power, cooling, connectivity, and physical security. The hosting fee typically includes power costs (bundled at a fixed rate per MWh or per machine per month) and facility management. This bundled hosting fee is a direct COGS item for mining companies. Hosting agreements must be assessed under IFRS 16 for embedded lease components \u2014 if the agreement grants the miner the right to use a specifically identified rack or section of the facility, an embedded operating lease may exist.",
+    "practitioner_notes": {
+      "erp_application": "Hosting fees are accrued monthly per the hosting agreement terms. Many hosting contracts are denominated in USD but payable in cryptocurrency \u2014 creating FX/crypto settlement adjustments. The bundled power rate embedded in hosting fees (often $0.035\u2013$0.10 per kWh) allows calculation of the effective electricity cost per unit of hashrate for management reporting. IFRS 16 assessment of embedded leases: if the hosting agreement identifies specific racks or floor space dedicated exclusively to the miner that the operator cannot substitute, an embedded lease exists and must be capitalised.",
+      "audit_triggers": "Auditors perform the IFRS 16 embedded lease assessment for all significant hosting agreements. The substitution rights of the data centre operator are the key test \u2014 operators who retain practical ability to move equipment cannot create an identified asset lease. Test hosting fees against invoices and ensure the expense aligns with the contracted rate. For cryptocurrency-denominated hosting payments, test the foreign currency/crypto gain or loss on settlement.",
+      "required_documentation": "Hosting agreement (rate schedule, power rate, term, rack space specifications), IFRS 16 embedded lease assessment (identified asset test, substitution rights analysis), monthly invoices, crypto-denominated payment records, effective kWh rate calculation, and COGS classification documentation."
+    }
+  },
+  {
+    "slug": "crypto-mining-equipment-disposal",
+    "category": "Cryptocurrency",
+    "title": "Mining Equipment Disposal \u2014 Gain/Loss on Sale of ASIC Miners",
+    "description": "Recording the gain or loss when ASIC mining equipment is sold \u2014 derecognising the asset at its net book value and recognising any difference from proceeds as a disposal gain or loss.",
+    "entries": [
+      {
+        "account": "Cash / Crypto Received (Sale Proceeds)",
+        "type": "Asset (+)",
+        "dr": 650000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Depreciation \u2014 Mining Equipment (Reversed)",
+        "type": "Asset Contra (-)",
+        "dr": 480000.0,
+        "cr": 0
+      },
+      {
+        "account": "Mining Equipment \u2014 Gross Cost (Derecognised)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 1000000.0
+      },
+      {
+        "account": "Gain / (Loss) on Disposal \u2014 Mining Equipment",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 130000.0
+      }
+    ],
+    "explanation": "Mining companies frequently sell older-generation ASIC miners (e.g., Bitmain S9, S17) when they are replaced by newer, more efficient hardware. The disposal is recorded by derecognising the gross cost and accumulated depreciation, with any difference from proceeds recognised as a gain or loss. Proceeds may be in cash (from secondary ASIC markets) or cryptocurrency. The gain/loss is presented as other income or other expenses (not within COGS). Where equipment has been previously impaired, the accumulated impairment is also derecognised alongside accumulated depreciation.",
+    "practitioner_notes": {
+      "erp_application": "Mining equipment disposals are high-volume transactions for actively upgrading mining operations. The fixed asset register must be updated for each disposal \u2014 batch disposal of an entire hardware generation requires a bulk write-off procedure. Proceeds in cryptocurrency require fair value measurement at the transaction date. For impaired equipment, the net book value = cost \u2212 accumulated depreciation \u2212 accumulated impairment losses. Any gain on disposal of previously impaired equipment is limited to the original cost net of depreciation (cannot reverse past impairment through disposal gain).",
+      "audit_triggers": "Auditors reconcile the fixed asset register before and after disposals to confirm completeness. Test disposal proceeds against sale agreements or crypto transaction confirmations. For batch disposals of multiple machines, auditors sample individual machines to confirm existence prior to disposal. Test whether any disposed machines are still generating mining rewards (if so, the disposal may not have occurred as stated). Confirm that impairment write-offs from prior periods are fully derecognised on disposal.",
+      "required_documentation": "Sale agreement for disposed mining equipment, proceeds confirmation (cash or crypto), fixed asset register before and after disposal, accumulated depreciation and impairment schedule at disposal date, gain/loss calculation, blockchain transaction hash (if proceeds received in crypto), and updated asset register."
+    }
+  },
+  {
+    "slug": "crypto-exchange-margin-lending-income",
+    "category": "Cryptocurrency",
+    "title": "Exchange \u2014 Margin Lending to Users (Interest Income)",
+    "description": "Recording interest income earned by a cryptocurrency exchange from lending funds to users for leveraged trading positions.",
+    "entries": [
+      {
+        "account": "Margin Loan Receivable \u2014 Users (Accrued Interest)",
+        "type": "Asset (+)",
+        "dr": 185000.0,
+        "cr": 0
+      },
+      {
+        "account": "Margin Lending Interest Income",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 185000.0
+      }
+    ],
+    "explanation": "Cryptocurrency exchanges that offer margin trading lend funds (fiat or crypto) to users to open leveraged positions. Interest is charged daily on outstanding margin balances at rates that can range from 0.02% to 0.10% per day. The exchange recognises interest income under the effective interest rate method (IFRS 9 \u2014 amortised cost for the loan receivable). The interest accumulates in the user's account balance and is netted against their trading profits or deducted from their collateral. The margin loan receivable is a financial asset at amortised cost \u2014 requiring IFRS 9 ECL assessment.",
+    "practitioner_notes": {
+      "erp_application": "Margin lending is tracked in the exchange's trading system at the individual user level \u2014 each margin position has its own loan balance, daily accrual, and collateral. Interest accrues daily and is posted to the user's account. The aggregate margin loan receivable is recognised in the exchange's balance sheet alongside the equal liability representing the funds borrowed by the user (from the exchange's own balance sheet). IFRS 9 ECL for margin loans: the primary risk mitigation is automatic liquidation (when the position's margin ratio breaches the liquidation threshold, the position is automatically closed). ECL is typically low for margin loans with adequate collateral ratios.",
+      "audit_triggers": "Auditors test margin loan balances against the trading system's user account data. Confirm that liquidated positions are correctly removed from the receivable balance. The ECL assessment for margin loans must consider extreme market scenarios (flash crashes can cause margin calls to fail if the market moves faster than the liquidation system). Test interest income against the loan balance multiplied by the daily interest rate.",
+      "required_documentation": "Margin lending rate schedule, user margin loan balances at period-end, daily accrued interest calculation, liquidation records (forced close of under-margined positions), IFRS 9 ECL assessment for margin loans, collateral ratio monitoring policy, and user agreement terms for margin trading."
+    }
+  },
+  {
+    "slug": "crypto-exchange-listing-fee",
+    "category": "Cryptocurrency",
+    "title": "Exchange \u2014 Token Listing Fee Revenue",
+    "description": "Recording the fee charged by a cryptocurrency exchange to list a new token for trading \u2014 recognised when the listing obligation is fulfilled.",
+    "entries": [
+      {
+        "account": "Cash / Cryptocurrency Received (Listing Fee)",
+        "type": "Asset (+)",
+        "dr": 500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Revenue \u2014 Token Listing (Pre-Listing)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 500000.0
+      }
+    ],
+    "explanation": "Exchanges charge listing fees to token projects in exchange for listing the token for trading on their platform. The listing fee creates a performance obligation \u2014 making the market (enabling trading infrastructure, order books, clearing). Revenue is recognised when the listing goes live and the token becomes tradeable (point-in-time performance obligation satisfied). If ongoing market-making or support obligations exist post-listing, a portion of the fee is deferred and recognised over the service period. Listing fees paid in the listed token itself require fair value measurement at receipt.",
+    "practitioner_notes": {
+      "erp_application": "Listing fees received before the token goes live are deferred. On the listing date, the deferred revenue is released. If the exchange has ongoing obligations (maintaining the listing, providing market depth, providing trading data feeds), the portion attributable to those ongoing services is recognised ratably over the service period. Listing fees received in the listed token are measured at the token's fair value on receipt \u2014 creating both a crypto asset and a deferred revenue liability. Subsequent changes in the token's price affect only the asset (not the revenue).",
+      "audit_triggers": "Auditors confirm the listing date (when trading commenced) as the revenue recognition trigger. Test whether ongoing obligations exist post-listing that require revenue deferral. For token-denominated listing fees, verify the fair value at receipt. Assess whether listing fees are commercially priced at arm's length \u2014 exchanges that list their own affiliated tokens at no fee or reduced fees may have related-party disclosure requirements.",
+      "required_documentation": "Token listing agreement (fee amount, listing date, ongoing obligations), deferred revenue schedule, listing date confirmation (first trade timestamp), IFRS 15 performance obligation analysis, token-denominated fee valuation (if applicable), and related-party assessment."
+    }
+  },
+  {
+    "slug": "crypto-exchange-withdrawal-fee",
+    "category": "Cryptocurrency",
+    "title": "Exchange \u2014 Cryptocurrency Withdrawal Fee Revenue",
+    "description": "Recording withdrawal fees charged by an exchange when users withdraw cryptocurrency from their exchange account to an external wallet.",
+    "entries": [
+      {
+        "account": "Crypto Asset (Withdrawal Fee Retained)",
+        "type": "Asset (+)",
+        "dr": 28500.0,
+        "cr": 0
+      },
+      {
+        "account": "Withdrawal Fee Revenue",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 28500.0
+      }
+    ],
+    "explanation": "Exchanges charge a withdrawal fee when users move cryptocurrency off the platform \u2014 either a fixed amount per transaction or a percentage of the withdrawal. The fee covers the network transaction fee (gas fees on Ethereum, miner fees on Bitcoin) plus the exchange's margin. Revenue is recognised at the point of withdrawal processing (point-in-time performance obligation). Where the withdrawal fee is collected in the withdrawn cryptocurrency (fee deducted from the withdrawal amount), the retained fee is recognised as a crypto asset and revenue.",
+    "practitioner_notes": {
+      "erp_application": "Withdrawal fees are collected automatically by the exchange system at withdrawal processing time. The fee is deducted from the user's withdrawal amount before broadcasting the blockchain transaction. The exchange's cost is the network fee (gas/miner fee) paid to miners/validators to process the blockchain transaction \u2014 this cost offsets the revenue. The margin (withdrawal fee minus network fee) is the exchange's net revenue. For networks with variable fees (Ethereum gas prices), the exchange may earn more in high-fee periods (if withdrawal fees are fixed) or less (if withdrawal fees are capped).",
+      "audit_triggers": "Auditors reconcile total withdrawal fees collected against the withdrawal processing records. Test that network fees paid are correctly recognised as a cost of the withdrawal service. For variable-fee networks, test that gas costs are tracked and matched against withdrawal fee revenue to determine the net margin. Assess whether large withdrawal fee spikes (during network congestion) create unusual revenue that requires disclosure.",
+      "required_documentation": "Withdrawal fee schedule (by cryptocurrency and network), withdrawal processing log (fee collected per transaction), network fee cost per withdrawal (blockchain transaction fee paid), net fee margin calculation, and withdrawal revenue aggregation report."
+    }
+  },
+  {
+    "slug": "crypto-futures-initial-margin",
+    "category": "Cryptocurrency",
+    "title": "Bitcoin Futures Contract \u2014 Initial Margin Deposit",
+    "description": "Recording the initial margin deposited with a futures exchange when entering a Bitcoin futures position \u2014 classified as a restricted cash or financial asset, not an expense.",
+    "entries": [
+      {
+        "account": "Initial Margin Deposit \u2014 Futures Exchange (Restricted Asset)",
+        "type": "Asset (+)",
+        "dr": 150000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash & Cash Equivalents (Transferred to Futures Margin Account)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 150000.0
+      }
+    ],
+    "explanation": "Entering a Bitcoin futures contract on CME, Binance Futures, or Deribit requires posting initial margin \u2014 a security deposit held by the exchange or clearinghouse (typically 20-50% of the notional value for crypto futures). The margin is NOT an expense \u2014 it is a restricted financial asset that will be returned when the futures position is closed. The futures contract itself has zero initial fair value (the entry price is set at the current market price). Initial margin is classified as a financial asset at amortised cost under IFRS 9 (it earns minimal interest, if any). The margin account is separate from the company's operating cash accounts.",
+    "practitioner_notes": {
+      "erp_application": "The margin deposit is transferred to the futures exchange's margin account and tracked as a restricted asset in the balance sheet (not as cash equivalents \u2014 it is restricted for use). The futures contract notional position (long or short) is disclosed off-balance-sheet unless hedge accounting is applied. If hedge accounting is not applied, the futures contract is marked to market with gains/losses through P&L. If hedge accounting IS applied (fair value hedge or cash flow hedge of Bitcoin price risk), the hedging relationship must be formally documented at inception.",
+      "audit_triggers": "Auditors confirm the margin deposit against the futures exchange account statement. Verify that the futures contract is disclosed appropriately \u2014 the notional amount is disclosed in the financial instruments note. Assess whether hedge accounting has been applied and whether all IFRS 9 hedge accounting criteria are met (formal designation, effectiveness testing). Test that variation margin settlements are correctly posted to P&L (or OCI if designated as a cash flow hedge).",
+      "required_documentation": "Futures exchange margin account statement, futures contract confirmation (contract type, size, entry price, expiry), hedge accounting designation document (if applicable), IFRS 9 hedging relationship documentation, effectiveness testing methodology, and restricted asset presentation in the balance sheet."
+    }
+  },
+  {
+    "slug": "crypto-futures-daily-settlement-variation-margin",
+    "category": "Cryptocurrency",
+    "title": "Bitcoin Futures \u2014 Daily Mark-to-Market Settlement (Variation Margin)",
+    "description": "Recording the daily cash settlement of gains or losses on a Bitcoin futures position \u2014 the variation margin paid or received as the futures price moves, recognised immediately in P&L (absent hedge accounting).",
+    "entries": [
+      {
+        "account": "Cash (Variation Margin Received \u2014 Futures Price Increased)",
+        "type": "Asset (+)",
+        "dr": 22000.0,
+        "cr": 0
+      },
+      {
+        "account": "Unrealised Gain on Bitcoin Futures (P&L \u2014 Mark-to-Market)",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 22000.0
+      }
+    ],
+    "explanation": "Bitcoin futures are marked-to-market daily \u2014 the clearinghouse settles gains and losses in cash each day (variation margin). If the futures price moves favourably (up for a long position), the holder RECEIVES cash variation margin. If unfavourable, cash is PAID (deducted from the margin account). These daily cash settlements represent the realised daily P&L on the futures position. Without hedge accounting, ALL daily settlement amounts flow through the income statement. The accumulated unrealised gain or loss on the futures contract = cumulative variation margin received or paid since contract inception. When the contract is closed, no additional gain/loss entry is required \u2014 the total P&L has already been recognised through the daily settlements.",
+    "practitioner_notes": {
+      "erp_application": "Daily variation margin settlements are operationally intensive \u2014 requiring a journal entry for every business day the futures position is open. Most companies automate this through a treasury management system feed from the futures exchange. The cumulative variation margin since inception represents the total economic gain or loss on the futures position. For cash flow hedges of Bitcoin sales: the effective portion of the futures gain/loss goes to OCI; the ineffective portion goes to P&L \u2014 this requires daily effectiveness testing.",
+      "audit_triggers": "Auditors obtain the futures account statement from the exchange showing all daily variation margin settlements. Reconcile cumulative settlements to the income statement impact. For cash flow hedges, test that the hedge effectiveness testing was performed throughout the hedging period and that the correct portion was allocated between OCI and P&L. Confirm that the margin account balance at period-end equals the initial margin plus cumulative net variation margin settlements.",
+      "required_documentation": "Daily futures exchange settlement statements (variation margin paid/received), cumulative settlement reconciliation, futures position roll-up (open contracts at period-end), hedge effectiveness testing workpapers (if hedge accounting applied), OCI vs. P&L allocation schedule (for cash flow hedges), and futures account balance confirmation."
+    }
+  },
+  {
+    "slug": "crypto-options-premium-paid",
+    "category": "Cryptocurrency",
+    "title": "Bitcoin Options Premium \u2014 Option Purchased (Right to Buy/Sell Bitcoin)",
+    "description": "Recording the premium paid for a Bitcoin call or put option \u2014 classified as a financial asset at fair value through profit or loss under IFRS 9.",
+    "entries": [
+      {
+        "account": "Bitcoin Option Asset (Premium Paid \u2014 Fair Value at Inception)",
+        "type": "Asset (+)",
+        "dr": 85000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash (Premium Paid to Option Writer)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 85000.0
+      }
+    ],
+    "explanation": "Purchasing a Bitcoin option (call to buy at a strike price, put to sell at a strike price) requires paying a premium to the option writer. The premium is the fair value of the option at inception \u2014 it is recorded as a financial asset (derivative) at fair value through profit or loss under IFRS 9. The option is remeasured to fair value at each reporting date, with changes in fair value through P&L. The fair value of the option declines with time (theta decay) and changes with Bitcoin price volatility (vega) and price movement (delta). Common uses: companies buying put options to hedge against downside Bitcoin price risk on their treasury holdings, or call options to participate in upside.",
+    "practitioner_notes": {
+      "erp_application": "Bitcoin options are priced using Black-Scholes or Binomial models \u2014 key inputs: current Bitcoin price, strike price, time to expiry, risk-free rate, and implied volatility (the most judgmental input). The option is remeasured to fair value at each reporting date using the updated market price and implied volatility. For OTC options (not exchange-traded), a Level 2 or Level 3 fair value measurement applies \u2014 more complex valuation and audit procedures. Exchange-traded options (Deribit, CME) have observable market prices (Level 1 or Level 2).",
+      "audit_triggers": "Auditors confirm option positions against broker confirmations and exchange account statements. Test the fair value measurement at period-end \u2014 for exchange-traded options, obtain the closing price from the exchange. For OTC options, assess the valuation model and inputs. Confirm that no inappropriate netting of option positions has occurred. Assess hedge designation if options are used in a formal hedging relationship (IFRS 9 permits purchased options as hedging instruments in certain structures).",
+      "required_documentation": "Option purchase confirmation (strike price, expiry, premium paid, contract size), exchange or broker account statement showing the option position, fair value at period-end (exchange closing price or model valuation), valuation model inputs (for OTC options), hedge accounting designation (if applicable), and options portfolio summary."
+    }
+  },
+  {
+    "slug": "crypto-perpetual-swap-funding-payment",
+    "category": "Cryptocurrency",
+    "title": "Perpetual Swap \u2014 Funding Rate Payment / Receipt",
+    "description": "Recording the funding rate payment or receipt on a Bitcoin perpetual swap \u2014 a recurring cash flow that keeps the perpetual swap price anchored to the spot price.",
+    "entries": [
+      {
+        "account": "Funding Rate Expense (Paid to Short Holders \u2014 Long Position)",
+        "type": "Expense (+)",
+        "dr": 12000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Margin Account (Funding Payment Made)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 12000.0
+      }
+    ],
+    "explanation": "Perpetual swaps (perpetual futures) are the most traded crypto derivative product \u2014 they have no expiry date and use a funding rate mechanism to keep the swap price close to the spot price. When Bitcoin's perpetual swap price trades above spot (bullish market sentiment), long holders PAY a positive funding rate to short holders every 8 hours. When swap price is below spot, short holders pay long holders (negative funding rate). The funding rate is a pure cash payment with no impact on the derivative's notional or face value. It is recognised as an expense (when paying) or income (when receiving) in the period it occurs \u2014 it is NOT a component of the derivative's fair value change.",
+    "practitioner_notes": {
+      "erp_application": "Funding payments occur every 8 hours on most exchanges \u2014 three payments per day. Annual funding rate costs can be significant during bull markets (positive funding sustained above 0.1% per 8 hours = over 100% annualised cost). The funding payment/receipt is a separate P&L item from the mark-to-market gain/loss on the position. Funding costs are an important consideration in treasury strategy \u2014 sustained positive funding makes long perpetual swap positions expensive. Many sophisticated treasurers use cash-and-carry trades (long spot, short perpetual) to earn funding income.",
+      "audit_triggers": "Auditors obtain the perpetual swap funding payment history from the exchange account statement. Reconcile total funding payments/receipts to the income statement. Test that funding payments are not incorrectly included in the derivative's carrying value or confused with the variation margin settlements (which represent price movements, not funding). Assess whether the funding cost is material enough to require separate disclosure.",
+      "required_documentation": "Perpetual swap exchange account statement (funding rate history, amounts paid/received), funding rate schedule (8-hourly rate), cumulative funding cost by period, open position size at each funding interval, and P&L presentation (separate from derivative mark-to-market)."
+    }
+  },
+  {
+    "slug": "crypto-fv-hedge-bitcoin-treasury",
+    "category": "Cryptocurrency",
+    "title": "Hedge Accounting \u2014 Fair Value Hedge of Bitcoin Treasury Using Futures",
+    "description": "Applying IFRS 9 fair value hedge accounting to offset Bitcoin price movements \u2014 with both the hedged item (Bitcoin treasury) and the hedging instrument (futures) recognised at fair value through P&L, reducing income statement volatility.",
+    "entries": [
+      {
+        "account": "Bitcoin Treasury Asset \u2014 FV Change (Hedged Item)",
+        "type": "Asset (+/-)",
+        "dr": 85000.0,
+        "cr": 0
+      },
+      {
+        "account": "Fair Value Hedge Gain \u2014 Bitcoin Treasury (P&L)",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 85000.0
+      },
+      {
+        "account": "Bitcoin Futures Liability \u2014 FV Change (Hedging Instrument)",
+        "type": "Liability (+/-)",
+        "dr": 0,
+        "cr": 84000.0
+      },
+      {
+        "account": "Fair Value Hedge Loss \u2014 Bitcoin Futures (P&L)",
+        "type": "Expense (+)",
+        "dr": 84000.0,
+        "cr": 0
+      }
+    ],
+    "explanation": "Under IFRS 9 fair value hedge accounting: the hedged item (Bitcoin treasury) is adjusted for the hedged risk (Bitcoin price changes) through P&L \u2014 even though it would normally be measured under IAS 38 cost model (with only impairments through P&L). The hedging instrument (short Bitcoin futures) also generates P&L. The two approximately offset each other, reducing net income statement volatility. The $1,000 net P&L impact represents hedge ineffectiveness (the futures don't perfectly offset the Bitcoin price changes). This is the primary motivation for hedge accounting \u2014 without it, the Bitcoin would be measured under IAS 38 cost model (only impairment losses; no gains until disposal) while the futures are marked to market daily \u2014 creating asymmetric income statement volatility.",
+    "practitioner_notes": {
+      "erp_application": "IFRS 9 hedge accounting requires: (1) Formal designation at hedge inception (documented hedging relationship), (2) Eligible hedged item (Bitcoin qualifies as a designated risk component \u2014 Bitcoin price risk), (3) Eligible hedging instrument (Bitcoin futures are a derivative), (4) Hedge effectiveness requirement (economic relationship between hedged item and instrument; credit risk does not dominate), (5) Quantitative or qualitative effectiveness assessment. The designation document must specify the hedged risk, the hedging ratio, and the effectiveness assessment method.",
+      "audit_triggers": "IFRS 9 hedge accounting is subject to intensive audit procedures: verify the formal documentation exists at inception, test effectiveness assessments at each reporting date, confirm hedge ratio hasn't changed without re-designation, and test whether the hedge relationship should be discontinued (if the economic relationship breaks down). The $1,000 ineffectiveness must be identified and explained \u2014 it arises from differences in the spot price vs. futures price (basis risk).",
+      "required_documentation": "Hedge designation document (hedged item, hedging instrument, hedged risk, hedging ratio), effectiveness assessment workpapers (quantitative Dollar Offset or regression method), basis risk documentation, hedging instrument fair value calculation, hedged item fair value adjustment, ineffectiveness calculation, and hedge accounting discontinuation criteria."
+    }
+  },
+  {
+    "slug": "crypto-defi-impermanent-loss",
+    "category": "Cryptocurrency",
+    "title": "DeFi Liquidity Pool Withdrawal \u2014 Impermanent Loss Recognition",
+    "description": "Recording the impermanent loss crystallised when withdrawing from a DeFi liquidity pool \u2014 the economic loss from providing liquidity compared to simply holding the deposited assets.",
+    "entries": [
+      {
+        "account": "Cryptocurrency Assets (Token A + Token B Received on Withdrawal)",
+        "type": "Asset (+)",
+        "dr": 88000.0,
+        "cr": 0
+      },
+      {
+        "account": "Impermanent Loss \u2014 DeFi Liquidity Position (Expense)",
+        "type": "Expense (+)",
+        "dr": 12000.0,
+        "cr": 0
+      },
+      {
+        "account": "LP Token Asset (Derecognised on Withdrawal)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 100000.0
+      }
+    ],
+    "explanation": "Impermanent loss (IL) occurs when the relative price of the two tokens in a liquidity pool diverges from the price at deposit. The AMM (Automated Market Maker) automatically rebalances the pool \u2014 selling the appreciating token to buy the depreciating one. When prices diverge significantly, the LP withdraws fewer of the appreciating token and more of the depreciating token compared to what was originally deposited. The IL = (Value of withdrawn tokens at withdrawal) vs. (Value of original tokens at withdrawal prices, as if simply held). On withdrawal, the LP token is burned and the underlying tokens are returned \u2014 the IL becomes 'realised' and is recognised as an expense. Prior to withdrawal, the IL is an 'unrealised economic loss' that most accounting frameworks do not require to be recognised (the LP token is carried at its cost, which does not reflect IL).",
+    "practitioner_notes": {
+      "erp_application": "Impermanent loss calculation: at deposit, the LP received Token A (1 ETH, $2,000) + Token B (1,000 USDC) = $4,000 total. On withdrawal, ETH has risen to $4,000 \u2192 the pool has rebalanced: LP receives 0.7 ETH ($2,800) + 1,400 USDC ($1,400) = $4,200. Had they simply held: 1 ETH ($4,000) + 1,000 USDC ($1,000) = $5,000. IL = $5,000 \u2212 $4,200 = $800. The IL is the opportunity cost of providing liquidity. On withdrawal, recognise the actual tokens received at their fair value, derecognise the LP token at its carrying value, and record the difference as an expense (impermanent loss, now realised).",
+      "audit_triggers": "Auditors require on-chain confirmation of the LP deposit and withdrawal transactions. The IL calculation requires the price data at both the deposit date and withdrawal date. Assess whether IL was disclosed as a risk in prior periods (even if not recognised as a liability) \u2014 the IFRS 7 financial instruments risk disclosure requires discussion of material exposures. Test the LP token carrying value at withdrawal.",
+      "required_documentation": "LP deposit transaction record (tokens deposited, quantities, prices at deposit), LP withdrawal transaction record (tokens received, quantities, prices at withdrawal), LP token carrying value at withdrawal, impermanent loss calculation (HODL value vs. LP withdrawal value), on-chain analytics report, and liquidity pool smart contract address."
+    }
+  },
+  {
+    "slug": "crypto-defi-governance-token-received",
+    "category": "Cryptocurrency",
+    "title": "DeFi Protocol \u2014 Governance Token Received as Incentive (Liquidity Mining Reward)",
+    "description": "Recording governance tokens received as protocol incentives for providing liquidity or staking \u2014 the 'yield farming' reward model.",
+    "entries": [
+      {
+        "account": "Governance Token Asset (COMP, UNI, CRV, etc. \u2014 FV at Receipt)",
+        "type": "Asset (+)",
+        "dr": 18500.0,
+        "cr": 0
+      },
+      {
+        "account": "Liquidity Mining Income (Protocol Token Incentive)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 18500.0
+      }
+    ],
+    "explanation": "DeFi protocols incentivise liquidity provision by distributing their governance tokens (COMP on Compound, UNI on Uniswap, CRV on Curve) to users who provide liquidity or stake. This 'liquidity mining' creates income for the recipient \u2014 the governance tokens are received at nil cost but have market value. Income is recognised at the fair value of the governance tokens at the time of receipt. The tokens are then held as a cryptocurrency asset subject to subsequent measurement. The governance token income is often the primary economic driver of yield farming strategies \u2014 sometimes exceeding the fee income from the liquidity position.",
+    "practitioner_notes": {
+      "erp_application": "Governance token accruals are tracked on-chain \u2014 many protocols distribute rewards continuously (accruing per block) while others require periodic claiming transactions. Recognition timing: for auto-accumulating rewards, income is recognised when the tokens become claimable (the company has an unconditional right to them). For reward claiming: income is recognised at the claiming transaction timestamp. The fair value at receipt is determined from the governance token's market price on a reference exchange (if listed). Newly launched governance tokens with no market price are recognised at nil until a market develops.",
+      "audit_triggers": "Auditors obtain the protocol's reward distribution records (often retrievable on-chain via Dune Analytics or the protocol's API). Test the fair value at receipt \u2014 governance token prices can be extremely volatile, especially for new tokens. Assess whether the governance token is itself subject to lock-up or vesting \u2014 if so, recognition may need to be deferred. Consider whether the governance tokens should be classified under IAS 38 (intangible asset), IAS 2 (inventory if held for sale in the short term), or IFRS 9 (financial asset if they confer profit rights).",
+      "required_documentation": "Protocol reward distribution records (token quantity, timestamp), governance token market price at receipt (from DEX or CEX), income recognition journal, governance token classification assessment (IAS 38 vs. IAS 2 vs. IFRS 9), lock-up/vesting terms (if applicable), and subsequent measurement policy."
+    }
+  },
+  {
+    "slug": "crypto-defi-liquidation-collateral",
+    "category": "Cryptocurrency",
+    "title": "DeFi Collateral Liquidation \u2014 Forced Collateral Sale (Borrower Accounting)",
+    "description": "Recording the forced liquidation of DeFi loan collateral when the loan-to-value ratio breaches the liquidation threshold \u2014 a forced disposal of the pledged cryptocurrency.",
+    "entries": [
+      {
+        "account": "DeFi Loan Payable (Outstanding Balance Repaid)",
+        "type": "Liability (-)",
+        "dr": 58000.0,
+        "cr": 0
+      },
+      {
+        "account": "Liquidation Penalty Expense (Protocol Fee on Liquidation)",
+        "type": "Expense (+)",
+        "dr": 6000.0,
+        "cr": 0
+      },
+      {
+        "account": "Crypto Collateral Pledged (FV at Liquidation \u2014 Derecognised)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 100000.0
+      },
+      {
+        "account": "Loss on DeFi Collateral Liquidation (FV vs. Carrying Cost)",
+        "type": "Expense (+)",
+        "dr": 30000.0,
+        "cr": 0
+      },
+      {
+        "account": "Excess Proceeds Returned by Protocol (FV Collateral - Debt - Penalty)",
+        "type": "Asset (+)",
+        "dr": 6000.0,
+        "cr": 0
+      }
+    ],
+    "explanation": "When the LTV ratio of a DeFi loan breaches the liquidation threshold (e.g., collateral value drops below 130% of the loan), the protocol automatically liquidates sufficient collateral to repay the loan plus a liquidation penalty (typically 5-15%). The accounting: (1) Derecognise the full collateral at its fair value (the liquidation price), (2) Derecognise the loan liability, (3) Recognise the liquidation penalty as an expense, (4) Return any excess collateral value to the borrower, (5) Record the gain/loss on the forced disposal (FV of collateral at liquidation vs. its carrying cost). This is a significant and often unexpected event \u2014 the borrower suffers both the collateral loss AND the liquidation penalty.",
+    "practitioner_notes": {
+      "erp_application": "DeFi liquidations happen instantaneously on-chain \u2014 often within seconds of the LTV threshold being breached. The borrower may not be immediately aware of the liquidation. On-chain monitoring tools alert to liquidation events. The accounting requires knowing: (1) the LTV at the liquidation block timestamp, (2) the collateral price at liquidation, (3) the amount of collateral liquidated by the protocol, (4) the loan repaid, (5) the penalty charged, and (6) any excess returned. The carrying cost of the collateral (for gain/loss calculation) is the reclassified amount from when the collateral was pledged.",
+      "audit_triggers": "Auditors confirm all liquidation events on-chain during the reporting period. Test the recognition of the liquidation loss against the collateral's carrying value at the liquidation date. Assess whether the liquidation was foreseeable (if the LTV was tracked and the company was aware of liquidation risk) \u2014 risk of not disclosing as a subsequent event if it occurred after year-end. Confirm the liquidation penalty expense is correctly classified (not netted against the loss).",
+      "required_documentation": "On-chain liquidation transaction record (timestamp, collateral liquidated, loan repaid, penalty charged, excess returned), collateral carrying value at liquidation, DeFi protocol liquidation parameters (threshold LTV, penalty rate), blockchain analytics confirmation, loss calculation, and liquidation monitoring policy."
+    }
+  },
+  {
+    "slug": "crypto-ecl-crypto-loan-provision",
+    "category": "Cryptocurrency",
+    "title": "Crypto Lending \u2014 Expected Credit Loss Provision (IFRS 9 ECL)",
+    "description": "Recording the expected credit loss provision on cryptocurrency loans receivable \u2014 applying the IFRS 9 three-stage ECL model to institutional crypto lending portfolios.",
+    "entries": [
+      {
+        "account": "Credit Loss Expense \u2014 Crypto Lending (ECL Provision)",
+        "type": "Expense (+)",
+        "dr": 2850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Allowance for Credit Losses \u2014 Crypto Loans (Contra-Asset)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 2850000.0
+      }
+    ],
+    "explanation": "Under IFRS 9, cryptocurrency loans to institutional borrowers (exchanges, trading firms, funds) require Expected Credit Loss provisioning. The ECL model classifies loans into three stages: Stage 1 (performing \u2014 12-month ECL), Stage 2 (significant increase in credit risk \u2014 lifetime ECL), Stage 3 (credit-impaired \u2014 lifetime ECL, interest recognised on net carrying amount). The cryptocurrency lending market demonstrated extreme counterparty risk during 2022-2023 (Celsius, BlockFi, Genesis, Three Arrows Capital all defaulted). ECL for crypto lending requires consideration of: borrower creditworthiness, collateral coverage, loan-to-value ratio, and macro crypto market conditions.",
+    "practitioner_notes": {
+      "erp_application": "Crypto lending ECL models must be calibrated to the high-risk, high-volatility nature of the industry. Historical default rates in traditional finance are not applicable \u2014 crypto lending experienced catastrophic default rates in 2022. Probability of Default (PD), Loss Given Default (LGD), and Exposure at Default (EAD) inputs must reflect crypto-specific risk factors. Collateral coverage (if loans are secured by crypto assets) reduces LGD \u2014 but collateral values are also highly correlated with borrower default (both fall in a crypto market crash). The ECL model must be stress-tested under severe market scenarios.",
+      "audit_triggers": "Auditors scrutinise ECL models for crypto lending portfolios \u2014 this is a high-risk area given the crypto industry's default history. Test the staging of each loan (Stage 1 vs. 2 vs. 3). Challenge PD assumptions against observable market indicators (credit spreads, exchange solvency signals). For Stage 3 loans (credit-impaired), test that interest income is recognised on the net carrying amount (not the gross). Review whether any recent borrower stress events require immediate stage transfer.",
+      "required_documentation": "Crypto loan receivable register (borrower, principal, rate, maturity, collateral), IFRS 9 staging assessment per borrower, ECL model documentation (PD, LGD, EAD inputs and methodology), collateral value at reporting date, Stage 1/2/3 ECL calculation by loan, significant deterioration trigger criteria, and sensitivity analysis on key ECL assumptions."
+    }
+  },
+  {
+    "slug": "crypto-defaulted-loan-collateral-seizure",
+    "category": "Cryptocurrency",
+    "title": "Crypto Loan Default \u2014 Collateral Seizure and Write-Off",
+    "description": "Recording the seizure of cryptocurrency collateral when a borrower defaults on a crypto loan \u2014 derecognising the loan receivable and recognising the seized collateral at fair value.",
+    "entries": [
+      {
+        "account": "Cryptocurrency Asset (Seized Collateral \u2014 Recognised at FV)",
+        "type": "Asset (+)",
+        "dr": 4200000.0,
+        "cr": 0
+      },
+      {
+        "account": "Allowance for Credit Losses (ECL Provision Released)",
+        "type": "Asset (+)",
+        "dr": 2850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Credit Loss Expense \u2014 Write-Off (Excess Loss Over ECL)",
+        "type": "Expense (+)",
+        "dr": 950000.0,
+        "cr": 0
+      },
+      {
+        "account": "Crypto Loan Receivable (Defaulted \u2014 Written Off)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 8000000.0
+      }
+    ],
+    "explanation": "When a borrower defaults, the lender seizes the pledged collateral under the loan security agreement. The accounting: (1) Derecognise the full loan receivable (principal + accrued interest), (2) Release the ECL allowance established against the loan, (3) Recognise the seized collateral at its FAIR VALUE at the date of seizure (regardless of the borrower's cost basis), (4) Record any excess loss (loan carrying value net of ECL minus FV of collateral seized) as an additional credit loss expense. The seized collateral becomes a new crypto asset on the lender's balance sheet, subject to subsequent remeasurement under the lender's applicable standard (IAS 38 or ASU 2023-08).",
+    "practitioner_notes": {
+      "erp_application": "Collateral seizure requires legal enforcement of the security agreement \u2014 for DeFi loans, seizure is automatic (smart contract liquidation); for OTC/institutional loans, it requires legal action or borrower cooperation in transferring custody. The FV of seized collateral at seizure date is the initial recognition amount \u2014 it is not the loan's carrying value, not the original collateral value at pledging, but the current market price. If the seized collateral's FV is less than the loan's carrying value (net of ECL), the shortfall is an immediate credit loss.",
+      "audit_triggers": "Auditors verify the security agreement gives the lender the right to seize and liquidate the collateral. Confirm the FV of seized collateral (market price at seizure date). Test that the write-off correctly releases the ECL provision and recognises any incremental loss. Assess whether any residual claim against the defaulted borrower exists (post-seizure deficiency) \u2014 if so, a contingent asset must be assessed.",
+      "required_documentation": "Loan agreement (security interest in collateral), default notice, collateral transfer record (blockchain or custody transfer), FV of collateral at seizure (from exchange price at seizure date), ECL provision release calculation, write-off journal, and assessment of residual claims against defaulted borrower."
+    }
+  },
+  {
+    "slug": "crypto-repo-sale-and-repurchase",
+    "category": "Cryptocurrency",
+    "title": "Crypto Repo \u2014 Bitcoin Sold Under Agreement to Repurchase",
+    "description": "Recording a repurchase agreement (repo) where Bitcoin is sold today with a contractual obligation to repurchase at a fixed price \u2014 treated as a secured borrowing, NOT a true sale.",
+    "entries": [
+      {
+        "account": "Cash Received (Repo Proceeds \u2014 Short-Term Borrowing)",
+        "type": "Asset (+)",
+        "dr": 4800000.0,
+        "cr": 0
+      },
+      {
+        "account": "Repo Liability (Obligation to Repurchase Bitcoin)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 4800000.0
+      }
+    ],
+    "explanation": "A Bitcoin repo is economically a secured loan: the owner 'sells' Bitcoin to a counterparty and simultaneously agrees to buy it back at a slightly higher price (the difference being the repo interest rate). Under IFRS 9, a repo is NOT a true sale \u2014 it is a SECURED BORROWING. The Bitcoin remains on the owner's balance sheet (the 'sale' does not meet derecognition criteria because the owner retains substantially all risks and rewards). The cash received is a liability (the obligation to return it by repurchasing the Bitcoin). The repo interest (the price difference) is recognised as interest expense over the repo term using the effective interest rate.",
+    "practitioner_notes": {
+      "erp_application": "The key IFRS 9 derecognition test for repos: does the entity retain substantially all risks and rewards of ownership? For a fixed-price repurchase agreement: YES \u2014 the original owner bears all the upside if Bitcoin's price rises above the repurchase price, and all downside if it falls. Therefore, Bitcoin is NOT derecognised. The cash received is a secured borrowing. The counterparty (repo buyer) has rights in the Bitcoin as collateral \u2014 they may need to recognise the Bitcoin as a collateralised asset at fair value if they have the right to re-pledge.",
+      "audit_triggers": "Auditors apply the IFRS 9 derecognition framework to all crypto repo arrangements. The most common error: treating repos as true sales (derecognising the Bitcoin and recognising gain/loss) when they should be secured borrowings. Test whether the repurchase price is fixed (secured borrowing) or at market (potentially a true sale). For the counterparty (repo buyer), assess whether they should recognise the Bitcoin received as a collateral asset.",
+      "required_documentation": "Repo agreement (sale price, repurchase price, term, rates), IFRS 9 derecognition analysis (risks and rewards assessment), Bitcoin on-balance-sheet confirmation (not derecognised), repo liability amortisation schedule (interest at EIR), and counterparty right to re-pledge assessment."
+    }
+  },
+  {
+    "slug": "crypto-employee-token-grant-ifrs2",
+    "category": "Cryptocurrency",
+    "title": "Employee Token Grant \u2014 Share-Based Payment (IFRS 2)",
+    "description": "Recording a grant of company governance or utility tokens to employees as compensation \u2014 applying IFRS 2 Share-Based Payment with the token's grant date fair value amortised over the vesting period.",
+    "entries": [
+      {
+        "account": "Token-Based Compensation Expense (IFRS 2 \u2014 Vested Portion)",
+        "type": "Expense (+)",
+        "dr": 185000.0,
+        "cr": 0
+      },
+      {
+        "account": "Token Reserve / Additional Paid-In Capital (Equity-Settled SBC)",
+        "type": "Equity (+)",
+        "dr": 0,
+        "cr": 185000.0
+      }
+    ],
+    "explanation": "Many crypto companies compensate employees with their own governance or utility tokens instead of (or in addition to) cash salaries and stock options. Under IFRS 2, token grants to employees are share-based payments \u2014 the grant date fair value of the tokens is recognised as an expense over the vesting period. If tokens are classified as equity instruments of the issuing entity: equity-settled treatment applies (credit to equity, no remeasurement after grant date). If tokens are classified as liabilities (a cash-settled obligation to deliver tokens with market value fluctuation): liability-settled treatment applies (remeasurement to FV at each reporting date, with P&L impact). The classification depends on whether the tokens represent residual interests in the company (equity) or obligations to deliver assets (liability).",
+    "practitioner_notes": {
+      "erp_application": "Token grant accounting parallels stock option accounting under IFRS 2. The key steps: (1) Determine grant date FV of the token (using the market price if listed, or a valuation model if unlisted), (2) Identify the vesting conditions (service conditions, performance conditions \u2014 e.g., platform launch milestones), (3) Amortise the grant date FV over the vesting period for equity-settled awards, (4) Remeasure at each reporting date for liability-settled awards. Forfeited unvested tokens (employees who leave before vesting) result in a reversal of previously recognised expense.",
+      "audit_triggers": "Auditors test the IFRS 2 classification (equity vs. liability-settled). The most challenging area: governance tokens that grant economic rights similar to shares may be equity-settled; utility tokens with no ownership rights may be liability-settled or fall outside IFRS 2 entirely. Test the grant date FV (particularly for unlisted tokens \u2014 requires a valuation model). Confirm vesting condition assessment (service conditions vs. market conditions vs. performance conditions \u2014 each has different expense recognition patterns).",
+      "required_documentation": "Token grant agreement (quantity, grant date, vesting schedule, conditions), IFRS 2 classification analysis (equity vs. liability-settled), grant date FV determination (market price or valuation model), vesting condition classification, IFRS 2 expense calculation by period, forfeiture experience and estimated rate, and token reserve movement in equity."
+    }
+  },
+  {
+    "slug": "crypto-employee-token-vesting-delivery",
+    "category": "Cryptocurrency",
+    "title": "Employee Token Vesting \u2014 Delivery of Vested Tokens",
+    "description": "Recording the delivery of tokens to an employee upon vesting \u2014 converting the token reserve (equity) to the tokens issued at fair value, with any tax withholding obligation.",
+    "entries": [
+      {
+        "account": "Token Reserve (IFRS 2 \u2014 Vested Tokens Transferred to Employee)",
+        "type": "Equity (-)",
+        "dr": 185000.0,
+        "cr": 0
+      },
+      {
+        "account": "Tokens Issued to Employee (From Treasury or New Issuance)",
+        "type": "Asset (-) / Equity (-)",
+        "dr": 0,
+        "cr": 185000.0
+      },
+      {
+        "account": "Payroll Tax Withholding Liability (On FMV of Tokens at Vesting)",
+        "type": "Liability (+)",
+        "dr": 12000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash (Payroll Tax Remitted to Tax Authority)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 12000.0
+      }
+    ],
+    "explanation": "Upon vesting, the employee receives their tokens. The company transfers tokens from its treasury (if previously repurchased or retained) or issues new tokens. The token reserve built up under IFRS 2 during the vesting period is released. Importantly: the income tax and social security withholding on the TOKEN's fair value at vesting must be calculated and remitted \u2014 the employee has received a taxable benefit equal to the token's market value at vesting date, even though no cash changes hands. The employer must withhold the appropriate tax in cash (since the employee receives tokens, not cash), either by retaining some tokens or requiring the employee to pay the tax separately.",
+    "practitioner_notes": {
+      "erp_application": "The payroll tax at vesting is calculated on the FMV of tokens at vesting multiplied by the applicable withholding rate. If the employer nets the tokens (withholds some tokens and sells them to cover the tax), the token sale is a disposal event with its own gain/loss. Many crypto companies have struggled with payroll tax compliance on token vesting \u2014 regulators in the UK (HMRC), US (IRS), and EU have all issued guidance requiring timely withholding. Token price volatility makes the withholding calculation challenging when the settlement date differs from the vesting date.",
+      "audit_triggers": "Auditors verify payroll tax withholding compliance on all token vesting events during the year. For companies with large token vesting schedules (annual cliff vesting can trigger millions in tokens simultaneously), the payroll tax exposure is material. Test the FMV used for withholding against the exchange price on the vesting date. Confirm that the employer has remitted the withholding to the tax authority and issued appropriate tax documentation to employees.",
+      "required_documentation": "Token vesting schedule and vest dates, token FMV on each vesting date (from exchange or pricing service), payroll tax calculation and rate applied, withholding remittance records, employee tax documentation issued (W-2 for US, P60 for UK, equivalent for other jurisdictions), net settlement records (tokens withheld to cover tax), and employment tax filing compliance."
+    }
+  },
+  {
+    "slug": "crypto-employee-token-options",
+    "category": "Cryptocurrency",
+    "title": "Employee Token Options \u2014 IFRS 2 Grant Date Fair Value (Black-Scholes)",
+    "description": "Recording token option grants to employees \u2014 where the option to purchase company tokens at a fixed strike price is measured at grant date using an option pricing model.",
+    "entries": [
+      {
+        "account": "Token Option Compensation Expense (IFRS 2 \u2014 Monthly Amortisation)",
+        "type": "Expense (+)",
+        "dr": 42000.0,
+        "cr": 0
+      },
+      {
+        "account": "Token Option Reserve (Equity \u2014 Accumulated SBC)",
+        "type": "Equity (+)",
+        "dr": 0,
+        "cr": 42000.0
+      }
+    ],
+    "explanation": "Token options give employees the right (but not obligation) to purchase company tokens at a fixed price (strike price) for a defined period (typically 2-5 years). Under IFRS 2, the grant date fair value of the option is measured using Black-Scholes (or a lattice model) \u2014 inputs include the current token price, strike price, expected volatility, risk-free rate, expected term, and expected dividends. The fair value is amortised as compensation expense over the vesting period (typically 4 years with 1-year cliff + monthly vesting). Token options are often preferred over outright grants because employees benefit from price appreciation while the company's P&L impact is limited to the option's time value at grant.",
+    "practitioner_notes": {
+      "erp_application": "Token option accounting parallels equity option accounting under IFRS 2. The main complexity: expected volatility for unlisted tokens. For listed governance tokens, historical volatility from the trading history is used. For pre-listing tokens (granted before the token goes live), a comparable publicly listed token's volatility may be used as a proxy. The grant date FV is FIXED \u2014 it is not remeasured after grant date (for equity-settled options). Forfeited options (employees leaving before vesting) result in reversal of previously recognised expense.",
+      "audit_triggers": "Auditors test the Black-Scholes inputs: (1) current token price at grant date (observable for listed tokens; requires valuation for unlisted), (2) strike price (per grant agreement), (3) expected volatility (most judgmental input \u2014 for unlisted tokens), (4) risk-free rate (T-bill rate for the option's expected term), (5) expected term (often use simplified method or based on exercise history). For unlisted tokens, the volatility assumption is the most critical and most heavily scrutinised input.",
+      "required_documentation": "Token option agreement (strike price, vesting, expiry, quantity), IFRS 2 grant date FV calculation (Black-Scholes model with all inputs documented), expected volatility methodology (for unlisted tokens \u2014 comparable listed token analysis), IFRS 2 amortisation schedule, forfeiture rate estimate, and token option reserve movement in equity."
+    }
+  },
+  {
+    "slug": "crypto-in-game-token-issuance-gaming",
+    "category": "Cryptocurrency",
+    "title": "Web3 Gaming \u2014 In-Game Token Issued by Game Developer (Deferred Revenue)",
+    "description": "Recording the proceeds from selling in-game utility tokens (e.g., game currency or governance tokens in a play-to-earn game) \u2014 initially deferred as the developer has not yet delivered the in-game utility.",
+    "entries": [
+      {
+        "account": "Cash / Crypto Received (In-Game Token Sale)",
+        "type": "Asset (+)",
+        "dr": 2500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Revenue \u2014 In-Game Token (Platform Not Yet Launched)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 2500000.0
+      }
+    ],
+    "explanation": "Web3 game developers often raise funds by pre-selling in-game tokens before the game launches. These tokens promise future utility (in-game currency, governance rights, NFT upgrades). The proceeds create a deferred revenue liability \u2014 the developer has received cash but has not yet delivered the performance obligation (the functioning game). Revenue is recognised as the game delivers value to token holders \u2014 on game launch, on feature delivery, or over the period players use the tokens. If the token is classified as a financial instrument (security) rather than a utility token, the proceeds go to equity or a financial liability, not deferred revenue.",
+    "practitioner_notes": {
+      "erp_application": "In-game tokens raise nearly identical accounting questions to ICO tokens \u2014 the IFRS 15 vs. IAS 32 vs. IFRS 9 classification analysis is required. For most game utility tokens: (1) the token grants in-game utility (not ownership rights) \u2192 IFRS 15 deferred revenue, (2) revenue recognised when the game is operational and players can use the tokens, (3) breakage income recognised for tokens permanently unspent. The game's delay or cancellation may create a legal obligation to refund token holders \u2014 this would reclassify the deferred revenue to a refund liability.",
+      "audit_triggers": "Auditors perform the IFRS 15 / IAS 32 classification analysis, then test the revenue recognition against actual game delivery milestones. For games that raised pre-launch token sales but never launched, the deferred revenue may be a refund liability. Token holders' legal rights (whether they can demand a refund) affect the classification. Test the breakage estimate for permanently unspent tokens against actual player engagement data.",
+      "required_documentation": "In-game token whitepaper, legal opinion on token classification (utility vs. security), IFRS 15 performance obligation identification, game launch and development milestone schedule, revenue recognition trigger documentation, player engagement and token usage data (post-launch), breakage estimate methodology, and refund obligation assessment."
+    }
+  },
+  {
+    "slug": "crypto-play-to-earn-token-expense",
+    "category": "Cryptocurrency",
+    "title": "Play-to-Earn Game \u2014 Token Rewards Paid to Players (Expense Recognition)",
+    "description": "Recording the cost of governance or utility tokens distributed to players as rewards in a play-to-earn (P2E) game \u2014 the developer's cost of delivering the game's economic model.",
+    "entries": [
+      {
+        "account": "Player Token Reward Expense (COGS / Operating Expense)",
+        "type": "Expense (+)",
+        "dr": 1850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Token Treasury (Tokens Issued from Developer Reserve)",
+        "type": "Equity / Asset (-)",
+        "dr": 0,
+        "cr": 1850000.0
+      }
+    ],
+    "explanation": "Play-to-earn games pay players in the game's own token for completing tasks, winning battles, or contributing to the ecosystem. From the developer's perspective, these token rewards are a cost of running the game \u2014 analogous to promotional costs or revenue sharing with content creators. The cost is measured at the fair value of the tokens at the time they are distributed to players. If issued from a token reserve (pre-minted tokens held by the developer), the developer's treasury decreases. If newly minted (token supply increases), the existing token holders experience dilution \u2014 which may be an implicit expense even without cash outflow.",
+    "practitioner_notes": {
+      "erp_application": "P2E economics are fundamentally unsustainable if the token reward expense exceeds the revenue from new player onboarding \u2014 a death spiral (Axie Infinity's collapse demonstrated this). The accounting must reflect the economic cost of token rewards at fair value, not at the developer's cost basis of zero (for newly minted tokens). Newly minted tokens that are rewarded to players increase the circulating supply and dilute existing holders \u2014 this is a real economic cost that must be recognised at the current market price of the token.",
+      "audit_triggers": "Auditors test that newly minted token rewards are recognised at FMV at the time of distribution (not at nil cost, just because the developer minted them). The token supply schedule (total supply, circulating supply, developer reserves) must be disclosed. Test the game's economic sustainability \u2014 if the token reward expense continuously exceeds in-game revenue, the going concern of the game's economic model must be assessed.",
+      "required_documentation": "Token distribution records (player rewards by period), token FMV at distribution date, token supply schedule (minted vs. treasury vs. circulating), player engagement data (confirming the rewards were earned), economic sustainability analysis, and COGS vs. operating expense classification."
+    }
+  },
+  {
+    "slug": "crypto-metaverse-land-developer",
+    "category": "Cryptocurrency",
+    "title": "Metaverse Land NFT \u2014 Developer Capitalization of Creation Costs",
+    "description": "Capitalizing the costs incurred by a metaverse platform developer to create virtual land NFTs \u2014 treated as an internally developed intangible asset under IAS 38.",
+    "entries": [
+      {
+        "account": "Virtual Land NFT Asset \u2014 Cost to Develop (IAS 38)",
+        "type": "Asset (+)",
+        "dr": 850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Development Costs \u2014 Metaverse Platform (Capitalised)",
+        "type": "Asset (-) / Expense Reclassified",
+        "dr": 0,
+        "cr": 850000.0
+      }
+    ],
+    "explanation": "A metaverse platform developer (like Decentraland or The Sandbox) creates virtual land NFTs by developing the underlying platform \u2014 the smart contracts, rendering engine, coordinate system, and virtual world infrastructure. Under IAS 38, development costs incurred after technical feasibility is established are capitalised as an internally developed intangible asset. The virtual land NFTs themselves are the product being sold \u2014 when sold to users, revenue is recognised under IFRS 15 and the cost of the sold NFT is transferred from the developer's intangible asset to cost of sales. Unsold virtual land NFTs remain on the developer's balance sheet as an intangible asset.",
+    "practitioner_notes": {
+      "erp_application": "The capitalisation follows the IAS 38 development phase criteria: (1) technical feasibility of completing the metaverse (demonstrated by working prototype or beta), (2) intention to complete, (3) ability to use or sell, (4) probable future economic benefits (pre-sales, user engagement projections), (5) adequate resources, (6) ability to measure costs reliably. Post-technical feasibility development costs (programming the virtual world, creating the land parcel coordinate system, building the smart contracts) are capitalised. Marketing costs, pre-feasibility research, and G&A are expensed.",
+      "audit_triggers": "Auditors assess the technical feasibility determination (when did it occur, what evidence supports it?) and confirm that only post-feasibility costs are capitalised. Test the carrying value of unsold virtual land against NRV (what is the current market price for virtual land, and does it support the carrying cost?). For metaverse platforms with falling user engagement or token prices, impairment of unsold virtual land inventory may be required.",
+      "required_documentation": "Technical feasibility determination memo, development cost tracking (post-feasibility), virtual land NFT inventory (parcels created vs. sold), cost-per-parcel calculation, NRV assessment of unsold land (current market price), IAS 38 capitalisation policy, and smart contract development records."
+    }
+  },
+  {
+    "slug": "crypto-security-token-offering-equity",
+    "category": "Cryptocurrency",
+    "title": "Security Token Offering (STO) \u2014 Proceeds Classified as Equity",
+    "description": "Recording proceeds from a Security Token Offering where the tokens represent equity interests in the company \u2014 classified as equity (not revenue or liability) under IAS 32.",
+    "entries": [
+      {
+        "account": "Cash / Cryptocurrency Received (STO Proceeds)",
+        "type": "Asset (+)",
+        "dr": 15000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Share Capital \u2014 Security Tokens (Equity)",
+        "type": "Equity (+)",
+        "dr": 0,
+        "cr": 150000.0
+      },
+      {
+        "account": "Share Premium (APIC) \u2014 STO Proceeds over Par",
+        "type": "Equity (+)",
+        "dr": 0,
+        "cr": 14850000.0
+      }
+    ],
+    "explanation": "A security token that represents ownership in the issuing company (profit participation, residual interest, voting rights) is an equity instrument under IAS 32 \u2014 it meets the definition of an equity instrument: a contract that evidences a residual interest in the assets after deducting all liabilities. Proceeds from issuing equity security tokens go to equity \u2014 NOT to deferred revenue (as a utility token would). The distinction between utility tokens (IFRS 15 deferred revenue) and security tokens (IAS 32 equity) is the most critical classification judgment in crypto accounting, with major P&L and balance sheet implications.",
+    "practitioner_notes": {
+      "erp_application": "The STO equity classification mirrors an IPO or private placement \u2014 proceeds go to share capital (par value) and share premium. The security tokens are treated as shares for all purposes: they participate in dividends, are listed in the equity section, and their issuance is disclosed in the statement of changes in equity. STO issuance costs (legal, marketing, exchange listing costs) reduce the equity proceeds (deducted from share premium). Token holder rights (voting, dividend participation, liquidation preference) are disclosed in the notes to financial statements.",
+      "audit_triggers": "Auditors perform the IAS 32 classification analysis: does the token represent a residual interest? Does the issuer have the unconditional right to avoid delivering cash? If the token has a fixed redemption obligation, it is a liability \u2014 not equity. For security tokens classified as equity, auditors verify regulatory compliance \u2014 most jurisdictions require STOs to comply with securities law (SEC in the US, FCA in the UK). Test that issuance costs are correctly deducted from equity (not expensed).",
+      "required_documentation": "STO legal documentation (token terms \u2014 equity rights, voting, dividend), IAS 32 classification analysis (equity vs. financial liability vs. financial asset), regulatory approval or exemption documentation, STO proceeds and issuance costs, equity section presentation, token holder rights disclosure, and regulatory filing confirmations."
+    }
+  },
+  {
+    "slug": "crypto-charitable-donation-bitcoin",
+    "category": "Cryptocurrency",
+    "title": "Charitable Donation of Bitcoin \u2014 Disposal at Fair Value and Deduction",
+    "description": "Recording the donation of Bitcoin to a charitable organisation \u2014 treated as a disposal at fair value (triggering gain recognition) with a corresponding charitable expense.",
+    "entries": [
+      {
+        "account": "Charitable Donation Expense (FV of Bitcoin Donated)",
+        "type": "Expense (+)",
+        "dr": 250000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cryptocurrency Asset (Carrying Cost of Donated BTC)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 180000.0
+      },
+      {
+        "account": "Gain on Disposal \u2014 Donated Bitcoin (FV minus Carrying Cost)",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 70000.0
+      }
+    ],
+    "explanation": "Donating Bitcoin requires recognising two separate economic events: (1) a disposal of the Bitcoin at its fair value (triggering a gain = FV $250,000 minus carrying cost $180,000 = $70,000 gain), and (2) a charitable expense equal to the FV of the donated Bitcoin ($250,000). These cannot be netted \u2014 both the gain and the expense must be separately recognised. The gain on disposal is taxable; the charitable deduction may partially offset it depending on jurisdiction. Companies often donate appreciated Bitcoin specifically to crystallise the tax deduction while recognising the gain \u2014 the net tax benefit can be significant when the charitable deduction rate matches or exceeds the capital gains rate.",
+    "practitioner_notes": {
+      "erp_application": "Bitcoin donations to qualifying charities are increasingly common as a tax-efficient philanthropic strategy. The accounting requires both the gain recognition (disposal at FV) and the expense recognition (charitable donation at FV). The net P&L impact = gain \u2212 donation expense = $70,000 \u2212 $250,000 = $(180,000) net loss (equal to the carrying cost of the Bitcoin \u2014 which makes sense, as the company has given away an asset costing $180,000). The donation expense may be tax-deductible up to certain limits, with the gain also potentially taxable \u2014 the tax efficiency depends on jurisdiction.",
+      "audit_triggers": "Auditors confirm that both the disposal gain and the charitable expense are recognised \u2014 netting is not permitted. Test the FV at the donation date (the date the Bitcoin is transferred to the charity's wallet on-chain). Confirm the charity is a recognised tax-exempt organisation (to support the tax deduction). For large Bitcoin donations, the charity may need to sign an acknowledgement confirming receipt of the donation.",
+      "required_documentation": "Donation agreement or acknowledgement from charity, blockchain transaction record (Bitcoin transfer to charity wallet), FV of Bitcoin at transfer date, carrying cost of donated Bitcoin (lot identification), gain on disposal calculation, charitable expense recognition, charity's tax-exempt status documentation, and tax deduction assessment."
+    }
+  },
+  {
+    "slug": "crypto-exchange-insolvency-customer-claim",
+    "category": "Cryptocurrency",
+    "title": "Crypto Exchange Insolvency \u2014 Customer Claim Asset Recognition (FTX-type Scenario)",
+    "description": "Recording a contingent asset arising from a customer's claim against an insolvent cryptocurrency exchange \u2014 recognised only when recovery is virtually certain.",
+    "entries": [
+      {
+        "account": "Cryptocurrency Receivable \u2014 Insolvency Claim (If Recovery Virtually Certain)",
+        "type": "Asset (+)",
+        "dr": 0,
+        "cr": 0
+      },
+      {
+        "account": "Loss on Exchange Insolvency Exposure (Write-Down of Exchange Balance)",
+        "type": "Expense (+)",
+        "dr": 2800000.0,
+        "cr": 0
+      },
+      {
+        "account": "Exchange Deposit Asset (Previously Recognised \u2014 Now Impaired/Written Off)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 2800000.0
+      }
+    ],
+    "explanation": "When a cryptocurrency exchange becomes insolvent (FTX, Celsius, BlockFi), customers with balances on the platform face a significant risk of loss. The accounting treatment for an affected company: (1) immediately assess whether the exchange balance is still recoverable \u2014 if recovery is not virtually certain (which it typically is not in exchange insolvency), the balance is FULLY written off. (2) Any claim in the insolvency proceedings is a contingent asset \u2014 NOT recognised on the balance sheet until recovery is virtually certain. The loss is recognised in the period when the exchange insolvency is announced and the customer's funds are clearly at risk. This is NOT a loss only on final liquidation \u2014 IFRS 9 impairment requires immediate recognition when default is evident.",
+    "practitioner_notes": {
+      "erp_application": "Exchange insolvency events (Chapter 11 filing, regulatory closure, withdrawal freeze) are trigger events for immediate impairment assessment. Balances on an insolvent exchange are financial assets under IFRS 9 \u2014 measured at amortised cost with an ECL model. Once exchange insolvency is declared, the ECL becomes a Stage 3 lifetime ECL (credit-impaired) \u2014 typically 100% provision (full write-off) is appropriate given the history of crypto exchange insolvencies (FTX customers received pennies on the dollar in some cases). Subsequent recovery (through insolvency proceedings, government recovery programs) is recognised as income only when virtually certain.",
+      "audit_triggers": "Auditors review the timeliness of the impairment recognition \u2014 companies that maintained exchange balances at full carrying value while exchange insolvency proceedings were underway had materially overstated assets. Test whether the written-off amount is complete (including all balances: cash, crypto, and any open derivatives positions on the exchange). Assess whether management has appropriately escalated the exchange insolvency disclosure to the board and to auditors as a subsequent event.",
+      "required_documentation": "Exchange insolvency filing documentation, balance confirmation at insolvency date (from exchange last statement), IFRS 9 ECL assessment (Stage 3 \u2014 credit-impaired), write-off journal, subsequent recovery tracking (insolvency proceedings, SIPC or equivalent claims), contingent asset recognition criteria assessment, and disclosure of unrecovered exchange balances."
+    }
+  },
+  {
+    "slug": "crypto-intercompany-transfer-group",
+    "category": "Cryptocurrency",
+    "title": "Intercompany Cryptocurrency Transfer \u2014 Within Consolidated Group",
+    "description": "Recording the transfer of Bitcoin from a parent entity to a subsidiary entity within the same consolidated group \u2014 with intercompany elimination required at consolidation.",
+    "entries": [
+      {
+        "account": "Intercompany Receivable \u2014 Crypto Transfer (Parent's Books)",
+        "type": "Asset (+)",
+        "dr": 5000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cryptocurrency Asset (Parent's Books \u2014 Transferred to Sub)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 5000000.0
+      },
+      {
+        "account": "Cryptocurrency Asset (Subsidiary's Books \u2014 Received)",
+        "type": "Asset (+)",
+        "dr": 5000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Intercompany Payable \u2014 Crypto Transfer (Subsidiary's Books)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 5000000.0
+      }
+    ],
+    "explanation": "Intercompany cryptocurrency transfers within a consolidated group are internal transactions \u2014 they must be eliminated at consolidation. On each entity's individual books: the parent records a disposal of the crypto and an intercompany receivable; the subsidiary records an acquisition of crypto and an intercompany payable. On consolidation: the intercompany receivable and payable are eliminated. Any gain or loss recognised on the parent's books on the 'sale' of crypto to the subsidiary (if transferred above carrying value) is eliminated as an unrealised intercompany profit. The crypto appears once on the consolidated balance sheet at the original group cost.",
+    "practitioner_notes": {
+      "erp_application": "Group treasury centralisation often involves moving crypto assets between group entities (e.g., moving Bitcoin from an operating subsidiary to a treasury holding company). At the individual entity level: each entity records the transfer at the agreed intercompany price. At consolidation: the intercompany balances are eliminated. If the transfer price differs from the carrying value (creating an intercompany gain/loss at the entity level), the unrealised gain/loss is eliminated on consolidation \u2014 the group reports the crypto at its original cost to the group. Any tax implications at the entity level (even though eliminated in consolidation) must be tracked separately.",
+      "audit_triggers": "Auditors confirm that intercompany crypto transfers are properly eliminated in the consolidation working paper. Test that any intercompany gain recognised at the individual entity level is correctly eliminated (unrealised profit in intercompany transactions is a standard consolidation elimination). Confirm the crypto is only presented once on the consolidated balance sheet. Assess tax implications of intercompany crypto transfers \u2014 may create taxable disposals at the entity level even though eliminated at group level.",
+      "required_documentation": "Intercompany transfer agreement, blockchain transaction hash (crypto transfer on-chain), entity-level records (parent disposal, subsidiary acquisition), intercompany reconciliation (parent receivable equals subsidiary payable), consolidation elimination entry, tax analysis of the intercompany transfer (entity-level taxable disposal), and transfer pricing documentation."
+    }
+  },
+  {
+    "slug": "crypto-deferred-tax-unrealised-fv-gain",
+    "category": "Cryptocurrency",
+    "title": "Deferred Tax Liability \u2014 On Unrealised Fair Value Gain (ASU 2023-08 or Revaluation Model)",
+    "description": "Recording the deferred tax liability arising when cryptocurrency fair value gains are recognised in financial statements before being taxed \u2014 under the US GAAP ASU 2023-08 FV model or IAS 38 revaluation model.",
+    "entries": [
+      {
+        "account": "Income Tax Expense \u2014 Deferred (On Crypto FV Gain)",
+        "type": "Expense (+)",
+        "dr": 37800.0,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Tax Liability (Crypto FV Gain \u2014 Book/Tax Temp. Difference)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 37800.0
+      }
+    ],
+    "explanation": "Under both ASU 2023-08 (US GAAP) and the IAS 38 revaluation model, unrealised cryptocurrency gains are recognised in the financial statements BEFORE they are taxed (taxes apply only on disposal). This creates a taxable temporary difference: Book value of crypto = FV ($680,000); Tax basis = original cost ($500,000); Temporary difference = $180,000; DTL = $180,000 \u00d7 21% = $37,800. The DTL represents the tax the company will pay when it eventually sells the Bitcoin. The DTL increases as the FV increases (more unrealised gain \u2192 more deferred tax), and decreases when the FV falls (unrealised loss \u2192 smaller DTL, or a deferred tax asset if FV falls below cost). Under the revaluation model (IFRS), the DTL may be presented in equity alongside the revaluation reserve, not in the income statement.",
+    "practitioner_notes": {
+      "erp_application": "Under ASU 2023-08: the DTL moves every quarter as the Bitcoin FV changes. The income tax expense on the unrealised gain must be presented alongside the unrealised gain (both in the income statement). The effective tax rate on crypto gains = statutory rate \u00d7 (unrealised gain / total pre-tax income) \u2014 this can significantly affect the ETR. Under the IAS 38 revaluation model: the DTL on the revaluation reserve may be presented in OCI alongside the revaluation gain (as a tax effect of an OCI item).",
+      "audit_triggers": "Auditors verify the DTL calculation uses the correct enacted tax rate applicable to the nature of the gain (capital gains rate vs. ordinary income rate \u2014 depending on jurisdiction and holding period). Test that the DTL correctly tracks the book/tax temporary difference as the FV changes each period. For jurisdictions that do not tax unrealised crypto gains, no DTL arises \u2014 the tax treatment must be confirmed.",
+      "required_documentation": "Bitcoin FV at period-end (Level 1 price), original tax cost basis, temporary difference calculation, applicable tax rate (capital vs. ordinary), DTL calculation, income statement presentation (tax effect alongside pre-tax gain), and jurisdiction-specific tax treatment confirmation."
+    }
+  },
+  {
+    "slug": "crypto-flash-loan-fee-income",
+    "category": "Cryptocurrency",
+    "title": "DeFi Protocol \u2014 Flash Loan Fee Income",
+    "description": "Recording fee income earned by a DeFi lending protocol from providing uncollateralised flash loans \u2014 atomic transactions where borrowing and repayment occur within the same blockchain block.",
+    "entries": [
+      {
+        "account": "Protocol Treasury Asset (Flash Loan Fee Received in Crypto)",
+        "type": "Asset (+)",
+        "dr": 45000.0,
+        "cr": 0
+      },
+      {
+        "account": "Flash Loan Fee Revenue (Point-in-Time \u2014 Per Transaction)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 45000.0
+      }
+    ],
+    "explanation": "Flash loans (pioneered by Aave) allow borrowers to borrow any amount of assets from the protocol for a single blockchain transaction \u2014 as long as the full amount plus a fee (typically 0.09% of the borrowed amount) is returned by the end of the same block. If not repaid, the entire transaction is reverted (as if it never happened). The protocol earns the fee only when the flash loan completes successfully. Revenue is recognised at the point-in-time the transaction completes \u2014 the performance obligation (providing the temporary liquidity) is instantaneously satisfied. Flash loan fees can be substantial during periods of high DeFi activity (arbitrage, liquidations, collateral swaps).",
+    "practitioner_notes": {
+      "erp_application": "Flash loan fees are collected automatically in the smart contract and added to the protocol's treasury or the liquidity pool reserves. Fee income is measured at the FV of the fee cryptocurrency at the transaction timestamp. Revenue recognition is at the block timestamp \u2014 truly point-in-time (milliseconds). Flash loan volume is tracked on-chain and reported through protocol analytics dashboards (Dune Analytics, Aave's own dashboard). The income is highly variable \u2014 flash loan volume spikes during volatile markets (arbitrageurs and liquidators use flash loans heavily).",
+      "audit_triggers": "Auditors use blockchain analytics to verify flash loan fee income \u2014 each successful flash loan transaction is on-chain with fee amounts. Test the aggregate fee income against the protocol's total flash loan volume multiplied by the fee rate. Assess whether flash loans create any credit risk to the protocol (they do not \u2014 failed flash loans are reverted, costing the borrower only gas fees). Confirm the accounting entity that receives the flash loan fees (the DAO treasury, a foundation, or an operating company).",
+      "required_documentation": "Protocol analytics report (flash loan volume, fee income by period), blockchain transaction records of flash loan executions, fee rate schedule (from smart contract), treasury wallet transaction history, IFRS 15 point-in-time recognition confirmation, and accounting entity identification for fee receipt."
+    }
+  },
+  {
+    "slug": "crypto-tokenised-bond-issuer",
+    "category": "Cryptocurrency",
+    "title": "Tokenised Bond \u2014 Issuer Accounting (Financial Liability at Amortised Cost)",
+    "description": "Recording a bond issued in tokenised form on a blockchain \u2014 the issuer's accounting is identical to a traditional bond, classified as a financial liability at amortised cost under IFRS 9.",
+    "entries": [
+      {
+        "account": "Cash / Proceeds (Tokenised Bond Issuance)",
+        "type": "Asset (+)",
+        "dr": 50000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Debt Issuance Costs (Legal, Technology, Listing \u2014 Contra-Liability)",
+        "type": "Liability (+) Contra",
+        "dr": 0,
+        "cr": 750000.0
+      },
+      {
+        "account": "Tokenised Bond Liability (Amortised Cost \u2014 Net of Issuance Costs)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 49250000.0
+      }
+    ],
+    "explanation": "A tokenised bond is a traditional fixed-income security represented on a blockchain as a digital token \u2014 the bond's terms (principal, coupon, maturity, covenants) are encoded in the smart contract. From the issuer's perspective: the accounting is IDENTICAL to a conventional bond. The issuer receives cash proceeds and incurs a financial liability (the obligation to pay coupons and return principal at maturity). The liability is measured at amortised cost using the effective interest rate. The 'blockchain' element is purely a settlement and transfer mechanism \u2014 it does not change the fundamental accounting. The World Bank, European Investment Bank, and various central banks have issued tokenised bonds; accounting treatment follows IFRS 9.",
+    "practitioner_notes": {
+      "erp_application": "Tokenised bonds are booked in the debt management system identically to traditional bonds \u2014 with principal, coupon rate, maturity, and EIR. The smart contract terms (self-executing coupon payments, automated redemption) mirror the traditional bond terms. Debt issuance costs (legal, blockchain deployment, smart contract audit, exchange listing for the token) are netted against the liability and amortised using the EIR method. The technology element (smart contract development, blockchain platform fees) may be partially capitalised as intangible assets if they have future utility beyond this specific issuance.",
+      "audit_triggers": "Auditors confirm the tokenised bond terms match the smart contract code (coupon rate, principal, maturity). Test the EIR calculation including issuance costs. Confirm the smart contract's automated coupon payment mechanism aligns with the accrual accounting. For multi-currency tokenised bonds (e.g., a bond denominated in EUR but settled in EUR stablecoin), assess the functional currency treatment and any FX exposure. Confirm regulatory treatment of tokenised bonds in the issuer's jurisdiction.",
+      "required_documentation": "Tokenised bond prospectus or information memorandum, smart contract code (confirmed by auditor), proceeds confirmation, issuance cost schedule, EIR calculation (amortised cost model), coupon payment schedule, regulatory approval or exemption for tokenised bond issuance, and smart contract audit report."
+    }
+  },
+  {
+    "slug": "crypto-investment-fund-nav-calculation",
+    "category": "Cryptocurrency",
+    "title": "Crypto Investment Fund \u2014 NAV Calculation (Investment Company Accounting)",
+    "description": "Recording the periodic NAV (Net Asset Value) calculation for a cryptocurrency investment fund \u2014 where all holdings are measured at fair value and changes flow through the income statement.",
+    "entries": [
+      {
+        "account": "Cryptocurrency Investments (BTC, ETH, Altcoins \u2014 FV Increase)",
+        "type": "Asset (+)",
+        "dr": 8500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Unrealised Investment Income \u2014 Crypto Fund (Net Asset Increase)",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 8500000.0
+      }
+    ],
+    "explanation": "Cryptocurrency investment funds (hedge funds, venture funds, ETFs) are investment companies under IFRS 10/IAS 28 or ASC 946 (US GAAP investment companies). Investment companies measure ALL investments at FAIR VALUE through profit or loss \u2014 regardless of whether the underlying investment would normally be measured at cost under IAS 38 or amortised cost under IFRS 9. The NAV = total FV of all crypto holdings minus all fund liabilities. Changes in NAV are recognised through the income statement. This treatment provides investors with a transparent view of the fund's performance based on current market values \u2014 unlike corporate accounting where Bitcoin might be measured at cost with only impairment.",
+    "practitioner_notes": {
+      "erp_application": "Fund NAV is calculated daily (for open-ended funds) or at each reporting date (for closed-ended funds). Fair values are obtained from reference exchanges for each held cryptocurrency. For illiquid altcoins or tokens in early-stage blockchain projects, Level 3 fair value measurements are required \u2014 using valuation models (DCF, comparable transaction analysis, token multiple approaches). The fund's net income = sum of FV changes on all holdings + realised gains/losses on disposals + interest and staking income \u2212 fund expenses.",
+      "audit_triggers": "Fund auditors confirm each cryptocurrency holding quantity against custody records at period-end. Test each cryptocurrency's fair value against market prices from reference exchanges. For Level 3 holdings (illiquid tokens), the valuation methodology and key assumptions are scrutinised. The completeness of the fund's holding schedule (all tokens included, no off-balance-sheet positions) is tested. Performance fees (carried interest) based on NAV require specific timing and waterfall analysis.",
+      "required_documentation": "Fund NAV calculation at period-end (all holdings at FV), custody platform confirmation of all holdings, fair value source for each cryptocurrency (Level 1/2/3 hierarchy), Level 3 valuation models and assumptions, performance fee calculation, investor capital accounts (contributed capital + allocated income), management fee accrual, and fund financial statements (Statement of Assets and Liabilities, Statement of Operations)."
+    }
+  },
+
+  {
     "slug": "avi-passenger-ticket-revenue",
     "category": "Aviation / Airlines",
     "title": "Passenger Ticket Revenue — Scheduled Flight",
