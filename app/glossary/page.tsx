@@ -31,7 +31,7 @@ export default function GlossaryPage() {
             The <span className="text-emerald-600">Glossary</span>
           </h1>
           <p className="text-slate-500 text-lg font-medium">
-            Standardizing IFRS and CMA definitions for professional excellence.
+            Standardizing accounting, audit, and tax definitions for professional excellence.
           </p>
         </header>
 
