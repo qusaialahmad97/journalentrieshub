@@ -37,7 +37,7 @@ export default function HomePage() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const totalEntriesCount = entriesData.length;
+  const totalEntriesCount = (entriesData as Entry[]).length;
 
   const primaryPillars = ["Tax", "IFRS", "Advanced"];
   

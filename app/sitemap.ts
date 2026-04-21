@@ -1,5 +1,11 @@
 import { MetadataRoute } from 'next'
-import entries from "../data/entries.json";
+import entriesData from "../data/entries.json";
+
+// 1. Define the structure so TypeScript understands the JSON data
+interface Entry {
+  slug: string;
+  category: string;
+}
 
 const generateCategorySlug = (categoryName: string) => {
   return categoryName
@@ -12,6 +18,10 @@ const generateCategorySlug = (categoryName: string) => {
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.journalentrieshub.com';
 
+  // 2. Explicitly cast the imported JSON as an array of Entry
+  const entries = entriesData as Entry[];
+
+  // Dynamic Entry URLs
   const entryUrls = entries.map((entry) => ({
     url: `${baseUrl}/entries/${entry.slug}`,
     lastModified: new Date(),
@@ -19,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Dynamic Category Pillar URLs
   const categories = Array.from(new Set(entries.map((e) => e.category)));
   const categoryUrls = categories.map((cat) => ({
     url: `${baseUrl}/categories/${generateCategorySlug(cat)}`,
@@ -27,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // Static Core Hubs
   const staticPages = [
     {
       url: baseUrl,
@@ -35,11 +47,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      // NEW: Explicitly adding the Product Suite for SEO
       url: `${baseUrl}/suite`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
-      priority: 1, // Highest priority for your product
+      priority: 1, 
     },
     {
       url: `${baseUrl}/news`,
