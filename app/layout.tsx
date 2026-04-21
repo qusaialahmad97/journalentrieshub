@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import Header from "./Header"; 
 import Footer from "./components/Footer"; 
 import { Analytics } from "@vercel/analytics/next"; 
-import { SpeedInsights } from "@vercel/speed-insights/next"; // 1. Added Speed Insights
+import { SpeedInsights } from "@vercel/speed-insights/next"; 
+import ProductLightbox from "./components/ProductLightbox"; // Double check this path!
+import ExitIntentLightbox from "./components/ExitIntentLightbox"; // Double check this path!
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,12 +19,9 @@ export const metadata: Metadata = {
   description: "The definitive library of professional journal entries, IFRS guides, and accounting reconciliations. Built by experts for modern accountants.",
   keywords: ["Journal Entries", "IFRS 16", "Jordanian VAT", "Accounting Hub", "AP Supervisor", "Amman Accounting"],
   authors: [{ name: "Qusai Ahmad" }],
-  
-  // 2. Add your Google Search Console code here later
   verification: {
     google: "YOUR_GOOGLE_CODE_HERE", 
   },
-
   alternates: {
     canonical: "/",
   },
@@ -33,7 +32,6 @@ export const metadata: Metadata = {
     siteName: "Journal Entries Hub",
     images: ["/journalentrieshublogo.png"],
   },
-  // Added for Twitter/X sharing cards
   twitter: {
     card: "summary_large_image",
     title: "Journal Entries Hub",
@@ -52,14 +50,15 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen bg-white text-black antialiased`}>
         <Header />
         
-        {/* Main content wrapper with standard max-width to keep text readable */}
-        <main className="grow">
+        <main className="grow relative">
           {children}
+          {/* Moving Lightbox here ensures it stays within the relative flow for hydration */}
+          <ProductLightbox />
+          <ExitIntentLightbox />
         </main>
-
+        
         <Footer />
 
-        {/* 3. Monitoring & Growth Tools */}
         <Analytics />
         <SpeedInsights />
       </body>
