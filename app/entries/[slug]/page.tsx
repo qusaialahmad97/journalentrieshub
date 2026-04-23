@@ -18,7 +18,7 @@ interface JournalEntry {
   description: string;
   explanation: string;
   entries: { account: string; type: string; dr: number; cr: number }[];
-  practitioner_notes?: PractitionerNotes; // Added this line
+  practitioner_notes?: PractitionerNotes;
 }
 
 export async function generateMetadata({ 
@@ -56,8 +56,10 @@ export async function generateMetadata({
   };
 }
 
+// THE FIX IS HERE: We cast entries as JournalEntry[]
 export async function generateStaticParams() {
-  return entries.map((entry) => ({
+  const allEntries = entries as JournalEntry[];
+  return allEntries.map((entry) => ({
     slug: entry.slug,
   }));
 }
@@ -235,27 +237,36 @@ export default async function EntryPage({
                 </div>
               )}
 
-              {/* Lead Magnet Section */}
-              <div className="mt-12 p-1 bg-gradient-to-br from-emerald-400 to-blue-600 rounded-2xl shadow-lg">
-                <div className="bg-white rounded-[14px] p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full mb-4">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
+              {/* Lead Magnet Section - JEH Suite Upsell */}
+              <div className="mt-12 p-1 bg-gradient-to-br from-emerald-500 to-slate-900 rounded-3xl shadow-2xl relative overflow-hidden group">
+                {/* Background glow effect */}
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-emerald-400/20 rounded-full blur-3xl transition-transform group-hover:scale-110 duration-700"></div>
+                
+                <div className="bg-white rounded-[22px] p-10 text-center relative z-10 border border-white/50">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl mb-6 shadow-sm border border-emerald-100 rotate-3">
+                    <span className="text-3xl">⚡</span>
                   </div>
-                  <h2 className="text-2xl font-extrabold text-slate-900 mb-2">Professional Excel Template</h2>
-                  <p className="text-slate-600 mb-8 max-w-md mx-auto leading-relaxed">
-                    Get the automated version of this entry. Includes built-in IFRS checks, 
-                    VAT calculators, and SAP-ready upload formats.
+                  
+                  <h2 className="text-3xl font-black text-slate-900 mb-4 tracking-tight">
+                    Automate this entry with the JEH Accounting Suite
+                  </h2>
+                  
+                  <p className="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed text-sm font-medium">
+                    Stop doing manual entry. Our VBA-powered ERP automatically generates your ledgers, Trial Balance, and Financial Statements.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button disabled className="w-full sm:w-auto bg-slate-100 text-slate-400 cursor-not-allowed px-10 py-4 rounded-full font-bold border border-slate-200">
-                      Download .xlsx (Coming Soon)
-                    </button>
-                    <Link href="/about" className="w-full sm:w-auto bg-emerald-600 text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-700 transition-all shadow-md">
-                      Notify Me on Release
+                  
+                  <div className="flex justify-center items-center">
+                    <Link 
+                      href="/suite" 
+                      className="w-full sm:w-auto bg-slate-950 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-emerald-600 transition-all shadow-xl shadow-slate-200 active:scale-95"
+                    >
+                      Get the Suite for $49 — Lifetime Access
                     </Link>
                   </div>
+                  
+                  <p className="mt-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                    No Subscriptions. Own your data.
+                  </p>
                 </div>
               </div>
 
