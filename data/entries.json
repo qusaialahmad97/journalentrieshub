@@ -60110,7 +60110,1407 @@
       "audit_triggers": "The securities sold short liability must reflect the current market price \u2014 not the original short sale price. If the price has risen significantly (a 'short squeeze'), the liability increase and the associated unrealized loss must be fully recognized. Auditors confirm the short position details from the prime broker's statement (shares short, current price). Dividend obligations on short positions are often overlooked \u2014 auditors trace dividends paid by companies with shorted shares to confirm the short seller's pass-through obligation is accrued. Hard-to-borrow securities may carry significant borrow costs that must be accrued as interest expense.",
       "required_documentation": "Prime broker statement confirming short position (shares, security, current price), short sale proceeds at initial sale date, mark-to-market at each period-end (current market price of shorted security), dividend pass-through calculation (dividends declared on shorted securities while position open), borrow rate accrual (fee paid to securities lender), short position cover (purchase to return securities \u2014 gain/loss calculation vs. short sale proceeds)."
     }
+  },
+  
+  {
+    "slug": "lease-operating-initial-recognition",
+    "category": "Leases",
+    "title": "How to Record the Initial Recognition of an Operating Lease Right-of-Use Asset and Lease Liability at Commencement Date",
+    "description": "Recognizing the right-of-use asset and corresponding lease liability at the lease commencement date for an operating lease \u2014 measured at the present value of future lease payments discounted at the incremental borrowing rate.",
+    "entries": [
+      {
+        "account": "Right-of-Use Asset \u2014 Operating Lease",
+        "type": "Asset (+)",
+        "dr": 8420000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Operating (Non-Current)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 7800000.0
+      },
+      {
+        "account": "Lease Liability \u2014 Operating (Current)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 620000.0
+      }
+    ],
+    "explanation": "Under ASC 842 and IFRS 16, a lessee recognizes a right-of-use (ROU) asset and a lease liability at the lease commencement date for all leases with a term exceeding 12 months (unless the low-value asset exemption applies under IFRS 16). The lease liability = present value of lease payments not yet made, discounted at the rate implicit in the lease (if determinable) or the lessee's incremental borrowing rate (IBR). The ROU asset = lease liability + initial direct costs + prepaid lease payments \u2212 lease incentives received. The current/non-current split of the liability follows the payment schedule \u2014 the portion due within 12 months is current. For an operating lease, the subsequent income statement presentation is a single straight-line lease expense (not split into interest and amortization as with a finance lease).",
+    "practitioner_notes": {
+      "erp_application": "Set up each lease in the lease accounting module (LeaseQuery, CoStar, Visual Lease, or ERP-embedded modules in SAP/Oracle) with: commencement date, lease term (including reasonably certain renewal options), lease payments by period, discount rate (IBR by lease currency and term), initial direct costs, and lease incentives received. The module automatically calculates the liability amortization schedule and the ROU asset amortization (which for an operating lease equals total lease cost minus interest accrual on the liability \u2014 creating an accelerating pattern to keep total expense straight-line). Classify the lease as operating or finance at commencement and do not subsequently reclassify unless a modification occurs.",
+      "audit_triggers": "The most critical inputs are: (1) lease term \u2014 which renewal options are 'reasonably certain' to be exercised? Significant economic incentive required (specialized nature of asset, significant leasehold improvements, below-market rent in renewal), (2) the IBR \u2014 must be the rate the lessee would pay to borrow over a similar term with similar collateral, determined at commencement for each lease. Auditors challenge IBRs that are too low (understating liabilities) and renewal period inclusions that are too aggressive (overstating liabilities). Missing embedded leases (service contracts containing a lease component) are a common completeness finding.",
+      "required_documentation": "Executed lease agreement (commencement date, base rent schedule, renewal options, purchase options, termination rights), IBR determination memo (by currency, term, and credit quality), reasonably-certain renewal option assessment, initial direct costs schedule, lease incentives received, lease classification assessment (operating vs. finance \u2014 five criteria), lease-versus-service component separation analysis."
+    }
+  },
+  {
+    "slug": "lease-operating-subsequent-measurement",
+    "category": "Leases",
+    "title": "How to Record Ongoing Straight-Line Operating Lease Expense and the Simultaneous Accretion of Lease Liability and Amortization of the ROU Asset",
+    "description": "Processing periodic operating lease expense as a single straight-line charge while separately accreting the lease liability at the effective interest rate and amortizing the ROU asset as the balancing plug.",
+    "entries": [
+      {
+        "account": "Operating Lease Expense (Straight-Line \u2014 Single P&L Line)",
+        "type": "Expense (+)",
+        "dr": 850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Interest Accretion (Unwinding of Discount)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 312000.0
+      },
+      {
+        "account": "Lease Liability \u2014 Payment Reduction",
+        "type": "Liability (-)",
+        "dr": 850000.0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset \u2014 Operating Lease Amortization (Balancing Plug)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 538000.0
+      }
+    ],
+    "explanation": "For operating leases under ASC 842, the income statement shows a single straight-line lease expense (total undiscounted payments \u00f7 lease term = annual expense). The balance sheet mechanics are more complex: the lease liability accretes using the effective interest rate (unwinding the discount), and the ROU asset amortization is a balancing plug \u2014 it equals the straight-line expense minus the interest component on the liability. Early in the lease, the interest component is larger, so the ROU asset amortizes slowly; later, interest declines and ROU amortization accelerates. This differs from a finance lease (where depreciation and interest are presented separately, resulting in front-loaded total expense). Under IFRS 16, all leases follow the finance lease model \u2014 there is no operating lease model for lessees.",
+    "practitioner_notes": {
+      "erp_application": "The lease accounting module generates the amortization table automatically: period-by-period lease liability balance, interest accrual, cash payment, and ending balance; plus the ROU asset amortization (straight-line expense minus interest = ROU amortization). The cash payment reduces the liability; the interest accrual increases it. The net liability reduction equals principal portion of the payment. Reconcile the lease expense to the amortization table monthly \u2014 any difference indicates a calculation error. For the cash flow statement: operating lease payments are classified as OPERATING cash outflows (not financing, unlike finance leases) under ASC 842.",
+      "audit_triggers": "The most common error is applying straight-line expense only \u2014 without properly amortizing the ROU asset (leaving it unchanged or incorrectly straight-lining it independently). Auditors test: (1) the ROU asset roll-forward (beginning balance + new leases + modifications \u2212 amortization = ending balance, which must equal the discounted remaining payments for operating leases at any date), (2) whether the liability amortization table matches the contracted payment schedule, (3) whether lease payments that are not fixed (CPI-linked, variable based on usage) are correctly excluded from the liability until remeasurement is required. The operating cash flow classification of operating lease payments must be consistently applied.",
+      "required_documentation": "Lease amortization table (liability: beginning, interest, payment, ending; ROU: beginning, amortization, ending), straight-line lease expense calculation (total payments \u00f7 term), reconciliation of ROU asset to remaining liability (discounted), cash flow statement classification confirmation (operating vs. financing), variable lease payment disclosure (excluded from liability), lease expense disclosure (operating, short-term, variable components)."
+    }
+  },
+  {
+    "slug": "lease-finance-initial-recognition",
+    "category": "Leases",
+    "title": "How to Classify a Lease as a Finance Lease and Record Initial Recognition of the ROU Asset and Lease Liability",
+    "description": "Applying the five finance lease classification criteria to determine a lease is a finance lease \u2014 then recording the ROU asset and lease liability at present value with subsequent depreciation and interest presented separately.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Finance Lease (at PV of Payments + Initial Direct Costs)",
+        "type": "Asset (+)",
+        "dr": 4850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Finance Lease (Current)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 380000.0
+      },
+      {
+        "account": "Lease Liability \u2014 Finance Lease (Non-Current)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 4470000.0
+      }
+    ],
+    "explanation": "A lease is classified as a finance lease (ASC 842) or finance lease (IFRS 16) when any one of five criteria is met: (1) Ownership transfers to the lessee by end of the lease term; (2) The lessee has a purchase option that is reasonably certain to be exercised; (3) The lease term is for the major part of the asset's economic life (generally 75%+ under US GAAP practice, though not a bright-line rule under ASC 842); (4) The present value of lease payments equals substantially all of the asset's fair value (generally 90%+ under practice); (5) The asset is specialized and has no alternative use to the lessor at end of lease. Finance lease ROU assets are depreciated straight-line (or another systematic basis) separately from the interest cost on the lease liability \u2014 creating front-loaded total expense.",
+    "practitioner_notes": {
+      "erp_application": "Finance lease classification drives a different P&L presentation: depreciation (in operating expenses) and interest expense (below operating income) rather than a single lease expense line. This affects EBITDA, operating income, and EBIT metrics. For a finance lease: the ROU asset is depreciated straight-line over the shorter of the lease term or the asset's useful life (if ownership transfers or a purchase option is reasonably certain, depreciate over the asset's useful life). The lease liability accretes using the effective interest rate \u2014 exactly as a loan. Finance lease payments are split in the cash flow statement: interest portion is operating (or financing under policy election); principal portion is financing.",
+      "audit_triggers": "Finance lease classification criteria are bright-line triggers (any single criterion met = finance lease) but require judgment for criteria 3 and 4 (major part, substantially all). Auditors test: (1) whether the lessee has correctly evaluated all five criteria, (2) whether the useful life estimate used for criterion 3 is reasonable (many companies under-estimate useful life to avoid the 75% threshold), (3) whether the purchase option is genuinely at fair value (options significantly below expected fair value at exercise = reasonably certain to exercise = criterion 2 met). Misclassifying a finance lease as operating understates both depreciation and interest expense and inflates operating income.",
+      "required_documentation": "Lease classification analysis (all five criteria evaluated with supporting data), asset fair value at lease commencement (for criterion 4 test), asset economic life assessment (for criterion 3 test), purchase option terms and current fair value estimate (for criterion 2 assessment), depreciation schedule (ROU asset over shorter of lease term or useful life), interest amortization table, cash flow classification (principal: financing; interest: operating or financing per policy)."
+    }
+  },
+  {
+    "slug": "lease-finance-subsequent-depreciation-interest",
+    "category": "Leases",
+    "title": "How to Record Ongoing Finance Lease Depreciation and Interest Expense Separately \u2014 Creating Front-Loaded Total Lease Cost",
+    "description": "Processing periodic finance lease depreciation on the ROU asset and effective-interest-rate interest accrual on the lease liability \u2014 resulting in higher total expense early in the lease term compared to an operating lease.",
+    "entries": [
+      {
+        "account": "Depreciation Expense \u2014 Finance Lease ROU Asset (Straight-Line)",
+        "type": "Expense (+)",
+        "dr": 485000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Depreciation \u2014 Finance Lease ROU Asset",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 485000.0
+      },
+      {
+        "account": "Interest Expense \u2014 Finance Lease Liability (EIR Accretion)",
+        "type": "Expense (+)",
+        "dr": 218000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Finance Lease (Interest Accrual)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 218000.0
+      },
+      {
+        "account": "Lease Liability \u2014 Finance Lease (Payment \u2014 Principal)",
+        "type": "Liability (-)",
+        "dr": 682000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash (Total Lease Payment)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 900000.0
+      }
+    ],
+    "explanation": "Finance leases produce front-loaded total cost: early periods have high interest expense (large outstanding liability \u00d7 interest rate) plus straight-line depreciation = total expense exceeds the lease payment. Later periods, as the liability reduces, interest declines and total cost falls below the payment. This contrasts with operating leases where expense is straight-line regardless. The cash payment is split: interest portion (increases the liability then reduces with cash) and principal portion (directly reduces the liability). In the cash flow statement: the interest portion goes to operating activities (under ASC 842) or may be financing (policy election); the principal portion goes to financing activities.",
+    "practitioner_notes": {
+      "erp_application": "The finance lease amortization table tracks: liability beginning balance, interest accrual (EIR \u00d7 beginning balance), total payment, principal reduction (payment minus interest), and ending liability balance. Simultaneously, the depreciation schedule tracks: ROU asset beginning balance, depreciation (cost \u00f7 remaining periods), and ending ROU asset balance. Neither schedule interacts \u2014 they run independently. For assets where ownership transfers at end of lease, the useful life used for depreciation extends beyond the lease term. The total expense profile (depreciation + interest) decreases over the lease term \u2014 a characteristic that companies must disclose and explain to investors.",
+      "audit_triggers": "Auditors reconcile the liability balance to the amortization table at each period-end (beginning balance + interest \u2212 payment = ending balance). A common error: recording the entire lease payment as principal reduction without the interest accrual step \u2014 understating interest expense and accelerating liability reduction. Auditors also verify the depreciation rate matches the lease classification: if ownership transfers, depreciate over asset economic life (not just lease term); if no transfer, depreciate over the shorter of the two. The cash flow classification of interest (operating vs. financing per policy election) must be consistently applied and disclosed.",
+      "required_documentation": "Finance lease amortization table (liability: opening, interest, payment, closing by period), depreciation schedule (ROU asset: opening, depreciation, closing by period), cash flow statement classification memo (interest: operating or financing; principal: financing), total finance lease cost disclosure by period (depreciation + interest), comparison to operating lease equivalent (for investor disclosures)."
+    }
+  },
+  {
+    "slug": "lease-short-term-low-value-exemption",
+    "category": "Leases",
+    "title": "How to Apply the Short-Term Lease and Low-Value Asset Exemptions to Avoid ROU Asset and Liability Recognition",
+    "description": "Electing and applying the practical expedients for short-term leases (term of 12 months or less at commencement) and low-value assets (IFRS 16 only) \u2014 recognizing lease payments as straight-line expense without balance sheet recognition.",
+    "entries": [
+      {
+        "account": "Short-Term Lease Expense (Straight-Line Over Lease Term)",
+        "type": "Expense (+)",
+        "dr": 48000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accrued Lease Payments (Short-Term Lease Payments)",
+        "type": "Asset/Liability (-)",
+        "dr": 0,
+        "cr": 48000.0
+      }
+    ],
+    "explanation": "ASC 842 and IFRS 16 provide practical expedients for small/short leases: (1) Short-term lease exemption (both GAAP and IFRS): leases with a term of 12 months or less at commencement date (not counting renewal options unless they are reasonably certain to be exercised) \u2014 the entity elects this by CLASS of underlying asset, not lease by lease. If elected, payments are recognized straight-line as lease expense without ROU asset/liability recognition. (2) Low-value asset exemption (IFRS 16 only, not available under ASC 842): leases of assets with a new value of approximately USD 5,000 or less (tablets, personal computers, small office furniture, personal phones) \u2014 recognized as expense when incurred, regardless of lease term. The election is made on a lease-by-lease basis under IFRS.",
+    "practitioner_notes": {
+      "erp_application": "Short-term lease exemption must be elected by asset class (e.g., elected for all IT equipment leases, not elected for real estate leases). Document the class-level election in the accounting policy. For leases initially classified as short-term: if the circumstances change and a renewal becomes reasonably certain before the 12-month window elapses, the lease must be reclassified as a regular lease and recognized on the balance sheet at that point. The straight-line expense for a short-term lease should still account for rent-free periods and other payment variations \u2014 not simply cash-basis recognition.",
+      "audit_triggers": "Auditors test the short-term election: (1) was it made by class consistently (not selectively applied to keep specific leases off the balance sheet), (2) does the lease term genuinely not exceed 12 months when all renewal options that are reasonably certain are included (a monthly rolling lease with a history of renewal over 3 years may not truly be short-term), (3) for IFRS low-value: was the asset value assessed at the new asset level (not the leased asset's current or residual value). Using short-term exemption for 13-month leases or for leases of high-value assets to avoid recognition is a misapplication.",
+      "required_documentation": "Short-term lease election documentation (by asset class), lease-by-lease assessment for assets near the 12-month threshold, IFRS low-value asset threshold analysis (new value of asset at time of manufacture \u2014 not residual), straight-line expense calculation (including any variable or irregular payments), lease portfolio breakdown (recognized vs. short-term/low-value)."
+    }
+  },
+  {
+    "slug": "lease-ibr-determination",
+    "category": "Leases",
+    "title": "How to Determine the Incremental Borrowing Rate for Lease Liability Discounting When the Implicit Rate Is Not Readily Determinable",
+    "description": "Constructing a lessee-specific incremental borrowing rate (IBR) for each lease using observable reference rates adjusted for the lessee's credit quality, collateral, lease term, and currency \u2014 the most critical and judgment-intensive lease accounting input.",
+    "entries": [
+      {
+        "account": "Lease Liability (Discounted at IBR \u2014 Memo Entry for Rate Determination)",
+        "type": "Memo Only",
+        "dr": 0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset (Higher Liability from Lower IBR = Higher ROU Asset)",
+        "type": "Memo Only",
+        "dr": 0,
+        "cr": 0
+      }
+    ],
+    "explanation": "The implicit rate in the lease (the rate at which the PV of lease payments + unguaranteed residual value equals the asset's fair value) is rarely known to the lessee. Therefore, most lessees use the IBR \u2014 the rate the lessee would pay to borrow, over a similar term, with similar security, in the same currency, to fund an asset of similar value. IBR construction: (1) Start with a risk-free rate (government bond yield for the lease currency at the lease term), (2) Add a credit spread (the lessee's borrowing spread above risk-free for similar-maturity unsecured debt), (3) Adjust for collateral (secured borrowing is cheaper than unsecured \u2014 a collateral adjustment typically reduces the rate by 50-150 bps). Lower IBR \u2192 higher liability and ROU asset. Higher IBR \u2192 lower liability and ROU asset.",
+    "practitioner_notes": {
+      "erp_application": "Large companies with frequent lease activity develop an IBR matrix: rates by currency, term (1-year, 3-year, 5-year, 7-year, 10-year, 15-year, 20-year, 30-year), and credit quality segment. Update the matrix quarterly (or at minimum semi-annually) as market rates change. Private companies (ASC 842) may elect to use the risk-free rate only (no credit spread) as a practical expedient \u2014 simplifying the IBR but resulting in higher liabilities (lower discount rate). The IBR must be determined at lease commencement \u2014 subsequent changes in market rates do not affect the discount rate unless a modification requires remeasurement.",
+      "audit_triggers": "The IBR is the most audited input in lease accounting \u2014 small rate changes produce large balance sheet differences for long-term leases. Auditors challenge: (1) whether the risk-free rate matches the lease currency and term (using a USD rate for an EUR-denominated lease is wrong), (2) whether the credit spread reflects the lessee's actual borrowing cost at the time of commencement (not a historical or theoretical rate), (3) whether the collateral adjustment is reasonable (the leased asset itself is the collateral \u2014 similar to a secured auto loan). IBR matrices must be current \u2014 using a 2-year-old rate for a new lease is incorrect.",
+      "required_documentation": "IBR determination methodology memo (components: risk-free rate, credit spread, collateral adjustment), risk-free rate source and date (government bond curve at commencement date), credit spread evidence (the lessee's recent debt issuances, credit facility rate, bank loan rates, or credit rating-implied spread from market data), collateral adjustment rationale, IBR by currency/term matrix (updated schedule), private company risk-free rate election documentation (if applicable)."
+    }
+  },
+  {
+    "slug": "lease-variable-payment-index-remeasurement",
+    "category": "Leases",
+    "title": "How to Remeasure the Lease Liability When Index-Based or Rate-Based Lease Payments Change Due to a CPI or Interest Rate Adjustment",
+    "description": "Remeasuring the lease liability and adjusting the ROU asset when lease payments change because of a contractual CPI, inflation index, or interest rate escalation \u2014 using the updated index or rate at the remeasurement date.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Operating Lease (Increased for Payment Step-Up)",
+        "type": "Asset (+)",
+        "dr": 285000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Operating (Remeasured Upward for CPI Step-Up)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 285000.0
+      }
+    ],
+    "explanation": "Lease payments linked to an index (CPI, RPI, HICP) or rate (variable interest rate) must be remeasured when the index or rate is updated in the contract. The remeasurement uses the updated index/rate at the date of the change to compute revised future payments, which are discounted at the ORIGINAL discount rate (not a new rate \u2014 this is not a lease modification). The adjustment flows through the ROU asset (not P&L) \u2014 increasing or decreasing it by the same amount as the liability. This remeasurement can be significant for long-term leases in high-inflation environments \u2014 a 5% CPI step-up on a 10-year office lease with $1M annual payments creates a material increase in both the liability and ROU asset. Variable payments based on usage (units produced, miles driven) are NOT included in the liability \u2014 expensed as incurred.",
+    "practitioner_notes": {
+      "erp_application": "In the lease accounting system, flag leases with index-based or rate-based payment escalations and set a reminder for the remeasurement trigger date (typically annual CPI adjustment dates in the lease). When the index is updated, obtain the official published index value, calculate the revised payment, and update the lease amortization table with the new payment amounts. Remeasure using the original IBR \u2014 do not obtain a new rate. The ROU asset adjustment is the same amount as the liability adjustment (no P&L impact from the remeasurement itself). Prospectively, the new payment amount is used for the straight-line expense calculation.",
+      "audit_triggers": "Auditors test for completeness of CPI remeasurements \u2014 many companies miss the required remeasurement trigger date (typically the anniversary of the CPI adjustment clause). Common errors: (1) adjusting the lease expense to the new payment amount without remeasuring the liability (understating or overstating the liability), (2) using the current market IBR instead of the original IBR for the remeasurement discount rate (incorrect \u2014 only modifications trigger a new rate), (3) failing to adjust the ROU asset by the same amount as the liability (creating an imbalance). In high-inflation environments (Jordan 2022-2023), CPI-linked commercial leases may have had significant upward remeasurements.",
+      "required_documentation": "Lease agreement CPI/rate adjustment clause (adjustment date, reference index, calculation method), official index values at each adjustment date, revised payment calculation, remeasurement journal (same amount to liability and ROU asset), original IBR used for remeasurement (confirmed as unchanged), updated amortization table with new payment schedule, straight-line expense recalculation from adjustment date."
+    }
+  },
+  {
+    "slug": "lease-modification-increase-scope",
+    "category": "Leases",
+    "title": "How to Account for a Lease Modification That Adds Additional Space or Extends the Lease Term as a New Separate Lease",
+    "description": "Processing a lease modification that grants additional rights of use not included in the original lease \u2014 accounted for as a new separate lease if the modification adds additional underlying assets at a standalone price.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 New Separate Lease (Additional Space)",
+        "type": "Asset (+)",
+        "dr": 1850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 New Separate Lease (Current)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 185000.0
+      },
+      {
+        "account": "Lease Liability \u2014 New Separate Lease (Non-Current)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 1665000.0
+      }
+    ],
+    "explanation": "A lease modification that both: (1) adds rights to use additional underlying assets not included in the original lease, AND (2) increases the lease payments by an amount commensurate with the standalone price of the additional rights \u2014 is accounted for as a NEW SEPARATE LEASE. The original lease continues unchanged. The new separate lease is recognized as a fresh commencement, with its own IBR at the modification date, its own ROU asset, and its own liability. Examples: adding a second floor to an existing office lease at market rates, adding a new vehicle to an existing fleet lease at the vehicle's standalone price. If either condition is not met (e.g., the price is not standalone), it is a modification of the existing lease rather than a new separate lease.",
+    "practitioner_notes": {
+      "erp_application": "Classify each modification as: (1) New separate lease (both criteria met \u2014 treat as a new commencement), (2) Modification of the existing lease \u2014 increase in scope (criteria not met \u2014 remeasure the existing lease using a new IBR at modification date), or (3) Modification of the existing lease \u2014 decrease in scope (partial or full termination \u2014 recognize a gain or loss). For new separate leases: create a new lease record in the system with the modification date as the commencement date. For modifications that are not separate leases but increase scope: add the additional payments to the existing lease's schedule, remeasure the liability at a new rate, and adjust the ROU asset (no P&L impact).",
+      "audit_triggers": "The standalone price test for new separate lease classification is judgment-intensive. Auditors challenge: (1) whether the additional payment genuinely reflects market rates for the additional space/asset (not a bundled discount that disqualifies separate lease treatment), (2) for term extensions that are modifications \u2014 these can NEVER be new separate leases (same underlying asset, not an additional one), term extensions are always modifications of the existing lease. Missing the standalone price test and incorrectly accounting for a modification as a continuation of the original lease (without remeasurement) is a common error.",
+      "required_documentation": "Lease modification agreement (effective date, changes to payments, changes to term, changes to underlying assets), standalone price analysis for the additional rights (market rate evidence), new separate lease vs. modification classification analysis, new IBR at modification date (if not a separate lease), updated amortization schedule, lease term reassessment at modification date."
+    }
+  },
+  {
+    "slug": "lease-modification-decrease-scope",
+    "category": "Leases",
+    "title": "How to Record a Lease Modification That Decreases the Scope \u2014 Partial Termination or Early Lease Return \u2014 Including Gain or Loss Recognition",
+    "description": "Accounting for a lease modification that reduces the lessee's rights \u2014 returning floors, reducing space, or shortening the lease term \u2014 with gain or loss recognized for the proportionate reduction in the ROU asset and liability.",
+    "entries": [
+      {
+        "account": "Lease Liability (Remeasured \u2014 Reduced for Surrendered Space)",
+        "type": "Liability (-)",
+        "dr": 2850000.0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset (Proportionately Reduced \u2014 Surrendered Rights)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 2620000.0
+      },
+      {
+        "account": "Gain on Partial Lease Termination (Liability Reduction > ROU Asset Reduction)",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 230000.0
+      }
+    ],
+    "explanation": "When a lease modification decreases scope (reduces space, returns assets, shortens term), the lessee must: (1) Remeasure the lease liability to reflect the revised payments for the retained rights, using a new IBR at the modification date; (2) Reduce the ROU asset proportionately to the reduction in the lease (by the ratio: reduction in rights \u00f7 total original rights \u2014 measured by remaining space, asset count, or remaining term); (3) Recognize any difference between the liability reduction and the ROU asset reduction as a gain (or loss). A gain typically arises because the liability reduction (reflecting higher discount rate at modification) exceeds the proportionate ROU asset carrying value (which was discounted at the original, often lower rate). A loss arises if the carrying amount of the surrendered rights exceeds the liability reduction.",
+    "practitioner_notes": {
+      "erp_application": "For a partial termination, the proportionate reduction in the ROU asset must be calculated carefully: if the lessee returns 2 of 5 floors, the ROU asset reduction = (2/5) \u00d7 carrying value of the ROU asset at modification date. The liability is remeasured at the NEW IBR at the modification date for the remaining term \u2014 the full remaining payments are discounted at the new rate. The difference between the liability reduction and the proportionate ROU asset reduction is P&L. Document the proportion clearly in the modification workpaper. For a full termination: remove both the ROU asset and liability entirely, recognize any lease liability > ROU asset as a gain, or any excess ROU asset as a loss.",
+      "audit_triggers": "Auditors test the proportionate reduction calculation \u2014 particularly when the surrendered space is not a clean fraction of the total (e.g., returning one floor of a custom-configured office where each floor has different dimensions and different lease terms). The new IBR at modification date is required (unlike remeasurements for index changes) \u2014 using the original IBR is incorrect and understates the liability reduction. Gain recognition on lease terminations may be scrutinized if the gain appears to smooth earnings \u2014 verify it is economically consistent with the modification terms.",
+      "required_documentation": "Lease modification agreement (effective date, surrendered space or assets, revised payment schedule), proportionate reduction calculation (surrendered rights \u00f7 total rights \u2014 with measurement basis), new IBR at modification date (documented), revised liability calculation (remaining payments discounted at new IBR), proportionate ROU asset reduction, gain/loss calculation, updated amortization schedule for remaining rights."
+    }
+  },
+  {
+    "slug": "lease-modification-existing-not-separate",
+    "category": "Leases",
+    "title": "How to Remeasure an Existing Lease When a Modification Increases Scope Without Meeting the Separate Lease Criteria",
+    "description": "Remeasuring the ROU asset and lease liability when a modification adds scope (additional time or assets) at a non-standalone price \u2014 using the new IBR at the modification date to remeasure the entire revised lease.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Existing Lease (Remeasured \u2014 Increased for Extended Term)",
+        "type": "Asset (+)",
+        "dr": 1420000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Existing Lease (Remeasured \u2014 Extended Term at New IBR)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 1420000.0
+      }
+    ],
+    "explanation": "When a lease modification increases scope but does NOT qualify as a new separate lease (e.g., extending the term at a below-market rate, adding space at a bundled price), the entire modified lease is remeasured as a single lease starting from the modification date. The remeasurement: (1) calculates the revised future payments from the modification date (including the additional rights and any revised payment schedule), (2) discounts at the NEW IBR at the modification date (required for all non-separate-lease modifications), (3) establishes a new amortization schedule. The difference between the new liability and the old carrying value adjusts the ROU asset (no P&L impact). For an OPERATING lease that becomes a finance lease after modification: recalculate from scratch using the finance lease model.",
+    "practitioner_notes": {
+      "erp_application": "Update the existing lease record in the accounting system with the modification date as a remeasurement date. Enter the revised payment schedule (all future payments from modification date, including additional scope payments). Obtain a new IBR at the modification date. Recalculate the entire remaining lease \u2014 the old amortization table is replaced. The ROU asset is adjusted to the new liability value (for a lessee with no other adjustments). If the modification also changes the lease classification (operating to finance), apply the finance lease model from the modification date. For re-classified leases, the ROU asset and accumulated depreciation must be recalculated.",
+      "audit_triggers": "The requirement for a new IBR at modification date (for modifications that are not new separate leases) is frequently missed \u2014 using the original IBR understates or overstates the new liability depending on rate movements. Auditors test all lease modifications during the year: is each one classified as (a) new separate lease, (b) modification with increase in scope (remeasure at new rate), or (c) modification with decrease in scope (proportionate reduction + gain/loss)? Modifications that are incorrectly treated as simple payment adjustments without remeasurement (using the original IBR for new payments) are a common audit finding.",
+      "required_documentation": "Lease modification agreement, modification classification analysis (separate lease vs. not), new IBR at modification date, revised payment schedule (all payments from modification date), new amortization schedule (replacing old schedule from modification date), ROU asset adjustment calculation, lease classification reassessment at modification date (operating vs. finance)."
+    }
+  },
+  {
+    "slug": "lease-sale-leaseback-qualifying",
+    "category": "Leases",
+    "title": "How to Account for a Qualifying Sale-Leaseback Transaction Where the Transfer Meets the IFRS 15 or ASC 606 Sale Criteria",
+    "description": "Recording a sale-leaseback where the asset transfer qualifies as a sale \u2014 derecognizing the asset, recognizing a gain or loss restricted to the portion of the asset not retained, and recording the leaseback as an operating or finance lease.",
+    "entries": [
+      {
+        "account": "Cash (Sale Proceeds from Buyer-Lessor)",
+        "type": "Asset (+)",
+        "dr": 18500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Property, Plant & Equipment \u2014 Sold (Net Book Value)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 12000000.0
+      },
+      {
+        "account": "Gain on Sale \u2014 Portion Not Retained via Leaseback",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 4500000.0
+      },
+      {
+        "account": "Gain Deferred \u2014 Portion Related to Retained Rights (ROU Asset Offset)",
+        "type": "Income (-)",
+        "dr": 2000000.0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset \u2014 Leaseback (Operating Lease at PV of Future Payments)",
+        "type": "Asset (+)",
+        "dr": 6500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Leaseback",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 6500000.0
+      }
+    ],
+    "explanation": "A sale-leaseback is a qualifying sale if the asset transfer meets the revenue recognition criteria (control transfers to the buyer-lessor per ASC 606/IFRS 15). For a qualifying sale-leaseback: (1) Derecognize the asset at carrying value, (2) Recognize the gain/loss but only the portion related to the rights TRANSFERRED to the buyer (the retained ROU reduces the gain recognized \u2014 the gain on the portion retained via leaseback is deferred against the ROU asset), (3) Record the leaseback as a new lease (operating or finance). The deferred gain on the retained portion is recognized ratably over the leaseback term (through reduced lease expense or reduced depreciation). For transactions where sale proceeds differ from fair value, additional adjustments are required.",
+    "practitioner_notes": {
+      "erp_application": "The sale-leaseback gain restriction calculation: Full gain = Proceeds \u2212 Carrying value. Gain recognized = Full gain \u00d7 (PV of retained rights / PV of retained rights + Fair value transferred). Alternatively: Gain recognized = Full gain \u00d7 (1 \u2212 ROU asset / Total asset fair value). The deferred gain (reduced from ROU asset) reduces the amortization base of the ROU asset \u2014 effectively amortizing the deferred gain to income over the leaseback term. For corporate real estate sale-leasebacks (common in banking and retail sectors to unlock balance sheet capital), the leaseback typically qualifies as an operating lease, and the gain provides an immediate earnings benefit (for the non-retained portion).",
+      "audit_triggers": "The most critical question: does the transfer qualify as a sale? Auditors apply ASC 606/IFRS 15 criteria: has control transferred to the buyer-lessor? If the leaseback grants the seller-lessee substantially all of the remaining economic life of the asset (criteria 3 or 4 of a finance lease), the transfer does NOT qualify as a sale \u2014 treated as a financing. Repurchase options (at less than fair value) or options to buy back the asset may prevent sale recognition. For bank sale-leasebacks of owned branches: confirm the bank does not retain so many rights that the buyer-lessor cannot benefit from the asset independently.",
+      "required_documentation": "Sale-leaseback agreement (sale price, leaseback terms, repurchase options, any residual value guarantees), ASC 606/IFRS 15 sale criteria assessment (control transfer), gain calculation (full gain and restricted gain), deferred gain calculation (proportion retained via leaseback), ROU asset recognition (net of deferred gain), deferred gain amortization schedule (over leaseback term), lease classification for the leaseback (operating vs. finance)."
+    }
+  },
+  {
+    "slug": "lease-sale-leaseback-failed-financing",
+    "category": "Leases",
+    "title": "How to Account for a Failed Sale-Leaseback Where the Asset Transfer Does Not Qualify as a Sale \u2014 Treated as a Financing",
+    "description": "Recording a sale-leaseback where the transfer fails the ASC 606/IFRS 15 sale criteria \u2014 the asset remains on the seller-lessee's books and the proceeds are recognized as a financing liability.",
+    "entries": [
+      {
+        "account": "Cash (Proceeds from Failed Sale-Leaseback \u2014 Treated as Financing)",
+        "type": "Asset (+)",
+        "dr": 18500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Financial Liability \u2014 Failed Sale-Leaseback (Financing)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 18500000.0
+      },
+      {
+        "account": "PP&E \u2014 Asset Remains on Books (No Derecognition)",
+        "type": "Memo Only",
+        "dr": 0,
+        "cr": 0
+      },
+      {
+        "account": "Interest Expense \u2014 Financing Liability (EIR on Proceeds)",
+        "type": "Expense (+)",
+        "dr": 925000.0,
+        "cr": 0
+      },
+      {
+        "account": "Financing Liability (Interest Accrual)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 925000.0
+      }
+    ],
+    "explanation": "If the sale-leaseback fails the sale criteria \u2014 because the buyer-lessor has a repurchase option that it is reasonably certain to exercise, the seller-lessee has a repurchase option at less than expected fair value, or the leaseback grants the seller-lessee substantially all of the remaining use of the asset \u2014 the transfer is treated as a FINANCING, not a sale. The seller-lessee: (1) Continues to recognize the underlying asset (no derecognition), (2) Recognizes the proceeds as a financial liability, (3) Accrues interest on the financial liability using the effective interest rate (typically the rate implied by the lease payment structure), (4) Continues to depreciate the asset normally. No gain is recognized. The buyer-lessor accounts for it as a loan, not an asset purchase.",
+    "practitioner_notes": {
+      "erp_application": "For a failed sale-leaseback: the asset stays in the fixed asset register with its original cost, accumulated depreciation, and depreciation schedule \u2014 no disruption to the asset's accounting. Add a new financing liability (separate from lease liabilities) for the proceeds, and build an amortization table using the effective rate implied by the leaseback payment structure (the rate that equates the proceeds to the PV of all leaseback payments). Interest accrues on this liability each period; the 'lease payments' are treated as debt service (interest + principal reduction). Present as 'sale-leaseback financing liability' separately from both debt and lease liabilities.",
+      "audit_triggers": "Failed sale-leaseback identification requires careful analysis of all terms \u2014 auditors review repurchase clauses, residual value guarantees, and the economics of the leaseback payments. A leaseback covering 95%+ of the asset's remaining useful life is almost certainly a failed sale (the buyer-lessor has no meaningful economic benefit). Auditors compare the leaseback rental rates to market rates \u2014 above-market leaseback payments that give the seller-lessee a repurchase right at a fixed price are a strong indicator of a financing structure. Under IFRS 16, failed sale-leasebacks explicitly require the asset to remain on the seller's balance sheet.",
+      "required_documentation": "Sale-leaseback agreement (all terms including any repurchase options, residual value guarantees, leaseback terms), ASC 606/IFRS 15 sale criteria failure analysis, financing liability calculation (proceeds at face value), effective interest rate derivation (rate that equates proceeds to PV of leaseback payments), financing liability amortization schedule, asset depreciation continuation schedule, balance sheet presentation (asset separate from financing liability)."
+    }
+  },
+  {
+    "slug": "lease-lessor-operating-lease",
+    "category": "Leases",
+    "title": "How to Account for a Lessor's Operating Lease \u2014 Retaining the Asset on the Lessor's Balance Sheet and Recognizing Straight-Line Rental Income",
+    "description": "Recording a lessor's operating lease where the underlying asset remains on the lessor's balance sheet and rental income is recognized on a straight-line basis over the lease term regardless of payment timing.",
+    "entries": [
+      {
+        "account": "Lease Receivable / Accrued Rent (Straight-Line Adjustment)",
+        "type": "Asset (+)",
+        "dr": 42000.0,
+        "cr": 0
+      },
+      {
+        "account": "Rental Income (Straight-Line \u2014 Equal to Average Annual Rent)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 850000.0
+      },
+      {
+        "account": "Deferred Rent Liability (For Periods When Rent Exceeds Straight-Line)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 42000.0
+      },
+      {
+        "account": "Depreciation Expense \u2014 Leased Asset (Retained on Lessor's Books)",
+        "type": "Expense (+)",
+        "dr": 285000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Depreciation \u2014 Leased Asset",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 285000.0
+      }
+    ],
+    "explanation": "Under ASC 842, lessor accounting for operating leases is largely unchanged from prior GAAP: the underlying asset remains on the lessor's balance sheet and is depreciated over its useful life. Rental income is recognized on a straight-line basis over the lease term \u2014 even if payments are irregular (rent-free periods, step-ups). Lease incentives paid by the lessor (tenant improvement allowances) reduce the total rental income recognized, amortized over the lease term. Initial direct costs (lease origination costs) for an operating lease are deferred and recognized over the lease term as a reduction to rental income. Lessor operating leases are common in commercial real estate, equipment leasing, and retail landlord situations.",
+    "practitioner_notes": {
+      "erp_application": "Set up each operating lease in the property management or lease management system with the full payment schedule (including rent-free periods, step-ups, and options). The straight-line calculation averages all fixed payments over the lease term \u2014 a rent-free period in year 1 followed by full rent in years 2-10 produces a straight-line rent receivable in year 1. Deferred rent (or accrued rent) is the cumulative difference between cash received and straight-line income recognized. For tenant improvement allowances (TIAs) paid by the lessor: capitalize as a deferred lease incentive and amortize straight-line over the lease term as a reduction to rental income. Initial direct costs are similarly deferred.",
+      "audit_triggers": "Lessor operating lease completeness is tested by comparing lease agreements to rental income recognized \u2014 missing lease modifications, incorrect straight-line calculations that ignore rent-free periods, and failure to defer TIAs are common findings. Auditors also test whether certain lessor leases should be classified as finance leases rather than operating (applying the five criteria from the lessee's perspective but evaluated from the lessor's side). For large real estate lessor companies, the deferred rent receivable (straight-line adjustment) can be a material balance sheet item.",
+      "required_documentation": "Lease agreements (all payment terms: base rent, rent-free periods, step-ups, renewal options), straight-line rent calculation (total fixed payments \u00f7 lease term in months), deferred rent or accrued rent schedule, TIA paid and amortization schedule, initial direct costs schedule, asset depreciation schedule (underlying asset retained by lessor), lease classification analysis (operating vs. finance from lessor perspective)."
+    }
+  },
+  {
+    "slug": "lease-lessor-sales-type-finance",
+    "category": "Leases",
+    "title": "How to Account for a Lessor's Sales-Type Finance Lease \u2014 Derecognizing the Asset and Recognizing Dealer Profit at Lease Commencement",
+    "description": "Recording a lessor's sales-type lease where the lease effectively transfers substantially all risks and rewards \u2014 derecognizing the underlying asset, recognizing a net investment in the lease, and booking a dealer/manufacturer profit at commencement.",
+    "entries": [
+      {
+        "account": "Net Investment in Lease \u2014 Sales-Type Finance Lease",
+        "type": "Asset (+)",
+        "dr": 4850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Unearned Revenue \u2014 Unguaranteed Residual (PV of Residual)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 285000.0
+      },
+      {
+        "account": "Revenue (Dealer Profit \u2014 Fair Value of Asset at Commencement)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 5200000.0
+      },
+      {
+        "account": "Cost of Goods Sold (Carrying Value of Leased Asset)",
+        "type": "Expense (+)",
+        "dr": 3850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Asset (Underlying Asset Derecognized \u2014 Transferred via Lease)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 3850000.0
+      },
+      {
+        "account": "Interest Income \u2014 Net Investment in Lease (EIR on Lease Receivable)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 194000.0
+      },
+      {
+        "account": "Net Investment in Lease (Interest Accrual)",
+        "type": "Asset (+)",
+        "dr": 194000.0,
+        "cr": 0
+      }
+    ],
+    "explanation": "A sales-type lease arises when one or more of the five finance lease criteria are met from the lessor's perspective. For a manufacturer or dealer lessor: (1) Derecognize the underlying asset at carrying value (cost of goods sold), (2) Recognize the leased asset's fair value as revenue \u2014 creating dealer/manufacturer profit (fair value \u2212 carrying value), (3) Recognize the net investment in lease (present value of future lease payments + unguaranteed residual value, discounted at the interest rate implicit in the lease), (4) Subsequently recognize interest income on the net investment using the effective interest method. The dealer profit is recognized at lease commencement (front-loaded), similar to a sale of the asset. A direct financing lease (a third type) arises for non-manufacturer/dealer lessors when no profit arises \u2014 only interest income is recognized.",
+    "practitioner_notes": {
+      "erp_application": "The net investment in lease consists of: PV of lease payments receivable + PV of unguaranteed residual value (the asset's expected value at lease end that is not guaranteed by the lessee). The unguaranteed residual is an estimate \u2014 if the actual residual at lease end is less than estimated, the lessor takes a loss. Track the net investment in lease in the receivables module: it increases by interest income (EIR) and decreases by lease payments received. Any initial direct costs for sales-type leases are expensed at commencement (they offset the profit, but the total effect is recognized at day 1 \u2014 not deferred). For direct financing leases, initial direct costs are deferred into the net investment.",
+      "audit_triggers": "The dealer profit recognition at lease commencement creates an immediate earnings impact \u2014 auditors verify: (1) the fair value of the leased asset (the 'selling price' for revenue recognition purposes \u2014 must be observable or supportable), (2) the interest rate implicit in the lease (the rate that equates PV of payments + PV of unguaranteed residual to the asset's fair value), (3) the unguaranteed residual estimate (subject to significant judgment \u2014 determines the interest income profile and any end-of-lease gains/losses), (4) whether the lease genuinely qualifies as sales-type vs. operating (the criteria must be met). Improperly classifying operating leases as sales-type leases front-loads revenue recognition.",
+      "required_documentation": "Lease agreement (all payment terms, purchase options, residual value guarantees, lease term), asset fair value at commencement (third-party appraisal or market evidence), asset carrying value (cost of goods sold), unguaranteed residual value estimate and methodology, interest rate implicit in the lease calculation, net investment in lease amortization table (including interest income schedule), initial direct cost treatment (expensed vs. deferred by lease type), dealer profit calculation and disclosure."
+    }
+  },
+  {
+    "slug": "lease-embedded-lease-identification",
+    "category": "Leases",
+    "title": "How to Identify an Embedded Lease Within a Service, Supply, or Outsourcing Contract and Separate the Lease Component",
+    "description": "Applying the three-part embedded lease test to determine whether a service contract (IT outsourcing, logistics agreement, data centre contract, manufacturing supply agreement) contains an embedded lease \u2014 and separating the lease and non-lease components for accounting.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Embedded Lease Component (Data Centre Servers)",
+        "type": "Asset (+)",
+        "dr": 2850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Embedded Lease Component",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 2850000.0
+      },
+      {
+        "account": "IT Service Expense \u2014 Non-Lease Component (Continued as Operating Expense)",
+        "type": "Expense (+)",
+        "dr": 185000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable (Total Contract Payment)",
+        "type": "Asset/Liability (-)",
+        "dr": 0,
+        "cr": 185000.0
+      }
+    ],
+    "explanation": "An embedded lease exists within a contract if: (1) The contract involves an identified asset (specific asset identified by the supplier or implicitly identified \u2014 the supplier cannot substitute a practically different asset), (2) The customer has the right to obtain substantially all of the economic benefits from the use of the asset throughout the period of use, (3) The customer has the right to direct how and for what purpose the asset is used during the period. Common embedded lease examples: dedicated server racks in a data centre (specific servers identified, customer controls usage), a dedicated logistics truck (specific vehicle, customer controls routes and schedules), a custom manufacturing line used exclusively for one customer's production. If all three criteria are met, the contract contains a lease \u2014 separate the lease component (recognize ROU asset and liability) from the service component (continue as operating expense).",
+    "practitioner_notes": {
+      "erp_application": "Contracts above a materiality threshold should be systematically reviewed for embedded leases during contract review (procurement, legal, and accounting collaboration). Key question 1 \u2014 identified asset: does the supplier have practical ability to substitute the asset? If substitution would cost the supplier more than the benefit (e.g., moving dedicated servers would require customer downtime and system reconfiguration that the supplier would never do), the substitution right is not practical \u2014 it is an identified asset. Key question 2 \u2014 right to direct use: does the customer decide HOW the asset is used (not just what output to request)? Practical expedient: elect not to separate lease and non-lease components, treating the entire contract as a lease (simpler, but results in larger ROU asset and liability).",
+      "audit_triggers": "Embedded lease identification is the most commonly missed lease accounting issue \u2014 particularly for: cloud computing arrangements (often pure service, not a lease \u2014 the provider controls the hardware), data centre co-location agreements (often an embedded lease if specific rack space is identified), logistics/transportation agreements (embedded if a specific vehicle is dedicated), and manufacturing outsourcing (embedded if a dedicated production line is used exclusively). Auditors review a sample of significant service contracts to assess for embedded leases. Missing embedded leases understates ROU assets and lease liabilities. The practical expedient to not separate components must be consistently applied by asset class.",
+      "required_documentation": "Contract review template (three embedded lease criteria applied to each significant contract), identified asset determination (substitution right analysis), right to direct use analysis, separated lease vs. non-lease payment allocation (standalone price of service component), IBR for the lease component, embedded lease ROU asset and liability recognition, practical expedient election documentation (if not separating components)."
+    }
+  },
+  {
+    "slug": "lease-lease-incentives-tenant-improvement",
+    "category": "Leases",
+    "title": "How to Account for Lease Incentives \u2014 Tenant Improvement Allowances Received from the Lessor and Lessor-Funded Leasehold Improvements",
+    "description": "Recording tenant improvement allowances (TIAs) received from the lessor \u2014 as a reduction to the lessee's ROU asset rather than income \u2014 and separately accounting for leasehold improvements made by the lessee using the TIA.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Operating Lease (Before TIA Reduction)",
+        "type": "Asset (+)",
+        "dr": 8500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Operating Lease (PV of Payments)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 8500000.0
+      },
+      {
+        "account": "ROU Asset \u2014 Reduced by Lease Incentive (TIA Received)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 850000.0
+      },
+      {
+        "account": "Leasehold Improvements \u2014 Lessee (Cash Spent Using TIA)",
+        "type": "Asset (+)",
+        "dr": 850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash (TIA Received from Lessor \u2014 Flows to Leasehold Improvements)",
+        "type": "Asset (+/-)",
+        "dr": 0,
+        "cr": 0
+      }
+    ],
+    "explanation": "Tenant improvement allowances (TIAs) are cash payments from the lessor to the lessee to fund leasehold improvements (fit-out of office space, retail buildout, laboratory improvements). Under ASC 842 and IFRS 16: the TIA reduces the lessee's ROU asset (it is a lease incentive that reduces the overall cost of the lease). Separately, the lessee capitalizes the leasehold improvements as PP&E (owned by the lessee during the lease term) and depreciates them over the shorter of the improvement's useful life or the lease term. The TIA is NOT income \u2014 it reduces the ROU asset. If the TIA is received before or at lease commencement: it directly reduces the ROU asset at commencement. If received after commencement: it reduces the ROU asset when received.",
+    "practitioner_notes": {
+      "erp_application": "Track TIAs separately from the base lease in the lease accounting system. The ROU asset at commencement = PV of lease payments + initial direct costs + prepaid payments \u2212 lease incentives received (including TIA receivable). If the TIA is received before commencement but after the lease is signed: create a TIA receivable and reduce it when cash is received. The leasehold improvements (the physical assets built using the TIA) are separate PP&E assets with their own depreciation schedules. For the cash flow statement: TIA received is an investing cash inflow (it funds PP&E assets); lease payments are operating outflows; leasehold improvement spending is investing outflow. Net economic effect: lessor pays lessee, lessee builds out the space.",
+      "audit_triggers": "The most common TIA error is recognizing TIA as income (deferred income to P&L over the lease term) rather than as a reduction to the ROU asset. Auditors verify TIA accounting treatment at lease commencement. For large commercial real estate leases (retail flagship stores, headquarters office leases), TIAs can be in the millions and materially affect the ROU asset balance. TIA receivables (TIA promised but not yet received at period-end) must be included in the ROU asset calculation. Lessor-owned improvements (where the lessor constructs improvements that remain the lessor's property) are NOT lessee leasehold improvements \u2014 they may, however, factor into the lease incentive calculation.",
+      "required_documentation": "Lease agreement TIA provisions (amount, conditions, timing of payment), TIA receipt documentation (cash received from lessor), ROU asset calculation showing TIA reduction, leasehold improvement capitalization (separate PP&E asset), leasehold improvement depreciation schedule (shorter of useful life or lease term), cash flow statement classification of TIA (investing inflow), TIA receivable at commencement (if not yet received)."
+    }
+  },
+  {
+    "slug": "lease-sublease-lessor-intermediate",
+    "category": "Leases",
+    "title": "How to Account for a Sublease Where the Intermediate Party Is Both a Lessee Under the Head Lease and a Lessor Under the Sublease",
+    "description": "Accounting for subleases from the intermediate party's perspective \u2014 maintaining the head lease accounting unchanged and separately accounting for the sublease as a new lessor arrangement based on the ROU asset as the underlying asset.",
+    "entries": [
+      {
+        "account": "Head Lease \u2014 ROU Asset (Unchanged \u2014 Continues as Lessee)",
+        "type": "Asset (+)",
+        "dr": 0,
+        "cr": 0
+      },
+      {
+        "account": "Head Lease \u2014 Lease Liability (Unchanged \u2014 Continues as Lessee)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 0
+      },
+      {
+        "account": "Sublease Receivable \u2014 Net Investment in Sublease (Finance Lease Sublease)",
+        "type": "Asset (+)",
+        "dr": 3200000.0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset \u2014 Head Lease (Derecognized for Finance Sublease Portion)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 3200000.0
+      },
+      {
+        "account": "Sublease Income (Interest Income on Net Investment \u2014 Finance Sublease)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 128000.0
+      },
+      {
+        "account": "Sublease Receivable \u2014 Finance Sublease (Interest Accrual)",
+        "type": "Asset (+)",
+        "dr": 128000.0,
+        "cr": 0
+      }
+    ],
+    "explanation": "In a sublease, the intermediate party is simultaneously a lessee (under the head lease with the original lessor) and a lessor (under the sublease with the sublessee). Accounting rules: (1) The head lease is NOT derecognized \u2014 the intermediate party continues to account for it as a lessee (ROU asset and liability remain), (2) The sublease is accounted for SEPARATELY as a new lessor arrangement, (3) The sublease is classified (operating or finance) based on the REMAINING TERM AND PAYMENTS of the head lease ROU asset \u2014 NOT based on the head lease's original terms. If the sublease term covers substantially all of the remaining head lease term: likely a finance sublease (derecognize the ROU asset, recognize net investment in sublease). If only a portion: operating sublease (keep ROU asset, recognize rental income).",
+    "practitioner_notes": {
+      "erp_application": "For a finance sublease: derecognize the portion of the head lease ROU asset that corresponds to the subleased space, and replace it with a sublease receivable. The head lease liability continues unchanged. Net effect: the ROU asset is replaced by a sublease receivable, but the liability remains \u2014 creating a mismatch that is appropriate under the accounting model (the intermediate party still owes head lease payments regardless of the sublease). For an operating sublease: keep the entire head lease ROU asset and liability; add sublease rental income on top. Cash flows: head lease payments are operating outflows (for operating head lease) or financing (for finance head lease); sublease receipts are investing inflows (for finance sublease) or operating (for operating sublease).",
+      "audit_triggers": "Sublease classification requires using the REMAINING head lease ROU asset terms \u2014 not the head lease's original terms. Auditors test: (1) Is the sublease classified correctly using remaining ROU asset terms (a 3-year sublease on a head lease with 4 years remaining is very different from classifying based on a 10-year original term), (2) Is the head lease accounting properly maintained (the intermediate party should NOT derecognize the head lease liability just because they sublet), (3) Is the net investment in a finance sublease correctly calculated using the implicit rate (or the intermediate party's IBR at sublease commencement). A common error: treating the intermediate party as if it sold the lease (derecognizing both the ROU asset and liability) \u2014 incorrect unless the head lease is itself novated.",
+      "required_documentation": "Head lease agreement and accounting (unchanged ROU asset and liability), sublease agreement (term, payments, sublessee details), sublease classification analysis (using remaining head lease ROU asset terms), net investment in sublease calculation (for finance sublease), sublease receivable amortization schedule, operating sublease income schedule, head lease liability continuity confirmation, cash flow presentation (head lease payments vs. sublease receipts)."
+    }
+  },
+  {
+    "slug": "lease-ground-lease-long-term",
+    "category": "Leases",
+    "title": "How to Account for a Long-Term Ground Lease Where the Lessee Constructs and Owns a Building on Leased Land",
+    "description": "Recording a long-term ground lease (50-99 years) where the lessee builds and depreciates a building on leased land \u2014 with the land lease recognized as an ROU asset and the building as a separate owned PP&E asset, both subject to different useful life assessments.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Ground Lease (Land \u2014 PV of 75-Year Payments)",
+        "type": "Asset (+)",
+        "dr": 18500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Ground Lease (PV of Payments at IBR)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 18500000.0
+      },
+      {
+        "account": "Building \u2014 PP&E (Lessee-Constructed, Lessee-Owned)",
+        "type": "Asset (+)",
+        "dr": 42000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Construction in Progress (Transferred to Building at Completion)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 42000000.0
+      },
+      {
+        "account": "Depreciation \u2014 Building (Over Shorter of Lease Term or Useful Life)",
+        "type": "Expense (+)",
+        "dr": 700000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Depreciation \u2014 Building",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 700000.0
+      }
+    ],
+    "explanation": "Ground leases are extremely long-term (50-99 years) leases of land on which the lessee builds permanent improvements. The land lease itself is an operating or finance lease (classified using the five criteria \u2014 a 75-year term covering substantially all of the land's economic life may qualify as a finance lease). The lessee-constructed building is SEPARATE PP&E \u2014 owned by the lessee during the lease term and depreciated over its useful life or the lease term, whichever is shorter. For long-term ground leases with renewal options: if the lessee has an economic incentive to exercise renewals (owns a valuable building that requires the land), the lease term for accounting includes those renewably certain periods. The IBR for a 75-year ground lease must reflect the ultra-long duration \u2014 typically a much lower rate than short-term leases.",
+    "practitioner_notes": {
+      "erp_application": "Ground leases create two separate assets: the land ROU asset (lease liability discounted at IBR over full lease term) and the building PP&E (owned by lessee). The land ROU asset is not depreciated for an operating ground lease (it amortizes as a plug, like any operating lease ROU). The building is depreciated over the shorter of its physical life or the lease term. For a 75-year ground lease with a 50-year building: depreciate over 50 years. For renewal certainty assessment: if the lessee owns a $40M building on the land, the economic incentive to exercise renewal options is almost certain. This incentive must be reflected in the lease term \u2014 extending the accounting lease term to include the renewal periods.",
+      "audit_triggers": "Ground leases are complex due to their extraordinary length. Auditors challenge: (1) the lease term \u2014 are all reasonably certain renewal options included? (For ground leases supporting significant buildings, virtually all renewals may be 'reasonably certain'), (2) the IBR \u2014 a 75-year IBR is unusual and requires special derivation (long-dated government bonds plus credit spread), (3) whether the lease qualifies as a finance lease (75 years likely exceeds the major part of land's economic life \u2014 potentially criterion 3 if land has a finite legal life), (4) the building depreciation period \u2014 must use lease term (including reasonably certain renewals) if shorter than building's useful life.",
+      "required_documentation": "Ground lease agreement (base term, renewal options, improvement rights, ownership of improvements at lease end), lease term determination (base + reasonably certain renewals \u2014 supported by building value analysis), IBR for ultra-long-term lease (long-dated government bond yield + credit spread), lease classification analysis (operating vs. finance for the land), building PP&E capitalization and depreciation schedule (shorter of useful life or lease term), renewal option economic incentive documentation."
+    }
+  },
+  {
+    "slug": "lease-right-of-use-asset-impairment",
+    "category": "Leases",
+    "title": "How to Test a Right-of-Use Asset for Impairment and Record an Impairment Charge When the Lease Is Onerous or the Asset Is Underutilized",
+    "description": "Applying ASC 360 (IAS 36) impairment testing to ROU assets when circumstances indicate the carrying value may not be recoverable \u2014 such as vacated premises, abandoned leased assets, or restructuring events.",
+    "entries": [
+      {
+        "account": "Impairment Loss \u2014 ROU Asset (Vacated Leased Space)",
+        "type": "Expense (+)",
+        "dr": 1850000.0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset \u2014 Operating Lease (Impaired)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 1850000.0
+      },
+      {
+        "account": "Lease Liability \u2014 Unchanged (Obligation Continues Even if Space Vacated)",
+        "type": "Memo Only",
+        "dr": 0,
+        "cr": 0
+      }
+    ],
+    "explanation": "ROU assets are subject to impairment testing under ASC 360-10 (US GAAP) or IAS 36 (IFRS) \u2014 impairment indicators include: facility closures, workforce reductions that vacate leased space, remote work transitions reducing office utilization, restructuring events, and subleases at below-cost rates. Under ASC 360: test the ROU asset as part of its asset group \u2014 if the carrying value of the asset group exceeds undiscounted future cash flows, measure impairment as carrying value minus fair value. The lease LIABILITY is NOT impaired \u2014 the lessee's obligation to make lease payments continues regardless of whether the space is used. After impairment, the ROU asset amortization schedule is recalculated on the reduced carrying value. Unlike ASC 820/IAS 36 impairment in some cases, ROU asset impairment under ASC 360 is NON-REVERSIBLE under US GAAP.",
+    "practitioner_notes": {
+      "erp_application": "Monitor leased space utilization as part of real estate portfolio management \u2014 particularly post-COVID. For vacated leased space: impair the ROU asset to the present value of anticipated sublease cash flows (if a sublease is planned) or to zero (if the space is completely abandoned with no recovery). The lease liability remains fully accreted and payable \u2014 the entity has both an impaired ROU asset AND a full lease liability, creating a net deficit on the balance sheet. If a sublease is entered: treat the sublease income as an offset to the ongoing lease cost, but the sublease receivable does not increase the impaired ROU asset (the impairment is already recognized).",
+      "audit_triggers": "ROU asset impairment became a significant issue during COVID-19 (retail store closures, office vacancies). Auditors assess: (1) whether impairment indicators were identified promptly (did management recognize that vacating space required an impairment assessment?), (2) the fair value determination for the impaired ROU asset (difficult \u2014 no active market for in-place leases; typically estimated using discounted sublease cash flows or comparable market rents), (3) whether the impairment was classified correctly (operating expense if related to operations; restructuring if part of a formal plan). The lease liability continuing at full value while the ROU asset is impaired creates a balance sheet asymmetry \u2014 important disclosure for investors.",
+      "required_documentation": "Impairment triggering event documentation (facility closure, workforce reduction decision), ROU asset carrying value at impairment date, fair value determination (discounted sublease cash flows or market comparable rents), impairment amount calculation, lease liability balance confirmation (unchanged), updated ROU asset amortization schedule (post-impairment), income statement classification (operating expense vs. restructuring), sublease status (if applicable \u2014 sublease income does not reverse impairment)."
+    }
+  },
+  {
+    "slug": "lease-reassessment-option-exercise",
+    "category": "Leases",
+    "title": "How to Remeasure the Lease Liability When There Is a Significant Event That Changes the Assessment of Whether a Renewal or Termination Option Will Be Exercised",
+    "description": "Updating the lease term and remeasuring the ROU asset and lease liability when a significant event (major leasehold improvements, business decision, market conditions) changes whether a previously-excluded renewal option is now reasonably certain to be exercised.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Operating Lease (Increased for Extended Term)",
+        "type": "Asset (+)",
+        "dr": 4200000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Operating Lease (Remeasured for Extended Term at New IBR)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 4200000.0
+      }
+    ],
+    "explanation": "The lease term assessment (which renewal or termination options are 'reasonably certain') must be reassessed when a significant event occurs that is within the lessee's control and affects whether a previously-assessed option will or won't be exercised. Triggering events: (1) A lessee constructs significant leasehold improvements that would be abandoned if the lease were not renewed (increasing the likelihood of renewal), (2) A business decision to expand in a location previously considered temporary (increasing renewal likelihood), (3) A business exit or restructuring reducing the strategic importance of a location (increasing termination likelihood). When reassessment changes the lease term: remeasure the liability at a new IBR at the reassessment date, adjust the ROU asset by the same amount, no P&L impact.",
+    "practitioner_notes": {
+      "erp_application": "Establish a lease term monitoring process in the real estate or lease management function: track all lease renewals, termination windows, and significant events (capex in leased spaces, strategic reviews). When a significant event occurs, perform a formal reasonably-certain assessment and document the outcome. If the term changes: (1) Update the lease accounting system with the new term, (2) Obtain a new IBR at the reassessment date, (3) Remeasure the liability (PV of all future payments under the revised term at new IBR), (4) Adjust the ROU asset by the same amount (no P&L), (5) Update the amortization schedule. The reassessment remeasurement is symmetric with the modification accounting for scope changes \u2014 except no separate classification analysis is required.",
+      "audit_triggers": "Lease term reassessments are often missed \u2014 particularly when a company makes significant leasehold improvements without reassessing the lease term. Auditors review the PP&E additions in leased spaces and compare to the lease terms \u2014 if significant improvements were made in a space with a short remaining lease term and a renewal option, a reassessment may be required. The test is whether a significant event within the lessee's control has occurred \u2014 external market events (landlord's actions, changes in area market rents) that are outside the lessee's control do not trigger reassessment.",
+      "required_documentation": "Significant event documentation (capital expenditure in leased space, business decision, board approval), reasonably-certain reassessment analysis (before and after the event), new lease term determination, new IBR at reassessment date, remeasured liability calculation, ROU asset adjustment, updated amortization schedule (new term), disclosure of lease term change (material changes require disclosure)."
+    }
+  },
+  {
+    "slug": "lease-build-to-suit-lessee-asset",
+    "category": "Leases",
+    "title": "How to Determine Whether a Lessee Is the Accounting Owner of a Build-to-Suit Asset During Construction and Recognize the Resulting Financing Arrangement",
+    "description": "Assessing whether a lessee controls a build-to-suit asset under construction \u2014 and if so, recognizing both the constructed asset and a financing liability even before the lease commences.",
+    "entries": [
+      {
+        "account": "Construction in Progress \u2014 Build-to-Suit Asset (Lessee Controls Construction)",
+        "type": "Asset (+)",
+        "dr": 28500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Build-to-Suit Financing Liability (Lessee Deemed Owner During Construction)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 28500000.0
+      },
+      {
+        "account": "PP&E \u2014 Completed Build-to-Suit Asset (At Lease Commencement)",
+        "type": "Asset (+)",
+        "dr": 42000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Construction in Progress (Transferred to PP&E at Completion)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 28500000.0
+      },
+      {
+        "account": "Build-to-Suit Financing Liability (Reclassified \u2014 Lessor Contributions)",
+        "type": "Liability (-)",
+        "dr": 13500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Lease Liability (At Commencement \u2014 Standard Lease Accounting)",
+        "type": "Asset/Liability (+)",
+        "dr": 0,
+        "cr": 13500000.0
+      }
+    ],
+    "explanation": "In a build-to-suit arrangement, a landlord constructs a building to a tenant's specifications. If the lessee controls the asset DURING construction (due to: ownership of the underlying land, the lessee bearing the construction risk, having the right to take the asset in an incomplete state, or having the right to redesign), the lessee is the accounting owner during construction \u2014 recognizing a construction-in-progress asset and a financing liability. At lease commencement, a sale-leaseback assessment determines whether the transfer qualifies as a sale (derecognize the asset, begin lease accounting) or fails (retain the asset, continue the financing). This prevents off-balance-sheet financing of custom-built facilities through sale-leaseback structures.",
+    "practitioner_notes": {
+      "erp_application": "Build-to-suit accounting requires careful analysis of the construction agreement terms. The lessee-as-accounting-owner conclusion means: (1) all construction costs flow through the lessee's balance sheet (even if paid by the developer), (2) a financing liability (equivalent to the developer's contributed cost) is recognized, (3) at completion, a sale-leaseback analysis determines final accounting. In practice, many build-to-suit arrangements are structured specifically to avoid lessee accounting-owner status \u2014 by limiting the lessee's ability to modify the design, control the construction, or take the asset early. Ensure the construction contracts are reviewed for control indicators before signing.",
+      "audit_triggers": "Build-to-suit arrangements are scrutinized because they are often used to keep large assets off the lessee's balance sheet. Auditors review construction agreement terms for: (1) land ownership or long-term land lease (lessee may control the land = control the asset), (2) lessee's right to direct and control construction activities, (3) lessee bearing construction cost overruns or risks, (4) the lessee's specification level (highly customized design suggests control). If lessee control is established, the asset and financing liability must be recognized \u2014 failure to do so is a completeness error that could be material for large custom facilities.",
+      "required_documentation": "Construction agreement (control provisions, modification rights, completion risk allocation), land ownership or ground lease documentation, lessee construction control analysis (applying ASC 842 build-to-suit guidance), construction progress billings and costs, CIP rollforward, financing liability calculation, sale-leaseback analysis at completion (qualifying vs. failed sale), final PP&E recognition or continued asset/financing treatment."
+    }
+  },
+  {
+    "slug": "lease-rent-concession-covid",
+    "category": "Leases",
+    "title": "How to Apply the COVID-19 Rent Concession Practical Expedient for Lease Payments Forgiven or Deferred by the Lessor",
+    "description": "Applying the ASC 842 and IFRS 16 practical expedients for COVID-19-related lease concessions \u2014 accounting for rent reductions, deferrals, and forgiveness as negative variable lease expense rather than as lease modifications.",
+    "entries": [
+      {
+        "account": "Lease Liability \u2014 Operating Lease (Reduced for Forgiven Rent)",
+        "type": "Liability (-)",
+        "dr": 285000.0,
+        "cr": 0
+      },
+      {
+        "account": "Variable Lease Income (Negative Variable Expense \u2014 Concession)",
+        "type": "Expense (-)",
+        "dr": 0,
+        "cr": 285000.0
+      },
+      {
+        "account": "Lease Liability \u2014 Operating Lease (Increased for Deferred Rent)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 185000.0
+      },
+      {
+        "account": "Accrued Lease Liability \u2014 Deferred Rent Payable",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 185000.0
+      }
+    ],
+    "explanation": "During COVID-19, many landlords provided rent concessions (forgiveness or deferral) to struggling tenants. Under normal modification accounting, each concession would trigger remeasurement of the lease liability at a new IBR \u2014 operationally burdensome for thousands of leases. FASB and IASB issued practical expedients: if the concession is entirely due to COVID-19, does not increase the lease term or scope substantially, and results in total payments remaining substantially the same or less \u2014 the lessee may elect to account for it as a NEGATIVE VARIABLE LEASE EXPENSE (not a modification). For deferrals (payment postponed, not forgiven): increase the lease liability (you owe more in future periods) and recognize as additional variable expense in the deferral period, reversing when paid. For forgiveness: reduce the liability and recognize a negative expense (income-like credit).",
+    "practitioner_notes": {
+      "erp_application": "The practical expedient election must be made by class of asset and consistently applied. Document: (1) whether the concession is COVID-related (not a renegotiation opportunistically labeled COVID), (2) whether total payments under the modified terms are substantially the same or less (total payments, not just current period), (3) the accounting treatment elected (variable expense vs. modification). For deferrals \u2014 enter a temporary additional payable; when the deferred rent is later paid, the payable is eliminated. For forgiveness \u2014 reduce the outstanding liability. Both treatments avoid the remeasurement complexity of formal modification accounting.",
+      "audit_triggers": "COVID-19 concession practical expedient elections must meet the eligibility criteria \u2014 auditors verify concessions were genuinely COVID-related (documented in correspondence with the landlord), and that total future payments are not materially higher than pre-concession (some 'concessions' involved adding payment periods that increased the total \u2014 these do not qualify). For large portfolios, auditors may sample-test the concession terms to verify eligibility. Missing the recording of deferred rent payables (treating deferrals as if the obligation was forgiven) is a common completeness error.",
+      "required_documentation": "Landlord concession agreement or correspondence (COVID-19 basis, forgiveness vs. deferral terms), eligibility assessment for practical expedient (same or less total payments, same or shorter lease term), practical expedient election documentation (by asset class), lease-by-lease concession schedule, variable expense/income recognition amounts, deferred rent payable rollforward (for deferrals), cash flow impact disclosure."
+    }
+  },
+  {
+    "slug": "lease-portfolio-approach-practical-expedient",
+    "category": "Leases",
+    "title": "How to Apply the Portfolio Approach Practical Expedient for Leases with Similar Characteristics to Simplify IBR Determination and Initial Recognition",
+    "description": "Grouping leases with similar characteristics (same asset class, similar term, same currency, similar commencement date) to apply a single IBR and discount rate rather than determining a unique rate for each individual lease.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Fleet Vehicles (Portfolio \u2014 Single Weighted IBR Applied)",
+        "type": "Asset (+)",
+        "dr": 4850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Fleet Vehicles (Portfolio \u2014 Blended Rate)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 4850000.0
+      }
+    ],
+    "explanation": "ASC 842 and IFRS 16 permit a portfolio approach: rather than accounting for each lease individually, a company may group leases with similar characteristics and apply a single set of assumptions (including a single IBR) as long as the portfolio result would not differ materially from the individual lease approach. Common portfolios: all vehicle leases of a specific type (passenger cars, light trucks, forklifts), all copier leases, all retail store leases in a specific region with similar terms. The IBR for the portfolio is typically a weighted-average or representative rate for the asset class, term, and currency. The portfolio approach dramatically reduces the operational burden for companies with hundreds or thousands of similar leases.",
+    "practitioner_notes": {
+      "erp_application": "Define portfolio groups at the accounting policy level: document the criteria for grouping (asset class, currency, lease term range, commencement date window). For each portfolio, determine a representative IBR. Apply consistently \u2014 don't cherry-pick which leases go into a portfolio vs. individual treatment. For fleet leases: group all passenger vehicle leases of similar term (36-48 months) in the same currency \u2014 apply a single IBR. Add new fleet leases to the portfolio throughout the year using the same IBR until a significant market rate change requires updating. Re-assess the portfolio IBR semi-annually for material rate movements.",
+      "audit_triggers": "Auditors test the portfolio approach materiality conclusion: the portfolio approach result must not differ materially from individual lease accounting. For very heterogeneous groups (widely varying lease terms, different currencies, different credit environments), a portfolio approach may produce a materially different result from individual lease accounting \u2014 in which case the portfolio is too broad and must be subdivided. Auditors also verify that the representative IBR is genuinely representative (not systematically biased high or low relative to the portfolio's actual characteristics).",
+      "required_documentation": "Portfolio definition documentation (asset class, currency, term range, commencement date window), IBR for each portfolio (representative rate with supporting evidence), materiality assessment (portfolio result vs. individual lease result), portfolio amortization schedules (aggregate), consistent application policy (criteria for including leases in each portfolio), portfolio IBR update history."
+    }
+  },
+  {
+    "slug": "lease-transition-modified-retrospective",
+    "category": "Leases",
+    "title": "How to Record the ASC 842 / IFRS 16 Transition Adjustment Using the Modified Retrospective Method at the Adoption Date",
+    "description": "Recording the cumulative-effect adjustment at the adoption date under the modified retrospective transition approach \u2014 recognizing ROU assets and lease liabilities for all operating leases that existed at adoption, with no restatement of prior periods.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Operating Leases (Recognized at Adoption Date)",
+        "type": "Asset (+)",
+        "dr": 285000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Operating Leases (Current)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 42000000.0
+      },
+      {
+        "account": "Lease Liability \u2014 Operating Leases (Non-Current)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 248000000.0
+      },
+      {
+        "account": "Deferred Rent Liability (Reclassified \u2014 Offset Against ROU Asset)",
+        "type": "Liability (-)",
+        "dr": 12000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Prepaid Lease Expense (Reclassified \u2014 Added to ROU Asset)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 5000000.0
+      },
+      {
+        "account": "Retained Earnings / Cumulative Effect Adjustment",
+        "type": "Equity (-)",
+        "dr": 10000000.0,
+        "cr": 0
+      }
+    ],
+    "explanation": "Under the modified retrospective transition method, the entity recognizes: (1) Lease liability = PV of remaining operating lease payments (as of adoption date) discounted at the IBR on the adoption date, (2) ROU asset = lease liability \u00b1 adjustments for prepaid/accrued rent, deferred rent, and lease incentives (transition practical expedient: ROU asset equals liability adjusted for existing balances). Deferred rent liabilities (from prior straight-lining) are offset against the ROU asset. Prepaid lease payments are added to the ROU asset. Any difference (typically from impairment of existing ROU assets or leases that are onerous) flows through retained earnings as a cumulative-effect adjustment. Prior periods are NOT restated under this method.",
+    "practitioner_notes": {
+      "erp_application": "Transition requires a complete lease inventory as of the adoption date \u2014 all operating leases must be identified, their remaining payments extracted, and IBRs determined. The IBR at adoption date is used for ALL existing leases (not the original commencement-date IBR). The practical expedient to set ROU asset = lease liability \u00b1 existing balances eliminates the need to reconstruct the amortization table from the original commencement date (which would be required under full retrospective). Document all practical expedients elected at transition: hindsight (using the actual lease term with known renewals), combination of operating and finance lease practical expedient, not reassessing classification.",
+      "audit_triggers": "Transition audits focus on completeness \u2014 were all operating leases identified and included? Auditors scan AP records, general ledger rent expense accounts, and contract management systems for leases not in the initial inventory. The IBR at adoption date is a single market date \u2014 auditors confirm the rate source is appropriate for that specific date. Practical expedients elected must be documented and consistently applied. Deferred rent balances (often material for companies with large real estate portfolios) must be correctly reclassified to adjust the ROU asset \u2014 not left as standalone liabilities.",
+      "required_documentation": "Complete lease inventory at adoption date (all operating leases), IBR determination at adoption date by portfolio/term/currency, lease liability calculation (PV of remaining payments at adoption IBR), ROU asset calculation (liability \u00b1 prepaid rent \u00b1 deferred rent \u00b1 lease incentives), deferred rent liability reclassification, prepaid lease reclassification, cumulative-effect retained earnings adjustment, practical expedients elected, disclosure of adoption impact."
+    }
+  },
+  {
+    "slug": "lease-leveraged-lease",
+    "category": "Leases",
+    "title": "How to Account for a Leveraged Lease from the Lessor's Perspective Where Third-Party Debt Finances the Majority of the Asset",
+    "description": "Recording a leveraged lease arrangement where the lessor uses significant non-recourse debt to finance the majority of the asset cost \u2014 applying the net investment method to recognize the lessor's equity investment and deferred income.",
+    "entries": [
+      {
+        "account": "Leveraged Lease Receivable \u2014 Net Investment in Lease",
+        "type": "Asset (+)",
+        "dr": 8500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Income \u2014 Leveraged Lease (Unearned Income Component)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 3200000.0
+      },
+      {
+        "account": "Cash / Asset (Lessor's Equity Investment \u2014 20-30% of Asset Cost)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 5300000.0
+      },
+      {
+        "account": "Income from Leveraged Lease (Recognized Using Net Investment Method)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 485000.0
+      },
+      {
+        "account": "Leveraged Lease \u2014 Net Investment (Income Accrual)",
+        "type": "Asset (+)",
+        "dr": 485000.0,
+        "cr": 0
+      }
+    ],
+    "explanation": "A leveraged lease (a grandfathered concept under ASC 842 \u2014 new leveraged leases cannot be created post-adoption, but existing leveraged leases continue under ASC 840 rules) involves: (1) A lessee, (2) A lessor (the equity participant \u2014 typically 20-30% of asset cost), and (3) A non-recourse lender who provides the remaining 70-80% of financing. The lessor's investment is leveraged by third-party debt \u2014 hence the name. The lessor recognizes only the NET investment (equity investment less associated deferred income), not the gross asset and full debt. Income is recognized using the net investment method: a constant rate of return on the positive net investment balance. In years where the net investment is negative (tax benefits exceed cash flows), no income is recognized.",
+    "practitioner_notes": {
+      "erp_application": "Leveraged lease accounting is highly specialized and requires a dedicated system or spreadsheet model. The net investment in a leveraged lease consists of: (1) rentals receivable (net of non-recourse debt service payments), (2) estimated residual value (the lessor's share of the asset's expected end-of-lease value), (3) unearned income (interest income to be recognized in future periods). The cash flows (rent received minus debt service paid) are front-loaded if the rent exceeds debt service in early years, or negative in years when debt service exceeds rent. Tax benefits (depreciation, interest deductions) are the primary driver of lessor economics \u2014 the structure is fundamentally a tax-arbitrage investment.",
+      "audit_triggers": "Leveraged leases are rare post-ASC 842 (no new leveraged leases) but legacy leases continue. Auditors test: (1) whether the net investment balance correctly reflects all components (receivables, residual, deferred income), (2) whether income recognition follows the net investment method (constant rate on positive net investment balance, zero in negative periods), (3) whether tax benefit assumptions remain valid (changes in tax law may eliminate the anticipated tax benefits that justified the lessor's investment), (4) whether the residual value estimate is current. If key assumptions change significantly, the entire income recognition schedule must be recalculated prospectively.",
+      "required_documentation": "Leveraged lease agreement (all parties, asset, rent schedule, non-recourse debt terms), net investment calculation (initial equity investment, receivables, residual, deferred income), income recognition model (net investment method schedule), tax benefit schedule (assumed depreciation and interest deductions), residual value estimate and annual update, non-recourse debt service schedule, years with positive vs. negative net investment (income recognition pattern)."
+    }
+  },
+  {
+    "slug": "lease-initial-direct-costs",
+    "category": "Leases",
+    "title": "How to Capitalize Initial Direct Costs of a Lease and Amortize Them Over the Lease Term",
+    "description": "Identifying incremental costs incurred by the lessee to obtain a lease (commissions, legal fees for lease negotiation) \u2014 adding them to the ROU asset at commencement and amortizing them over the lease term.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Operating Lease (Includes Initial Direct Costs)",
+        "type": "Asset (+)",
+        "dr": 125000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable (Initial Direct Costs Paid)",
+        "type": "Asset/Liability (-)",
+        "dr": 0,
+        "cr": 125000.0
+      },
+      {
+        "account": "Operating Lease Expense (Amortization Including IDC Component)",
+        "type": "Expense (+)",
+        "dr": 12500.0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset \u2014 IDC Component (Amortized Over Lease Term)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 12500.0
+      }
+    ],
+    "explanation": "Initial direct costs (IDCs) are incremental costs of obtaining a lease that would not have been incurred if the lease had not been obtained. For lessees: IDCs are capitalized into the ROU asset and amortized over the lease term as part of the lease cost. Examples of IDCs: commissions paid to real estate brokers for negotiating the lease, legal fees for negotiating and documenting the lease terms, transaction-specific appraisal costs. NOT IDCs (expensed as incurred): costs that would be incurred regardless of whether a specific lease is obtained (general legal fees, negotiation salaries, overhead). Under ASC 842, the lessee's IDC definition is the same as under ASC 606 for contract costs \u2014 only incremental costs of obtaining (not executing) the contract.",
+    "practitioner_notes": {
+      "erp_application": "Capture IDCs in the lease accounting system at lease commencement \u2014 they are added to the ROU asset and amortize as part of the overall lease cost (not separately identified in the income statement for operating leases). For finance leases, IDCs increase the ROU asset and are included in the depreciation base. The most common IDC for commercial real estate: broker commissions (typically 3-6% of total lease value, paid at lease signing). For the lessor perspective: IDCs for operating leases are deferred and recognized over the lease term (similar to lessee treatment). For sales-type leases: IDC is expensed at commencement (offsets the dealer profit, recognized immediately).",
+      "audit_triggers": "The IDC definition is narrow \u2014 many costs incurred during lease negotiations are NOT IDCs. Auditors test: (1) whether the costs are truly incremental (would the legal fees have been incurred for general corporate work even without this specific lease? If yes, expense them), (2) whether all capitalized IDCs relate specifically to the lease obtained (not to the entire real estate search process), (3) whether the amortization period matches the lease term (including reasonably certain renewals). Companies sometimes capitalize general overhead or pre-lease costs that don't qualify \u2014 inflating the ROU asset.",
+      "required_documentation": "IDC itemization (each cost: vendor, amount, description, incremental justification), broker commission agreements (for real estate leases), legal engagement letters (for lease-specific legal fees), IDC capitalization policy, IDC rollforward (by lease), amortization schedule."
+    }
+  },
+  {
+    "slug": "lease-residual-value-guarantee",
+    "category": "Leases",
+    "title": "How to Include Amounts Probable of Being Owed Under a Residual Value Guarantee in the Lease Liability Calculation",
+    "description": "Including the lessee's estimate of probable payments under a residual value guarantee in the lease liability \u2014 updating the estimate at each reporting date and remeasuring when the estimate changes.",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Finance Lease (Including Probable RVG Amount)",
+        "type": "Asset (+)",
+        "dr": 4850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Finance Lease (Including Probable RVG)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 4850000.0
+      },
+      {
+        "account": "ROU Asset (Increase \u2014 RVG Estimate Increased Due to Asset Depreciation)",
+        "type": "Asset (+)",
+        "dr": 285000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability (Remeasured \u2014 Higher Probable RVG Payment)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 285000.0
+      }
+    ],
+    "explanation": "A residual value guarantee (RVG) is a lessee's guarantee to the lessor that the leased asset will have a minimum value at the end of the lease term. If the asset is worth less than the guaranteed amount, the lessee pays the shortfall. Under ASC 842 and IFRS 16: the lessee includes in the lease liability only the PROBABLE amount of RVG payments \u2014 not the full guaranteed amount. At commencement, the lessee estimates the probability of paying the RVG (based on expected end-of-lease asset value vs. the guaranteed value). At each reporting date, the estimate is updated \u2014 if the expected asset value declines relative to the guaranteed amount, more of the guarantee becomes probable and the liability increases. Changes in the RVG estimate are treated as remeasurements (adjusting the ROU asset, not P&L).",
+    "practitioner_notes": {
+      "erp_application": "Track the RVG amount and the expected asset residual value separately in the lease system. The probable payment = max(0, guaranteed amount \u2212 expected residual value) \u00d7 probability factor. Monitor the leased asset's expected residual value throughout the lease \u2014 for assets with rapid depreciation (technology equipment, specialized machinery) or market value declines, the RVG becomes more valuable to the lessor and more costly to the lessee. For fleet leases with RVGs: compare the manufacturer's residual value estimates to the guaranteed amount annually and adjust the probable payment accordingly.",
+      "audit_triggers": "RVG probability assessments are highly subjective. Auditors challenge: (1) whether the expected residual value estimate is reasonable (based on third-party valuation data, market trends, historical realized residual values), (2) whether the probability of payment accurately reflects the risk (a $1M guarantee on an asset expected to be worth $900K has an expected payment of $100K, not zero), (3) whether remeasurements are made promptly when circumstances change (a significant decline in the market for the leased asset type should trigger reassessment). Under-estimating probable RVG payments understates the lease liability.",
+      "required_documentation": "Lease agreement RVG terms (guaranteed amount, measurement date), initial RVG probability assessment (expected residual value vs. guaranteed amount), residual value data source (market comparables, manufacturer data, appraisal), periodic reassessment of expected residual value, probability-weighted RVG payment calculation, remeasurement journal (when estimate changes), ROU asset adjustment (same amount as liability change)."
+    }
+  },
+  {
+    "slug": "lease-purchase-option-reasonably-certain",
+    "category": "Leases",
+    "title": "How to Assess and Account for a Lease Purchase Option That Is Reasonably Certain of Exercise \u2014 Including in the Lease Term and Liability",
+    "description": "Determining when a purchase option is reasonably certain to be exercised and including the option price in the lease liability calculation \u2014 resulting in finance lease classification and amortization of the ROU asset over the asset's useful life (not the lease term).",
+    "entries": [
+      {
+        "account": "ROU Asset \u2014 Finance Lease (Including Purchase Option \u2014 Amortized Over Asset Life)",
+        "type": "Asset (+)",
+        "dr": 6200000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Finance Lease (Payments + Purchase Option Price at PV)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 6200000.0
+      },
+      {
+        "account": "Accumulated Depreciation \u2014 Finance Lease ROU (Over Asset Useful Life)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 0
+      },
+      {
+        "account": "Depreciation Expense \u2014 Finance Lease (Over Full Asset Life, Not Just Lease Term)",
+        "type": "Expense (+)",
+        "dr": 310000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Depreciation \u2014 Finance Lease ROU",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 310000.0
+      }
+    ],
+    "explanation": "If a purchase option is reasonably certain to be exercised (significant economic incentive \u2014 the option price is expected to be below the asset's market value at exercise), the option price is included in the lease liability. Including a purchase option: (1) Automatically classifies the lease as a FINANCE lease (criterion 2 of five), (2) The ROU asset is depreciated over the asset's FULL useful life (not the lease term) because the lessee expects to own it, (3) The purchase option price (discounted to PV) is part of the lease liability. When the option is exercised: derecognize the lease liability (paid off), reclassify the ROU asset to PP&E, and record the cash payment to the lessor. Reassess the reasonably-certain conclusion at each period-end \u2014 if the conclusion changes, remeasure the liability.",
+    "practitioner_notes": {
+      "erp_application": "Include the option price in the lease amortization table as a balloon payment at the expected exercise date. The EIR calculation incorporates all payments plus the option price. For the finance lease: depreciate the ROU asset over the full asset economic life (the lessee intends to own it through its full useful life). At option exercise: the liability is zero (or near-zero after full amortization) \u2014 reclassify the ROU asset net of accumulated depreciation to PP&E at carrying value. If the option is NOT exercised when expected: treat as a lease modification (the lessee no longer expects to buy, the purchase option is excluded, the lease continues with a new term analysis).",
+      "audit_triggers": "Reasonably-certain purchase option assessments require evidence. Auditors test: (1) whether the expected fair value of the asset at exercise date significantly exceeds the option price (economic incentive), (2) whether the company has a history of exercising similar options (behavioral evidence), (3) whether the asset is specialized (difficult to replace \u2014 creating economic pressure to exercise). A bargain purchase option (price significantly below expected fair value) has a very strong presumption of exercise \u2014 auditors would need compelling evidence of non-exercise to accept a contrary conclusion.",
+      "required_documentation": "Lease agreement purchase option terms (price, exercise window), expected fair value of asset at option exercise date (third-party appraisal or market data), reasonably-certain assessment (economic incentive analysis, behavioral history), lease classification (finance due to purchase option), depreciation schedule (over full asset useful life), liability amortization including option price, reassessment at each period-end, option exercise documentation (if exercised)."
+    }
+  },
+  {
+    "slug": "lease-variable-lease-payment-non-index",
+    "category": "Leases",
+    "title": "How to Account for Variable Lease Payments Based on Performance or Usage That Are Excluded from the Lease Liability",
+    "description": "Recognizing variable lease payments tied to usage, revenue, or performance metrics as period expenses when incurred \u2014 excluded from the lease liability because they are not fixed or index-linked.",
+    "entries": [
+      {
+        "account": "Variable Lease Expense \u2014 Usage-Based (Excluded from Liability)",
+        "type": "Expense (+)",
+        "dr": 185000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accrued Lease Payable (Variable Payment Made/Accrued)",
+        "type": "Asset/Liability (-)",
+        "dr": 0,
+        "cr": 185000.0
+      }
+    ],
+    "explanation": "Variable lease payments that depend on the lessee's performance, usage, or other factors that are NOT an index or rate are EXCLUDED from the lease liability \u2014 they cannot be predicted reliably at commencement. Examples: percentage rent (retail leases where rent = higher of base rent or X% of sales), variable mileage charges (car leases where excess mileage is charged at $0.25/mile), usage-based equipment leases (copier leases at $0.01/copy), and revenue-sharing arrangements. These payments are recognized as expenses in the period when the obligation is incurred (when the lessee's performance or usage that triggers the payment occurs). The lease liability is based only on fixed payments and index/rate-linked payments (at the current index/rate).",
+    "practitioner_notes": {
+      "erp_application": "Identify and separate the variable components of each lease payment: fixed base (include in liability), CPI/index step-up (include at current rate, remeasure when rate changes), usage-based (exclude, expense when incurred), performance-based (exclude, expense when performance is measured). For retail percentage rent leases: the base rent is in the liability; the percentage rent over the natural break-even is variable and excluded. Track variable lease payments by lease for disclosure purposes \u2014 companies must disclose total variable lease expense separately from fixed lease expense in the financial statements.",
+      "audit_triggers": "Auditors verify that variable lease payment exclusions are appropriate: (1) is the variability based on a factor other than an index or rate (usage, performance, lessee's choice)? If yes, exclude from liability; if no, include (index/rate payments are included at the current rate), (2) are variable payments recognized in the correct period (when the obligation arises, not when estimated at lease commencement), (3) is the variable lease expense disclosure complete and accurate in the footnote? Underestimating variable lease cost (presenting only fixed costs in financial forecasts and analyst guidance) without disclosing the variable component can be misleading.",
+      "required_documentation": "Lease agreement variable payment provisions (formula, measurement period, trigger event), separation of fixed vs. variable lease payments, variable payment accrual calculation each period (based on actual usage or performance), footnote disclosure of variable lease expense by type (usage-based, performance-based), reconciliation of total lease expense (fixed + variable) to cash payments."
+    }
+  },
+  {
+    "slug": "lease-sale-leaseback-partial-transfer",
+    "category": "Leases",
+    "title": "How to Account for a Partial Sale-Leaseback Where Only a Portion of the Asset Is Transferred to the Buyer-Lessor",
+    "description": "Recording a sale-leaseback where the seller-lessee retains a proportionate interest in the underlying asset and only transfers the remaining portion to the buyer-lessor \u2014 allocating the gain between the transferred and retained portions.",
+    "entries": [
+      {
+        "account": "Cash (Sale Proceeds for Transferred Portion)",
+        "type": "Asset (+)",
+        "dr": 12000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Investment in Retained Portion (Proportionate Interest Retained)",
+        "type": "Asset (+)",
+        "dr": 6000000.0,
+        "cr": 0
+      },
+      {
+        "account": "PP&E \u2014 Original Asset (Carrying Value Derecognized in Full)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 15000000.0
+      },
+      {
+        "account": "Gain \u2014 Recognized Portion (Rights Transferred to Buyer)",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 2000000.0
+      },
+      {
+        "account": "Gain \u2014 Deferred Against ROU Asset (Portion Retained via Leaseback)",
+        "type": "Deferred",
+        "dr": 1000000.0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset \u2014 Leaseback (Operating Lease on Transferred Portion)",
+        "type": "Asset (+)",
+        "dr": 4500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Liability \u2014 Leaseback",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 4500000.0
+      }
+    ],
+    "explanation": "A partial sale-leaseback occurs when a company sells a portion of its interest in an asset to an investor and leases it back \u2014 common in real estate joint ventures where a company sells 50% of a building and leases back its own floors. The seller-lessee: (1) Derecognizes the FULL original asset at carrying value, (2) Recognizes a proportionate investment in the retained portion (as a financial asset or equity method investment), (3) Recognizes the leaseback as a new lease (operating or finance), (4) Allocates the gain between the transferred portion (recognized immediately) and the leaseback portion (deferred against the ROU asset). The complexity lies in the allocation between the gain recognized for rights definitively transferred and the gain deferred for rights retained via the leaseback.",
+    "practitioner_notes": {
+      "erp_application": "Partial sale-leasebacks require careful identification of the proportion transferred vs. retained. The gain allocation: Total gain = Proceeds \u2212 carrying value \u00b1 fair value adjustments. Gain on transferred portion = Total gain \u00d7 (transferred rights \u00f7 total rights). Deferred gain = Total gain \u00d7 (retained rights \u00f7 total rights), offset against the ROU asset. The retained proportionate interest (50% of the building) is accounted for based on its nature: if it is a passive financial interest (buyer controls operations), use ASC 321 cost/FV; if significant influence is retained, use ASC 323 equity method; if control is retained through the retained interest, do not derecognize (consolidate with minority interest).",
+      "audit_triggers": "Partial sale-leasebacks are complex and relatively rare. Auditors focus on: (1) whether the sale is a genuine transfer of control for the transferred portion (buyer-lessor must independently benefit from the transferred portion), (2) the allocation of gain between recognized and deferred (proportion must reflect the economic rights transferred vs. retained via leaseback), (3) the accounting for the retained interest (financial asset, equity method, or consolidation \u2014 depends on the governance structure of the remaining ownership). Related-party partial sale-leasebacks require additional scrutiny for the arm's-length basis of the sales price.",
+      "required_documentation": "Sale-leaseback agreement (proportion transferred, proportionate interest retained, leaseback terms), control assessment for transferred vs. retained interests, gain allocation calculation (transferred vs. retained portions), retained interest accounting method (financial asset, equity method, or consolidation analysis), leaseback ROU asset and liability, deferred gain amortization schedule, fair value of entire asset (for allocation basis)."
+    }
+  },
+  {
+    "slug": "lease-direct-financing-lease-lessor",
+    "category": "Leases",
+    "title": "How to Account for a Direct Financing Lease from the Lessor's Perspective Where No Dealer Profit Arises at Inception",
+    "description": "Recording a non-dealer lessor's direct financing lease \u2014 where the leased asset's carrying value equals its fair value at lease commencement \u2014 recognizing only interest income over the lease term without upfront profit.",
+    "entries": [
+      {
+        "account": "Net Investment in Direct Financing Lease (Receivable)",
+        "type": "Asset (+)",
+        "dr": 4850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Unguaranteed Residual Asset (PV of Unguaranteed Residual)",
+        "type": "Asset (+)",
+        "dr": 285000.0,
+        "cr": 0
+      },
+      {
+        "account": "Leased Asset (Derecognized \u2014 Transferred to Lessee Under Finance Lease)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 4850000.0
+      },
+      {
+        "account": "Deferred Income \u2014 Initial Direct Costs (Added to Net Investment)",
+        "type": "Asset (+)",
+        "dr": 125000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Payable \u2014 IDC (Capitalized Into Net Investment)",
+        "type": "Asset/Liability (-)",
+        "dr": 0,
+        "cr": 125000.0
+      },
+      {
+        "account": "Interest Income \u2014 Direct Financing Lease (EIR on Net Investment)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 218000.0
+      },
+      {
+        "account": "Net Investment (Interest Income Accrued)",
+        "type": "Asset (+)",
+        "dr": 218000.0,
+        "cr": 0
+      }
+    ],
+    "explanation": "A direct financing lease arises when: (1) The lease meets one or more of the five finance lease criteria AND (2) The lessor's carrying value of the asset equals its fair value at commencement (no dealer profit). Common for financial institutions (banks, leasing companies) that purchase assets at fair value specifically to lease to customers. The lessor derecognizes the leased asset, recognizes a net investment in the lease (PV of future payments + PV of unguaranteed residual), and capitalizes initial direct costs into the net investment (deferring them over the lease term as a reduction to the effective yield). Only interest income is recognized \u2014 no upfront profit (unlike sales-type leases for manufacturer/dealer lessors).",
+    "practitioner_notes": {
+      "erp_application": "The net investment in a direct financing lease = PV of lease payments receivable + PV of unguaranteed residual value \u2212 deferred initial direct costs (which reduce the net investment and consequently the effective yield). Interest income = beginning net investment balance \u00d7 effective interest rate (the rate that equates the net investment to the sum of PV of all future cash flows). Track the unguaranteed residual separately \u2014 if the expected residual value declines, recognize an immediate loss on the residual. Unlike the lessee's liability amortization, the lessor's net investment amortization reflects: beginning balance + interest income \u2212 cash received = ending balance.",
+      "audit_triggers": "Direct financing lease classification requires confirming that no dealer profit exists (asset carrying value = fair value at commencement). For financial institutions that purchase assets to lease, this is straightforward. Auditors also test: (1) the unguaranteed residual estimate (may be inflated to increase the net investment and boost initial yield \u2014 requires current market data), (2) the EIR calculation (must reflect IDCs embedded in the net investment), (3) any impairment of the unguaranteed residual (if the asset type is depreciating faster than expected \u2014 technology equipment, specialized vehicles). CECL (ASC 326) credit loss provisioning applies to the net investment in direct financing leases for lessors.",
+      "required_documentation": "Lease agreement (all payment terms, unguaranteed residual provisions), asset carrying value at commencement = fair value confirmation, net investment calculation (PV of payments + PV of unguaranteed residual \u2212 IDCs), initial direct costs schedule and EIR impact, interest income recognition schedule (EIR method), CECL credit loss assessment for lease receivable, unguaranteed residual value annual reassessment, impairment testing of unguaranteed residual."
+    }
+  },
+  {
+    "slug": "lease-ifrs16-vs-asc842-differences",
+    "category": "Leases",
+    "title": "How to Identify the Key Differences Between IFRS 16 and ASC 842 and Apply the Correct Standard for Each Reporting Entity",
+    "description": "Documenting the principal differences between IFRS 16 (single lessee model \u2014 all leases as finance leases) and ASC 842 (dual model \u2014 operating and finance leases) and their impact on the income statement, EBITDA, and key financial ratios.",
+    "entries": [
+      {
+        "account": "Operating Lease Expense (ASC 842 \u2014 Single Line, Below EBITDA Impact Zero)",
+        "type": "Expense (+)",
+        "dr": 850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Depreciation \u2014 ROU Asset (IFRS 16 \u2014 In EBITDA Calculation)",
+        "type": "Expense (+)",
+        "dr": 765000.0,
+        "cr": 0
+      },
+      {
+        "account": "Interest Expense \u2014 Lease Liability (IFRS 16 \u2014 Below EBIT, Below EBITDA)",
+        "type": "Expense (+)",
+        "dr": 312000.0,
+        "cr": 0
+      },
+      {
+        "account": "EBITDA Add-Back Difference (IFRS 16 > ASC 842 by Depreciation + Interest)",
+        "type": "Memo Only",
+        "dr": 0,
+        "cr": 0
+      }
+    ],
+    "explanation": "Key differences between IFRS 16 and ASC 842: (1) Lessee model: IFRS 16 uses a SINGLE model for all leases (equivalent to ASC 842 finance lease) \u2014 separate depreciation and interest in income statement, no operating lease option. ASC 842 has a DUAL model \u2014 operating leases (single straight-line expense) and finance leases (separate depreciation + interest). (2) EBITDA impact: Under IFRS 16, all lease costs are removed from operating expenses (depreciation goes back into EBITDA as a non-cash charge; interest is below EBIT) \u2014 EBITDA significantly increases. Under ASC 842, operating lease expense reduces EBITDA. (3) Short-term and low-value exemptions: IFRS 16 has a low-value asset exemption (approximately USD 5,000) \u2014 ASC 842 does not. (4) Lessor accounting: largely unchanged and convergent between the two standards.",
+    "practitioner_notes": {
+      "erp_application": "For multinational companies reporting under both IFRS and US GAAP (parent IFRS, US subsidiary ASC 842 \u2014 or vice versa): maintain separate lease accounting for each entity per its applicable standard. The key financial ratio differences: IFRS 16 inflates EBITDA (depreciation added back), inflates EBIT (relative to ASC 842 operating lease expense), reduces operating cash flow (interest portion of finance lease now flows through financing, not operating), and increases leverage ratios (same liabilities, but higher EBITDA). For companies transitioning between standards (IFRS to US GAAP for an IPO, or vice versa): rebuild the lease accounting model from scratch under the new standard.",
+      "audit_triggers": "For dual reporters (IFRS parent, US subsidiary), auditors verify that each entity applies the correct standard and that consolidation adjustments correctly reflect the different treatments. EBITDA adjustments for IFRS 16 are a frequent focus of sell-side analyst models and acquisition due diligence \u2014 auditors confirm the disclosed adjustments are accurate. Under IFRS 16, there is no operating lease category for lessees \u2014 any lessee applying an operating lease model for non-exempt leases is misapplying the standard.",
+      "required_documentation": "Standard applicability determination by entity (IFRS 16 vs. ASC 842), dual-standard reconciliation (for entities reporting under both), EBITDA impact analysis (operating lease expense removed vs. depreciation and interest separately presented), financial ratio impact disclosure (leverage ratios, interest coverage), low-value asset threshold documentation (IFRS only), operating vs. finance lease split (ASC 842 only), analyst communication on IFRS 16 EBITDA impact."
+    }
+  },
+  {
+    "slug": "lease-disclosure-requirements-summary",
+    "category": "Leases",
+    "title": "How to Prepare the Required ASC 842 and IFRS 16 Lease Disclosures Including the Maturity Analysis, Weighted Average Rate, and Undiscounted Payment Schedule",
+    "description": "Preparing the comprehensive lease footnote disclosures required by ASC 842 and IFRS 16 \u2014 including the lease liability maturity analysis, weighted average discount rate and remaining lease term, lease expense by type, and the reconciliation of undiscounted to discounted payments.",
+    "entries": [
+      {
+        "account": "Lease Disclosure \u2014 Maturity Analysis (Undiscounted Payments By Year)",
+        "type": "Memo Only",
+        "dr": 0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Disclosure \u2014 Weighted Average IBR and Remaining Term",
+        "type": "Memo Only",
+        "dr": 0,
+        "cr": 0
+      },
+      {
+        "account": "Lease Disclosure \u2014 Total Lease Expense (Operating + Finance + Short-Term + Variable)",
+        "type": "Memo Only",
+        "dr": 0,
+        "cr": 0
+      }
+    ],
+    "explanation": "ASC 842 and IFRS 16 require extensive disclosures. Key elements: (1) Maturity analysis of lease liabilities \u2014 undiscounted future payments by year (Year 1-5 individually, then thereafter), reconciling to the discounted lease liability balance (difference = effect of discounting), (2) Weighted average discount rate and weighted average remaining lease term (separately for operating and finance leases under ASC 842), (3) Total lease cost breakdown: operating lease expense, finance lease depreciation, finance lease interest, short-term lease expense, variable lease expense, sublease income, (4) Cash flow information: operating cash paid for operating leases, financing cash paid for principal of finance leases, interest paid for finance leases, (5) Non-cash information: new ROU assets recognized, modifications that increased ROU assets.",
+    "practitioner_notes": {
+      "erp_application": "Generate the disclosure package from the lease accounting system: (1) pull the maturity schedule (undiscounted payments from the amortization tables), (2) calculate the weighted average discount rate (weighted by lease liability balance), (3) calculate the weighted average remaining term (weighted by lease liability balance), (4) accumulate lease expense by type (operating, finance depreciation, finance interest, short-term, variable) from the GL, (5) pull cash flow data from the treasury system (lease payments made during the period). Cross-check the undiscounted maturity analysis total to the sum of future cash flows in the individual lease amortization tables \u2014 a key reconciliation that auditors test.",
+      "audit_triggers": "The maturity analysis reconciliation (undiscounted total \u2212 effect of discounting = lease liability) is audited in detail \u2014 the undiscounted total must agree to the sum of contractual future payments (including options reasonably certain to be exercised), and the discounting effect must equal the difference between the present value (liability) and the future value (undiscounted total). Auditors also test the weighted average rate and term calculations \u2014 these must be liability-weighted, not equally-weighted across all leases. Completeness of variable lease expense disclosure is a frequent finding (companies disclose only fixed costs).",
+      "required_documentation": "Maturity analysis workpaper (undiscounted payments by year, effect of discounting, lease liability balance), weighted average discount rate calculation (liability-weighted), weighted average remaining term calculation, lease expense schedule by type (from GL), cash flow paid schedule (from bank/treasury records), non-cash lease activity (new ROU assets recognized during period), sublease income schedule, footnote draft with all required elements."
+    }
+  },
+  {
+    "slug": "lease-asset-retirement-obligation-leased",
+    "category": "Leases",
+    "title": "How to Account for Asset Retirement Obligations on Leased Properties \u2014 Restoring Leased Space to Its Original Condition at Lease End",
+    "description": "Recognizing an asset retirement obligation (ARO) for the estimated cost of restoring leased property to its original condition (removing leasehold improvements, reinstating original finishes) as required by the lease agreement \u2014 as a separate liability from the lease liability.",
+    "entries": [
+      {
+        "account": "ROU Asset (Increased by ARO \u2014 Cost of Restoration Added to Cost Basis)",
+        "type": "Asset (+)",
+        "dr": 485000.0,
+        "cr": 0
+      },
+      {
+        "account": "Asset Retirement Obligation \u2014 Lease Restoration (PV of Future Cost)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 485000.0
+      },
+      {
+        "account": "Accretion Expense \u2014 ARO (Unwinding of Discount on Restoration Obligation)",
+        "type": "Expense (+)",
+        "dr": 19400.0,
+        "cr": 0
+      },
+      {
+        "account": "Asset Retirement Obligation (Accretion \u2014 Increasing Toward Future Cost)",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 19400.0
+      }
+    ],
+    "explanation": "Many commercial leases require the lessee to restore the leased space to its original condition at the end of the lease (removing custom fit-outs, reinstating original flooring and walls, removing installed equipment). This restoration obligation meets the ASC 410 / IAS 37 definition of an ARO: a legal obligation to perform a future restoration activity. The ARO is recognized at the PV of the estimated future restoration cost (discounted at a credit-adjusted risk-free rate). The debit entry increases the ROU asset (the restoration obligation is part of the cost of the leased right of use). The ARO is accreted (interest expense) each period using the credit-adjusted risk-free rate. At lease end, the actual restoration cost is compared to the ARO \u2014 any shortfall or excess is a gain or loss.",
+    "practitioner_notes": {
+      "erp_application": "Identify lease agreements with restoration clauses at inception \u2014 these are common in commercial office leases (particularly in markets where landlords protect the space condition for re-leasing). The restoration cost estimate requires: (1) engineering or facilities management estimate of the specific restoration work required, (2) discounting at the credit-adjusted risk-free rate (not the IBR used for the lease liability \u2014 different purpose and rate). The ARO is separate from the lease liability \u2014 a different standard (ASC 410 vs. ASC 842) and a different rate. The ROU asset increase from the ARO is amortized as part of the total ROU asset (not separately identified in the income statement for operating leases).",
+      "audit_triggers": "AROs on leased properties are frequently overlooked \u2014 auditors scan significant lease agreements for restoration obligations and assess whether AROs have been recognized. Missing restoration AROs understates liabilities (the ARO liability) and understates assets (the ROU asset). Auditors also test: (1) whether the restoration cost estimate is current and based on actual contractor estimates (not a generic percentage), (2) whether the credit-adjusted risk-free rate used for discounting is appropriate (the lessee's own credit risk affects the rate), (3) whether the ARO is remeasured when there are changes in the timing or amount of the restoration estimate.",
+      "required_documentation": "Lease agreement restoration clause (specific obligations, condition at return), restoration cost estimate (contractor estimate or engineering assessment), ARO calculation (PV of future restoration cost at credit-adjusted risk-free rate), ARO rollforward (beginning balance + accretion \u2212 settlements = ending balance), ROU asset increase documentation, actual restoration cost vs. ARO at lease end (gain/loss calculation), interim remeasurement (if estimate changes significantly)."
+    }
+  },
+  {
+    "slug": "lease-ifrs16-lease-modification-reassessment",
+    "category": "Leases",
+    "title": "How to Apply IFRS 16's Requirement to Remeasure All Leases When There Is a Change in the Assessment of a Variable Lease Payment Based on a Rate",
+    "description": "Under IFRS 16, remeasuring all leases with rate-based variable payments when the floating reference rate changes \u2014 using the revised rate at the remeasurement date to update the lease liability and ROU asset.",
+    "entries": [
+      {
+        "account": "Lease Liability \u2014 IFRS 16 (Remeasured for Rate Change \u2014 Floating Rate Lease)",
+        "type": "Liability (+/-)",
+        "dr": 0,
+        "cr": 185000.0
+      },
+      {
+        "account": "ROU Asset \u2014 IFRS 16 (Adjusted for Rate-Based Payment Remeasurement)",
+        "type": "Asset (+)",
+        "dr": 185000.0,
+        "cr": 0
+      }
+    ],
+    "explanation": "IFRS 16 requires remeasurement of the lease liability when there is a change in future lease payments resulting from a change in an index or a rate used to determine those payments. This applies to leases where the base rent is linked to a floating interest rate (less common) or where rent is adjusted based on a market rent review mechanism (particularly common in some European and Asian lease markets). The remeasurement uses the revised rate or index at the remeasurement date. This is different from ASC 842, which also requires remeasurement for index changes \u2014 the trigger is the same, but IFRS 16 may also apply to market rent reviews (where rent is reset to market rates at specified intervals) which ASC 842 would treat differently.",
+    "practitioner_notes": {
+      "erp_application": "Market rent reviews (common in UK commercial leases where rent is reviewed every 5 years to the higher of current rent or market rent) create unique accounting challenges. Under IFRS 16: when the rent is reviewed and set to market, the new rent is the fixed payment for the next review period \u2014 remeasure at the new payment amount and the IBR at the review date. This creates a step-change in the liability at each review date. For floating-rate leases (leases where the base rent tracks a market interest rate index): remeasure whenever the rate is reset in the contract (monthly, quarterly, annually).",
+      "audit_triggers": "Market rent reviews in IFRS 16 leases are a technical area that requires careful analysis of whether the new rent constitutes a variable payment (excluded from liability) or a fixed payment for the next review period (included in liability). UK commercial property leases with upward-only rent reviews: the rent cannot decrease at review, so the minimum rent is fixed and must be in the liability; any additional market-rate increase is considered fixed for the next period after the review. Auditors test the completeness of remeasurements \u2014 each rent review date must trigger a reassessment.",
+      "required_documentation": "Lease agreement market rent review or floating rate provisions (review frequency, mechanism, upward-only provisions), review trigger date monitoring schedule, new rent or rate at each review date, remeasurement journal (same amount to liability and ROU asset using original IBR for index changes, new IBR for modifications), disclosure of remeasurement impact, comparison of IFRS 16 vs. ASC 842 treatment for the same lease (if entity reports under both)."
+    }
+  },
+  {
+    "slug": "lease-sale-leaseback-ifrs16-seller-adjustment",
+    "category": "Leases",
+    "title": "How to Apply the IFRS 16 Sale-Leaseback Rules Where the Seller-Lessee Recognizes Only the Gain on Rights Transferred to the Buyer",
+    "description": "Under IFRS 16, recognizing the gain on a qualifying sale-leaseback as the proportion of the total gain relating to rights transferred to the buyer-lessor \u2014 with the retained rights reflected in the ROU asset at a proportion of the pre-sale carrying amount.",
+    "entries": [
+      {
+        "account": "Cash (Sale Proceeds)",
+        "type": "Asset (+)",
+        "dr": 18500000.0,
+        "cr": 0
+      },
+      {
+        "account": "ROU Asset \u2014 Leaseback (Proportion of Previous Carrying Amount Retained)",
+        "type": "Asset (+)",
+        "dr": 4200000.0,
+        "cr": 0
+      },
+      {
+        "account": "PP&E \u2014 Underlying Asset (Derecognized)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 12000000.0
+      },
+      {
+        "account": "Lease Liability \u2014 Leaseback",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 4200000.0
+      },
+      {
+        "account": "Gain on Sale \u2014 Rights Transferred (IFRS 16 Proportionate Method)",
+        "type": "Income (+)",
+        "dr": 0,
+        "cr": 6500000.0
+      }
+    ],
+    "explanation": "IFRS 16 uses a specific proportionate approach for sale-leaseback gain calculation: the ROU asset is measured as the proportion of the PREVIOUS carrying amount of the asset that relates to the rights retained via the leaseback (not the PV of future lease payments as in the general lessee model). The gain recognized = gain \u00d7 (1 \u2212 proportion of rights retained). Proportion of rights retained = PV of leaseback payments / FV of underlying asset. This IFRS 16 approach differs from ASC 842's approach (where the ROU asset is measured at the PV of leaseback payments and the deferred gain = gain \u00d7 proportion retained). The IFRS 16 result: the ROU asset reflects the seller's historical cost basis attributable to the retained rights \u2014 the leaseback is not remeasured to the full current fair value.",
+    "practitioner_notes": {
+      "erp_application": "The IFRS 16 sale-leaseback calculation: (1) Proportion retained = PV of leaseback payments \u00f7 FV of underlying asset, (2) ROU asset = pre-sale carrying amount \u00d7 proportion retained, (3) Gain = Total gain on sale \u00d7 (1 \u2212 proportion retained), (4) Lease liability = PV of leaseback payments (normal IFRS 16 lessee calculation). Note: the ROU asset (based on historical carrying amount) and the lease liability (based on PV of payments at IBR) will typically NOT be equal \u2014 the difference is the deferred gain (netted within the ROU asset for IFRS 16). The lease liability may exceed the ROU asset if the asset was fully or significantly depreciated before the sale-leaseback.",
+      "audit_triggers": "The IFRS 16 sale-leaseback proportionate calculation is counterintuitive \u2014 the ROU asset is not set equal to the lease liability (as in a normal lessee entry). Auditors verify: (1) the proportion calculation uses the FAIR VALUE of the underlying asset (not carrying value or proceeds), (2) the ROU asset uses the PRE-SALE carrying amount (not the sale price or PV of payments), (3) the gain calculation uses the total economic gain (FV of proceeds \u2212 carrying value \u2014 not just cash received). Transactions where proceeds significantly exceed fair value (above-market sale price) require additional adjustments under IFRS 16 \u2014 the above-market element is treated as an additional financing.",
+      "required_documentation": "Pre-sale asset carrying amount, fair value of underlying asset at sale date (independent appraisal), sale proceeds and PV of leaseback payments, proportion retained calculation (PV of payments \u00f7 FV), ROU asset calculation (pre-sale carrying \u00d7 proportion retained), lease liability calculation (PV of payments at IBR), gain recognized and deferred, comparison to ASC 842 treatment (if entity reports under both), above-market sale proceeds adjustment (if applicable)."
+    }
   }
+
 
 
 
