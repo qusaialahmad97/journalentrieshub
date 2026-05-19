@@ -8413,8 +8413,8 @@
   {
     "slug": "physical-subscription-box-revenue",
     "category": "E-commerce",
-    "title": "How to Recognize Revenue for a Monthly Physical Subscription Box",
-    "description": "Recording deferred revenue release and COGS simultaneously when a subscription box ships to subscribers.",
+    "title": "How to Recognize Revenue for Monthly Subscription Boxes (ASC 606)",
+    "description": "Stop deferring revenue incorrectly. Here is the exact journal entry to recognize subscription box revenue upon physical delivery under ASC 606.",
     "entries": [
       { "account": "Deferred Revenue", "type": "Liability (-)", "dr": 30.00, "cr": 0 },
       { "account": "Sales Revenue", "type": "Revenue (+)", "dr": 0, "cr": 30.00 },
@@ -24272,8 +24272,8 @@
   {
     "slug": "pe-capital-call-receivable-default",
     "category": "Private Equity & Investment Funds",
-    "title": "How to Record an LP Default on a Capital Call and Apply LPA Penalty Provisions",
-    "description": "Recording the accounting treatment when an LP fails to fund a capital call by the due date, triggering default provisions under the LPA including penalty interest and potential forfeiture of LP interest.",
+    "title": "How to Record an LP Capital Call Default and LPA Penalties",
+    "description": "Handling a delinquent investor? Here is how private equity funds record a capital call default and execute LPA penalty provisions in the ledger.",
     "entries": [
       { "account": "Capital Call Receivable - Defaulting LP", "type": "Asset (+)", "dr": 500000.00, "cr": 0 },
       { "account": "LP Unfunded Commitment Liability (Reclassification)", "type": "Liability (-)", "dr": 0, "cr": 500000.00 }
@@ -32327,8 +32327,8 @@
   {
     "slug": "pens-health-self-insured-ibnr",
     "category": "Pension & Employee Benefit Plans",
-    "title": "Self-Insured Health Plan - IBNR Accrual (Incurred But Not Reported Claims)",
-    "description": "Accruing the estimated health insurance claims that have been medically incurred by employees during the period but for which invoices have not yet been received or processed by the employer's claims administrator.",
+    "title": "How to Calculate and Record an IBNR Accrual (Incurred But Not Reported)",
+    "description": "Month-end guide to estimating and booking the IBNR liability for self-insured health plans to ensure your health claims expenses are accurate.",
     "entries": [
       {
         "account": "Employee Health Benefit Expense - IBNR Accrual",
@@ -35296,8 +35296,8 @@
   {
     "slug": "hc-acquisition-costs-expensed",
     "category": "Holding Companies & Consolidations",
-    "title": "Business Combination - Acquisition-Related Costs (Expensed, Not Capitalized)",
-    "description": "Expensing all direct acquisition-related costs \u2014 investment banking fees, legal fees, due diligence costs, advisory fees \u2014 as incurred rather than capitalizing them as part of the purchase price under ASC 805.",
+    "title": "How to Record M&A Acquisition-Related Costs (ASC 805 / IFRS 3)",
+    "description": "Are legal and banking fees capitalized into goodwill? No. Learn how to correctly expense M&A acquisition-related costs under ASC 805 and IFRS 3.",
     "entries": [
       {
         "account": "Acquisition-Related Costs (G&A / Transaction Costs \u2014 Expensed)",
@@ -36409,8 +36409,8 @@
   {
     "slug": "ibcm-securities-sold-not-yet-purchased",
     "category": "Investment Banking & Capital Markets",
-    "title": "Broker-Dealer \u2014 Securities Sold, Not Yet Purchased (Short Positions as Liabilities at FV)",
-    "description": "Recording the broker-dealer's obligation to deliver securities sold short \u2014 a liability at fair value that moves inversely to the shorted security's price.",
+    "title": "How to Record Short Sales (Securities Sold, Not Yet Purchased)",
+    "description": "Fund accountants: See the exact journal entries to record short positions as liabilities and mark them to fair value at month-end.",
     "entries": [
       {
         "account": "Cash Received (Short Sale Proceeds)",
@@ -41923,8 +41923,8 @@
   {
     "slug": "sports-season-ticket-deferred-revenue",
     "category": "Sports, Media Rights & Live Entertainment",
-    "title": "Season Ticket Revenue \u2014 Deferred and Recognized Per Home Game Played",
-    "description": "Recording season ticket sales as deferred revenue \u2014 recognizing each game's proportional share of the season ticket price as the home game is played, with full deferral of pre-season cash received.",
+    "title": "How to Record Deferred Revenue for Season Tickets (Game-by-Game)",
+    "description": "Learn how sports franchises map upfront season ticket cash to deferred revenue and recognize it proportionately as each home game is played.",
     "entries": [
       {
         "account": "Cash (Season Ticket Payments Received Before Season)",
@@ -42325,8 +42325,8 @@
   {
     "slug": "sports-football-transfer-fee-paid",
     "category": "Sports, Media Rights & Live Entertainment",
-    "title": "Football Transfer Fee Paid \u2014 Player Registration Right (Intangible Asset) and Amortization",
-    "description": "Recording the purchase of a player's registration rights \u2014 recognizing an intangible asset amortized over the player's contract period at the buying club.",
+    "title": "How to Record a Player Transfer Fee (Capitalization & Amortization)",
+    "description": ""Learn how to capitalize player transfer fees as intangible assets and calculate the correct straight-line amortization over the contract life.",
     "entries": [
       {
         "account": "Player Registration \u2014 Intangible Asset (Transfer Fee Paid)",
@@ -44527,8 +44527,8 @@
   {
     "slug": "hr-global-equity-compensation-rsu-vest",
     "category": "HR, Payroll & Staffing",
-    "title": "Global — RSU Vesting Compensation Expense (ASC 718 / IFRS 2) and Multi-Country Payroll Tax on Vest",
-    "description": "Recording RSU (Restricted Stock Unit) compensation expense under ASC 718 over the vesting period and the payroll tax implications at vest — with notes on how each major jurisdiction treats RSU income for withholding and social tax purposes.",
+    "title": "How to Record RSU Vesting Expense and Payroll Taxes (ASC 718 / IFRS 2)",
+    "description": "Clear up your equity accounting. Here are the journal entries to record RSU vesting compensation expense and handle the employer payroll tax liability.",
     "entries": [
       {
         "account": "Stock-Based Compensation Expense — RSU (Graded Vesting; FMV at Grant Date × Shares Vesting / Vest Period)",
@@ -50985,8 +50985,8 @@
   {
     "slug": "restaurant-vat-input-on-purchases",
     "category": "Restaurant",
-    "title": "How to Record Recoverable VAT Input Tax on an Ingredient Purchase Invoice",
-    "description": "Separating the 16% VAT paid to a registered supplier as a recoverable input tax asset.",
+    "title": "How to Record Recoverable Input VAT on Purchase Invoices",
+    "description": "Don't expense your tax. See the correct journal entry to isolate recoverable Input VAT as a current asset when purchasing raw materials.",
     "entries": [
       { "account": "Food & Beverage Inventory", "type": "Asset (+)", "dr": 1000.00, "cr": 0 },
       { "account": "VAT Input Tax (16%)", "type": "Asset (+)", "dr": 160.00, "cr": 0 },
@@ -61335,8 +61335,8 @@
   {
     "slug": "lease-ifrs16-vs-asc842-differences",
     "category": "Leases",
-    "title": "How to Identify the Key Differences Between IFRS 16 and ASC 842 and Apply the Correct Standard for Each Reporting Entity",
-    "description": "Documenting the principal differences between IFRS 16 (single lessee model \u2014 all leases as finance leases) and ASC 842 (dual model \u2014 operating and finance leases) and their impact on the income statement, EBITDA, and key financial ratios.",
+    "title": "ASC 842 vs IFRS 16: Key Differences & How to Apply the Right Lease Standard",
+    "description": "Operating vs. Finance leases? Dual reporting? Compare the key differences between ASC 842 and IFRS 16 to ensure your entities are compliant.",
     "entries": [
       {
         "account": "Operating Lease Expense (ASC 842 \u2014 Single Line, Below EBITDA Impact Zero)",
