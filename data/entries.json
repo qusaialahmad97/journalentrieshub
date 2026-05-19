@@ -21019,8 +21019,8 @@
   {
     "slug": "crypto-asu-2023-08-adoption-adjustment",
     "category": "Cryptocurrency",
-    "title": "How to Record the ASU 2023-08 Adoption Cumulative-Effect Adjustment to Retained Earnings",
-    "description": "Recording the transition adjustment when a company adopts ASU 2023-08 — recognising the difference between the fair value of crypto assets at adoption date and their prior carrying value directly in retained earnings.",
+    "title": "How to Record the ASU 2023-08 Crypto Retained Earnings Adjustment",
+    "description": "See an exact journal entry example for early adoption of FASB ASU 2023-08. Learn how to record the crypto cumulative-effect adjustment to retained earnings.",
     "entries": [
       { "account": "Cryptocurrency Asset (Step-Up from Impaired Cost to FV at Adoption)", "type": "Asset (+)", "dr": 420000.00, "cr": 0 },
       { "account": "Retained Earnings (Cumulative-Effect Adjustment at Adoption)", "type": "Equity (+)", "dr": 0, "cr": 420000.00 }
@@ -25168,8 +25168,8 @@
   {
     "slug": "fr-initial-franchise-fee-franchisee-capitalization",
     "category": "Franchise Operations",
-    "title": "Franchisee - Initial Franchise Fee Capitalized as Intangible Asset",
-    "description": "Recording the payment of the initial franchise fee by the franchisee as an intangible asset (franchise rights) on the franchisee's balance sheet, amortized over the franchise agreement term.",
+    "title": "Franchisee - How to Record Initial Franchise Fees (ASPE Capitalization & Amortization)",
+    "description": "Accounting for franchises under ASPE: Learn the journal entry to capitalize initial franchise fees as an intangible asset and amortize them correctly.",
     "entries": [
       {
         "account": "Franchise Rights - Intangible Asset",
@@ -25184,7 +25184,7 @@
         "cr": 50000.0
       }
     ],
-    "explanation": "From the franchisee's perspective, the initial franchise fee is an intangible asset representing the right to operate under the franchise system. It is capitalized and amortized over the initial franchise agreement term (commonly 10\u201320 years) on a straight-line basis. If the agreement is renewed for additional terms, a new intangible asset (renewal fee) is recorded. The franchise right is subject to impairment testing under ASC 350.",
+    "explanation": "From the franchisee's perspective, the initial franchise fee is an intangible asset representing the right to operate under the franchise system. It is capitalized and amortized over the initial franchise agreement term (commonly 10–20 years) on a straight-line basis. If the agreement is renewed for additional terms, a new intangible asset (renewal fee) is recorded. The franchise right is subject to impairment testing under Section 3064 of the ASPE Handbook.",
     "practitioner_notes": {
       "erp_application": "Set up the franchise right as an intangible asset in the fixed asset/intangible module with straight-line amortization over the initial term. The amortization period should match the initial franchise agreement term, not include renewal options (unless renewal is reasonably certain).",
       "audit_triggers": "Auditors assess the amortization period against the franchise agreement term. If the franchise is underperforming, impairment of the franchise right must be evaluated. Amortization periods longer than the agreement term are a misstatement.",
