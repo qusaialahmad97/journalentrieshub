@@ -3,6 +3,8 @@ import Link from "next/link";
 import entries from "../../../data/entries.json";
 import { Metadata } from "next";
 
+export const dynamic = 'force-static';
+
 interface JournalEntry {
   slug: string;
   title: string;

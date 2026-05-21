@@ -4,6 +4,8 @@ import entries from "../../../data/entries.json";
 import Comments from "../../components/Comments";
 import { Metadata } from "next";
 
+export const dynamic = 'force-static';
+
 // 1. UPDATED INTERFACE: Added the Practitioner Notes structure
 interface PractitionerNotes {
   erp_application?: string;
