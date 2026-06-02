@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface CommentProps {
   slug: string;
@@ -18,8 +18,31 @@ export default function Comments({ slug }: CommentProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   
-  // This state holds comments temporarily for the current session
   const [localComments, setLocalComments] = useState<LocalComment[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load comments when the component mounts (with cache busting)
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        // Add a timestamp and 'no-store' to completely bust the browser cache
+        const res = await fetch(`/api/comments?slug=${slug}&t=${Date.now()}`, {
+          cache: 'no-store'
+        });
+        
+        if (res.ok) {
+          const data = await res.json();
+          setLocalComments(data);
+        }
+      } catch (error) {
+        console.error("Failed to load comments:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchComments();
+  }, [slug]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,16 +61,11 @@ export default function Comments({ slug }: CommentProps) {
       });
 
       if (!res.ok) throw new Error('Network response was not ok');
+      
+      const data = await res.json();
 
-      // Add to local display immediately for optimistic UI
-      setLocalComments([
-        ...localComments,
-        {
-          name: authorName,
-          text: comment,
-          date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-        }
-      ]);
+      // Add the new comment to the top of the list locally for immediate feedback
+      setLocalComments([data.comment, ...localComments]);
 
       setName('');
       setComment('');
@@ -69,8 +87,10 @@ export default function Comments({ slug }: CommentProps) {
         Discussion & Community Questions
       </h3>
 
-      {/* Render local comments */}
-      {localComments.length > 0 && (
+      {/* Render saved comments from the database */}
+      {isLoading ? (
+        <p className="text-sm text-slate-500 mb-8 animate-pulse">Loading comments...</p>
+      ) : localComments.length > 0 ? (
         <div className="mb-8 space-y-4">
           {localComments.map((c, idx) => (
             <div key={idx} className="p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
@@ -82,6 +102,8 @@ export default function Comments({ slug }: CommentProps) {
             </div>
           ))}
         </div>
+      ) : (
+        <p className="text-sm text-slate-500 mb-8 italic">No comments yet. Be the first to start the discussion!</p>
       )}
 
       {/* Comment Form */}
