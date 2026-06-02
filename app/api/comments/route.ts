@@ -3,13 +3,11 @@ import { Redis } from '@upstash/redis';
 
 export const dynamic = 'force-dynamic';
 
-// Initialize Upstash Redis using the Vercel KV environment variables
 const redis = new Redis({
   url: process.env.KV_REST_API_URL!,
   token: process.env.KV_REST_API_TOKEN!,
 });
 
-// GET: Fetch comments for a specific page
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -17,7 +15,6 @@ export async function GET(request: Request) {
 
     if (!slug) return NextResponse.json({ error: 'Slug required' }, { status: 400 });
 
-    // Fetch the list of comments from Upstash Redis
     const comments = await redis.lrange(`comments:${slug}`, 0, -1);
     
     return NextResponse.json(comments || []);
@@ -27,32 +24,30 @@ export async function GET(request: Request) {
   }
 }
 
-// POST: Save new comment and ping Discord
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, comment, slug } = body;
+    const { name, comment, slug, parentId } = body;
 
-    // 1. Save the comment to Upstash Redis
     const newComment = {
+      id: Date.now().toString() + Math.random().toString(36).substring(2, 9), // Generates a simple unique ID
+      parentId: parentId || null,
       name: name || "Anonymous Accountant",
       text: comment,
       date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
       timestamp: Date.now()
     };
     
-    // lpush adds the newest comment to the top of the list
     await redis.lpush(`comments:${slug}`, newComment);
 
-    // 2. Ping your new specific Comments channel on Discord
     const webhookUrl = process.env.DISCORD_COMMENTS_WEBHOOK_URL;
 
     if (webhookUrl) {
       const message = {
         embeds: [
           {
-            title: "💬 New Website Comment",
-            color: 3447003,
+            title: parentId ? "↩️ New Reply to Comment" : "💬 New Website Comment",
+            color: parentId ? 16753920 : 3447003, // Yellow for replies, Blue for main comments
             fields: [
               { name: "Author", value: newComment.name, inline: true },
               { name: "Entry Page", value: `/${slug}`, inline: true },
