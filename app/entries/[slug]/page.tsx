@@ -2,11 +2,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import entries from "../../../data/entries.json";
 import Comments from "../../components/Comments";
+import UtilityPrompt from "../../components/UtilityPrompt"; // <-- 1. ADDED IMPORT
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
 
-// 1. UPDATED INTERFACE: Added the Practitioner Notes structure
 interface PractitionerNotes {
   erp_application?: string;
   audit_triggers?: string;
@@ -58,7 +58,6 @@ export async function generateMetadata({
   };
 }
 
-// THE FIX IS HERE: We cast entries as JournalEntry[]
 export async function generateStaticParams() {
   const allEntries = entries as JournalEntry[];
   return allEntries.map((entry) => ({
@@ -192,7 +191,6 @@ export default async function EntryPage({
                 <p className="text-blue-800 leading-relaxed italic">{entry.explanation}</p>
               </div>
 
-              {/* 2. NEW: PRACTITIONER & COMPLIANCE NOTES */}
               {entry.practitioner_notes && (
                 <div className="mt-10 mb-6">
                   <h3 className="text-lg font-bold text-slate-900 border-b border-slate-200 pb-4 mb-6">
@@ -200,7 +198,6 @@ export default async function EntryPage({
                   </h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
-                    {/* ERP Application Info */}
                     {entry.practitioner_notes.erp_application && (
                       <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl flex flex-col h-full">
                         <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2">
@@ -212,7 +209,6 @@ export default async function EntryPage({
                       </div>
                     )}
 
-                    {/* Audit Triggers */}
                     {entry.practitioner_notes.audit_triggers && (
                       <div className="bg-rose-50 border border-rose-100 p-6 rounded-2xl flex flex-col h-full">
                         <h4 className="text-[10px] font-black uppercase tracking-widest text-rose-500 mb-3 flex items-center gap-2">
@@ -224,7 +220,6 @@ export default async function EntryPage({
                       </div>
                     )}
 
-                    {/* Required Documentation (Spans full width at bottom) */}
                     {entry.practitioner_notes.required_documentation && (
                       <div className="bg-emerald-50 border border-emerald-100 p-6 rounded-2xl md:col-span-2">
                         <h4 className="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-3 flex items-center gap-2">
@@ -239,9 +234,14 @@ export default async function EntryPage({
                 </div>
               )}
 
+              {/* 2. ADDED THE UTILITY PROMPT HERE */}
+              <UtilityPrompt 
+                entryTitle={entry.title} 
+                slug={entry.slug} 
+              />
+
               {/* Lead Magnet Section - JEH Suite Upsell */}
               <div className="mt-12 p-1 bg-gradient-to-br from-emerald-500 to-slate-900 rounded-3xl shadow-2xl relative overflow-hidden group">
-                {/* Background glow effect */}
                 <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-emerald-400/20 rounded-full blur-3xl transition-transform group-hover:scale-110 duration-700"></div>
                 
                 <div className="bg-white rounded-[22px] p-10 text-center relative z-10 border border-white/50">
@@ -308,7 +308,7 @@ export default async function EntryPage({
               )}
 
               <div className="mt-12 pt-8 border-t border-slate-100">
-                <Comments />
+                <Comments slug={entry.slug} />
               </div>
 
             </div>
