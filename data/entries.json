@@ -73548,7 +73548,181 @@
       "audit_triggers": "Technical eligibility. Auditors will look for 'Experimental Uncertainty.' If the labor was just for routine software updates for an old chip, it doesn't qualify. High-stakes for tax-basis audits.",
       "required_documentation": "Project technical briefs, engineer time-logs by project, and the formal R&D Tax Credit Study."
     }
+  },
+
+  {
+    "slug": "semi-how-to-record-chip-binning-inventory-valuation",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Chip Binning and Grade Reclassification",
+    "description": "Accounting for the reclassification of inventory when a single manufacturing run produces chips of varying performance 'bins' (e.g., Gold, Silver, and Bronze grades).",
+    "entries": [
+      {
+        "account": "Inventory - Finished Goods (High-Performance Bin)",
+        "type": "Asset (+)",
+        "dr": 60000.0,
+        "cr": 0
+      },
+      {
+        "account": "Inventory - Finished Goods (Standard Bin)",
+        "type": "Asset (+)",
+        "dr": 40000.0,
+        "cr": 0
+      },
+      {
+        "account": "Inventory - Die Bank (WIP Layer)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 100000.0
+      }
+    ],
+    "explanation": "In chip manufacturing, not all 'good die' are equal. Some can handle higher clock speeds (overclocking) while others run hotter. After testing, chips are sorted into 'Bins.' Under the 'Relative Sales Value' method, the total production cost of the wafer is allocated to these bins based on their expected selling price. This ensures the high-margin 'Gold' chips carry a higher cost basis than the 'Value' chips, preventing distorted gross margins across the product line.",
+    "practitioner_notes": {
+      "erp_application": "Requires a 'Product Transformation' or 'Work Order Disassembly' transaction in the ERP. One 'Parent Lot' from the Die Bank is closed, and multiple 'Child SKUs' are opened in Finished Goods based on the test results.",
+      "audit_triggers": "Incorrect cost allocation. If the company assigns equal costs to high-end and low-end bins, they are 'overstating' the value of the low-end chips, which may eventually require an NRV write-down.",
+      "required_documentation": "Final Test & Sort Report, Relative Sales Value allocation worksheet, and the updated SKU price list."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-patent-portfolio-licensing-revenue",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Patent Portfolio Licensing Revenue",
+    "description": "Accounting for revenue earned by a chip-maker (e.g., Qualcomm or Rambus) for granting other companies the right to use their patented technology.",
+    "entries": [
+      {
+        "account": "Accounts Receivable - Licensee",
+        "type": "Asset (+)",
+        "dr": 1000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Revenue - Patent License",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 1000000.0
+      },
+      {
+        "account": "Deferred Revenue - Patent License",
+        "type": "Liability (-)",
+        "dr": 83333.33,
+        "cr": 0
+      },
+      {
+        "account": "Licensing & Royalty Revenue",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 83333.33
+      }
+    ],
+    "explanation": "Semi-companies often license their patent 'portfolios.' Under ASC 606, if the license provides a 'Right to Access' the portfolio as it exists at any time (Symbolic IP), revenue is recognized over the term of the license (e.g., 12 months). The $1M upfront payment is deferred and recognized ratably. This is pure-profit revenue as the R&D costs were already expensed in prior years.",
+    "practitioner_notes": {
+      "erp_application": "Must be flagged as 'Licensing' revenue to separate it from 'Product' revenue. This is vital for analysts calculating 'Gross Margin' as licensing has effectively 100% margin.",
+      "audit_triggers": "Point-in-time vs. Over-time recognition. Auditors will check the contract to see if the technology is 'Static' (Point-in-time) or 'Evolving' (Over-time). Most semi portfolios are 'Evolving,' requiring deferral.",
+      "required_documentation": "Patent License Agreement (PLA), Legal opinion on IP classification, and the revenue recognition schedule."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-evb-loss-leader-sales",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Evaluation Board (EVB) Sales and Costs",
+    "description": "Accounting for the sale of hardware development kits used to win 'Design-ins' with customers, often sold at or below manufacturing cost.",
+    "entries": [
+      {
+        "account": "Cash / Accounts Receivable",
+        "type": "Asset (+)",
+        "dr": 199.0,
+        "cr": 0
+      },
+      {
+        "account": "Cost of Goods Sold - EVB Kits",
+        "type": "Expense (+)",
+        "dr": 450.0,
+        "cr": 0
+      },
+      {
+        "account": "Revenue - Hardware Sales (EVB)",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 199.0
+      },
+      {
+        "account": "Inventory - Finished Goods (EVBs)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 450.0
+      }
+    ],
+    "explanation": "To get a chip into a new smartphone or car, the manufacturer sells 'Evaluation Boards' (EVBs). These kits are expensive to build but sold cheap to lower the barrier to entry. The $251 loss is recognized immediately as a cost of doing business. You cannot capitalize this loss as 'Marketing' because the EVB is a physical product sale.",
+    "practitioner_notes": {
+      "erp_application": "EVBs should be in a separate 'Product Category.' If EVBs are given away for free, the entire $450 cost is debited to 'Marketing Expense' and credited to 'Inventory' upon shipment.",
+      "audit_triggers": "Inventory Valuation. If the firm has 10,000 EVBs on the books at $450 cost but is selling them for $199, auditors will require an LCM (Lower of Cost or Market) write-down of the entire stock.",
+      "required_documentation": "Sales invoice, kit BOM cost report, and the promotional pricing memo."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-strategic-inventory-buyback",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record a Strategic Inventory Buy-back (Channel Cleanup)",
+    "description": "Accounting for the repurchase of chips from a distributor to prevent 'Gray Market' sales or to make room for a newer version.",
+    "entries": [
+      {
+        "account": "Inventory - Finished Goods (Returned)",
+        "type": "Asset (+)",
+        "dr": 8000.0,
+        "cr": 0
+      },
+      {
+        "account": "Revenue (Contra-Revenue) - Buy-back",
+        "type": "Revenue (-)",
+        "dr": 10000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable - Distributor",
+        "type": "Asset (-) / Liability (+)",
+        "dr": 0,
+        "cr": 10000.0
+      },
+      {
+        "account": "Cost of Goods Sold (Adjustment)",
+        "type": "Expense (-)",
+        "dr": 0,
+        "cr": 8000.0
+      }
+    ],
+    "explanation": "Occasionally, a manufacturer buys back stock from a distributor (e.g., Arrow or Future Electronics). Under ASC 606, this is treated as a 'Right of Return' event. The original revenue is reversed, and the original cost is returned to the inventory asset. This 'cleans up' the channel and protects the brand's ASP (Average Selling Price).",
+    "practitioner_notes": {
+      "erp_application": "Use a 'Return Merchandise Authorization' (RMA) against the distributor's account. It is vital to use the 'Original Unit Cost' to ensure the inventory value isn't inflated during the buy-back.",
+      "audit_triggers": "Earnings Management. Buying back inventory in a 'bad quarter' to reset the channel and then 're-selling' it in a 'good quarter' is a major red flag for revenue manipulation.",
+      "required_documentation": "Inventory Buy-back Agreement, distributor stock-count verification, and management approval for the channel reset."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-ip-indemnification-legal-reserve",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record an IP Indemnification Legal Reserve",
+    "description": "Recognizing a loss contingency when a customer is sued for patent infringement and the chip-maker is contractually required to cover the legal costs.",
+    "entries": [
+      {
+        "account": "Legal & Settlement Expense (IP Contingency)",
+        "type": "Expense (+)",
+        "dr": 250000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities - Legal Claims",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 250000.0
+      }
+    ],
+    "explanation": "Semi-contracts usually include 'IP Indemnification.' If a chip is found to infringe on a patent, the manufacturer must defend their customer. Under ASC 450, once the claim is 'Probable and Estimable' (e.g., a lawsuit has been filed and counsel expects a payout), the manufacturer must accrue the loss. This is a common and high-value risk in the 'Patent War' environment of the chip industry.",
+    "practitioner_notes": {
+      "erp_application": "Record this in a 'Corporate/Non-Operating' G/L to avoid distorting the 'Product P&L' performance. The reserve should be reviewed quarterly by the General Counsel.",
+      "audit_triggers": "Disclosures. Even if the loss isn't 'Probable,' auditors will check for 'Reasonably Possible' claims that must be disclosed in the footnotes under ASC 450.",
+      "required_documentation": "Legal summons, counsel's probability/estimate letter, and the IP clause from the customer Master Purchase Agreement (MPA)."
+    }
   }
+
 
 
 
