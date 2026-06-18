@@ -72994,6 +72994,560 @@
       "audit_triggers": "Target Verification. Auditors will verify that the PUE or carbon target was actually met and certified by a third party before allowing the lower interest rate to be used in the financials.",
       "required_documentation": "SLL Loan Agreement (KPI clause), Independent ESG Assurance Report, and the Bank's rate-reset notification."
     }
+  },
+
+  {
+    "slug": "semi-how-to-record-raw-silicon-wafer-purchase",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Raw Silicon Wafer Purchases",
+    "description": "Accounting for the acquisition of blank silicon wafers (e.g., 300mm) before they enter the photolithography process.",
+    "entries": [
+      {
+        "account": "Inventory - Raw Materials (Silicon Wafers)",
+        "type": "Asset (+)",
+        "dr": 50000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable - Wafer Supplier",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 50000.0
+      }
+    ],
+    "explanation": "Silicon wafers are the base 'substrate' for chips. In the semiconductor industry, these are high-purity, high-cost raw materials. They are held at cost on the balance sheet until they are 'issued' to a specific production lot, at which point they move into Work-in-Process (WIP).",
+    "practitioner_notes": {
+      "erp_application": "Inventory must be tracked by 'Lot ID' or 'Ingot Batch.' Any microscopic contamination upon arrival requires a 'Return-to-Vendor' (RTV) entry to clear the asset.",
+      "audit_triggers": "Wastage in storage. Blank wafers are fragile; if a box is dropped or exposed to air, the entire batch must be written off to COGS immediately.",
+      "required_documentation": "Purchase Order, Certificate of Authenticity/Purity, and Receiving Report."
+    }
+  },
+  {
+    "slug": "semi-how-to-absorb-clean-room-operating-costs",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Clean Room WIP Absorption (Power, Gases, and Labor)",
+    "description": "Allocating the massive overhead costs of a 'Class 1' Clean Room environment to the chips currently in production.",
+    "entries": [
+      {
+        "account": "Inventory - Work-in-Process (WIP)",
+        "type": "Asset (+)",
+        "dr": 120000.0,
+        "cr": 0
+      },
+      {
+        "account": "Manufacturing Overhead - Applied (Utilities/Gases)",
+        "type": "Expense (-)",
+        "dr": 0,
+        "cr": 80000.0
+      },
+      {
+        "account": "Direct Labor - Fab Operators",
+        "type": "Expense (-)",
+        "dr": 0,
+        "cr": 40000.0
+      }
+    ],
+    "explanation": "Semi-manufacturing is overhead-heavy. Constant airflow, high-purity gases (like Argon or Neon), and specialized chemicals (Photoresist) are consumed 24/7. Under ASC 330, these 'conversion costs' are capitalized into the WIP inventory. Because the production cycle (cycle time) can be 90+ days, these costs sit on the Balance Sheet for months before hitting COGS.",
+    "practitioner_notes": {
+      "erp_application": "Requires 'Standard Costing' with monthly variance analysis. Overhead is typically applied based on 'Machine Hours' (lithography time) rather than labor hours, as the process is highly automated.",
+      "audit_triggers": "Over-absorption. If the Fab is running at low capacity, capitalizing all utilities into inventory results in 'phantom' profits. Auditors look for 'Capacity Utilization' adjustments to ensure fixed costs aren't hidden in inventory.",
+      "required_documentation": "Utility meter logs (for gases/electricity), payroll allocation by production lot, and the standard cost bridge."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-wafer-yield-variance",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Wafer Yield Variance (The 'Good Die' Adjustment)",
+    "description": "Adjusting the value of inventory when a wafer produces fewer working chips (Die) than the theoretical maximum.",
+    "entries": [
+      {
+        "account": "Manufacturing Variance - Yield Loss",
+        "type": "Expense (+)",
+        "dr": 15000.0,
+        "cr": 0
+      },
+      {
+        "account": "Inventory - Work-in-Process (WIP)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 15000.0
+      }
+    ],
+    "explanation": "In semiconductors, 'Yield' is everything. If a wafer has 1,000 potential chips (dies) but a laser-test proves only 700 work, the 'Yield' is 70%. The cost of the 300 failed chips cannot be capitalized into the good ones indefinitely; the excess cost resulting from 'abnormal' yield loss must be expensed as a variance in the period it occurs.",
+    "practitioner_notes": {
+      "erp_application": "Integration with a Manufacturing Execution System (MES) like Applied Materials or Camstar is vital. The 'Sort/Probe' test triggers the update from 'Gross Die' to 'Net Good Die' in the inventory sub-ledger.",
+      "audit_triggers": "Consistent Yield Fluctuations. High yield loss in a new production 'Node' (e.g., transitioning to 2nm) is common, but if it remains high, auditors will require an impairment of the entire WIP pool.",
+      "required_documentation": "Wafer Sort Report (Probe Test), Production Lot Summary, and the Yield Target vs. Actual analysis."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-die-bank-inventory-recognition",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Die-Bank Inventory (Unpackaged Chips)",
+    "description": "Accounting for 'Finished Wafers' that have been cut into individual dies but not yet 'Packaged and Tested' (OSAT).",
+    "entries": [
+      {
+        "account": "Inventory - Die Bank (Finished Goods Layer 1)",
+        "type": "Asset (+)",
+        "dr": 75000.0,
+        "cr": 0
+      },
+      {
+        "account": "Inventory - Work-in-Process (WIP)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 75000.0
+      }
+    ],
+    "explanation": "Once a wafer is 'probed' and 'diced,' the individual good chips are put into a 'Die Bank.' This is a unique inventory stage. These chips are 'Semi-finished'—they work, but they aren't in a plastic/ceramic case yet. Companies often hold 'Die Bank' inventory for months before deciding whether to package them for a specific customer or region.",
+    "practitioner_notes": {
+      "erp_application": "Use a specific 'Warehouse Location' for Die Bank. Since dies are microscopic, physical counts are impossible; the G/L must rely 100% on the electronic 'Wafer Map' data.",
+      "audit_triggers": "Obsolescence. If chips stay in the Die Bank for >180 days, they are at risk of being replaced by a newer 'Revision.' Auditors will look for 'Slow Moving' Die Bank reports.",
+      "required_documentation": "Wafer Map (Digital), Dicing/Sawing Completion report, and the Die Bank aging report."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-precious-metal-scrap-recovery",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Silicon and Precious Metal Scrap Recovery",
+    "description": "Accounting for the value recovered from defective wafers or manufacturing byproduct (e.g., gold/copper/silicon recycling).",
+    "entries": [
+      {
+        "account": "Other Receivables - Scrap Vendor",
+        "type": "Asset (+)",
+        "dr": 5000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cost of Goods Sold - Scrap Credit",
+        "type": "Expense (-)",
+        "dr": 0,
+        "cr": 5000.0
+      }
+    ],
+    "explanation": "Semi-fab produces high-value waste. Defective wafers and the 'slurry' from polishing contains silicon and sometimes gold or copper. Large Fabs have contracts with reclaimers. Under GAAP, the value received for scrap is typically recorded as a reduction of COGS in the period the scrap is sold.",
+    "practitioner_notes": {
+      "erp_application": "Track scrap by weight (grams/kg). Large Fabs record 'Expected Scrap' as a standard cost credit, while smaller shops record it only upon cash receipt.",
+      "audit_triggers": "Inventory Shrinkage. If scrap revenue is high but yield loss is reported as 'Low,' there is a data integrity issue in the manufacturing reporting.",
+      "required_documentation": "Scrap manifest, reclaimer's assay report (showing metal content), and the check/remittance advice."
+    }
+  },
+
+  {
+    "slug": "semi-how-to-capitalize-photomask-sets-tooling",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record and Capitalize Photomask (Mask Set) Costs",
+    "description": "Accounting for the high-cost master 'stencils' used in the photolithography process to project circuit patterns onto wafers.",
+    "entries": [
+      {
+        "account": "Fixed Assets - Specialized Tooling (Photomasks)",
+        "type": "Asset (+)",
+        "dr": 500000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable",
+        "type": "Asset (-) / Liability (+)",
+        "dr": 0,
+        "cr": 500000.0
+      }
+    ],
+    "explanation": "Photomasks are the most expensive 'tools' in a Fab. A single set for an advanced node (e.g., 7nm) can cost millions of dollars. Under ASC 360, these are capitalized as specialized tooling. Because they are unique to a specific chip design, they are typically depreciated using the 'Units of Production' method over the expected total volume of chips to be manufactured with that specific design.",
+    "practitioner_notes": {
+      "erp_application": "Mask sets should be linked to a specific 'Part Number' or 'Product Family' in the Fixed Asset sub-ledger to ensure depreciation stops if that chip is discontinued.",
+      "audit_triggers": "Revision/Spin-off risk. If a design flaw is found and a new 'Mask Spin' is required, the old mask set is obsolete. Auditors look for immediate write-offs of 'Legacy' mask sets that are no longer in the production plan.",
+      "required_documentation": "Purchase order for the mask set, technical sign-off on the 'Tape-out,' and the projected production volume for the depreciation calculation."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-nre-milestone-revenue",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record NRE (Non-Recurring Engineering) Revenue",
+    "description": "Accounting for fees charged to a customer for the specialized design and development work required before mass production begins.",
+    "entries": [
+      {
+        "account": "Cash / Accounts Receivable",
+        "type": "Asset (+)",
+        "dr": 250000.0,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Revenue - NRE Services",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 250000.0
+      },
+      {
+        "account": "Deferred Revenue - NRE Services",
+        "type": "Liability (-)",
+        "dr": 50000.0,
+        "cr": 0
+      },
+      {
+        "account": "NRE Revenue",
+        "type": "Revenue (+)",
+        "dr": 0,
+        "cr": 50000.0
+      }
+    ],
+    "explanation": "Foundries and design houses charge NRE fees to cover the cost of designing a custom chip (ASIC). Under ASC 606, NRE is often a separate performance obligation. Revenue is recognized as the work is performed (over time) or upon hitting specific technical milestones (e.g., 'First Silicon' or 'Final Tape-out'). If the NRE is not a distinct service (i.e., it's just a prepay for future chips), it must be deferred and recognized over the production life of the chips.",
+    "practitioner_notes": {
+      "erp_application": "Requires 'Project Accounting' to track engineering hours and costs against the NRE billing. The G/L must reflect the 'Percentage of Completion' (POC) based on engineer time-logs.",
+      "audit_triggers": "Milestone 'Window Dressing.' Recognizing 100% of NRE revenue based on a 'Tape-out' milestone if significant design work or testing is still required.",
+      "required_documentation": "Master Service Agreement (MSA), Statement of Work (SOW) with defined milestones, and customer 'Acceptance of Deliverable' emails."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-ip-core-licensing-upfront-fees",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record IP Core Licensing (Upfront Technology Access Fees)",
+    "description": "Accounting for the purchase of 'blueprints' or functional blocks (e.g., an ARM CPU core) to be integrated into a chip design.",
+    "entries": [
+      {
+        "account": "Intangible Asset - Proprietary Technology (IP License)",
+        "type": "Asset (+)",
+        "dr": 1000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable",
+        "type": "Asset (-) / Liability (+)",
+        "dr": 0,
+        "cr": 1000000.0
+      }
+    ],
+    "explanation": "Semi-companies rarely design every part of a chip; they license IP 'Cores' from vendors. An upfront license fee for a 'Right to Use' specific IP is capitalized as a finite-lived intangible asset under ASC 350. The asset is then amortized over the estimated commercial life of the chip products that will utilize that IP.",
+    "practitioner_notes": {
+      "erp_application": "Amortization should start when the first chip using that IP hits 'General Availability' (GA). In the interim, it sits as an 'In-Progress' intangible asset.",
+      "audit_triggers": "Useful Life estimate. If the IP is for an old 28nm node while the market has shifted to 5nm, the 'economic life' may be much shorter than the contract life, requiring accelerated amortization.",
+      "required_documentation": "IP License Agreement, Proof of 'Tape-out' integration, and the commercialization roadmap."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-running-royalty-accruals",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Sales-Based IP Royalty Expenses",
+    "description": "Accounting for the recurring 'per-chip' fees owed to IP providers for every unit sold to an end customer.",
+    "entries": [
+      {
+        "account": "Cost of Goods Sold - IP Royalties",
+        "type": "Expense (+)",
+        "dr": 12000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Royalty Liabilities",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 12000.0
+      }
+    ],
+    "explanation": "In addition to upfront fees, IP vendors charge a 'Running Royalty' (e.g., $0.15 per chip). This is a variable cost of sales. Under the matching principle, the royalty must be accrued in the same month the chip revenue is recognized, even if the IP vendor only invoices quarterly based on the 'Royalty Report.'",
+    "practitioner_notes": {
+      "erp_application": "The ERP should auto-calculate this by multiplying 'Units Shipped' by the 'IP SKU Rate.' This is a high-volume automated accrual that is 'trued-up' once the quarterly royalty audit is completed.",
+      "audit_triggers": "Missing Accruals. If chips are sold in Q1 but the royalty isn't recorded until the Q2 invoice arrives, the gross margin for Q1 is artificially inflated.",
+      "required_documentation": "Quarterly Royalty Report, IP License Royalty Schedule, and the SKU-to-IP mapping table."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-eda-software-licensing",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record EDA (Electronic Design Automation) Software Licenses",
+    "description": "Accounting for the multi-year subscription costs for specialized chip-design software (e.g., Cadence, Synopsys).",
+    "entries": [
+      {
+        "account": "Prepaid Software Subscriptions",
+        "type": "Asset (+)",
+        "dr": 360000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable",
+        "type": "Asset (-) / Liability (+)",
+        "dr": 0,
+        "cr": 360000.0
+      },
+      {
+        "account": "Software Expense (R&D)",
+        "type": "Expense (+)",
+        "dr": 10000.0,
+        "cr": 0
+      },
+      {
+        "account": "Prepaid Software Subscriptions",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 10000.0
+      }
+    ],
+    "explanation": "EDA software is the 'Microsoft Office' of chip designers, but costs millions. These are usually 3-year term licenses. Under ASC 350, these are treated as 'Prepaid Expenses' (or ROU assets if they meet lease criteria) and amortized straight-line over the term. Because EDA tools are used by engineers to design chips, they are classified as R&D operating expenses.",
+    "practitioner_notes": {
+      "erp_application": "Most firms treat these as standard recurring amortizations. In large firms, these costs are 'allocated' to different product business units based on 'Seat Count' (number of engineers using the tool).",
+      "audit_triggers": "Classification. If EDA software is incorrectly put into 'COGS' instead of 'R&D,' it distorts Gross Margin. If it is capitalized as an 'Intangible Asset' instead of 'Prepaid,' it misstates the asset category.",
+      "required_documentation": "Multi-year Software License Agreement (SLA) and proof of payment."
+    }
+  },
+
+  {
+    "slug": "semi-how-to-capitalize-clean-room-internals",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Clean Room Infrastructure Construction",
+    "description": "Accounting for the specialized build-out of a 'Class 1' environment, including raised flooring, HEPA filtration, and vibration-isolated foundations.",
+    "entries": [
+      {
+        "account": "Construction in Progress (CIP) - Fab Infrastructure",
+        "type": "Asset (+)",
+        "dr": 5000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable",
+        "type": "Asset (-) / Liability (+)",
+        "dr": 0,
+        "cr": 5000000.0
+      }
+    ],
+    "explanation": "A Fab is not a standard factory. Under ASC 360, the 'Shell' of the building is depreciated over 30-40 years, but the 'Clean Room' internals—the airflow systems, specialized filtration, and vibration-proof slabs—are treated as a separate asset class. Because technology moves so fast, these 'Internals' are usually depreciated over a much shorter life (10-15 years) than the building shell itself.",
+    "practitioner_notes": {
+      "erp_application": "Use a 'Parent/Child' asset structure. The Building is the parent, and the Clean Room systems are child assets with different useful lives. This ensures that when the clean room is gutted and upgraded for a new node, the old child assets can be retired separately.",
+      "audit_triggers": "Incorrect Depreciation. If the firm depreciates specialized clean-room HVAC systems over 40 years (standard building life), it is a major audit red-flag for overstating assets and understating expenses.",
+      "required_documentation": "Civil engineering contracts, technical specs for filtration systems, and the Fixed Asset Policy defining 'Shell' vs. 'Infrastructure' lives."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-tool-hook-up-costs",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Semiconductor Tool Hook-up and Qualification Costs",
+    "description": "Capitalizing the labor and materials required to connect a multi-million dollar lithography tool to electricity, gases, and cooling.",
+    "entries": [
+      {
+        "account": "Fixed Assets - Fab Equipment (Hook-up Layer)",
+        "type": "Asset (+)",
+        "dr": 150000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable",
+        "type": "Asset (-) / Liability (+)",
+        "dr": 0,
+        "cr": 150000.0
+      }
+    ],
+    "explanation": "When an ASML or Applied Materials tool arrives, it isn't 'ready for use.' It requires 'Hook-up'—complex plumbing for ultra-pure water, hazardous gases, and high-voltage power. Under ASC 360-10-30-1, all costs necessary to bring an asset to the condition and location for its intended use must be capitalized. This includes the labor of the specialized engineers who 'hook up' and 'qualify' the machine.",
+    "practitioner_notes": {
+      "erp_application": "Hook-up costs should be added as a 'Cost Layer' to the specific tool's asset ID. This ensures that if the tool is sold or retired, the related installation costs are retired with it.",
+      "audit_triggers": "Post-Production Capitalization. Once the tool begins 'Mass Production,' any further adjustments or repairs are expenses. Auditors check 'Ready for Use' sign-off dates to ensure no operating maintenance was capitalized.",
+      "required_documentation": "Installation Work Orders, tool-specific 'Safe-to-Operate' certificates, and vendor service reports."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-specialized-gas-delivery-systems",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Specialized Gas and Chemical Delivery Systems",
+    "description": "Accounting for high-purity stainless steel piping and chemical distribution systems used to transport toxic materials to the factory floor.",
+    "entries": [
+      {
+        "account": "Fixed Assets - Chemical & Gas Distribution (TGCM)",
+        "type": "Asset (+)",
+        "dr": 850000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable",
+        "type": "Asset (-) / Liability (+)",
+        "dr": 0,
+        "cr": 850000.0
+      }
+    ],
+    "explanation": "Fabs require 'Total Gas and Chemical Management' (TGCM). The piping is often electro-polished stainless steel to prevent contamination. These systems are capitalized as 'Plant Equipment.' Because the chemicals they carry are often corrosive or hazardous, these systems have a high 'wear-out' rate and may be depreciated over 5-7 years, significantly faster than standard plumbing.",
+    "practitioner_notes": {
+      "erp_application": "Componentize these assets. The 'Chemical Cabinets' (the pumps) should be separated from the 'Piping' (the distribution) if they have different replacement cycles.",
+      "audit_triggers": "Environmental Liabilities. Because these systems carry toxic gases (like Silane or Ammonia), auditors will check if the installation of these systems has triggered a 'Legal Obligation' for an Asset Retirement Obligation (ARO) for future decontamination.",
+      "required_documentation": "Process piping blueprints, material invoices for specialized alloys, and EPA-required safety certificates."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-accelerated-depreciation-node-transition",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Accelerated Depreciation for Process Node Transitions",
+    "description": "Adjusting the useful life of existing Fab equipment when a decision is made to transition to a smaller nanometer node (e.g., 7nm to 5nm).",
+    "entries": [
+      {
+        "account": "Depreciation Expense (Accelerated)",
+        "type": "Expense (+)",
+        "dr": 2000000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Depreciation - Fab Equipment",
+        "type": "Contra-Asset (+)",
+        "dr": 0,
+        "cr": 2000000.0
+      }
+    ],
+    "explanation": "Semiconductors operate on 'Moore's Law.' If a company decides to move production from 10nm to 7nm in two years, all equipment that is 'Node-Specific' (cannot be upgraded) must have its depreciation accelerated. Under ASC 360, a change in estimated useful life is a change in accounting estimate handled prospectively. The remaining book value is spread over the newly shortened remaining life.",
+    "practitioner_notes": {
+      "erp_application": "The Fixed Asset module 'Useful Life' field must be updated. This results in a much higher monthly depreciation charge until the node transition date.",
+      "audit_triggers": "Announcement of new 'Fabs' or 'Nodes.' When a CEO announces a technology roadmap to investors, auditors use that as evidence that the lives of current assets must be shortened immediately.",
+      "required_documentation": "Technology Roadmap memo from the CTO, Board approval for the node transition, and a list of node-specific vs. node-agnostic tools."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-high-value-capital-spares",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record High-Value Capital Spares (Strategic Inventory)",
+    "description": "Accounting for critical, high-cost components (e.g., specialized lenses or vacuum pumps) held for the immediate repair of Fab tools.",
+    "entries": [
+      {
+        "account": "Fixed Assets - Capital Spares (Non-Depreciating)",
+        "type": "Asset (+)",
+        "dr": 45000.0,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable",
+        "type": "Asset (-) / Liability (+)",
+        "dr": 0,
+        "cr": 45000.0
+      }
+    ],
+    "explanation": "In a Fab, one hour of downtime can cost $1M. Companies keep 'Capital Spares'—expensive parts ($10k-$500k each) that are not used in daily production but are essential for the machine's long-term operation. Under GAAP, these are classified as Fixed Assets (not Inventory) because they are expected to be used for more than one year. They generally are not depreciated until they are physically 'installed' into a machine.",
+    "practitioner_notes": {
+      "erp_application": "Set these up in the Fixed Asset module with a 'Pending Installation' status. When the part is swapped into a tool, you start depreciation, and the 'old' broken part is retired/scrapped.",
+      "audit_triggers": "Physical Counts. Because these parts are high-value and portable, they are prime targets for theft or loss. Auditors will perform a 'Wall-to-Wall' count of the Capital Spares room.",
+      "required_documentation": "Strategic spares list, purchase invoice, and the 'Inventory vs. Capital Spare' policy memo."
+    }
+  },
+
+  {
+    "slug": "semi-how-to-record-die-bank-nrv-write-down",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Die-Bank NRV Write-downs (Unpackaged Chip Obsolescence)",
+    "description": "Accounting for a reduction in the value of unfinished dies sitting in storage when the market price for the final product falls below production cost.",
+    "entries": [
+      {
+        "account": "Cost of Goods Sold - Inventory Write-down",
+        "type": "Expense (+)",
+        "dr": 25000.0,
+        "cr": 0
+      },
+      {
+        "account": "Inventory - Die Bank (Allowance for Obsolescence)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 25000.0
+      }
+    ],
+    "explanation": "Dies can sit in a 'Die Bank' for months. Under ASC 330, if the 'Net Realizable Value' (expected selling price minus packaging/shipping costs) falls below the cost of the wafer and fabrication, the asset must be written down. In semiconductors, this is often triggered by the release of a 'New Revision' or a competitor's price cut in a specific segment (e.g., memory or mobile chips).",
+    "practitioner_notes": {
+      "erp_application": "Requires an 'Inventory Aging' report tagged by 'Node' and 'Product Family.' If dies haven't been 'called' for packaging in over 180 days, a 50% or 100% reserve is usually applied automatically by the system.",
+      "audit_triggers": "Product Roadmap alignment. Auditors cross-reference the Die Bank inventory against the 'End-of-Life' (EOL) notices sent to customers. If a chip is EOL but still carries full value in the Die Bank, it is a material misstatement risk.",
+      "required_documentation": "Inventory Aging report, latest Price List (Market Data), and the 'Technical Obsolescence' memo from the product manager."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-distributor-price-protection-credit",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record Distributor Price Protection (Ship-from-Stock-and-Debit)",
+    "description": "Accounting for credits issued to distributors to compensate them for inventory on their shelves when the manufacturer lowers the market price.",
+    "entries": [
+      {
+        "account": "Revenue (Contra-Revenue) - Price Protection",
+        "type": "Revenue (-)",
+        "dr": 12000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities - Distributor Credits",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 12000.0
+      }
+    ],
+    "explanation": "Semiconductors are sold through channels. To keep distributors competitive, manufacturers offer 'Price Protection.' If the manufacturer drops the price of a chip from $1.00 to $0.80, they must credit the distributor $0.20 for every chip the distributor hasn't sold yet. Under ASC 606, this is 'Variable Consideration' and must be estimated and accrued as a reduction of revenue at the time of the initial sale to the distributor.",
+    "practitioner_notes": {
+      "erp_application": "Requires 'Inventory in Channel' (IIC) reporting. The distributor sends a weekly EDI 846 (Inventory Report). The ERP calculates the 'Price Protection' liability based on the quantity on the distributor's shelf multiplied by the price drop.",
+      "audit_triggers": "Incorrect 'Channel Inventory' counts. Auditors perform 'Negative Confirmations' with distributors to verify the quantity of stock being used to calculate the price protection reserve.",
+      "required_documentation": "Distributor POS and Inventory reports (EDI 846/867), Price Protection Policy, and the 'Debit Memo' authorization."
+    }
+  },
+  {
+    "slug": "semi-how-to-accrue-osat-packaging-and-test-costs",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Accrue OSAT (Outsourced Semiconductor Assembly and Test) Costs",
+    "description": "Recording the liability for packaging and testing services performed by third-party vendors (e.g., ASE, Amkor) at month-end.",
+    "entries": [
+      {
+        "account": "Inventory - Finished Goods (Packaging Layer)",
+        "type": "Asset (+)",
+        "dr": 45000.0,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities - OSAT Services",
+        "type": "Liability (+)",
+        "dr": 0,
+        "cr": 45000.0
+      }
+    ],
+    "explanation": "Fabless companies send their dies to OSATs to be put into 'Packages' (the black plastic cases with pins). This is a conversion cost. At month-end, the company must accrue for all chips that have finished packaging but haven't been invoiced yet. This cost is capitalized into the Finished Goods inventory value.",
+    "practitioner_notes": {
+      "erp_application": "The ERP must track 'Off-site Inventory.' As the OSAT sends 'Assembly Completion' messages, the system should auto-accrue the service cost based on the 'Price-per-Unit' in the Master Service Agreement.",
+      "audit_triggers": "Dies in Transit. Auditors will check the reconciliation of 'Dies Out' vs. 'Finished Goods In' to ensure no inventory was 'lost' at the vendor site or double-counted during the month-end cutoff.",
+      "required_documentation": "OSAT Production WIP Report, Bill of Lading for die shipments, and the MSA rate card."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-field-failure-rma-reserve",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record a Field Failure and RMA Reserve",
+    "description": "Estimating a liability for chips that will fail after being integrated into customer products (e.g., phones or cars).",
+    "entries": [
+      {
+        "account": "Cost of Goods Sold - Warranty/RMA Expense",
+        "type": "Expense (+)",
+        "dr": 8000.0,
+        "cr": 0
+      },
+      {
+        "account": "Allowance for Sales Returns & Warranty (Contra-AR)",
+        "type": "Asset (-)",
+        "dr": 0,
+        "cr": 8000.0
+      }
+    ],
+    "explanation": "Under ASC 460, semiconductor firms must record a provision for 'Standard Warranties.' Because chips are often critical components, a failure can trigger a Return Merchandise Authorization (RMA). The reserve covers the cost of replacing the chip and the 'Failure Analysis' (FA) labor to determine the root cause. This is especially material for 'Automotive Grade' chips where failure rates must be near zero.",
+    "practitioner_notes": {
+      "erp_application": "The 'RMA Module' should track 'Failure Reason Codes.' The accounting team uses the 'DPPM' (Defects Per Part Million) metric from the Quality department to set the monthly accrual rate.",
+      "audit_triggers": "Spikes in 'FA' (Failure Analysis) lab costs. If the engineering lab is running overtime to analyze a specific lot, it indicates a systemic quality issue that might require a massive 'Recall' reserve rather than a standard warranty reserve.",
+      "required_documentation": "Historical DPPM reports, Quality Management System (QMS) audit logs, and the RMA policy."
+    }
+  },
+  {
+    "slug": "semi-how-to-record-qualified-research-expense-credit",
+    "category": "Semiconductors & Foundry Operations",
+    "title": "How to Record R&D Tax Credits for 'First Silicon' Development",
+    "description": "Recognizing the tax benefit for the massive engineering labor costs involved in bringing a new chip design to 'First Silicon' (functional prototype).",
+    "entries": [
+      {
+        "account": "R&D Tax Credit Receivable",
+        "type": "Asset (+)",
+        "dr": 150000.0,
+        "cr": 0
+      },
+      {
+        "account": "Income Tax Benefit (Current Period)",
+        "type": "Expense (-)",
+        "dr": 0,
+        "cr": 150000.0
+      }
+    ],
+    "explanation": "Semiconductors are the primary beneficiaries of R&D tax credits (e.g., Section 41 in the US). Engineering labor for 'logic design,' 'physical layout,' and 'verification' qualifies as experimental development. The credit is recognized when it is 'reasonably assured' that the company will meet the requirements, often providing a significant boost to Net Income.",
+    "practitioner_notes": {
+      "erp_application": "Requires a link between 'Project IDs' and 'Payroll' to isolate 'Qualified Research Expenses' (QREs). General 'Product Marketing' or 'Sales Support' labor must be excluded from the calculation.",
+      "audit_triggers": "Technical eligibility. Auditors will look for 'Experimental Uncertainty.' If the labor was just for routine software updates for an old chip, it doesn't qualify. High-stakes for tax-basis audits.",
+      "required_documentation": "Project technical briefs, engineer time-logs by project, and the formal R&D Tax Credit Study."
+    }
   }
 
 
