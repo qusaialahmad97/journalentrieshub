@@ -20496,7 +20496,7 @@
       "erp_application": "Cryptocurrency disposal is recorded in the digital asset management system, which identifies the specific lot (or applies FIFO) being disposed of and calculates the gain/loss. The proceeds (net of exchange trading fees) are the cash received. The carrying cost is the lot's impaired or original cost basis. The gain is presented as other income or finance income depending on the classification of the holding. Tax on the disposal gain is calculated separately — capital gains vs. ordinary income treatment varies by jurisdiction and holding period. The disposal is confirmed by the blockchain transaction hash.",
       "audit_triggers": "Auditors test the proceeds amount against the exchange settlement statement and bank receipt. Confirm the cost basis of the disposed lot is correctly identified under the elected cost flow method (FIFO or specific identification) and is consistent with prior periods. For companies holding large quantities of the same cryptocurrency acquired at different prices, test the lot selection on FIFO or specific identification basis. Verify that trading fees are deducted from proceeds. Confirm the tax treatment of the disposal gain — many jurisdictions treat cryptocurrency gains as capital gains.",
       "required_documentation": "Exchange sale confirmation (quantity, price, trading fees), blockchain transaction hash, bank receipt of proceeds, lot identification record (FIFO or specific identification), gain/loss calculation (proceeds - carrying cost), cost basis election documentation, tax treatment assessment (capital vs. ordinary), and prior period impairment history (affecting carrying cost)."
-    }
+    }	
   },
   {
     "slug": "crypto-sale-realised-loss",
@@ -72684,7 +72684,7 @@
     }
   },
   {
-    "slug": "datacenter-how-to-record-liquid-cooling-r&d",
+    "slug": "datacenter-how-to-record-liquid-cooling",
     "category": "Data Centers & Cloud Infrastructure",
     "title": "How to Record Liquid Cooling Infrastructure Development",
     "description": "Accounting for the build-out of advanced immersion cooling or direct-to-chip cooling systems for AI/HPC workloads.",
