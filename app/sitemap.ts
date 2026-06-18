@@ -7,6 +7,19 @@ interface Entry {
   category: string;
 }
 
+// XML escaping helper to prevent sitemap errors
+const escapeXml = (unsafe: string) => {
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '&': return '&amp;';
+      case '\'': return '&apos;';
+      case '"': return '&quot;';
+    }
+  });
+};
+
 const generateCategorySlug = (categoryName: string) => {
   return categoryName
     .toLowerCase()
@@ -21,51 +34,51 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 2. Explicitly cast the imported JSON as an array of Entry
   const entries = entriesData as Entry[];
 
-  // Dynamic Entry URLs
+  // Dynamic Entry URLs (wrapped in escapeXml)
   const entryUrls = entries.map((entry) => ({
-    url: `${baseUrl}/entries/${entry.slug}`,
+    url: escapeXml(`${baseUrl}/entries/${entry.slug}`),
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
-  // Dynamic Category Pillar URLs
+  // Dynamic Category Pillar URLs (wrapped in escapeXml)
   const categories = Array.from(new Set(entries.map((e) => e.category)));
   const categoryUrls = categories.map((cat) => ({
-    url: `${baseUrl}/categories/${generateCategorySlug(cat)}`,
+    url: escapeXml(`${baseUrl}/categories/${generateCategorySlug(cat)}`),
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,
   }));
 
-  // Static Core Hubs
+  // Static Core Hubs (wrapped in escapeXml)
   const staticPages = [
     {
-      url: baseUrl,
+      url: escapeXml(baseUrl),
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 1,
     },
     {
-      url: `${baseUrl}/suite`,
+      url: escapeXml(`${baseUrl}/suite`),
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 1, 
     },
     {
-      url: `${baseUrl}/news`,
+      url: escapeXml(`${baseUrl}/news`),
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/glossary`,
+      url: escapeXml(`${baseUrl}/glossary`),
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about`,
+      url: escapeXml(`${baseUrl}/about`),
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
