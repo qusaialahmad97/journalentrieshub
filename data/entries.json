@@ -73725,7 +73725,7 @@
 
   {
     "slug": "mri-sale-maintenance-bundle",
-    "category": "Revenue Recognition",
+    "category": "Revenue Recognition (ASC 606 / IFRS 15)",
     "title": "How to Record Bundled MRI Sales and Maintenance",
     "description": "Allocation of transaction price between a high-value medical imaging device and a 3-year service contract under ASC 606.",
     "entries": [
@@ -73756,66 +73756,8 @@
     }
   },
   {
-    "slug": "lab-reagent-obsolescence",
-    "category": "Inventory Management",
-    "title": "How to Record Lab Reagent Inventory Impairment",
-    "description": "Accounting for the write-down of perishable laboratory reagents that have reached their expiration date.",
-    "entries": [
-      {
-        "account": "Cost of Goods Sold - Obsolescence",
-        "type": "Expense",
-        "dr": 45000,
-        "cr": 0
-      },
-      {
-        "account": "Allowance for Inventory Obsolescence",
-        "type": "Contra-Asset",
-        "dr": 0,
-        "cr": 45000
-      }
-    ],
-    "explanation": "Recognizing the loss on expired inventory to reflect the net realizable value of lab supplies.",
-    "practitioner_notes": {
-      "audit_triggers": "Significant fluctuations in inventory turnover ratios or high disposal volumes.",
-      "erp_application": "Inventory valuation adjustment in WMS or ERP.",
-      "required_documentation": "Expiration date logs and physical disposal certificates."
-    }
-  },
-  {
-    "slug": "device-development-capitalization",
-    "category": "Intangible Assets",
-    "title": "How to Capitalize Medical Device Development Costs",
-    "description": "Capitalization of internal development costs for a new diagnostic tool after reaching technological feasibility.",
-    "entries": [
-      {
-        "account": "Capitalized Software/R&D",
-        "type": "Asset",
-        "dr": 250000,
-        "cr": 0
-      },
-      {
-        "account": "R&D Salaries & Benefits",
-        "type": "Expense",
-        "dr": 0,
-        "cr": 180000
-      },
-      {
-        "account": "Overhead Applied to R&D",
-        "type": "Expense",
-        "dr": 0,
-        "cr": 70000
-      }
-    ],
-    "explanation": "Direct labor and overhead costs incurred during the development phase are capitalized once the product meets the criteria for asset recognition.",
-    "practitioner_notes": {
-      "audit_triggers": "Classification of research vs development phases.",
-      "erp_application": "Project Accounting module linked to timesheets.",
-      "required_documentation": "Technical feasibility report and project time tracking logs."
-    }
-  },
-  {
     "slug": "unbilled-lab-service-revenue",
-    "category": "Revenue Recognition",
+    "category": "Revenue Recognition (ASC 606 / IFRS 15)",
     "title": "How to Accrue Unbilled Lab Testing Revenue",
     "description": "Accruing revenue for laboratory tests completed but not yet invoiced to healthcare providers or insurance.",
     "entries": [
@@ -73841,7 +73783,7 @@
   },
   {
     "slug": "medical-device-warranty-provision",
-    "category": "Liabilities",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Warranty Reserves for Medical Devices",
     "description": "Establishing a provision for estimated future warranty claims on medical devices sold during the period.",
     "entries": [
@@ -73867,7 +73809,7 @@
   },
   {
     "slug": "clinical-trial-accrual",
-    "category": "Operating Expenses",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Accrue Clinical Trial Expenses",
     "description": "Accruing estimated costs for ongoing clinical trials managed by a Contract Research Organization (CRO).",
     "entries": [
@@ -73893,7 +73835,7 @@
   },
   {
     "slug": "nih-research-grant-income",
-    "category": "Other Income",
+    "category": "Revenue Recognition (ASC 606 / IFRS 15)",
     "title": "How to Record NIH Grant Revenue for Research",
     "description": "Recognition of grant income received from the National Institutes of Health for specific medical research projects.",
     "entries": [
@@ -73919,7 +73861,7 @@
   },
   {
     "slug": "installation-training-deferred-rev",
-    "category": "Revenue Recognition",
+    "category": "Revenue Recognition (ASC 606 / IFRS 15)",
     "title": "How to Record Equipment Installation and Training",
     "description": "Separating revenue for the installation and training components of a medical device sale.",
     "entries": [
@@ -73944,112 +73886,8 @@
     }
   },
   {
-    "slug": "bad-debt-allowance-healthcare",
-    "category": "Receivables",
-    "title": "How to Record Bad Debt for Healthcare Providers",
-    "description": "Adjustment of the allowance for doubtful accounts based on specific risk assessments of hospital clients.",
-    "entries": [
-      {
-        "account": "Bad Debt Expense",
-        "type": "Expense",
-        "dr": 22000,
-        "cr": 0
-      },
-      {
-        "account": "Allowance for Doubtful Accounts",
-        "type": "Contra-Asset",
-        "dr": 0,
-        "cr": 22000
-      }
-    ],
-    "explanation": "Increasing the reserve for accounts receivable that are unlikely to be collected due to hospital credit risks.",
-    "practitioner_notes": {
-      "audit_triggers": "Ageing of receivables beyond 90 days.",
-      "erp_application": "Doubtful account provisioning rules.",
-      "required_documentation": "Aging reports and credit risk assessments."
-    }
-  },
-  {
-    "slug": "fda-submission-fees-expensing",
-    "category": "Operating Expenses",
-    "title": "How to Record FDA Regulatory Submission Fees",
-    "description": "Accounting for the payment of User Fees to the FDA for a 510(k) or PMA submission.",
-    "entries": [
-      {
-        "account": "Regulatory Compliance Expense",
-        "type": "Expense",
-        "dr": 35000,
-        "cr": 0
-      },
-      {
-        "account": "Cash",
-        "type": "Asset",
-        "dr": 0,
-        "cr": 35000
-      }
-    ],
-    "explanation": "Regulatory submission fees are generally expensed as incurred as they do not meet the criteria for capitalization under R&D rules.",
-    "practitioner_notes": {
-      "audit_triggers": "Inconsistent treatment of regulatory fees (cap vs exp).",
-      "erp_application": "Accounts Payable vendor payment.",
-      "required_documentation": "FDA invoice and proof of submission."
-    }
-  },
-  {
-    "slug": "medical-device-operating-lease",
-    "category": "Leasing",
-    "title": "How to Record Operating Leases for Lab Analyzers",
-    "description": "Recording the monthly lease payment for lab equipment where the risks and rewards of ownership remain with the lessor.",
-    "entries": [
-      {
-        "account": "Lease Expense",
-        "type": "Expense",
-        "dr": 5000,
-        "cr": 0
-      },
-      {
-        "account": "Cash",
-        "type": "Asset",
-        "dr": 0,
-        "cr": 5000
-      }
-    ],
-    "explanation": "Recognition of monthly rental expense for equipment under an operating lease agreement.",
-    "practitioner_notes": {
-      "audit_triggers": "Missing ROU assets for leases over 12 months under ASC 842.",
-      "erp_application": "Lease Accounting module (ASC 842 / IFRS 16).",
-      "required_documentation": "Executed lease agreement and amortization schedule."
-    }
-  },
-  {
-    "slug": "commission-capitalization-asc-606",
-    "category": "Assets",
-    "title": "How to Accrue Medical Sales Rep Commissions",
-    "description": "Capitalization of incremental costs of obtaining a contract, specifically sales commissions for long-term device placements.",
-    "entries": [
-      {
-        "account": "Deferred Commission Costs",
-        "type": "Asset",
-        "dr": 10000,
-        "cr": 0
-      },
-      {
-        "account": "Accrued Commissions",
-        "type": "Liability",
-        "dr": 0,
-        "cr": 10000
-      }
-    ],
-    "explanation": "Under ASC 606, incremental costs to obtain a contract are capitalized and amortized over the expected contract duration.",
-    "practitioner_notes": {
-      "audit_triggers": "Amortization period compared to contract life.",
-      "erp_application": "Incentive Compensation Management system.",
-      "required_documentation": "Sales commission plan and signed contract."
-    }
-  },
-  {
     "slug": "reagent-kit-sales-return-allowance",
-    "category": "Revenue Recognition",
+    "category": "Revenue Recognition (ASC 606 / IFRS 15)",
     "title": "How to Record Sales Returns for Medical Supplies",
     "description": "Creating an allowance for potential returns of laboratory reagent kits due to defects or shipping errors.",
     "entries": [
@@ -74071,58 +73909,6 @@
       "audit_triggers": "Spikes in return activity after quarter-end.",
       "erp_application": "Sales Order return authorization workflow.",
       "required_documentation": "Historical return data and RMA logs."
-    }
-  },
-  {
-    "slug": "lab-software-amortization",
-    "category": "Intangible Assets",
-    "title": "How to Record Amortization of Lab Software",
-    "description": "Monthly amortization of a Laboratory Information Management System (LIMS) over its 5-year useful life.",
-    "entries": [
-      {
-        "account": "Amortization Expense",
-        "type": "Expense",
-        "dr": 2000,
-        "cr": 0
-      },
-      {
-        "account": "Accumulated Amortization - Software",
-        "type": "Contra-Asset",
-        "dr": 0,
-        "cr": 2000
-      }
-    ],
-    "explanation": "Systematic allocation of the cost of lab software over the period it provides economic benefit.",
-    "practitioner_notes": {
-      "audit_triggers": "Useful life assumptions vs technological changes.",
-      "erp_application": "Fixed Asset module - Intangible assets.",
-      "required_documentation": "Amortization schedule and software license."
-    }
-  },
-  {
-    "slug": "lab-equipment-impairment",
-    "category": "Fixed Assets",
-    "title": "How to Record Impairment of Lab Equipment",
-    "description": "Recognizing an impairment loss when the carrying amount of lab equipment exceeds its fair value due to technical obsolescence.",
-    "entries": [
-      {
-        "account": "Impairment Loss",
-        "type": "Expense",
-        "dr": 120000,
-        "cr": 0
-      },
-      {
-        "account": "Accumulated Depreciation - Lab Equipment",
-        "type": "Contra-Asset",
-        "dr": 0,
-        "cr": 120000
-      }
-    ],
-    "explanation": "Writing down the value of equipment that is no longer competitive or functional in the current market.",
-    "practitioner_notes": {
-      "audit_triggers": "Idle equipment or sudden change in business strategy.",
-      "erp_application": "Fixed Asset impairment transaction.",
-      "required_documentation": "Fair value assessment and impairment test (Step 1 and 2)."
     }
   },
   {
@@ -74773,7 +74559,7 @@
   },
   {
     "slug": "record-intercompany-medical-transfer-pricing",
-    "category": "Medical Devices",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Intercompany Medical Device Transfers",
     "description": "Recording the transfer of medical device components between a parent and foreign subsidiary using standard transfer pricing markups.",
     "entries": [
@@ -74799,7 +74585,7 @@
   },
   {
     "slug": "capitalize-ai-training-data-medical-imaging",
-    "category": "Medical Devices",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Capitalize Medical AI Training Data",
     "description": "Accounting for the costs associated with acquiring and labeling large datasets used to train diagnostic AI algorithms within medical imaging software.",
     "entries": [
@@ -74825,7 +74611,7 @@
   },
   {
     "slug": "record-medicare-reimbursement-adjustments",
-    "category": "Laboratory Services",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Government Reimbursement Adjustments",
     "description": "Adjusting accounts receivable to reflect the gap between gross charges and the actual allowed amount from Medicare/Medicaid for lab tests.",
     "entries": [
@@ -74851,7 +74637,7 @@
   },
   {
     "slug": "record-captive-insurance-medical-liability",
-    "category": "Laboratory Services",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Captive Insurance Premiums",
     "description": "Recording premium payments to a wholly-owned captive insurance company for professional liability and medical malpractice coverage.",
     "entries": [
@@ -75007,7 +74793,7 @@
   },
   {
     "slug": "how-to-record-fx-hedging-medical-exports",
-    "category": "Medical Devices",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record FX Hedging for Medical Exports",
     "description": "Accounting for cash flow hedges used to mitigate currency risk on forecasted international medical device sales.",
     "entries": [
@@ -75033,7 +74819,7 @@
   },
   {
     "slug": "how-to-capitalize-custom-medical-tooling",
-    "category": "Medical Devices",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Capitalize Custom Medical Device Tooling",
     "description": "Capitalization of specialized molds and tooling used for patient-specific implant manufacturing.",
     "entries": [
@@ -75059,7 +74845,7 @@
   },
   {
     "slug": "how-to-record-lab-biohazard-waste-disposal",
-    "category": "Laboratory Services",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Lab Biohazard Waste Disposal",
     "description": "Accruing for the specialized disposal costs of biohazardous materials generated during clinical testing.",
     "entries": [
@@ -75085,7 +74871,7 @@
   },
   {
     "slug": "how-to-record-sunshine-act-compliance-costs",
-    "category": "Medical Devices",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Sunshine Act Compliance Costs",
     "description": "Recording administrative costs related to Open Payments (Sunshine Act) data collection and reporting.",
     "entries": [
@@ -75111,7 +74897,7 @@
   },
   {
     "slug": "how-to-record-tele-pathology-consult-revenue",
-    "category": "Laboratory Services",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Tele-Pathology Consult Revenue",
     "description": "Revenue recognition for digital pathology consultations provided to remote clinical sites.",
     "entries": [
@@ -75717,7 +75503,7 @@
   },
   {
     "slug": "bill-and-hold-medical-equipment-revenue",
-    "category": "Medical Devices",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Bill-and-Hold Revenue for Equipment",
     "description": "Accounting for medical equipment sales where the customer has purchased the item and assumed control but requested a delay in shipping due to site preparation.",
     "entries": [
@@ -75754,34 +75540,8 @@
     }
   },
   {
-    "slug": "fda-post-approval-study-accruals",
-    "category": "Regulatory Accounting",
-    "title": "How to Record FDA Post-Approval Study Costs",
-    "description": "Accruing the estimated costs for mandatory clinical studies required by the FDA as a condition of Premarket Approval (PMA) for a medical device.",
-    "entries": [
-      {
-        "account": "Regulatory Compliance Expense",
-        "type": "Expense",
-        "dr": 45000,
-        "cr": 0
-      },
-      {
-        "account": "Accrued Post-Market Study Liabilities",
-        "type": "Liability",
-        "dr": 0,
-        "cr": 45000
-      }
-    ],
-    "explanation": "When the FDA mandates a post-approval study as a condition of market entry, the company must estimate the future cash outflows. These are recognized as a liability when the obligation is incurred (upon approval) and the amount can be reasonably estimated.",
-    "practitioner_notes": {
-      "audit_triggers": "Changes in study protocol that significantly increase or decrease estimated total costs.",
-      "erp_application": "Project-based cost tracking linked to regulatory milestone triggers.",
-      "required_documentation": "FDA Approval Letter citing Section 522 requirements and detailed study budget estimates."
-    }
-  },
-  {
     "slug": "radioactive-source-disposal-accrual",
-    "category": "Laboratory Services",
+    "category": "Medical Devices & Laboratory Services",
     "title": "How to Record Radioactive Source Disposal Accruals",
     "description": "Accounting for the eventual decommissioning and disposal of radioactive isotopes or sources used in diagnostic imaging or laboratory equipment.",
     "entries": [
@@ -94990,7 +94750,3439 @@
       "erp_application": "Link to depletion modules to ensure units-of-production method is applied correctly as minerals are extracted.",
       "required_documentation": "Geological surveys, reserve estimates (proven and probable), and commodity price forecasts."
     }
+  },
+
+  {
+    "slug": "record-initial-marketplace-sale-escrow",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Initial Marketplace Sale with Escrow",
+    "description": "Initial receipt of funds from a buyer for a third-party transaction where the platform acts as an agent.",
+    "entries": [
+      {
+        "account": "Cash - Escrow Account",
+        "type": "Asset",
+        "dr": 1000,
+        "cr": 0
+      },
+      {
+        "account": "Funds Held for Sellers",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1000
+      }
+    ],
+    "explanation": "When a buyer pays for a product on a marketplace, the cash is held in a restricted escrow account, creating a corresponding liability to the seller until the transaction is finalized.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between bank escrow balances and internal sub-ledgers for seller liabilities.",
+      "erp_application": "Automate through payment gateway webhooks linking transaction IDs to liability sub-ledgers.",
+      "required_documentation": "Payment gateway receipt and buyer transaction confirmation."
+    }
+  },
+  {
+    "slug": "recognize-platform-commission-revenue",
+    "category": "Marketplace Platforms",
+    "title": "How to Recognize Platform Commission Revenue",
+    "description": "Recognition of the platform's cut from the total transaction value after the performance obligation is met.",
+    "entries": [
+      {
+        "account": "Funds Held for Sellers",
+        "type": "Liability",
+        "dr": 150,
+        "cr": 0
+      },
+      {
+        "account": "Commission Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "This entry represents the platform's net revenue (15% commission) taken from the gross funds held in escrow once the buyer accepts the goods.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent application of commission rates or revenue recognition before the return period expires.",
+      "erp_application": "Use a revenue recognition engine to trigger this entry upon 'delivery confirmation' status in the platform.",
+      "required_documentation": "Service Level Agreement (SLA) terms and automated commission calculation log."
+    }
+  },
+  {
+    "slug": "record-payout-funds-to-seller",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Payout of Funds to Seller",
+    "description": "Disbursement of the remaining balance to the third-party seller after fees and commissions.",
+    "entries": [
+      {
+        "account": "Funds Held for Sellers",
+        "type": "Liability",
+        "dr": 850,
+        "cr": 0
+      },
+      {
+        "account": "Cash - Escrow Account",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 850
+      }
+    ],
+    "explanation": "After the platform takes its commission, the remaining 85% is paid out to the seller, clearing the liability and the restricted cash account.",
+    "practitioner_notes": {
+      "audit_triggers": "Large balances remaining in 'Funds Held for Sellers' for extended periods without payout.",
+      "erp_application": "Integrate with AP modules for bulk seller payouts via ACH or Wire.",
+      "required_documentation": "Bank transfer confirmation and seller payout statement."
+    }
+  },
+  {
+    "slug": "process-customer-refund-from-escrow",
+    "category": "Marketplace Platforms",
+    "title": "How to Process a Customer Refund from Escrow",
+    "description": "Reversal of escrow funds back to a customer prior to seller payout due to a cancellation or return.",
+    "entries": [
+      {
+        "account": "Funds Held for Sellers",
+        "type": "Liability",
+        "dr": 1000,
+        "cr": 0
+      },
+      {
+        "account": "Cash - Escrow Account",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 1000
+      }
+    ],
+    "explanation": "If a transaction is canceled, the liability to the seller is extinguished and the cash is returned to the buyer from the escrow account.",
+    "practitioner_notes": {
+      "audit_triggers": "High refund rates relative to gross sales which may indicate platform quality issues.",
+      "erp_application": "Ensure the refund logic automatically pulls from the specific transaction's escrow bucket to avoid negative balances.",
+      "required_documentation": "Refund authorization and original order reference."
+    }
+  },
+  {
+    "slug": "remit-sales-tax-collected-for-sellers",
+    "category": "Marketplace Platforms",
+    "title": "How to Remit Sales Tax Collected for Sellers",
+    "description": "Accounting for marketplace facilitator laws where the platform collects and remits sales tax on behalf of sellers.",
+    "entries": [
+      {
+        "account": "Sales Tax Payable",
+        "type": "Liability",
+        "dr": 80,
+        "cr": 0
+      },
+      {
+        "account": "Cash - Operating Account",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 80
+      }
+    ],
+    "explanation": "Many jurisdictions require platforms to remit sales tax. This entry records the payment of previously collected tax to the relevant tax authority.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to match tax collected by jurisdiction against tax remitted.",
+      "erp_application": "Use tax automation tools (e.g., Avalara) to calculate and file returns based on transaction data.",
+      "required_documentation": "State tax filing receipts and marketplace facilitator reports."
+    }
+  },
+  {
+    "slug": "net-revenue-recognition",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Net Revenue Recognition",
+    "description": "Adjusting gross transaction value to reflect net commission revenue where the platform acts as an agent under ASC 606.",
+    "entries": [
+      {
+        "account": "Gross Transaction Clearing",
+        "type": "Debit",
+        "dr": 1000,
+        "cr": 0
+      },
+      {
+        "account": "Seller Escrow Liability",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 850
+      },
+      {
+        "account": "Commission Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "This entry reclassifies funds from a clearing account. Since the platform is an agent, only the commission is recognized as revenue, while the remainder is a liability to the seller.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between payment processor reports and internal ledger revenue totals.",
+      "erp_application": "Automated via subledger mapping between transaction engine and General Ledger.",
+      "required_documentation": "Service Level Agreement (SLA) specifying commission percentages and 'Agent' status documentation."
+    }
+  },
+  {
+    "slug": "platform-funded-discounts",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Platform Funded Discounts",
+    "description": "Accounting for marketing discounts offered by the platform to buyers that do not reduce the seller's payout.",
+    "entries": [
+      {
+        "account": "Marketing Expense - Promotions",
+        "type": "Debit",
+        "dr": 20,
+        "cr": 0
+      },
+      {
+        "account": "Seller Escrow Liability",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 20
+      }
+    ],
+    "explanation": "When a platform offers a discount but guarantees the seller the full price, the discount amount is treated as a marketing expense and added to the seller's owed balance.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of promotional codes relative to total gross merchandise value (GMV).",
+      "erp_application": "Recognized at the point of sale transaction in the promotional sub-module.",
+      "required_documentation": "Promotion campaign authorization and system-generated discount usage report."
+    }
+  },
+  {
+    "slug": "backup-withholding-payouts",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Backup Withholding on Payouts",
+    "description": "Withholding a portion of seller funds for tax compliance purposes (e.g., missing TIN or regulatory requirements).",
+    "entries": [
+      {
+        "account": "Seller Escrow Liability",
+        "type": "Debit",
+        "dr": 500,
+        "cr": 0
+      },
+      {
+        "account": "Tax Withholding Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 120
+      },
+      {
+        "account": "Cash - Seller Payouts",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 380
+      }
+    ],
+    "explanation": "Reduces the liability to the seller by the amount of tax withheld, creating a separate liability for the platform to remit those funds to the tax authority.",
+    "practitioner_notes": {
+      "audit_triggers": "Incorrect 1099-K reporting or failure to remit withheld funds within statutory deadlines.",
+      "erp_application": "Set up as a 'Withholding Tax' rule in the accounts payable or payout module.",
+      "required_documentation": "IRS Form W-9 status or regulatory notice for mandatory withholding."
+    }
+  },
+  {
+    "slug": "accrued-marketplace-commissions",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Accrued Marketplace Commissions",
+    "description": "Recognizing commission revenue for completed transactions that have not yet been settled by the payment processor.",
+    "entries": [
+      {
+        "account": "Accrued Revenue - Unsettled Commissions",
+        "type": "Debit",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Commission Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "Ensures revenue is recognized in the period the service (facilitation) was performed, regardless of the cash settlement timing from gateways.",
+    "practitioner_notes": {
+      "audit_triggers": "Large month-over-month fluctuations in accrued revenue vs. settled cash.",
+      "erp_application": "Month-end reversal entry or automated accrual based on transaction timestamps.",
+      "required_documentation": "Gateway 'Pending' transaction reports and reconciliation workpapers."
+    }
+  },
+  {
+    "slug": "abandoned-escrow-reclassification",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Abandoned Escrow Reclassification",
+    "description": "Moving inactive seller balances to a specialized account for escheatment or other income as per local laws.",
+    "entries": [
+      {
+        "account": "Seller Escrow Liability",
+        "type": "Debit",
+        "dr": 150,
+        "cr": 0
+      },
+      {
+        "account": "Escheatment Liability - Unclaimed Property",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "When seller funds remain unclaimed beyond the platform's terms of service, they are moved out of active escrow to await legal escheatment processing.",
+    "practitioner_notes": {
+      "audit_triggers": "Compliance with state-specific abandoned property (escheatment) timelines.",
+      "erp_application": "Aging report of seller balances used to trigger manual reclassification.",
+      "required_documentation": "Aged liability report and evidence of attempts to contact the seller (due diligence)."
+    }
+  },
+  {
+    "slug": "record-platform-subscription-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Platform Subscription Fees",
+    "description": "Recording the monthly recurring revenue collected from sellers for platform access, separate from transaction commissions.",
+    "entries": [
+      {
+        "account": "Seller Payable",
+        "type": "Liability",
+        "dr": 100,
+        "cr": 0
+      },
+      {
+        "account": "Subscription Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 100
+      }
+    ],
+    "explanation": "This entry reduces the liability owed to the seller by the amount of their monthly membership fee, recognizing that amount as earned revenue for the platform.",
+    "practitioner_notes": {
+      "audit_triggers": "Consistency between subscription tier settings and ledger entries.",
+      "erp_application": "Ensure automated billing modules trigger this entry on the first of each month.",
+      "required_documentation": "Seller agreement and monthly subscription tier report."
+    }
+  },
+  {
+    "slug": "record-expedited-payout-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Expedited Payout Fees",
+    "description": "Accounting for the convenience fee charged to sellers who request an immediate bank transfer rather than the standard payout cycle.",
+    "entries": [
+      {
+        "account": "Seller Payable",
+        "type": "Liability",
+        "dr": 5,
+        "cr": 0
+      },
+      {
+        "account": "Ancillary Service Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 5
+      }
+    ],
+    "explanation": "The fee is deducted from the seller's available balance at the time of payout, converting a portion of the payout liability into service revenue.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of manual payout adjustments without corresponding fee revenue.",
+      "erp_application": "Map the 'instant payout' flag in the payment processor to this revenue account.",
+      "required_documentation": "Transaction log showing payout timestamp and fee calculation."
+    }
+  },
+  {
+    "slug": "record-seller-chargeback-reserves",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Chargeback Reserves",
+    "description": "Allocating a portion of a seller's funds to a restricted reserve account to cover potential credit card chargebacks or disputes.",
+    "entries": [
+      {
+        "account": "Seller Payable - Unrestricted",
+        "type": "Liability",
+        "dr": 500,
+        "cr": 0
+      },
+      {
+        "account": "Seller Payable - Reserve Fund",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 500
+      }
+    ],
+    "explanation": "This is a reclassification of liabilities. It separates funds that are ready for payout from those held back for risk mitigation purposes.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant differences between reserve balances and historical chargeback rates.",
+      "erp_application": "Use sub-ledger accounts for different levels of fund availability.",
+      "required_documentation": "Platform risk policy and seller risk score documentation."
+    }
+  },
+  {
+    "slug": "record-marketplace-referral-credits",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Marketplace Referral Credits",
+    "description": "Recording the marketing expense and the corresponding liability when a buyer earns credit for referring a new user to the platform.",
+    "entries": [
+      {
+        "account": "Marketing Expense - Referrals",
+        "type": "Expense",
+        "dr": 25,
+        "cr": 0
+      },
+      {
+        "account": "Customer Credit Liability",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 25
+      }
+    ],
+    "explanation": "The platform incurs a marketing cost to acquire the new user, creating a liability to the referrer that must be tracked until redeemed or expired.",
+    "practitioner_notes": {
+      "audit_triggers": "Large amounts of unexpired credits remaining on the books indefinitely.",
+      "erp_application": "Integrate the referral software with the GL to record credits in real-time.",
+      "required_documentation": "Referral program terms and conditions and usage reports."
+    }
+  },
+  {
+    "slug": "record-seller-advertising-spend",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Advertising Spend",
+    "description": "Capturing revenue from sellers who pay to have their listings featured or promoted within the marketplace.",
+    "entries": [
+      {
+        "account": "Seller Payable",
+        "type": "Liability",
+        "dr": 150,
+        "cr": 0
+      },
+      {
+        "account": "Advertising Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "Instead of an external payment, the seller pays for internal ads using their accrued sales balance, reducing the platform's debt to them.",
+    "practitioner_notes": {
+      "audit_triggers": "Mismatch between ad server impressions/clicks and revenue recorded.",
+      "erp_application": "Sync the ad server's daily spend report to the financial ledger for automated netting.",
+      "required_documentation": "Ad campaign performance report and click-through rate logs."
+    }
+  },
+  {
+    "slug": "how-to-record-fx-gain-on-escrow-funds",
+    "category": "Marketplace Platforms",
+    "title": "How to Record FX Gain on Escrow Funds",
+    "description": "Adjusting the value of platform escrow funds held in foreign currency due to exchange rate fluctuations.",
+    "entries": [
+      {
+        "account": "Escrow Cash (Foreign Currency)",
+        "type": "Asset",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Unrealized Foreign Exchange Gain",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "When a platform holds buyer funds in a currency other than its functional currency, the asset must be revalued at the period-end spot rate, with gains recognized in the income statement.",
+    "practitioner_notes": {
+      "audit_triggers": "Large swings in FX gain/loss accounts relative to escrow balances; lack of month-end revaluation procedures.",
+      "erp_application": "Ensure the ERP multi-currency module is mapped to the specific escrow bank account for automated revaluation.",
+      "required_documentation": "Bank statements in original currency and the spot rate source used for the valuation (e.g., Oanda or Bloomberg)."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-wallet-interest-income",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Wallet Interest Income",
+    "description": "Recording interest earned on aggregate escrow balances held by the platform.",
+    "entries": [
+      {
+        "account": "Escrow Cash",
+        "type": "Asset",
+        "dr": 125.5,
+        "cr": 0
+      },
+      {
+        "account": "Interest Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 125.5
+      }
+    ],
+    "explanation": "If the marketplace terms allow the platform to retain interest earned on funds held in escrow, the interest is recorded as corporate revenue once credited by the financial institution.",
+    "practitioner_notes": {
+      "audit_triggers": "Terms of service compliance regarding ownership of interest; reconciliation of bank interest to ledger.",
+      "erp_application": "Automate interest posting via bank feed integration directly to a non-operating income account.",
+      "required_documentation": "Platform Terms of Service (ToS) and monthly bank credit advice."
+    }
+  },
+  {
+    "slug": "how-to-record-platform-dispute-settlement",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Platform Dispute Settlement",
+    "description": "Accounting for cases where the platform covers a buyer refund out of its own pocket to resolve a dispute.",
+    "entries": [
+      {
+        "account": "Customer Service Settlement Expense",
+        "type": "Expense",
+        "dr": 85,
+        "cr": 0
+      },
+      {
+        "account": "Escrow Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 85
+      }
+    ],
+    "explanation": "When the platform decides to refund a buyer without clawing back funds from the seller (goodwill refund), it recognizes an expense and reduces the escrow cash (or operating cash).",
+    "practitioner_notes": {
+      "audit_triggers": "Spikes in settlement expenses suggesting fraud or seller quality issues; consistency in refund policy application.",
+      "erp_application": "Use a specific department code for 'Trust and Safety' to track these costs independently of standard returns.",
+      "required_documentation": "Support ticket resolution log and authorization from the marketplace manager."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-onboarding-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Onboarding Fees",
+    "description": "Recording the one-time fee charged to new sellers for account verification and setup.",
+    "entries": [
+      {
+        "account": "Operating Cash",
+        "type": "Asset",
+        "dr": 250,
+        "cr": 0
+      },
+      {
+        "account": "Onboarding Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 250
+      }
+    ],
+    "explanation": "One-time fees that do not provide a separate material right are recognized immediately or over the expected seller life, depending on ASC 606 assessment of performance obligations.",
+    "practitioner_notes": {
+      "audit_triggers": "Revenue recognition timing for setup fees; deferred revenue vs. immediate recognition analysis.",
+      "erp_application": "Standard service item in the sales module triggered upon seller account activation.",
+      "required_documentation": "Seller agreement and evidence of account activation."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-overpayment-recoupment",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Overpayment Recoupment",
+    "description": "Tracking and recovering funds when a seller was paid more than their available balance.",
+    "entries": [
+      {
+        "account": "Due from Sellers",
+        "type": "Asset",
+        "dr": 300,
+        "cr": 0
+      },
+      {
+        "account": "Escrow Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 300
+      }
+    ],
+    "explanation": "If a platform pays a seller in error or due to a late chargeback that creates a negative balance, the amount is reclassified from escrow cash to a receivable from the seller.",
+    "practitioner_notes": {
+      "audit_triggers": "Aging of 'Due from Sellers' account; collectability of negative balances; frequency of payment errors.",
+      "erp_application": "Set up a sub-ledger for seller receivables to track aging and offset against future sales automatically.",
+      "required_documentation": "Transaction ID of the overpayment and automated notification sent to the seller regarding the recovery."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-insurance-deductions",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Insurance Deductions",
+    "description": "Records the deduction of platform-provided insurance premiums from a seller's escrow balance prior to payout.",
+    "entries": [
+      {
+        "account": "Seller Payable",
+        "type": "Debit",
+        "dr": 100,
+        "cr": 0
+      },
+      {
+        "account": "Insurance Premium Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 90
+      },
+      {
+        "account": "Insurance Administrative Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 10
+      }
+    ],
+    "explanation": "This entry reduces the liability owed to the seller to cover the cost of insurance premiums, splitting the amount between the third-party provider and the platform's service fee.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between total premiums collected and insurance carrier invoices.",
+      "erp_application": "Set up as an automatic deduction rule within the sub-ledger payout engine.",
+      "required_documentation": "Insurance policy enrollment confirmation and automated ledger deduction logs."
+    }
+  },
+  {
+    "slug": "how-to-record-marketplace-fulfillment-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Marketplace Fulfillment Fees",
+    "description": "Records the service fee charged to sellers for utilizing the platform's internal logistics and warehousing services.",
+    "entries": [
+      {
+        "account": "Seller Payable",
+        "type": "Debit",
+        "dr": 250,
+        "cr": 0
+      },
+      {
+        "account": "Logistics Service Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250
+      }
+    ],
+    "explanation": "When a platform provides fulfillment, the associated costs are deducted from the seller's gross sales held in escrow, converting a liability into earned logistics revenue.",
+    "practitioner_notes": {
+      "audit_triggers": "Large volume of manual adjustments to fulfillment fees outside of automated shipping calculations.",
+      "erp_application": "Integration between WMS (Warehouse Management System) and the financial ledger for automated billing.",
+      "required_documentation": "Shipping manifest or delivery confirmation linked to the specific transaction ID."
+    }
+  },
+  {
+    "slug": "how-to-record-voided-seller-payouts",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Voided Seller Payouts",
+    "description": "Records the reversal of a seller payout due to incorrect banking details or a failed electronic transfer.",
+    "entries": [
+      {
+        "account": "Cash in Transit",
+        "type": "Debit",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Seller Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "If a payout fails, the funds are returned to the platform's control, and the liability to the seller must be reinstated until valid payment information is provided.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of stale cash-in-transit items or aged credit balances in seller payables.",
+      "erp_application": "Automated reconciliation of bank return files (ACH/Wire) to trigger the reversal entry.",
+      "required_documentation": "Bank return notification and payout transaction log."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-tier-upgrade-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Tier Upgrade Fees",
+    "description": "Records the revenue recognized when a seller pays for a premium account tier or 'pro' status using their escrow balance.",
+    "entries": [
+      {
+        "account": "Seller Payable",
+        "type": "Debit",
+        "dr": 49.99,
+        "cr": 0
+      },
+      {
+        "account": "Subscription Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 49.99
+      }
+    ],
+    "explanation": "Sellers often pay for platform upgrades via deduction from sales; this entry reflects the movement from a liability (escrow) to service revenue.",
+    "practitioner_notes": {
+      "audit_triggers": "Mismatches between the number of 'Pro' sellers and recognized subscription revenue.",
+      "erp_application": "Requires a link between the CRM/Account Management module and the payout processing engine.",
+      "required_documentation": "Seller agreement for tier upgrade and digital timestamp of service activation."
+    }
+  },
+  {
+    "slug": "how-to-record-inactive-seller-account-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Inactive Seller Account Fees",
+    "description": "Records the deduction of maintenance fees from seller accounts that have remained inactive beyond a specified grace period.",
+    "entries": [
+      {
+        "account": "Seller Payable",
+        "type": "Debit",
+        "dr": 15,
+        "cr": 0
+      },
+      {
+        "account": "Inactivity Fee Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15
+      }
+    ],
+    "explanation": "Platforms may charge fees to manage dormant balances; this entry recognizes revenue from the systematic reduction of these long-term liabilities.",
+    "practitioner_notes": {
+      "audit_triggers": "State escheatment law violations regarding the seizure of abandoned funds.",
+      "erp_application": "Automated aging report used to trigger monthly inactivity charges based on last-login data.",
+      "required_documentation": "Platform Terms of Service (TOS) detailing the inactivity policy and aging report."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-marketing-subsidies",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Marketing Subsidies",
+    "description": "Records the platform's contribution to a seller-led promotional campaign to incentivize high-volume sales.",
+    "entries": [
+      {
+        "account": "Marketing Expense",
+        "type": "Debit",
+        "dr": 200,
+        "cr": 0
+      },
+      {
+        "account": "Seller Escrow Liability",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 200
+      }
+    ],
+    "explanation": "The platform recognizes a marketing expense for its portion of a promotional subsidy, which is then credited to the seller's escrow account for future payout.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between promotional terms and subsidy amounts distributed.",
+      "erp_application": "Automated via marketing module integration to the ledger.",
+      "required_documentation": "Marketing campaign agreement and performance metrics."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-security-deposits",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Security Deposits",
+    "description": "Records the collection of security deposits from new sellers to cover potential future claims or chargebacks.",
+    "entries": [
+      {
+        "account": "Restricted Cash",
+        "type": "Debit",
+        "dr": 1000,
+        "cr": 0
+      },
+      {
+        "account": "Seller Security Deposit Liability",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1000
+      }
+    ],
+    "explanation": "Cash received for security deposits is restricted and held as a liability until the seller leaves the platform or the deposit is applied against a loss.",
+    "practitioner_notes": {
+      "audit_triggers": "Commingling of restricted security deposits with operational cash.",
+      "erp_application": "Use separate sub-ledger for restricted cash accounts.",
+      "required_documentation": "Seller onboarding agreement and deposit receipt."
+    }
+  },
+  {
+    "slug": "how-to-record-marketplace-processing-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Marketplace Processing Fees",
+    "description": "Records the internal revenue generated by charging sellers for payment processing costs incurred by the platform.",
+    "entries": [
+      {
+        "account": "Seller Escrow Liability",
+        "type": "Debit",
+        "dr": 30,
+        "cr": 0
+      },
+      {
+        "account": "Payment Processing Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 30
+      }
+    ],
+    "explanation": "The platform deducts a payment processing fee from the seller's escrow balance, recognizing this as platform revenue.",
+    "practitioner_notes": {
+      "audit_triggers": "Fee revenue exceeding the actual underlying merchant service provider costs.",
+      "erp_application": "Linked to transaction processing engine in the ERP.",
+      "required_documentation": "Platform fee schedule and transaction logs."
+    }
+  },
+  {
+    "slug": "how-to-record-escheatment-of-unclaimed-funds",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Escheatment of Unclaimed Funds",
+    "description": "Records the transfer of long-term unclaimed seller escrow funds to state authorities as per escheatment laws.",
+    "entries": [
+      {
+        "account": "Unclaimed Escrow Liability",
+        "type": "Debit",
+        "dr": 500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 500
+      }
+    ],
+    "explanation": "Reduces the escrow liability when funds are legally remitted to the state after the statutory dormancy period.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to remit funds within the legally required timeline.",
+      "erp_application": "Manual entry based on aging reports of inactive seller accounts.",
+      "required_documentation": "State escheatment filings and proof of remittance."
+    }
+  },
+  {
+    "slug": "how-to-record-performance-based-seller-rebates",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Performance Based Seller Rebates",
+    "description": "Records a reduction in commission revenue as a rebate for sellers who exceed specific sales volume targets.",
+    "entries": [
+      {
+        "account": "Commission Revenue (Contra)",
+        "type": "Debit",
+        "dr": 150,
+        "cr": 0
+      },
+      {
+        "account": "Seller Escrow Liability",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "Rebates are treated as a reduction of the transaction price (revenue) under ASC 606 and credited back to the seller.",
+    "practitioner_notes": {
+      "audit_triggers": "Calculation errors in volume-based tier achievements.",
+      "erp_application": "Revenue recognition module adjusting net commission totals.",
+      "required_documentation": "Tiered commission agreement and sales volume reports."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-loan-repayments",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Loan Repayments",
+    "description": "Recording the deduction of loan principal and interest from seller sale proceeds within the platform escrow system.",
+    "entries": [
+      {
+        "account": "Seller Payable (Escrow Funds)",
+        "type": "Liability",
+        "dr": 1050,
+        "cr": 0
+      },
+      {
+        "account": "Notes Receivable - Seller Loans",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 1000
+      },
+      {
+        "account": "Interest Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 50
+      }
+    ],
+    "explanation": "When a platform provides working capital loans to sellers, repayments are typically automated via deductions from the seller's available balance. This entry reduces the liability to the seller while clearing the receivable and recognizing interest income.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of loan write-offs or discrepancies between loan ledger and escrow deductions.",
+      "erp_application": "Requires integration between the lending sub-ledger and the core marketplace ledger.",
+      "required_documentation": "Loan agreement, repayment schedule, and transaction logs showing the offset against sales."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-api-integration-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller API Integration Fees",
+    "description": "Accounting for one-time or recurring fees charged to sellers for access to premium marketplace APIs or data tools.",
+    "entries": [
+      {
+        "account": "Seller Payable (Escrow Funds)",
+        "type": "Liability",
+        "dr": 200,
+        "cr": 0
+      },
+      {
+        "account": "API Integration Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 200
+      }
+    ],
+    "explanation": "Platform operators often charge professional sellers for advanced integration services. This entry records the conversion of escrowed funds into platform revenue.",
+    "practitioner_notes": {
+      "audit_triggers": "Revenue recognition timing if the integration service spans multiple reporting periods.",
+      "erp_application": "Automated fee trigger upon API key activation or monthly billing cycle.",
+      "required_documentation": "Service Level Agreement (SLA) or Terms of Service (ToS) indicating non-refundable nature of the fee."
+    }
+  },
+  {
+    "slug": "how-to-record-platform-gift-card-issuance",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Platform Gift Card Issuance",
+    "description": "Recording the cash receipt and liability creation when a customer purchases a platform-wide gift card.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 100,
+        "cr": 0
+      },
+      {
+        "account": "Gift Card Liability (Unredeemed)",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 100
+      }
+    ],
+    "explanation": "Gift cards represent a performance obligation to the customer. Revenue is not recognized until the card is redeemed for goods or services on the marketplace.",
+    "practitioner_notes": {
+      "audit_triggers": "High breakage rates (unredeemed cards) and state escheatment compliance.",
+      "erp_application": "Gift card sub-ledger must track individual card balances and expiration dates.",
+      "required_documentation": "Bank deposit records and gift card issuance logs."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-indemnity-recoveries",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Indemnity Recoveries",
+    "description": "Recording the recovery of costs from a seller for legal or tax penalties caused by the seller's violation of terms.",
+    "entries": [
+      {
+        "account": "Seller Payable (Escrow Funds)",
+        "type": "Liability",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Other Operating Income - Recoveries",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "If a platform is fined due to a seller's non-compliance, it may claw back those funds from the seller's account per the indemnity clause in the user agreement.",
+    "practitioner_notes": {
+      "audit_triggers": "Large, irregular deductions that may lead to seller disputes or legal action.",
+      "erp_application": "Manual journal entry often required following legal department approval of the clawback.",
+      "required_documentation": "Legal notice, proof of fine/expense, and marketplace terms of service reference."
+    }
+  },
+  {
+    "slug": "how-to-record-logistics-surcharge-adjustments",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Logistics Surcharge Adjustments",
+    "description": "Adjusting the amount owed to sellers based on actual shipping dimensions/weight reported by carriers.",
+    "entries": [
+      {
+        "account": "Seller Payable (Escrow Funds)",
+        "type": "Liability",
+        "dr": 25,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Shipping Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 25
+      }
+    ],
+    "explanation": "Carriers often charge the platform more than the initial estimate due to weight discrepancies. The platform passes this cost to the seller by reducing their payable balance.",
+    "practitioner_notes": {
+      "audit_triggers": "Frequency of shipping adjustments indicating poor seller input data or carrier billing errors.",
+      "erp_application": "Automated reconciliation between carrier API invoices and seller ledger.",
+      "required_documentation": "Carrier invoice detail and original seller shipping declaration."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-cancellation-penalties",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Cancellation Penalties",
+    "description": "Recording fees charged to sellers who cancel confirmed orders, often deducted from their escrow balance.",
+    "entries": [
+      {
+        "account": "Seller Escrow Payable",
+        "type": "Liability",
+        "dr": 50,
+        "cr": 0
+      },
+      {
+        "account": "Penalty Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 50
+      }
+    ],
+    "explanation": "The platform deducts a penalty fee from the seller's held funds to compensate for buyer inconvenience or platform costs.",
+    "practitioner_notes": {
+      "audit_triggers": "High frequency of manual penalty overrides or adjustments.",
+      "erp_application": "Triggered by order status changes in the marketplace OMS to the general ledger.",
+      "required_documentation": "Seller terms of service and order cancellation audit logs."
+    }
+  },
+  {
+    "slug": "how-to-record-marketplace-loyalty-rewards",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Marketplace Loyalty Rewards",
+    "description": "Accounting for the issuance of loyalty points to buyers as part of a transaction, creating a future liability.",
+    "entries": [
+      {
+        "account": "Marketing Expense",
+        "type": "Expense",
+        "dr": 15,
+        "cr": 0
+      },
+      {
+        "account": "Loyalty Points Liability",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 15
+      }
+    ],
+    "explanation": "When a user earns points on a purchase, the platform records a marketing expense and a corresponding liability for the estimated redemption value.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant changes in point breakage estimates affecting liability balance.",
+      "erp_application": "Integration between CRM loyalty engine and the accounting sub-ledger.",
+      "required_documentation": "Loyalty program valuation report and breakage rate analysis."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-withdrawal-reversals",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Withdrawal Reversals",
+    "description": "Recording the return of funds to the platform's bank account after a seller's payout fails due to invalid bank details.",
+    "entries": [
+      {
+        "account": "Cash - Operating",
+        "type": "Asset",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Seller Escrow Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "If a payout is rejected by the bank, the funds are returned to the platform's cash account and re-credited to the seller's escrow liability.",
+    "practitioner_notes": {
+      "audit_triggers": "Unreconciled items in the cash account exceeding 30 days.",
+      "erp_application": "Auto-reversal of bank file upload status in the treasury module.",
+      "required_documentation": "Bank rejection notice or ACH return notification."
+    }
+  },
+  {
+    "slug": "how-to-record-facilitated-charity-donations",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Facilitated Charity Donations",
+    "description": "Recording the deduction of seller proceeds for charitable donations opted-in by the seller at the point of sale.",
+    "entries": [
+      {
+        "account": "Seller Escrow Payable",
+        "type": "Liability",
+        "dr": 25,
+        "cr": 0
+      },
+      {
+        "account": "Charitable Funds Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 25
+      }
+    ],
+    "explanation": "The platform acts as a conduit, moving funds from the seller's balance to a dedicated charity payable account for later remittance.",
+    "practitioner_notes": {
+      "audit_triggers": "Mismatches between collected donations and disbursements to non-profits.",
+      "erp_application": "Configuration of seller payout splits within the payment gateway.",
+      "required_documentation": "Charity partnership agreements and seller opt-in records."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-hardware-lease-payments",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Hardware Lease Payments",
+    "description": "Recording the monthly recurring deduction from seller earnings for leased POS or scanning hardware.",
+    "entries": [
+      {
+        "account": "Seller Escrow Payable",
+        "type": "Liability",
+        "dr": 100,
+        "cr": 0
+      },
+      {
+        "account": "Hardware Lease Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 100
+      }
+    ],
+    "explanation": "Monthly lease fees for platform-provided hardware are deducted directly from the seller's available funds in escrow.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between hardware inventory counts and active lease billing.",
+      "erp_application": "Monthly recurring billing module integrated with the seller ledger.",
+      "required_documentation": "Signed hardware lease agreements and equipment serial numbers."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-verification-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Verification Fees",
+    "description": "Accounting for fees charged to sellers for manual identity verification and KYC compliance checks.",
+    "entries": [
+      {
+        "account": "Seller Payable (Escrow)",
+        "type": "Liability",
+        "dr": 25,
+        "cr": 0
+      },
+      {
+        "account": "Verification Service Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 25
+      }
+    ],
+    "explanation": "This entry reduces the seller's available balance in the escrow account to recognize the platform's revenue for performing background or identity verification services.",
+    "practitioner_notes": {
+      "audit_triggers": "Sudden spikes in verification revenue without corresponding new seller registrations.",
+      "erp_application": "Triggered by the KYC module upon successful document validation or manual review completion.",
+      "required_documentation": "Third-party KYC provider report and seller agreement terms."
+    }
+  },
+  {
+    "slug": "how-to-record-cross-border-regulatory-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Cross-Border Regulatory Fees",
+    "description": "Recording fees assessed to sellers for managing international compliance and cross-border trade regulations.",
+    "entries": [
+      {
+        "account": "Seller Funds Held in Escrow",
+        "type": "Liability",
+        "dr": 12.5,
+        "cr": 0
+      },
+      {
+        "account": "Regulatory Compliance Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 12.5
+      }
+    ],
+    "explanation": "When a seller ships internationally, the platform charges a fee to cover the administrative cost of customs and regulatory data management.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancy between cross-border GMV and regulatory fee income.",
+      "erp_application": "Automated calculation based on shipping origin and destination country codes.",
+      "required_documentation": "Customs documentation and international seller policy."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-packaging-material-sales",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Packaging Material Sales",
+    "description": "Accounting for the sale of branded packaging materials from the platform to the marketplace seller.",
+    "entries": [
+      {
+        "account": "Seller Payable (Wallet)",
+        "type": "Liability",
+        "dr": 150,
+        "cr": 0
+      },
+      {
+        "account": "Inventory - Packaging Materials",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 100
+      },
+      {
+        "account": "Revenue - Material Sales",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 50
+      }
+    ],
+    "explanation": "Records the deduction from the seller's wallet for the purchase of supplies, while also reducing platform inventory and recognizing the sale margin.",
+    "practitioner_notes": {
+      "audit_triggers": "Inventory shrinkage in packaging supplies vs. recorded sales.",
+      "erp_application": "Inventory module integration with the seller dashboard store.",
+      "required_documentation": "Shipping manifest and digital sales receipt."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-training-program-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Training Program Fees",
+    "description": "Capturing revenue from platform-hosted webinars or certification programs for marketplace participants.",
+    "entries": [
+      {
+        "account": "Seller Wallet Balance",
+        "type": "Liability",
+        "dr": 99,
+        "cr": 0
+      },
+      {
+        "account": "Educational Services Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 99
+      }
+    ],
+    "explanation": "Deducts the cost of enrollment from the seller's pending payouts to recognize service revenue for professional development programs.",
+    "practitioner_notes": {
+      "audit_triggers": "Revenue recognized for training sessions not yet attended or delivered.",
+      "erp_application": "Revenue recognition based on course completion or enrollment date depending on policy.",
+      "required_documentation": "Course registration log and attendance record."
+    }
+  },
+  {
+    "slug": "how-to-record-seller-account-reinstatement-fees",
+    "category": "Marketplace Platforms",
+    "title": "How to Record Seller Account Reinstatement Fees",
+    "description": "Accounting for fees paid by sellers to re-activate accounts that were suspended for policy violations.",
+    "entries": [
+      {
+        "account": "Cash or Seller Wallet",
+        "type": "Asset/Liability",
+        "dr": 200,
+        "cr": 0
+      },
+      {
+        "account": "Administrative Fee Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 200
+      }
+    ],
+    "explanation": "Recognizes administrative revenue when a seller pays a penalty or service fee to restore their selling privileges on the platform.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent application of reinstatement fees across similar violation types.",
+      "erp_application": "Triggered by the trust and safety module when an account status is updated to active.",
+      "required_documentation": "Violation notice and reinstatement fee agreement."
+    }
+  },
+
+  {
+    "slug": "how-to-record-monthly-rent-income",
+    "category": "Property Management",
+    "title": "How to Record Monthly Rent Income",
+    "description": "Recording the receipt of monthly rental payments from tenants for residential or commercial properties.",
+    "entries": [
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Rental Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "This entry recognizes the inflow of cash and the corresponding revenue earned from property leasing services.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between lease agreements and actual cash deposits recorded in the ledger.",
+      "erp_application": "Automate via the recurring billing module linked to the tenant lease sub-ledger.",
+      "required_documentation": "Executed lease agreement and bank deposit slip or electronic transfer confirmation."
+    }
+  },
+  {
+    "slug": "how-to-record-tenant-security-deposits",
+    "category": "Property Management",
+    "title": "How to Record Tenant Security Deposits",
+    "description": "Recording the receipt of security deposits which are held in trust and not considered revenue.",
+    "entries": [
+      {
+        "account": "Restricted Cash - Security Deposits",
+        "type": "Asset",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Tenant Security Deposit Liability",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "Security deposits are recorded as liabilities because they are refundable to the tenant upon lease termination, subject to property condition.",
+    "practitioner_notes": {
+      "audit_triggers": "Commingling of security deposit funds with general operating cash accounts.",
+      "erp_application": "Set up a separate trust bank account in the chart of accounts to track restricted funds.",
+      "required_documentation": "Security deposit receipt and move-in inspection report signed by the tenant."
+    }
+  },
+  {
+    "slug": "how-to-record-property-repairs",
+    "category": "Property Management",
+    "title": "How to Record Property Repairs",
+    "description": "Accounting for immediate maintenance expenses required to keep the property in habitable condition.",
+    "entries": [
+      {
+        "account": "Repairs and Maintenance Expense",
+        "type": "Expense",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "This entry records the cost of repairs as an expense in the period they occur to maintain the property's value.",
+    "practitioner_notes": {
+      "audit_triggers": "Large repair expenses that should potentially be capitalized as property improvements.",
+      "erp_application": "Link the expense to the specific property unit via 'Class' or 'Project' tracking tags.",
+      "required_documentation": "Vendor invoice and proof of work completion or work order."
+    }
+  },
+  {
+    "slug": "how-to-record-prepaid-property-insurance",
+    "category": "Property Management",
+    "title": "How to Record Prepaid Property Insurance",
+    "description": "Recording the payment of an annual property insurance premium to be amortized over the coverage period.",
+    "entries": [
+      {
+        "account": "Prepaid Insurance",
+        "type": "Asset",
+        "dr": 3600,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 3600
+      }
+    ],
+    "explanation": "Payments for future insurance coverage are recorded as assets and moved to expense monthly over the life of the policy.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to amortize the prepaid balance monthly leading to overstated assets.",
+      "erp_application": "Use the amortization schedule feature in the ERP to automate monthly expense recognition.",
+      "required_documentation": "Insurance policy declaration page and premium invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-management-fee-revenue",
+    "category": "Property Management",
+    "title": "How to Record Management Fee Revenue",
+    "description": "Recording the fee earned by the property management company for overseeing an owner's property.",
+    "entries": [
+      {
+        "account": "Accounts Receivable - Property Owners",
+        "type": "Asset",
+        "dr": 200,
+        "cr": 0
+      },
+      {
+        "account": "Management Fee Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 200
+      }
+    ],
+    "explanation": "The management company records its fee as revenue for services rendered, usually calculated as a percentage of gross rent.",
+    "practitioner_notes": {
+      "audit_triggers": "Calculation errors where the fee percentage does not match the management contract terms.",
+      "erp_application": "Configure the system to calculate fees automatically upon the posting of rent receipts.",
+      "required_documentation": "Property management agreement and the monthly owner statement."
+    }
+  },
+  {
+    "slug": "how-to-record-property-depreciation",
+    "category": "Property Management",
+    "title": "How to Record Property Depreciation",
+    "description": "Recognition of the systematic allocation of the cost of a building over its useful life.",
+    "entries": [
+      {
+        "account": "Depreciation Expense",
+        "type": "Expense",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Depreciation",
+        "type": "Contra-Asset",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "This entry records the annual depreciation expense for a rental property to match the cost of the asset against the revenue it generates.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between the fixed asset schedule and the general ledger accumulated depreciation balance.",
+      "erp_application": "Set up a recurring journal entry in the Fixed Assets module linked to the appropriate property cost center.",
+      "required_documentation": "Depreciation schedule showing asset cost, salvage value, and useful life calculation (e.g., 27.5 years for residential)."
+    }
+  },
+  {
+    "slug": "how-to-record-accrued-property-taxes",
+    "category": "Property Management",
+    "title": "How to Record Accrued Property Taxes",
+    "description": "Accrual of estimated property tax liabilities that have been incurred but not yet paid.",
+    "entries": [
+      {
+        "account": "Property Tax Expense",
+        "type": "Expense",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Property Taxes Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "Property taxes are often paid annually or semi-annually; this entry ensures the expense is recognized monthly as it is incurred.",
+    "practitioner_notes": {
+      "audit_triggers": "Large adjustments at year-end when actual tax bills arrive if monthly estimates were inaccurate.",
+      "erp_application": "Enter as a standard monthly accrual based on the prior year's tax bill plus a percentage increase buffer.",
+      "required_documentation": "Most recent property tax assessment and local municipal tax rate schedule."
+    }
+  },
+  {
+    "slug": "how-to-record-rent-bad-debt-provision",
+    "category": "Property Management",
+    "title": "How to Record Rent Bad Debt Provision",
+    "description": "Provisioning for potential uncollectible rent from tenants to adhere to the matching principle.",
+    "entries": [
+      {
+        "account": "Bad Debt Expense",
+        "type": "Expense",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Allowance for Doubtful Accounts",
+        "type": "Contra-Asset",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "This entry estimates the portion of rent receivables that may not be collected based on historical delinquency rates.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant write-offs directly to expense without using an allowance account.",
+      "erp_application": "Utilize the 'Aging of Receivables' report to calculate the required allowance balance at month-end.",
+      "required_documentation": "Tenant aging report and a documented policy for bad debt percentage calculations."
+    }
+  },
+  {
+    "slug": "how-to-record-capital-improvements",
+    "category": "Property Management",
+    "title": "How to Record Capital Improvements",
+    "description": "Recording major expenditures that extend the life or add value to a property, such as a roof replacement.",
+    "entries": [
+      {
+        "account": "Leasehold Improvements",
+        "type": "Asset",
+        "dr": 25000,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Accounts Payable",
+        "type": "Asset/Liability",
+        "dr": 0,
+        "cr": 25000
+      }
+    ],
+    "explanation": "Costs that improve the property beyond its original condition are capitalized rather than expensed as repairs.",
+    "practitioner_notes": {
+      "audit_triggers": "Capitalizing routine maintenance or expensing large capital projects incorrectly.",
+      "erp_application": "Post to a specific Project ID in the ERP to track multi-phase improvement costs before transferring to fixed assets.",
+      "required_documentation": "Detailed contractor invoices, building permits, and completion certificates."
+    }
+  },
+  {
+    "slug": "how-to-record-marketing-for-vacancies",
+    "category": "Property Management",
+    "title": "How to Record Marketing for Vacancies",
+    "description": "Recording the costs associated with advertising vacant units to attract new tenants.",
+    "entries": [
+      {
+        "account": "Marketing and Advertising Expense",
+        "type": "Expense",
+        "dr": 600,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 600
+      }
+    ],
+    "explanation": "This entry accounts for digital listings, print media, and signage costs used to fill property vacancies.",
+    "practitioner_notes": {
+      "audit_triggers": "Sudden spikes in marketing spend without corresponding changes in vacancy rates.",
+      "erp_application": "Categorize by property sub-ledger to analyze marketing cost per lead or per lease signed.",
+      "required_documentation": "Invoices from advertising platforms (e.g., Zillow, Apartments.com) and copies of the advertisements."
+    }
+  },
+  {
+    "slug": "how-to-record-late-payment-fees",
+    "category": "Property Management",
+    "title": "How to Record Late Payment Fees",
+    "description": "Accounting for penalties charged to tenants for overdue rent payments.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Debit",
+        "dr": 50,
+        "cr": 0
+      },
+      {
+        "account": "Late Fee Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 50
+      }
+    ],
+    "explanation": "Recognizes the income owed from a tenant for violating lease payment terms.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of late fees compared to total rent may indicate tenant instability or poor collection processes.",
+      "erp_application": "Automate late fee generation in the property management module based on grace period settings.",
+      "required_documentation": "Lease agreement penalty clause and dated rent receipt log."
+    }
+  },
+  {
+    "slug": "how-to-record-security-deposit-refunds",
+    "category": "Property Management",
+    "title": "How to Record Security Deposit Refunds",
+    "description": "Handling the return of a security deposit to a tenant with a deduction for cleaning or minor repairs.",
+    "entries": [
+      {
+        "account": "Tenant Security Deposits",
+        "type": "Debit",
+        "dr": 1000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 850
+      },
+      {
+        "account": "Repair Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "Decreases the liability for the deposit, records the cash outflow, and recognizes income for the cost of repairs performed.",
+    "practitioner_notes": {
+      "audit_triggers": "Unclaimed deposits remaining in liability accounts for long durations without state escheatment.",
+      "erp_application": "Use the 'Move-Out' wizard to link the security deposit liability to the accounts payable check request.",
+      "required_documentation": "Move-out inspection report, repair invoices, and copy of the refund check."
+    }
+  },
+  {
+    "slug": "how-to-record-utility-reimbursements",
+    "category": "Property Management",
+    "title": "How to Record Utility Reimbursements",
+    "description": "Recording the recovery of utility costs from tenants who pay a pro-rata share of building utilities.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Debit",
+        "dr": 200,
+        "cr": 0
+      },
+      {
+        "account": "Utility Expense Recovery",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 200
+      }
+    ],
+    "explanation": "Matches the reimbursement against the original utility expense or records it as a recovery income account.",
+    "practitioner_notes": {
+      "audit_triggers": "Reimbursement amounts consistently exceeding actual utility bills paid by the landlord.",
+      "erp_application": "Set up 'Ratio Utility Billing System' (RUBS) parameters within the ERP for automated calculations.",
+      "required_documentation": "Master utility bill and the calculation worksheet for tenant allocation."
+    }
+  },
+  {
+    "slug": "how-to-record-improvement-amortization",
+    "category": "Property Management",
+    "title": "How to Record Improvement Amortization",
+    "description": "Monthly expense recognition for tenant-specific improvements (TIs) over the life of the lease.",
+    "entries": [
+      {
+        "account": "Amortization Expense",
+        "type": "Debit",
+        "dr": 400,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Amortization - TIs",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 400
+      }
+    ],
+    "explanation": "Allocates the cost of tenant improvements over the shorter of the lease term or the useful life of the asset.",
+    "practitioner_notes": {
+      "audit_triggers": "Amortization periods extending beyond the legal lease term including non-guaranteed renewal options.",
+      "erp_application": "Configure the fixed asset sub-ledger to use the lease end date as the asset life end date.",
+      "required_documentation": "Signed lease agreement and project completion certificate."
+    }
+  },
+  {
+    "slug": "how-to-record-landscaping-services",
+    "category": "Property Management",
+    "title": "How to Record Landscaping Services",
+    "description": "Recording the monthly cost for lawn care, snow removal, and exterior grounds maintenance.",
+    "entries": [
+      {
+        "account": "Landscaping Expense",
+        "type": "Debit",
+        "dr": 600,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 600
+      }
+    ],
+    "explanation": "Records the liability and expense for professional groundskeeping services as they are performed.",
+    "practitioner_notes": {
+      "audit_triggers": "Large fluctuations in landscaping costs during winter months if snow removal is not separately tracked.",
+      "erp_application": "Associate these costs with specific property units or cost centers in the general ledger.",
+      "required_documentation": "Service contract and monthly vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-eviction-legal-fees",
+    "category": "Property Management",
+    "title": "How to Record Eviction Legal Fees",
+    "description": "Recording legal expenses incurred during the tenant eviction process.",
+    "entries": [
+      {
+        "account": "Legal and Professional Fees",
+        "type": "Expense",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Accounts Payable",
+        "type": "Asset or Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Legal fees related to evictions are recognized as operating expenses in the period they are incurred.",
+    "practitioner_notes": {
+      "audit_triggers": "Large legal spend relative to property count may trigger scrutiny of tenant screening processes.",
+      "erp_application": "Ensure legal fees are sub-categorized by property ID for accurate NOI calculation.",
+      "required_documentation": "Attorney invoice detailing the case number and property address."
+    }
+  },
+  {
+    "slug": "how-to-record-leasing-commissions",
+    "category": "Property Management",
+    "title": "How to Record Leasing Commissions",
+    "description": "Recording commission payments to brokers for securing new lease agreements.",
+    "entries": [
+      {
+        "account": "Deferred Leasing Costs",
+        "type": "Asset",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "Under US GAAP, leasing commissions are generally capitalized as an intangible asset and amortized over the lease term.",
+    "practitioner_notes": {
+      "audit_triggers": "Immediate expensing of large commissions instead of amortization over the lease life.",
+      "erp_application": "Setup as a fixed asset or deferred charge with a monthly amortization schedule in the ERP.",
+      "required_documentation": "Executed lease agreement and broker commission invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-pet-fee-income",
+    "category": "Property Management",
+    "title": "How to Record Pet Fee Income",
+    "description": "Recording non-refundable pet fees collected from tenants at lease inception.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 250,
+        "cr": 0
+      },
+      {
+        "account": "Other Rental Income - Pet Fees",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 250
+      }
+    ],
+    "explanation": "Non-refundable pet fees are recognized as revenue upon collection, separate from refundable pet deposits.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to distinguish between refundable pet deposits (liability) and non-refundable fees (revenue).",
+      "erp_application": "Code to a specific 'Other Income' account to track ancillary revenue streams.",
+      "required_documentation": "Lease addendum specifying the non-refundable nature of the fee."
+    }
+  },
+  {
+    "slug": "how-to-record-pest-control-expenses",
+    "category": "Property Management",
+    "title": "How to Record Pest Control Expenses",
+    "description": "Recording routine pest control maintenance services for the property.",
+    "entries": [
+      {
+        "account": "Maintenance - Pest Control",
+        "type": "Expense",
+        "dr": 175,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 175
+      }
+    ],
+    "explanation": "Routine maintenance costs like pest control are expensed as incurred as part of normal property operations.",
+    "practitioner_notes": {
+      "audit_triggers": "Unusually high frequency of service which may indicate underlying property damage issues.",
+      "erp_application": "Link to the recurring maintenance schedule in the property management module.",
+      "required_documentation": "Service report and vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-property-appraisal-fees",
+    "category": "Property Management",
+    "title": "How to Record Property Appraisal Fees",
+    "description": "Recording fees paid for professional property valuations for financing or tax purposes.",
+    "entries": [
+      {
+        "account": "Professional Fees - Appraisal",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "Appraisal fees are typically expensed as professional fees unless they are part of acquisition or loan closing costs.",
+    "practitioner_notes": {
+      "audit_triggers": "Appraisal fees that should have been capitalized as part of loan procurement costs.",
+      "erp_application": "Tag as non-operating if the appraisal is for a potential sale rather than routine operations.",
+      "required_documentation": "Appraisal report cover page and invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-property-cleaning-costs",
+    "category": "Property Management",
+    "title": "How to Record Property Cleaning Costs",
+    "description": "Recording the expense for janitorial and cleaning services for common areas or turn-over units.",
+    "entries": [
+      {
+        "account": "Cleaning and Maintenance Expense",
+        "type": "Debit",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "This entry records the cost incurred for cleaning property common areas or preparing a unit for a new tenant.",
+    "practitioner_notes": {
+      "audit_triggers": "Large spikes in cleaning costs relative to tenant turnover rates.",
+      "erp_application": "Record via the Accounts Payable or General Journal module with vendor tracking.",
+      "required_documentation": "Invoice from the cleaning service provider and work completion sign-off."
+    }
+  },
+  {
+    "slug": "how-to-record-hoa-assessment-payments",
+    "category": "Property Management",
+    "title": "How to Record HOA Assessment Payments",
+    "description": "Accounting for the payment of Homeowners Association assessments for managed units.",
+    "entries": [
+      {
+        "account": "HOA Fees Expense",
+        "type": "Debit",
+        "dr": 350,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 350
+      }
+    ],
+    "explanation": "Recognizes the monthly or quarterly fee paid to a Homeowners Association for property upkeep and amenities.",
+    "practitioner_notes": {
+      "audit_triggers": "Missing payments leading to property liens or late fees.",
+      "erp_application": "Set up as a recurring payment in the ERP to ensure timely settlement.",
+      "required_documentation": "HOA assessment notice or statement of account."
+    }
+  },
+  {
+    "slug": "how-to-record-property-insurance-claims",
+    "category": "Property Management",
+    "title": "How to Record Property Insurance Claims",
+    "description": "Recording the receipt of insurance proceeds related to property damage claims.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Debit",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Insurance Recovery Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "This entry records the cash received from an insurance provider to offset repair costs or asset loss.",
+    "practitioner_notes": {
+      "audit_triggers": "Insurance proceeds not matched against corresponding repair expenses.",
+      "erp_application": "Credit an income account or a contra-expense account depending on the recovery nature.",
+      "required_documentation": "Insurance claim settlement letter and proof of loss documentation."
+    }
+  },
+  {
+    "slug": "how-to-record-waste-removal-expenses",
+    "category": "Property Management",
+    "title": "How to Record Waste Removal Expenses",
+    "description": "Recording recurring costs for trash collection and waste management services.",
+    "entries": [
+      {
+        "account": "Utility Expense - Waste Removal",
+        "type": "Debit",
+        "dr": 125,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 125
+      }
+    ],
+    "explanation": "Recognizes the liability for municipal or private trash collection services for the property.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent billing amounts for flat-rate waste services.",
+      "erp_application": "Assign to the Utility department code within the general ledger.",
+      "required_documentation": "Utility bill or service contract invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-parking-space-income",
+    "category": "Property Management",
+    "title": "How to Record Parking Space Income",
+    "description": "Accounting for revenue generated from leasing specific parking spots to tenants.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Debit",
+        "dr": 75,
+        "cr": 0
+      },
+      {
+        "account": "Parking Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 75
+      }
+    ],
+    "explanation": "Records the receipt of payments from tenants specifically for reserved or additional parking privileges.",
+    "practitioner_notes": {
+      "audit_triggers": "Unreconciled parking spots versus total parking revenue collected.",
+      "erp_application": "Track as a separate revenue line item to analyze ancillary income performance.",
+      "required_documentation": "Parking lease addendum or monthly rent roll breakdown."
+    }
+  },
+  {
+    "slug": "how-to-record-key-replacement-fees",
+    "category": "Property Management",
+    "title": "How to Record Key Replacement Fees",
+    "description": "Recording the income received from tenants for the replacement of lost keys or electronic fobs.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 75,
+        "cr": 0
+      },
+      {
+        "account": "Key Replacement Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 75
+      }
+    ],
+    "explanation": "When a tenant pays for a lost key, the cash account is debited and the specific revenue account for miscellaneous fees is credited.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of key replacements without corresponding inventory purchase of blanks.",
+      "erp_application": "Map to 'Other Income' or a specific sub-ledger for tenant fees.",
+      "required_documentation": "Key replacement request form and receipt of payment."
+    }
+  },
+  {
+    "slug": "how-to-record-snow-removal-expenses",
+    "category": "Property Management",
+    "title": "How to Record Snow Removal Expenses",
+    "description": "Accounting for the seasonal costs associated with clearing snow and ice from property walkways and parking lots.",
+    "entries": [
+      {
+        "account": "Snow Removal Expense",
+        "type": "Expense",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "The expense is recognized in the period the service is performed, with a corresponding liability to the contractor.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variance in seasonal maintenance budgets.",
+      "erp_application": "Record under Landscaping or a separate Snow Removal GL code for seasonal analysis.",
+      "required_documentation": "Service invoice and proof of property visit log."
+    }
+  },
+  {
+    "slug": "how-to-record-storage-unit-income",
+    "category": "Property Management",
+    "title": "How to Record Storage Unit Income",
+    "description": "Recording additional monthly revenue generated from on-site storage units rented to tenants.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Asset",
+        "dr": 100,
+        "cr": 0
+      },
+      {
+        "account": "Storage Rental Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 100
+      }
+    ],
+    "explanation": "Revenue is recognized when the storage rent is earned, typically at the start of the month alongside residential rent.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between storage unit occupancy logs and recorded revenue.",
+      "erp_application": "Set up as a recurring charge in the tenant ledger.",
+      "required_documentation": "Storage unit lease addendum."
+    }
+  },
+  {
+    "slug": "how-to-record-hvac-maintenance",
+    "category": "Property Management",
+    "title": "How to Record HVAC Maintenance",
+    "description": "Recording the costs for routine preventative maintenance of heating and cooling systems.",
+    "entries": [
+      {
+        "account": "Repairs and Maintenance",
+        "type": "Expense",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "Routine maintenance is expensed immediately to keep the HVAC system in normal operating condition.",
+    "practitioner_notes": {
+      "audit_triggers": "Repairs vs Improvements classification; large amounts may need capitalization if system life is extended.",
+      "erp_application": "Classify as operating expense within the property P&L.",
+      "required_documentation": "Technician service report and invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-pool-maintenance-costs",
+    "category": "Property Management",
+    "title": "How to Record Pool Maintenance Costs",
+    "description": "Accounting for regular chemical balancing and cleaning services for property swimming pools.",
+    "entries": [
+      {
+        "account": "Pool Service Expense",
+        "type": "Expense",
+        "dr": 350,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 350
+      }
+    ],
+    "explanation": "Costs for pool upkeep are recognized as operating expenses to maintain property amenities.",
+    "practitioner_notes": {
+      "audit_triggers": "Off-season maintenance charges for outdoor pools in cold climates.",
+      "erp_application": "Use a specific sub-account for Amenities Maintenance.",
+      "required_documentation": "Monthly service contract and chemical usage logs."
+    }
+  },
+  {
+    "slug": "how-to-record-fire-safety-inspections",
+    "category": "Property Management",
+    "title": "How to Record Fire Safety Inspections",
+    "description": "Recording the costs associated with mandatory annual fire safety inspections and equipment testing for commercial or residential buildings.",
+    "entries": [
+      {
+        "account": "Safety Compliance Expense",
+        "type": "Expense",
+        "dr": 750,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 750
+      }
+    ],
+    "explanation": "Fire safety inspection fees are recognized as operational expenses when the service is performed to ensure compliance with local building codes.",
+    "practitioner_notes": {
+      "audit_triggers": "Frequency of inspections not matching local ordinance requirements; inconsistent fee amounts for similar properties.",
+      "erp_application": "Set up recurring service alerts in the maintenance module to match vendor invoices.",
+      "required_documentation": "Official inspection report, certification of compliance, and vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-coin-laundry-income",
+    "category": "Property Management",
+    "title": "How to Record Coin Laundry Income",
+    "description": "Accounting for the cash collected from on-site laundry facilities provided for tenant use.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 425,
+        "cr": 0
+      },
+      {
+        "account": "Laundry Service Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 425
+      }
+    ],
+    "explanation": "Cash collected from laundry machines is recognized as miscellaneous operating revenue at the time of collection and deposit.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variance in laundry revenue between months without change in occupancy.",
+      "erp_application": "Map cash receipts to a specific 'Laundry Income' ledger code for tracking amenity performance.",
+      "required_documentation": "Coin collection logs signed by two employees and validated bank deposit slips."
+    }
+  },
+  {
+    "slug": "how-to-record-elevator-service-costs",
+    "category": "Property Management",
+    "title": "How to Record Elevator Service Costs",
+    "description": "Recording monthly maintenance contract payments or specific repair costs for building elevator systems.",
+    "entries": [
+      {
+        "account": "Elevator Maintenance Expense",
+        "type": "Expense",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Regular elevator servicing is recorded as a maintenance expense to ensure building accessibility and safety.",
+    "practitioner_notes": {
+      "audit_triggers": "Large spikes in repair costs compared to fixed contract amounts.",
+      "erp_application": "Attach service logs to the vendor payment record in the ERP system.",
+      "required_documentation": "Maintenance contract agreement, service work order, and vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-property-mortgage-interest",
+    "category": "Property Management",
+    "title": "How to Record Property Mortgage Interest",
+    "description": "Recording the interest portion of a property mortgage payment, separate from the principal reduction.",
+    "entries": [
+      {
+        "account": "Mortgage Interest Expense",
+        "type": "Expense",
+        "dr": 3500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 3500
+      }
+    ],
+    "explanation": "Interest paid on property loans is an operating expense, while the principal portion reduces the mortgage liability on the balance sheet.",
+    "practitioner_notes": {
+      "audit_triggers": "Interest expense not aligning with the provided amortization schedule from the lender.",
+      "erp_application": "Use the debt management module to split payments automatically between interest and principal.",
+      "required_documentation": "Monthly mortgage statement and bank loan amortization schedule."
+    }
+  },
+  {
+    "slug": "how-to-record-move-out-damage-charges",
+    "category": "Property Management",
+    "title": "How to Record Move-out Damage Charges",
+    "description": "Recording the assessment of repair costs against a tenant after a move-out inspection for damages beyond wear and tear.",
+    "entries": [
+      {
+        "account": "Tenant Receivable",
+        "type": "Asset",
+        "dr": 550,
+        "cr": 0
+      },
+      {
+        "account": "Repair Cost Recovery Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 550
+      }
+    ],
+    "explanation": "Charges for damages are billed to the tenant as a receivable and recognized as recovery revenue to offset the repair expenses incurred by the landlord.",
+    "practitioner_notes": {
+      "audit_triggers": "Damage charges exceeding the total security deposit amount without subsequent collection efforts.",
+      "erp_application": "Post charges to the tenant ledger within the property management sub-ledger.",
+      "required_documentation": "Move-out inspection report, photos of damages, and repair contractor estimates."
+    }
+  },
+  {
+    "slug": "how-to-record-tenant-application-fees",
+    "category": "Property Management",
+    "title": "How to Record Tenant Application Fees",
+    "description": "Recording non-refundable fees collected from prospective tenants to cover background and credit screening costs.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 100,
+        "cr": 0
+      },
+      {
+        "account": "Application Fee Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 100
+      }
+    ],
+    "explanation": "Debit cash for the amount received from the applicant; credit application fee revenue to recognize the income from processing the screening.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant discrepancies between number of applicants and recorded revenue.",
+      "erp_application": "Ensure fee is mapped to a non-rent income GL code in property management modules.",
+      "required_documentation": "Copy of the application form and receipt or merchant processor confirmation."
+    }
+  },
+  {
+    "slug": "how-to-record-common-area-electricity",
+    "category": "Property Management",
+    "title": "How to Record Common Area Electricity",
+    "description": "Recording the utility expense specifically associated with shared building spaces such as hallways and lobbies.",
+    "entries": [
+      {
+        "account": "Utilities Expense - Common Area",
+        "type": "Expense",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "Debit the specific utility expense account for common areas and credit accounts payable to recognize the obligation to the utility provider.",
+    "practitioner_notes": {
+      "audit_triggers": "Sudden spikes in common area usage may indicate theft or faulty equipment.",
+      "erp_application": "Use utility sub-accounts to facilitate CAM (Common Area Maintenance) reconciliation.",
+      "required_documentation": "Utility bill with meter readings clearly identifying common area service."
+    }
+  },
+  {
+    "slug": "how-to-record-property-tax-refunds",
+    "category": "Property Management",
+    "title": "How to Record Property Tax Refunds",
+    "description": "Accounting for refunds received from local authorities following a successful tax assessment appeal.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 1250,
+        "cr": 0
+      },
+      {
+        "account": "Property Tax Expense",
+        "type": "Expense",
+        "dr": 0,
+        "cr": 1250
+      }
+    ],
+    "explanation": "Debit cash for the refund received; credit the property tax expense to offset the original overpayment recorded in the current period.",
+    "practitioner_notes": {
+      "audit_triggers": "Refunds not matched against original payments or tax year records.",
+      "erp_application": "Check if refund belongs to a prior year which may require an Other Income credit instead of an expense reduction.",
+      "required_documentation": "Notice of assessment change and check stub from the municipality."
+    }
+  },
+  {
+    "slug": "how-to-record-security-system-monitoring",
+    "category": "Property Management",
+    "title": "How to Record Security System Monitoring",
+    "description": "Recording monthly recurring service fees for building security and alarm monitoring systems.",
+    "entries": [
+      {
+        "account": "Security Services Expense",
+        "type": "Expense",
+        "dr": 175,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 175
+      }
+    ],
+    "explanation": "Debit the security services expense for the monitoring period and credit cash to reflect the payment to the security firm.",
+    "practitioner_notes": {
+      "audit_triggers": "Missed payments resulting in lapse of coverage or late penalties.",
+      "erp_application": "Set up as a recurring journal entry or automated ACH payment.",
+      "required_documentation": "Service contract and monthly monitoring invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-tenant-referral-bonuses",
+    "category": "Property Management",
+    "title": "How to Record Tenant Referral Bonuses",
+    "description": "Recording the cost of rewards or bonuses paid to existing tenants for referring new occupants who sign a lease.",
+    "entries": [
+      {
+        "account": "Marketing and Promotion Expense",
+        "type": "Expense",
+        "dr": 250,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 250
+      }
+    ],
+    "explanation": "Debit marketing and promotion expense to reflect customer acquisition costs; credit cash for the payout to the referring tenant.",
+    "practitioner_notes": {
+      "audit_triggers": "Bonuses paid without a signed lease from the referred party.",
+      "erp_application": "If given as a rent credit, debit the expense and credit Rent Receivable instead of cash.",
+      "required_documentation": "Referral program agreement and signed lease from the new tenant."
+    }
+  },
+  {
+    "slug": "how-to-record-vending-machine-income",
+    "category": "Property Management",
+    "title": "How to Record Vending Machine Income",
+    "description": "Recording miscellaneous revenue collected from on-site vending machine operations.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 150,
+        "cr": 0
+      },
+      {
+        "account": "Vending Machine Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "Recognizes the cash received from vending machine collections as ancillary property income.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between cash count sheets and bank deposits.",
+      "erp_application": "Set up as a unique GL code under Other Income.",
+      "required_documentation": "Cash collection logs and deposit slips."
+    }
+  },
+  {
+    "slug": "how-to-record-lease-termination-fees",
+    "category": "Property Management",
+    "title": "How to Record Lease Termination Fees",
+    "description": "Recording fees charged to tenants for ending their lease agreement before the scheduled expiration date.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Asset",
+        "dr": 2000,
+        "cr": 0
+      },
+      {
+        "account": "Lease Termination Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 2000
+      }
+    ],
+    "explanation": "Recognizes revenue earned when a tenant exercises an early termination clause in their lease contract.",
+    "practitioner_notes": {
+      "audit_triggers": "High frequency of early terminations may signal property management issues.",
+      "erp_application": "Often automated through the lease-end workflow in property software.",
+      "required_documentation": "Executed lease termination agreement and invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-property-manager-salaries",
+    "category": "Property Management",
+    "title": "How to Record Property Manager Salaries",
+    "description": "Recording the gross wages for on-site property management personnel.",
+    "entries": [
+      {
+        "account": "Management Salaries Expense",
+        "type": "Expense",
+        "dr": 4500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 4500
+      }
+    ],
+    "explanation": "Records the periodic payroll cost associated with the direct management of property operations.",
+    "practitioner_notes": {
+      "audit_triggers": "Allocation errors between different managed properties.",
+      "erp_application": "Integrate payroll module with the general ledger.",
+      "required_documentation": "Payroll registers and approved timesheets."
+    }
+  },
+  {
+    "slug": "how-to-record-locksmith-service-fees",
+    "category": "Property Management",
+    "title": "How to Record Locksmith Service Fees",
+    "description": "Recording costs for re-keying locks during tenant turnover or emergency lockout services.",
+    "entries": [
+      {
+        "account": "Repairs and Maintenance Expense",
+        "type": "Expense",
+        "dr": 175,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 175
+      }
+    ],
+    "explanation": "Recognizes the cost of locksmith services as an operational maintenance expense.",
+    "practitioner_notes": {
+      "audit_triggers": "Excessive locksmith charges per unit compared to historical averages.",
+      "erp_application": "Classify as part of the unit turnover cost center.",
+      "required_documentation": "Vendor invoice and work order."
+    }
+  },
+  {
+    "slug": "how-to-record-professional-staging-fees",
+    "category": "Property Management",
+    "title": "How to Record Professional Staging Fees",
+    "description": "Recording the expense of hiring professionals to stage model units or vacant spaces for marketing.",
+    "entries": [
+      {
+        "account": "Marketing and Advertising Expense",
+        "type": "Expense",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Recognizes the cost of enhancing a property's visual appeal to attract new tenants.",
+    "practitioner_notes": {
+      "audit_triggers": "Capitalization of staging furniture that should be expensed.",
+      "erp_application": "Track under marketing or vacancy-related cost categories.",
+      "required_documentation": "Staging contract and vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-security-deposit-interest",
+    "category": "Property Management",
+    "title": "How to Record Security Deposit Interest",
+    "description": "Recording the interest earned on tenant security deposits held in restricted escrow accounts that must be credited to the tenant.",
+    "entries": [
+      {
+        "account": "Restricted Cash - Security Deposits",
+        "type": "Asset",
+        "dr": 45,
+        "cr": 0
+      },
+      {
+        "account": "Interest Payable to Tenants",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 45
+      }
+    ],
+    "explanation": "In many jurisdictions, interest earned on security deposits must be legally returned or credited to the tenant, requiring a liability to be recorded for the earned amount.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between restricted bank account balances and the tenant liability ledger.",
+      "erp_application": "Record via the Cash Management module to sync bank reconciliation with the general ledger.",
+      "required_documentation": "Monthly bank statement for the restricted escrow account and state-specific interest rate mandates."
+    }
+  },
+  {
+    "slug": "how-to-record-plumbing-repair-expenses",
+    "category": "Property Management",
+    "title": "How to Record Plumbing Repair Expenses",
+    "description": "Recording non-capitalized plumbing maintenance and emergency repair costs for specific rental units.",
+    "entries": [
+      {
+        "account": "Plumbing Maintenance Expense",
+        "type": "Expense",
+        "dr": 275,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 275
+      }
+    ],
+    "explanation": "Routine repairs such as unclogging drains or repairing small leaks are expensed in the period incurred rather than capitalized.",
+    "practitioner_notes": {
+      "audit_triggers": "Large repair bills that should have been capitalized as improvements or billed back to the tenant.",
+      "erp_application": "Link the expense to a specific unit number in the property management module for cost tracking.",
+      "required_documentation": "Vendor invoice detailing the work performed and the unit number."
+    }
+  },
+  {
+    "slug": "how-to-record-tenant-utility-deposits",
+    "category": "Property Management",
+    "title": "How to Record Tenant Utility Deposits",
+    "description": "Recording deposits collected from tenants to cover potential unpaid utility bills at the end of a lease term.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 150,
+        "cr": 0
+      },
+      {
+        "account": "Tenant Utility Deposits Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "Utility deposits are held as liabilities on the balance sheet until the lease is terminated or the funds are applied to outstanding utility balances.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to reconcile utility deposit accounts against individual tenant sub-ledgers.",
+      "erp_application": "Use a specific liability sub-account for utility deposits distinct from security deposits.",
+      "required_documentation": "Lease agreement addendum and receipt of deposit payment."
+    }
+  },
+  {
+    "slug": "how-to-record-property-signage-costs",
+    "category": "Property Management",
+    "title": "How to Record Property Signage Costs",
+    "description": "Recording the purchase and installation of property signage that does not meet the capitalization threshold.",
+    "entries": [
+      {
+        "account": "Marketing and Signage Expense",
+        "type": "Expense",
+        "dr": 850,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 850
+      }
+    ],
+    "explanation": "Signage for property identification or wayfinding is often expensed as a marketing or administrative cost if the cost is below the company's capitalization limit.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent capitalization of signs that have a useful life exceeding one year.",
+      "erp_application": "Code to the marketing department if the signage is primarily for leasing; code to building ops for wayfinding.",
+      "required_documentation": "Vendor invoice and photo of installed signage for asset verification."
+    }
+  },
+  {
+    "slug": "how-to-record-gym-maintenance-fees",
+    "category": "Property Management",
+    "title": "How to Record Gym Maintenance Fees",
+    "description": "Recording service contracts and equipment repairs for on-site fitness facilities provided to tenants.",
+    "entries": [
+      {
+        "account": "Amenity Maintenance Expense",
+        "type": "Expense",
+        "dr": 320,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 320
+      }
+    ],
+    "explanation": "Expenses related to the upkeep of property amenities like gyms are recorded as operating expenses to maintain the property's value and tenant satisfaction.",
+    "practitioner_notes": {
+      "audit_triggers": "Unusually high maintenance costs that might indicate the need for equipment replacement (capitalization).",
+      "erp_application": "Assign to the 'Amenities' or 'Common Area' cost center in the ERP.",
+      "required_documentation": "Maintenance contract or service call invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-gutter-cleaning-costs",
+    "category": "Property Management",
+    "title": "How to Record Gutter Cleaning Costs",
+    "description": "Recording the expense associated with routine gutter maintenance to prevent water damage.",
+    "entries": [
+      {
+        "account": "Maintenance Expense",
+        "type": "Debit",
+        "dr": 500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 500
+      }
+    ],
+    "explanation": "Recognize the cost of seasonal gutter maintenance as an operating expense to maintain the property's exterior.",
+    "practitioner_notes": {
+      "audit_triggers": "Frequent maintenance on the same property within a short window indicating poor repair quality.",
+      "erp_application": "Accounts Payable module linked to the specific property unit code.",
+      "required_documentation": "Service invoice and proof of payment."
+    }
+  },
+  {
+    "slug": "how-to-record-furnished-unit-income",
+    "category": "Property Management",
+    "title": "How to Record Furnished Unit Income",
+    "description": "Splitting income between standard rent and furniture rental premiums for furnished apartments.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Debit",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Rent Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 2000
+      },
+      {
+        "account": "Furniture Rental Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 500
+      }
+    ],
+    "explanation": "Allocates total receipts to specific revenue streams for better asset utilization and tax reporting.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancy between lease agreement terms and GL revenue accounts for premium units.",
+      "erp_application": "Revenue Recognition engine in property management software.",
+      "required_documentation": "Executed lease agreement specifying the furniture premium."
+    }
+  },
+  {
+    "slug": "how-to-record-window-cleaning-expenses",
+    "category": "Property Management",
+    "title": "How to Record Window Cleaning Expenses",
+    "description": "Accounting for professional window cleaning services for common areas or residential units.",
+    "entries": [
+      {
+        "account": "Cleaning Expense",
+        "type": "Debit",
+        "dr": 800,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 800
+      }
+    ],
+    "explanation": "Expenses the cost of window cleaning to the period in which the service was performed for curb appeal.",
+    "practitioner_notes": {
+      "audit_triggers": "Payments to vendors lacking proper liability insurance documentation in the vendor portal.",
+      "erp_application": "General Ledger module with Vendor master data tracking.",
+      "required_documentation": "Vendor invoice and service completion sign-off from the onsite manager."
+    }
+  },
+  {
+    "slug": "how-to-record-smoke-detector-services",
+    "category": "Property Management",
+    "title": "How to Record Smoke Detector Services",
+    "description": "Tracking the costs of battery replacements and inspections for fire safety compliance.",
+    "entries": [
+      {
+        "account": "Safety Maintenance Expense",
+        "type": "Debit",
+        "dr": 300,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 300
+      }
+    ],
+    "explanation": "Records the periodic cost of maintaining life-safety equipment within the property as mandated by local code.",
+    "practitioner_notes": {
+      "audit_triggers": "Missing inspections required by local fire ordinances compared to service dates.",
+      "erp_application": "Work Order module linked to the safety compliance checklist for the property.",
+      "required_documentation": "Inspection log and invoice for batteries or new sensors."
+    }
+  },
+  {
+    "slug": "how-to-record-property-title-insurance",
+    "category": "Property Management",
+    "title": "How to Record Property Title Insurance",
+    "description": "Capturing title insurance premiums usually paid during property acquisition or refinancing.",
+    "entries": [
+      {
+        "account": "Title Insurance Expense",
+        "type": "Debit",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Records the one-time or periodic expense related to insuring the property's title against claims.",
+    "practitioner_notes": {
+      "audit_triggers": "Inclusion in closing statements not matched to GL entries during property onboarding.",
+      "erp_application": "Fixed Asset or Legal module for acquisition-related costs.",
+      "required_documentation": "Closing disclosure or ALTA settlement statement."
+    }
+  },
+  {
+    "slug": "record-background-check-fees",
+    "category": "Property Management",
+    "title": "How to Record Background Check Fees",
+    "description": "Accounting for the costs associated with screening prospective tenants through third-party background check services.",
+    "entries": [
+      {
+        "account": "Tenant Screening Expense",
+        "type": "Debit",
+        "dr": 150,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 150
+      }
+    ],
+    "explanation": "When a property manager pays a screening agency to verify a tenant's credit and criminal history, the cost is recorded as an operating expense.",
+    "practitioner_notes": {
+      "audit_triggers": "Excessive screening costs relative to the number of applications processed.",
+      "erp_application": "Code to the marketing or administrative department depending on the chart of accounts structure.",
+      "required_documentation": "Invoice from the screening bureau and a copy of the redacted applicant list for reconciliation."
+    }
+  },
+  {
+    "slug": "record-software-subscription-fees",
+    "category": "Property Management",
+    "title": "How to Record Software Subscription Fees",
+    "description": "Recording recurring monthly or annual costs for property management software platforms used for leasing and accounting.",
+    "entries": [
+      {
+        "account": "Software and Technology Expense",
+        "type": "Debit",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "Software-as-a-Service (SaaS) fees are recognized as operating expenses in the period the service is provided.",
+    "practitioner_notes": {
+      "audit_triggers": "Large annual upfront payments that should be treated as prepaid expenses rather than immediate costs.",
+      "erp_application": "Set up as a recurring journal entry if the monthly amount is fixed.",
+      "required_documentation": "Digital receipt or SaaS subscription agreement."
+    }
+  },
+  {
+    "slug": "record-short-term-rental-taxes",
+    "category": "Property Management",
+    "title": "How to Record Short-Term Rental Taxes",
+    "description": "Recording the collection of occupancy or lodging taxes from short-term rental guests for later remittance to local authorities.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Debit",
+        "dr": 1120,
+        "cr": 0
+      },
+      {
+        "account": "Rental Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1000
+      },
+      {
+        "account": "Occupancy Tax Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 120
+      }
+    ],
+    "explanation": "Taxes collected from guests are not revenue; they are a liability that must be remitted to the government.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancy between gross rental income and the associated tax liability account.",
+      "erp_application": "Use a sales tax liability module to track different tax rates for various jurisdictions.",
+      "required_documentation": "Booking platform report showing the tax breakdown per stay."
+    }
+  },
+  {
+    "slug": "record-irrigation-system-repairs",
+    "category": "Property Management",
+    "title": "How to Record Irrigation System Repairs",
+    "description": "Journalizing the costs for repairing sprinkler heads, pipes, or controllers in the property's irrigation system.",
+    "entries": [
+      {
+        "account": "Landscaping Maintenance Expense",
+        "type": "Debit",
+        "dr": 800,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 800
+      }
+    ],
+    "explanation": "Repairs to keep an existing irrigation system functional are classified as repairs and maintenance expenses.",
+    "practitioner_notes": {
+      "audit_triggers": "Repairs that exceed a certain threshold (e.g., $2,500) might need to be capitalized as a land improvement.",
+      "erp_application": "Attach to the specific building or unit cost center in the property management module.",
+      "required_documentation": "Contractor invoice detailing the scope of work performed."
+    }
+  },
+  {
+    "slug": "record-on-site-manager-bonuses",
+    "category": "Property Management",
+    "title": "How to Record On-Site Manager Bonuses",
+    "description": "Accounting for performance-based bonuses paid to on-site managers for achieving occupancy or retention targets.",
+    "entries": [
+      {
+        "account": "Manager Bonus Expense",
+        "type": "Debit",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Payroll",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Bonuses are recorded as an expense in the period they are earned, creating a liability until the payroll is processed.",
+    "practitioner_notes": {
+      "audit_triggers": "Bonuses paid without documented performance metrics or management approval.",
+      "erp_application": "Sync with payroll system to ensure proper tax withholding and benefits calculation.",
+      "required_documentation": "Approved bonus calculation worksheet and performance review."
+    }
+  },
+  {
+    "slug": "how-to-record-roof-replacement-costs",
+    "category": "Property Management",
+    "title": "How to Record Roof Replacement Costs",
+    "description": "Accounting for the capitalization of major roof replacement as a building improvement.",
+    "entries": [
+      {
+        "account": "Building Improvements",
+        "type": "Asset",
+        "dr": 25000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 25000
+      }
+    ],
+    "explanation": "Capitalize major roof replacements that extend the useful life of the property rather than recording them as simple repair expenses.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of capitalization thresholds vs expense policies.",
+      "erp_application": "Set up a new asset in the Fixed Asset module with the appropriate MACRS class life.",
+      "required_documentation": "Contractor invoice, proof of payment, and warranty documentation."
+    }
+  },
+  {
+    "slug": "how-to-record-appliance-purchases",
+    "category": "Property Management",
+    "title": "How to Record Appliance Purchases",
+    "description": "Recording the purchase of new refrigerators and stoves for rental units as fixed assets.",
+    "entries": [
+      {
+        "account": "Furniture and Fixtures",
+        "type": "Asset",
+        "dr": 4200,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 4200
+      }
+    ],
+    "explanation": "Appliances are recorded as fixed assets and depreciated over their useful life, typically 5 to 7 years.",
+    "practitioner_notes": {
+      "audit_triggers": "Large volume of low-value assets failing to meet capitalization minimums.",
+      "erp_application": "Assign unique asset tags to each appliance for tracking across units.",
+      "required_documentation": "Purchase receipt and delivery confirmation showing unit numbers."
+    }
+  },
+  {
+    "slug": "how-to-record-tenant-improvement-allowances",
+    "category": "Property Management",
+    "title": "How to Record Tenant Improvement Allowances",
+    "description": "Accounting for cash allowances provided to commercial tenants for space customization.",
+    "entries": [
+      {
+        "account": "Lease Incentive Asset",
+        "type": "Asset",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Tenant improvement allowances are recorded as an asset (lease incentive) and amortized as a reduction of rental income over the lease term.",
+    "practitioner_notes": {
+      "audit_triggers": "Mismatched amortization periods between the incentive and the lease term.",
+      "erp_application": "Link the incentive asset to the specific lease ID in the property management system.",
+      "required_documentation": "Signed lease agreement and verification of completed improvements."
+    }
+  },
+  {
+    "slug": "how-to-record-broker-referral-fees",
+    "category": "Property Management",
+    "title": "How to Record Broker Referral Fees",
+    "description": "Recording commissions paid to external real estate brokers for successful tenant referrals.",
+    "entries": [
+      {
+        "account": "Brokerage Commission Expense",
+        "type": "Expense",
+        "dr": 2200,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 2200
+      }
+    ],
+    "explanation": "Payments made to external brokers for referring tenants are typically expensed immediately unless the policy requires capitalization as lease acquisition costs.",
+    "practitioner_notes": {
+      "audit_triggers": "Payments to unlicensed individuals for brokerage services.",
+      "erp_application": "Track as a marketing expense or lease acquisition cost based on GAAP/IFRS preference.",
+      "required_documentation": "Broker invoice and 1099-NEC information for the payee."
+    }
+  },
+  {
+    "slug": "how-to-record-carpet-replacement-costs",
+    "category": "Property Management",
+    "title": "How to Record Carpet Replacement Costs",
+    "description": "Capitalizing carpet installation in residential or commercial units.",
+    "entries": [
+      {
+        "account": "Leasehold Improvements",
+        "type": "Asset",
+        "dr": 5500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 5500
+      }
+    ],
+    "explanation": "Major flooring replacements are capitalized and depreciated, usually over a shorter period like 5 years.",
+    "practitioner_notes": {
+      "audit_triggers": "Incorrectly expensing carpet as a repair when it should be capitalized.",
+      "erp_application": "Check for disposal of previous flooring asset if a book value remained.",
+      "required_documentation": "Installation invoice and square footage measurements."
+    }
+  },
+  {
+    "slug": "how-to-record-interior-painting-costs",
+    "category": "Property Management",
+    "title": "How to Record Interior Painting Costs",
+    "description": "Records the costs associated with painting the interior of a rental unit between tenancies.",
+    "entries": [
+      {
+        "account": "Repairs and Maintenance - Painting",
+        "type": "Debit",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Routine interior painting between tenants is typically treated as a maintenance expense rather than a capital improvement as it maintains the property's condition rather than extending its useful life.",
+    "practitioner_notes": {
+      "audit_triggers": "Large painting invoices being capitalized when they should be expensed, or vice versa if part of a full rehab.",
+      "erp_application": "Map the expense to the specific unit number or cost center within the property sub-ledger.",
+      "required_documentation": "Invoice from the painting contractor detailing the materials used and labor hours per unit."
+    }
+  },
+  {
+    "slug": "how-to-record-clubhouse-rental-income",
+    "category": "Property Management",
+    "title": "How to Record Clubhouse Rental Income",
+    "description": "Records the revenue generated from tenants or third parties renting the community clubhouse for private events.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Debit",
+        "dr": 250,
+        "cr": 0
+      },
+      {
+        "account": "Other Rental Income - Clubhouse Fees",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250
+      }
+    ],
+    "explanation": "Fees collected for the short-term use of community facilities are recognized as miscellaneous or other rental income at the time the facility is used.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistencies between clubhouse reservation logs and recorded income.",
+      "erp_application": "Set up a separate GL code for ancillary income to differentiate from primary residential rent.",
+      "required_documentation": "Rental agreement for the clubhouse and receipt of payment."
+    }
+  },
+  {
+    "slug": "how-to-record-exterior-lighting-repairs",
+    "category": "Property Management",
+    "title": "How to Record Exterior Lighting Repairs",
+    "description": "Records the expense for repairing or replacing bulbs and ballasts in common area exterior lighting.",
+    "entries": [
+      {
+        "account": "Common Area Maintenance - Lighting",
+        "type": "Debit",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "Exterior lighting repairs are categorized as common area maintenance (CAM) and are essential for property safety and security.",
+    "practitioner_notes": {
+      "audit_triggers": "High frequency of repairs in the same area which might indicate a systemic electrical issue that should be capitalized.",
+      "erp_application": "If the property is a commercial NNN lease, ensure these costs are included in the year-end CAM reconciliation.",
+      "required_documentation": "Work order and contractor invoice specifically identifying the location of the repair."
+    }
+  },
+  {
+    "slug": "how-to-record-tree-removal-expenses",
+    "category": "Property Management",
+    "title": "How to Record Tree Removal Expenses",
+    "description": "Records the cost of removing dead or hazardous trees from the property grounds.",
+    "entries": [
+      {
+        "account": "Landscaping and Grounds - Tree Service",
+        "type": "Debit",
+        "dr": 1800,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1800
+      }
+    ],
+    "explanation": "Removal of hazardous trees is an operating expense. However, if the removal is part of a larger land clearing project for new construction, it might be capitalized to the land basis.",
+    "practitioner_notes": {
+      "audit_triggers": "Extremely high tree removal costs that lack a corresponding arborist report or safety justification.",
+      "erp_application": "Classify under 'Grounds Maintenance' in the property management module.",
+      "required_documentation": "Arborist assessment and invoice from a licensed/insured tree removal service."
+    }
+  },
+  {
+    "slug": "how-to-record-lobby-furniture-purchases",
+    "category": "Property Management",
+    "title": "How to Record Lobby Furniture Purchases",
+    "description": "Records the purchase of new furniture for the main lobby or reception area as a fixed asset.",
+    "entries": [
+      {
+        "account": "Furniture and Fixtures",
+        "type": "Debit",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "Furniture for common areas is a long-term asset and is capitalized and depreciated over its useful life (typically 7 years per IRS MACRS).",
+    "practitioner_notes": {
+      "audit_triggers": "Expensing furniture that exceeds the company's de minimis safe harbor limit.",
+      "erp_application": "Add to the fixed asset module with a depreciation schedule based on the purchase date.",
+      "required_documentation": "Purchase invoice and delivery confirmation."
+    }
+  },
+  {
+    "slug": "how-to-record-asphalt-sealcoating-costs",
+    "category": "Property Management",
+    "title": "How to Record Asphalt Sealcoating Costs",
+    "description": "Recording the periodic maintenance expense for sealcoating a property's parking lot or driveway.",
+    "entries": [
+      {
+        "account": "Repairs and Maintenance - Parking Lot",
+        "type": "Debit",
+        "dr": 4500,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 4500
+      }
+    ],
+    "explanation": "Sealcoating is typically treated as a repair and maintenance expense rather than a capital improvement because it preserves the existing asset rather than extending its useful life significantly.",
+    "practitioner_notes": {
+      "audit_triggers": "Large maintenance expenses in a single month relative to budget.",
+      "erp_application": "Ensure the vendor is marked as a 1099 contractor if applicable in the ERP vendor master.",
+      "required_documentation": "Contractor invoice, proof of completion, and maintenance log entry."
+    }
+  },
+  {
+    "slug": "how-to-record-mailbox-installation-fees",
+    "category": "Property Management",
+    "title": "How to Record Mailbox Installation Fees",
+    "description": "Recording the costs associated with installing or replacing cluster box units for multi-family properties.",
+    "entries": [
+      {
+        "account": "Land Improvements",
+        "type": "Debit",
+        "dr": 2800,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 2800
+      }
+    ],
+    "explanation": "Permanent mailbox clusters are capitalized as land improvements and depreciated over their specific useful life (usually 15 years under MACRS).",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent capitalization thresholds for site furniture and fixtures.",
+      "erp_application": "Enter into the Fixed Asset Module with a 15-year life for tax depreciation.",
+      "required_documentation": "Purchase receipt for hardware and labor invoice for installation."
+    }
+  },
+  {
+    "slug": "how-to-record-building-wide-wifi-fees",
+    "category": "Property Management",
+    "title": "How to Record Building-Wide WiFi Fees",
+    "description": "Recording the monthly operating expense for providing community-wide internet access to tenants.",
+    "entries": [
+      {
+        "account": "Utilities - Internet and Cable",
+        "type": "Debit",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Building-wide internet provided by the landlord is an operating utility expense, often partially offset by tenant utility reimbursement income.",
+    "practitioner_notes": {
+      "audit_triggers": "Monthly variance in flat-rate service contracts.",
+      "erp_application": "Set up recurring journal entry if the contract amount is fixed for the term.",
+      "required_documentation": "Monthly service provider invoice and service level agreement."
+    }
+  },
+  {
+    "slug": "how-to-record-solar-energy-credit-income",
+    "category": "Property Management",
+    "title": "How to Record Solar Energy Credit Income",
+    "description": "Recording revenue received from utility companies for excess solar power generated by property panels.",
+    "entries": [
+      {
+        "account": "Accounts Receivable - Utility Company",
+        "type": "Debit",
+        "dr": 350,
+        "cr": 0
+      },
+      {
+        "account": "Other Operating Income - Solar Credits",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 350
+      }
+    ],
+    "explanation": "When solar panels produce more energy than the common areas consume, the surplus is sold back to the grid, creating a receivable and other income.",
+    "practitioner_notes": {
+      "audit_triggers": "Recording solar credits as a reduction in expense rather than gross income.",
+      "erp_application": "Create a separate revenue code to track the performance of green energy investments.",
+      "required_documentation": "Net metering statement from the utility provider."
+    }
+  },
+  {
+    "slug": "how-to-record-fence-installation-costs",
+    "category": "Property Management",
+    "title": "How to Record Fence Installation Costs",
+    "description": "Recording the capital expenditure for the installation of a new perimeter fence around the property.",
+    "entries": [
+      {
+        "account": "Land Improvements - Fencing",
+        "type": "Debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "A new fence is a capital improvement that adds value and security to the land, categorized as a land improvement for depreciation purposes.",
+    "practitioner_notes": {
+      "audit_triggers": "Differentiating between localized fence repair (expense) and total replacement (capital).",
+      "erp_application": "Map to the Land Improvements asset class to ensure proper 15-year depreciation scheduling.",
+      "required_documentation": "Contract, building permit, and final inspection report."
+    }
+  },
+  {
+    "slug": "how-to-record-property-audit-fees",
+    "category": "Property Management",
+    "title": "How to Record Property Audit Fees",
+    "description": "Records the expense incurred for the annual external audit of property financial statements.",
+    "entries": [
+      {
+        "account": "Professional Fees - Audit",
+        "type": "Expense",
+        "dr": 3500,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 3500
+      }
+    ],
+    "explanation": "This entry recognizes the cost of professional auditing services required for compliance or investor reporting as an expense in the period the service was performed.",
+    "practitioner_notes": {
+      "audit_triggers": "Large variances between budgeted and actual professional fee accounts.",
+      "erp_application": "Ensure the vendor is tagged with the correct 1099-NEC classification in the AP module.",
+      "required_documentation": "Signed engagement letter and final invoice from the CPA firm."
+    }
+  },
+  {
+    "slug": "how-to-record-sump-pump-repair-costs",
+    "category": "Property Management",
+    "title": "How to Record Sump Pump Repair Costs",
+    "description": "Records the costs associated with repairing or replacing a failing sump pump system.",
+    "entries": [
+      {
+        "account": "Repair and Maintenance",
+        "type": "Expense",
+        "dr": 850,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 850
+      }
+    ],
+    "explanation": "Maintenance costs for flood prevention systems are typically expensed unless the entire system is replaced and meets capitalization thresholds.",
+    "practitioner_notes": {
+      "audit_triggers": "Frequent repairs to the same unit which may indicate a need for capital replacement.",
+      "erp_application": "Link the expense to a specific building or unit ID in the sub-ledger.",
+      "required_documentation": "Service report from the plumber and proof of payment."
+    }
+  },
+  {
+    "slug": "how-to-record-intercom-system-repairs",
+    "category": "Property Management",
+    "title": "How to Record Intercom System Repairs",
+    "description": "Records the costs to fix building communication and access control hardware.",
+    "entries": [
+      {
+        "account": "Repairs and Maintenance - Security",
+        "type": "Expense",
+        "dr": 425,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 425
+      }
+    ],
+    "explanation": "Expenses for repairing existing building communication infrastructure are recorded as operational expenses.",
+    "practitioner_notes": {
+      "audit_triggers": "Sudden spikes in security maintenance accounts.",
+      "erp_application": "Use a 'Security' or 'Safety' cost center if available in the GL.",
+      "required_documentation": "Work order completion notice and vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-deck-staining-costs",
+    "category": "Property Management",
+    "title": "How to Record Deck Staining Costs",
+    "description": "Records the costs for periodic protective staining and sealing of wooden decks.",
+    "entries": [
+      {
+        "account": "Repairs and Maintenance - Exterior",
+        "type": "Expense",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Staining is considered routine maintenance used to preserve the life of an asset rather than an improvement that adds value.",
+    "practitioner_notes": {
+      "audit_triggers": "Misclassification as a capital improvement despite being a recurring maintenance task.",
+      "erp_application": "Post to the 'Exterior Maintenance' category for budget tracking.",
+      "required_documentation": "Vendor invoice detailing square footage or unit numbers serviced."
+    }
+  },
+  {
+    "slug": "how-to-record-fitness-equipment-leases",
+    "category": "Property Management",
+    "title": "How to Record Fitness Equipment Leases",
+    "description": "Records the monthly operating lease payment for gym equipment provided to tenants.",
+    "entries": [
+      {
+        "account": "Equipment Lease Expense",
+        "type": "Expense",
+        "dr": 600,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 600
+      }
+    ],
+    "explanation": "Recognizes the monthly cost of leasing fitness machines as an operating expense for tenant amenities.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of lease vs. purchase classification under ASC 842 or IFRS 16.",
+      "erp_application": "Set up as a recurring journal entry to ensure monthly recognition.",
+      "required_documentation": "Executed lease agreement and monthly billing statement."
+    }
+  },
+  {
+    "slug": "how-to-record-retaining-wall-repairs",
+    "category": "Property Management",
+    "title": "How to Record Retaining Wall Repairs",
+    "description": "Record the structural maintenance costs for retaining walls situated on property grounds.",
+    "entries": [
+      {
+        "account": "Repairs and Maintenance Expense",
+        "type": "Debit",
+        "dr": 3500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 3500
+      }
+    ],
+    "explanation": "Expensing the cost of fixing a failing or damaged retaining wall to maintain property safety and soil stability.",
+    "practitioner_notes": {
+      "audit_triggers": "High repair costs relative to property value; classification between expense and capital improvement.",
+      "erp_application": "Post to the maintenance module against the specific property asset ID.",
+      "required_documentation": "Contractor invoice, safety inspection report, and photos of the completed repair."
+    }
+  },
+  {
+    "slug": "how-to-record-emergency-generator-testing",
+    "category": "Property Management",
+    "title": "How to Record Emergency Generator Testing",
+    "description": "Record the recurring inspection and testing fees for emergency backup power systems.",
+    "entries": [
+      {
+        "account": "Maintenance and Safety Expense",
+        "type": "Debit",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "Recording the professional service fees for load bank testing and mechanical inspection of life-safety equipment.",
+    "practitioner_notes": {
+      "audit_triggers": "Absence of regular testing entries in high-rise or commercial property accounts.",
+      "erp_application": "Set up as a recurring scheduled service in the facility management module.",
+      "required_documentation": "Testing certificate from the service provider and mechanical log entry."
+    }
+  },
+  {
+    "slug": "how-to-record-backflow-preventer-testing",
+    "category": "Property Management",
+    "title": "How to Record Backflow Preventer Testing",
+    "description": "Record the mandatory annual testing for plumbing backflow prevention valves.",
+    "entries": [
+      {
+        "account": "Compliance and Testing Expense",
+        "type": "Debit",
+        "dr": 175,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 175
+      }
+    ],
+    "explanation": "Capturing costs for certifying that backflow preventers are functioning to prevent water contamination.",
+    "practitioner_notes": {
+      "audit_triggers": "Regulatory fines for missed testing cycles.",
+      "erp_application": "Tag as a compliance-related expense in the chart of accounts.",
+      "required_documentation": "Municipal compliance form and technician's certification."
+    }
+  },
+  {
+    "slug": "how-to-record-holiday-decoration-expenses",
+    "category": "Property Management",
+    "title": "How to Record Holiday Decoration Expenses",
+    "description": "Record the costs of purchasing and installing seasonal decorations for common areas.",
+    "entries": [
+      {
+        "account": "Operating Expense - Amenities",
+        "type": "Debit",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Expensing seasonal decor items and labor for installation to improve tenant experience and property aesthetics.",
+    "practitioner_notes": {
+      "audit_triggers": "Large seasonal spikes in miscellaneous operating expenses.",
+      "erp_application": "Code to common area maintenance (CAM) for possible tenant reimbursement if lease permits.",
+      "required_documentation": "Itemized receipts for decor and labor invoices."
+    }
+  },
+  {
+    "slug": "how-to-record-property-survey-expenses",
+    "category": "Property Management",
+    "title": "How to Record Property Survey Expenses",
+    "description": "Record the fees paid to licensed surveyors for boundary or topographical assessments.",
+    "entries": [
+      {
+        "account": "Professional Fees",
+        "type": "Debit",
+        "dr": 1800,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1800
+      }
+    ],
+    "explanation": "Accounting for legal and technical survey costs used for fence placement, land disputes, or planning.",
+    "practitioner_notes": {
+      "audit_triggers": "Survey costs capitalized versus expensed depending on the purpose of the survey.",
+      "erp_application": "Link to the legal or professional services sub-ledger.",
+      "required_documentation": "Certified survey map and professional invoice from the surveyor."
+    }
   }
+
+
 
 
 
