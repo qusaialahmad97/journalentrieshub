@@ -118589,7 +118589,2485 @@
       "erp_application": "Map to non-operating income to avoid distorting EBITDA at the subsidiary level.",
       "required_documentation": "Signed Tax Sharing Agreement and proof of the underlying third-party tax assessment."
     }
+  },
+
+  {
+    "slug": "how-to-record-performance-fee-accruals",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record performance fee accruals",
+    "description": "Accounting for performance fees earned by a hedge fund manager after exceeding the high-water mark.",
+    "entries": [
+      {
+        "account": "Performance Fee Receivable",
+        "type": "Asset",
+        "dr": 150000,
+        "cr": 0
+      },
+      {
+        "account": "Performance Fee Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 150000
+      }
+    ],
+    "explanation": "This entry records the accrual of incentive fees based on fund performance relative to its benchmark and previous peak value (high-water mark).",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of NAV calculation and validation that the current NAV exceeds the historical high-water mark.",
+      "erp_application": "Revenue recognition module linked to the fund administration's periodic NAV reporting.",
+      "required_documentation": "Incentive fee calculation worksheet, side letters, and fund offering memorandum."
+    }
+  },
+  {
+    "slug": "how-to-book-monthly-management-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to book monthly management fees",
+    "description": "Recording standard monthly management fees based on Assets Under Management (AUM).",
+    "entries": [
+      {
+        "account": "Management Fee Receivable",
+        "type": "Asset",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Management Fee Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Management fees are typically calculated as a percentage of the fund's average AUM for the period and billed monthly.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between billed AUM and the fund's third-party administrator reports.",
+      "erp_application": "Automated billing schedule based on integrated AUM data feeds.",
+      "required_documentation": "Investment Management Agreement (IMA) and average AUM report."
+    }
+  },
+  {
+    "slug": "how-to-account-for-etf-cash-creations",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to account for ETF cash creations",
+    "description": "Recording the receipt of cash from an Authorized Participant in exchange for new ETF creation units.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 5000000,
+        "cr": 0
+      },
+      {
+        "account": "ETF Shares in Issue - Capital",
+        "type": "Equity",
+        "dr": 0,
+        "cr": 5000000
+      }
+    ],
+    "explanation": "When an Authorized Participant (AP) creates ETF shares using cash instead of an in-kind basket, the fund records an increase in cash and equity.",
+    "practitioner_notes": {
+      "audit_triggers": "Timing differences between creation notification and actual cash settlement.",
+      "erp_application": "Shareholder accounting sub-ledger interface with the general ledger.",
+      "required_documentation": "AP creation order confirmation and bank settlement notification."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-seeding-investments",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund seeding investments",
+    "description": "Initial investment by the management company into its own newly launched UCITS fund.",
+    "entries": [
+      {
+        "account": "Financial Assets at FVTPL (Seed Capital)",
+        "type": "Asset",
+        "dr": 1000000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 1000000
+      }
+    ],
+    "explanation": "Seed capital is recorded as a financial asset, usually classified as Fair Value Through Profit or Loss (FVTPL) under IFRS 9 or ASC 320.",
+    "practitioner_notes": {
+      "audit_triggers": "Evaluation of whether the management company controls the fund, requiring consolidation.",
+      "erp_application": "Investment management module for tracking unit price (NAV) fluctuations.",
+      "required_documentation": "Subscription agreement and proof of transfer."
+    }
+  },
+  {
+    "slug": "how-to-record-sma-client-fee-rebates",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record SMA client fee rebates",
+    "description": "Adjusting revenue for fee rebates owed to Separately Managed Account clients based on volume tiers.",
+    "entries": [
+      {
+        "account": "Management Fee Revenue (Contra)",
+        "type": "Revenue",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Rebate Liability",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Fee rebates reduce the effective revenue earned from a client and are recognized in the same period as the related fee income.",
+    "practitioner_notes": {
+      "audit_triggers": "Complex rebate calculations that deviate from standard fee schedules.",
+      "erp_application": "Revenue offset codes within the accounts receivable module.",
+      "required_documentation": "Client contract with tiered fee schedule and rebate calculation sheet."
+    }
+  },
+  {
+    "slug": "how-to-record-ucits-fund-audit-fee-accrual",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record UCITS fund audit fee accrual",
+    "description": "Monthly accrual of estimated annual audit expenses to ensure the Net Asset Value (NAV) reflects current period liabilities.",
+    "entries": [
+      {
+        "account": "Audit Fee Expense",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "To spread the annual cost of the fund audit across all reporting periods, a monthly accrual is recorded based on the engagement letter estimate.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances between estimated accruals and actual billed amounts during the year-end audit.",
+      "erp_application": "Automated recurring journal entries scheduled in the fund accounting module.",
+      "required_documentation": "Signed engagement letter and prior year fee schedule for benchmarking."
+    }
+  },
+  {
+    "slug": "how-to-book-etf-in-kind-creation-units",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to book ETF in-kind creation units",
+    "description": "Recording the receipt of a basket of securities from an authorized participant in exchange for new ETF shares.",
+    "entries": [
+      {
+        "account": "Investments at Fair Value",
+        "type": "Asset",
+        "dr": 1000000,
+        "cr": 0
+      },
+      {
+        "account": "Shares Outstanding - ETF Units",
+        "type": "Equity",
+        "dr": 0,
+        "cr": 1000000
+      }
+    ],
+    "explanation": "This entry reflects the non-cash exchange where the fund receives underlying stocks and issues shares, typically valued at the day's closing NAV.",
+    "practitioner_notes": {
+      "audit_triggers": "Differences between the Portfolio Composition File (PCF) value and the actual fair value of received securities.",
+      "erp_application": "Integration between the transfer agent system and the portfolio sub-ledger.",
+      "required_documentation": "Daily PCF, trade confirmation from the custodian, and AP settlement report."
+    }
+  },
+  {
+    "slug": "how-to-record-hedge-fund-crystallization",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record hedge fund crystallization",
+    "description": "Moving accrued performance fees to a payable account upon the fulfillment of crystallization criteria, such as year-end or redemption.",
+    "entries": [
+      {
+        "account": "Accrued Performance Fees",
+        "type": "Liability",
+        "dr": 150000,
+        "cr": 0
+      },
+      {
+        "account": "Performance Fees Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 150000
+      }
+    ],
+    "explanation": "Once the performance period ends and the high-water mark is cleared, the estimated accrual becomes a definitive liability to the investment manager.",
+    "practitioner_notes": {
+      "audit_triggers": "Incorrect application of the hurdle rate or high-water mark logic in the calculation engine.",
+      "erp_application": "Crystallization trigger in the incentive fee module at the end of the performance period.",
+      "required_documentation": "Independent performance fee calculation report and investor high-water mark logs."
+    }
+  },
+  {
+    "slug": "how-to-account-for-side-pocket-transfers",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to account for side pocket transfers",
+    "description": "The transfer of illiquid or hard-to-value assets from the main liquid portfolio to a segregated side pocket class.",
+    "entries": [
+      {
+        "account": "Investments - Side Pocket Class",
+        "type": "Asset",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Investments - Main Class",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "This internal transfer separates non-liquid assets to ensure that redeeming investors do not adversely affect the liquidity of the remaining shareholders.",
+    "practitioner_notes": {
+      "audit_triggers": "Valuation adjustments made at the exact moment of the transfer to the side pocket.",
+      "erp_application": "Multi-class accounting structure requiring separate NAV calculations for each pocket.",
+      "required_documentation": "Board of Directors resolution and updated valuation policy for illiquid assets."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-organizational-costs",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund organizational costs",
+    "description": "Accounting for legal, regulatory, and marketing costs incurred during the setup phase of a new investment fund.",
+    "entries": [
+      {
+        "account": "Organizational Expense",
+        "type": "Expense",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Under US GAAP, organizational costs are generally expensed as incurred, whereas some jurisdictions allow for capitalization and amortization over 60 months.",
+    "practitioner_notes": {
+      "audit_triggers": "Capitalization of costs that should have been expensed per applicable accounting standards (e.g., FASB ASC 720).",
+      "erp_application": "Fixed asset or prepaid expense module if amortization is permitted under local GAAP/IFRS.",
+      "required_documentation": "Legal invoices, regulatory filing receipts, and offering memorandum language regarding cost allocation."
+    }
+  },
+  {
+    "slug": "how-to-record-soft-dollar-credits",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record soft dollar credits",
+    "description": "Records the accumulation of soft dollar credits generated through trading commissions to pay for research or services.",
+    "entries": [
+      {
+        "account": "Soft Dollar Asset",
+        "type": "Asset",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Commission Expense Offset",
+        "type": "Contra-Expense",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "Soft dollar credits are accrued as a portion of the commission paid to brokers, intended to be used for eligible research and brokerage services under Section 28(e).",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between broker reports and internal credit ledgers.",
+      "erp_application": "Tracked in a sub-ledger linked to the brokerage trade execution module.",
+      "required_documentation": "Section 28(e) compliance report and broker monthly credit statements."
+    }
+  },
+  {
+    "slug": "how-to-record-mutual-fund-redemptions",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record mutual fund redemptions",
+    "description": "Accounts for the decrease in net assets when investors redeem their shares in a mutual fund.",
+    "entries": [
+      {
+        "account": "Capital Shares Redeemed",
+        "type": "Equity",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Redemptions Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "When a redemption request is processed, the fund records a liability to the investor and reduces the equity capital based on the NAV at the time of the request.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant redemptions occurring post-NAV cut-off or during liquidity gates.",
+      "erp_application": "Automated interface between the transfer agent system and the general ledger.",
+      "required_documentation": "Redemption order tickets and NAV calculation sheets for the trade date."
+    }
+  },
+  {
+    "slug": "how-to-book-master-feeder-allocations",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to book master-feeder allocations",
+    "description": "Records the transfer of capital from a feeder fund into a master fund structure for unified investment management.",
+    "entries": [
+      {
+        "account": "Investment in Master Fund",
+        "type": "Asset",
+        "dr": 1000000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 1000000
+      }
+    ],
+    "explanation": "The feeder fund records an asset representing its proportional ownership in the master fund, which executes the actual security trades.",
+    "practitioner_notes": {
+      "audit_triggers": "Mismatched ownership percentages between feeder asset and master liability.",
+      "erp_application": "Consolidation modules or specialized fund accounting software like InvestOne.",
+      "required_documentation": "Master-feeder subscription agreement and monthly allocation workpapers."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-distribution-payables",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund distribution payables",
+    "description": "Records the declaration of dividends or capital gains distributions to fund shareholders.",
+    "entries": [
+      {
+        "account": "Distributions Declared",
+        "type": "Equity",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Distributions Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "On the ex-dividend date, the fund recognizes a liability for the total distribution amount owed to shareholders of record.",
+    "practitioner_notes": {
+      "audit_triggers": "Incorrect calculation of taxable income vs. book income distributions.",
+      "erp_application": "Dividend processing module within the fund accounting system.",
+      "required_documentation": "Board of Directors resolution and tax characterization analysis."
+    }
+  },
+  {
+    "slug": "how-to-record-unrealized-fund-fx-gains",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record unrealized fund FX gains",
+    "description": "Adjusts the value of non-base currency investments due to changes in foreign exchange rates at period end.",
+    "entries": [
+      {
+        "account": "Investment in Foreign Securities",
+        "type": "Asset",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Unrealized Gain on FX",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Funds holding international assets must revalue those holdings into the base currency using the spot rate at the valuation point, recognizing unrealized FX impact.",
+    "practitioner_notes": {
+      "audit_triggers": "Use of stale or non-standard exchange rates for illiquid currency pairs.",
+      "erp_application": "Multi-currency GL module that performs automated month-end revaluations.",
+      "required_documentation": "Official WM/Reuters spot rate data and asset holding reports."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-custody-fee-accruals",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund custody fee accruals",
+    "description": "Recording the monthly estimated cost for asset safekeeping and settlement services based on fund AUM.",
+    "entries": [
+      {
+        "account": "Custody Fee Expense",
+        "type": "Debit",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "Custody fees are typically calculated as a percentage of assets under management (basis points) and billed monthly or quarterly; an accrual ensures expenses match the reporting period.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variance between calculated basis points and the custodian fee schedule.",
+      "erp_application": "Set up a recurring journal entry template based on the prior month-end NAV.",
+      "required_documentation": "Custodian fee schedule and monthly NAV report."
+    }
+  },
+  {
+    "slug": "how-to-record-manager-expense-caps",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record manager expense caps",
+    "description": "Recognizing a receivable from the investment manager when the fund's Total Expense Ratio (TER) exceeds the agreed-upon cap.",
+    "entries": [
+      {
+        "account": "Due from Investment Manager",
+        "type": "Debit",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Expense Reimbursement Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "When a fund's operating expenses exceed a contractual limit, the manager must reimburse the fund to protect the investors' yield.",
+    "practitioner_notes": {
+      "audit_triggers": "Expenses exceeding the prospectus cap without a corresponding receivable.",
+      "erp_application": "Link the expense cap calculation to the automated financial statement consolidation module.",
+      "required_documentation": "Prospectus or Investment Management Agreement specifying the expense cap percentage."
+    }
+  },
+  {
+    "slug": "how-to-record-securities-lending-income",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record securities lending income",
+    "description": "Accruing gross revenue earned from lending portfolio securities to borrowers, net of the lending agent's fee split.",
+    "entries": [
+      {
+        "account": "Accrued Income",
+        "type": "Debit",
+        "dr": 3500,
+        "cr": 0
+      },
+      {
+        "account": "Securities Lending Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 3500
+      }
+    ],
+    "explanation": "Funds earn income by lending securities; this entry records the fund's share of the lending fees earned during the period.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistencies between the lending agent's monthly report and the fund's accrued income.",
+      "erp_application": "Interface the securities lending agent's data feed directly into the general ledger.",
+      "required_documentation": "Securities lending agent monthly activity statement."
+    }
+  },
+  {
+    "slug": "how-to-book-fund-dividend-income-accrual",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to book fund dividend income accrual",
+    "description": "Recording dividend income for equity securities on the ex-dividend date rather than the payment date.",
+    "entries": [
+      {
+        "account": "Dividends Receivable",
+        "type": "Debit",
+        "dr": 8000,
+        "cr": 0
+      },
+      {
+        "account": "Dividend Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 8000
+      }
+    ],
+    "explanation": "Under GAAP/IFRS for investment companies, dividend income must be recognized on the ex-dividend date to ensure accurate NAV calculation.",
+    "practitioner_notes": {
+      "audit_triggers": "Large dividends recorded on pay-date instead of ex-date, impacting NAV accuracy.",
+      "erp_application": "Use corporate action automated feeds to trigger journal entries on the ex-date.",
+      "required_documentation": "Corporate action announcements and portfolio holding report."
+    }
+  },
+  {
+    "slug": "how-to-record-performance-fee-clawbacks",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record performance fee clawbacks",
+    "description": "Reversing or reducing previously accrued performance fees due to subsequent investment losses or performance falling below the high-water mark.",
+    "entries": [
+      {
+        "account": "Accrued Performance Fees",
+        "type": "Debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Performance Fee Expense",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "If a fund's performance declines after a fee has been accrued but before it is crystallized, the accrual must be adjusted downward.",
+    "practitioner_notes": {
+      "audit_triggers": "Performance fee accruals remaining static despite significant NAV drawdowns.",
+      "erp_application": "Ensure the performance fee module is synced with the high-water mark tracking system.",
+      "required_documentation": "Performance fee calculation worksheet and NAV history."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-transfer-agency-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund transfer agency fees",
+    "description": "Monthly recognition of fees paid to the transfer agent for shareholder record-keeping and processing operations.",
+    "entries": [
+      {
+        "account": "Transfer Agency Expense",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "The fund incurs transfer agency fees for the maintenance of shareholder registers and transaction processing, typically accrued monthly based on the service contract.",
+    "practitioner_notes": {
+      "audit_triggers": "Verify invoice amounts against the TA agreement fee schedule and check for shareholder count accuracy.",
+      "erp_application": "Set up recurring monthly journals in the fund accounting module based on the service level agreement.",
+      "required_documentation": "Transfer agency monthly invoice and shareholder activity report."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-board-director-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund board director fees",
+    "description": "Accrual of compensation for the fund's board of directors or trustees overseeing fund governance.",
+    "entries": [
+      {
+        "account": "Director Fees Expense",
+        "type": "Expense",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Independent directors are compensated for their oversight roles. Fees are typically accrued monthly to smooth the expense across the fiscal year.",
+    "practitioner_notes": {
+      "audit_triggers": "Review board minutes for approved fee increases and check for timely payment to directors.",
+      "erp_application": "Record as a monthly accrual in the general ledger and reverse upon actual payment.",
+      "required_documentation": "Board meeting minutes and director service agreements."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-regulatory-filing-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund regulatory filing fees",
+    "description": "Recognition of mandatory costs associated with regulatory filings such as SEC Form N-PORT or UCITS KIID updates.",
+    "entries": [
+      {
+        "account": "Regulatory Fees Expense",
+        "type": "Expense",
+        "dr": 4500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 4500
+      }
+    ],
+    "explanation": "Funds must pay various regulatory bodies for filing fees. These should be accrued as the services are rendered or filings are prepared.",
+    "practitioner_notes": {
+      "audit_triggers": "Ensure filing dates match the accrual period and verify fees against regulatory rate cards.",
+      "erp_application": "Assign to the regulatory compliance cost center in the ERP.",
+      "required_documentation": "Regulatory filing receipts and invoices from filing agents or legal counsel."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-interest-expense-on-leverage",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund interest expense on leverage",
+    "description": "Accounting for interest costs incurred on margin balances or revolving credit facilities used by a hedge fund.",
+    "entries": [
+      {
+        "account": "Interest Expense",
+        "type": "Expense",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Interest Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "When a fund uses leverage, the cost of borrowing (interest) must be accrued based on the daily outstanding balance and the agreed-upon rate.",
+    "practitioner_notes": {
+      "audit_triggers": "Compare interest expense to the average daily leverage and prime brokerage interest rates.",
+      "erp_application": "Automate calculation via integration with the prime broker's daily margin reports.",
+      "required_documentation": "Prime brokerage monthly statements and credit facility agreements."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-listing-fee-amortization",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund listing fee amortization",
+    "description": "Monthly amortization of initial exchange listing fees for ETFs or closed-end funds over their useful life.",
+    "entries": [
+      {
+        "account": "Amortization Expense",
+        "type": "Expense",
+        "dr": 800,
+        "cr": 0
+      },
+      {
+        "account": "Prepaid Listing Fees",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 800
+      }
+    ],
+    "explanation": "Initial listing fees are capitalized as a prepaid asset and amortized systematically over the period the fund expects to remain listed on the exchange.",
+    "practitioner_notes": {
+      "audit_triggers": "Verify the amortization schedule against the original exchange invoice and listing duration.",
+      "erp_application": "Utilize the fixed asset or prepaid asset module to automate monthly amortization entries.",
+      "required_documentation": "Exchange fee invoice and listing agreement."
+    }
+  },
+  {
+    "slug": "record-fund-subscription-receivables",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund subscription receivables",
+    "description": "Recording capital commitments from investors at the net asset value (NAV) date prior to the actual receipt of cash.",
+    "entries": [
+      {
+        "account": "Subscription Receivable",
+        "type": "Asset",
+        "dr": 1000000,
+        "cr": 0
+      },
+      {
+        "account": "Capital Stock / Partner Capital",
+        "type": "Equity",
+        "dr": 0,
+        "cr": 1000000
+      }
+    ],
+    "explanation": "When an investor's subscription is accepted on a specific valuation date, the fund recognizes the receivable and the corresponding increase in capital, even if the cash is in transit.",
+    "practitioner_notes": {
+      "audit_triggers": "Large receivables outstanding past T+2 settlement windows.",
+      "erp_application": "Automated via the investor relations module integrated with the fund accounting system.",
+      "required_documentation": "Subscription agreement and signed offering memorandum supplement."
+    }
+  },
+  {
+    "slug": "record-realized-gain-futures",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record realized gain on futures contracts",
+    "description": "Accounting for the realized profit upon the closing of a futures position or the daily variation margin settlement.",
+    "entries": [
+      {
+        "account": "Due from Broker",
+        "type": "Asset",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Realized Gain on Derivatives",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Futures contracts are typically marked-to-market daily. This entry records the realized gain resulting from a favorable price move when the position is closed or settled.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between broker statements and internal gain/loss reports.",
+      "erp_application": "Daily feed from the prime broker or clearing house into the portfolio accounting module.",
+      "required_documentation": "Daily trade confirmation and broker statement."
+    }
+  },
+  {
+    "slug": "book-performance-fee-equalization",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to book performance fee equalization",
+    "description": "Recording equalization credits for new investors to ensure they do not pay performance fees on gains achieved before their investment.",
+    "entries": [
+      {
+        "account": "Performance Fee Expense",
+        "type": "Expense",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Equalization Credit Liability",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "Equalization prevents 'free riding' by ensuring that performance fees are calculated specifically for each investor's participation in the fund's growth.",
+    "practitioner_notes": {
+      "audit_triggers": "Complexities in NAV per share calculations across multiple series or classes.",
+      "erp_application": "Specific equalization accounting modules within specialized hedge fund software.",
+      "required_documentation": "Performance fee calculation methodology as defined in the Limited Partnership Agreement."
+    }
+  },
+  {
+    "slug": "record-12b-1-distribution-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record 12b-1 distribution fees",
+    "description": "Accruing the ongoing operational expense paid by a mutual fund for marketing and distribution services.",
+    "entries": [
+      {
+        "account": "12b-1 Distribution Expense",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Distribution Fees",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "12b-1 fees are operational expenses taken from fund assets to cover the costs of marketing and selling fund shares.",
+    "practitioner_notes": {
+      "audit_triggers": "Expense ratios exceeding the limits stated in the fund's prospectus.",
+      "erp_application": "Calculated as a percentage of average daily net assets in the general ledger.",
+      "required_documentation": "Distribution agreement and SEC-approved 12b-1 plan."
+    }
+  },
+  {
+    "slug": "record-capitalized-brokerage-commissions",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record capitalized brokerage commissions",
+    "description": "Adjusting the cost basis of a security purchase to include transaction-related brokerage commissions.",
+    "entries": [
+      {
+        "account": "Investments at Cost",
+        "type": "Asset",
+        "dr": 500,
+        "cr": 0
+      },
+      {
+        "account": "Cash / Due to Broker",
+        "type": "Asset/Liability",
+        "dr": 0,
+        "cr": 500
+      }
+    ],
+    "explanation": "Under standard fund accounting rules, transaction costs like brokerage commissions are capitalized into the cost basis of the security rather than expensed immediately.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent treatment of transaction costs across different asset classes.",
+      "erp_application": "Trade execution systems should automatically append commission data to the trade's total cost.",
+      "required_documentation": "Trade ticket or execution report showing the commission breakout."
+    }
+  },
+  {
+    "slug": "how-to-record-swap-financing-costs",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record swap financing costs",
+    "description": "Recording the financing charges or interest expense associated with total return swap positions.",
+    "entries": [
+      {
+        "account": "Swap Financing Expense",
+        "type": "Expense",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Swap Interest Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Hedge funds using synthetic leverage through swaps must accrue financing costs based on the notional value of the position and the agreed-upon rate (e.g., SOFR + spread).",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of reset dates and calculation methodology against ISDA Master Agreement terms.",
+      "erp_application": "Ensure the sub-ledger correctly matches the financing leg of the derivative contract.",
+      "required_documentation": "Counterparty reset statements and independent interest rate verification."
+    }
+  },
+  {
+    "slug": "how-to-record-portfolio-valuation-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record portfolio valuation fees",
+    "description": "Accruing the costs for third-party pricing services and independent valuation of illiquid assets.",
+    "entries": [
+      {
+        "account": "Portfolio Valuation Expense",
+        "type": "Expense",
+        "dr": 3500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Professional Fees",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 3500
+      }
+    ],
+    "explanation": "Funds frequently hire external valuation firms to price Level 3 assets; these costs must be accrued monthly as part of the NAV calculation.",
+    "practitioner_notes": {
+      "audit_triggers": "Consistency in valuation methodology and adherence to ASC 820 requirements.",
+      "erp_application": "Allocate fees based on asset complexity or specific fund share classes if applicable.",
+      "required_documentation": "Engagement letters and monthly invoices from the valuation provider."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-tax-withholding",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund tax withholding",
+    "description": "Accounting for foreign withholding taxes deducted at source from dividend income.",
+    "entries": [
+      {
+        "account": "Foreign Tax Expense",
+        "type": "Expense",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Dividend Receivable",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "When foreign jurisdictions withhold tax on dividends, the receivable balance is reduced by the tax amount to reflect the net cash expected.",
+    "practitioner_notes": {
+      "audit_triggers": "Reconciliation of gross vs net dividend rates based on treaty eligibility.",
+      "erp_application": "Use specific country codes to track reclaimable vs non-reclaimable tax balances.",
+      "required_documentation": "Dividend announcements and custody tax vouchers."
+    }
+  },
+  {
+    "slug": "how-to-record-unit-class-conversions",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record unit class conversions",
+    "description": "Recording the reclassification of investor capital from one share class to another.",
+    "entries": [
+      {
+        "account": "Partners Capital - Class A",
+        "type": "Equity",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Partners Capital - Class I",
+        "type": "Equity",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "Used when an investor meets the threshold for institutional shares (Class I) and is converted from retail shares (Class A).",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of eligibility for the target share class and NAV-per-share accuracy at time of conversion.",
+      "erp_application": "Update the transfer agent records simultaneously with the general ledger adjustment.",
+      "required_documentation": "Investor request or notification and board approval for class structures."
+    }
+  },
+  {
+    "slug": "how-to-record-marketing-expense-recovery",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record marketing expense recovery",
+    "description": "Recognition of marketing expenses to be reimbursed by the Investment Manager under an expense cap agreement.",
+    "entries": [
+      {
+        "account": "Due from Investment Manager",
+        "type": "Asset",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Marketing Expense Recovery",
+        "type": "Contra-Expense",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "If a fund's operating expenses exceed a contractual cap, the excess is recovered from the manager, reducing the fund's net expenses.",
+    "practitioner_notes": {
+      "audit_triggers": "Calculation of the expense ratio relative to the cap defined in the Offering Memorandum.",
+      "erp_application": "Automate the calculation using the average net assets (ANA) against the basis point cap.",
+      "required_documentation": "Expense cap agreement and monthly NAV impact worksheet."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-legal-fee-accruals",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund legal fee accruals",
+    "description": "Accounting for estimated legal professional fees incurred by the fund for ongoing compliance and corporate governance.",
+    "entries": [
+      {
+        "account": "Legal Fees Expense",
+        "type": "Debit",
+        "dr": 12500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses - Legal",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12500
+      }
+    ],
+    "explanation": "Legal fees are recognized on an accrual basis as services are rendered to ensure the fund's NAV reflects all current liabilities.",
+    "practitioner_notes": {
+      "audit_triggers": "Consistency between legal invoices and the monthly accrual estimate.",
+      "erp_application": "Automated monthly accrual reversals in the general ledger module.",
+      "required_documentation": "Legal engagement letter and monthly fee estimates from counsel."
+    }
+  },
+  {
+    "slug": "how-to-record-short-sale-borrowing-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record short sale borrowing fees",
+    "description": "Recording the cost of borrowing securities from a prime broker to maintain short positions in a hedge fund portfolio.",
+    "entries": [
+      {
+        "account": "Stock Loan Fee Expense",
+        "type": "Debit",
+        "dr": 4200,
+        "cr": 0
+      },
+      {
+        "account": "Due to Broker",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 4200
+      }
+    ],
+    "explanation": "Short sale borrowing fees are typically charged daily by the prime broker and are recorded as an expense against the fund's income.",
+    "practitioner_notes": {
+      "audit_triggers": "Large discrepancies between broker statements and internal fee calculations.",
+      "erp_application": "Integration with prime broker data feeds to automate fee capture.",
+      "required_documentation": "Daily prime broker stock loan reports and borrow rate schedules."
+    }
+  },
+  {
+    "slug": "how-to-record-cash-collateral-for-margin",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record cash collateral for margin",
+    "description": "The transfer of cash from a fund's operating account to a restricted broker account to satisfy margin requirements.",
+    "entries": [
+      {
+        "account": "Broker Margin Cash",
+        "type": "Debit",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Cash and Cash Equivalents",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "Cash moved to a margin account is reclassified to reflect that it is no longer available for general fund use and is held as collateral.",
+    "practitioner_notes": {
+      "audit_triggers": "Negative cash balances in non-margin accounts.",
+      "erp_application": "Sub-ledger setup for restricted cash accounts to track individual broker exposure.",
+      "required_documentation": "Margin call notice and bank wire confirmation."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-liquidation-cost-accrual",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund liquidation cost accrual",
+    "description": "Recognizing the estimated costs to wind down and dissolve a fund structure, including terminal audit and legal fees.",
+    "entries": [
+      {
+        "account": "Fund Liquidation Expense",
+        "type": "Debit",
+        "dr": 50000,
+        "cr": 0
+      },
+      {
+        "account": "Liquidation Reserve Liability",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 50000
+      }
+    ],
+    "explanation": "Liquidation costs must be accrued once the decision to liquidate is made, impacting the final distribution amount to investors.",
+    "practitioner_notes": {
+      "audit_triggers": "Inadequate reserves vs actual wind-down costs.",
+      "erp_application": "Use of a specific liquidation cost center to track all wind-down activities.",
+      "required_documentation": "Board resolution for liquidation and detailed cost estimation worksheet."
+    }
+  },
+  {
+    "slug": "how-to-record-sma-investment-management-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record SMA investment management fees",
+    "description": "Recording the earned revenue for managing a Separately Managed Account (SMA) for an institutional client.",
+    "entries": [
+      {
+        "account": "Fees Receivable - SMA",
+        "type": "Debit",
+        "dr": 18000,
+        "cr": 0
+      },
+      {
+        "account": "Management Fee Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 18000
+      }
+    ],
+    "explanation": "Management fees for SMAs are typically billed quarterly in arrears or advance based on the Average Daily Balance (ADB) or period-end AUM.",
+    "practitioner_notes": {
+      "audit_triggers": "Revenue recognition period not matching the investment management agreement terms.",
+      "erp_application": "Revenue recognition module linked to the AUM reporting system.",
+      "required_documentation": "Investment Management Agreement (IMA) and fee calculation schedule."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-administrator-fee-accrual",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund administrator fee accrual",
+    "description": "Monthly recognition of fees due to the third-party administrator for NAV calculation and reporting services.",
+    "entries": [
+      {
+        "account": "Fund Administration Expense",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "Fund administrators charge a fee typically based on a percentage of AUM or a fixed monthly rate. This entry accrues the expense to match the period of service.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances between accrued fees and actual invoices from the administrator.",
+      "erp_application": "Set up as a recurring monthly journal in the fund accounting module based on the service level agreement.",
+      "required_documentation": "Administration service agreement and monthly fee calculation worksheet."
+    }
+  },
+  {
+    "slug": "how-to-record-reverse-repo-interest-income",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record reverse repo interest income",
+    "description": "Recording the daily interest accrual on cash lent via a reverse repurchase agreement.",
+    "entries": [
+      {
+        "account": "Interest Receivable - Reverse Repo",
+        "type": "Asset",
+        "dr": 450,
+        "cr": 0
+      },
+      {
+        "account": "Interest Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 450
+      }
+    ],
+    "explanation": "Hedge funds use reverse repos to earn interest on excess cash. The interest is earned daily and recorded as a receivable until the repo matures.",
+    "practitioner_notes": {
+      "audit_triggers": "Calculation mismatch between the repo rate, principal amount, and the number of days.",
+      "erp_application": "Automated accrual via the treasury module using the daily overnight repo rate.",
+      "required_documentation": "Master Repurchase Agreement (MRA) and daily trade confirmation."
+    }
+  },
+  {
+    "slug": "how-to-record-research-payment-account-funding",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record research payment account funding",
+    "description": "Recording the allocation of fund assets to a Research Payment Account (RPA) for third-party investment research.",
+    "entries": [
+      {
+        "account": "Research Payment Account (RPA)",
+        "type": "Asset",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Under MiFID II, some managers use RPAs to pay for research. Funding the RPA moves cash into a restricted account dedicated to research expenses.",
+    "practitioner_notes": {
+      "audit_triggers": "Misallocation of research costs to the fund versus the investment manager's own books.",
+      "erp_application": "Use a restricted cash account code for the RPA to prevent use for general fund operations.",
+      "required_documentation": "Research budget approved by the board and RPA bank statement."
+    }
+  },
+  {
+    "slug": "how-to-book-fund-credit-facility-commitment-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to book fund credit facility commitment fees",
+    "description": "Recording the expense for maintaining an unused credit line used for fund liquidity management.",
+    "entries": [
+      {
+        "account": "Financing and Commitment Fees",
+        "type": "Expense",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "Commitment fees are paid to lenders for keeping a credit facility available, regardless of whether the fund draws down the debt.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to amortize upfront facility fees over the life of the credit agreement.",
+      "erp_application": "Track commitment fee percentages against the undrawn portion of the credit limit.",
+      "required_documentation": "Executed credit facility agreement and lender fee notice."
+    }
+  },
+  {
+    "slug": "how-to-record-etf-creation-fee-income",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record ETF creation fee income",
+    "description": "Accounting for transaction fees paid by Authorized Participants (APs) to the ETF during the creation process.",
+    "entries": [
+      {
+        "account": "Cash / AP Receivable",
+        "type": "Asset",
+        "dr": 500,
+        "cr": 0
+      },
+      {
+        "account": "ETF Transaction Fee Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 500
+      }
+    ],
+    "explanation": "To offset the costs of processing creations, ETFs often charge APs a transaction fee which is recorded as income to the fund or the sponsor.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistencies between the number of creation units issued and the fee income recorded.",
+      "erp_application": "Post fees automatically upon the confirmation of creation unit settlement.",
+      "required_documentation": "ETF Prospectus and Authorized Participant Agreement detailing fee structures."
+    }
+  },
+  {
+    "slug": "how-to-book-etf-redemption-transaction-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to book ETF redemption transaction fees",
+    "description": "Records the fee charged to an authorized participant (AP) when they redeem creation units of an ETF to cover processing costs.",
+    "entries": [
+      {
+        "account": "Cash or Receivable from Authorized Participant",
+        "type": "Debit",
+        "dr": 500,
+        "cr": 0
+      },
+      {
+        "account": "ETF Redemption Transaction Fee Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 500
+      }
+    ],
+    "explanation": "ETFs charge transaction fees to APs to ensure that the costs associated with the redemption of units are borne by the redeeming party rather than the remaining shareholders.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of the fee schedule against the ETF prospectus and matching transaction volume to redemption activity.",
+      "erp_application": "Automated calculation based on the number of creation unit baskets redeemed daily.",
+      "required_documentation": "Redemption order confirmation and AP agreement fee schedule."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-shareholder-report-costs",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund shareholder report costs",
+    "description": "Accounts for the accrual of costs related to printing and distributing semi-annual and annual reports to fund investors.",
+    "entries": [
+      {
+        "account": "Printing and Shareholder Report Expense",
+        "type": "Debit",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Shareholder Reporting Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Funds must provide periodic reports to shareholders. These costs are accrued over the reporting period to reflect the ongoing liability for document preparation and mailing.",
+    "practitioner_notes": {
+      "audit_triggers": "Comparing current year printing costs against historical averages and current shareholder base size.",
+      "erp_application": "Monthly accrual setup in the fund accounting system based on vendor estimates.",
+      "required_documentation": "Vendor contracts for printing/mailing and SEC filing timelines."
+    }
+  },
+  {
+    "slug": "how-to-record-cfd-mark-to-market-valuations",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record CFD mark-to-market valuations",
+    "description": "Records the unrealized gain or loss on Contracts for Difference (CFDs) held within a hedge fund portfolio.",
+    "entries": [
+      {
+        "account": "Unrealized Appreciation on CFD (Asset)",
+        "type": "Debit",
+        "dr": 25000,
+        "cr": 0
+      },
+      {
+        "account": "Unrealized Gain on CFD Investments",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 25000
+      }
+    ],
+    "explanation": "CFDs are derivatives and must be valued at fair market value at each NAV calculation point, reflecting the difference between the contract price and current market price.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between fund broker statements and internal valuation models.",
+      "erp_application": "Daily feed from prime broker utilized to update the derivative sub-ledger.",
+      "required_documentation": "Prime broker valuation statement and trade ticket details."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-do-insurance-accruals",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund D&O insurance accruals",
+    "description": "Records the monthly expense for Directors and Officers (D&O) liability insurance coverage for the fund's board.",
+    "entries": [
+      {
+        "account": "Insurance Expense - D&O",
+        "type": "Debit",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Insurance Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "Funds carry D&O and E&O insurance to protect the board and the manager. The premium is typically paid annually and amortized/accrued monthly.",
+    "practitioner_notes": {
+      "audit_triggers": "Lapses in coverage or failure to accrue for the specific policy period.",
+      "erp_application": "Straight-line amortization schedule within the prepaid/accrual module.",
+      "required_documentation": "Insurance policy binder and invoice from the insurance broker."
+    }
+  },
+  {
+    "slug": "how-to-record-sma-trade-settlement-liabilities",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record SMA trade settlement liabilities",
+    "description": "Accounts for the liability to pay for securities purchased in a separately managed account (SMA) that have not yet settled.",
+    "entries": [
+      {
+        "account": "Securities Purchased - Not Settled",
+        "type": "Debit",
+        "dr": 100000,
+        "cr": 0
+      },
+      {
+        "account": "Payable for Securities Purchased",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 100000
+      }
+    ],
+    "explanation": "On the trade date, a liability is recognized for the cost of securities purchased. This is cleared upon the settlement date when cash is transferred.",
+    "practitioner_notes": {
+      "audit_triggers": "Aged trade payables that exceed standard T+1 or T+2 settlement cycles.",
+      "erp_application": "Trade-date accounting integration between the OMS and the accounting system.",
+      "required_documentation": "Trade execution confirmation and broker settlement instructions."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-kiid-preparation-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund KIID preparation fees",
+    "description": "Accounting for the professional fees associated with drafting and updating Key Investor Information Documents (KIID) for UCITS funds.",
+    "entries": [
+      {
+        "account": "Professional Fees - KIID Preparation",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "UCITS funds must update KIIDs annually or upon material changes. The costs from service providers are accrued as professional expenses within the fund's NAV calculation.",
+    "practitioner_notes": {
+      "audit_triggers": "Ensure the expense is allocated correctly across sub-funds if part of an umbrella structure.",
+      "erp_application": "Set up a recurring accrual based on the service level agreement with the document production vendor.",
+      "required_documentation": "Vendor invoice or service agreement and evidence of document filing with regulators."
+    }
+  },
+  {
+    "slug": "how-to-record-partner-incentive-allocations",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record partner incentive allocations",
+    "description": "Recording the reallocation of capital from limited partners to the general partner as an incentive allocation rather than a fee expense.",
+    "entries": [
+      {
+        "account": "Capital Account - Limited Partner",
+        "type": "Equity",
+        "dr": 150000,
+        "cr": 0
+      },
+      {
+        "account": "Capital Account - General Partner",
+        "type": "Equity",
+        "dr": 0,
+        "cr": 150000
+      }
+    ],
+    "explanation": "In many hedge fund structures, the 'performance fee' is structured as a capital allocation between partners. This entry moves equity from LPs to the GP based on performance hurdles.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of high-water marks and hurdle rate calculations per the limited partnership agreement.",
+      "erp_application": "Use the partnership accounting module to automate equity transfers during the period-end close.",
+      "required_documentation": "Performance fee calculation worksheet and signed partnership agreement."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-proxy-voting-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund proxy voting fees",
+    "description": "Accrual of monthly service fees for third-party proxy research and voting execution services.",
+    "entries": [
+      {
+        "account": "Proxy Service Expenses",
+        "type": "Expense",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Investment funds often outsource proxy voting to ensure compliance and fiduciary duties. These recurring operational costs are accrued monthly.",
+    "practitioner_notes": {
+      "audit_triggers": "Compare proxy fees against the volume of holdings or a fixed fee schedule in the service contract.",
+      "erp_application": "Standard monthly journal entry in the fund accounting system.",
+      "required_documentation": "Service agreement with firms like ISS or Glass Lewis."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-risk-monitoring-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund risk monitoring fees",
+    "description": "Recording fees for independent risk reporting and Value-at-Risk (VaR) monitoring services required by regulators.",
+    "entries": [
+      {
+        "account": "Risk Management & Compliance Fees",
+        "type": "Expense",
+        "dr": 3000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 3000
+      }
+    ],
+    "explanation": "Funds, especially UCITS or AIFs, pay third-party vendors for independent risk monitoring reports. These are operational expenses of the fund.",
+    "practitioner_notes": {
+      "audit_triggers": "Ensure fees match the frequency of reporting (daily/monthly) as specified in the prospectus.",
+      "erp_application": "Categorize under compliance or administrative expenses in the G/L.",
+      "required_documentation": "Monthly service provider invoice and sample risk report for the period."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-printing-and-postage-costs",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund printing and postage costs",
+    "description": "Accounting for the costs associated with the physical production and mailing of shareholder reports and prospectuses.",
+    "entries": [
+      {
+        "account": "Shareholder Communication Expense",
+        "type": "Expense",
+        "dr": 4500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 4500
+      }
+    ],
+    "explanation": "While many communications are digital, funds still incur printing and postage costs for regulatory mailings to retail investors.",
+    "practitioner_notes": {
+      "audit_triggers": "Check for spikes in costs during annual or semi-annual report cycles.",
+      "erp_application": "Create a specific cost center for shareholder relations/communications.",
+      "required_documentation": "Invoices from fulfillment houses or printing vendors."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-fatca-reporting-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund FATCA reporting fees",
+    "description": "Accounting for professional service fees related to FATCA and CRS regulatory compliance and reporting.",
+    "entries": [
+      {
+        "account": "Professional Fees - Tax Compliance",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "Recognize the expense for annual FATCA/CRS reporting services when the service is rendered or based on the engagement letter terms.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances in tax compliance fees relative to the number of jurisdictions or investors.",
+      "erp_application": "Set up a recurring accrual for annual reporting cycles to avoid year-end expense spikes.",
+      "required_documentation": "Engagement letter and invoice from the tax service provider or fund administrator."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-cds-premium-payments",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund CDS premium payments",
+    "description": "Recording periodic premium payments for Credit Default Swaps (CDS) held in the fund portfolio.",
+    "entries": [
+      {
+        "account": "Realized Loss on Swaps - Premiums",
+        "type": "Expense",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Periodic premiums paid to the swap counterparty represent the cost of credit protection and are recorded as a realized expense.",
+    "practitioner_notes": {
+      "audit_triggers": "Mismatches between swap agreement premium schedules and actual cash outflows.",
+      "erp_application": "Record premiums separately from mark-to-market valuations to facilitate P&L analysis.",
+      "required_documentation": "CDS trade ticket and ISDA Master Agreement credit support annex."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-blue-sky-compliance-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund blue sky compliance fees",
+    "description": "Accounting for US state-level Blue Sky registration and filing fees for fund offerings.",
+    "entries": [
+      {
+        "account": "Regulatory Filing Fees",
+        "type": "Expense",
+        "dr": 4500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 4500
+      }
+    ],
+    "explanation": "State filing fees for private placements (Blue Sky laws) are expensed as incurred by the fund unless paid by the General Partner.",
+    "practitioner_notes": {
+      "audit_triggers": "High regulatory fees relative to the number of states where the fund is marketed.",
+      "erp_application": "Categorize by state in the sub-ledger for detailed regulatory reporting tracking.",
+      "required_documentation": "State filing receipts or Form D notices."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-capital-call-receivables",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund capital call receivables",
+    "description": "Recording the legal obligation of investors to contribute capital following a formal call notice.",
+    "entries": [
+      {
+        "account": "Capital Call Receivable",
+        "type": "Asset",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Partner Capital - Contributions",
+        "type": "Equity",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "When a capital call notice is issued, a receivable is recognized for the committed amount due from limited partners.",
+    "practitioner_notes": {
+      "audit_triggers": "Aging receivables beyond the standard 10-day or 15-day funding window specified in the LPA.",
+      "erp_application": "Use investor-level sub-ledgers to track individual commitment balances and aging.",
+      "required_documentation": "Formal capital call notice and Limited Partnership Agreement (LPA) draw-down provisions."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-performance-tax-distributions",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund performance tax distributions",
+    "description": "Accounting for cash distributions made to the investment manager to cover tax liabilities on performance allocations.",
+    "entries": [
+      {
+        "account": "Incentive Allocation Payable",
+        "type": "Liability",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Tax distributions reduce the outstanding performance fee or incentive allocation liability previously accrued.",
+    "practitioner_notes": {
+      "audit_triggers": "Distributions exceeding the maximum tax rate applied to the allocated income.",
+      "erp_application": "Ensure these are recorded as liability reductions rather than fund expenses.",
+      "required_documentation": "Tax distribution calculation worksheet and GP request letter."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-registration-fee-accruals",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund registration fee accruals",
+    "description": "Accounting for estimated costs associated with maintaining fund registration in various regulatory jurisdictions.",
+    "entries": [
+      {
+        "account": "Regulatory Registration Expense",
+        "type": "Expense",
+        "dr": 3500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 3500
+      }
+    ],
+    "explanation": "This entry recognizes the ongoing cost of fund registration on an accrual basis to ensure expenses match the period in which the fund is active and marketed.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances between accrued estimates and actual jurisdictional invoices.",
+      "erp_application": "Set up as a recurring monthly accrual in the General Ledger module based on prior year actuals.",
+      "required_documentation": "Regulatory fee schedules and jurisdictional registration confirmation."
+    }
+  },
+  {
+    "slug": "how-to-book-fund-index-licensing-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to book fund index licensing fees",
+    "description": "Recording fees paid to index providers for the right to use benchmarks or track specific indices within a fund.",
+    "entries": [
+      {
+        "account": "Index Licensing Expense",
+        "type": "Expense",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "Asset managers pay licensing fees to use indices like S&P or MSCI; these are recorded as fund expenses when the service is consumed.",
+    "practitioner_notes": {
+      "audit_triggers": "Unexplained changes in licensing fees relative to AUM if the contract is basis-point linked.",
+      "erp_application": "Post to the fund's operational expense sub-ledger with a vendor link to the index provider.",
+      "required_documentation": "Index licensing agreement and quarterly usage reports."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-tax-reclaim-receivables",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund tax reclaim receivables",
+    "description": "Recording potential tax refunds from foreign governments for withholding tax on dividends paid to the fund.",
+    "entries": [
+      {
+        "account": "Tax Reclaim Receivable",
+        "type": "Asset",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Dividend Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "When a fund is entitled to a partial refund of foreign withholding tax under a tax treaty, the refund is accrued as a receivable.",
+    "practitioner_notes": {
+      "audit_triggers": "Aging of receivables beyond standard jurisdictional processing times.",
+      "erp_application": "Custody-integrated systems should automatically generate these based on tax-lot data.",
+      "required_documentation": "Dividend vouchers and foreign tax credit certificates."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-data-terminal-expenses",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund data terminal expenses",
+    "description": "Booking costs for real-time market data terminals and financial information feeds allocated to specific funds.",
+    "entries": [
+      {
+        "account": "Market Data Expense",
+        "type": "Expense",
+        "dr": 2200,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 2200
+      }
+    ],
+    "explanation": "Costs for Bloomberg, Reuters, or other terminals are often allocated to funds based on usage or headcount; this accrues the monthly cost.",
+    "practitioner_notes": {
+      "audit_triggers": "Consistency of allocation logic across different fund vehicles.",
+      "erp_application": "Expense allocation module should be used to split master invoices across sub-funds.",
+      "required_documentation": "Master service agreement and allocation memo."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-credit-rating-agency-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund credit rating agency fees",
+    "description": "Accounting for fees paid to agencies like Moody's or S&P to maintain a credit rating for a debt or money market fund.",
+    "entries": [
+      {
+        "account": "Rating Agency Fees",
+        "type": "Expense",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Prepaid Expenses",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Rating fees are often paid annually in advance and amortized over the 12-month period the rating covers.",
+    "practitioner_notes": {
+      "audit_triggers": "Large one-time payments not properly amortized over the service period.",
+      "erp_application": "Use the Prepaid Amortization schedule in the Fixed Asset or GL module.",
+      "required_documentation": "Rating agency invoice and service term engagement letter."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-aml-kyc-screening-costs",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund AML KYC screening costs",
+    "description": "Accounting for periodic anti-money laundering and know-your-customer verification costs for fund investors.",
+    "entries": [
+      {
+        "account": "Compliance Expense - AML/KYC",
+        "type": "Debit",
+        "dr": 4500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 4500
+      }
+    ],
+    "explanation": "This entry records the accrual of fees paid to third-party providers for performing mandatory identity verification and background checks on new and existing fund participants.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances in screening costs relative to new investor onboarding volume.",
+      "erp_application": "Set up a recurring accrual based on the expected volume of investor subscriptions and redemptions.",
+      "required_documentation": "Service provider invoice, screening report log, and fund compliance policy documentation."
+    }
+  },
+  {
+    "slug": "how-to-record-etf-dividend-reinvestment",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record ETF dividend reinvestment",
+    "description": "Recording the automatic reinvestment of dividends into additional shares of an ETF portfolio holding.",
+    "entries": [
+      {
+        "account": "Investments in Securities (at Cost)",
+        "type": "Debit",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Dividend Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "When an ETF is set to reinvest dividends (DRIP), the income is recognized and immediately added to the cost basis of the investment position.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between the broker-reported cost basis and the fund's internal general ledger.",
+      "erp_application": "Ensure the portfolio management system (PMS) handles DRIP events as non-cash transactions to prevent bank reconciliation breaks.",
+      "required_documentation": "Brokerage statement showing dividend distribution and subsequent share purchase."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-performance-audit-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund performance audit fees",
+    "description": "Accruing for specialized audits such as GIPS compliance or track record verification fees.",
+    "entries": [
+      {
+        "account": "Performance Verification Expense",
+        "type": "Debit",
+        "dr": 8000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Professional Fees",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 8000
+      }
+    ],
+    "explanation": "Records the estimated cost of third-party verification of the fund's historical performance figures to ensure compliance with industry standards.",
+    "practitioner_notes": {
+      "audit_triggers": "Inclusion of verified performance in marketing materials without corresponding expense recognition.",
+      "erp_application": "Differentiate these from standard financial statement audit fees in the chart of accounts.",
+      "required_documentation": "Engagement letter from the performance auditor and invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-pricing-vendor-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund pricing vendor fees",
+    "description": "Accounting for subscription fees to market data providers for portfolio security valuations.",
+    "entries": [
+      {
+        "account": "Market Data & Pricing Services",
+        "type": "Debit",
+        "dr": 3200,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 3200
+      }
+    ],
+    "explanation": "Funds pay vendors (e.g., Bloomberg, Reuters, IDC) for independent price feeds used to calculate the daily Net Asset Value (NAV).",
+    "practitioner_notes": {
+      "audit_triggers": "High data costs relative to the complexity of the portfolio assets.",
+      "erp_application": "Often allocated across multiple sub-funds based on the number of security identifiers (CUSIPs/ISINs) held.",
+      "required_documentation": "Vendor service agreement and monthly usage-based invoices."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-compliance-software-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund compliance software fees",
+    "description": "Accounting for SaaS platform costs used for regulatory monitoring and investment restriction testing.",
+    "entries": [
+      {
+        "account": "Regulatory Software Expense",
+        "type": "Debit",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Prepaid Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "This entry records the monthly amortization of an annual compliance software subscription fee.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to amortize large upfront annual software licenses over the correct period.",
+      "erp_application": "Use the fixed asset or prepaid module to automate monthly release of the software expense.",
+      "required_documentation": "Software license agreement and proof of annual payment."
+    }
+  },
+  {
+    "slug": "how-to-record-management-fee-waivers",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record management fee waivers",
+    "description": "Accounting for the reduction of management fee expenses when an investment advisor voluntarily waives their contractual fee to lower the fund's expense ratio.",
+    "entries": [
+      {
+        "account": "Accrued Management Fees",
+        "type": "Liability",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Management Fee Expense",
+        "type": "Expense",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "The entry reverses a portion of the previously accrued management fee expense, reflecting the manager's agreement to waive the fee for the benefit of the fund's net asset value.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between investment management agreements and actual fees charged; lack of formal waiver letters.",
+      "erp_application": "Set up a contra-expense account or credit the expense account directly in the fund accounting module.",
+      "required_documentation": "Executed fee waiver letter, Board of Directors approval, and updated expense ratio calculation."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-storage-fees-bullion",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund storage fees for bullion",
+    "description": "Recording the monthly accrual for physical storage and insurance costs for precious metals held within a commodity-focused fund or ETF.",
+    "entries": [
+      {
+        "account": "Bullion Storage Expense",
+        "type": "Expense",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Storage Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "Storage fees for physical assets are typically calculated based on the weight or market value of the bullion held in a third-party vault.",
+    "practitioner_notes": {
+      "audit_triggers": "Variance between vault inventory reports and storage invoices; excessive insurance premiums.",
+      "erp_application": "Automate based on the month-end market value of the physical inventory within the commodity sub-ledger.",
+      "required_documentation": "Vaulting agreement, monthly storage invoice, and insurance policy schedules."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-redemption-gate-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund redemption gate fees",
+    "description": "Recording fees charged to redeeming shareholders during periods of liquidity constraints, which are usually retained by the fund to protect remaining investors.",
+    "entries": [
+      {
+        "account": "Redemptions Payable",
+        "type": "Liability",
+        "dr": 10000,
+        "cr": 0
+      },
+      {
+        "account": "Redemption Fee Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 10000
+      }
+    ],
+    "explanation": "When a redemption fee or gate is applied, the amount paid to the departing investor is reduced, and the difference is kept by the fund as income or to offset transaction costs.",
+    "practitioner_notes": {
+      "audit_triggers": "Manual adjustments to redemption payouts; consistency with the fund's offering memorandum regarding gate triggers.",
+      "erp_application": "Configure the transfer agency system to automatically calculate and deduct the fee from the gross redemption amount.",
+      "required_documentation": "Redemption request form, gate activation notice, and investor payout confirmation."
+    }
+  },
+  {
+    "slug": "how-to-record-realized-loss-on-options",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record realized loss on options",
+    "description": "Closing out a derivative position at a loss, reflecting the difference between the premium paid and the closing proceeds or expiration value.",
+    "entries": [
+      {
+        "account": "Realized Loss on Derivatives",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Options at Fair Value",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "The entry removes the asset from the books at its carrying value and recognizes the realized loss in the statement of operations.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between broker trade confirms and the fund's general ledger; incorrect cost-basis identification (FIFO vs Average Cost).",
+      "erp_application": "The derivative module should trigger the realization event upon trade execution or contract expiration.",
+      "required_documentation": "Broker trade confirmation and daily valuation report."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-esg-certification-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund ESG certification fees",
+    "description": "Accounting for the professional fees paid to third-party agencies for ESG scoring, rating, or sustainable finance labeling.",
+    "entries": [
+      {
+        "account": "ESG Certification Expense",
+        "type": "Expense",
+        "dr": 8500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Professional Fees",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 8500
+      }
+    ],
+    "explanation": "Costs associated with obtaining ESG credentials or labels for the fund are recognized as professional service expenses over the period of the engagement.",
+    "practitioner_notes": {
+      "audit_triggers": "Large one-time payments to unverified vendors; misclassification of marketing costs as ESG compliance.",
+      "erp_application": "Categorize under professional fees with a specific sub-code for ESG-related regulatory or compliance costs.",
+      "required_documentation": "Service Level Agreement (SLA), invoice from the rating agency, and the certification certificate."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-lei-registration-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund LEI registration fees",
+    "description": "Accounting for the annual registration and maintenance of the Legal Entity Identifier required for regulatory reporting.",
+    "entries": [
+      {
+        "account": "Regulatory Compliance Expense",
+        "type": "Debit",
+        "dr": 250,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250
+      }
+    ],
+    "explanation": "Legal Entity Identifier (LEI) fees are typically recognized as a regulatory expense. As these are predictable annual costs, they are often accrued monthly or recorded when the renewal invoice is received from the Local Operating Unit.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of active LEI status on the Global LEI Index against the expense recorded.",
+      "erp_application": "Set as a recurring annual journal or automated accrual in the regulatory reporting module.",
+      "required_documentation": "Invoice from the LOU (e.g., Bloomberg, GS1) and confirmation of LEI renewal."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-swing-pricing-adjustments",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund swing pricing adjustments",
+    "description": "Adjusting the Net Asset Value per share to protect existing investors from dilution caused by transaction costs of large inflows or outflows.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Debit",
+        "dr": 102000,
+        "cr": 0
+      },
+      {
+        "account": "Share Capital - Net Asset Value",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 100000
+      },
+      {
+        "account": "Swing Factor Reserve",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 2000
+      }
+    ],
+    "explanation": "When a fund 'swings' its price, the additional amount paid by the subscribing investor (the swing factor) is credited to the fund's capital to offset estimated brokerage and spread costs, rather than being treated as fee income.",
+    "practitioner_notes": {
+      "audit_triggers": "Consistency in applying swing thresholds as defined in the fund prospectus.",
+      "erp_application": "Most transfer agency systems calculate this automatically; the accounting feed must map the swing factor to a capital reserve account.",
+      "required_documentation": "Daily NAV calculation sheet and swing threshold breach report."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-professional-indemnity-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund professional indemnity fees",
+    "description": "Recording the accrual of professional indemnity (PI) insurance premiums to cover errors and omissions in fund management.",
+    "entries": [
+      {
+        "account": "Insurance Expense - Professional Indemnity",
+        "type": "Debit",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Prepaid Insurance",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "PI insurance is usually paid annually in advance. The monthly entry involves amortizing the prepaid asset into the fund's expense ratio to ensure a consistent NAV impact.",
+    "practitioner_notes": {
+      "audit_triggers": "Comparison of the amortization schedule against the insurance policy period and premium amount.",
+      "erp_application": "Use the prepaid amortization module to automate the monthly debit to the expense account.",
+      "required_documentation": "Insurance policy binder and premium invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-branding-and-design-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund branding and design fees",
+    "description": "Accounting for professional fees related to the design of fund logos, pitch books, and investor presentation materials.",
+    "entries": [
+      {
+        "account": "Marketing and Branding Expense",
+        "type": "Debit",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Branding and design fees are period costs and should be expensed as incurred, unless they relate specifically to the launch phase and are capitalized as organizational costs under specific GAAP/IFRS rules.",
+    "practitioner_notes": {
+      "audit_triggers": "Review of the management agreement to ensure these costs are fund-borne and not manager-borne.",
+      "erp_application": "Categorize under professional services in the General Ledger.",
+      "required_documentation": "Design agency contract and itemized invoices."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-website-hosting-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund website hosting fees",
+    "description": "Monthly accrual of technology costs for the fund's public factsheet website or secure investor portal.",
+    "entries": [
+      {
+        "account": "Technology and Data Expense",
+        "type": "Debit",
+        "dr": 400,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 400
+      }
+    ],
+    "explanation": "Modern funds incur ongoing costs for digital presence and investor reporting portals. These are typically accrued monthly to maintain an accurate Total Expense Ratio (TER).",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of service existence and reasonableness of the monthly fee relative to the service level agreement.",
+      "erp_application": "Post to the IT/Technology expense line item within the operating expense section of the P&L.",
+      "required_documentation": "Service Level Agreement (SLA) and monthly hosting invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-translation-adjustments",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund translation adjustments",
+    "description": "Recording the impact of currency fluctuations on the translation of foreign currency denominated net assets into the fund's reporting currency.",
+    "entries": [
+      {
+        "account": "Accumulated Other Comprehensive Income",
+        "type": "Debit",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Net Assets Attributable to Holders",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "This entry reflects the translation adjustment when the reporting currency strengthens against the functional currency of a foreign sub-fund, resulting in a decrease in the reporting value of net assets.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant swings in OCI relative to currency volatility benchmarks.",
+      "erp_application": "Automated through the multi-currency translation module at month-end close.",
+      "required_documentation": "Currency translation worksheets and month-end spot rate verification."
+    }
+  },
+  {
+    "slug": "how-to-record-sec-lending-collateral-income",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record sec lending collateral income",
+    "description": "Accounting for the income generated from reinvesting cash collateral received from borrowers in a securities lending program.",
+    "entries": [
+      {
+        "account": "Cash - Restricted Collateral Account",
+        "type": "Debit",
+        "dr": 1200,
+        "cr": 0
+      },
+      {
+        "account": "Securities Lending Reinvestment Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200
+      }
+    ],
+    "explanation": "When cash collateral is reinvested in short-term instruments, the interest earned is recorded as income, often shared between the fund and the lending agent.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between the lending agent's monthly statement and the fund's ledger.",
+      "erp_application": "Ensure the reinvestment income is mapped to a specific sub-ledger for securities lending activity.",
+      "required_documentation": "Lending agent monthly activity reports and collateral reinvestment yield schedules."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-restructuring-costs",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund restructuring costs",
+    "description": "Recording expenses associated with the legal and operational reorganization of a fund's investment mandate or share class structure.",
+    "entries": [
+      {
+        "account": "Fund Restructuring Expense",
+        "type": "Debit",
+        "dr": 25000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Restructuring Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 25000
+      }
+    ],
+    "explanation": "Captures the one-time professional and administrative costs incurred to modify the fund's constitutive documents or operational setup.",
+    "practitioner_notes": {
+      "audit_triggers": "Non-recurring expense items that significantly impact the fund's Total Expense Ratio (TER).",
+      "erp_application": "Use a unique project code to track all restructuring-related invoices separately from ordinary ops.",
+      "required_documentation": "Board resolutions approving the restructuring and invoices from legal counsel."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-merger-transaction-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund merger transaction fees",
+    "description": "Accounting for transaction-related costs incurred during the merger of two mutual funds or sub-funds within a SICAV.",
+    "entries": [
+      {
+        "account": "Merger Related Transaction Costs",
+        "type": "Debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable - Service Providers",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Direct costs of merging funds, such as auditor merger opinions and regulatory filing updates, are recognized as period expenses unless borne by the manager.",
+    "practitioner_notes": {
+      "audit_triggers": "Unusually high administrative expenses during the merger period.",
+      "erp_application": "Allocate costs to the surviving fund or according to the merger agreement terms.",
+      "required_documentation": "Merger agreement, prospectus supplements, and regulatory approval letters."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-gips-verification-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund GIPS verification fees",
+    "description": "Recording the fees paid to external third-party verifiers to ensure the fund's performance claims comply with GIPS standards.",
+    "entries": [
+      {
+        "account": "GIPS Verification Expense",
+        "type": "Debit",
+        "dr": 8000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Professional Fees",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 8000
+      }
+    ],
+    "explanation": "GIPS verification is an elective but standard practice; fees are typically accrued monthly or recorded upon issuance of the verification report.",
+    "practitioner_notes": {
+      "audit_triggers": "Omission of accruals for annual verification services.",
+      "erp_application": "Categorize under compliance or professional fees in the chart of accounts.",
+      "required_documentation": "Engagement letter with the GIPS verifier and final verification report."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-trade-error-losses",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund trade error losses",
+    "description": "Accounting for losses incurred due to execution errors or operational failures in fund trading.",
+    "entries": [
+      {
+        "account": "Trade Error Expense",
+        "type": "Expense",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Broker Payable",
+        "type": "Asset/Liability",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "When a trading error occurs (e.g., wrong security or quantity), the fund must record the loss to clear the position and reflect the operational cost in the P&L.",
+    "practitioner_notes": {
+      "audit_triggers": "Large trade error accounts often trigger scrutiny regarding internal controls and compliance oversight.",
+      "erp_application": "Post to a specific sub-ledger for operational losses to differentiate from realized investment losses.",
+      "required_documentation": "Trade error log, compliance sign-off, and broker confirmation of the correcting trade."
+    }
+  },
+  {
+    "slug": "how-to-record-placement-agent-fees",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record placement agent fees",
+    "description": "Recording fees paid to third-party marketers for securing capital commitments to the fund.",
+    "entries": [
+      {
+        "account": "Prepaid Placement Fees",
+        "type": "Asset",
+        "dr": 50000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 50000
+      }
+    ],
+    "explanation": "Placement agent fees are typically capitalized as a prepaid asset and amortized over a specific period, such as the fund's commitment period.",
+    "practitioner_notes": {
+      "audit_triggers": "Verify that fees are not being fully expensed immediately if they provide a long-term benefit for capital raising.",
+      "erp_application": "Set up an amortization schedule in the fixed assets or prepaid module.",
+      "required_documentation": "Placement agent agreement and proof of investor capital commitment."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-of-fund-rebate-income",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund-of-fund rebate income",
+    "description": "Accounting for management fee rebates received by a Fund-of-Funds from underlying investment managers.",
+    "entries": [
+      {
+        "account": "Rebate Receivable",
+        "type": "Asset",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Management Fee Expense (Contra)",
+        "type": "Expense",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "To prevent 'double-dipping' of fees, underlying managers may rebate fees back to the Fund-of-Funds, which is recorded as a reduction of expense.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances between expected and actual rebate income relative to NAV invested in underlying funds.",
+      "erp_application": "Map the credit to a contra-expense account to properly report net management fees.",
+      "required_documentation": "Side letter agreements and monthly/quarterly rebate statements from underlying managers."
+    }
+  },
+  {
+    "slug": "how-to-record-deferred-sales-charge-amortization",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record deferred sales charge amortization",
+    "description": "Amortizing the commission paid to distributors for back-end load mutual fund shares.",
+    "entries": [
+      {
+        "account": "Amortization Expense - DSC",
+        "type": "Expense",
+        "dr": 2500,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Sales Charge Asset",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 2500
+      }
+    ],
+    "explanation": "Commissions paid up-front for certain share classes are capitalized and amortized over the period the contingent deferred sales charge (CDSC) applies.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistencies between the amortization period and the actual CDSC schedule defined in the prospectus.",
+      "erp_application": "Automate amortization based on the vintage of the capital inflow.",
+      "required_documentation": "Fund prospectus and broker commission reports."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-seed-capital-withdrawals",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund seed capital withdrawals",
+    "description": "Recording the withdrawal or redemption of initial capital provided by the fund sponsor.",
+    "entries": [
+      {
+        "account": "Partner Capital - Seed Series",
+        "type": "Equity",
+        "dr": 100000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 100000
+      }
+    ],
+    "explanation": "When the investment manager withdraws seeding capital, the transaction is recorded as a redemption of equity or net assets.",
+    "practitioner_notes": {
+      "audit_triggers": "Compliance with lock-up periods or regulatory requirements regarding minimum seed capital levels.",
+      "erp_application": "Process as a standard redemption within the investor accounting/transfer agency module.",
+      "required_documentation": "Redemption notice and bank wire confirmation."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-dilution-levy-income",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund dilution levy income",
+    "description": "Recording the levy charged to investors during subscriptions or redemptions to offset the cost of buying or selling underlying assets.",
+    "entries": [
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 1500,
+        "cr": 0
+      },
+      {
+        "account": "Dilution Levy Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 1500
+      }
+    ],
+    "explanation": "A dilution levy is applied to ensure that existing shareholders are not disadvantaged by the transaction costs (commissions, spreads) incurred when a fund trades assets to accommodate new capital or redemptions.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of levy calculations against the fund prospectus and actual portfolio transaction costs.",
+      "erp_application": "Ensure the levy is tracked separately from investment management fees for tax and reporting purposes.",
+      "required_documentation": "Investor transaction record, dilution levy calculation sheet, and trade confirmation reports."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-vat-refund-receivables",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund VAT refund receivables",
+    "description": "Accounting for the recognition of Value Added Tax (VAT) reclaims on management or professional fees in eligible jurisdictions.",
+    "entries": [
+      {
+        "account": "VAT Recoverable",
+        "type": "Asset",
+        "dr": 4200,
+        "cr": 0
+      },
+      {
+        "account": "VAT Expense Recovery",
+        "type": "Expense Reduction",
+        "dr": 0,
+        "cr": 4200
+      }
+    ],
+    "explanation": "In certain jurisdictions, investment funds can reclaim a portion of the VAT paid on services such as management, administration, and legal advice.",
+    "practitioner_notes": {
+      "audit_triggers": "Aging of VAT receivables and correspondence with tax authorities regarding refund eligibility.",
+      "erp_application": "Link the recovery to the specific historical expense lines to maintain accurate net expense ratios.",
+      "required_documentation": "VAT returns, original invoices, and tax authority approval letters."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-nav-error-compensation",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund NAV error compensation",
+    "description": "Recording the liability and expense associated with compensating investors due to an error in the Net Asset Value calculation.",
+    "entries": [
+      {
+        "account": "NAV Error Compensation Expense",
+        "type": "Expense",
+        "dr": 12500,
+        "cr": 0
+      },
+      {
+        "account": "Due to Shareholders",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 12500
+      }
+    ],
+    "explanation": "When an error in valuation or accounting leads to an incorrect NAV, the fund or its manager must compensate affected shareholders to restore their position.",
+    "practitioner_notes": {
+      "audit_triggers": "Materiality thresholds for NAV errors and regulatory reporting requirements for compensation events.",
+      "erp_application": "Record as a non-recurring operating expense; distinguish from standard management fee waivers.",
+      "required_documentation": "NAV error impact analysis report, board approval for compensation, and settlement schedule."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-share-class-hedging-gains",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund share class hedging gains",
+    "description": "Recording unrealized gains from currency forward contracts specifically allocated to a hedged share class.",
+    "entries": [
+      {
+        "account": "Unrealized Gain on Forward Contracts",
+        "type": "Asset",
+        "dr": 8500,
+        "cr": 0
+      },
+      {
+        "account": "Change in Unrealized Appreciation (Hedged Class)",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 8500
+      }
+    ],
+    "explanation": "Hedged share classes use derivatives to minimize the impact of exchange rate fluctuations between the fund base currency and the share class currency.",
+    "practitioner_notes": {
+      "audit_triggers": "Mismatch between hedging gains/losses and the currency exposure of the specific share class net assets.",
+      "erp_application": "Attribute these specific gains/losses to the relevant share class rather than the general fund pool.",
+      "required_documentation": "Forward contract valuation reports, share class hedging policy, and counterparty confirmations."
+    }
+  },
+  {
+    "slug": "how-to-record-fund-regulatory-levy-expenses",
+    "category": "Asset Management & Hedge Funds",
+    "title": "How to record fund regulatory levy expenses",
+    "description": "Accruing for periodic fees and levies imposed by financial regulators such as the SEC, FCA, or CSSF.",
+    "entries": [
+      {
+        "account": "Regulatory Levy Expense",
+        "type": "Expense",
+        "dr": 3200,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Regulatory Fees",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 3200
+      }
+    ],
+    "explanation": "Funds are often subject to annual or periodic fees based on their assets under management or as a flat fee to support regulatory oversight functions.",
+    "practitioner_notes": {
+      "audit_triggers": "Consistency with regulatory fee schedules and accurate accrual based on the fund's reporting period.",
+      "erp_application": "Create a recurring journal entry to spread the annual cost across monthly reporting periods.",
+      "required_documentation": "Official fee schedule from the regulator, prior year invoices, and AUM calculation support."
+    }
   }
+
 
 
 
