@@ -1,15 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 
-export default function ProductLightbox() {
+export default function LeadMagnetLightbox() {
   const [isVisible, setIsVisible] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
+  
+  // Subscription states
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   useEffect(() => {
-    // 1. Check storage
-    const hasSeenPopup = localStorage.getItem("jeh_suite_popup_seen");
+    // 1. Check storage (renamed key so returning users can see the new offer)
+    const hasSeenPopup = localStorage.getItem("jeh_lead_popup_seen");
     
     // 2. Logic: Show if never seen OR if we are in development mode to test
     const isDevelopment = process.env.NODE_ENV === 'development';
@@ -19,7 +22,7 @@ export default function ProductLightbox() {
         setShouldRender(true);
         // Small delay to allow the 'scale-95' transition to trigger
         setTimeout(() => setIsVisible(true), 100);
-      }, 3000); // Reduced to 3 seconds for faster testing
+      }, 3000); // Popup appears after 3 seconds
 
       return () => clearTimeout(timer);
     }
@@ -28,9 +31,31 @@ export default function ProductLightbox() {
   const closePopup = () => {
     setIsVisible(false);
     // Mark as seen for production
-    localStorage.setItem("jeh_suite_popup_seen", "true");
+    localStorage.setItem("jeh_lead_popup_seen", "true");
     // Delay unmounting to allow fade-out animation
     setTimeout(() => setShouldRender(false), 500);
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setTimeout(closePopup, 3000); // Auto-close 3 seconds after success
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
   };
 
   if (!shouldRender) return null;
@@ -64,29 +89,29 @@ export default function ProductLightbox() {
              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
              
              <div className="relative z-10">
-                <div className="text-3xl mb-4">📊</div>
+                <div className="text-4xl mb-6 shadow-sm">📑</div>
                 <h3 className="text-3xl font-black leading-tight mb-4 uppercase tracking-tighter italic">
-                   Stop <br/> Renting <br/> Data.
+                   Master <br/> Complex <br/> Entries.
                 </h3>
-                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest leading-relaxed">
-                   Professional <br/> VBA ERP Suite <br/> v1.0
+                <p className="text-emerald-100 text-xs font-bold uppercase tracking-widest leading-relaxed mt-6">
+                   Free 100+ Advanced <br/> Accounting PDF
                 </p>
              </div>
           </div>
 
-          {/* Right Side: Details & CTA */}
+          {/* Right Side: Details & Form CTA */}
           <div className="md:w-7/12 p-10 flex flex-col justify-center bg-white">
-            <span className="text-[10px] font-black text-emerald-600 uppercase tracking-[0.3em] mb-2 block">Founders Launch Offer</span>
-            <h4 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">JEH Accounting Suite</h4>
+            <span className="text-[10px] font-black text-emerald-600 uppercase tracking-[0.3em] mb-2 block">Free Professional Guide</span>
+            <h4 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">Advanced Journal Entries</h4>
             
             <ul className="space-y-3 mb-8">
               {[
-                "No Subscription Fees", 
-                "Automated PDF Vouchers", 
-                "Live Financial Ratios"
+                "Covers Carbon Credits & Green Financing", 
+                "Tax Equity & Complex IFRS Logic", 
+                "Delivered instantly to your inbox"
               ].map(item => (
                 <li key={item} className="flex items-center gap-3 text-[11px] font-bold text-slate-600 uppercase tracking-tight">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
                     <svg className="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -96,17 +121,36 @@ export default function ProductLightbox() {
               ))}
             </ul>
 
-            <Link 
-              href="/suite" 
-              onClick={closePopup}
-              className="block w-full text-center bg-slate-950 text-white py-4 rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] hover:bg-emerald-600 transition-all shadow-xl shadow-slate-200 active:scale-95"
-            >
-              Get The Suite — $49
-            </Link>
+            {status === "success" ? (
+              <div className="bg-emerald-50 border border-emerald-100 text-emerald-700 p-5 rounded-2xl font-bold text-sm text-center animate-bounce shadow-sm">
+                Guide sent! Check your inbox. 🎉
+              </div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="space-y-3">
+                <input 
+                  type="email" 
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your professional email" 
+                  className="w-full p-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 outline-none focus:border-emerald-500 transition-all text-sm font-medium placeholder:text-slate-400" 
+                />
+                <button 
+                  type="submit" 
+                  disabled={status === "loading"}
+                  className="block w-full text-center bg-slate-950 text-white py-4 rounded-xl font-black text-[11px] uppercase tracking-[0.2em] hover:bg-emerald-600 transition-all shadow-xl shadow-slate-200 active:scale-95 disabled:opacity-50"
+                >
+                  {status === "loading" ? "Sending..." : "Send Me The PDF"}
+                </button>
+                {status === "error" && (
+                  <p className="text-center text-red-500 text-xs font-bold mt-2">Something went wrong. Try again.</p>
+                )}
+              </form>
+            )}
             
             <button 
               onClick={closePopup} 
-              className="mt-4 w-full text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest hover:text-slate-600 transition-colors"
+              className="mt-5 w-full text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest hover:text-slate-600 transition-colors"
             >
               No thanks, I&apos;ll keep browsing
             </button>

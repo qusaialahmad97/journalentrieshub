@@ -14,21 +14,26 @@ export default function Footer() {
           </h3>
           <p className="text-sm leading-relaxed max-w-xs text-slate-400">
             The definitive resource for modern accountants. Specialized in IFRS, 
-            Jordanian Tax, and financial automation. Expertise by Qusai Ahmad.
+            financial automation, and global accounting logic. Expertise by Qusai Ahmad.
           </p>
         </div>
 
-        {/* Quick Links & Legal (Point #11) */}
+        {/* Quick Links & Legal */}
         <div>
-          <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-widest">Resources & Legal</h4>
+          <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-widest">Platform</h4>
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="/" className="hover:text-emerald-400 transition-colors">Browse All Entries</Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-emerald-400 transition-colors">About Me</Link>
+              <Link href="/about" className="hover:text-emerald-400 transition-colors">About the Hub</Link>
             </li>
-            {/* POINT #11: The Professional Shield Links */}
+            <li>
+              <Link href="/founder" className="hover:text-emerald-400 transition-colors">Founder Profile</Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-emerald-400 transition-colors">Contact</Link>
+            </li>
             <li>
               <Link href="/privacy" className="hover:text-emerald-400 transition-colors italic">Privacy Policy</Link>
             </li>
@@ -54,18 +59,11 @@ export default function Footer() {
             </li>
             <li>
               <a 
-                href="https://github.com/qusaialahmad97" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="mailto:admin@journalentrieshub.com" 
                 className="hover:text-emerald-400 transition-colors"
               >
-                GitHub Projects
+                admin@journalentrieshub.com
               </a>
-            </li>
-            <li>
-              <Link href="mailto:qusai@speakaccounting.com" className="hover:text-emerald-400 transition-colors font-bold">
-                Consulting Inquiry
-              </Link>
             </li>
           </ul>
         </div>

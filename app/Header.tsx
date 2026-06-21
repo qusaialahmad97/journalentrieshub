@@ -63,15 +63,16 @@ export default function Header() {
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex items-center gap-6">
           <Link href="/" className={pathname === '/' ? 'text-emerald-600 font-bold' : 'text-slate-600 hover:text-emerald-600 font-medium transition-colors'}>Home</Link>
-          <Link href="/suite" className={pathname === '/suite' ? 'text-emerald-600 font-bold' : 'text-slate-600 hover:text-emerald-600 font-medium transition-colors'}>ERP Suite</Link>
           <Link href="/glossary" className={pathname === '/glossary' ? 'text-emerald-600 font-bold' : 'text-slate-600 hover:text-emerald-600 font-medium transition-colors'}>Glossary</Link>
-          <Link href="/news" className={pathname === '/news' ? 'text-emerald-600 font-bold' : 'text-slate-600 hover:text-emerald-600 font-medium transition-colors'}>News</Link>
+          <Link href="/about" className={pathname === '/about' ? 'text-emerald-600 font-bold' : 'text-slate-600 hover:text-emerald-600 font-medium transition-colors'}>About</Link>
+          <Link href="/founder" className={pathname === '/founder' ? 'text-emerald-600 font-bold' : 'text-slate-600 hover:text-emerald-600 font-medium transition-colors'}>Founder</Link>
+          <Link href="/contact" className={pathname === '/contact' ? 'text-emerald-600 font-bold' : 'text-slate-600 hover:text-emerald-600 font-medium transition-colors'}>Contact</Link>
         </div>
 
         {/* Action Buttons & Desktop Subscription */}
         <div className="hidden md:flex items-center gap-3">
           
-          {/* NEW: Compact Desktop Subscription Form */}
+          {/* Compact Desktop Subscription Form */}
           <form onSubmit={handleSubscribe} className="hidden xl:flex relative items-center mr-2">
             <input 
               type="email" 
@@ -99,21 +100,6 @@ export default function Header() {
               {status === "error" && "Err"}
             </button>
           </form>
-
-          {/* 1. Buy Me a Coffee (The Original Support) */}
-          <a href="https://buymeacoffee.com/qusaiahmad" target="_blank" className="flex items-center gap-2 bg-[#FFDD00] text-black px-4 py-2 rounded-full font-bold text-[9px] uppercase tracking-wider transition-transform hover:scale-105 active:scale-95">
-            <span>☕</span> Support
-          </a>
-
-          {/* 2. ERP Suite (The Product) */}
-          <Link href="/suite" className="bg-slate-900 text-white px-5 py-2.5 rounded-full font-bold text-[9px] uppercase tracking-widest hover:bg-emerald-600 transition-all shadow-md">
-            ⚡ Get ERP Suite
-          </Link>
-
-          {/* 3. About (The Architect) */}
-          <Link href="/about" className="bg-slate-50 text-slate-600 px-4 py-2.5 rounded-full font-bold text-[9px] uppercase tracking-wider hover:bg-slate-100 transition-all">
-            About
-          </Link>
         </div>
 
         {/* MOBILE HAMBURGER BUTTON */}
@@ -133,15 +119,15 @@ export default function Header() {
         <div className={`fixed inset-0 bg-white z-[50] flex flex-col p-8 transition-transform duration-500 ease-in-out md:hidden overflow-y-auto ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="mt-20 flex flex-col gap-6 text-xl font-bold">
             <Link onClick={toggleMenu} href="/" className={pathname === '/' ? 'text-emerald-600' : 'text-slate-900'}>Home</Link>
-            <Link onClick={toggleMenu} href="/suite" className={pathname === '/suite' ? 'text-emerald-600' : 'text-slate-900'}>JEH ERP Suite</Link>
             <Link onClick={toggleMenu} href="/glossary" className={pathname === '/glossary' ? 'text-emerald-600' : 'text-slate-900'}>Glossary</Link>
-            <Link onClick={toggleMenu} href="/news" className={pathname === '/news' ? 'text-emerald-600' : 'text-slate-900'}>News</Link>
-            <Link onClick={toggleMenu} href="/about" className={pathname === '/about' ? 'text-emerald-600' : 'text-slate-900'}>About Me</Link>
+            <Link onClick={toggleMenu} href="/about" className={pathname === '/about' ? 'text-emerald-600' : 'text-slate-900'}>About</Link>
+            <Link onClick={toggleMenu} href="/founder" className={pathname === '/founder' ? 'text-emerald-600' : 'text-slate-900'}>Founder</Link>
+            <Link onClick={toggleMenu} href="/contact" className={pathname === '/contact' ? 'text-emerald-600' : 'text-slate-900'}>Contact</Link>
             
             <hr className="border-slate-100 my-2" />
 
-            {/* NEW: Mobile Subscription Form */}
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+            {/* Mobile Subscription Form */}
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-8">
               <h4 className="text-sm text-slate-900 font-bold mb-3">Get Weekly Technical Guides</h4>
               <form onSubmit={handleSubscribe} className="relative flex items-center">
                 <input 
@@ -171,14 +157,6 @@ export default function Header() {
                 </button>
               </form>
             </div>
-            
-            <Link onClick={toggleMenu} href="/suite" className="w-full text-center bg-slate-900 text-white py-4 rounded-2xl text-lg flex items-center justify-center gap-2">
-              ⚡ Get Accounting Suite
-            </Link>
-            
-            <a href="https://buymeacoffee.com/qusaiahmad" className="w-full text-center bg-[#FFDD00] text-black py-4 rounded-2xl text-lg flex items-center justify-center gap-2 mb-8">
-              ☕ Support the Project
-            </a>
           </div>
         </div>
 

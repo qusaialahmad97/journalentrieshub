@@ -201,109 +201,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. THE PRIMARY PILLARS */}
-      <section id="categories" className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
-          <div>
-            <h2 className="text-4xl font-black text-slate-900 mb-2">Professional Pillars</h2>
-            <p className="text-slate-500 font-medium text-lg">Deep technical hubs curated for complex reporting roles.</p>
-          </div>
-          <div className="h-1.5 w-24 bg-emerald-500 rounded-full hidden md:block"></div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
-          <Link href={`/categories/${generateCategorySlug("Tax")}`} className="group relative bg-white border border-slate-200 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
-            <div className="w-16 h-16 bg-emerald-600 text-white rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl shadow-emerald-200 mb-10 transform group-hover:rotate-6 transition-transform">T</div>
-            <h3 className="text-2xl font-black mb-4">Tax & VAT</h3>
-            <p className="text-slate-500 leading-relaxed mb-10 text-sm">Jordanian VAT compliance, Withholding Tax, and regional Zakat entries.</p>
-            <div className="flex items-center text-emerald-600 font-black text-xs uppercase tracking-widest gap-2 group-hover:gap-4 transition-all">
-              View Tax Library <span>→</span>
-            </div>
-          </Link>
-
-          <Link href={`/categories/${generateCategorySlug("IFRS")}`} className="group relative bg-slate-900 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.3)]">
-            <div className="w-16 h-16 bg-white text-slate-900 rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl mb-10 transform group-hover:rotate-6 transition-transform">I</div>
-            <h3 className="text-2xl font-black mb-4 text-white">IFRS Hub</h3>
-            <p className="text-slate-400 leading-relaxed mb-10 text-sm">IFRS 16 Leases, IFRS 15 Revenue, and complex consolidation logic.</p>
-            <div className="flex items-center text-emerald-400 font-black text-xs uppercase tracking-widest gap-2 group-hover:gap-4 transition-all">
-              View IFRS Hub <span>→</span>
-            </div>
-          </Link>
-
-          <Link href={`/categories/${generateCategorySlug("Advanced")}`} className="group relative bg-white border border-slate-200 p-12 rounded-[48px] transition-all hover:-translate-y-3 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]">
-            <div className="w-16 h-16 bg-blue-600 text-white rounded-[20px] flex items-center justify-center font-black text-2xl shadow-xl shadow-blue-200 mb-10 transform group-hover:rotate-6 transition-transform">A</div>
-            <h3 className="text-2xl font-black mb-4">Advanced</h3>
-            <p className="text-slate-500 leading-relaxed mb-10 text-sm">Equity methods, Bond amortizations, and intercompany reconciliations.</p>
-            <div className="flex items-center text-blue-600 font-black text-xs uppercase tracking-widest gap-2 group-hover:gap-4 transition-all">
-              View Advanced <span>→</span>
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* 3. PRODUCT SHOWCASE: JEH ACCOUNTING SUITE */}
-      <section className="py-20 px-6 bg-emerald-50/50 border-y border-emerald-100">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-          <div className="flex-1">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest mb-6 shadow-lg shadow-emerald-200">
-              New: Version 1.0 ERP Suite
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-              Professional Accounting. <br/>
-              <span className="text-emerald-600">Zero Monthly Fees.</span>
-            </h2>
-            <p className="text-slate-600 text-lg mb-10 leading-relaxed">
-              Stop renting your data. The <strong>JEH Accounting Suite</strong> is a professional, VBA-powered ERP engine designed for Excel. Get automated PDF vouchers, live dashboards, and audit-ready reports in one lifetime payment.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-              {[
-                "Automated PDF Vouchers",
-                "Live Financial Ratios",
-                "VBA-Powered UserForms",
-                "No Subscriptions Forever"
-              ].map((feat) => (
-                <div key={feat} className="flex items-center gap-3 text-slate-700 font-bold text-sm">
-                  <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  {feat}
-                </div>
-              ))}
-            </div>
-
-            <a 
-              href="https://qusaialahmad.gumroad.com/l/jeh-accounting-suite" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-slate-900 text-white font-black px-10 py-5 rounded-2xl hover:bg-emerald-600 transition-all shadow-xl hover:shadow-emerald-200 uppercase text-xs tracking-[0.2em]"
-            >
-              Get the Suite — $49 <span>&nbsp;→</span>
-            </a>
-          </div>
-
-          {/* UPDATED: Visual Box with dashboard.png Background */}
-          <div className="flex-1 w-full">
-            <div 
-              className="relative rounded-[40px] overflow-hidden shadow-2xl border-8 border-white aspect-video group bg-cover bg-center"
-              style={{ backgroundImage: "url('/dashboard.png')" }}
-            >
-              {/* Subtle Dark Overlay that lightens on hover */}
-              <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-all duration-300 flex items-center justify-center">
-                <span className="bg-white/95 backdrop-blur-sm px-8 py-4 rounded-full font-black text-xs uppercase tracking-tighter shadow-2xl transform group-hover:scale-110 transition-transform duration-300 text-slate-900">
-                  View Live Dashboard
-                </span>
-              </div>
-            </div>
-            <p className="text-center mt-6 text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
-              Visual interface of the JEH v1.0 Command Center
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. SECONDARY INDUSTRY GRID */}
-      <section className="py-24 px-6 max-w-7xl mx-auto border-t border-slate-100">
+      {/* 2. SECONDARY INDUSTRY GRID */}
+      <section className="py-24 px-6 max-w-7xl mx-auto">
         <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-12 text-center">Browse Specialized Industries</h3>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {secondaryIndustries.map((industry) => (
@@ -324,7 +223,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. SUBSCRIPTION / LEAD MAGNET */}
+      {/* 3. SUBSCRIPTION / LEAD MAGNET */}
       <section id="subscribe" className="py-24 px-4 bg-[#0f172a] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
         

@@ -1,125 +1,107 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About Qusai Ahmad | Professional Profile",
-  description: "Executive profile of Qusai Ahmad, Accounts Payable Supervisor at alfanar. Expert in IFRS reporting and financial automation.",
+  title: "About Journal Entries Hub | The Global Accounting Library",
+  description: "The world's premier technical resource for modern accountants, providing standardized, expert-verified journal entries for the global finance community.",
 };
 
-export default function AboutPage() {
+export default function AboutHubPage() {
   return (
     <main className="min-h-screen bg-white font-sans text-slate-900 selection:bg-emerald-100">
       
-      {/* 1. MINIMALIST HERO SECTION */}
+      {/* 1. HERO SECTION */}
       <section className="pt-32 pb-20 border-b border-slate-100 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px]">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center text-center">
-          <div className="relative mb-10">
-            <div className="absolute inset-0 bg-emerald-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
-            <Image 
-              src="/Qusai_Ahmad.jpg" 
-              alt="Qusai Ahmad - Accounts Payable Supervisor" 
-              width={180} 
-              height={180} 
-              className="relative rounded-2xl grayscale hover:grayscale-0 transition-all duration-700 border border-slate-200 shadow-2xl"
-              priority 
-            />
+        <div className="max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-black uppercase tracking-widest mb-8 border border-emerald-100">
+            Our Global Mission
           </div>
-          <h1 className="text-6xl font-black text-slate-900 tracking-tighter mb-4">
-            Qusai <span className="text-emerald-600">Ahmad</span>
+          <h1 className="text-5xl md:text-6xl font-black text-slate-900 tracking-tight mb-6">
+            The World's #1 Library for <br />
+            <span className="text-emerald-600">Accounting Professionals.</span>
           </h1>
-          <p className="text-xl text-slate-500 font-medium tracking-tight max-w-2xl">
-            Accounts Payable Supervisor at alfanar & Founder of Journal Entries Hub. 
-            Specializing in IFRS compliance and financial system automation.
+          <p className="text-xl text-slate-500 font-medium tracking-tight max-w-2xl leading-relaxed">
+            Journal Entries Hub is the definitive, globally recognized resource for active finance professionals—delivering expert-verified accounting logic, universal IFRS/GAAP standards, and enterprise automation strategies.
           </p>
         </div>
       </section>
 
-      {/* 2. EXECUTIVE SUMMARY & STATS */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-3 gap-16">
-          
-          {/* Left: Biography */}
-          <div className="lg:col-span-2 space-y-12">
+      {/* 2. THE PROBLEM & THE SOLUTION */}
+      <section className="py-24 px-6 max-w-6xl mx-auto border-b border-slate-100">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
             <div>
-              <h2 className="text-sm font-black uppercase tracking-[0.3em] text-emerald-600 mb-6">Executive Summary</h2>
-              <div className="prose prose-slate prose-xl text-slate-600 leading-relaxed font-medium">
-                <p>
-                  As a General Accountant and Accounts Payable Supervisor based in Amman, Jordan, I lead financial operations that demand absolute precision. Currently at alfanar, I manage high-volume workflows where technical accuracy meets operational efficiency.
-                </p>
-                <p>
-                  My career is built on a foundation of IFRS standards and regional tax compliance. I believe that modern accounting is no longer just about recording—it&apos;s about building systems that scale.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-400 mb-6">The Initiative</h2>
+              <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-400 mb-4">The Global Gap</h2>
               <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                I founded Journal Entries Hub to solve a specific problem: the lack of standardized, high-level resources for active practitioners. This platform serves as a technical bridge between academic theory and corporate reality.
+                The internet is saturated with basic bookkeeping tutorials, but there is a severe lack of standardized, high-level resources for active practitioners. When accountants worldwide face complex consolidations, cross-border tax treatments, or new IFRS adoptions, they are often left to piece together ambiguous, fragmented guidelines.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-sm font-black uppercase tracking-[0.3em] text-emerald-600 mb-4">The Universal Standard</h2>
+              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                We are building the internet's most comprehensive, searchable library of advanced accounting logic. Every entry, regulatory breakdown, and workflow automation on this platform is designed to be immediately applicable in any high-volume corporate environment, anywhere in the world.
               </p>
             </div>
           </div>
 
-          {/* Right: Credential Sidebar */}
-          <div className="space-y-6">
-            <div className="bg-slate-900 text-white p-10 rounded-[40px] shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-              
-              <h3 className="text-xs font-black uppercase tracking-widest text-emerald-400 mb-10">Professional Credentials</h3>
-              
-              <ul className="space-y-8">
-                <li className="flex items-start gap-4">
-                  <span className="text-emerald-500 font-bold">01</span>
-                  <div>
-                    <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest mb-1">Current Office</p>
-                    <p className="font-bold text-sm">alfanar, Amman 🇯🇴</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="text-emerald-500 font-bold">02</span>
-                  <div>
-                    <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest mb-1">Technical Expertise</p>
-                    <p className="font-bold text-sm">IFRS & Tax</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="text-emerald-500 font-bold">03</span>
-                  <div>
-                    <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest mb-1">Strategic Focus</p>
-                    <p className="font-bold text-sm">Financial Automation & SAP</p>
-                  </div>
-                </li>
-              </ul>
+          {/* Visual Data Representation */}
+          <div className="bg-slate-900 rounded-[40px] p-10 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            <h3 className="text-white font-black text-2xl mb-8 relative z-10">The Global Ecosystem</h3>
+            <ul className="space-y-6 relative z-10">
+              <li className="flex items-center gap-4 text-slate-300 font-medium">
+                <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 shrink-0">1</div>
+                Deep-Dive IFRS & US GAAP Standards
+              </li>
+              <li className="flex items-center gap-4 text-slate-300 font-medium">
+                <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 shrink-0">2</div>
+                Complex Cross-Border Tax & VAT Logic
+              </li>
+              <li className="flex items-center gap-4 text-slate-300 font-medium">
+                <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 shrink-0">3</div>
+                Enterprise-Grade Financial Automation
+              </li>
+              <li className="flex items-center gap-4 text-slate-300 font-medium">
+                <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 shrink-0">4</div>
+                Weekly Insights for 1,000+ Global Pros
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-              <a 
-                href="https://www.linkedin.com/in/qusaialahmad" 
-                target="_blank" 
-                className="mt-12 flex items-center justify-center gap-3 w-full bg-white text-slate-900 p-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-emerald-500 hover:text-white transition-all duration-500 group"
-              >
-                LinkedIn Profile
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
-            </div>
-            
-            <p className="text-center text-[10px] font-black text-slate-300 uppercase tracking-[0.4em] py-4">
-              Verified Technical Resource
+      {/* 3. FOUNDER CALL-OUT SECTION */}
+      <section className="py-24 px-6 bg-slate-50/50">
+        <div className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-[40px] p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-10">
+          <div className="shrink-0 relative">
+            <div className="absolute inset-0 bg-emerald-500 rounded-full blur-2xl opacity-20"></div>
+            <Image 
+              src="/Qusai_Ahmad.jpg" 
+              alt="Qusai Ahmad" 
+              width={140} 
+              height={140} 
+              className="relative rounded-full grayscale border-4 border-white shadow-lg object-cover w-[140px] h-[140px]"
+            />
+          </div>
+          
+          <div className="text-center md:text-left flex-1">
+            <h3 className="text-xs font-black uppercase tracking-[0.3em] text-emerald-600 mb-2">The Architect</h3>
+            <h4 className="text-3xl font-black text-slate-900 mb-4 tracking-tight">Built by an Active Practitioner.</h4>
+            <p className="text-slate-500 font-medium leading-relaxed mb-6">
+              Journal Entries Hub is managed and curated by Qusai Ahmad, an accounting professional dedicated to elevating the technical standards of the global finance community through practical precision and automation.
             </p>
+            <Link 
+              href="/founder" 
+              className="inline-flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full font-black text-xs uppercase tracking-widest hover:bg-emerald-600 transition-all shadow-md active:scale-95 group"
+            >
+              View Qusai&apos;s Profile 
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 3. LOGO WALL / TRUST (Subtle) */}
-      <section className="py-20 bg-slate-50/50 border-t border-slate-100">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em] mb-12">Core Competencies</h3>
-          <div className="flex flex-wrap justify-center gap-x-16 gap-y-8 opacity-40 grayscale">
-            <span className="text-2xl font-black text-slate-900 tracking-tighter italic underline decoration-emerald-500">IFRS</span>
-            <span className="text-2xl font-black text-slate-900 tracking-tighter">TAX</span>
-            <span className="text-2xl font-black text-slate-900 tracking-tighter italic">CMA</span>
-            <span className="text-2xl font-black text-slate-900 tracking-tighter underline decoration-emerald-500">SAP</span>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
