@@ -240,38 +240,6 @@ export default async function EntryPage({
                 slug={entry.slug} 
               />
 
-              {/* Lead Magnet Section - JEH Suite Upsell */}
-              <div className="mt-12 p-1 bg-gradient-to-br from-emerald-500 to-slate-900 rounded-3xl shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-emerald-400/20 rounded-full blur-3xl transition-transform group-hover:scale-110 duration-700"></div>
-                
-                <div className="bg-white rounded-[22px] p-10 text-center relative z-10 border border-white/50">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl mb-6 shadow-sm border border-emerald-100 rotate-3">
-                    <span className="text-3xl">⚡</span>
-                  </div>
-                  
-                  <h2 className="text-3xl font-black text-slate-900 mb-4 tracking-tight">
-                    Automate this entry with the JEH Accounting Suite
-                  </h2>
-                  
-                  <p className="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed text-sm font-medium">
-                    Stop doing manual entry. Our VBA-powered ERP automatically generates your ledgers, Trial Balance, and Financial Statements.
-                  </p>
-                  
-                  <div className="flex justify-center items-center">
-                    <Link 
-                      href="/suite" 
-                      className="w-full sm:w-auto bg-slate-950 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-emerald-600 transition-all shadow-xl shadow-slate-200 active:scale-95"
-                    >
-                      Get the Suite for $49 — Lifetime Access
-                    </Link>
-                  </div>
-                  
-                  <p className="mt-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                    No Subscriptions. Own your data.
-                  </p>
-                </div>
-              </div>
-
               {/* Author Box */}
               <div className="mt-12 p-8 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col md:flex-row items-center gap-6">
                 <div className="w-20 h-20 rounded-full bg-slate-200 overflow-hidden border-2 border-emerald-500 relative flex items-center justify-center shrink-0">
