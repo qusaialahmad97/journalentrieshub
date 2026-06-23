@@ -106,12 +106,12 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         }}>
           {/* Logo with fixed type */}
           <img
-            src={logoSrc}
-            alt="Logo"
-            width="60"
-            height="60"
-            style={{ marginRight: '20px', borderRadius: '12px' }}
-          />
+          src={logoSrc}
+          alt="Logo"
+          width={60}  // <--- Fixed
+          height={60} // <--- Fixed
+          style={{ marginRight: '20px', borderRadius: '12px' }}
+        />
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{
