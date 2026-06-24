@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import entriesData from "../data/entries.json";
 
+export const dynamic = 'force-static';
 // 1. Define the interfaces
 interface JournalRow {
   account: string;
