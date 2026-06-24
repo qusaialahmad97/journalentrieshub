@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+export const dynamic = 'force-static';
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-white py-20 px-6 text-slate-800 font-sans">
