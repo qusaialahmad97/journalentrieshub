@@ -4,7 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import entriesData from "../data/entries.json";
 
+// Force this page to be static and generated at build time
 export const dynamic = 'force-static';
+
 // 1. Define the interfaces
 interface JournalRow {
   account: string;
@@ -19,9 +21,27 @@ interface Entry {
   entries: JournalRow[];
 }
 
+// --- OPTIMIZATION: Moved calculations outside the component ---
+// This runs once at build time, not on every page request.
+const entries = entriesData as Entry[];
+const totalEntriesCount = entries.length;
+const primaryPillars = ["Tax", "IFRS", "Advanced"];
+
+const categoryCounts = entries.reduce((acc, entry) => {
+  if (entry.category) {
+    acc[entry.category] = (acc[entry.category] || 0) + 1;
+  }
+  return acc;
+}, {} as Record<string, number>);
+
+const secondaryIndustries = Object.entries(categoryCounts)
+  .filter(([catName]) => !primaryPillars.includes(catName) && catName !== "General")
+  .map(([name, count]) => ({ name, count }))
+  .sort((a, b) => b.count - a.count);
+// -------------------------------------------------------------
+
 const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-// SEO slug generator
 const generateCategorySlug = (categoryName: string) => {
   return categoryName
     .toLowerCase()
@@ -38,25 +58,6 @@ export default function HomePage() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const totalEntriesCount = (entriesData as Entry[]).length;
-
-  const primaryPillars = ["Tax", "IFRS", "Advanced"];
-  
-  // Count entries per category
-  const categoryCounts = (entriesData as Entry[]).reduce((acc, entry) => {
-    if (entry.category) {
-      acc[entry.category] = (acc[entry.category] || 0) + 1;
-    }
-    return acc;
-  }, {} as Record<string, number>);
-
-  // Convert the tally into an array
-  const secondaryIndustries = Object.entries(categoryCounts)
-    .filter(([catName]) => !primaryPillars.includes(catName) && catName !== "General")
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count);
-
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
@@ -93,9 +94,9 @@ export default function HomePage() {
     }
   };
 
-  // Dropdown Search Logic
+  // Search Logic (Runs on the client as the user types)
   const searchTerms = query.toLowerCase().split(/\s+/).filter(Boolean);
-  const allMatches = (entriesData as Entry[]).filter((entry) => {
+  const allMatches = entries.filter((entry) => {
     if (searchTerms.length === 0) return false;
     const searchableContent = [
       entry.title,
@@ -115,7 +116,6 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-white text-slate-900 font-sans antialiased">
-      
       {/* 1. HERO */}
       <section className="relative py-28 px-4 bg-[#f8fafc] border-b border-slate-200 overflow-visible">
         <div className="max-w-4xl mx-auto text-center">
