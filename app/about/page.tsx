@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: "About Journal Entries Hub | The Global Accounting Library",
