@@ -6,6 +6,7 @@ import UtilityPrompt from "../../components/UtilityPrompt"; // <-- 1. ADDED IMPO
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
+export const dynamicParams = false;
 
 interface PractitionerNotes {
   erp_application?: string;
