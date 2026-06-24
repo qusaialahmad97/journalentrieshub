@@ -10,7 +10,7 @@ export default function FounderPage() {
   return (
     <main className="min-h-screen bg-white font-sans text-slate-900 selection:bg-emerald-100">
       
-{/* 1. MINIMALIST HERO SECTION */}
+      {/* 1. MINIMALIST HERO SECTION */}
       <section className="pt-32 pb-20 border-b border-slate-100 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px]">
         <div className="max-w-6xl mx-auto px-6 flex flex-col items-center text-center">
           <div className="relative mb-10">
@@ -53,7 +53,7 @@ export default function FounderPage() {
                   As an Accounts Payable Supervisor and General Accountant based in Amman, I lead financial operations that demand absolute precision. Currently at alfanar, I manage high-volume corporate workflows where technical accuracy meets operational efficiency.
                 </p>
                 <p>
-                  My career is built on a solid foundation of IFRS standards and regional tax compliance. However, I believe that modern accounting is no longer just about recording historical data—it is about building resilient systems that scale. 
+                  My career is built on a solid foundation of IFRS standards and regional tax compliance, and I am actively advancing my global expertise as a Certified Public Accountant (CPA) candidate. However, I believe that modern accounting is no longer just about recording historical data—it is about building resilient systems that scale. 
                 </p>
                 <p>
                   By integrating technical frameworks with automation logic, I focus on optimizing SAP GUI workflows, batch processing, and complex reconciliations to eliminate repetitive tasks and surface critical financial insights faster.
@@ -89,7 +89,7 @@ export default function FounderPage() {
                   <span className="text-emerald-500 font-bold">02</span>
                   <div>
                     <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest mb-1">Education</p>
-                    <p className="font-bold text-sm">B.S. Accounting</p>
+                    <p className="font-bold text-sm">B.S. Accounting (English)</p>
                     <p className="text-xs text-slate-400 mt-1">Al-Zaytoonah University of Jordan</p>
                   </div>
                 </li>
@@ -97,7 +97,7 @@ export default function FounderPage() {
                   <span className="text-emerald-500 font-bold">03</span>
                   <div>
                     <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest mb-1">Technical Expertise</p>
-                    <p className="font-bold text-sm">IFRS & Tax Compliance</p>
+                    <p className="font-bold text-sm">IFRS, Tax Compliance & CPA Candidate</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
