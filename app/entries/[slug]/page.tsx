@@ -90,8 +90,16 @@ export default async function EntryPage({
     "author": {
       "@type": "Person",
       "name": "Qusai Ahmad",
-      "jobTitle": "General Accountant Supervisor",
-      "url": "https://www.linkedin.com/in/qusaialahmad"
+      "jobTitle": "Accounts Payable Supervisor & CPA Candidate",
+      "url": "https://www.linkedin.com/in/qusaialahmad",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "alfanar"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Al-Zaytoonah University of Jordan"
+      }
     },
     "publisher": {
       "@type": "Organization",
@@ -247,7 +255,7 @@ export default async function EntryPage({
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h4 className="text-lg font-bold text-slate-900">Expert Analysis by Qusai Ahmad</h4>
-                  <p className="text-sm text-slate-600 mb-2">General Accountant Supervisor & IFRS Specialist</p>
+                  <p className="text-sm text-slate-600 mb-2">Accounts Payable Supervisor & CMA Candidate</p>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     Specialized in SAP GUI automation and Middle Eastern tax compliance. 
                     Building digital tools for the next generation of finance leaders.
