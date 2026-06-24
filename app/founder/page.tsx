@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-
+export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: "Qusai Ahmad | Founder & Accounting Professional",
   description: "Executive profile of Qusai Ahmad, Accounts Payable Supervisor at alfanar. Expert in IFRS reporting, regional tax, and financial automation.",
