@@ -1,3 +1,4 @@
+export const dynamic = 'force-static';
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-white py-20 px-6 text-slate-800 font-sans">
