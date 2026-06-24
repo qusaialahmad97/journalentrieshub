@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+export const dynamic = 'force-static';
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
