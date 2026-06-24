@@ -3,6 +3,8 @@
 import Link from "next/link";
 import glossaryData from "../../data/glossary.json";
 
+export const dynamic = 'force-static';
+
 export default function GlossaryPage() {
   // 1. Sort and Group terms by Letter
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
