@@ -4,6 +4,9 @@ import entries from "../../../data/entries.json";
 import { Metadata } from "next";
 
 export const dynamic = 'force-static';
+export const dynamicParams = false;
+
+
 
 interface JournalEntry {
   slug: string;
