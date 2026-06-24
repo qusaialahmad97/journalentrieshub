@@ -43,6 +43,12 @@ export default function AboutHubPage() {
                 We are building the internet's most comprehensive, searchable library of advanced accounting logic. Every entry, regulatory breakdown, and workflow automation on this platform is designed to be immediately applicable in any high-volume corporate environment, anywhere in the world.
               </p>
             </div>
+            <div>
+              <h2 className="text-sm font-black uppercase tracking-[0.3em] text-slate-400 mb-4">Editorial Compliance</h2>
+              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                Every transaction guide, debit/credit matrix, and workflow automation model on Journal Entries Hub undergoes rigorous internal review against current IFRS and US GAAP frameworks before publication. We maintain strict compliance standards to ensure all data is immediately audit-ready for enterprise environments.
+              </p>
+            </div>
           </div>
 
           {/* Visual Data Representation */}
