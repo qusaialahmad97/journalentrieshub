@@ -11,7 +11,7 @@ export default function FounderPage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Qusai Ahmad",
-    "jobTitle": "Accounts Payable Supervisor & CMA Candidate",
+    "jobTitle": "Accounts Payable Supervisor & CPA Candidate",
     "worksFor": {
       "@type": "Organization",
       "name": "alfanar"

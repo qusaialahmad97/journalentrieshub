@@ -60278,7 +60278,3126 @@
       "required_documentation": "Class-approved surveyor's thickness measurement report and invoice."
     }
   },
-  
+    {
+    "slug": "world-cup-ticket-sales-deferral",
+    "category": "fifa-world-cup",
+    "title": "How to Record World Cup Ticket Sales",
+    "description": "Recording the receipt of cash from fans for World Cup matches prior to the event taking place.",
+    "entries": [
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 5000000,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Ticket Revenue",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 5000000
+      }
+    ],
+    "explanation": "Cash is debited as funds are received from fans, while a liability is credited because the service (the match) hasn't been provided yet.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of small transactions requires robust reconciliation between ticketing software and bank statements.",
+      "erp_application": "Use a clearing account to match gateway receipts with individual seat IDs.",
+      "required_documentation": "Batch report from official ticketing platform and bank deposit confirmation."
+    }
+  },
+  {
+    "slug": "stadium-depreciation-match-month",
+    "category": "fifa-world-cup",
+    "title": "How to Expense World Cup Stadium Depreciation",
+    "description": "Monthly depreciation expense for a multi-billion dollar stadium used during the tournament.",
+    "entries": [
+      {
+        "account": "Depreciation Expense - Stadiums",
+        "type": "Expense",
+        "dr": 1200000,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Depreciation",
+        "type": "Contra-Asset",
+        "dr": 0,
+        "cr": 1200000
+      }
+    ],
+    "explanation": "Allocating the cost of the stadium over its useful life, recognizing the portion used during the tournament month.",
+    "practitioner_notes": {
+      "audit_triggers": "Verify the useful life estimate matches FIFA requirements and local tax laws.",
+      "erp_application": "Fixed asset module should trigger this based on the asset's depreciation schedule.",
+      "required_documentation": "Fixed asset register and valuation report for the stadium structure."
+    }
+  },
+  {
+    "slug": "sponsorship-revenue-recognition",
+    "category": "fifa-world-cup",
+    "title": "How to Recognize FIFA Sponsorship Income",
+    "description": "Moving unearned sponsorship funds to revenue once the tournament commences and obligations are met.",
+    "entries": [
+      {
+        "account": "Unearned Sponsorship Revenue",
+        "type": "Liability",
+        "dr": 20000000,
+        "cr": 0
+      },
+      {
+        "account": "Sponsorship Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 20000000
+      }
+    ],
+    "explanation": "Recognizing revenue as the performance obligations (visibility and branding during matches) are fulfilled.",
+    "practitioner_notes": {
+      "audit_triggers": "Recognition timing must align with the delivery of contract-specific marketing milestones.",
+      "erp_application": "Revenue recognition engine in ERP should be tied to match schedule milestones.",
+      "required_documentation": "Sponsorship contract and proof of delivery for media placements."
+    }
+  },
+  {
+    "slug": "prize-money-accrual-accounting",
+    "category": "fifa-world-cup",
+    "title": "How to Accrue Player Prize Money Payouts",
+    "description": "Accounting for the obligation to pay national teams based on their progression in the tournament.",
+    "entries": [
+      {
+        "account": "Prize Money Expense",
+        "type": "Expense",
+        "dr": 15000000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Prize Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 15000000
+      }
+    ],
+    "explanation": "Recording the expense in the period the competition occurs, creating a liability to pay the various national federations.",
+    "practitioner_notes": {
+      "audit_triggers": "Large payouts to international entities require strict KYC and AML compliance checks.",
+      "erp_application": "Record as an accrual until final match results are verified and payments processed.",
+      "required_documentation": "Tournament results schedule and FIFA prize money allocation table."
+    }
+  },
+  {
+    "slug": "broadcasting-rights-installment",
+    "category": "fifa-world-cup",
+    "title": "How to Account for TV Broadcasting Fees",
+    "description": "Recording the receipt of a major installment for global television and media rights.",
+    "entries": [
+      {
+        "account": "Cash - Restricted Accounts",
+        "type": "Asset",
+        "dr": 100000000,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Broadcasting Revenue",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 100000000
+      }
+    ],
+    "explanation": "Media rights payments are often received in installments; they remain a liability until the tournament is broadcast.",
+    "practitioner_notes": {
+      "audit_triggers": "Currency fluctuations between contract signing and payment receipt for international broadcasters.",
+      "erp_application": "Apply multi-currency revaluation to the deferred revenue account monthly.",
+      "required_documentation": "Broadcasting rights agreement and bank credit advice for the incoming wire."
+    }
+  },
+  {
+    "slug": "how-to-expense-world-cup-marketing-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense World Cup Marketing Costs",
+    "description": "Recording the advertising and promotional expenditures incurred during the FIFA World Cup cycle.",
+    "entries": [
+      {
+        "account": "Marketing Expense",
+        "type": "Debit",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "This entry recognizes marketing costs as an expense in the period they are incurred to generate brand awareness during the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Large spikes in marketing spend relative to historical data.",
+      "erp_application": "Record via the Accounts Payable module or General Ledger manual journal.",
+      "required_documentation": "Invoices from advertising agencies and media outlets."
+    }
+  },
+  {
+    "slug": "how-to-recognize-hospitality-package-revenue",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Hospitality Package Revenue",
+    "description": "Accounting for the sale of premium VIP hospitality packages for World Cup matches.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Debit",
+        "dr": 1200000,
+        "cr": 0
+      },
+      {
+        "account": "Hospitality Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200000
+      }
+    ],
+    "explanation": "Revenue is recognized when the match occurs and the hospitality service is delivered to the customer.",
+    "practitioner_notes": {
+      "audit_triggers": "Timing of revenue recognition vs. date of the match.",
+      "erp_application": "Sales and Distribution (SD) module for package billing.",
+      "required_documentation": "Hospitality contracts and attendance confirmation records."
+    }
+  },
+  {
+    "slug": "how-to-record-official-merchandise-sales",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Official Merchandise Sales",
+    "description": "Daily recording of revenue from licensed tournament merchandise sold at stadium kiosks.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Debit",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Merchandise Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Cash sales from merchandise are recorded daily to reflect retail activity during the event.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between inventory counts and cash receipts.",
+      "erp_application": "Point of Sale (POS) system integration with the GL.",
+      "required_documentation": "Daily sales reports and inventory reconciliation sheets."
+    }
+  },
+  {
+    "slug": "how-to-accrue-staff-travel-and-lodging",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Staff Travel and Lodging",
+    "description": "Accruing estimated costs for organizing committee travel and accommodation expenses not yet invoiced.",
+    "entries": [
+      {
+        "account": "Travel and Lodging Expense",
+        "type": "Debit",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "Recognizes expenses incurred by staff during the tournament to ensure compliance with the accrual basis of accounting.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant accrual reversals in the subsequent period.",
+      "erp_application": "Month-end accrual process in the Financial Accounting (FI) module.",
+      "required_documentation": "Travel itineraries and estimated lodging rate sheets."
+    }
+  },
+  {
+    "slug": "how-to-pay-for-event-security-services",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Pay for Event Security Services",
+    "description": "Recording the payment to third-party security firms for maintaining stadium safety.",
+    "entries": [
+      {
+        "account": "Security Service Expense",
+        "type": "Debit",
+        "dr": 300000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 300000
+      }
+    ],
+    "explanation": "This entry records the obligation to pay security vendors for services rendered during the group stages.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of security overtime charges.",
+      "erp_application": "Vendor invoice processing via Accounts Payable.",
+      "required_documentation": "Service level agreements and verified timesheets from the security firm."
+    }
+  },
+  {
+    "slug": "how-to-amortize-world-cup-bid-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Amortize World Cup Bid Costs",
+    "description": "Accounting for the systematic allocation of costs incurred during the successful bidding process for the FIFA World Cup.",
+    "entries": [
+      {
+        "account": "Amortization Expense",
+        "type": "Debit",
+        "dr": 50000,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Amortization - Bid Costs",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 50000
+      }
+    ],
+    "explanation": "Successful bid costs are capitalized as intangible assets and amortized over the period from the award date to the end of the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant changes in amortization schedule or useful life estimates.",
+      "erp_application": "Fixed Asset module should track bid costs as a specific asset class with a fixed end date.",
+      "required_documentation": "Bid award letter from FIFA and capitalization policy documentation."
+    }
+  },
+  {
+    "slug": "how-to-record-event-insurance-premiums",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Event Insurance Premiums",
+    "description": "Recording the prepayment and subsequent expense recognition of event cancellation and liability insurance for the tournament.",
+    "entries": [
+      {
+        "account": "Prepaid Insurance",
+        "type": "Debit",
+        "dr": 1200000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1200000
+      }
+    ],
+    "explanation": "Premiums paid in advance for tournament coverage are recorded as an asset and expensed over the policy period or during the event month.",
+    "practitioner_notes": {
+      "audit_triggers": "Large lump-sum payments to insurers without corresponding binder agreements.",
+      "erp_application": "Use the recurring journal entry feature to amortize the prepaid balance monthly.",
+      "required_documentation": "Insurance policy documents and proof of payment."
+    }
+  },
+  {
+    "slug": "how-to-accrue-volunteer-stipend-payments",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Volunteer Stipend Payments",
+    "description": "Recognizing the obligation for per diem and travel stipends owed to tournament volunteers.",
+    "entries": [
+      {
+        "account": "Volunteer Program Expense",
+        "type": "Debit",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Stipends Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "Stipends earned by volunteers during the tournament cycle must be accrued as an expense in the period the service was rendered.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between volunteer headcount and total stipend payout.",
+      "erp_application": "Integrate volunteer management software with the payroll or AP module.",
+      "required_documentation": "Volunteer attendance logs and approved stipend rate tables."
+    }
+  },
+  {
+    "slug": "how-to-recognize-logo-licensing-royalties",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Logo Licensing Royalties",
+    "description": "Recording revenue earned from third-party manufacturers using official World Cup logos and trademarks.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Debit",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Licensing Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Revenue is recognized based on sales reports provided by licensees, adhering to the accrual basis of accounting.",
+    "practitioner_notes": {
+      "audit_triggers": "Underreporting of sales by licensees or delayed royalty reports.",
+      "erp_application": "Sales order module should track royalty rates per SKU.",
+      "required_documentation": "Executed licensing agreements and monthly royalty statements."
+    }
+  },
+  {
+    "slug": "how-to-record-world-cup-forex-fluctuations",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record World Cup Forex Fluctuations",
+    "description": "Adjusting the value of prize money liabilities denominated in foreign currencies due to exchange rate changes.",
+    "entries": [
+      {
+        "account": "Foreign Exchange Loss",
+        "type": "Debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Prize Money Liability",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "When liabilities are held in a foreign currency, they must be revalued at the period-end spot rate, with the difference hitting the P&L.",
+    "practitioner_notes": {
+      "audit_triggers": "Material fluctuations in prize pool value without corresponding market movement.",
+      "erp_application": "Ensure the multi-currency functionality is enabled for all tournament-related liability accounts.",
+      "required_documentation": "Spot rate confirmation from a reliable financial source at period end."
+    }
+  },
+  {
+    "slug": "how-to-record-match-official-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Match Official Fees",
+    "description": "Records the professional fees paid to match referees, assistants, and VAR officials.",
+    "entries": [
+      {
+        "account": "Professional Services Expense",
+        "type": "Debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Payment for officiating services rendered during the tournament group stages.",
+    "practitioner_notes": {
+      "audit_triggers": "Verify match logs against official payroll records.",
+      "erp_application": "Utilize Project Costing module to link fees to specific matches.",
+      "required_documentation": "Service agreements and official match assignments."
+    }
+  },
+  {
+    "slug": "how-to-accrue-stadium-cleaning-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Stadium Cleaning Costs",
+    "description": "Recognizes the estimated liability for post-match sanitation and facility cleanup.",
+    "entries": [
+      {
+        "account": "Stadium Maintenance Expense",
+        "type": "Debit",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Accruing costs for cleaning services performed but not yet invoiced to ensure period matching.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances between estimated accrual and final vendor invoice.",
+      "erp_application": "General Ledger manual accrual journal entry.",
+      "required_documentation": "Service contract and signed work completion certificate."
+    }
+  },
+  {
+    "slug": "how-to-recognize-govt-world-cup-grants",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Govt World Cup Grants",
+    "description": "Recognition of government funding provided for World Cup operational support.",
+    "entries": [
+      {
+        "account": "Cash at Bank",
+        "type": "Debit",
+        "dr": 2000000,
+        "cr": 0
+      },
+      {
+        "account": "Deferred Grant Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 2000000
+      }
+    ],
+    "explanation": "Initial receipt of grant funds intended for future tournament-related expenditure according to IAS 20.",
+    "practitioner_notes": {
+      "audit_triggers": "Monitoring of grant compliance milestones and restricted usage.",
+      "erp_application": "Revenue Recognition engine for performance-based triggers.",
+      "required_documentation": "Signed grant agreement and bank disbursement letter."
+    }
+  },
+  {
+    "slug": "how-to-record-merchandise-impairment",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Merchandise Impairment",
+    "description": "Adjusting the book value of inventory for teams eliminated early from the competition.",
+    "entries": [
+      {
+        "account": "Inventory Write-Down Expense",
+        "type": "Debit",
+        "dr": 120000,
+        "cr": 0
+      },
+      {
+        "account": "Inventory - Merchandise",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 120000
+      }
+    ],
+    "explanation": "Loss recognized as Net Realizable Value (NRV) falls below cost for specific team apparel.",
+    "practitioner_notes": {
+      "audit_triggers": "High inventory levels of non-advancing teams post-elimination.",
+      "erp_application": "Inventory valuation and adjustment module.",
+      "required_documentation": "NRV calculation worksheet and stock status report."
+    }
+  },
+  {
+    "slug": "how-to-expense-player-charter-flights",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Player Charter Flights",
+    "description": "Recording the cost of private air transport for national team squads and technical staff.",
+    "entries": [
+      {
+        "account": "Travel and Logistics Expense",
+        "type": "Debit",
+        "dr": 85000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 85000
+      }
+    ],
+    "explanation": "Recognition of invoices received for charter flight services between host match venues.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistencies between flight manifests and team travel rosters.",
+      "erp_application": "Procurement and Accounts Payable modules.",
+      "required_documentation": "Charter service agreement and flight passenger manifests."
+    }
+  },
+  {
+    "slug": "how-to-accrue-vip-catering-expenses",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue VIP Catering Expenses",
+    "description": "Recording the estimated costs for catering services provided in VIP boxes during World Cup matches.",
+    "entries": [
+      {
+        "account": "Catering Expense",
+        "type": "debit",
+        "dr": 50000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "credit",
+        "dr": 0,
+        "cr": 50000
+      }
+    ],
+    "explanation": "Matches the expense with the tournament period in which the service was rendered prior to receiving the final vendor invoice.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variance between accrued amount and final invoice from hospitality vendors.",
+      "erp_application": "Record via a manual journal entry in the General Ledger module using a 'Hospitality' cost center.",
+      "required_documentation": "Contractual per-head rates and verified attendance records for VIP suites."
+    }
+  },
+  {
+    "slug": "how-to-amortize-event-software-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Amortize Event Software Costs",
+    "description": "Allocating the cost of specialized ticketing and tournament management software over the duration of the event.",
+    "entries": [
+      {
+        "account": "Amortization Expense",
+        "type": "debit",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accumulated Amortization - Software",
+        "type": "credit",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Recognizes the consumption of the intangible asset's economic benefits during the active tournament phase.",
+    "practitioner_notes": {
+      "audit_triggers": "Software useful life exceeding the tournament cycle without justification.",
+      "erp_application": "Use the Fixed Asset module to set a short-term depreciation schedule based on the tournament calendar.",
+      "required_documentation": "Software purchase agreement and documentation of the tournament duration."
+    }
+  },
+  {
+    "slug": "how-to-record-anti-doping-testing-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Anti-Doping Testing Fees",
+    "description": "Accounting for laboratory fees and sample collection costs for player anti-doping compliance procedures.",
+    "entries": [
+      {
+        "account": "Medical Compliance Expense",
+        "type": "debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Records the direct operational costs for maintaining tournament integrity and FIFA medical protocol compliance.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between the number of tests performed and the invoice quantities.",
+      "erp_application": "Post as an operating expense in the 'Medical and Integrity' department code.",
+      "required_documentation": "Lab test manifests and official FIFA medical committee testing logs."
+    }
+  },
+  {
+    "slug": "how-to-recognize-venue-rental-income",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Venue Rental Income",
+    "description": "Recording revenue earned from sub-leasing stadium spaces to third-party vendors or media outlets for the event.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "debit",
+        "dr": 30000,
+        "cr": 0
+      },
+      {
+        "account": "Rental Income",
+        "type": "credit",
+        "dr": 0,
+        "cr": 30000
+      }
+    ],
+    "explanation": "Recognizes income earned from granting secondary usage rights of the venue during the World Cup.",
+    "practitioner_notes": {
+      "audit_triggers": "Revenue recognized for periods outside of the agreed lease term.",
+      "erp_application": "Invoice through the Accounts Receivable module linked to a 'Venue Management' revenue account.",
+      "required_documentation": "Signed sub-lease agreements and space utilization maps."
+    }
+  },
+  {
+    "slug": "how-to-accrue-fan-zone-rental-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Fan Zone Rental Costs",
+    "description": "Accounting for the rental of public spaces and temporary structures for official FIFA Fan Festivals.",
+    "entries": [
+      {
+        "account": "Facility Rental Expense",
+        "type": "debit",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "credit",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Captures the cost of leasing land or equipment for fan engagement zones during the month the service is utilized.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent application of rental rates compared to municipality master agreements.",
+      "erp_application": "Accrue in the General Ledger under 'Event Infrastructure' using the accrual reversal method.",
+      "required_documentation": "Permits from local municipalities and rental quotes for temporary structures."
+    }
+  },
+  {
+    "slug": "how-to-record-var-tech-licensing-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record VAR Tech Licensing Fees",
+    "description": "Accounting for the licensing fees paid to technology providers for the Video Assistant Referee system.",
+    "entries": [
+      {
+        "account": "Technology Licensing Expense",
+        "type": "Debit",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "This entry records the operational expense of utilizing proprietary VAR technology during the tournament matches.",
+    "practitioner_notes": {
+      "audit_triggers": "Large technology service contracts without service level agreements",
+      "erp_application": "Record under the Information Technology or Match Operations cost center",
+      "required_documentation": "Licensing agreement, software activation certificate, and invoice"
+    }
+  },
+  {
+    "slug": "how-to-accrue-team-participation-bonus",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Team Participation Bonus",
+    "description": "Accruing the guaranteed base payment owed to each participating national football association.",
+    "entries": [
+      {
+        "account": "Tournament Participation Expense",
+        "type": "Debit",
+        "dr": 1500000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Prize Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 1500000
+      }
+    ],
+    "explanation": "Guaranteed participation fees are accrued once a team qualifies and confirms attendance at the final tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancy between the number of participating teams and the total accrued amount",
+      "erp_application": "Manage via the Prize Money module in the Financials suite",
+      "required_documentation": "FIFA World Cup Regulations, team qualification certificates"
+    }
+  },
+  {
+    "slug": "how-to-recognize-streaming-rights-revenue",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Streaming Rights Revenue",
+    "description": "Recording revenue earned from digital streaming platforms for exclusive match broadcasting rights.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Debit",
+        "dr": 25000000,
+        "cr": 0
+      },
+      {
+        "account": "Digital Media Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 25000000
+      }
+    ],
+    "explanation": "Revenue is recognized over the duration of the tournament as the performance obligation (broadcasting) is satisfied.",
+    "practitioner_notes": {
+      "audit_triggers": "Recognition of revenue prior to the start of the tournament",
+      "erp_application": "Revenue management module with percentage-of-completion based on matches played",
+      "required_documentation": "Media rights agreement and broadcasting schedule"
+    }
+  },
+  {
+    "slug": "how-to-record-player-insurance-claims",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player Insurance Claims",
+    "description": "Recording the recovery of medical and salary costs from insurance providers for injured players.",
+    "entries": [
+      {
+        "account": "Insurance Claims Receivable",
+        "type": "Debit",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Insurance Recovery Income",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Recognizes the expected reimbursement from the Club Protection Program for player injuries sustained during international duty.",
+    "practitioner_notes": {
+      "audit_triggers": "Uncertainty of claim approval or long-standing uncollected claims",
+      "erp_application": "Other Income category in the General Ledger",
+      "required_documentation": "Medical report, claim submission form, and insurer's acknowledgment"
+    }
+  },
+  {
+    "slug": "how-to-expense-match-ball-procurement",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Match Ball Procurement",
+    "description": "Expensing the purchase of official tournament match balls for training and competition.",
+    "entries": [
+      {
+        "account": "Sporting Equipment Expense",
+        "type": "Debit",
+        "dr": 120000,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 120000
+      }
+    ],
+    "explanation": "Records the purchase price of match balls which are typically expensed immediately due to their high turnover and limited lifespan.",
+    "practitioner_notes": {
+      "audit_triggers": "Material amounts capitalized instead of expensed for low-value sporting goods",
+      "erp_application": "Purchasing module linked to the Operations department",
+      "required_documentation": "Purchase order, shipping manifest, and receipt of goods"
+    }
+  },
+  {
+    "slug": "how-to-account-for-team-shuttle-services",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Account for Team Shuttle Services",
+    "description": "Recording the operational costs associated with local transportation for participating national teams and FIFA officials during the tournament.",
+    "entries": [
+      {
+        "account": "Team Transportation Expense",
+        "type": "debit",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "credit",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Transport costs for teams are categorized as operational expenses. Under accrual accounting, the expense is recognized when the service is rendered by the transport provider.",
+    "practitioner_notes": {
+      "audit_triggers": "Large variances between budgeted fleet costs and actual vendor invoices.",
+      "erp_application": "Use the Logistics or Fleet Management module to track individual vehicle usage against vendor billing.",
+      "required_documentation": "Service level agreements, vehicle manifests, and verified fuel or mileage logs."
+    }
+  },
+  {
+    "slug": "how-to-expense-stadium-it-infrastructure",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Stadium IT Infrastructure",
+    "description": "Accounting for the deployment of temporary high-speed networking, Wi-Fi, and data management systems within World Cup venues.",
+    "entries": [
+      {
+        "account": "Venue Technology Expense",
+        "type": "debit",
+        "dr": 125000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "credit",
+        "dr": 0,
+        "cr": 125000
+      }
+    ],
+    "explanation": "Costs for temporary IT infrastructure that do not provide long-term benefit beyond the tournament duration are expensed as incurred.",
+    "practitioner_notes": {
+      "audit_triggers": "Classification of hardware as expense vs. asset if items are reusable for future events.",
+      "erp_application": "Record under Project Accounting to monitor IT spend per venue.",
+      "required_documentation": "Installation reports, hardware lease agreements, and technical sign-off documents."
+    }
+  },
+  {
+    "slug": "how-to-accrue-event-medical-services",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Event Medical Services",
+    "description": "Provisioning for the costs of on-site medical staff, emergency ambulances, and stadium clinics required for match-day safety.",
+    "entries": [
+      {
+        "account": "Medical and Safety Expense",
+        "type": "debit",
+        "dr": 80000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "credit",
+        "dr": 0,
+        "cr": 80000
+      }
+    ],
+    "explanation": "Safety regulations require medical presence. These costs are accrued at the end of the reporting period for matches played but not yet invoiced.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent ratios between medical staff count and stadium capacity.",
+      "erp_application": "Map to the Health and Safety cost center within the General Ledger.",
+      "required_documentation": "Medical deployment plans, hourly rate sheets for practitioners, and attendance logs."
+    }
+  },
+  {
+    "slug": "how-to-record-opening-ceremony-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Opening Ceremony Costs",
+    "description": "Managing the financial records for performer fees, stage production, and pyrotechnics used during the tournament kickoff.",
+    "entries": [
+      {
+        "account": "Event Production Expense",
+        "type": "debit",
+        "dr": 350000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "credit",
+        "dr": 0,
+        "cr": 350000
+      }
+    ],
+    "explanation": "Production costs for ceremonies are recognized as part of the overall event operations expense once the event has occurred.",
+    "practitioner_notes": {
+      "audit_triggers": "High-value payments to international talent requiring withholding tax considerations.",
+      "erp_application": "Utilize the Marketing and Events module for tracking complex production sub-contracts.",
+      "required_documentation": "Performance contracts, production budget approvals, and tax residency certificates for foreign talent."
+    }
+  },
+  {
+    "slug": "how-to-expense-broadcasting-equipment-rentals",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Broadcasting Equipment Rentals",
+    "description": "Recording the short-term rental of specialized 4K/8K cameras and audio equipment for global transmission.",
+    "entries": [
+      {
+        "account": "Broadcasting Rental Expense",
+        "type": "debit",
+        "dr": 95000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "credit",
+        "dr": 0,
+        "cr": 95000
+      }
+    ],
+    "explanation": "Lease payments for broadcasting equipment are treated as operating expenses for the duration of the tournament under IFRS 16 short-term lease exemptions.",
+    "practitioner_notes": {
+      "audit_triggers": "Equipment damage surcharges or late return penalties.",
+      "erp_application": "Use the Fixed Asset or Leasing module to manage short-term lease schedules.",
+      "required_documentation": "Rental agreements, equipment delivery receipts, and inspection reports upon return."
+    }
+  },
+  {
+    "slug": "how-to-record-fifa-brand-licensing-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record FIFA Brand Licensing Fees",
+    "description": "Accounting for the payment and recognition of fees paid to FIFA for the rights to use official brand marks.",
+    "entries": [
+      {
+        "account": "Intangible Assets - Brand Licenses",
+        "type": "Asset",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "The licensing fee is recorded as an intangible asset to be amortized over the period of the tournament cycle.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of license agreement terms and effective dates.",
+      "erp_application": "Set up as an amortizable asset in the Fixed Assets module.",
+      "required_documentation": "FIFA licensing agreement and payment confirmation."
+    }
+  },
+  {
+    "slug": "how-to-accrue-press-center-operations",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Press Center Operations",
+    "description": "Recognizing the month-end liability for operating the International Broadcast Center and press facilities.",
+    "entries": [
+      {
+        "account": "Media Operations Expense",
+        "type": "Expense",
+        "dr": 125000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 125000
+      }
+    ],
+    "explanation": "This entry ensures that the operational costs for journalist facilities are matched to the period they occur.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances between estimated accruals and actual vendor invoices.",
+      "erp_application": "Record via standard journal entry in the General Ledger.",
+      "required_documentation": "Vendor service logs and utility meter readings for the facility."
+    }
+  },
+  {
+    "slug": "how-to-expense-official-uniform-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Official Uniform Costs",
+    "description": "Recording the cost of apparel and uniforms provided to tournament officials and volunteer staff.",
+    "entries": [
+      {
+        "account": "Staff Apparel Expense",
+        "type": "Expense",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Inventory - Uniforms",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Uniforms are moved from inventory to expense as they are distributed for use during the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Inventory shrinkage or excessive distribution counts vs staff numbers.",
+      "erp_application": "Inventory issuance transaction in the SCM module.",
+      "required_documentation": "Distribution lists and inventory reconciliation reports."
+    }
+  },
+  {
+    "slug": "how-to-record-host-city-subsidies",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Host City Subsidies",
+    "description": "Recording the financial support provided to local municipalities for event-related infrastructure demands.",
+    "entries": [
+      {
+        "account": "Municipal Support Expense",
+        "type": "Expense",
+        "dr": 2000000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 2000000
+      }
+    ],
+    "explanation": "This recognizes the transfer of funds to local governments to offset the costs of hosting matches.",
+    "practitioner_notes": {
+      "audit_triggers": "Compliance with the specific grant conditions in the host city agreement.",
+      "erp_application": "Categorize as a non-operating expense or grant-in-aid.",
+      "required_documentation": "Host City Agreement and evidence of bank transfer."
+    }
+  },
+  {
+    "slug": "how-to-expense-temporary-seat-rentals",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Temporary Seat Rentals",
+    "description": "Accounting for the rental fees of modular grandstands used to increase stadium capacity.",
+    "entries": [
+      {
+        "account": "Venue Overlay Expense",
+        "type": "Expense",
+        "dr": 450000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 450000
+      }
+    ],
+    "explanation": "Temporary seating is considered an overlay expense and is recognized during the period of use.",
+    "practitioner_notes": {
+      "audit_triggers": "Physical verification of seat counts vs contract specifications.",
+      "erp_application": "Link to the specific Venue/Stadium cost center.",
+      "required_documentation": "Rental contract and completion certificate from the seating vendor."
+    }
+  },
+  {
+    "slug": "how-to-record-ticket-sales-commissions",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Ticket Sales Commissions",
+    "description": "Recording the commission fees paid to external ticketing platforms for match seat sales.",
+    "entries": [
+      {
+        "account": "Commission Expense",
+        "type": "Expense",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "Recognizes the cost of using third-party ticketing infrastructure as an expense against match revenue.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between ticket revenue and commission percentages.",
+      "erp_application": "AP module integration with ticketing API.",
+      "required_documentation": "Monthly commission statement from ticketing platform."
+    }
+  },
+  {
+    "slug": "how-to-accrue-stadium-utility-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Stadium Utility Costs",
+    "description": "Estimating and accruing water and electricity expenses for host stadiums during the match period.",
+    "entries": [
+      {
+        "account": "Utilities Expense",
+        "type": "Expense",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Ensures utility costs are recorded in the period they were consumed, matching the event revenue.",
+    "practitioner_notes": {
+      "audit_triggers": "Utility bills significantly higher than stadium historical averages.",
+      "erp_application": "General Ledger journal entry for month-end accruals.",
+      "required_documentation": "Meter readings or estimated usage reports from venue management."
+    }
+  },
+  {
+    "slug": "how-to-expense-translation-services",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Translation Services",
+    "description": "Accounting for professional translation and interpretation services for international teams and media.",
+    "entries": [
+      {
+        "account": "Translation Services Expense",
+        "type": "Expense",
+        "dr": 8500,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 8500
+      }
+    ],
+    "explanation": "Records the immediate payment for language support services required for tournament communication.",
+    "practitioner_notes": {
+      "audit_triggers": "Service fees that deviate from pre-negotiated tournament rates.",
+      "erp_application": "Accounts Payable for vendor payment processing.",
+      "required_documentation": "Service delivery log and signed vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-social-media-campaign-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Social Media Campaign Costs",
+    "description": "Capturing the expenditures related to targeted digital advertising on social media for the tournament.",
+    "entries": [
+      {
+        "account": "Digital Marketing Expense",
+        "type": "Expense",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Directly expenses digital promotional costs incurred to drive global viewership and fan engagement.",
+    "practitioner_notes": {
+      "audit_triggers": "Spikes in ad spend without corresponding reach or engagement reports.",
+      "erp_application": "Marketing department budget tracking vs GL actuals.",
+      "required_documentation": "Ad platform spend reports and campaign performance metrics."
+    }
+  },
+  {
+    "slug": "how-to-record-venue-security-deposits",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Venue Security Deposits",
+    "description": "Recording refundable deposits paid to stadium owners for venue usage and potential damages.",
+    "entries": [
+      {
+        "account": "Security Deposits - Venues",
+        "type": "Asset",
+        "dr": 50000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 50000
+      }
+    ],
+    "explanation": "Recognizes the outflow of cash as a receivable asset until the deposit is returned post-event.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to reconcile returned deposits within 60 days of event close.",
+      "erp_application": "Other Current Assets sub-ledger.",
+      "required_documentation": "Lease or venue usage agreement specifying refund terms of the deposit."
+    }
+  },
+  {
+    "slug": "how-to-record-goal-line-tech-purchase",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Goal-Line Tech Purchase",
+    "description": "Recording the capital expenditure for goal-line technology systems installed in stadiums for match accuracy.",
+    "entries": [
+      {
+        "account": "Goal-Line Tech Equipment",
+        "type": "Asset",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "Goal-line technology is treated as a fixed asset and capitalized at the cost of purchase and installation.",
+    "practitioner_notes": {
+      "audit_triggers": "Large capital outflows near tournament start dates.",
+      "erp_application": "Fixed Asset Module for depreciation scheduling.",
+      "required_documentation": "Purchase agreement, installation certificate, and vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-recognize-nft-licensing-revenue",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize NFT Licensing Revenue",
+    "description": "Recognizing royalty income generated from official World Cup digital collectibles and NFTs.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 125000,
+        "cr": 0
+      },
+      {
+        "account": "Licensing Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 125000
+      }
+    ],
+    "explanation": "Revenue is recognized when the licensing partner reports sales and the cash transfer or accrual is confirmed.",
+    "practitioner_notes": {
+      "audit_triggers": "High volume of small transactions from blockchain platforms.",
+      "erp_application": "Revenue recognition engine for digital assets.",
+      "required_documentation": "Royalty statement from the NFT platform and licensing contract."
+    }
+  },
+  {
+    "slug": "how-to-accrue-referee-training-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Referee Training Costs",
+    "description": "Recording the accrual for training camps and workshops for match officials prior to the tournament.",
+    "entries": [
+      {
+        "account": "Official Training Expense",
+        "type": "Expense",
+        "dr": 85000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 85000
+      }
+    ],
+    "explanation": "Accrual of costs for training services provided but not yet billed by the training facility or instructors.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between training schedules and billing dates.",
+      "erp_application": "General Ledger journal entry for month-end accruals.",
+      "required_documentation": "Training schedule, attendance logs, and service provider quotes."
+    }
+  },
+  {
+    "slug": "how-to-expense-doping-control-stations",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Doping Control Stations",
+    "description": "Recording the operational costs associated with setting up and running doping control facilities.",
+    "entries": [
+      {
+        "account": "Medical Services Expense",
+        "type": "Expense",
+        "dr": 35000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 35000
+      }
+    ],
+    "explanation": "Operational expenses for testing equipment and station setup are expensed as incurred during the event.",
+    "practitioner_notes": {
+      "audit_triggers": "Compliance with anti-doping regulation spending requirements.",
+      "erp_application": "Accounts Payable for medical vendor payments.",
+      "required_documentation": "Station setup reports and medical vendor invoices."
+    }
+  },
+  {
+    "slug": "how-to-record-fan-zone-wi-fi-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Fan Zone Wi-Fi Costs",
+    "description": "Accounting for the temporary high-speed internet infrastructure provided in official fan zones.",
+    "entries": [
+      {
+        "account": "IT Infrastructure Expense",
+        "type": "Expense",
+        "dr": 95000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 95000
+      }
+    ],
+    "explanation": "The cost of temporary telecom infrastructure is expensed over the period the fan zone is operational.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant IT spending in non-stadium locations.",
+      "erp_application": "Project Accounting module for event-specific costs.",
+      "required_documentation": "Telecom service agreement and installation sign-off."
+    }
+  },
+  {
+    "slug": "how-to-record-pitch-maintenance-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Pitch Maintenance Costs",
+    "description": "Recording the costs associated with specialized turf management and pitch preparation for tournament matches.",
+    "entries": [
+      {
+        "account": "Pitch Maintenance Expense",
+        "type": "Expense",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Recognize the specialized landscaping and maintenance costs required to keep tournament pitches at international standards.",
+    "practitioner_notes": {
+      "audit_triggers": "High frequency of sod replacement invoices during group stages.",
+      "erp_application": "Allocate costs to specific stadium cost centers within the Fixed Asset or Facilities module.",
+      "required_documentation": "Service level agreements and pitch quality certification reports."
+    }
+  },
+  {
+    "slug": "how-to-expense-player-hydration-supplies",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Player Hydration Supplies",
+    "description": "Accounting for the procurement of water, electrolytes, and sports drinks for participating national teams.",
+    "entries": [
+      {
+        "account": "Team Supply Expense",
+        "type": "Expense",
+        "dr": 12500,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 12500
+      }
+    ],
+    "explanation": "Direct expense recognition for consumable supplies provided to athletes during training and match days.",
+    "practitioner_notes": {
+      "audit_triggers": "Bulk purchases immediately preceding the tournament start date.",
+      "erp_application": "Use the inventory module to track stock levels and trigger automatic expense recognition upon distribution.",
+      "required_documentation": "Purchase orders and delivery receipts at team base camps."
+    }
+  },
+  {
+    "slug": "how-to-accrue-training-camp-rentals",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Training Camp Rentals",
+    "description": "Recording the liability for private training facilities utilized by national teams during the tournament.",
+    "entries": [
+      {
+        "account": "Venue Lease Expense",
+        "type": "Expense",
+        "dr": 95000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 95000
+      }
+    ],
+    "explanation": "Accrual of rental costs for high-performance training centers used as base camps for participating teams.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between lease agreements and actual period of usage.",
+      "erp_application": "Link the accrual to the specific department code for Team Operations.",
+      "required_documentation": "Short-term lease agreements and facility access logs."
+    }
+  },
+  {
+    "slug": "how-to-record-match-video-archiving-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Match Video Archiving Fees",
+    "description": "Accounting for the fees paid to digital asset management services for tournament footage storage.",
+    "entries": [
+      {
+        "account": "IT and Media Services Expense",
+        "type": "Expense",
+        "dr": 30000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 30000
+      }
+    ],
+    "explanation": "Recording the cost of securing and storing high-definition match footage for historical and commercial use.",
+    "practitioner_notes": {
+      "audit_triggers": "Sudden spikes in data storage costs following the final match.",
+      "erp_application": "Post to the Broadcasting or Digital Media sub-ledger.",
+      "required_documentation": "Cloud storage invoices and data volume reports."
+    }
+  },
+  {
+    "slug": "how-to-recognize-fan-app-subscription-income",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Fan App Subscription Income",
+    "description": "Recognizing revenue from premium digital content and features within the official tournament mobile application.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Digital Subscription Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "Recognition of revenue collected from fans for exclusive digital access during the tournament period.",
+    "practitioner_notes": {
+      "audit_triggers": "Reconciliation gaps between app store reports and bank deposits.",
+      "erp_application": "Integrate API from payment processors directly into the Revenue Recognition module.",
+      "required_documentation": "App store sales reports and merchant bank statements."
+    }
+  },
+  {
+    "slug": "how-to-record-waste-management-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Waste Management Fees",
+    "description": "Accounting for environmental and waste disposal services at tournament venues to comply with sustainability mandates.",
+    "entries": [
+      {
+        "account": "Tournament Sustainability Expense",
+        "type": "Debit",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Recognizes the cost of venue waste removal and recycling programs during the group stages of the World Cup.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of waste tonnage reports against service invoices.",
+      "erp_application": "Assign costs to the Sustainability Cost Center within the General Ledger.",
+      "required_documentation": "Service Level Agreement (SLA) with waste management vendor and disposal certifications."
+    }
+  },
+  {
+    "slug": "how-to-recognize-coin-licensing-income",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Coin Licensing Income",
+    "description": "Recording revenue from the licensing of official World Cup commemorative coins and bullion.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Debit",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Licensing Revenue - Numismatics",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "Records the earned royalty income from a third-party minting company for the use of tournament branding on collector coins.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between royalty reports from the mint and recorded licensing income.",
+      "erp_application": "Setup as recurring revenue based on quarterly sales reports in the Licensing Module.",
+      "required_documentation": "Executed Licensing Agreement and quarterly sales volume audit reports."
+    }
+  },
+  {
+    "slug": "how-to-expense-stadium-signage-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Stadium Signage Costs",
+    "description": "Accounting for the production and installation of temporary tournament branding across host stadiums.",
+    "entries": [
+      {
+        "account": "Event Infrastructure Expense",
+        "type": "Debit",
+        "dr": 120000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 120000
+      }
+    ],
+    "explanation": "Expensing the one-time costs associated with printing and hanging venue-specific banners and stadium wrap signage.",
+    "practitioner_notes": {
+      "audit_triggers": "Large variances in installation costs between different host cities.",
+      "erp_application": "Code to Venue Operations under Marketing & Branding budget lines.",
+      "required_documentation": "Purchase orders for printing and certificates of completion from installation crews."
+    }
+  },
+  {
+    "slug": "how-to-record-team-laundry-expenses",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Team Laundry Expenses",
+    "description": "Processing daily operational costs for professional laundry services for all participating national teams.",
+    "entries": [
+      {
+        "account": "Team Logistics Expense",
+        "type": "Debit",
+        "dr": 8500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 8500
+      }
+    ],
+    "explanation": "Accruing the daily costs of kit and training gear cleaning services provided at base camps.",
+    "practitioner_notes": {
+      "audit_triggers": "Unusually high per-team laundry costs compared to historical tournament benchmarks.",
+      "erp_application": "Utilize the Logistics sub-ledger for per-team cost allocation.",
+      "required_documentation": "Daily delivery notes and weekly summary invoices from commercial laundry providers."
+    }
+  },
+  {
+    "slug": "how-to-accrue-player-massage-services",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Player Massage Services",
+    "description": "Accounting for specialized sports therapy and recovery services provided to athletes during the tournament.",
+    "entries": [
+      {
+        "account": "Medical & Wellness Expense",
+        "type": "Debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Accruing the fees for external physiotherapists and massage therapists contracted for player recovery sessions.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent billing hours relative to the number of players in the recovery protocol.",
+      "erp_application": "Enter into the Medical Services cost center; track by national team project code.",
+      "required_documentation": "Time logs signed by team medical staff and the services contract."
+    }
+  },
+  {
+    "slug": "how-to-record-radio-rights-revenue",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Radio Rights Revenue",
+    "description": "Accounting for the sale of broadcasting rights specifically for radio transmission of tournament matches.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Asset",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Unearned Media Revenue",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "Recognize the contractual amount for radio broadcasting rights as unearned revenue until the matches are broadcast according to the delivery schedule.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between contract values and recognized revenue per match.",
+      "erp_application": "Set up a revenue recognition schedule linked to the match calendar.",
+      "required_documentation": "Signed radio broadcasting agreement and transmission logs."
+    }
+  },
+  {
+    "slug": "how-to-expense-carbon-offset-credits",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Carbon Offset Credits",
+    "description": "Recording the purchase of carbon offsets to mitigate the environmental impact of tournament travel.",
+    "entries": [
+      {
+        "account": "Sustainability Expense",
+        "type": "Expense",
+        "dr": 120000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 120000
+      }
+    ],
+    "explanation": "The cost of purchasing carbon credits is expensed in the period they are retired to offset the tournament's carbon footprint.",
+    "practitioner_notes": {
+      "audit_triggers": "Large lump-sum payments to environmental NGOs or credit brokers.",
+      "erp_application": "Post to the Sustainability or Corporate Social Responsibility cost center.",
+      "required_documentation": "Carbon credit certificates and offset retirement confirmation."
+    }
+  },
+  {
+    "slug": "how-to-accrue-closing-ceremony-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Closing Ceremony Costs",
+    "description": "Accounting for the estimated liabilities related to the World Cup final match closing ceremony.",
+    "entries": [
+      {
+        "account": "Ceremony Event Expense",
+        "type": "Expense",
+        "dr": 850000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 850000
+      }
+    ],
+    "explanation": "Accrue the estimated costs for performers, pyrotechnics, and staging to ensure expenses match the reporting period of the event.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances between estimated accruals and final vendor invoices.",
+      "erp_application": "Use project-based accounting to track ceremony-specific budgets.",
+      "required_documentation": "Vendor quotes and service agreements for ceremony production."
+    }
+  },
+  {
+    "slug": "how-to-record-mascot-licensing-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Mascot Licensing Fees",
+    "description": "Recognizing revenue from third-party manufacturers using the official tournament mascot.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Asset",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Licensing Royalty Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "Record revenue based on the minimum guarantee or sales-based royalty reports provided by the licensee.",
+    "practitioner_notes": {
+      "audit_triggers": "Underreporting of sales by licensees or late royalty reports.",
+      "erp_application": "Automate royalty calculations based on sales data imports.",
+      "required_documentation": "Mascot licensing contract and quarterly royalty statements."
+    }
+  },
+  {
+    "slug": "how-to-account-for-player-award-bonuses",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Account for Player Award Bonuses",
+    "description": "Recording the liability for individual player awards such as the Golden Boot or Golden Ball.",
+    "entries": [
+      {
+        "account": "Player Award Expense",
+        "type": "Expense",
+        "dr": 100000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Prize Obligations",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 100000
+      }
+    ],
+    "explanation": "Expense the cost of individual performance awards as soon as the winner is officially determined at the tournament conclusion.",
+    "practitioner_notes": {
+      "audit_triggers": "Inconsistent treatment of award bonuses across different tournaments.",
+      "erp_application": "Map to the prize money sub-ledger within the finance module.",
+      "required_documentation": "FIFA official award results and prize money distribution policy."
+    }
+  },
+  {
+    "slug": "how-to-record-player-recovery-equipment",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player Recovery Equipment",
+    "description": "Accounting for the purchase of specialized medical recovery equipment such as cryotherapy chambers and compression boots for national teams.",
+    "entries": [
+      {
+        "account": "Fixed Assets - Medical Equipment",
+        "type": "Asset",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Cash and Cash Equivalents",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Recovery equipment is capitalized as a fixed asset if it meets the capitalization threshold, or expensed immediately if used only for the duration of the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "High-value asset purchases close to tournament start dates.",
+      "erp_application": "Asset Management module for tracking location and depreciation.",
+      "required_documentation": "Purchase invoices and warranty agreements for specialized medical devices."
+    }
+  },
+  {
+    "slug": "how-to-record-press-kit-production-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Press Kit Production Costs",
+    "description": "Recording the expenses associated with the production and distribution of official media kits for accredited journalists.",
+    "entries": [
+      {
+        "account": "Marketing and Media Expense",
+        "type": "Expense",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "These costs are recorded as operational expenses when the media materials are produced and delivered to the press centers.",
+    "practitioner_notes": {
+      "audit_triggers": "Large volume printing contracts and digital distribution fees.",
+      "erp_application": "Marketing budget center within the General Ledger.",
+      "required_documentation": "Vendor invoices and sample kits for verification."
+    }
+  },
+  {
+    "slug": "how-to-accrue-team-liaison-officer-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Team Liaison Officer Fees",
+    "description": "Accruing the professional fees for Team Liaison Officers (TLOs) who facilitate communication between FIFA and participating teams.",
+    "entries": [
+      {
+        "account": "Event Operations Expense",
+        "type": "Expense",
+        "dr": 25000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 25000
+      }
+    ],
+    "explanation": "Fees are accrued during the tournament based on contractual agreements for services provided across the duration of the team's stay.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between contract terms and days actually served.",
+      "erp_application": "Human Capital Management or Payroll accrual modules.",
+      "required_documentation": "Executed TLO contracts and time-tracking logs."
+    }
+  },
+  {
+    "slug": "how-to-record-player-visa-processing-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player Visa Processing Fees",
+    "description": "Accounting for the administrative costs related to processing entry visas and work permits for players and technical staff.",
+    "entries": [
+      {
+        "account": "Administrative Travel Expense",
+        "type": "Expense",
+        "dr": 8500,
+        "cr": 0
+      },
+      {
+        "account": "Cash and Cash Equivalents",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 8500
+      }
+    ],
+    "explanation": "Visa fees are expensed as incurred during the pre-tournament preparation phase as part of administrative logistics.",
+    "practitioner_notes": {
+      "audit_triggers": "Duplicate payments for expedited processing fees.",
+      "erp_application": "Travel and Expense (T&E) management system.",
+      "required_documentation": "Government receipts and visa application logs."
+    }
+  },
+  {
+    "slug": "how-to-recognize-virtual-billboard-revenue",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Virtual Billboard Revenue",
+    "description": "Recognizing revenue from digitally overlaid advertisements on stadium perimeter boards for specific regional broadcasts.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Asset",
+        "dr": 150000,
+        "cr": 0
+      },
+      {
+        "account": "Sponsorship Revenue - Virtual",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 150000
+      }
+    ],
+    "explanation": "Revenue is recognized upon the successful airing of the match and verification of the virtual ad placement in the target region.",
+    "practitioner_notes": {
+      "audit_triggers": "Revenue recognition prior to the actual match date.",
+      "erp_application": "Revenue Management module with regional sub-ledger.",
+      "required_documentation": "Proof of broadcast reports and regional advertising contracts."
+    }
+  },
+  {
+    "slug": "record-ticket-refund-reserves",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Ticket Refund Reserves",
+    "description": "Accounting for the anticipated return of funds for cancelled or disputed World Cup ticket sales.",
+    "entries": [
+      {
+        "account": "Sales Revenue - Tickets",
+        "type": "Debit",
+        "dr": 50000,
+        "cr": 0
+      },
+      {
+        "account": "Refund Liability Reserve",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 50000
+      }
+    ],
+    "explanation": "Decreasing recognized revenue to establish a liability for estimated future ticket refunds prior to event completion.",
+    "practitioner_notes": {
+      "audit_triggers": "High refund rates compared to historical tournament data.",
+      "erp_application": "Record as a month-end adjustment in the revenue module.",
+      "required_documentation": "Refund policy document and historical refund rate analysis."
+    }
+  },
+  {
+    "slug": "record-trophy-insurance-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Trophy Insurance Costs",
+    "description": "Recording the premium payments for the temporary insurance coverage of the World Cup trophy.",
+    "entries": [
+      {
+        "account": "Prepaid Insurance - Trophy",
+        "type": "Debit",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "The insurance premium is recorded as a prepaid asset and amortized over the duration of the trophy tour and tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Unusually high premiums for specialized asset coverage.",
+      "erp_application": "Fixed asset or insurance module for scheduled amortization.",
+      "required_documentation": "Insurance policy binder and proof of payment."
+    }
+  },
+  {
+    "slug": "expense-player-meal-allowances",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Player Meal Allowances",
+    "description": "Recording daily per diem payments for players and team technical staff during the tournament.",
+    "entries": [
+      {
+        "account": "Player Subsistence Expense",
+        "type": "Debit",
+        "dr": 85000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 85000
+      }
+    ],
+    "explanation": "Direct expense for the daily nutritional support and allowances provided to participating team members.",
+    "practitioner_notes": {
+      "audit_triggers": "Per diem rates exceeding FIFA or local tax authority limits.",
+      "erp_application": "Payroll or accounts payable batch processing.",
+      "required_documentation": "Signed per diem receipt logs and team roster verification."
+    }
+  },
+  {
+    "slug": "accrue-stadium-security-training",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Stadium Security Training",
+    "description": "Recognizing the expense for specialized safety and security training for venue stewards.",
+    "entries": [
+      {
+        "account": "Security Training Expense",
+        "type": "Debit",
+        "dr": 35000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 35000
+      }
+    ],
+    "explanation": "Accruing for training services rendered by third-party security firms prior to the invoice receipt.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between training hours logged and amount accrued.",
+      "erp_application": "General ledger manual journal entry.",
+      "required_documentation": "Service contract and training attendance records."
+    }
+  },
+  {
+    "slug": "record-var-equipment-maintenance",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record VAR Equipment Maintenance",
+    "description": "Accounting for the routine servicing and calibration of Video Assistant Referee technology.",
+    "entries": [
+      {
+        "account": "IT Maintenance Expense",
+        "type": "Debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "The cost of technical maintenance for VAR systems to ensure compliance with match day standards.",
+    "practitioner_notes": {
+      "audit_triggers": "Maintenance costs occurring outside of scheduled match windows.",
+      "erp_application": "Maintenance management module integrated with AP.",
+      "required_documentation": "Technical service report and vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-fifa-club-protection-payouts",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record FIFA Club Protection Payouts",
+    "description": "Accounting for the compensation received from FIFA for players injured while on international duty during the World Cup.",
+    "entries": [
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 50000,
+        "cr": 0
+      },
+      {
+        "account": "Other Operating Income",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 50000
+      }
+    ],
+    "explanation": "Recognize the payout from the FIFA Club Protection Programme as other operating income when the criteria for reimbursement are met and the cash is received.",
+    "practitioner_notes": {
+      "audit_triggers": "Verify injury reports and length of absence against FIFA's daily pro-rata compensation rates.",
+      "erp_application": "Record under a specific 'International Duty Compensation' cost center.",
+      "required_documentation": "FIFA claim approval letter, medical reports, and proof of receipt."
+    }
+  },
+  {
+    "slug": "how-to-accrue-referee-accommodation",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Referee Accommodation",
+    "description": "Recording the estimated costs for housing match officials at designated tournament hotels.",
+    "entries": [
+      {
+        "account": "Match Official Expenses",
+        "type": "Expense",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Accrue the expense for referee lodging based on the contracted rate and duration of stay before the final invoice is received.",
+    "practitioner_notes": {
+      "audit_triggers": "Mismatches between hotel booking counts and the number of active referees in later stages.",
+      "erp_application": "Use the recurring journal entry module for monthly hotel accruals.",
+      "required_documentation": "Hotel contract, rooming list, and tournament schedule."
+    }
+  },
+  {
+    "slug": "how-to-record-stadium-sound-system-rental",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Stadium Sound System Rental",
+    "description": "Accounting for the short-term lease of high-performance audio equipment for matchday announcements and entertainment.",
+    "entries": [
+      {
+        "account": "Venue Rental Expense",
+        "type": "Expense",
+        "dr": 8500,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 8500
+      }
+    ],
+    "explanation": "Record the rental cost of audio-visual equipment as an operational expense for the duration of the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Comparison of rental costs versus potential asset purchase for multiple venues.",
+      "erp_application": "Categorize under 'Event Operations - AV' in the GL.",
+      "required_documentation": "Lease agreement, delivery receipt, and technical specification sheet."
+    }
+  },
+  {
+    "slug": "how-to-expense-team-transport-fuel",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Team Transport Fuel",
+    "description": "Recording the cost of fuel consumed by official team buses and fleet vehicles during the event.",
+    "entries": [
+      {
+        "account": "Logistics and Fuel Expense",
+        "type": "Expense",
+        "dr": 4200,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Fleet Card Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 4200
+      }
+    ],
+    "explanation": "Expense fuel costs immediately as they are incurred to maintain accurate logistics cost tracking.",
+    "practitioner_notes": {
+      "audit_triggers": "Fuel consumption spikes inconsistent with the team's travel distance.",
+      "erp_application": "Integrate fleet management software with the accounting system for automated data entry.",
+      "required_documentation": "Fuel receipts, mileage logs, and fleet card statements."
+    }
+  },
+  {
+    "slug": "how-to-record-player-recovery-room-setup",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player Recovery Room Setup",
+    "description": "Accounting for the costs associated with setting up specialized recovery equipment like cryotherapy tanks and massage tables.",
+    "entries": [
+      {
+        "account": "Medical and Recovery Costs",
+        "type": "Expense",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Record the setup and operational costs of recovery zones as a medical/performance expense for the squad.",
+    "practitioner_notes": {
+      "audit_triggers": "Capitalization of equipment that should be expensed if it doesn't meet the useful life threshold.",
+      "erp_application": "Tag as 'Team Performance' within the World Cup project code.",
+      "required_documentation": "Invoices for equipment delivery, installation labor, and medical supplies."
+    }
+  },
+  {
+    "slug": "how-to-record-pitch-drainage-repairs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Pitch Drainage Repairs",
+    "description": "Recording the maintenance costs incurred for field drainage systems during the tournament to ensure playability.",
+    "entries": [
+      {
+        "account": "Field Maintenance Expense",
+        "type": "Debit",
+        "dr": 12500,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12500
+      }
+    ],
+    "explanation": "Recognizes the expense for emergency or scheduled drainage system repairs at stadium venues.",
+    "practitioner_notes": {
+      "audit_triggers": "Frequency of repairs vs weather reports",
+      "erp_application": "Record under Venue Infrastructure module",
+      "required_documentation": "Service provider invoice and technical inspection report"
+    }
+  },
+  {
+    "slug": "how-to-expense-player-kit-printing",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Player Kit Printing",
+    "description": "Accounting for the costs associated with the customized printing of player names and numbers on official match jerseys.",
+    "entries": [
+      {
+        "account": "Equipment Customization Expense",
+        "type": "Debit",
+        "dr": 8000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 8000
+      }
+    ],
+    "explanation": "Expensing the variable costs of kit printing services for national teams.",
+    "practitioner_notes": {
+      "audit_triggers": "Variance in kit counts per match day",
+      "erp_application": "Assign to Team Operations cost center",
+      "required_documentation": "Printing service log and vendor receipts"
+    }
+  },
+  {
+    "slug": "how-to-accrue-stadium-wi-fi-maintenance",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Stadium Wi-Fi Maintenance",
+    "description": "Recognizing the obligation for ongoing technical support for fan and media connectivity throughout the event.",
+    "entries": [
+      {
+        "account": "IT Support Expense",
+        "type": "Debit",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Accrues estimated monthly maintenance costs for high-density stadium Wi-Fi networks during the group stage.",
+    "practitioner_notes": {
+      "audit_triggers": "SLA performance metrics vs maintenance fees",
+      "erp_application": "Accrue in Month-End Closing module",
+      "required_documentation": "Maintenance contract and network uptime reports"
+    }
+  },
+  {
+    "slug": "how-to-record-team-welcome-ceremonies",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Team Welcome Ceremonies",
+    "description": "Recording the operational and logistics costs for official national team arrival events at host cities.",
+    "entries": [
+      {
+        "account": "Ceremony Operational Expense",
+        "type": "Debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Captures the costs for staging, lighting, and coordination of team welcome festivities.",
+    "practitioner_notes": {
+      "audit_triggers": "Budget overruns for non-match events",
+      "erp_application": "Record in Event Management sub-ledger",
+      "required_documentation": "Vendor contracts and event completion certificates"
+    }
+  },
+  {
+    "slug": "how-to-recognize-fan-village-revenue",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Fan Village Revenue",
+    "description": "Recognizing gross income generated from food, beverage, and booth rentals within official fan zones.",
+    "entries": [
+      {
+        "account": "Cash at Bank",
+        "type": "Debit",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Fan Village Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "Recognition of daily revenue collected from Fan Village commercial activities.",
+    "practitioner_notes": {
+      "audit_triggers": "Cash vs electronic payment reconciliation discrepancies",
+      "erp_application": "Sales and Distribution revenue posting",
+      "required_documentation": "POS daily sales reports and bank deposit slips"
+    }
+  },
+  {
+    "slug": "how-to-record-stadium-lighting-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Stadium Lighting Costs",
+    "description": "Recording the utility expense associated with high-intensity floodlights used during World Cup matches and rehearsals.",
+    "entries": [
+      {
+        "account": "Stadium Utilities Expense",
+        "type": "debit",
+        "dr": 15000,
+        "cr": 0
+      },
+      {
+        "account": "Cash or Accounts Payable",
+        "type": "credit",
+        "dr": 0,
+        "cr": 15000
+      }
+    ],
+    "explanation": "Recognizes the direct operational cost of electricity for stadium lighting during event hours.",
+    "practitioner_notes": {
+      "audit_triggers": "Unusually high utility spikes outside of match days.",
+      "erp_application": "Allocate to the specific venue cost center in the GL.",
+      "required_documentation": "Utility meter readings and provider invoices."
+    }
+  },
+  {
+    "slug": "how-to-accrue-team-photography-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Team Photography Fees",
+    "description": "Accruing costs for professional photographers hired to document team arrivals, training, and matches for official media use.",
+    "entries": [
+      {
+        "account": "Media Operations Expense",
+        "type": "debit",
+        "dr": 8500,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "credit",
+        "dr": 0,
+        "cr": 8500
+      }
+    ],
+    "explanation": "Matches the expense of media production with the period in which the photography services were rendered.",
+    "practitioner_notes": {
+      "audit_triggers": "Differences between contracted day rates and actual hours billed.",
+      "erp_application": "Use the procurement module to track service receipts against POs.",
+      "required_documentation": "Service contract and proof of digital asset delivery."
+    }
+  },
+  {
+    "slug": "how-to-record-player-gym-equipment-rental",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player Gym Equipment Rental",
+    "description": "Accounting for the short-term lease of high-performance fitness and strength equipment at team base camps.",
+    "entries": [
+      {
+        "account": "Training Facility Expense",
+        "type": "debit",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "credit",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Records the rental cost of specialized equipment needed for player conditioning during the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Rental periods extending beyond the team's elimination from the tournament.",
+      "erp_application": "Classify as a short-term operating lease under IFRS 16 exemptions.",
+      "required_documentation": "Lease agreement and equipment delivery receipt."
+    }
+  },
+  {
+    "slug": "how-to-expense-team-baggage-handling-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Team Baggage Handling Fees",
+    "description": "Expensing the logistical costs of transporting large volumes of team gear, kits, and medical supplies between venues.",
+    "entries": [
+      {
+        "account": "Logistics and Freight Expense",
+        "type": "debit",
+        "dr": 5000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "credit",
+        "dr": 0,
+        "cr": 5000
+      }
+    ],
+    "explanation": "Recognizes the immediate cost of specialized baggage handling and air freight for national team equipment.",
+    "practitioner_notes": {
+      "audit_triggers": "Excess baggage fees that exceed the standard logistics budget.",
+      "erp_application": "Tag expenses with the specific National Team ID for reporting.",
+      "required_documentation": "Waybills and cargo handling invoices."
+    }
+  },
+  {
+    "slug": "how-to-record-stadium-tour-revenue",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Stadium Tour Revenue",
+    "description": "Recognizing income from pre-tournament and non-match day guided tours of the World Cup stadiums.",
+    "entries": [
+      {
+        "account": "Cash or Accounts Receivable",
+        "type": "debit",
+        "dr": 25000,
+        "cr": 0
+      },
+      {
+        "account": "Stadium Tour Revenue",
+        "type": "credit",
+        "dr": 0,
+        "cr": 25000
+      }
+    ],
+    "explanation": "Records the gross revenue generated from public tours of the venue infrastructure.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between ticket scan counts and recorded revenue.",
+      "erp_application": "Integrate with the ticketing sub-ledger for automated recognition.",
+      "required_documentation": "Daily sales reports and visitor count logs."
+    }
+  },
+  {
+    "slug": "how-to-record-player-gps-tracking-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player GPS Tracking Costs",
+    "description": "Accounting for the purchase and subscription of wearable GPS tracking systems used for player performance analysis during the tournament.",
+    "entries": [
+      {
+        "account": "Player Performance Technology Expense",
+        "type": "Debit",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "This entry records the operational cost of utilizing GPS vests and data subscriptions for real-time player tracking during matches and training.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of device count against squad size and technical staff assignments.",
+      "erp_application": "Allocate to the Technical/Sports Science department cost center.",
+      "required_documentation": "Vendor invoice, service level agreement, and equipment delivery confirmation."
+    }
+  },
+  {
+    "slug": "how-to-accrue-team-security-personnel",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Team Security Personnel",
+    "description": "Recognizing the estimated liability for private security services specifically dedicated to protecting national teams at base camps.",
+    "entries": [
+      {
+        "account": "Security Services Expense",
+        "type": "Debit",
+        "dr": 120000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 120000
+      }
+    ],
+    "explanation": "Estimates the cost of security personnel hours worked but not yet invoiced at the end of the reporting period for team-specific protection.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between security log hours and accrued estimates.",
+      "erp_application": "Post to accrued expenses within the tournament operations module.",
+      "required_documentation": "Security deployment logs and signed rate cards from the security firm."
+    }
+  },
+  {
+    "slug": "how-to-recognize-stamp-licensing-income",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Stamp Licensing Income",
+    "description": "Recognizing revenue generated from licensing agreements with national postal services for official commemorative World Cup stamps.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Debit",
+        "dr": 85000,
+        "cr": 0
+      },
+      {
+        "account": "Licensing Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 85000
+      }
+    ],
+    "explanation": "Revenue is recognized based on the sales reports or minimum guarantee payments from the postal authority for the use of World Cup branding.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of revenue recognition timing against the royalty report periods.",
+      "erp_application": "Revenue recognition module linked to licensing contracts.",
+      "required_documentation": "Licensing agreement and quarterly sales reports from the postal agency."
+    }
+  },
+  {
+    "slug": "how-to-record-pitch-irrigation-expenses",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Pitch Irrigation Expenses",
+    "description": "Accounting for the specific water and utility costs associated with maintaining high-quality turf across various tournament pitches.",
+    "entries": [
+      {
+        "account": "Stadium Maintenance Expense",
+        "type": "Debit",
+        "dr": 12500,
+        "cr": 0
+      },
+      {
+        "account": "Utilities Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12500
+      }
+    ],
+    "explanation": "Records the cost of water usage and automated irrigation systems required to keep the grass in FIFA-mandated condition.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances in water bills between match days and non-match days.",
+      "erp_application": "Maintenance module tied to stadium utility meters.",
+      "required_documentation": "Utility bills and pitch maintenance logs signed by the groundskeeper."
+    }
+  },
+  {
+    "slug": "how-to-record-team-hotel-deposits",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Team Hotel Deposits",
+    "description": "Accounting for refundable deposits paid to secure exclusive team base camps and accommodation blocks during the tournament.",
+    "entries": [
+      {
+        "account": "Security Deposits (Asset)",
+        "type": "Debit",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "This entry records the payment of a deposit which is treated as a current asset until the conclusion of the stay and potential refund.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to reclassify or recover deposits after the tournament concludes.",
+      "erp_application": "Record as a 'Security Deposit' under Other Current Assets.",
+      "required_documentation": "Hotel contract, payment confirmation, and deposit refund terms."
+    }
+  },
+  {
+    "slug": "how-to-record-pitch-cooling-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Pitch Cooling Costs",
+    "description": "Accounting for the specialized utility and equipment costs related to maintaining pitch temperatures in hot climates.",
+    "entries": [
+      {
+        "account": "Stadium Operations - Utilities",
+        "type": "Debit",
+        "dr": 150000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 150000
+      }
+    ],
+    "explanation": "This entry records the expense of energy and liquid cooling systems required to maintain the pitch at optimal playing temperatures for matches.",
+    "practitioner_notes": {
+      "audit_triggers": "Sudden spikes in utility bills outside of match days.",
+      "erp_application": "Allocate to the specific venue sub-ledger.",
+      "required_documentation": "Utility provider invoices and temperature monitoring logs."
+    }
+  },
+  {
+    "slug": "how-to-recognize-stadium-app-ad-revenue",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Stadium App Ad Revenue",
+    "description": "Recording revenue generated from digital advertising within the official tournament mobile application.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Debit",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Digital Advertising Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Revenue is recognized when the ad impressions or clicks are delivered as per the digital services agreement.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancy between app traffic reports and invoiced amounts.",
+      "erp_application": "Recognize via the Revenue Management module using performance obligations.",
+      "required_documentation": "Ad server traffic reports and signed insertion orders."
+    }
+  },
+  {
+    "slug": "how-to-accrue-vip-gift-pack-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue VIP Gift Pack Costs",
+    "description": "Accounting for the cost of premium merchandise sets provided to high-value guests and dignitaries.",
+    "entries": [
+      {
+        "account": "Hospitality & VIP Expenses",
+        "type": "Debit",
+        "dr": 85000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 85000
+      }
+    ],
+    "explanation": "Costs are accrued when the gift packs are received and staged for distribution during tournament match days.",
+    "practitioner_notes": {
+      "audit_triggers": "Inventory shrinkage or excessive per-unit gift costs.",
+      "erp_application": "Record under the Hospitality cost center.",
+      "required_documentation": "Purchase orders and vendor delivery confirmations."
+    }
+  },
+  {
+    "slug": "how-to-expense-player-data-analytics",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Player Data Analytics",
+    "description": "Recording the fees paid to technical firms for real-time player performance and tactical data analysis.",
+    "entries": [
+      {
+        "account": "Technical Performance Services",
+        "type": "Debit",
+        "dr": 120000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 120000
+      }
+    ],
+    "explanation": "Professional fees for specialized data services are expensed as incurred during the tournament phases.",
+    "practitioner_notes": {
+      "audit_triggers": "Lump-sum payments without supporting service level agreements.",
+      "erp_application": "Categorize as Professional Services in the Sport Operations budget.",
+      "required_documentation": "Service contract and data delivery confirmation logs."
+    }
+  },
+  {
+    "slug": "how-to-record-transit-subsidy-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Transit Subsidy Costs",
+    "description": "Recording the payments made to municipal authorities to provide free public transit for match ticket holders.",
+    "entries": [
+      {
+        "account": "Logistics & Transport Expense",
+        "type": "Debit",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "This entry reflects the fulfillment of a host city agreement where the event organizer subsidizes public transportation costs for fans.",
+    "practitioner_notes": {
+      "audit_triggers": "Variance between estimated ridership and actual subsidy reconciliation.",
+      "erp_application": "Record as a city-specific operational expense.",
+      "required_documentation": "Host City Agreement and municipal transit usage reports."
+    }
+  },
+  {
+    "slug": "how-to-record-team-medical-insurance",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Team Medical Insurance",
+    "description": "Accounting for the premium payments for comprehensive medical insurance for participating national teams.",
+    "entries": [
+      {
+        "account": "Prepaid Insurance",
+        "type": "Asset",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "Initial payment of medical insurance premiums is recorded as a prepaid asset and amortized over the duration of the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Verification of coverage dates against tournament schedule",
+      "erp_application": "Insurance module or prepaid amortization schedule",
+      "required_documentation": "Insurance policy documents and proof of payment"
+    }
+  },
+  {
+    "slug": "how-to-recognize-fan-zone-stall-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Fan Zone Stall Fees",
+    "description": "Recording the rental income received from third-party vendors for commercial stalls within the official Fan Zones.",
+    "entries": [
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 120000,
+        "cr": 0
+      },
+      {
+        "account": "Rental Income - Fan Zones",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 120000
+      }
+    ],
+    "explanation": "Revenue is recognized when the space is provided to the vendor, typically upon receipt of the non-refundable rental fee.",
+    "practitioner_notes": {
+      "audit_triggers": "Comparison of square footage rented vs total Fan Zone capacity",
+      "erp_application": "Revenue management or real estate sub-ledger",
+      "required_documentation": "Vendor rental agreements and site map layout"
+    }
+  },
+  {
+    "slug": "how-to-record-video-feed-uplink-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Video Feed Uplink Costs",
+    "description": "Recording the operational expenses for satellite uplink services used to transmit live match feeds globally.",
+    "entries": [
+      {
+        "account": "Broadcasting Operations Expense",
+        "type": "Expense",
+        "dr": 75000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 75000
+      }
+    ],
+    "explanation": "Uplink services are categorized as broadcasting operations expenses and recognized in the period the services are rendered.",
+    "practitioner_notes": {
+      "audit_triggers": "Significant variances in per-match transmission costs",
+      "erp_application": "Accounts Payable or Project Accounting module",
+      "required_documentation": "Service Level Agreement (SLA) and telecomm invoices"
+    }
+  },
+  {
+    "slug": "how-to-accrue-stadium-ushering-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Stadium Ushering Costs",
+    "description": "Accruing the liability for temporary staff wages related to stadium ushering and crowd management services.",
+    "entries": [
+      {
+        "account": "Stadium Operations Expense",
+        "type": "Expense",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Wages",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Ushering costs are accrued at the end of the reporting period based on hours worked during matches to match expenses with revenue.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancy between shift logs and payroll accruals",
+      "erp_application": "Payroll or Time and Attendance integration",
+      "required_documentation": "Staff timesheets and temporary agency contracts"
+    }
+  },
+  {
+    "slug": "how-to-record-match-statistics-license",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Match Statistics License",
+    "description": "Accounting for the licensing fees paid to data providers for official real-time match statistics and analytics.",
+    "entries": [
+      {
+        "account": "Data Licensing Expense",
+        "type": "Expense",
+        "dr": 30000,
+        "cr": 0
+      },
+      {
+        "account": "Cash",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 30000
+      }
+    ],
+    "explanation": "Licensing fees for real-time data feeds are recognized as an operational expense for the duration of the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Exclusivity clauses that may impact valuation of the data",
+      "erp_application": "Purchasing module or Intellectual Property sub-ledger",
+      "required_documentation": "Data licensing agreement and digital delivery confirmation"
+    }
+  },
+  {
+    "slug": "how-to-record-match-day-program-printing",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Match Day Program Printing",
+    "description": "Records the expenses related to the physical production and printing of official match day programs for spectators.",
+    "entries": [
+      {
+        "account": "Printing and Publication Expense",
+        "type": "Debit",
+        "dr": 85000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 85000
+      }
+    ],
+    "explanation": "This entry recognizes the cost of printing official souvenir programs as an operating expense upon delivery of the materials to the stadium.",
+    "practitioner_notes": {
+      "audit_triggers": "Large variances between print run volume and actual ticket attendance metrics.",
+      "erp_application": "Post to the Marketing and Media cost center within the procurement module.",
+      "required_documentation": "Print order specifications, delivery notes, and vendor invoice."
+    }
+  },
+  {
+    "slug": "how-to-record-team-scouting-report-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Team Scouting Report Fees",
+    "description": "Accounts for the fees paid to external technical consultants for providing detailed scouting reports on tournament opponents.",
+    "entries": [
+      {
+        "account": "Technical Analysis Expense",
+        "type": "Debit",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Professional fees for tactical intelligence and scouting are expensed as incurred during the preparation or tournament phase.",
+    "practitioner_notes": {
+      "audit_triggers": "Payments to unregistered individuals or consultants without valid service contracts.",
+      "erp_application": "Category code for Professional Services - Sports Technical.",
+      "required_documentation": "Service agreement and signed confirmation of report delivery."
+    }
+  },
+  {
+    "slug": "how-to-record-pitch-side-board-installation",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Pitch Side Board Installation",
+    "description": "Records the labor and material costs specifically for the physical installation of LED and static pitch-side boards.",
+    "entries": [
+      {
+        "account": "Venue Preparation Expense",
+        "type": "Debit",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Costs for the temporary installation of marketing boards are expensed as venue preparation rather than capitalized, due to their short-term utility.",
+    "practitioner_notes": {
+      "audit_triggers": "Duplicate billing for setup and dismantling services.",
+      "erp_application": "Allocate to Event Operations or Venue Management cost centers.",
+      "required_documentation": "Installation sign-off sheet and vendor payment voucher."
+    }
+  },
+  {
+    "slug": "how-to-accrue-stadium-scoreboard-maintenance",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Stadium Scoreboard Maintenance",
+    "description": "Recognizes the liability for ongoing technical maintenance and emergency repairs of large stadium screens and scoreboards.",
+    "entries": [
+      {
+        "account": "Maintenance and Repairs Expense",
+        "type": "Debit",
+        "dr": 30000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Liabilities",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 30000
+      }
+    ],
+    "explanation": "Accrues for scheduled maintenance work performed by stadium technicians that has not yet been invoiced by the service provider.",
+    "practitioner_notes": {
+      "audit_triggers": "Failure to reverse accruals once the final invoice is processed.",
+      "erp_application": "Use the accrual module to set an automatic reversal for the following month.",
+      "required_documentation": "Maintenance logs and estimated quote for services rendered."
+    }
+  },
+  {
+    "slug": "how-to-record-player-sleep-pod-rentals",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player Sleep Pod Rentals",
+    "description": "Accounts for the short-term rental of specialized recovery sleep pods used by athletes during the tournament.",
+    "entries": [
+      {
+        "account": "Player Welfare and Recovery Expense",
+        "type": "Debit",
+        "dr": 25000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 25000
+      }
+    ],
+    "explanation": "Expenses the rental of recovery equipment utilized for athlete health and performance optimization during the competition period.",
+    "practitioner_notes": {
+      "audit_triggers": "Classification of rental as a capital lease if the duration exceeds certain thresholds (rare for tournament use).",
+      "erp_application": "Link to the National Team High Performance budget line.",
+      "required_documentation": "Rental agreement and equipment receipt confirmation."
+    }
+  },
+  {
+    "slug": "how-to-record-player-wellness-app-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player Wellness App Fees",
+    "description": "Accounting for the monthly subscription fees for specialized player health and wellness monitoring applications used during the tournament.",
+    "entries": [
+      {
+        "account": "Player Welfare Expense",
+        "type": "Debit",
+        "dr": 8500,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 8500
+      }
+    ],
+    "explanation": "This entry records the operational cost of utilizing health monitoring software to track player fitness levels and fatigue during the World Cup cycle.",
+    "practitioner_notes": {
+      "audit_triggers": "Recurring subscription charges without an active user list or service agreement.",
+      "erp_application": "Set up as a recurring expense under the Team Operations module.",
+      "required_documentation": "Software license agreement, monthly invoice, and player participation log."
+    }
+  },
+  {
+    "slug": "how-to-recognize-concession-license-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Concession License Fees",
+    "description": "Recognition of licensing revenue from third-party food and beverage vendors granted the right to operate inside the World Cup stadiums.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Debit",
+        "dr": 250000,
+        "cr": 0
+      },
+      {
+        "account": "Concession Licensing Revenue",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 250000
+      }
+    ],
+    "explanation": "This entry recognizes the earned portion of the licensing fee paid by vendors for the exclusive right to sell refreshments at designated venues.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancy between contracted fee and actual recorded revenue; timing of revenue recognition vs event dates.",
+      "erp_application": "Record under Revenue Management with links to the vendor contract ID.",
+      "required_documentation": "Signed concession agreement and proof of stadium access permit issuance."
+    }
+  },
+  {
+    "slug": "how-to-expense-team-kit-launch-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Expense Team Kit Launch Costs",
+    "description": "Recording the administrative and marketing costs associated with the official unveiling event for a national team's World Cup kit.",
+    "entries": [
+      {
+        "account": "Marketing and Event Expense",
+        "type": "Debit",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Accounts Payable",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Marketing costs for the kit launch are expensed as incurred, representing the promotional efforts to drive merchandise sales ahead of the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "Large one-time promotional expenses that are not properly categorized as marketing.",
+      "erp_application": "Post to the Marketing cost center under the 'World Cup Campaign' project code.",
+      "required_documentation": "Event management invoices, media placement receipts, and venue hire contracts."
+    }
+  },
+  {
+    "slug": "how-to-accrue-ball-boy-stipend-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Ball Boy Stipend Costs",
+    "description": "Recording the accrual for daily stipends and travel reimbursements for youth participants acting as ball boys and girls during matches.",
+    "entries": [
+      {
+        "account": "Match Day Operations Expense",
+        "type": "Debit",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Expenses",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Stipends for volunteer support roles like ball kids are accrued based on the match schedule to ensure match-day expenses are matched to the period.",
+    "practitioner_notes": {
+      "audit_triggers": "Unreconciled differences between headcounts on match day and total stipend payouts.",
+      "erp_application": "Accrue via the Match Operations general ledger account.",
+      "required_documentation": "Match attendance sheets and signed stipend acknowledgement forms."
+    }
+  },
+  {
+    "slug": "how-to-record-pitch-sod-replacement-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Pitch Sod Replacement Costs",
+    "description": "Accounting for the emergency replacement of damaged turf sections (sod) to maintain international pitch standards during the group stage.",
+    "entries": [
+      {
+        "account": "Stadium Maintenance Expense",
+        "type": "Debit",
+        "dr": 65000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Credit",
+        "dr": 0,
+        "cr": 65000
+      }
+    ],
+    "explanation": "Costs for replacing grass sections are categorized as maintenance expense rather than capital improvements due to their short lifespan and immediate utility.",
+    "practitioner_notes": {
+      "audit_triggers": "Capitalizing repair costs that should be expensed as immediate maintenance.",
+      "erp_application": "Charge to Venue Operations Maintenance with a specific 'Pitch Quality' sub-tag.",
+      "required_documentation": "Agronomy report justifying replacement and supplier delivery notes."
+    }
+  },
+  {
+    "slug": "how-to-record-player-cryotherapy-costs",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Player Cryotherapy Costs",
+    "description": "Accounting for specialized muscle recovery treatments such as cryotherapy for competing national teams.",
+    "entries": [
+      {
+        "account": "Player Medical and Recovery Expense",
+        "type": "Expense",
+        "dr": 22000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 22000
+      }
+    ],
+    "explanation": "Records the immediate expense for cryotherapy services provided by third-party wellness centers during the tournament.",
+    "practitioner_notes": {
+      "audit_triggers": "High frequency of medical billing during the group stage.",
+      "erp_application": "Allocate to the Team Welfare cost center.",
+      "required_documentation": "Service logs and provider invoices."
+    }
+  },
+  {
+    "slug": "how-to-accrue-fan-transport-shuttles",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue Fan Transport Shuttles",
+    "description": "Recording the estimated costs for park-and-ride shuttle services provided to ticket holders.",
+    "entries": [
+      {
+        "account": "Fan Logistics and Transport Expense",
+        "type": "Expense",
+        "dr": 85000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Transportation Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 85000
+      }
+    ],
+    "explanation": "Recognizes the cost of transportation services utilized during the match days before the final invoice is received.",
+    "practitioner_notes": {
+      "audit_triggers": "Discrepancies between estimated shuttle loops and actual fuel/driver logs.",
+      "erp_application": "Use the logistics accrual module for month-end closing.",
+      "required_documentation": "Contractual rate card and daily vehicle trip reports."
+    }
+  },
+  {
+    "slug": "how-to-recognize-stadium-naming-rights",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Recognize Stadium Naming Rights",
+    "description": "Accounting for the short-term commercial naming rights income for venues during the World Cup.",
+    "entries": [
+      {
+        "account": "Accounts Receivable",
+        "type": "Asset",
+        "dr": 500000,
+        "cr": 0
+      },
+      {
+        "account": "Stadium Naming Rights Revenue",
+        "type": "Revenue",
+        "dr": 0,
+        "cr": 500000
+      }
+    ],
+    "explanation": "Recognizes revenue earned from corporate sponsors for naming rights specific to the tournament duration.",
+    "practitioner_notes": {
+      "audit_triggers": "Revenue recognition timing relative to the tournament calendar.",
+      "erp_application": "Enter as a fixed-term contract in the Revenue Recognition engine.",
+      "required_documentation": "Sponsorship agreement and proof of brand placement."
+    }
+  },
+  {
+    "slug": "how-to-record-team-travel-agent-fees",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Record Team Travel Agent Fees",
+    "description": "Recording the commissions and service fees paid to agencies for managing national team travel.",
+    "entries": [
+      {
+        "account": "Travel Agency Service Fees",
+        "type": "Expense",
+        "dr": 12000,
+        "cr": 0
+      },
+      {
+        "account": "Cash at Bank",
+        "type": "Asset",
+        "dr": 0,
+        "cr": 12000
+      }
+    ],
+    "explanation": "Captures the administrative fees paid to travel agents for booking flights and domestic transfers for the squads.",
+    "practitioner_notes": {
+      "audit_triggers": "Fees exceeding the standard percentage of total travel volume.",
+      "erp_application": "Categorize under Administrative Travel Expenses.",
+      "required_documentation": "Travel agency service level agreement and itemized fee statements."
+    }
+  },
+  {
+    "slug": "how-to-accrue-fifa-delegate-per-diems",
+   "category": "Sports, Media Rights & Live Entertainment",
+    "title": "How to Accrue FIFA Delegate Per Diems",
+    "description": "Accounting for the daily living allowances owed to official tournament delegates and observers.",
+    "entries": [
+      {
+        "account": "Delegate Travel and Living Expense",
+        "type": "Expense",
+        "dr": 45000,
+        "cr": 0
+      },
+      {
+        "account": "Accrued Per Diem Liabilities",
+        "type": "Liability",
+        "dr": 0,
+        "cr": 45000
+      }
+    ],
+    "explanation": "Accrues the total per diem amounts based on the number of days delegates were active on-site.",
+    "practitioner_notes": {
+      "audit_triggers": "Variation in per diem rates across different host cities.",
+      "erp_application": "Post to the HR Payroll or Accounts Payable accrual sub-ledger.",
+      "required_documentation": "Delegate attendance records and approved per diem rate schedule."
+    }
+  },
   {
     "slug": "sports-season-ticket-deferred-revenue",
     "category": "Sports, Media Rights & Live Entertainment",
