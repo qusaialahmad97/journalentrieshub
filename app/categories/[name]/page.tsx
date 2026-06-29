@@ -6,17 +6,25 @@ import { Metadata } from "next";
 export const dynamic = 'force-static';
 export const dynamicParams = false;
 
-
-
+// 1. Updated Interface to support both old and new JSON formats
 interface JournalEntry {
   slug: string;
   title: string;
-  category: string;
   description: string;
+  category?: string; // Old format
+  core_accounting?: {
+    category: string; // New format
+  };
 }
 
-// 1. The SEO slug generator (same as homepage)
+// Helper to safely extract the category regardless of which JSON format the entry uses
+const getCategory = (entry: JournalEntry): string => {
+  return entry.core_accounting?.category || entry.category || 'Uncategorized';
+};
+
+// 2. The SEO slug generator with added safety check
 const generateCategorySlug = (categoryName: string) => {
+  if (!categoryName) return 'uncategorized'; // Prevents crashes on undefined
   return categoryName
     .toLowerCase()
     .replace(/ & /g, '-and-')
@@ -24,7 +32,7 @@ const generateCategorySlug = (categoryName: string) => {
     .replace(/(^-|-$)+/g, '');
 };
 
-// 2. Metadata generation using the original category name
+// 3. Metadata generation using the helper
 export async function generateMetadata({ 
   params 
 }: { 
@@ -34,11 +42,11 @@ export async function generateMetadata({
   
   // Find a matching entry to get the true, beautifully formatted category name
   const matchingEntry = (entries as JournalEntry[]).find(
-    (e) => generateCategorySlug(e.category) === name
+    (e) => generateCategorySlug(getCategory(e)) === name
   );
   
   // If found, use "Pharmaceuticals & Biotech". If not, fallback to the slug text.
-  const displayCategoryName = matchingEntry ? matchingEntry.category : name.replace(/-/g, ' ');
+  const displayCategoryName = matchingEntry ? getCategory(matchingEntry) : name.replace(/-/g, ' ');
 
   return {
     title: `${displayCategoryName} Journal Entries & Guides | Journal Entries Hub`,
@@ -54,9 +62,10 @@ export async function generateMetadata({
   };
 }
 
-// 3. Pre-generate the category pages using the HYPHENATED slugs for speed (SSG)
+// 4. Pre-generate the category pages using the helper
 export async function generateStaticParams() {
-  const categories = Array.from(new Set(entries.map((e) => e.category)));
+  const categories = Array.from(new Set((entries as JournalEntry[]).map((e) => getCategory(e))));
+  
   return categories.map((cat) => ({
     name: generateCategorySlug(cat),
   }));
@@ -69,15 +78,15 @@ export default async function CategoryPage({
 }) {
   const { name } = await params;
   
-  // Filter entries using the slug generator
+  // Filter entries using the slug generator and the helper
   const filteredEntries = (entries as JournalEntry[]).filter(
-    (e) => generateCategorySlug(e.category) === name
+    (e) => generateCategorySlug(getCategory(e)) === name
   );
 
   if (filteredEntries.length === 0) return notFound();
 
   // Extract the beautiful display name from the first matched entry
-  const displayCategoryName = filteredEntries[0].category;
+  const displayCategoryName = getCategory(filteredEntries[0]);
 
   // --- ITEMLIST & COLLECTION SCHEMA ---
   const jsonLd = {
@@ -136,7 +145,7 @@ export default async function CategoryPage({
               >
                 <div className="flex-grow">
                   <div className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">
-                    {entry.category}
+                    {getCategory(entry)}
                   </div>
                   <h2 className="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors mb-4 leading-tight">
                     {entry.title}

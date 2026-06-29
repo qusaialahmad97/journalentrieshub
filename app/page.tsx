@@ -7,18 +7,29 @@ import entriesData from "../data/entries.json";
 // Force this page to be static and generated at build time
 export const dynamic = 'force-static';
 
-// 1. Define the interfaces
+// 1. UPDATED INTERFACES: Support BOTH old and new formats
 interface JournalRow {
   account: string;
 }
 
 interface Entry {
-  title: string;
   slug: string;
-  category: string;
-  explanation: string;
+  title: string;
   description: string;
-  entries: JournalRow[];
+  
+  // Old Format
+  category?: string;
+  explanation?: string;
+  entries?: JournalRow[];
+  
+  // New Format
+  core_accounting?: {
+    category: string;
+    entries: JournalRow[];
+  };
+  content_sections?: {
+    detailed_explanation: string;
+  };
 }
 
 // --- OPTIMIZATION: Moved calculations outside the component ---
@@ -27,9 +38,11 @@ const entries = entriesData as Entry[];
 const totalEntriesCount = entries.length;
 const primaryPillars = ["Tax", "IFRS", "Advanced"];
 
+// FIX: Safely count categories from both formats
 const categoryCounts = entries.reduce((acc, entry) => {
-  if (entry.category) {
-    acc[entry.category] = (acc[entry.category] || 0) + 1;
+  const catName = entry.core_accounting?.category || entry.category;
+  if (catName) {
+    acc[catName] = (acc[catName] || 0) + 1;
   }
   return acc;
 }, {} as Record<string, number>);
@@ -43,6 +56,7 @@ const secondaryIndustries = Object.entries(categoryCounts)
 const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const generateCategorySlug = (categoryName: string) => {
+  if (!categoryName) return 'uncategorized';
   return categoryName
     .toLowerCase()
     .replace(/ & /g, '-and-')
@@ -94,16 +108,22 @@ export default function HomePage() {
     }
   };
 
-  // Search Logic (Runs on the client as the user types)
+  // FIX: Search Logic now indexes both formats
   const searchTerms = query.toLowerCase().split(/\s+/).filter(Boolean);
   const allMatches = entries.filter((entry) => {
     if (searchTerms.length === 0) return false;
+    
+    // Safely extract text from whichever format the entry uses
+    const entryCategory = entry.core_accounting?.category || entry.category || "";
+    const entryExplanation = entry.content_sections?.detailed_explanation || entry.explanation || "";
+    const entryRows = entry.core_accounting?.entries || entry.entries || [];
+
     const searchableContent = [
       entry.title,
-      entry.category,
+      entryCategory,
       entry.description,
-      entry.explanation,
-      ...(entry.entries || []).map(row => row.account)
+      entryExplanation,
+      ...entryRows.map(row => row.account)
     ].join(" ").toLowerCase();
 
     return searchTerms.every(term => {
@@ -174,7 +194,10 @@ export default function HomePage() {
                         className="flex items-center px-8 py-4 hover:bg-slate-50 transition-all border-b border-slate-50 last:border-0 group"
                       >
                         <div className="flex-1 text-left">
-                          <span className="block text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-1 opacity-80">{entry.category}</span>
+                          <span className="block text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-1 opacity-80">
+                            {/* FIX: Use fallback for category display in dropdown */}
+                            {entry.core_accounting?.category || entry.category || "Uncategorized"}
+                          </span>
                           <span className="block text-slate-900 font-bold text-lg group-hover:text-emerald-700 transition-colors">{entry.title}</span>
                           <span className="block text-slate-500 text-xs mt-1 leading-relaxed line-clamp-1">{entry.description}</span>
                         </div>

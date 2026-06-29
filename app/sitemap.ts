@@ -1,12 +1,23 @@
 import { MetadataRoute } from 'next'
 import entriesData from "../data/entries.json";
 
+// 1. UPDATED INTERFACE: Support BOTH old and new formats
 interface Entry {
   slug: string;
-  category: string;
+  category?: string; // Old format
+  core_accounting?: {
+    category: string; // New format
+  };
 }
 
+// 2. HELPER: Safely extract the category regardless of format
+const getCategory = (entry: Entry): string => {
+  return entry.core_accounting?.category || entry.category || 'Uncategorized';
+};
+
+// 3. SLUG GENERATOR: Safely handle missing names
 const generateCategorySlug = (categoryName: string) => {
+  if (!categoryName) return 'uncategorized';
   return categoryName
     .toLowerCase()
     .replace(/ & /g, '-and-')
@@ -25,7 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const categories = Array.from(new Set(entries.map((e) => e.category)));
+  // FIX: Extract categories using the helper
+  const categories = Array.from(new Set(entries.map((e) => getCategory(e))));
+  
   const categoryUrls = categories.map((cat) => ({
     url: `${baseUrl}/categories/${generateCategorySlug(cat)}`,
     lastModified: new Date(),

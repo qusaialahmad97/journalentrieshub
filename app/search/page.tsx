@@ -1,24 +1,25 @@
 "use client";
 
-import { Suspense } from "react"; // 1. We imported Suspense
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import entriesData from "../../data/entries.json"; 
+import entriesData from "../../data/entries.json";
 
-interface JournalRow {
-  account: string;
-  type: string;
-  dr: number;
-  cr: number;
-}
-
+// 1. UPDATED INTERFACE: Support BOTH old and new formats
 interface Entry {
   slug: string;
-  category: string;
   title: string;
   description: string;
-  explanation: string; 
-  entries: JournalRow[]; 
+  explanation?: string;
+  category?: string; // Old
+  entries?: { account: string }[]; // Old
+  core_accounting?: {
+    category: string; // New
+    entries: { account: string }[]; // New
+  };
+  content_sections?: {
+    detailed_explanation: string; // New
+  };
 }
 
 const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -46,7 +47,6 @@ function Highlight({ text, query }: { text: string; query: string }) {
   );
 }
 
-// 2. We renamed the main logic to "SearchContent"
 function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q")?.trim() || "";
@@ -56,12 +56,17 @@ function SearchContent() {
   const results = (entriesData as Entry[]).filter((entry) => {
     if (searchTerms.length === 0) return false;
 
+    // Safely extract data from both old and new formats
+    const entryCategory = entry.core_accounting?.category || entry.category || "";
+    const entryExplanation = entry.content_sections?.detailed_explanation || entry.explanation || "";
+    const entryRows = entry.core_accounting?.entries || entry.entries || [];
+
     const searchableContent = [
       entry.title,
-      entry.category,
+      entryCategory,
       entry.description,
-      entry.explanation,
-      ...(entry.entries || []).map(row => row.account)
+      entryExplanation,
+      ...entryRows.map(row => row.account)
     ].join(" ").toLowerCase();
 
     return searchTerms.every(term => {
@@ -85,17 +90,18 @@ function SearchContent() {
         {results.length > 0 ? (
           <div className="grid gap-10">
             {results.map((entry) => {
+              const displayExplanation = entry.content_sections?.detailed_explanation || entry.explanation || "";
               let snippet = entry.description;
               
               const firstTerm = searchTerms[0];
               if (firstTerm) {
                 const matchRegex = new RegExp(`\\b${escapeRegExp(firstTerm)}`, 'i');
-                const match = entry.explanation.match(matchRegex);
+                const match = displayExplanation.match(matchRegex);
                 
                 if (match && match.index !== undefined) {
                   const start = Math.max(0, match.index - 50);
-                  const end = Math.min(entry.explanation.length, match.index + 90);
-                  snippet = "..." + entry.explanation.substring(start, end) + "...";
+                  const end = Math.min(displayExplanation.length, match.index + 90);
+                  snippet = "..." + displayExplanation.substring(start, end) + "...";
                 }
               }
 
@@ -105,7 +111,7 @@ function SearchContent() {
                     <div className="flex justify-between items-start mb-6">
                       <div>
                         <span className="text-[10px] font-black text-emerald-600 uppercase tracking-[0.2em] block mb-1">
-                          {entry.category}
+                          {entry.core_accounting?.category || entry.category || "Uncategorized"}
                         </span>
                         <h2 className="text-3xl font-black text-slate-900 group-hover:text-emerald-700 transition-colors">
                           {entry.title}
@@ -135,13 +141,11 @@ function SearchContent() {
   );
 }
 
-// 3. We create a NEW default export that wraps the SearchContent in <Suspense>
 export default function SearchPage() {
   return (
     <Suspense fallback={
       <main className="min-h-screen bg-white flex items-center justify-center">
         <div className="flex flex-col items-center gap-4 text-slate-400">
-          {/* A professional loading spinner */}
           <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
           <p className="font-bold tracking-widest uppercase text-xs">Loading Hub Data...</p>
         </div>
