@@ -15,8 +15,7 @@ export const contentType = 'image/png';
 
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const entry = (entries as JournalEntry[]).find((e) => e.slug === resolvedParams.slug);
-
+  const entry = (entries as unknown as JournalEntry[]).find((e) => e.slug === resolvedParams.slug);
   // 1. Fetch logo and convert to a type Satori likes (ArrayBuffer)
   const logoPath = join(process.cwd(), 'public', 'journalentrieshublogo.png');
   const logoData = await readFile(logoPath);
