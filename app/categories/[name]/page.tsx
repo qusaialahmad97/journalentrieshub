@@ -41,9 +41,9 @@ export async function generateMetadata({
   const { name } = await params;
   
   // Find a matching entry to get the true, beautifully formatted category name
-  const matchingEntry = (entries as JournalEntry[]).find(
-    (e) => generateCategorySlug(getCategory(e)) === name
-  );
+    const matchingEntry = (entries as unknown as JournalEntry[]).find(
+      (e) => generateCategorySlug(getCategory(e)) === name
+    );
   
   // If found, use "Pharmaceuticals & Biotech". If not, fallback to the slug text.
   const displayCategoryName = matchingEntry ? getCategory(matchingEntry) : name.replace(/-/g, ' ');
@@ -64,7 +64,7 @@ export async function generateMetadata({
 
 // 4. Pre-generate the category pages using the helper
 export async function generateStaticParams() {
-  const categories = Array.from(new Set((entries as JournalEntry[]).map((e) => getCategory(e))));
+  const categories = Array.from(new Set((entries as unknown as JournalEntry[]).map((e) => getCategory(e))));
   
   return categories.map((cat) => ({
     name: generateCategorySlug(cat),
@@ -79,7 +79,7 @@ export default async function CategoryPage({
   const { name } = await params;
   
   // Filter entries using the slug generator and the helper
-  const filteredEntries = (entries as JournalEntry[]).filter(
+  const filteredEntries = (entries as unknown as JournalEntry[]).filter(
     (e) => generateCategorySlug(getCategory(e)) === name
   );
 

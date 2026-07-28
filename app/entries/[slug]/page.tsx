@@ -24,6 +24,7 @@ interface JournalEntry {
   slug: string;
   title: string;
   description: string;
+  generated_related_html?: string; // <-- Added this field for the Python-generated HTML
   
   // Legacy fields (Old Format)
   category?: string;
@@ -51,7 +52,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }> 
 }): Promise<Metadata> {
   const resolvedParams = await params;
-  const entry = (entries as JournalEntry[]).find((e) => e.slug === resolvedParams.slug);
+  const entry = (entries as unknown as JournalEntry[]).find((e) => e.slug === resolvedParams.slug);
 
   if (!entry) return { title: "Entry Not Found" };
 
@@ -81,7 +82,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const allEntries = entries as JournalEntry[];
+  const allEntries = entries as unknown as JournalEntry[];
   return allEntries.map((entry) => ({
     slug: entry.slug,
   }));
@@ -94,7 +95,7 @@ export default async function EntryPage({
 }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  const allEntries = entries as JournalEntry[];
+  const allEntries = entries as unknown as JournalEntry[];
   const entry = allEntries.find((e) => e.slug === slug);
 
   if (!entry) return notFound();
@@ -367,23 +368,33 @@ export default async function EntryPage({
                 </a>
               </div>
 
-              {relatedEntries.length > 0 && (
+              {entry.generated_related_html ? (
                 <div className="mt-12 pt-10 border-t border-slate-100">
                   <h3 className="text-xl font-bold text-slate-800 mb-6">Related Journal Entries</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {relatedEntries.map((rel) => {
-                      const relCategory = rel.core_accounting?.category || rel.category || 'Uncategorized';
-                      return (
-                        <Link key={rel.slug} href={`/entries/${rel.slug}`} className="block p-5 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-lg transition-all group bg-white">
-                          <p className="text-[10px] font-bold text-emerald-600 uppercase mb-2 tracking-wider">{relCategory}</p>
-                          <h4 className="text-sm font-bold text-slate-800 group-hover:text-emerald-700 transition-colors line-clamp-2 leading-snug">
-                            {rel.title}
-                          </h4>
-                        </Link>
-                      );
-                    })}
-                  </div>
+                  <div 
+                    className="grid grid-cols-1 md:grid-cols-3 gap-4"
+                    dangerouslySetInnerHTML={{ __html: entry.generated_related_html }}
+                  />
                 </div>
+              ) : (
+                relatedEntries.length > 0 && (
+                  <div className="mt-12 pt-10 border-t border-slate-100">
+                    <h3 className="text-xl font-bold text-slate-800 mb-6">Related Journal Entries</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {relatedEntries.map((rel) => {
+                        const relCategory = rel.core_accounting?.category || rel.category || 'Uncategorized';
+                        return (
+                          <Link key={rel.slug} href={`/entries/${rel.slug}`} className="block p-5 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-lg transition-all group bg-white">
+                            <p className="text-[10px] font-bold text-emerald-600 uppercase mb-2 tracking-wider">{relCategory}</p>
+                            <h4 className="text-sm font-bold text-slate-800 group-hover:text-emerald-700 transition-colors line-clamp-2 leading-snug">
+                              {rel.title}
+                            </h4>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )
               )}
 
               <div className="mt-12 pt-8 border-t border-slate-100">
