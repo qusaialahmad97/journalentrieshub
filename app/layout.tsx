@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script"; // 🌟 Added Next.js Script engine
 import Header from "./Header"; 
 import Footer from "./components/Footer"; 
 import { Analytics } from "@vercel/analytics/next"; 
 import { SpeedInsights } from "@vercel/speed-insights/next"; 
-import ProductLightbox from "./components/ProductLightbox"; // Double check this path!
-import ExitIntentLightbox from "./components/ExitIntentLightbox"; // Double check this path!
+import ProductLightbox from "./components/ProductLightbox"; 
+import ExitIntentLightbox from "./components/ExitIntentLightbox"; 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -59,8 +60,17 @@ export default function RootLayout({
         
         <Footer />
 
+        {/* Analytics & Optimizations */}
         <Analytics />
         <SpeedInsights />
+
+        {/* 🌟 Live Google AdSense Configuration */}
+        <Script
+          id="adsense-init"
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5114773178417860"
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   );

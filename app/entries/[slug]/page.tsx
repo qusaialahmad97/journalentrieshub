@@ -113,39 +113,53 @@ export default async function EntryPage({
     })
     .slice(0, 3);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": entry.title,
-    "description": entry.description,
-    "image": `https://www.journalentrieshub.com/entries/${slug}/opengraph-image`,
-    "author": {
-      "@type": "Person",
-      "name": "Qusai Ahmad",
-      "jobTitle": "Accounts Payable Supervisor & CPA Candidate",
-      "url": "https://www.linkedin.com/in/qusaialahmad",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "alfanar"
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": entry.title,
+      "description": entry.description,
+      "image": `https://www.journalentrieshub.com/entries/${slug}/opengraph-image`,
+      "author": {
+        "@type": "Person",
+        "name": "Qusai Ahmad",
+        "jobTitle": "Accounts Payable Supervisor & CPA Candidate",
+        "url": "https://www.linkedin.com/in/qusaialahmad",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "alfanar"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Al-Zaytoonah University of Jordan"
+        }
       },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Al-Zaytoonah University of Jordan"
+      "publisher": {
+        "@type": "Organization",
+        "name": "Journal Entries Hub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.journalentrieshub.com/journalentrieshublogo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://www.journalentrieshub.com/entries/${slug}`
       }
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Journal Entries Hub",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.journalentrieshub.com/journalentrieshublogo.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://www.journalentrieshub.com/entries/${slug}`
-    }
-  };
+    ...(entry.faqs && entry.faqs.length > 0 ? [{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": entry.faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }] : [])
+  ];
 
   return (
     <>
