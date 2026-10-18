@@ -1,0 +1,2382 @@
+[
+  {
+    "term": "Absorption Costing",
+    "definition": "A costing method that includes all manufacturing costs — both fixed and variable — in the cost of a product. Required under GAAP for external financial reporting.",
+    "slug": "absorption-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Accounting Cycle",
+    "definition": "The full sequence of steps followed during an accounting period: analyze transactions, record journal entries, post to the ledger, prepare a trial balance, make adjusting entries, prepare financial statements, and close the books.",
+    "slug": "accounting-cycle",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Accounting Equation",
+    "definition": "The foundation of double-entry bookkeeping: Assets = Liabilities + Equity. Every transaction must keep this equation in balance.",
+    "slug": "accounting-equation",
+    "category": "Principles"
+  },
+  {
+    "term": "Accounting Period",
+    "definition": "The specific interval of time covered by financial statements, typically a month, quarter, or fiscal year.",
+    "slug": "accounting-period",
+    "category": "Principles"
+  },
+  {
+    "term": "Accounts Payable (AP)",
+    "definition": "A current liability representing a company's obligation to pay suppliers or creditors for goods and services received on credit.",
+    "slug": "accounts-payable",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Accounts Receivable (AR)",
+    "definition": "A current asset representing money owed to a business by customers for goods or services delivered on credit.",
+    "slug": "accounts-receivable",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Accrual Basis",
+    "definition": "An accounting method where revenue and expenses are recorded when earned or incurred, regardless of when cash changes hands. Required under IFRS and GAAP for most entities.",
+    "slug": "accrual-basis",
+    "category": "Principles"
+  },
+  {
+    "term": "Accrued Expenses",
+    "definition": "Liabilities for expenses that have been incurred but not yet paid or formally recorded — for example, wages owed at period-end or interest accrued on a loan.",
+    "slug": "accrued-expenses",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Accrued Revenue",
+    "definition": "Revenue that has been earned but not yet billed or received. Recorded as a current asset under the accrual basis.",
+    "slug": "accrued-revenue",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Accumulated Depreciation",
+    "definition": "A contra-asset account that aggregates all depreciation expense charged against a fixed asset since acquisition. Net book value equals cost minus accumulated depreciation.",
+    "slug": "accumulated-depreciation",
+    "category": "Assets"
+  },
+  {
+    "term": "Acid-Test Ratio",
+    "definition": "See Quick Ratio. A stringent liquidity measure: (Cash + Short-term Investments + AR) / Current Liabilities, excluding inventory and prepaid items.",
+    "slug": "acid-test-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Activity-Based Costing (ABC)",
+    "definition": "A costing methodology that assigns overhead costs to products or services based on the specific activities that consume resources, rather than broad allocation rates.",
+    "slug": "activity-based-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Additional Paid-In Capital (APIC)",
+    "definition": "The amount received from shareholders above the par value of shares issued. Appears in the equity section of the balance sheet.",
+    "slug": "apic",
+    "category": "Equity"
+  },
+  {
+    "term": "Adjusting Entries",
+    "definition": "Journal entries recorded at the end of an accounting period to ensure revenues and expenses are properly matched and all account balances are accurate before financial statements are prepared.",
+    "slug": "adjusting-entries",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Administrative Expenses",
+    "definition": "General and administrative costs not directly tied to production, such as executive salaries, office rent, and legal fees. Reported separately from COGS on the income statement.",
+    "slug": "administrative-expenses",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Allowance for Doubtful Accounts",
+    "definition": "A contra-asset account offsetting accounts receivable to estimate the portion expected to be uncollectible. Established under the allowance method per the matching principle.",
+    "slug": "allowance-for-doubtful-accounts",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Allowance Method",
+    "definition": "The GAAP-preferred approach to recording bad debt, which estimates uncollectible accounts at period-end rather than waiting until an account is actually written off.",
+    "slug": "allowance-method",
+    "category": "Principles"
+  },
+  {
+    "term": "Amortization",
+    "definition": "The systematic allocation of an intangible asset's cost over its useful life, or the reduction of a loan balance through scheduled principal payments.",
+    "slug": "amortization",
+    "category": "Assets"
+  },
+  {
+    "term": "Amortization Schedule",
+    "definition": "A table showing the periodic breakdown of each loan payment into principal and interest components, along with the remaining loan balance after each payment.",
+    "slug": "amortization-schedule",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Annual Report",
+    "definition": "A comprehensive document published yearly by a company for its shareholders, including audited financial statements, management discussion and analysis (MD&A), and notes.",
+    "slug": "annual-report",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Asset",
+    "definition": "A resource controlled by an entity as a result of past events from which future economic benefits are expected to flow. Classified as current or non-current on the balance sheet.",
+    "slug": "asset",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Asset Turnover Ratio",
+    "definition": "A ratio measuring the efficiency of a company's use of its assets to generate revenue: Net Revenue / Average Total Assets.",
+    "slug": "asset-turnover-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Audit",
+    "definition": "An independent examination of a company's financial records and statements to verify accuracy and compliance with applicable accounting standards.",
+    "slug": "audit",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Audit Opinion",
+    "definition": "The conclusion issued by an external auditor after examining financial statements. Types include unqualified (clean), qualified, adverse, and disclaimer of opinion.",
+    "slug": "audit-opinion",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Audit Trail",
+    "definition": "A chronological record linking each financial transaction back to its source documents (invoices, receipts, contracts), essential for internal control and fraud prevention.",
+    "slug": "audit-trail",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Average Cost Method (AVCO)",
+    "definition": "An inventory valuation method that assigns cost to inventory items based on the weighted average cost of all units available for sale during the period.",
+    "slug": "average-cost-method",
+    "category": "Inventory"
+  },
+  {
+    "term": "Bad Debt Expense",
+    "definition": "The income statement charge representing the estimated portion of credit sales or receivables that will not be collected.",
+    "slug": "bad-debt-expense",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Balance Sheet",
+    "definition": "A financial statement presenting a company's assets, liabilities, and shareholders' equity at a specific point in time. Also called the Statement of Financial Position under IFRS.",
+    "slug": "balance-sheet",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Bank Reconciliation",
+    "definition": "The process of comparing and aligning a company's cash book balance with the bank statement balance, identifying and explaining any discrepancies.",
+    "slug": "bank-reconciliation",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Bond",
+    "definition": "A fixed-income debt instrument issued by a corporation or government to raise capital, representing a promise to pay periodic interest (coupon) and repay the principal at maturity.",
+    "slug": "bond",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Bond Discount",
+    "definition": "The amount by which a bond's face value exceeds its issue price, occurring when the coupon rate is below the market interest rate. Amortized over the bond's life.",
+    "slug": "bond-discount",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Bond Premium",
+    "definition": "The amount by which a bond's issue price exceeds its face value, occurring when the coupon rate is above the market interest rate. Amortized over the bond's life.",
+    "slug": "bond-premium",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Book Value",
+    "definition": "The net value of an asset as recorded on the balance sheet — original cost minus accumulated depreciation (for fixed assets) or minus accumulated amortization (for intangibles).",
+    "slug": "book-value",
+    "category": "Assets"
+  },
+  {
+    "term": "Book Value Per Share",
+    "definition": "Total shareholders' equity divided by the number of shares outstanding. Indicates the net asset value attributable to each share.",
+    "slug": "book-value-per-share",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Break-Even Analysis",
+    "definition": "A study determining the sales volume at which total revenues equal total costs (fixed + variable), resulting in zero profit or loss.",
+    "slug": "break-even-analysis",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Break-Even Point",
+    "definition": "The level of sales at which total revenue equals total costs. Calculated as Fixed Costs / Contribution Margin per unit.",
+    "slug": "break-even-point",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Budget",
+    "definition": "A financial plan expressing management's expectations for revenues, expenses, and cash flows over a future period, used for planning and performance evaluation.",
+    "slug": "budget",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Budget Variance",
+    "definition": "The difference between a budgeted (planned) amount and the actual result for a given period. Can be favorable (better than budget) or unfavorable (worse than budget).",
+    "slug": "budget-variance",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Capital Expenditure (CAPEX)",
+    "definition": "Spending on acquiring or improving long-term assets such as property, plant, and equipment. Capitalized on the balance sheet and depreciated over the asset's useful life.",
+    "slug": "capex",
+    "category": "Assets"
+  },
+  {
+    "term": "Capital Lease",
+    "definition": "A lease that transfers substantially all the risks and rewards of ownership to the lessee, recorded as both an asset and a liability on the lessee's balance sheet. Called a Finance Lease under IFRS 16.",
+    "slug": "capital-lease",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Capitalization",
+    "definition": "The process of recording a cost as an asset (to be expensed over time) rather than as an immediate expense, typically for items that provide multi-period benefit.",
+    "slug": "capitalization",
+    "category": "Principles"
+  },
+  {
+    "term": "Cash Basis Accounting",
+    "definition": "An accounting method that records revenues and expenses only when cash is received or paid. Simpler than accrual but does not conform to GAAP/IFRS for most businesses.",
+    "slug": "cash-basis",
+    "category": "Principles"
+  },
+  {
+    "term": "Cash Equivalents",
+    "definition": "Short-term, highly liquid investments that are readily convertible to known amounts of cash and subject to insignificant risk of value change — typically maturities of 90 days or less.",
+    "slug": "cash-equivalents",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Cash Flow",
+    "definition": "The net amount of cash and cash equivalents moving into and out of a business over a specified period.",
+    "slug": "cash-flow",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Chart of Accounts",
+    "definition": "A structured list of all account names and numbers used by a company in its general ledger, organized by category: assets, liabilities, equity, revenue, and expenses.",
+    "slug": "chart-of-accounts",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Closing Entries",
+    "definition": "Journal entries made at period-end to reset temporary accounts (revenues, expenses, dividends) to zero and transfer their net balances to Retained Earnings.",
+    "slug": "closing-entries",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Common Stock",
+    "definition": "Equity securities representing residual ownership in a corporation. Common stockholders vote on corporate matters and receive dividends after preferred stockholders.",
+    "slug": "common-stock",
+    "category": "Equity"
+  },
+  {
+    "term": "Comparability",
+    "definition": "A qualitative characteristic of financial information that enables users to identify similarities and differences between entities or between periods for the same entity.",
+    "slug": "comparability",
+    "category": "Principles"
+  },
+  {
+    "term": "Comprehensive Income",
+    "definition": "The change in equity from all sources other than owner transactions. Includes net income plus other comprehensive income (OCI) items such as foreign currency translation adjustments.",
+    "slug": "comprehensive-income",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Conservatism Principle",
+    "definition": "When uncertainty exists about how to record an item, accountants should choose the approach least likely to overstate assets or income — recognizing losses early and gains only when realized.",
+    "slug": "conservatism-principle",
+    "category": "Principles"
+  },
+  {
+    "term": "Consistency Principle",
+    "definition": "The requirement that once an accounting method is chosen, it should be applied consistently from period to period, enabling meaningful comparisons over time.",
+    "slug": "consistency-principle",
+    "category": "Principles"
+  },
+  {
+    "term": "Consolidated Financial Statements",
+    "definition": "Financial statements that combine the financials of a parent company and its subsidiaries into a single set of statements, eliminating intercompany transactions.",
+    "slug": "consolidated-financial-statements",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Contingent Liability",
+    "definition": "A potential obligation that may arise depending on the outcome of a future event, such as a pending lawsuit. Recognized only if probable and estimable.",
+    "slug": "contingent-liability",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Contra Account",
+    "definition": "An account that is paired with and reduces the balance of a related account. Examples: Accumulated Depreciation (contra-asset), Allowance for Doubtful Accounts (contra-asset), Treasury Stock (contra-equity).",
+    "slug": "contra-account",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Contra-Asset",
+    "definition": "A contra account with a credit balance that offsets a related asset account, reducing its net reported value. Examples: Accumulated Depreciation, Allowance for Doubtful Accounts.",
+    "slug": "contra-asset",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Contribution Margin",
+    "definition": "Revenue minus variable costs. Represents the amount available to cover fixed costs and generate profit. Expressed per unit or as a ratio.",
+    "slug": "contribution-margin",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Contribution Margin Ratio",
+    "definition": "Contribution margin divided by sales revenue, expressed as a percentage. Indicates the proportion of each dollar of sales available to cover fixed costs.",
+    "slug": "contribution-margin-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Cost of Goods Sold (COGS)",
+    "definition": "The direct costs incurred in producing goods sold during a period, including raw materials, direct labor, and manufacturing overhead.",
+    "slug": "cost-of-goods-sold",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Cost Principle (Historical Cost)",
+    "definition": "The accounting principle requiring assets to be recorded at their original purchase price rather than their current market value.",
+    "slug": "cost-principle",
+    "category": "Principles"
+  },
+  {
+    "term": "Credit (CR)",
+    "definition": "An entry on the right side of a T-account. Credits increase liabilities, equity, and revenue; they decrease assets and expenses.",
+    "slug": "credit",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Credit Memo",
+    "definition": "A document issued by a seller reducing the amount owed by a buyer — for example, due to returned goods, pricing errors, or allowances.",
+    "slug": "credit-memo",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Current Assets",
+    "definition": "Assets expected to be converted to cash or used within one year or one operating cycle, whichever is longer. Includes cash, AR, inventory, and prepaid expenses.",
+    "slug": "current-assets",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Current Liabilities",
+    "definition": "Obligations expected to be settled within one year or one operating cycle. Includes AP, accrued expenses, short-term debt, and current portions of long-term debt.",
+    "slug": "current-liabilities",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Current Ratio",
+    "definition": "Current Assets / Current Liabilities. A primary liquidity metric measuring a company's ability to cover short-term obligations with short-term assets.",
+    "slug": "current-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Days Sales Outstanding (DSO)",
+    "definition": "A measure of the average number of days a company takes to collect payment after a sale: (AR / Revenue) × Number of Days. Lower is generally better.",
+    "slug": "days-sales-outstanding",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Debit (DR)",
+    "definition": "An entry on the left side of a T-account. Debits increase assets and expenses; they decrease liabilities, equity, and revenue.",
+    "slug": "debit",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Debt-to-Equity Ratio",
+    "definition": "Total Liabilities / Total Shareholders' Equity. A leverage metric showing the proportion of financing from creditors versus owners.",
+    "slug": "debt-to-equity-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Deferred Revenue",
+    "definition": "Cash received before the related goods or services have been delivered. Recorded as a liability until the performance obligation is satisfied.",
+    "slug": "deferred-revenue",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Deferred Tax Asset (DTA)",
+    "definition": "A balance sheet asset arising from temporary differences between accounting income and taxable income, representing taxes paid now that reduce future tax payments.",
+    "slug": "deferred-tax-asset",
+    "category": "Tax"
+  },
+  {
+    "term": "Deferred Tax Liability (DTL)",
+    "definition": "A balance sheet liability for taxes that are owed in the future due to temporary differences — for example, when accelerated depreciation is used for tax but straight-line is used for books.",
+    "slug": "deferred-tax-liability",
+    "category": "Tax"
+  },
+  {
+    "term": "Depletion",
+    "definition": "The systematic allocation of the cost of a natural resource (oil, timber, minerals) over the period of its extraction, analogous to depreciation for physical assets.",
+    "slug": "depletion",
+    "category": "Assets"
+  },
+  {
+    "term": "Depreciation",
+    "definition": "The systematic allocation of a tangible fixed asset's cost over its estimated useful life. A non-cash expense that reduces the book value of the asset.",
+    "slug": "depreciation",
+    "category": "Assets"
+  },
+  {
+    "term": "Direct Costs",
+    "definition": "Costs that can be directly traced to a specific product, service, or project — such as raw materials and direct labor.",
+    "slug": "direct-costs",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Direct Labor",
+    "definition": "Wages paid to workers who are directly involved in manufacturing a product or delivering a service.",
+    "slug": "direct-labor",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Direct Materials",
+    "definition": "Raw materials that are directly incorporated into a finished product and whose cost can be traced to it specifically.",
+    "slug": "direct-materials",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Direct Method (Cash Flow)",
+    "definition": "A presentation format for the operating section of the cash flow statement that lists actual cash receipts and payments, rather than adjusting net income.",
+    "slug": "direct-method-cash-flow",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Direct Write-Off Method",
+    "definition": "Recording bad debt expense only when a specific receivable is determined to be uncollectible. Not GAAP-compliant for most companies because it violates the matching principle.",
+    "slug": "direct-write-off-method",
+    "category": "Principles"
+  },
+  {
+    "term": "Discontinued Operations",
+    "definition": "A component of an entity that has been disposed of or classified as held for sale, reported separately from continuing operations on the income statement.",
+    "slug": "discontinued-operations",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Discount Rate",
+    "definition": "The interest rate used to determine the present value of future cash flows in discounted cash flow (DCF) analysis.",
+    "slug": "discount-rate",
+    "category": "Valuation"
+  },
+  {
+    "term": "Discounted Cash Flow (DCF)",
+    "definition": "A valuation method that estimates the value of an investment based on its expected future cash flows, discounted back to their present value at an appropriate rate.",
+    "slug": "discounted-cash-flow",
+    "category": "Valuation"
+  },
+  {
+    "term": "Dividends",
+    "definition": "Distributions of earnings to shareholders, typically in cash or additional shares. Declared dividends reduce retained earnings.",
+    "slug": "dividends",
+    "category": "Equity"
+  },
+  {
+    "term": "Dividends Payable",
+    "definition": "A current liability representing dividends that have been declared by the board of directors but not yet paid to shareholders.",
+    "slug": "dividends-payable",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Double-Declining Balance (DDB)",
+    "definition": "An accelerated depreciation method that applies twice the straight-line depreciation rate to the asset's declining book value each period.",
+    "slug": "double-declining-balance",
+    "category": "Assets"
+  },
+  {
+    "term": "Double-Entry Bookkeeping",
+    "definition": "The system requiring every transaction to be recorded in at least two accounts — with equal debits and credits — ensuring the accounting equation always balances.",
+    "slug": "double-entry-bookkeeping",
+    "category": "Principles"
+  },
+  {
+    "term": "Earnings Per Share (EPS)",
+    "definition": "Net income (less preferred dividends) divided by the weighted average number of common shares outstanding. A key metric for investors.",
+    "slug": "earnings-per-share",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "EBIT",
+    "definition": "Earnings Before Interest and Taxes. A measure of operating profitability independent of capital structure and tax environment.",
+    "slug": "ebit",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "EBITDA",
+    "definition": "Earnings Before Interest, Taxes, Depreciation, and Amortization. A widely used proxy for operating cash flow and business profitability.",
+    "slug": "ebitda",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Effective Interest Method",
+    "definition": "The preferred method of amortizing bond premiums or discounts, applying a constant effective interest rate to the carrying value of the bond each period.",
+    "slug": "effective-interest-method",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Effective Tax Rate",
+    "definition": "The actual average percentage of pretax income paid in taxes: Total Income Tax Expense / Pretax Income.",
+    "slug": "effective-tax-rate",
+    "category": "Tax"
+  },
+  {
+    "term": "Entity Concept",
+    "definition": "The accounting principle that a business is treated as a separate economic entity distinct from its owners and other businesses.",
+    "slug": "entity-concept",
+    "category": "Principles"
+  },
+  {
+    "term": "Equity",
+    "definition": "The residual interest in the assets of an entity after deducting all liabilities. Also called net assets, shareholders' equity, or owners' equity.",
+    "slug": "equity",
+    "category": "Equity"
+  },
+  {
+    "term": "Equity Method",
+    "definition": "An accounting approach used when an investor has significant influence (typically 20–50% ownership) over an investee. The investor records its share of the investee's net income or loss.",
+    "slug": "equity-method",
+    "category": "Investments"
+  },
+  {
+    "term": "Expense",
+    "definition": "An outflow of economic benefits or a decrease in assets (or increase in liabilities) incurred in the course of generating revenue.",
+    "slug": "expense",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Fair Value",
+    "definition": "The price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date.",
+    "slug": "fair-value",
+    "category": "Valuation"
+  },
+  {
+    "term": "FIFO (First-In, First-Out)",
+    "definition": "An inventory method assuming the earliest purchased goods are sold first. In rising price environments, FIFO yields lower COGS, higher gross profit, and higher ending inventory.",
+    "slug": "fifo",
+    "category": "Inventory"
+  },
+  {
+    "term": "Finance Lease",
+    "definition": "Under IFRS 16, a lease in which the lessee recognizes a right-of-use asset and a corresponding lease liability. Equivalent to a capital lease under legacy US GAAP.",
+    "slug": "finance-lease",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Financial Accounting",
+    "definition": "The field of accounting concerned with recording, summarizing, and reporting financial transactions for external stakeholders (investors, creditors, regulators).",
+    "slug": "financial-accounting",
+    "category": "Principles"
+  },
+  {
+    "term": "Financial Statements",
+    "definition": "Formal reports summarizing the financial activities and position of a business: balance sheet, income statement, statement of cash flows, and statement of changes in equity.",
+    "slug": "financial-statements",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Financing Activities",
+    "definition": "Cash flow transactions related to borrowing, repaying debt, and equity financing — such as issuing stock, paying dividends, or repaying loans. One of the three sections of the cash flow statement.",
+    "slug": "financing-activities",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Fixed Assets (PP&E)",
+    "definition": "Long-term tangible assets used in operations — property, plant, and equipment — not intended for resale, subject to depreciation.",
+    "slug": "fixed-assets",
+    "category": "Assets"
+  },
+  {
+    "term": "Fixed Costs",
+    "definition": "Costs that remain constant regardless of production or sales volume within a relevant range — such as rent, insurance, and salaried staff costs.",
+    "slug": "fixed-costs",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Fixed Overhead",
+    "definition": "Manufacturing overhead costs that remain constant regardless of production volume, such as factory rent, insurance, and supervisory salaries.",
+    "slug": "fixed-overhead",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Forensic Accounting",
+    "definition": "The application of accounting skills and investigative techniques to legal matters — including fraud detection, litigation support, and financial crime investigations.",
+    "slug": "forensic-accounting",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Free Cash Flow (FCF)",
+    "definition": "Operating cash flow minus capital expenditures. Represents the cash a business generates after maintaining or expanding its asset base.",
+    "slug": "free-cash-flow",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Full Disclosure Principle",
+    "definition": "The requirement that financial statements include all information necessary for a user to make an informed decision, typically addressed through notes to the financial statements.",
+    "slug": "full-disclosure",
+    "category": "Principles"
+  },
+  {
+    "term": "Fund Accounting",
+    "definition": "An accounting system used by nonprofits and government entities that segregates resources into separate funds, each with its own set of self-balancing accounts.",
+    "slug": "fund-accounting",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "GAAP (Generally Accepted Accounting Principles)",
+    "definition": "The set of accounting rules, standards, and procedures issued primarily by the FASB that US public and private companies use to prepare financial statements.",
+    "slug": "gaap",
+    "category": "Standards"
+  },
+  {
+    "term": "General Journal",
+    "definition": "The original book of entry where all financial transactions are recorded chronologically before being posted to the general ledger.",
+    "slug": "general-journal",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "General Ledger",
+    "definition": "The master record of all financial transactions of a company, organized by account. The source of data for the trial balance and financial statements.",
+    "slug": "general-ledger",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Going Concern",
+    "definition": "The accounting assumption that a business will continue to operate for the foreseeable future and does not intend to liquidate or significantly curtail operations.",
+    "slug": "going-concern",
+    "category": "Principles"
+  },
+  {
+    "term": "Goodwill",
+    "definition": "An intangible asset recorded when a business is acquired for a price exceeding the fair value of its identifiable net assets. Not amortized under US GAAP; tested annually for impairment.",
+    "slug": "goodwill",
+    "category": "Assets"
+  },
+  {
+    "term": "Gross Profit",
+    "definition": "Revenue minus Cost of Goods Sold. The amount remaining before operating expenses, interest, and taxes.",
+    "slug": "gross-profit",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Gross Profit Margin",
+    "definition": "(Revenue − COGS) / Revenue, expressed as a percentage. Measures how efficiently a company produces its goods relative to sales.",
+    "slug": "gross-profit-margin",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "High-Low Method",
+    "definition": "A simple cost estimation technique that uses the highest and lowest activity levels in a data set to separate mixed costs into their fixed and variable components.",
+    "slug": "high-low-method",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Horizontal Analysis",
+    "definition": "A financial analysis technique that compares line items across multiple periods, expressing changes in dollar amounts and percentages to identify trends.",
+    "slug": "horizontal-analysis",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "IFRS (International Financial Reporting Standards)",
+    "definition": "Accounting standards issued by the IASB, used in over 140 countries for the preparation of public company financial statements.",
+    "slug": "ifrs",
+    "category": "Standards"
+  },
+  {
+    "term": "Impairment",
+    "definition": "A permanent reduction recognized when an asset's carrying amount exceeds its recoverable amount (the higher of fair value less costs to sell and value in use).",
+    "slug": "impairment",
+    "category": "Assets"
+  },
+  {
+    "term": "Income Statement",
+    "definition": "A financial statement showing revenues, expenses, gains, and losses over a period of time, resulting in a net income or net loss figure.",
+    "slug": "income-statement",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Income Tax Expense",
+    "definition": "The total charge to the income statement for income taxes in a period, comprising current taxes payable and changes in deferred tax assets and liabilities.",
+    "slug": "income-tax-expense",
+    "category": "Tax"
+  },
+  {
+    "term": "Indirect Costs",
+    "definition": "Costs that cannot be directly traced to a specific product or project, such as factory utilities, supervisor salaries, and depreciation of shared machinery.",
+    "slug": "indirect-costs",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Indirect Method (Cash Flow)",
+    "definition": "The most common presentation format for the operating section of the cash flow statement. Starts with net income and adjusts for non-cash items and working capital changes.",
+    "slug": "indirect-method-cash-flow",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Intangible Assets",
+    "definition": "Non-physical assets with long-term value — including patents, trademarks, copyrights, customer lists, and goodwill.",
+    "slug": "intangible-assets",
+    "category": "Assets"
+  },
+  {
+    "term": "Interest Coverage Ratio",
+    "definition": "EBIT / Interest Expense. Measures how easily a company can pay interest on its outstanding debt. A ratio below 1.5 is generally considered a warning sign.",
+    "slug": "interest-coverage-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Internal Audit",
+    "definition": "An independent appraisal function within an organization that evaluates the effectiveness of internal controls, risk management, and governance processes.",
+    "slug": "internal-audit",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Internal Controls",
+    "definition": "Policies, procedures, and systems implemented by management to safeguard assets, ensure accurate financial reporting, and promote compliance with laws and regulations.",
+    "slug": "internal-controls",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Internal Rate of Return (IRR)",
+    "definition": "The discount rate that makes the net present value (NPV) of all cash flows from a project equal to zero. Used to evaluate the attractiveness of investments.",
+    "slug": "internal-rate-of-return",
+    "category": "Valuation"
+  },
+  {
+    "term": "Inventory",
+    "definition": "Goods held for sale in the ordinary course of business, or raw materials and work-in-progress being converted into finished goods.",
+    "slug": "inventory",
+    "category": "Inventory"
+  },
+  {
+    "term": "Inventory Turnover",
+    "definition": "COGS / Average Inventory. Measures how many times inventory is sold and replaced in a period. Higher generally indicates efficient inventory management.",
+    "slug": "inventory-turnover",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Investing Activities",
+    "definition": "Cash flows from buying or selling long-term assets and investments — such as purchasing equipment, acquiring subsidiaries, or selling marketable securities.",
+    "slug": "investing-activities",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Invoice",
+    "definition": "A commercial document issued by a seller to a buyer detailing goods or services provided, quantities, prices, and payment terms.",
+    "slug": "invoice",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Job Order Costing",
+    "definition": "A cost accounting system that assigns costs to specific, distinct jobs or batches of production — common in construction, custom manufacturing, and professional services.",
+    "slug": "job-order-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Journal Entry",
+    "definition": "The formal recording of a financial transaction in the books, showing accounts debited and credited along with amounts and a brief description.",
+    "slug": "journal-entry",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Just-In-Time (JIT)",
+    "definition": "An inventory management strategy that aligns raw-material orders from suppliers with production schedules, minimizing inventory holding costs.",
+    "slug": "just-in-time",
+    "category": "Inventory"
+  },
+  {
+    "term": "Lease",
+    "definition": "A contractual arrangement where the lessor grants the lessee the right to use an asset for a specified period in exchange for periodic payments.",
+    "slug": "lease",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Leverage",
+    "definition": "The use of borrowed capital (debt) to amplify potential returns — and potential losses — on equity. Often measured by the debt-to-equity or debt-to-assets ratio.",
+    "slug": "leverage",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Liability",
+    "definition": "A present obligation of an entity arising from past events, the settlement of which is expected to result in an outflow of economic resources.",
+    "slug": "liability",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "LIFO (Last-In, First-Out)",
+    "definition": "An inventory method assuming the most recently purchased goods are sold first. Permitted under US GAAP but prohibited by IFRS.",
+    "slug": "lifo",
+    "category": "Inventory"
+  },
+  {
+    "term": "LIFO Reserve",
+    "definition": "The difference between inventory valued under FIFO and inventory valued under LIFO. Disclosed to help analysts compare LIFO companies to FIFO companies.",
+    "slug": "lifo-reserve",
+    "category": "Inventory"
+  },
+  {
+    "term": "Liquidity",
+    "definition": "The ease with which an entity can meet its short-term obligations using its current assets. Measured by ratios like the current ratio and quick ratio.",
+    "slug": "liquidity",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Long-Term Debt",
+    "definition": "Debt obligations that mature more than one year from the balance sheet date, such as bonds payable, mortgages, and term loans.",
+    "slug": "long-term-debt",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Lower of Cost or Market (LCM)",
+    "definition": "An inventory valuation rule requiring that inventory be written down to its current market replacement cost when that cost falls below its original purchase cost.",
+    "slug": "lower-of-cost-or-market",
+    "category": "Inventory"
+  },
+  {
+    "term": "Managerial Accounting",
+    "definition": "The branch of accounting focused on providing financial and non-financial information to internal managers for planning, controlling, and decision-making.",
+    "slug": "managerial-accounting",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Manufacturing Overhead",
+    "definition": "All indirect costs associated with the production process that cannot be directly traced to a specific product — including factory rent, utilities, and indirect labor.",
+    "slug": "manufacturing-overhead",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Margin of Safety",
+    "definition": "The excess of actual or expected sales above the break-even sales level. Indicates how much sales can fall before the company incurs a loss.",
+    "slug": "margin-of-safety",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Market Capitalization",
+    "definition": "The total market value of a company's outstanding shares: Share Price × Number of Shares Outstanding.",
+    "slug": "market-capitalization",
+    "category": "Valuation"
+  },
+  {
+    "term": "Matching Principle",
+    "definition": "Expenses must be recognized in the same period as the revenues they helped generate, regardless of when cash changes hands.",
+    "slug": "matching-principle",
+    "category": "Principles"
+  },
+  {
+    "term": "Materiality",
+    "definition": "An item is material if its omission or misstatement could influence the economic decisions of users of the financial statements.",
+    "slug": "materiality",
+    "category": "Principles"
+  },
+  {
+    "term": "Mixed Costs (Semi-Variable Costs)",
+    "definition": "Costs containing both fixed and variable components — such as a utility bill with a fixed base charge plus a variable usage charge.",
+    "slug": "mixed-costs",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Net Income",
+    "definition": "The bottom line of the income statement: revenue minus all expenses, including COGS, operating expenses, interest, and income taxes.",
+    "slug": "net-income",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Net Present Value (NPV)",
+    "definition": "The difference between the present value of expected future cash inflows and the present value of cash outflows for a project. A positive NPV indicates the investment creates value.",
+    "slug": "net-present-value",
+    "category": "Valuation"
+  },
+  {
+    "term": "Net Realizable Value (NRV)",
+    "definition": "The estimated selling price of an asset in the ordinary course of business, less the estimated costs of completion and selling. Used for inventory valuation under IFRS.",
+    "slug": "net-realizable-value",
+    "category": "Valuation"
+  },
+  {
+    "term": "Non-Controlling Interest (NCI)",
+    "definition": "The equity interest in a subsidiary not attributable to the parent company. Reported within equity on the consolidated balance sheet.",
+    "slug": "non-controlling-interest",
+    "category": "Equity"
+  },
+  {
+    "term": "Notes Payable",
+    "definition": "A written promise to pay a specified amount at a defined future date, classified as current or long-term depending on the due date.",
+    "slug": "notes-payable",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Notes Receivable",
+    "definition": "A formal written promise from a customer or borrower to pay a specific sum by a specified date, carrying an interest component.",
+    "slug": "notes-receivable",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Notes to Financial Statements",
+    "definition": "Supplementary disclosures accompanying the financial statements that provide detail on accounting policies, estimates, contingencies, and other information necessary for a fair presentation.",
+    "slug": "notes-to-financial-statements",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Off-Balance-Sheet Financing",
+    "definition": "Arrangements that provide financing without appearing as liabilities on the balance sheet, such as operating leases (pre-IFRS 16) or special purpose vehicles.",
+    "slug": "off-balance-sheet",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Operating Activities",
+    "definition": "Cash flows derived from a company's core business operations — receipts from customers, payments to suppliers and employees, interest and taxes paid.",
+    "slug": "operating-activities",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Operating Expenses (OPEX)",
+    "definition": "Costs incurred in running a business that are not directly tied to production, including sales, general, and administrative (SG&A) expenses.",
+    "slug": "operating-expenses",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Operating Income (EBIT)",
+    "definition": "Revenue minus COGS and operating expenses, before deducting interest and taxes. Also called operating profit.",
+    "slug": "operating-income",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Operating Lease",
+    "definition": "A lease where the lessee uses the asset for a period without obtaining substantially all the risks and rewards of ownership. Under IFRS 16 and ASC 842, most leases are now on-balance-sheet.",
+    "slug": "operating-lease",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Operating Leverage",
+    "definition": "The degree to which a company uses fixed costs in its operations. High operating leverage means small changes in revenue produce large changes in operating income.",
+    "slug": "operating-leverage",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Other Comprehensive Income (OCI)",
+    "definition": "Gains and losses excluded from net income but included in comprehensive income — such as unrealized gains on available-for-sale securities and foreign currency translation adjustments.",
+    "slug": "other-comprehensive-income",
+    "category": "Equity"
+  },
+  {
+    "term": "Overhead",
+    "definition": "Indirect costs of running a business not directly linked to producing a specific product or service — factory, office, and administrative overhead are common categories.",
+    "slug": "overhead",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Owner's Equity",
+    "definition": "In a sole proprietorship or partnership, the owner's residual claim on assets after liabilities are deducted. Equivalent to shareholders' equity in a corporation.",
+    "slug": "owners-equity",
+    "category": "Equity"
+  },
+  {
+    "term": "Par Value",
+    "definition": "The face value of a bond, or the nominal stated value of a share of stock as defined in the corporate charter — usually $0.01 or $1 per share.",
+    "slug": "par-value",
+    "category": "Equity"
+  },
+  {
+    "term": "Payback Period",
+    "definition": "The time it takes for an investment to recover its initial cost from its net cash inflows. A simple, non-discounted capital budgeting metric.",
+    "slug": "payback-period",
+    "category": "Valuation"
+  },
+  {
+    "term": "Payroll Accounting",
+    "definition": "The process of calculating and recording employee compensation, including wages, salaries, bonuses, deductions, and payroll tax liabilities.",
+    "slug": "payroll-accounting",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Periodic Inventory System",
+    "definition": "An inventory system where records are updated only at the end of a period (via a physical count), rather than continuously.",
+    "slug": "periodic-inventory",
+    "category": "Inventory"
+  },
+  {
+    "term": "Perpetual Inventory System",
+    "definition": "An inventory system that continuously updates inventory records with each purchase and sale transaction, providing real-time balances.",
+    "slug": "perpetual-inventory",
+    "category": "Inventory"
+  },
+  {
+    "term": "Petty Cash",
+    "definition": "A small reserve of cash kept on hand for minor, incidental business expenses. Replenished periodically and subject to internal controls.",
+    "slug": "petty-cash",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Post-Closing Trial Balance",
+    "definition": "A trial balance prepared after closing entries have been recorded, containing only permanent accounts (assets, liabilities, equity) with zero temporary account balances.",
+    "slug": "post-closing-trial-balance",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Preferred Stock",
+    "definition": "A class of equity with priority over common stock for dividends and asset distribution in liquidation. Often carries a fixed dividend rate.",
+    "slug": "preferred-stock",
+    "category": "Equity"
+  },
+  {
+    "term": "Prepaid Expenses",
+    "definition": "Payments made in advance for goods or services to be received in future periods. Recorded as a current asset and expensed as the benefit is consumed.",
+    "slug": "prepaid-expenses",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Present Value (PV)",
+    "definition": "The current value of a future sum of money or stream of cash flows, discounted at a specified rate of return.",
+    "slug": "present-value",
+    "category": "Valuation"
+  },
+  {
+    "term": "Price-to-Earnings Ratio (P/E)",
+    "definition": "Market price per share divided by earnings per share. A widely used valuation multiple indicating how much investors are willing to pay per dollar of earnings.",
+    "slug": "price-to-earnings",
+    "category": "Valuation"
+  },
+  {
+    "term": "Process Costing",
+    "definition": "A cost accounting method used in industries that produce homogeneous products continuously (chemicals, food, oil refining), where costs are averaged across all units produced.",
+    "slug": "process-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Profit",
+    "definition": "The financial gain remaining after all costs and expenses have been subtracted from revenue. Can refer to gross profit, operating profit, or net profit depending on context.",
+    "slug": "profit",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Profit and Loss Statement (P&L)",
+    "definition": "Another name for the income statement — a report of revenues, expenses, and net income or loss for a given period.",
+    "slug": "profit-and-loss",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Provision",
+    "definition": "A liability of uncertain timing or amount, recognized when an entity has a present obligation from a past event and an outflow of resources is probable and estimable.",
+    "slug": "provision",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Quick Ratio (Acid-Test)",
+    "definition": "(Cash + Short-Term Investments + Net AR) / Current Liabilities. A stricter measure of liquidity than the current ratio, excluding inventory and prepaid expenses.",
+    "slug": "quick-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Realization Principle",
+    "definition": "Revenue should be recognized when it is earned and realizable — that is, when goods or services have been delivered and collection is reasonably assured.",
+    "slug": "realization-principle",
+    "category": "Principles"
+  },
+  {
+    "term": "Receivables Turnover Ratio",
+    "definition": "Net Credit Sales / Average Accounts Receivable. Measures how efficiently a company collects its receivables. A higher ratio signals faster collections.",
+    "slug": "receivables-turnover",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Relevance",
+    "definition": "A qualitative characteristic of financial information requiring that it be capable of making a difference in users' decisions — it must be timely and have predictive or confirmatory value.",
+    "slug": "relevance",
+    "category": "Principles"
+  },
+  {
+    "term": "Reliability (Faithful Representation)",
+    "definition": "The qualitative characteristic requiring financial information to be complete, neutral, and free from material error. Called 'faithful representation' under IFRS Conceptual Framework.",
+    "slug": "reliability",
+    "category": "Principles"
+  },
+  {
+    "term": "Retained Earnings",
+    "definition": "The cumulative net income of a corporation that has been kept in the business rather than distributed as dividends, since the company's inception.",
+    "slug": "retained-earnings",
+    "category": "Equity"
+  },
+  {
+    "term": "Return on Assets (ROA)",
+    "definition": "Net Income / Average Total Assets. Measures how effectively management uses assets to generate profit.",
+    "slug": "return-on-assets",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Return on Equity (ROE)",
+    "definition": "Net Income / Average Shareholders' Equity. A key measure of management's effectiveness in generating profit from owners' invested capital.",
+    "slug": "return-on-equity",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Return on Investment (ROI)",
+    "definition": "(Net Benefit / Cost of Investment) × 100%. A broad profitability metric comparing the return of an investment relative to its cost.",
+    "slug": "return-on-investment",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Revenue",
+    "definition": "The income generated from a company's primary business activities — the sale of goods or rendering of services — before any expenses are deducted.",
+    "slug": "revenue",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Revenue Recognition Principle",
+    "definition": "Revenue is recognized when (or as) performance obligations to customers are satisfied, regardless of when cash is received. Codified in ASC 606 (US GAAP) and IFRS 15.",
+    "slug": "revenue-recognition",
+    "category": "Principles"
+  },
+  {
+    "term": "Reversing Entries",
+    "definition": "Optional entries made on the first day of a new period to cancel the prior period's adjusting entries, simplifying subsequent recording of actual transactions.",
+    "slug": "reversing-entries",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Right-of-Use Asset",
+    "definition": "Under IFRS 16 and ASC 842, an asset recognized by the lessee representing the right to use a leased item for the lease term.",
+    "slug": "right-of-use-asset",
+    "category": "Assets"
+  },
+  {
+    "term": "Salvage Value (Residual Value)",
+    "definition": "The estimated value of an asset at the end of its useful life, used to calculate depreciable cost (Cost − Salvage Value).",
+    "slug": "salvage-value",
+    "category": "Assets"
+  },
+  {
+    "term": "Sarbanes-Oxley Act (SOX)",
+    "definition": "US legislation enacted in 2002 that established stricter corporate governance, financial disclosure, and internal control requirements for public companies, including Section 404 management assessments.",
+    "slug": "sarbanes-oxley",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Segment Reporting",
+    "definition": "The disclosure of financial information for distinct components (operating segments) of a business — required for public companies under IFRS 8 and ASC 280.",
+    "slug": "segment-reporting",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Selling Expenses",
+    "definition": "Costs directly related to marketing, selling, and distributing a company's products — such as sales commissions, advertising, and shipping.",
+    "slug": "selling-expenses",
+    "category": "Income Statement"
+  },
+  {
+    "term": "Shareholders' Equity",
+    "definition": "The residual interest in a corporation's assets after all liabilities are deducted. Comprises share capital, APIC, retained earnings, and other comprehensive income.",
+    "slug": "shareholders-equity",
+    "category": "Equity"
+  },
+  {
+    "term": "Standard Costing",
+    "definition": "A cost accounting system that assigns predetermined (standard) costs to products, then analyzes variances between standard and actual costs.",
+    "slug": "standard-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Statement of Cash Flows",
+    "definition": "A financial statement showing all cash inflows and outflows during a period, classified into operating, investing, and financing activities.",
+    "slug": "statement-of-cash-flows",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Statement of Changes in Equity",
+    "definition": "A financial statement explaining movements in each component of shareholders' equity — share capital, retained earnings, OCI — over a reporting period.",
+    "slug": "statement-of-changes-in-equity",
+    "category": "Financial Statements"
+  },
+  {
+    "term": "Stock Dividend",
+    "definition": "A dividend paid in the form of additional shares rather than cash. Increases shares outstanding but does not change total equity or the economic value per shareholder.",
+    "slug": "stock-dividend",
+    "category": "Equity"
+  },
+  {
+    "term": "Stock Split",
+    "definition": "An increase in a company's number of shares outstanding proportionally reducing the price per share. Does not change total equity value.",
+    "slug": "stock-split",
+    "category": "Equity"
+  },
+  {
+    "term": "Straight-Line Depreciation",
+    "definition": "The most common depreciation method, allocating equal amounts of an asset's depreciable cost over each year of its useful life: (Cost − Salvage Value) / Useful Life.",
+    "slug": "straight-line-depreciation",
+    "category": "Assets"
+  },
+  {
+    "term": "Subsidiary",
+    "definition": "A company controlled by another company (the parent), typically through ownership of more than 50% of voting shares.",
+    "slug": "subsidiary",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Sum-of-the-Years'-Digits (SYD)",
+    "definition": "An accelerated depreciation method that applies a decreasing fraction to the depreciable base, with the numerator being the remaining useful life and denominator being the sum of all years.",
+    "slug": "sum-of-years-digits",
+    "category": "Assets"
+  },
+  {
+    "term": "T-Account",
+    "definition": "A visual representation of a general ledger account shaped like the letter T, with debits on the left and credits on the right.",
+    "slug": "t-account",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Tax Shield",
+    "definition": "The reduction in taxable income resulting from deductible expenses such as interest, depreciation, or amortization, which reduce the amount of taxes owed.",
+    "slug": "tax-shield",
+    "category": "Tax"
+  },
+  {
+    "term": "Temporary Accounts",
+    "definition": "Income statement accounts (revenues and expenses) and dividends that are closed to retained earnings at the end of each accounting period.",
+    "slug": "temporary-accounts",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Time Value of Money (TVM)",
+    "definition": "The principle that a dollar available today is worth more than a dollar in the future, because today's dollar can be invested to earn a return.",
+    "slug": "time-value-of-money",
+    "category": "Valuation"
+  },
+  {
+    "term": "Times Interest Earned",
+    "definition": "EBIT / Interest Expense. See Interest Coverage Ratio. Measures a company's capacity to meet its interest obligations from operating income.",
+    "slug": "times-interest-earned",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Transfer Pricing",
+    "definition": "The pricing of transactions (goods, services, IP) between related entities within the same corporate group. Heavily regulated to prevent profit shifting for tax purposes.",
+    "slug": "transfer-pricing",
+    "category": "Tax"
+  },
+  {
+    "term": "Treasury Stock",
+    "definition": "A company's own shares that have been repurchased from the open market and held by the company. Recorded as a contra-equity account reducing total equity.",
+    "slug": "treasury-stock",
+    "category": "Equity"
+  },
+  {
+    "term": "Trial Balance",
+    "definition": "A list of all general ledger account balances at a specific date. If total debits equal total credits, the books are arithmetically in balance.",
+    "slug": "trial-balance",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Unearned Revenue",
+    "definition": "Cash collected from customers before goods or services are provided. A current liability until the performance obligation is fulfilled.",
+    "slug": "unearned-revenue",
+    "category": "Balance Sheet"
+  },
+  {
+    "term": "Units of Production Depreciation",
+    "definition": "A depreciation method allocating cost based on actual usage or output, rather than time. Useful when wear on an asset correlates directly with production volume.",
+    "slug": "units-of-production-depreciation",
+    "category": "Assets"
+  },
+  {
+    "term": "Useful Life",
+    "definition": "The estimated period over which an asset is expected to be used by the entity, used to calculate depreciation or amortization.",
+    "slug": "useful-life",
+    "category": "Assets"
+  },
+  {
+    "term": "Variable Costs",
+    "definition": "Costs that change in direct proportion to production or sales volume — such as raw materials, direct labor per unit, and sales commissions.",
+    "slug": "variable-costs",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Variable Costing",
+    "definition": "A costing method that includes only variable manufacturing costs in product costs. Fixed manufacturing overhead is expensed in the period incurred. Used internally, not permitted for external GAAP reporting.",
+    "slug": "variable-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Variance Analysis",
+    "definition": "The process of comparing actual results to standard or budgeted amounts and investigating the causes of differences — price, quantity, efficiency, and volume variances.",
+    "slug": "variance-analysis",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Vertical Analysis (Common-Size Analysis)",
+    "definition": "A financial analysis technique expressing each line item as a percentage of a base figure — revenue for the income statement, total assets for the balance sheet.",
+    "slug": "vertical-analysis",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "WACC (Weighted Average Cost of Capital)",
+    "definition": "The blended cost of a company's financing, weighted by the proportion of debt and equity in its capital structure. Used as the discount rate in DCF analysis.",
+    "slug": "wacc",
+    "category": "Valuation"
+  },
+  {
+    "term": "Work-in-Progress (WIP)",
+    "definition": "Goods that have been started but not yet completed in the production process. Classified as inventory on the balance sheet.",
+    "slug": "work-in-progress",
+    "category": "Inventory"
+  },
+  {
+    "term": "Working Capital",
+    "definition": "Current Assets − Current Liabilities. The net short-term financial resources available to fund day-to-day operations.",
+    "slug": "working-capital",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Working Capital Cycle",
+    "definition": "The time it takes to convert working capital inputs (inventory, receivables) back into cash. A shorter cycle generally indicates better operational efficiency.",
+    "slug": "working-capital-cycle",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Write-Down",
+    "definition": "A partial reduction in the recorded value of an asset to reflect an impairment or decline in value below its carrying amount.",
+    "slug": "write-down",
+    "category": "Assets"
+  },
+  {
+    "term": "Write-Off",
+    "definition": "The complete removal of an asset from the books when it is deemed to have no remaining value — such as writing off an uncollectible receivable.",
+    "slug": "write-off",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Yield to Maturity (YTM)",
+    "definition": "The total return anticipated on a bond if held until it matures, expressed as an annual rate. Accounts for coupon payments, face value, and current price.",
+    "slug": "yield-to-maturity",
+    "category": "Valuation"
+  },
+  {
+    "term": "Zero-Based Budgeting (ZBB)",
+    "definition": "A budgeting approach requiring every expense to be justified from scratch each period, rather than basing budgets on prior-year figures.",
+    "slug": "zero-based-budgeting",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Accounts Receivable Aging",
+    "definition": "A report categorizing outstanding receivables by the length of time an invoice has been outstanding (e.g., 0–30, 31–60, 61–90, 90+ days), used to monitor collections and estimate bad debts.",
+    "slug": "ar-aging",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Benchmarking",
+    "definition": "The practice of comparing a company's financial ratios and performance metrics to industry peers or best-in-class competitors to identify gaps and improvement opportunities.",
+    "slug": "benchmarking",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Capital Structure",
+    "definition": "The mix of debt and equity financing a company uses to fund its operations and assets, reflecting strategic decisions about risk, cost of capital, and financial flexibility.",
+    "slug": "capital-structure",
+    "category": "Valuation"
+  },
+  {
+    "term": "Cash Conversion Cycle (CCC)",
+    "definition": "Days Inventory Outstanding + Days Sales Outstanding − Days Payables Outstanding. Measures the time a company takes to convert inventory investment into cash from sales.",
+    "slug": "cash-conversion-cycle",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Certified Public Accountant (CPA)",
+    "definition": "A professional designation granted to accountants who pass the Uniform CPA Examination and meet state licensing requirements in the United States.",
+    "slug": "cpa",
+    "category": "Standards"
+  },
+  {
+    "term": "Convertible Bonds",
+    "definition": "Debt instruments that give holders the option to convert the bond into a predetermined number of equity shares, typically at a premium to the market price at issuance.",
+    "slug": "convertible-bonds",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Cost Behavior",
+    "definition": "The way costs change (or do not change) in response to variations in business activity levels — classified as fixed, variable, or mixed.",
+    "slug": "cost-behavior",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Cost Centre",
+    "definition": "A department or function within an organization that incurs costs but does not directly generate revenue — used for internal performance tracking.",
+    "slug": "cost-centre",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Cost Driver",
+    "definition": "A factor that causes a change in the cost of an activity or resource — used in activity-based costing to assign overhead to products or services.",
+    "slug": "cost-driver",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Credit Risk",
+    "definition": "The risk that a borrower or counterparty will fail to meet its financial obligations, resulting in a loss for the lender or creditor.",
+    "slug": "credit-risk",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Debit Memo",
+    "definition": "A document issued to increase the amount owed by a buyer — for example, to correct an underbilling or charge an additional fee.",
+    "slug": "debit-memo",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Dividend Payout Ratio",
+    "definition": "Dividends per Share / Earnings per Share, or Total Dividends / Net Income. Indicates the percentage of earnings distributed to shareholders.",
+    "slug": "dividend-payout-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Dividend Yield",
+    "definition": "Annual Dividends per Share / Market Price per Share. Measures the return on investment from dividends alone.",
+    "slug": "dividend-yield",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Economic Order Quantity (EOQ)",
+    "definition": "The ideal order quantity a company should purchase to minimize total inventory costs — balancing ordering costs against holding costs.",
+    "slug": "economic-order-quantity",
+    "category": "Inventory"
+  },
+  {
+    "term": "Enterprise Value (EV)",
+    "definition": "Market Capitalization + Total Debt − Cash and Equivalents. Represents the total value of a business, used in acquisition pricing and ratio analysis (e.g., EV/EBITDA).",
+    "slug": "enterprise-value",
+    "category": "Valuation"
+  },
+  {
+    "term": "Fiduciary Duty",
+    "definition": "The legal and ethical obligation to act in the best interest of another party — for example, a company's directors owe a fiduciary duty to its shareholders.",
+    "slug": "fiduciary-duty",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Fiscal Year",
+    "definition": "A 12-month accounting period used for financial reporting purposes, which may or may not align with the calendar year.",
+    "slug": "fiscal-year",
+    "category": "Principles"
+  },
+  {
+    "term": "Fraud Triangle",
+    "definition": "A model explaining why fraud occurs, based on three factors: pressure (incentive), opportunity (weak controls), and rationalization (justification).",
+    "slug": "fraud-triangle",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Gross Margin",
+    "definition": "Gross Profit / Net Revenue, expressed as a percentage. Shows how much of each revenue dollar remains after paying for the goods sold.",
+    "slug": "gross-margin",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Imprest System",
+    "definition": "A cash management system (commonly used for petty cash) where a fixed fund is maintained and replenished to the original balance when receipts equal the amount spent.",
+    "slug": "imprest-system",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Investment Property",
+    "definition": "Property (land or buildings) held to earn rental income or for capital appreciation — not for use in operations or for sale in the ordinary course of business. Accounted for under IAS 40.",
+    "slug": "investment-property",
+    "category": "Assets"
+  },
+  {
+    "term": "Key Performance Indicator (KPI)",
+    "definition": "A measurable value that demonstrates how effectively an organization is achieving its key business objectives, including financial metrics like ROE, margin, and turnover ratios.",
+    "slug": "kpi",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Liquidity Ratio",
+    "definition": "A class of ratios measuring a company's ability to pay its short-term obligations. Includes the current ratio, quick ratio, and cash ratio.",
+    "slug": "liquidity-ratio",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Management Discussion and Analysis (MD&A)",
+    "definition": "A section of a company's annual report in which management discusses financial results, liquidity, capital resources, and known trends or uncertainties.",
+    "slug": "mdna",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Mark-to-Market (MTM)",
+    "definition": "An accounting method that values assets and liabilities at their current market prices rather than historical cost, recording unrealized gains and losses.",
+    "slug": "mark-to-market",
+    "category": "Valuation"
+  },
+  {
+    "term": "Minority Interest",
+    "definition": "See Non-Controlling Interest. The portion of a subsidiary's equity not owned by the parent company.",
+    "slug": "minority-interest",
+    "category": "Equity"
+  },
+  {
+    "term": "Monetary Unit Assumption",
+    "definition": "The accounting assumption that transactions are recorded in a stable monetary unit (e.g., USD, EUR), ignoring the effects of inflation.",
+    "slug": "monetary-unit-assumption",
+    "category": "Principles"
+  },
+  {
+    "term": "Permanent Accounts",
+    "definition": "Balance sheet accounts (assets, liabilities, equity) whose balances carry forward from period to period and are not closed at year-end.",
+    "slug": "permanent-accounts",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Profitability Ratios",
+    "definition": "A category of financial ratios measuring a company's ability to generate profit relative to its revenue, assets, or equity. Includes gross margin, operating margin, ROA, and ROE.",
+    "slug": "profitability-ratios",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Purchase Order",
+    "definition": "A commercial document issued by a buyer to a seller, authorizing the purchase of goods or services at specified prices, quantities, and delivery terms.",
+    "slug": "purchase-order",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Restatement",
+    "definition": "A revision to previously issued financial statements to correct material errors, reflecting a change in accounting principle or the correction of a mistake.",
+    "slug": "restatement",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Source Documents",
+    "definition": "The original records providing evidence of a transaction — such as receipts, invoices, purchase orders, and bank statements. The basis for journal entries.",
+    "slug": "source-documents",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Solvency",
+    "definition": "A company's long-term ability to meet its financial obligations. Measured by leverage ratios such as debt-to-equity and interest coverage.",
+    "slug": "solvency",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Suspense Account",
+    "definition": "A temporary account used to record transactions when there is uncertainty about their proper classification, pending investigation and correct posting.",
+    "slug": "suspense-account",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Three-Way Match",
+    "definition": "An accounts payable control process that verifies a vendor invoice against the original purchase order and the receiving report before authorizing payment.",
+    "slug": "three-way-match",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Timeliness",
+    "definition": "A qualitative characteristic of financial information requiring that it be available to decision-makers before it loses its capacity to influence decisions.",
+    "slug": "timeliness",
+    "category": "Principles"
+  },
+  {
+    "term": "Understandability",
+    "definition": "A qualitative characteristic of financial information requiring that it be presented clearly and concisely so that users with reasonable financial knowledge can comprehend it.",
+    "slug": "understandability",
+    "category": "Principles"
+  },
+  {
+    "term": "Voucher",
+    "definition": "An internal document authorizing a payment, confirming that a liability has been verified and approved for settlement.",
+    "slug": "voucher",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Window Dressing",
+    "definition": "Actions taken near the end of a reporting period to make financial statements appear more favorable — such as accelerating cash collections or delaying payments.",
+    "slug": "window-dressing",
+    "category": "Financial Reporting"
+  },
+  
+  {
+    "term": "Opportunity Cost",
+    "definition": "The potential benefit that is given up or sacrificed when choosing one alternative over another. A key concept in decision-making.",
+    "slug": "opportunity-cost",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Sunk Cost",
+    "definition": "A cost that has already been incurred and cannot be recovered. Sunk costs should be ignored when making future economic decisions.",
+    "slug": "sunk-cost",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "FASB (Financial Accounting Standards Board)",
+    "definition": "The independent, private-sector, not-for-profit organization based in the US that establishes and improves Generally Accepted Accounting Principles (GAAP).",
+    "slug": "fasb",
+    "category": "Standards"
+  },
+  {
+    "term": "SEC (Securities and Exchange Commission)",
+    "definition": "The US federal government agency responsible for enforcing federal securities laws, proposing securities rules, and regulating the securities industry and stock exchanges.",
+    "slug": "sec",
+    "category": "Standards"
+  },
+  {
+    "term": "Owner's Draw (Drawings)",
+    "definition": "A withdrawal of cash or other assets from a sole proprietorship or partnership by the owner for personal use. It reduces total equity but is not an expense.",
+    "slug": "owners-draw",
+    "category": "Equity"
+  },
+  {
+    "term": "Pro Forma Financial Statements",
+    "definition": "Financial reports based on hypothetical scenarios, assumptions, or projections. Often used for business planning, forecasting, or illustrating the impact of a proposed transaction.",
+    "slug": "pro-forma",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Unrealized Gain or Loss",
+    "definition": "A paper profit or loss resulting from holding an asset that has changed in value but has not yet been sold (e.g., holding a stock that has gone up in price).",
+    "slug": "unrealized-gain-loss",
+    "category": "Valuation"
+  },
+  {
+    "term": "Realized Gain or Loss",
+    "definition": "The actual profit or loss that occurs when an asset is sold for a price higher or lower than its original purchase price or book value.",
+    "slug": "realized-gain-loss",
+    "category": "Valuation"
+  },
+  {
+    "term": "Subsequent Events",
+    "definition": "Events or transactions that occur after the balance sheet date but before the financial statements are issued, which may require adjustment to or disclosure in the statements.",
+    "slug": "subsequent-events",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Material Weakness",
+    "definition": "A deficiency, or combination of deficiencies, in internal control over financial reporting, such that there is a reasonable possibility a material misstatement will not be prevented or detected.",
+    "slug": "material-weakness",
+    "category": "Controls & Compliance"
+  },
+  
+  {
+    "term": "Annual Recurring Revenue (ARR)",
+    "definition": "A metric used by subscription-based businesses to quantify the predictable and recurring revenue components of their term subscriptions normalized for a single calendar year.",
+    "slug": "arr",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Asserted Claims",
+    "definition": "Legal claims or assessments that have been formally brought against an entity, which must be evaluated for potential accrual or disclosure in financial statements.",
+    "slug": "asserted-claims",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Audit Assertions",
+    "definition": "Implicit or explicit claims made by management regarding the recognition, measurement, presentation, and disclosure of items in the financial statements.",
+    "slug": "audit-assertions",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Backflush Costing",
+    "definition": "A simplified cost accounting system often used with Just-In-Time (JIT) inventory, where costs are not assigned to products until they are finished or sold.",
+    "slug": "backflush-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Base Erosion and Profit Shifting (BEPS)",
+    "definition": "Tax avoidance strategies used by multinational companies that exploit gaps and mismatches in tax rules to artificially shift profits to low or no-tax locations.",
+    "slug": "beps",
+    "category": "Tax"
+  },
+  {
+    "term": "Byproduct",
+    "definition": "A secondary product derived from a production process, manufacturing process, or chemical reaction, which has minor sales value compared to the major product.",
+    "slug": "byproduct",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Capitalized Software Costs",
+    "definition": "Costs incurred during the application development stage of internal-use software that are capitalized and amortized over the software's estimated useful life.",
+    "slug": "capitalized-software",
+    "category": "Assets"
+  },
+  {
+    "term": "Control Risk",
+    "definition": "The risk that a misstatement that could occur in an assertion about an account balance or disclosure will not be prevented, or detected and corrected, on a timely basis by the entity's internal control.",
+    "slug": "control-risk",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Derivative",
+    "definition": "A financial security with a value that is reliant upon or derived from an underlying asset or group of assets (e.g., options, futures, swaps).",
+    "slug": "derivative",
+    "category": "Investments"
+  },
+  {
+    "term": "Detection Risk",
+    "definition": "The risk that the procedures performed by the auditor will not detect a misstatement that exists and could be material.",
+    "slug": "detection-risk",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Earnout",
+    "definition": "A contractual provision in an M&A transaction stating that the seller of a business will obtain future compensation if the business achieves certain financial goals.",
+    "slug": "earnout",
+    "category": "Valuation"
+  },
+  {
+    "term": "Encumbrance",
+    "definition": "In government accounting, a commitment related to unperformed contracts for goods or services. It restricts a portion of a fund balance to prevent overspending.",
+    "slug": "encumbrance",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Equivalent Units",
+    "definition": "A concept used in process costing to express partially completed units in terms of fully completed units to assign costs appropriately.",
+    "slug": "equivalent-units",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Forward Contract",
+    "definition": "A customized contract between two parties to buy or sell an asset at a specified price on a future date, often used for hedging foreign currency or commodity risks.",
+    "slug": "forward-contract",
+    "category": "Investments"
+  },
+  {
+    "term": "Hedging",
+    "definition": "An investment strategy designed to offset potential losses or gains that may be incurred by a companion investment, often using derivatives.",
+    "slug": "hedging",
+    "category": "Investments"
+  },
+  {
+    "term": "Inherent Risk",
+    "definition": "The susceptibility of an account balance or class of transactions to a material misstatement, assuming there are no related internal controls.",
+    "slug": "inherent-risk",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Intercompany Elimination",
+    "definition": "The process of removing transactions and balances between companies within the same corporate group during the preparation of consolidated financial statements.",
+    "slug": "intercompany-elimination",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Joint Costs",
+    "definition": "Costs incurred in a manufacturing process that simultaneously produces multiple distinct products (joint products) up to a split-off point.",
+    "slug": "joint-costs",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "MACRS (Modified Accelerated Cost Recovery System)",
+    "definition": "The current tax depreciation system in the United States, allowing for accelerated depreciation of property to reduce taxable income in the early years of an asset's life.",
+    "slug": "macrs",
+    "category": "Tax"
+  },
+  {
+    "term": "Modified Accrual Basis",
+    "definition": "An accounting method used by government funds that combines accrual and cash basis accounting. Revenues are recognized when available and measurable, and expenditures are recognized when incurred.",
+    "slug": "modified-accrual",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Monthly Recurring Revenue (MRR)",
+    "definition": "The normalized monthly revenue expected from all active subscriptions. A core performance metric for SaaS companies.",
+    "slug": "mrr",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Net Assets With Donor Restrictions",
+    "definition": "A classification of a non-profit organization's net assets that are subject to donor-imposed stipulations, which may be temporary (time/purpose) or perpetual.",
+    "slug": "net-assets-with-restrictions",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Net Assets Without Donor Restrictions",
+    "definition": "A classification of a non-profit organization's net assets that are not subject to any donor-imposed stipulations and are available for general use.",
+    "slug": "net-assets-without-restrictions",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Net Operating Loss (NOL)",
+    "definition": "A period in which a company's allowable tax deductions are greater than its taxable income, resulting in a negative taxable income. This loss can often be carried forward to offset future tax liabilities.",
+    "slug": "net-operating-loss",
+    "category": "Tax"
+  },
+  {
+    "term": "Purchase Price Allocation (PPA)",
+    "definition": "An acquisition accounting process in which the acquirer allocates the purchase price into the target company's various assets and liabilities based on fair value.",
+    "slug": "purchase-price-allocation",
+    "category": "Valuation"
+  },
+  {
+    "term": "Section 179 Deduction",
+    "definition": "A US tax code provision allowing businesses to deduct the full purchase price of qualifying equipment and software purchased or financed during the tax year, rather than capitalizing and depreciating it.",
+    "slug": "section-179",
+    "category": "Tax"
+  },
+  {
+    "term": "Significant Deficiency",
+    "definition": "A deficiency, or combination of deficiencies, in internal control that is less severe than a material weakness, yet important enough to merit attention by those charged with governance.",
+    "slug": "significant-deficiency",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Split-Off Point",
+    "definition": "The juncture in a joint production process where distinct products can be identified and recognized individually.",
+    "slug": "split-off-point",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Step-Up in Basis",
+    "definition": "The readjustment of the value of an appreciated asset for tax purposes upon inheritance or specific types of corporate acquisitions, minimizing future capital gains taxes.",
+    "slug": "step-up-in-basis",
+    "category": "Tax"
+  },
+  {
+    "term": "Target Costing",
+    "definition": "A pricing method used by firms to manage costs. It subtracts the desired profit margin from a competitive market price to determine the maximum allowable cost for a product.",
+    "slug": "target-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Variable Interest Entity (VIE)",
+    "definition": "A legal business structure in which an investor has a controlling interest despite not having a majority of voting rights, requiring consolidation into the investor's financial statements under GAAP.",
+    "slug": "variable-interest-entity",
+    "category": "Financial Reporting"
+  },
+  
+  {
+    "term": "Altman Z-Score",
+    "definition": "A financial formula that measures a company's likelihood of entering bankruptcy within the next two years, calculated using a combination of five weighted financial ratios.",
+    "slug": "altman-z-score",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Capitalization Rate (Cap Rate)",
+    "definition": "A real estate valuation metric indicating the expected rate of return on an investment property, calculated as Net Operating Income (NOI) divided by current market value.",
+    "slug": "cap-rate",
+    "category": "Valuation"
+  },
+  {
+    "term": "CECL (Current Expected Credit Losses)",
+    "definition": "A FASB accounting standard requiring financial institutions and other entities to estimate and immediately recognize expected credit losses over the entire life of a loan or financial instrument.",
+    "slug": "cecl",
+    "category": "Standards"
+  },
+  {
+    "term": "Defined Benefit Plan",
+    "definition": "A traditional pension plan where the employer promises a specified monthly benefit upon retirement, based on employee history and tenure. The employer bears the investment risk.",
+    "slug": "defined-benefit-plan",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Defined Contribution Plan",
+    "definition": "A retirement plan (like a 401(k)) where the employer, employee, or both make regular contributions. Future benefits fluctuate based on investment earnings, meaning the employee bears the risk.",
+    "slug": "defined-contribution-plan",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Digital Assets",
+    "definition": "Intangible assets existing on a blockchain (like cryptocurrencies). Under GAAP, they are typically accounted for as indefinite-lived intangible assets and tested for impairment, though fair-value rules are evolving.",
+    "slug": "digital-assets",
+    "category": "Assets"
+  },
+  {
+    "term": "ESG Reporting (Environmental, Social, and Governance)",
+    "definition": "The disclosure of data covering a company's operations in three areas: environmental impact, societal impact, and corporate governance. Increasingly mandated by global regulators.",
+    "slug": "esg-reporting",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Fair Value Hierarchy",
+    "definition": "A three-level framework under GAAP and IFRS used to classify the inputs used in measuring fair value. Level 1 uses observable market prices, while Level 3 uses unobservable, internal estimates.",
+    "slug": "fair-value-hierarchy",
+    "category": "Valuation"
+  },
+  {
+    "term": "Foreign Currency Translation",
+    "definition": "The process of converting the financial statements of a foreign subsidiary from its functional currency into the parent company's reporting currency for consolidation purposes.",
+    "slug": "foreign-currency-translation",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Functional Currency",
+    "definition": "The primary economic currency of the environment in which an entity operates and generates cash flows. It is not necessarily the currency of the country where the entity is located.",
+    "slug": "functional-currency",
+    "category": "Principles"
+  },
+  {
+    "term": "Funds From Operations (FFO)",
+    "definition": "A key performance metric used by Real Estate Investment Trusts (REITs). It adds depreciation and amortization back to net income and subtracts gains on the sale of property.",
+    "slug": "ffo",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Greenhouse Gas (GHG) Accounting",
+    "definition": "The process of calculating and reporting an organization's carbon emissions, categorized into Scope 1 (direct), Scope 2 (indirect energy), and Scope 3 (value chain) emissions.",
+    "slug": "ghg-accounting",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Projected Benefit Obligation (PBO)",
+    "definition": "The actuarial present value of all future pension liabilities earned to date by employees, incorporating an assumption about future salary increases.",
+    "slug": "pbo",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Remeasurement",
+    "definition": "The process of converting financial statement items recorded in a local currency to the entity's functional currency, with resulting gains or losses flowing through the income statement.",
+    "slug": "remeasurement",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Transfer Agent",
+    "definition": "A trust company, bank, or similar financial institution assigned by a corporation to maintain records of investors and account balances, tracking who owns the company's stock or bonds.",
+    "slug": "transfer-agent",
+    "category": "Equity"
+  },
+  
+  {
+    "term": "Asset Retirement Obligation (ARO)",
+    "definition": "A legal obligation associated with the retirement of a tangible long-lived asset in which a company is responsible for dismantling, restoring, or cleaning up a site (common in oil, gas, and mining).",
+    "slug": "asset-retirement-obligation",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Black-Scholes Model",
+    "definition": "A complex mathematical model used to estimate the theoretical fair value of stock options and other derivatives, widely used for calculating stock-based compensation expense.",
+    "slug": "black-scholes-model",
+    "category": "Valuation"
+  },
+  {
+    "term": "Capitation",
+    "definition": "A healthcare accounting payment arrangement where a provider is paid a set amount for each enrolled person assigned to them, per period of time, regardless of whether that person seeks care.",
+    "slug": "capitation",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Charity Care",
+    "definition": "Healthcare services provided for free or at a reduced cost to patients who are unable to pay. It is not recorded as revenue or receivables, but the cost of providing the care is disclosed.",
+    "slug": "charity-care",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Debtor-in-Possession (DIP) Financing",
+    "definition": "A special form of financing provided for companies in financial distress or under Chapter 11 bankruptcy restructuring, generally taking priority over existing debt, equity, and other claims.",
+    "slug": "dip-financing",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Fresh Start Accounting",
+    "definition": "A set of accounting rules applied when a company emerges from bankruptcy, requiring the entity to revalue its assets and liabilities to fair value, essentially creating a new reporting entity.",
+    "slug": "fresh-start-accounting",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Full Cost Method",
+    "definition": "An accounting method used in the oil and gas industry where all operating costs of acquiring, exploring, and developing properties are capitalized, regardless of whether the efforts yield a successful well.",
+    "slug": "full-cost-method",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Net Interest Margin (NIM)",
+    "definition": "A primary profitability metric for banks, calculated as the difference between interest income generated by loans and interest paid out to depositors, divided by average earning assets.",
+    "slug": "net-interest-margin",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Non-Performing Loan (NPL)",
+    "definition": "A loan in which the borrower is in default or close to default, typically having not made scheduled payments of principal or interest for 90 days or more.",
+    "slug": "non-performing-loan",
+    "category": "Assets"
+  },
+  {
+    "term": "Restricted Stock Unit (RSU)",
+    "definition": "A form of equity-based compensation where an employer grants company shares to an employee, which vest over time or upon meeting performance milestones. Expensed over the vesting period.",
+    "slug": "rsu",
+    "category": "Equity"
+  },
+  {
+    "term": "Spoilage",
+    "definition": "Unacceptable units of production discarded or sold for salvage. 'Normal' spoilage is considered an expected cost of production and included in COGS, while 'abnormal' spoilage is recognized as a separate loss.",
+    "slug": "spoilage",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Successful Efforts Method",
+    "definition": "An alternative oil and gas accounting method where only the costs associated with successfully locating new oil and gas reserves are capitalized, while costs of unsuccessful ('dry hole') explorations are immediately expensed.",
+    "slug": "successful-efforts-method",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Throughput Accounting",
+    "definition": "A principle-based management accounting approach associated with the Theory of Constraints, focusing on increasing throughput (sales minus completely variable costs) while minimizing inventory and operating expenses.",
+    "slug": "throughput-accounting",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Tier 1 Capital",
+    "definition": "The core measure of a bank's financial strength from a regulator's point of view, composed primarily of common stock and disclosed reserves (retained earnings).",
+    "slug": "tier-1-capital",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Vesting",
+    "definition": "The process by which an employee earns the right to receive full benefits from company-granted stock options, RSUs, or retirement plan contributions over a set period of time.",
+    "slug": "vesting",
+    "category": "Equity"
+  },
+  
+  {
+    "term": "Activity-Based Management (ABM)",
+    "definition": "A system-wide, integrated approach that focuses management's attention on activities with the objective of improving customer value and the profit achieved by providing this value.",
+    "slug": "activity-based-management",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Ad Valorem Tax",
+    "definition": "A tax whose amount is based on the assessed value of a transaction or of property. It is typically imposed at the time of a transaction (sales tax) or annually (property tax).",
+    "slug": "ad-valorem-tax",
+    "category": "Tax"
+  },
+  {
+    "term": "Alternative Minimum Tax (AMT)",
+    "definition": "A supplemental income tax imposed by the US federal government required for certain individuals, estates, and trusts to ensure that those who benefit from certain exclusions and deductions pay at least a minimum amount of tax.",
+    "slug": "alternative-minimum-tax",
+    "category": "Tax"
+  },
+  {
+    "term": "Anti-Dilutive Securities",
+    "definition": "Options, warrants, convertible debt, or convertible preferred stock that would increase earnings per share (EPS) or reduce the loss per share if converted to common stock. They are excluded from diluted EPS calculations.",
+    "slug": "anti-dilutive-securities",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Appropriation",
+    "definition": "A legal authorization granted by a legislative body (in government accounting) to make expenditures and to incur obligations for specific purposes.",
+    "slug": "appropriation",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "ASC 606",
+    "definition": "The revenue recognition standard issued by the FASB that provides a unified, five-step model for recognizing revenue from contracts with customers.",
+    "slug": "asc-606",
+    "category": "Standards"
+  },
+  {
+    "term": "ASC 842",
+    "definition": "The FASB standard governing lease accounting, requiring organizations to record the vast majority of their leases on the balance sheet as right-of-use (ROU) assets and lease liabilities.",
+    "slug": "asc-842",
+    "category": "Standards"
+  },
+  {
+    "term": "Beta",
+    "definition": "A measure of the volatility, or systematic risk, of a security or a portfolio in comparison to the market as a whole. Used in the Capital Asset Pricing Model (CAPM).",
+    "slug": "beta",
+    "category": "Valuation"
+  },
+  {
+    "term": "Capital Asset Pricing Model (CAPM)",
+    "definition": "A model that describes the relationship between systematic risk and expected return for assets, particularly stocks, used throughout finance for pricing risky securities and generating expected returns.",
+    "slug": "capm",
+    "category": "Valuation"
+  },
+  {
+    "term": "Clawback Provision",
+    "definition": "A contractual clause often found in executive compensation or private equity agreements that requires an employee or general partner to return previously distributed funds if certain financial targets or regulatory requirements are later missed or violated.",
+    "slug": "clawback-provision",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Commercial Paper",
+    "definition": "An unsecured, short-term debt instrument issued by a corporation, typically for the financing of accounts receivable, inventories, and meeting short-term liabilities.",
+    "slug": "commercial-paper",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Compensating Balance",
+    "definition": "A minimum bank account balance that a borrower must maintain as a requirement of a lender, often reducing the actual liquidity available to the borrower and increasing the effective interest rate of the loan.",
+    "slug": "compensating-balance",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Comprehensive Annual Financial Report (CAFR)",
+    "definition": "A set of US government financial statements comprising the financial report of a state, municipal, or other governmental entity that complies with the accounting requirements promulgated by the GASB.",
+    "slug": "cafr",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Contingent Asset",
+    "definition": "A possible asset that arises from past events and whose existence will be confirmed only by the occurrence or non-occurrence of one or more uncertain future events not wholly within the control of the entity. Not recognized on the balance sheet until realization is virtually certain.",
+    "slug": "contingent-asset",
+    "category": "Assets"
+  },
+  {
+    "term": "Critical Audit Matters (CAM)",
+    "definition": "Matters communicated or required to be communicated to the audit committee that relate to accounts or disclosures that are material to the financial statements and involved especially challenging, subjective, or complex auditor judgment.",
+    "slug": "critical-audit-matters",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Debt Covenant",
+    "definition": "Agreements between a company and its creditors that the company must operate within certain rules or maintain specific financial ratios (like maximum debt-to-equity) as a condition of the loan.",
+    "slug": "debt-covenant",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Debt Service Fund",
+    "definition": "A governmental fund type used to account for the accumulation of resources for, and the payment of, general long-term debt principal and interest.",
+    "slug": "debt-service-fund",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Diluted Earnings Per Share (Diluted EPS)",
+    "definition": "A performance metric used to gauge the quality of a company's earnings per share (EPS) if all convertible securities (options, warrants, convertible bonds) were exercised.",
+    "slug": "diluted-eps",
+    "category": "Ratios & Metrics"
+  },
+  {
+    "term": "Enterprise Fund",
+    "definition": "A proprietary fund type used in government accounting to report any activity for which a fee is charged to external users for goods or services (e.g., a municipal water utility).",
+    "slug": "enterprise-fund",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Excise Tax",
+    "definition": "Legislated taxes on specific goods or services at purchase such as fuel, tobacco, and alcohol. They are often included in the price of the product.",
+    "slug": "excise-tax",
+    "category": "Tax"
+  },
+  {
+    "term": "Factoring",
+    "definition": "A financial transaction in which a business sells its accounts receivable (invoices) to a third party (a factor) at a discount in exchange for immediate cash.",
+    "slug": "factoring",
+    "category": "Assets"
+  },
+  {
+    "term": "FICA (Federal Insurance Contributions Act)",
+    "definition": "A US federal payroll tax deducted from employees' paychecks and matched by employers to fund Social Security and Medicare programs.",
+    "slug": "fica",
+    "category": "Tax"
+  },
+  {
+    "term": "Fiduciary Fund",
+    "definition": "Funds used to account for assets held by a government in a trustee capacity or as an agent for individuals, private organizations, or other governmental units.",
+    "slug": "fiduciary-fund",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Free Cash Flow to Equity (FCFE)",
+    "definition": "A measure of how much cash is available to the equity shareholders of a company after all expenses, reinvestment, and debt are paid.",
+    "slug": "fcfe",
+    "category": "Valuation"
+  },
+  {
+    "term": "Free Cash Flow to the Firm (FCFF)",
+    "definition": "The amount of cash flow from operations available for distribution after depreciation expenses, taxes, working capital, and investments are accounted for, available to both debt and equity holders.",
+    "slug": "fcff",
+    "category": "Valuation"
+  },
+  {
+    "term": "General Fund",
+    "definition": "The primary operating fund of a governmental entity, used to account for all financial resources except those required to be accounted for in another fund.",
+    "slug": "general-fund",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Going Concern Modification",
+    "definition": "An explanatory paragraph added to an auditor's report indicating that the auditor has substantial doubt about the company's ability to continue operating as a viable business for the next year.",
+    "slug": "going-concern-modification",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Information Technology General Controls (ITGC)",
+    "definition": "Controls that apply to all systems components, processes, and data for a given organization or IT environment, designed to ensure the proper development and implementation of applications and integrity of data.",
+    "slug": "itgc",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Internal Service Fund",
+    "definition": "A fund used in governmental accounting to account for the financing of goods or services provided by one department or agency to other departments or agencies of the governmental unit on a cost-reimbursement basis.",
+    "slug": "internal-service-fund",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Kaizen Costing",
+    "definition": "A cost accounting system that focuses on the continuous, incremental reduction of costs during the manufacturing phase of a product's life cycle.",
+    "slug": "kaizen-costing",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Kiting",
+    "definition": "A fraudulent scheme where a perpetrator takes advantage of the float time required for checks to clear the banking system to create fictitious balances in bank accounts.",
+    "slug": "kiting",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Lapping",
+    "definition": "An accounting fraud scheme where an employee steals cash received from customer A, and uses cash received later from customer B to credit customer A's account, creating a continuous chain of delayed postings.",
+    "slug": "lapping",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Lean Accounting",
+    "definition": "The general term used for the changes required to a company's accounting, control, measurement, and management processes to support lean manufacturing and lean thinking.",
+    "slug": "lean-accounting",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Lockbox System",
+    "definition": "A service provided by banks to companies for the receipt of payment from customers. Customer payments are mailed directly to a post office box controlled by the bank to accelerate cash collection.",
+    "slug": "lockbox-system",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Mezzanine Financing",
+    "definition": "A hybrid of debt and equity financing that gives the lender the right to convert to an equity interest in the company in case of default, generally, after venture capital companies and other senior lenders are paid.",
+    "slug": "mezzanine-financing",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Onerous Contract",
+    "definition": "A contract in which the unavoidable costs of meeting the obligations under the contract exceed the economic benefits expected to be received under it. Requires immediate recognition of a loss/provision.",
+    "slug": "onerous-contract",
+    "category": "Liabilities"
+  },
+  {
+    "term": "Payroll Burden",
+    "definition": "The employer's costs above and beyond the employee's base salary or hourly wage, including employer payroll taxes, workers' compensation insurance, health benefits, and retirement matching.",
+    "slug": "payroll-burden",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Preferred Return (Hurdle Rate)",
+    "definition": "In private equity and real estate, a minimum annual return that limited partners (investors) are entitled to receive before the general partner (manager) can begin sharing in the profits.",
+    "slug": "preferred-return",
+    "category": "Valuation"
+  },
+  {
+    "term": "Proprietary Fund",
+    "definition": "A type of governmental fund used to account for activities that are similar to those found in the private sector, where the intent is to recover costs through user charges (includes Enterprise and Internal Service funds).",
+    "slug": "proprietary-fund",
+    "category": "Specialized Accounting"
+  },
+  {
+    "term": "Repatriation Tax",
+    "definition": "A tax levied on the transfer of corporate money or property from a foreign country back to its home country. Relevant for multinational corporations consolidating cash.",
+    "slug": "repatriation-tax",
+    "category": "Tax"
+  },
+  {
+    "term": "Rework",
+    "definition": "The process of correcting defective, failed, or non-conforming items during production. Rework costs are heavily tracked in cost accounting to monitor manufacturing inefficiency.",
+    "slug": "rework",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Sampling Risk",
+    "definition": "The risk that an auditor's conclusion based on a sample may be different from the conclusion if the entire population were subjected to the same audit procedure.",
+    "slug": "sampling-risk",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Scrap",
+    "definition": "Material left over from certain production processes, such as woodworking or metal manufacturing, that has minimal economic value and is sold or discarded.",
+    "slug": "scrap",
+    "category": "Cost Accounting"
+  },
+  {
+    "term": "Segregation of Duties (SoD)",
+    "definition": "A critical internal control principle requiring that more than one person be necessary to complete a financial task, specifically separating the custody of assets from the authorization and recording of transactions.",
+    "slug": "segregation-of-duties",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Skimming",
+    "definition": "An 'off-book' fraud scheme where cash is stolen from a business before it is recorded in the accounting system, making it particularly difficult to detect.",
+    "slug": "skimming",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "SOC 1 (System and Organization Controls 1)",
+    "definition": "An audit report evaluating the internal controls of a service organization that are relevant to its clients' financial reporting (ICFR).",
+    "slug": "soc-1",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "SOC 2 (System and Organization Controls 2)",
+    "definition": "An audit report that evaluates a service organization's controls regarding security, availability, processing integrity, confidentiality, and privacy of customer data.",
+    "slug": "soc-2",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Substantive Testing",
+    "definition": "Audit procedures designed to test for dollar misstatements (due to errors or fraud) that directly affect the correctness of financial statement balances.",
+    "slug": "substantive-testing",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Sweep Account",
+    "definition": "A bank account that automatically transfers amounts that exceed, or fall short of, a certain level into a higher interest-earning investment option at the close of each business day.",
+    "slug": "sweep-account",
+    "category": "Bookkeeping"
+  },
+  {
+    "term": "Tax Haven",
+    "definition": "A country or jurisdiction that offers foreign individuals and businesses little or no tax liability in a politically and economically static environment, often requiring little to no physical presence.",
+    "slug": "tax-haven",
+    "category": "Tax"
+  },
+  {
+    "term": "Terminal Value",
+    "definition": "The estimated value of a business beyond the explicit forecast period in a Discounted Cash Flow (DCF) analysis. It often accounts for the majority of the total enterprise value.",
+    "slug": "terminal-value",
+    "category": "Valuation"
+  },
+  {
+    "term": "Tolerable Misstatement",
+    "definition": "The application of performance materiality to a particular sampling procedure in an audit. It is the maximum monetary error that an auditor is willing to accept in an account balance.",
+    "slug": "tolerable-misstatement",
+    "category": "Controls & Compliance"
+  },
+  {
+    "term": "Value Added Tax (VAT)",
+    "definition": "A consumption tax assessed on the value added to goods and services. It applies at each stage of the supply chain, from production to the point of sale, widely used outside the US.",
+    "slug": "value-added-tax",
+    "category": "Tax"
+  },
+  {
+    "term": "Value Stream Mapping",
+    "definition": "A lean-management method for analyzing the current state and designing a future state for the series of events that take a product or service from its beginning through to the customer.",
+    "slug": "value-stream-mapping",
+    "category": "Managerial Accounting"
+  },
+  {
+    "term": "Waterfall Distribution",
+    "definition": "A method used in private equity to allocate investment returns or capital gains among participants of a group or pooled investment, typically detailing how capital is returned and preferred returns are met before the GP earns carried interest.",
+    "slug": "waterfall-distribution",
+    "category": "Valuation"
+  },
+  {
+    "term": "Weighted Average Shares Outstanding (WASO)",
+    "definition": "A calculation that takes the number of outstanding shares and multiplies the portion of the reporting period those shares covered. Used as the denominator for calculating EPS.",
+    "slug": "waso",
+    "category": "Financial Reporting"
+  },
+  {
+    "term": "Zero Balance Account (ZBA)",
+    "definition": "A system of cash management where a company maintains a master account and subsidiary accounts. The subsidiary accounts always maintain a balance of exactly $0.00, with funds automatically transferred from the master account only when a check clears.",
+    "slug": "zero-balance-account",
+    "category": "Bookkeeping"
+  }
+
+
+
+
+
+]

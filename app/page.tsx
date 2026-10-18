@@ -1,0 +1,301 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import entriesData from "../data/entries.json";
+
+// Force this page to be static and generated at build time
+export const dynamic = 'force-static';
+
+// 1. UPDATED INTERFACES: Support BOTH old and new formats
+interface JournalRow {
+  account: string;
+}
+
+interface Entry {
+  slug: string;
+  title: string;
+  description: string;
+  
+  // Old Format
+  category?: string;
+  explanation?: string;
+  entries?: JournalRow[];
+  
+  // New Format
+  core_accounting?: {
+    category: string;
+    entries: JournalRow[];
+  };
+  content_sections?: {
+    detailed_explanation: string;
+  };
+}
+
+// --- OPTIMIZATION: Moved calculations outside the component ---
+// This runs once at build time, not on every page request.
+const entries = entriesData as Entry[];
+const totalEntriesCount = entries.length;
+const primaryPillars = ["Tax", "IFRS", "Advanced"];
+
+// FIX: Safely count categories from both formats
+const categoryCounts = entries.reduce((acc, entry) => {
+  const catName = entry.core_accounting?.category || entry.category;
+  if (catName) {
+    acc[catName] = (acc[catName] || 0) + 1;
+  }
+  return acc;
+}, {} as Record<string, number>);
+
+const secondaryIndustries = Object.entries(categoryCounts)
+  .filter(([catName]) => !primaryPillars.includes(catName) && catName !== "General")
+  .map(([name, count]) => ({ name, count }))
+  .sort((a, b) => b.count - a.count);
+// -------------------------------------------------------------
+
+const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const generateCategorySlug = (categoryName: string) => {
+  if (!categoryName) return 'uncategorized';
+  return categoryName
+    .toLowerCase()
+    .replace(/ & /g, '-and-')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+};
+
+export default function HomePage() {
+  const [query, setQuery] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (response.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
+  const handleSearchRedirect = () => {
+    if (query.trim()) {
+      window.location.href = `/search?q=${encodeURIComponent(query)}`;
+    }
+  };
+
+  // FIX: Search Logic now indexes both formats
+  const searchTerms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  const allMatches = entries.filter((entry) => {
+    if (searchTerms.length === 0) return false;
+    
+    // Safely extract text from whichever format the entry uses
+    const entryCategory = entry.core_accounting?.category || entry.category || "";
+    const entryExplanation = entry.content_sections?.detailed_explanation || entry.explanation || "";
+    const entryRows = entry.core_accounting?.entries || entry.entries || [];
+
+    const searchableContent = [
+      entry.title,
+      entryCategory,
+      entry.description,
+      entryExplanation,
+      ...entryRows.map(row => row.account)
+    ].join(" ").toLowerCase();
+
+    return searchTerms.every(term => {
+      const regex = new RegExp(`\\b${escapeRegExp(term)}`, 'i');
+      return regex.test(searchableContent);
+    });
+  });
+
+  const dropdownResults = allMatches.slice(0, 8);
+
+  return (
+    <main className="min-h-screen bg-white text-slate-900 font-sans antialiased">
+      {/* 1. HERO */}
+      <section className="relative py-28 px-4 bg-[#f8fafc] border-b border-slate-200 overflow-visible">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase tracking-widest mb-8 border border-emerald-200">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            {totalEntriesCount} Expert-Verified Entries
+          </div>
+
+          <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Find Any <span className="text-emerald-600">Journal Entry</span> Instantly.
+          </h1>
+          <p className="text-slate-500 text-lg mb-12 font-medium max-w-xl mx-auto leading-relaxed">
+            The definitive professional library for IFRS standards, Middle Eastern tax compliance, and industry-specific accounting logic.
+          </p>
+
+          {/* FLOATING SEARCH BAR */}
+          <div className="relative max-w-2xl mx-auto" ref={searchRef}>
+            <div className={`relative z-50 flex items-center bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border transition-all duration-300 ${
+              showDropdown && query ? 'rounded-t-3xl border-slate-200' : 'rounded-full border-transparent hover:border-emerald-200'
+            }`}>
+              <div className="pl-6 text-slate-400">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Search by keyword (e.g. 'VAT', 'Prepaid', 'IFRS 16')..."
+                className="w-full p-6 pl-4 rounded-full outline-none text-lg font-medium text-black bg-transparent placeholder:text-slate-300"
+                value={query}
+                onFocus={() => setShowDropdown(true)}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSearchRedirect()} 
+              />
+              <button 
+                onClick={handleSearchRedirect} 
+                className="hidden sm:block absolute right-3 top-3 bg-emerald-600 text-white font-black text-xs uppercase tracking-wider px-6 py-4 rounded-full hover:bg-emerald-500 transition shadow-emerald-200"
+              >
+                Search
+              </button>
+            </div>
+
+            {/* FLOATING DROPDOWN */}
+            {showDropdown && query && (
+              <div className="absolute top-full left-0 w-full bg-white shadow-[0_30px_60px_rgba(0,0,0,0.15)] rounded-b-3xl border-x border-b border-slate-200 z-100 overflow-hidden text-left">
+                {dropdownResults.length > 0 ? (
+                  <div className="py-2">
+                    {dropdownResults.map((entry) => (
+                      <Link
+                        key={entry.slug}
+                        href={`/entries/${entry.slug}`}
+                        onClick={() => setShowDropdown(false)}
+                        className="flex items-center px-8 py-4 hover:bg-slate-50 transition-all border-b border-slate-50 last:border-0 group"
+                      >
+                        <div className="flex-1 text-left">
+                          <span className="block text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-1 opacity-80">
+                            {/* FIX: Use fallback for category display in dropdown */}
+                            {entry.core_accounting?.category || entry.category || "Uncategorized"}
+                          </span>
+                          <span className="block text-slate-900 font-bold text-lg group-hover:text-emerald-700 transition-colors">{entry.title}</span>
+                          <span className="block text-slate-500 text-xs mt-1 leading-relaxed line-clamp-1">{entry.description}</span>
+                        </div>
+                        <div className="text-slate-200 group-hover:text-emerald-500 transition-colors ml-4">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" /></svg>
+                        </div>
+                      </Link>
+                    ))}
+                    
+                    {allMatches.length > 0 && (
+                      <Link 
+                        href={`/search?q=${encodeURIComponent(query)}`} 
+                        className="block text-center pt-4 pb-3 font-bold text-sm text-emerald-700 hover:text-emerald-500 group bg-slate-50 border-t border-slate-100"
+                      >
+                        See all {allMatches.length} matches for "{query}" <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                      </Link>
+                    )}
+                  </div>
+                ) : (
+                  <div className="p-12 text-center text-slate-400 font-medium italic">No entries found for &quot;{query}&quot;</div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* 2. SECONDARY INDUSTRY GRID */}
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-12 text-center">Browse Specialized Industries</h3>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {secondaryIndustries.map((industry) => (
+            <Link 
+              key={industry.name}
+              href={`/categories/${generateCategorySlug(industry.name)}`}
+              className="group p-8 bg-white border border-slate-100 rounded-4xl text-center transition-all hover:border-emerald-500 hover:shadow-xl hover:bg-emerald-50/30"
+            >
+              <span className="block text-slate-800 font-bold group-hover:text-emerald-700 transition-colors">
+                {industry.name}
+              </span>
+              
+              <span className="text-[9px] text-slate-400 font-black uppercase tracking-widest mt-2 block opacity-80">
+                {industry.count} {industry.count === 1 ? 'Entry' : 'Entries'}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. SUBSCRIPTION / LEAD MAGNET */}
+      <section id="subscribe" className="py-24 px-4 bg-[#0f172a] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-8 border border-emerald-500/20">
+            Verified Expertise by Qusai Ahmad
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Master Your <span className="text-emerald-500">Career.</span></h2>
+          
+          {status === "success" ? (
+            <div className="bg-emerald-500/20 text-emerald-400 p-8 rounded-4xl border border-emerald-500/30 animate-in fade-in zoom-in max-w-lg mx-auto">
+              <p className="font-bold text-lg text-white mb-2">You&apos;re in! 🎉</p>
+              <p className="text-emerald-400">Welcome to the Hub. Check your inbox for your first technical accounting guide.</p>
+            </div>
+          ) : (
+            <>
+              <p className="text-slate-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+                Join 1,000+ professionals receiving deep-dive IFRS guides and professional automation tips.
+              </p>
+              <form className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto" onSubmit={handleSubscribe}>
+                <input 
+                  type="email" 
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Professional email address" 
+                  className="flex-1 p-5 rounded-[20px] bg-slate-800 border border-slate-700 text-white outline-none focus:border-emerald-500 transition-all placeholder:text-slate-500" 
+                />
+                <button 
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="bg-emerald-600 text-white font-black px-10 py-5 rounded-[20px] hover:bg-emerald-500 transition-all shadow-xl shadow-emerald-900/40 uppercase text-[10px] tracking-widest disabled:opacity-50"
+                >
+                  {status === "loading" ? "Joining..." : "Join Free"}
+                </button>
+              </form>
+              {status === "error" && (
+                <p className="text-red-400 text-xs mt-4 font-bold uppercase tracking-widest">Something went wrong. Please try again.</p>
+              )}
+            </>
+          )}
+          
+          <p className="mt-8 text-slate-500 text-[10px] uppercase font-bold tracking-widest opacity-50">
+            No Spam. Just high-quality technical accounting.
+          </p>
+        </div>
+      </section>
+    </main>
+  );
+}
